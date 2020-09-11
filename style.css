@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(146, 146, 146);
+  background-color: rgb(68, 68, 68);
   text-align: center;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 .color-black-selected:hover {
-  padding: 25px;
+  padding: 22px;
 }
 
 .color {
@@ -31,7 +31,7 @@ body {
 }
 
 .color:hover {
-  padding: 25px;
+  padding: 22px;
 }
 
 .pixel-board {
@@ -39,7 +39,7 @@ body {
   border: solid 2px black;
   border-radius: 10px;
   margin: 20px auto;
-  padding: 5px;
+  padding: 10px;
 }
 
 .pixel {
