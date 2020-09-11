@@ -40,7 +40,7 @@ table , th , td {
 
 .pixel-board {
   clear: both;
-  height: 25px;
-  width: 25px;
+  height: 250px;
+  width: 250px;
   background-color: violet;
 }
