@@ -24,3 +24,14 @@ body {
 .color-div-4 {
   background-color: blue;
 }
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+}
+
+.pixel-line {
+  display: inline-block;
+}

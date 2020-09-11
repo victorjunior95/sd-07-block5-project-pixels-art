@@ -4,11 +4,11 @@ const color3 = document.querySelector('#color-3');
 const color4 = document.querySelector('#color-4');
 
 
-function colorGeneration () {
-  let red = Math.floor(Math.random() * 255);
-  let green = Math.floor(Math.random() * 255);
-  let blue = Math.floor(Math.random() * 255);
-  let rgb = `rgb(${red}, ${green}, ${blue})`;
+function colorGeneration() {
+  const red = Math.floor(Math.random() * 255);
+  const green = Math.floor(Math.random() * 255);
+  const blue = Math.floor(Math.random() * 255);
+  const rgb = `rgb(${red}, ${green}, ${blue})`;
   return rgb;
 }
 
