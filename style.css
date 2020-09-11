@@ -1,7 +1,7 @@
 .color {
   border: 1px solid black;
   display: inline-block;
-  padding: 50px;
+  padding: 24px;
 }
 .black {
   background-color: black;
@@ -17,4 +17,16 @@
 
 .blue {
   background-color: blue;
+}
+
+.pixels {
+  width: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
 }
