@@ -25,14 +25,21 @@
 }
 
 .pixel {
-  border: 1px solid black;
-  width: 25px;
-  height: 25px;
   background-color: white;
+  height: 25px;
+  width: 25px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
 }
 
 .pixel-board {
-  width: 40px;
-  height: 40px;
   clear: both;
+  height: 40px;
+  width: 40px;
 }
