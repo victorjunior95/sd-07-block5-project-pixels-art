@@ -1,0 +1,31 @@
+.head-container div {
+  border: 1px solid black;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  padding: 40px 40px;
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.grey {
+  background-color: grey;
+}
+
+.pixels {
+  border: 1px solid black;
+  display: inline-table;
+  margin: -1px -1px;
+  padding: 40px 40px;
+}
