@@ -4,7 +4,7 @@ function resetSelector() {
   document.querySelectorAll('.color').forEach((item) => {
     item.classList.remove = 'selected';
   });
-};
+}
 
 const blackPicker = document.querySelector('.black');
 blackPicker.addEventListener('click', function () {
@@ -37,6 +37,6 @@ redPicker.addEventListener('click', function () {
 // https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
 document.querySelectorAll('.pixel').forEach((item) => {
   item.addEventListener('click', (event) => {
-    item.style.backgroundColor = color;
+    event = item.style.backgroundColor = color;
   });
 });
