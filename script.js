@@ -36,7 +36,7 @@ redPicker.addEventListener('click', function () {
 
 // https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
 document.querySelectorAll('.pixel').forEach((item) => {
-  item.addEventListener('click', (event) => {
-    event = item.style.backgroundColor = color;
+  item.addEventListener('click', () => {
+    item.style.backgroundColor = color;
   });
 });
