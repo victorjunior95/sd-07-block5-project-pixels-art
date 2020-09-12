@@ -1,7 +1,7 @@
 .color {
   border: 1px solid black;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
 }
 
 .color1 {
@@ -18,4 +18,20 @@
 
 .color4 {
   background: blue;
+}
+
+.pixel-board {
+  display: block;
+  width: 200px;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
+  float: left;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.pixel + .pixel {
 }
