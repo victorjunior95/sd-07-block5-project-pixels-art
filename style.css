@@ -7,25 +7,25 @@
   padding: 40px 40px;
 }
 
-.black {
+.color {
   background-color: black;
 }
 
-.red {
+.color + .color {
   background-color: red;
 }
 
-.green {
+.color + .color + .color {
   background-color: green;
 }
 
-.grey {
+.color + .color + .color + .color {
   background-color: grey;
 }
 
-.pixels {
+.pixel {
   border: 1px solid black;
-  display: inline-table;
-  margin: -1px -1px;
+  display: inline-block;
+  margin: -1px 0px;
   padding: 40px 40px;
 }
