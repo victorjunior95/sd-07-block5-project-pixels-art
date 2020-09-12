@@ -54,7 +54,7 @@ for (let i = 0; i < qualPixel.length; i++) {
 //botão para limpar o desenho
 let botao = document.getElementById("clear-board");
 botao.addEventListener("click", function(){
-    for (i in qualPixel){
+    for (let i in qualPixel){
         qualPixel[i].style.backgroundColor = "white";
     }
 })
