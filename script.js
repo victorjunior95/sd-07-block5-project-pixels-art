@@ -7,7 +7,7 @@ function createCanvas(value) {
     for (let index2 = 0; index2 < value; index2 += 1) {
       let itemElement = document.createElement('div')
       itemElement.style.backgroundColor = 'rgb (0, 0, 0)'
-      itemElement.className = 'td'
+      itemElement.className = 'td pixel'
       itemElement.addEventListener('click', () => {changeColor(itemElement)})
       rowElement.appendChild(itemElement)
     }
