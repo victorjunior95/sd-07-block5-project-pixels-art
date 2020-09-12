@@ -10,11 +10,13 @@
   border: 1px solid black;
   display: inline-block;
   height: 40px;
+  margin-right: 10px;
   width: 40px;
 }
 
 .color-palette {
   display: inline-block;
+  margin-bottom: 20px;
 }
 
 .green {
@@ -24,8 +26,15 @@
 .pixel {
   background-color: white;
   border: 1px solid black;
+  display: table-cell;
   height: 40px;
   width: 40px;
+}
+
+.pixel-board {
+  display: table;
+  height: 210px;
+  width: 210px;
 }
 
 .red {
