@@ -2,36 +2,43 @@ body {
   margin: 10px;
 }
 
-.color-palette {
-  width: 200px;
-  height: 42px;
-}
 .color {
   border: black solid 1px;
+  color: white;
   display: inline-block;
   width: 40px;
   height: 40px;
 }
-
-.color#color-01 {
-  background-color: #000000;
+.color-palette {
+  width: 200px;
+  height: 42px;
 }
 
-.color#color-02 {
-  background-color: #4D17BD;
+.color-01 {
+  background-color: black;
 }
 
-.color#color-03 {
-  background-color: #FF160A;
+.color-02 {
+  background-color: #4d17bd;
 }
 
-.color#color-04 {
-  background-color: #FFB508;
+.color-03 {
+  background-color: #ff160a;
+}
+
+.color-04 {
+  background-color: #ffb508;
 }
 
 .pixel {
   width: 40px;
   height: 40px;
   border: black solid 1px;
-  display: inline-block;
+  display: block;
+  float: left;
+}
+
+.pixel-board{
+  width: 240px;
+  height: 240px;
 }
