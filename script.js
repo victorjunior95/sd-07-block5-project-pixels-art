@@ -46,6 +46,12 @@ buttonGenerateBoard.addEventListener('click', function() {
         removeLinhas[index].remove(removeLinhas);
     }
     // inserir quadro novo
+    if (boardSize.value < 5){
+        boardSize.value = 5;
+    }
+    if (boardSize.value > 50){
+        boardSize.value = 50;
+    }
     for (let index = 0; index < boardSize.value; index += 1){
         let novaLinha = document.createElement('div');
         linha = pixelBoard.appendChild(novaLinha);
