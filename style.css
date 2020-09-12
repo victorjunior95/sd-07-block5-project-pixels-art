@@ -1,5 +1,5 @@
 .color-palette {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .color {
@@ -27,17 +27,21 @@
 }
 
 .pixel-board {
-    border: 1px solid black;
+    display: table;
+    box-sizing: border-box;
+    border: 3px solid black;
+
 }
 
 .board-line {
-    border: 1px solid black;
+    display: table-row;
 }
 
 .pixel {
-    display: inline-block;
+    display: table-cell;
     background-color: white;
     border: 1px solid black;
     width: 40px;
     height: 40px;
+    box-sizing: border-box;
 }
