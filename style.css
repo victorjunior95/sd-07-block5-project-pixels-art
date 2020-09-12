@@ -23,6 +23,7 @@
 
 .pixel {
   background-color: white;
+  border-spacing: 0;
   display: table-column;
 }
 
@@ -48,10 +49,6 @@
   display: inline-block;
   height: 40px;
   width: 40px;
-}
-
-.tr {
-  display: table-cell;
 }
 
 input {
