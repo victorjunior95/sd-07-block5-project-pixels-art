@@ -41,6 +41,7 @@ body {
   border-radius: 10px;
   margin: 20px auto;
   padding: 10px;
+  width: 400px;
 }
 
 .pixel {
@@ -48,5 +49,22 @@ body {
   border: solid 1px black;
   display: inline-block;
   height: 40px;
+  margin: -5px;
   width: 40px;
+}
+
+.topFirst {
+  border-radius: 10px 0px 0px 0px;
+}
+
+.topLast {
+  border-radius: 0px 10px 0px 0px;
+}
+
+.bottomFirst {
+  border-radius: 0px 0px 0px 10px;
+}
+
+.bottomLast {
+  border-radius: 0px 0px 10px 0px;
 }
