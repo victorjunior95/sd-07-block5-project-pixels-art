@@ -1,5 +1,19 @@
 let color = 'black';
 
+// https://stackoverflow.com/a/25873123
+function randomHsl() {
+  return 'hsla(' + Math.random() * 360 + ', 100%, 50%, 1)';
+}
+// <------------------------------------------------------->
+
+let buttonColor1 = randomHsl();
+let buttonColor2 = randomHsl();
+let buttonColor3 = randomHsl();
+
+document.querySelector('.button1').style.backgroundColor = buttonColor1;
+document.querySelector('.button2').style.backgroundColor = buttonColor2;
+document.querySelector('.button3').style.backgroundColor = buttonColor3;
+
 const resetSelector = () => {
   document.querySelectorAll('.color').forEach((item) => {
     item.classList.remove('selected');
@@ -13,25 +27,25 @@ blackPicker.addEventListener('click', function () {
   document.querySelector('.black').classList.add('selected');
 });
 
-const greenPicker = document.querySelector('.green');
+const greenPicker = document.querySelector('.button1');
 greenPicker.addEventListener('click', function () {
-  color = 'green';
+  color = buttonColor1;
   resetSelector();
-  document.querySelector('.green').classList.add('selected');
+  document.querySelector('.button1').classList.add('selected');
 });
 
-const bluePicker = document.querySelector('.blue');
+const bluePicker = document.querySelector('.button2');
 bluePicker.addEventListener('click', function () {
-  color = 'blue';
+  color = buttonColor2;
   resetSelector();
-  document.querySelector('.blue').classList.add('selected');
+  document.querySelector('.button2').classList.add('selected');
 });
 
-const redPicker = document.querySelector('.red');
+const redPicker = document.querySelector('.button3');
 redPicker.addEventListener('click', function () {
-  color = 'red';
+  color = buttonColor3;
   resetSelector();
-  document.querySelector('.red').classList.add('selected');
+  document.querySelector('.button3').classList.add('selected');
 });
 
 // https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
@@ -40,6 +54,7 @@ document.querySelectorAll('.pixel').forEach((item) => {
     item.style.backgroundColor = color;
   });
 });
+// <-------------------------------------------------------------------------------->
 
 const clearBoard = document.getElementById('clear-board');
 clearBoard.addEventListener('click', () => {
