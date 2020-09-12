@@ -90,14 +90,20 @@ function dynamicBoard() {
   let matrixValue = document.querySelector('#board-size').value;
 
   if (matrixValue === '') {
-    alert('Board inválido!'); 
+    alert('Board inválido!');
   } else {
-    if (matrixValue < 5) {
-      matrixValue = 5;
+
+    switch (true) {
+      case (matrixValue < 5):
+        matrixValue = 5;
+        break;
+      case (matrixValue > 50):
+        matrixValue = 50;
+        break;
+      default:
+        break;
     }
-    if (matrixValue > 50) {
-      matrixValue = 50;
-    }
+
     const pixelQty = matrixValue * matrixValue;
     clearBoard();
     createBoard(pixelQty);
