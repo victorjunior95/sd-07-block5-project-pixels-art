@@ -3,17 +3,29 @@
   display: inline-block;
   height: 40px;
   margin: 5px;
-  width: 40px; 
+  width: 40px;
 }
 
 .colorBlack {
   background-color: black;
 }
 
+.colorBlue {
+  background-color: blue;
+}
+
+.colorRed{
+  background-color: red;
+}
+
+.colorGreen {
+  background-color: green;
+}
+
 .pixel-board {
   border: 3px solid black;
   box-sizing: border-box;
-  display: table;   
+  display: table;
 }
 
 .board-line {
@@ -26,5 +38,5 @@
   box-sizing: border-box;
   display: table-cell;
   height: 40px;
-  width: 40px; 
+  width: 40px;
 }
