@@ -6,3 +6,10 @@ let green = document.getElementsByClassName('color')[2];
 let purple = document.getElementsByClassName('color')[3];
 let pixel = document.querySelectorAll('pixel')[0];
 let pixelBoard = document.querySelector('.pixel-board');
+
+// 2) Define the functions:
+
+// To select the black color when the page is loaded:
+window.addEventListener('load', function() {
+    black.pixel = 'color black selected';
+})
