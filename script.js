@@ -3,8 +3,11 @@ const color2 = document.querySelector('#color-2');
 const color3 = document.querySelector('#color-3');
 const color4 = document.querySelector('#color-4');
 const colorPalette = document.querySelector('#color-palette');
-const pixelBoard = document.querySelector('#pixel-board');
 const btnClear = document.querySelector('#clear-board');
+const btnVqv = document.querySelector('#generate-board');
+const inputBoardSize = document.querySelector('#board-size');
+const tableElement = document.querySelector('table');
+const tableSection = document.querySelector('.pixel-section');
 
 let selectedColor = 'black';
 
@@ -22,6 +25,22 @@ function removeSelectedClass(stringClass) {
   return classArray.join(' ');
 }
 
+function createTable(nValue) {
+  let  newTable = document.createElement('table');
+  newTable.id = 'pixel-board';
+  for (let i = 0; i < nValue; i += 1) {
+    let tableRow = document.createElement('tr');
+    tableRow.className = ('pixel-line');
+    for (let j = 0; j < nValue; j += 1) {
+      const tableCell = document.createElement('td');
+      tableCell.className = 'pixel';
+      tableRow.appendChild(tableCell);
+    }
+    newTable.appendChild(tableRow);
+  }
+  return newTable;
+}
+
 color1.style.backgroundColor = 'black';
 color2.style.backgroundColor = colorGeneration();
 color3.style.backgroundColor = colorGeneration();
@@ -37,8 +56,11 @@ colorPalette.addEventListener('click', function (event) {
   }
 });
 
-pixelBoard.addEventListener('click', function (elementEvent) {
-  elementEvent.target.style.backgroundColor = selectedColor;
+tableSection.addEventListener('click', function (elementEvent) {
+  if (elementEvent.target.className == 'pixel') {
+    elementEvent.target.style.backgroundColor = selectedColor;
+  }
+  console.log(elementEvent.target);
 });
 
 btnClear.addEventListener('click', function () {
@@ -46,4 +68,24 @@ btnClear.addEventListener('click', function () {
   for (let index = 0; index < pixelList.length; index += 1) {
     pixelList[index].style.backgroundColor = 'white';
   }
+});
+
+inputBoardSize.addEventListener('keyup', function () {
+  if (inputBoardSize.value <= 4) {
+    inputBoardSize.value = 5;
+  } else if (inputBoardSize.value >= 51) {
+    inputBoardSize.value = 50;
+  }
+});
+
+btnVqv.addEventListener('click', function () {
+  const valueBoardSize = inputBoardSize.value;
+  if (valueBoardSize == '') {
+    alert('Board inválido!');
+  } else if (valueBoardSize <= 4) {
+    valueBoardSize = 5;
+  } else if (valueBoardSize >= 51) {
+    valueBoardSize = 50;
+  }
+  tableSection.replaceChild(createTable(valueBoardSize), tableSection.children[0]);
 });

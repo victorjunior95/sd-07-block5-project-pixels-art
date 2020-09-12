@@ -35,3 +35,7 @@ td {
 table {
   margin: auto;
 }
+
+.selected {
+  border: 2px double red;
+}
