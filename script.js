@@ -1,5 +1,5 @@
-document.querySelectorAll(".color").forEach(removeClass);
-document.querySelectorAll(".color").forEach(selectColor);
+document.querySelectorAll("#color-palette").forEach(removeClass);
+document.querySelectorAll("#color-palette").forEach(selectColor);
 
 function removeClass()
 {
