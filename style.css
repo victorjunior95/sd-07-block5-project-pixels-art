@@ -1,51 +1,30 @@
-.color-palette {
-
-}
-
 .color {
-    display: inline-block;
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
-    margin: 5px;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  margin: 5px;
+  width: 40px; 
 }
-
-/* .selected {
-    border: 3px inset;
-} */
 
 .colorBlack {
-    background-color: black;
-}
-
-.colorRed {
-    background-color: red;
-}
-
-.colorBlue {
-    background-color: blue;
-}
-
-.colorGreen {
-    background-color: green;
+  background-color: black;
 }
 
 .pixel-board {
-    display: table;
-    box-sizing: border-box;
-    border: 3px solid black;
-
+  border: 3px solid black;
+  box-sizing: border-box;
+  display: table;   
 }
 
 .board-line {
-    display: table-row;
+  display: table-row;
 }
 
 .pixel {
-    display: table-cell;
-    background-color: white;
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
-    box-sizing: border-box;
+  background-color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: table-cell;
+  height: 40px;
+  width: 40px; 
 }
