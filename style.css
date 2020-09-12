@@ -62,15 +62,15 @@ input {
   width: 40px;
   height: 40px;
   border: 1px solid black;
-  margin: 1px;
 }
 
 .canvas {
+  display: table;
   position: relative;
   margin: 20px auto;
 }
 
 .pixel {
   background-color: rgb(255, 255, 255);
-  width: 40px
+  width: 40px;
 }

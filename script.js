@@ -14,7 +14,7 @@ function createCanvas(value) {
     canvasElement.appendChild(rowElement)
   }
 
-  canvasElement.style.width = `${value * 40}px`
+  canvasElement.style.width = `${value * 42}px`
 }
 
 function destructCanvas() {
