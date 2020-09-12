@@ -1,6 +1,6 @@
 let color = 'black';
 
-let resetSelector = () => {
+const resetSelector = () => {
   document.querySelectorAll('.color').forEach((item) => {
     item.classList.remove('selected');
   });
