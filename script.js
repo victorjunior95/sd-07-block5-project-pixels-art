@@ -33,6 +33,7 @@ redPicker.addEventListener('click', function (){
     document.querySelector('.red').className = 'color red box selected';
 });
 
+// https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
 document.querySelectorAll('.pixel').forEach(item => {
     item.addEventListener('click', event => {
       item.style.backgroundColor = color;
