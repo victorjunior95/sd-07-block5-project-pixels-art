@@ -18,6 +18,9 @@
    
    
 }
+.black{
+    background-color: black;
+}
 
 .color{
    
@@ -38,6 +41,4 @@
 
 
 
-.selected{
-    width: 100px;
-}
+
