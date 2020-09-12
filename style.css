@@ -1,36 +1,36 @@
 .box {
-    height: 100px;
-    width: 100px;
-    display: inline-block;
-    border: 1px solid black;
+  border: 1px solid black;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
 }
 
 .red {
-    background-color: red;
+  background-color: red;
 }
 
 .green {
-    background-color: green;
+  background-color: green;
 }
 
 .blue {
-    background-color: blue;
+  background-color: blue;
 }
 
 .black {
-    background-color: black;
+  background-color: black;
 }
 
 .pixel {
-    background-color: white;
-    border: 1px solid black;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-    margin-left: -5px;
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  margin-left: -5px;
+  width: 40px;
 }
 
 .col {
-    display: block;
-    margin-top: -5px;
+  display: block;
+  margin-top: -5px;
 }
