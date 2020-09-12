@@ -35,13 +35,7 @@ function criarPaleta(){
 /* Crianto a Tela */
 
 function criarTela(){
-    let printSize = document.querySelector("#board-size").value
-    if (printSize < 5 ) {printSize = 5}
-    else if (printSize > 50) {printSize = 50}
-
-    if (printSize == "") {
-        alert("Board inválido!")
-    }
+    let printSize = tamanho()
     let tabela = document.querySelector("#pixel-board")
     tabela.innerHTML = ""
     for (let i = 0; i< printSize; i+=1){
@@ -60,6 +54,14 @@ function criarTela(){
     }
 }
 
+function tamanho(){
+    let printSize = document.querySelector("#board-size").value
+    if (printSize == "") {alert("Board inválido!")}
+    else if (printSize > 50) {printSize = 50}
+    else if (printSize < 5 ) {printSize = 5}
+    return printSize
+    
+}
 /* Botão Limpar */
 let btnLimpar = document.querySelector("#clear-board")
 btnLimpar.addEventListener("click", criarTela)
