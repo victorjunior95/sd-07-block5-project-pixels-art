@@ -9,19 +9,6 @@
   margin: 2px 2px;
 }
 
-.one {
-  background-color: black;
-}
-.two {
-  background-color: red;
-}
-.three {
-  background-color: blue;
-}
-.four {
-  background-color: green;
-}
-
 .horiDiv {
   display: flex;
 }
