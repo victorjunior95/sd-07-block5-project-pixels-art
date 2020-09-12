@@ -4,30 +4,47 @@
   #color-palette{
     width: 412px;
     height: 100px;
-    background-color: black;
+    
   }
   #pixel-board{
-    width: 200px;
-    height: 200px;
+    
     box-sizing: content-box;
     padding: 0px;
     margin: 0px;
-    
-
   }
+
+  .pixel{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 1px black solid;
+    box-sizing: content-box;
+    padding: 0px;
+    margin: -2px;
+}
+
+.linha{
+    display: inline-block;
+    /* box-sizing: content-box; */
+    /* padding: 0px; */
+    /* margin: 0px;
+    font-size: 0; */
+    border: 2px black;
+}
   .color{
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       display: inline-block;
+      border: 2px solid black;
      
   }
   #cores{
-      width: 412px;
-      border: 2px solid black;
+      width: 335px;
+      height: 30px;
       text-align: center;
   }
   .cores{
-      width: 100px;
+      width: 80px;
       display: inline-block;
       text-align; center;
   }
@@ -43,20 +60,5 @@
   #purple{
       background-color: purple;
   }
-  .pixel{
-      width: 40px;
-      height: 40px;
-      background-color: white;
-      border: 1px black;
-      box-sizing: content-box;
-      padding: 0px;
-      margin: -2px;
-  }
-  .linha{
-      display: inline-block;
-      box-sizing: content-box;
-      padding: 0px;
-      margin: 0px;
-      font-size: 0
-  }
+
 
