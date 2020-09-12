@@ -16,6 +16,7 @@ window.onload = function () {
       verticalPixel(horizontalDiv);
     }
   }
+  DefineSize();
 
   function verticalPixel(motherDiv) {
     for (let u = 0; u < BOX_SIZE; u += 1) {
