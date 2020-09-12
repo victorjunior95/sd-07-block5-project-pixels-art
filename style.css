@@ -38,6 +38,10 @@
         height: 210px;
        
     }
+    #clear-board{
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
     .pixel{
         /* margin: -1.9px ; */
         display: inline-block; 

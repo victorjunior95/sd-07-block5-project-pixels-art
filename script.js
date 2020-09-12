@@ -14,6 +14,7 @@ window.onload = function(){
     let colorBlue = document.querySelector('#color3');
     let colorGreen = document.querySelector('#color4');
     let divPixelBoard = document.querySelector('#pixel-board')
+    let clear = document.querySelector('#clear-board')
 
     let arr = []
     function ColumnAndlines(numberchoice){
@@ -91,6 +92,15 @@ for(let e = 0 ; e < classPixel.length ; e++) {
     classPixel[e].style.background = currentColor
   });
 }
+
+function clearBoard(){
+    for(let e = 0 ; e < classPixel.length ; e++) {
+        // classPixel[e].addEventListener('click', function() {
+          classPixel[e].style.background = 'white'
+        // });
+      }
+}
+clear.addEventListener('click', clearBoard)
 // console.log(currentColor)
     // function changeColor() {
     //     teste.style.backgroundColor = 'Blue'
