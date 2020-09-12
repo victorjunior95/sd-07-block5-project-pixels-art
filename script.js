@@ -1,4 +1,4 @@
-const color1 = document.querySelector('#color-1');
+//const color1 = document.querySelector('#color-1');
 const color2 = document.querySelector('#color-2');
 const color3 = document.querySelector('#color-3');
 const color4 = document.querySelector('#color-4');
