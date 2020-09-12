@@ -1,0 +1,21 @@
+.color {
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+}
+
+.color1 {
+  background: black;
+}
+
+.color2 {
+  background: red;
+}
+
+.color3 {
+  background: green;
+}
+
+.color4 {
+  background: blue;
+}
