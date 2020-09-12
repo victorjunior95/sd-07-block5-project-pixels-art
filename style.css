@@ -25,3 +25,19 @@
 .colorGreen {
     background-color: green;
 }
+
+.pixel-board {
+    border: 1px solid black;
+}
+
+.board-line {
+    border: 1px solid black;
+}
+
+.pixel {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+}
