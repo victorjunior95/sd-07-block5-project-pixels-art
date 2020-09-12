@@ -1,22 +1,16 @@
-const colorPalette = document.getElementById('color-palette');
-const pixelBoard = document.getElementById('pixel-board');
-
 const divPixel = document.getElementsByClassName('pixel');
-const buttonColor = document.getElementsByClassName('color');
-const buttonClear = document.getElementById('clear-board');
-
 const buttonBlack = document.querySelector('.black');
 const buttonRed = document.querySelector('.red');
 const buttonGreen = document.querySelector('.green');
 const buttonBlue = document.querySelector('.blue');
-
+const buttonColor = document.getElementsByClassName('color');
+const buttonClear = document.getElementById('clear-board');
 let currentColor = 'black';
 
 buttonBlack.addEventListener('click', selectColor);
 buttonRed.addEventListener('click', selectColor);
 buttonGreen.addEventListener('click', selectColor);
 buttonBlue.addEventListener('click', selectColor);
-
 buttonClear.addEventListener('click', clearBoard);
 
 function selectColor(event) {

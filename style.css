@@ -1,7 +1,7 @@
 .color {
-  width: 60px;
-  height: 25px;
   border-radius: 3px;
+  height: 25px;
+  width: 60px;
 }
 
 .black {
@@ -25,9 +25,8 @@
 }
 
 button.selected::before {
-  content: "👆";  
   color: white;
-  
+  content: "👆";
 }
 
 .clear-board {
