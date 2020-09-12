@@ -16,7 +16,7 @@ function removeSelectedClass() {
   const allColorPallet = document.querySelectorAll('.color');
   for (let index = 0; index < allColorPallet.length; index += 1) {
     // remove class selected
-    allColorPallet[index].className = item.className.replace(' selected', '');
+    allColorPallet[index].className = allColorPallet[index].className.replace(' selected', '');
   }
 }
 
