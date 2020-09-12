@@ -28,8 +28,14 @@
     display: inline-block;
     width: 40px;
     height: 40px;
-    border:1px black solid
+    
 }
 .pixel{
     background-color:white;
+}
+.borda{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border:1px black solid
 }
