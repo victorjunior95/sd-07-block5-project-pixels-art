@@ -9,7 +9,7 @@ let colorCurrent = colorsPallet.color1;
 
 const colors = document.getElementsByClassName('color');
 
-let selectedCurrent;
+let selectedCurrent = document.getElementsByClassName('selected')[0];
 
 function removeClassSelected() {
   let classes = selectedCurrent.className.split(' ');
