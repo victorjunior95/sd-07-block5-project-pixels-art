@@ -1,13 +1,14 @@
 .container {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
 
 .container-two {
-  width: 80%;
+  width: 100%;
+  width: 200px;
+  height: 200px;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .color {
