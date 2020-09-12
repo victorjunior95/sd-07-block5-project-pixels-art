@@ -28,6 +28,11 @@ function changeSelectedColorPallet(event) {
     applySelectedClass(document.getElementById(event.target.id));
 }
 
+// Function to apply the saved color in a pixel
+function applyBackgroundColor(event) {
+    event.target.style.backgroundColor = selectedColorRGB;
+}
+
 // Execute function to select the first color pallet
 applySelectedClass(document.querySelector(".color"));
 
@@ -38,5 +43,11 @@ document.querySelectorAll('.color').forEach(item => {
     item.addEventListener('click',changeSelectedColorPallet);
 });
 
-// console.log(selectedColorRGB);
-// document.querySelector(".pixel").style.backgroundColor = selectedColorRGB;
+// Assign the function applyBackgroundColor on all pixels
+// For each pixel 
+document.querySelectorAll('.pixel').forEach(item => {
+    // assign the function 
+    item.addEventListener('click',applyBackgroundColor);
+});
+
+
