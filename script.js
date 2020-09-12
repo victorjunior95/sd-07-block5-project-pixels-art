@@ -13,10 +13,11 @@ function applySelectedClass(colorElement) {
 // function to remove the class selected of all pallet
 function removeSelectedClass() {
   // For each color Pallet
-  document.querySelectorAll('.color').forEach(item => {
+  const allColorPallet = document.querySelectorAll('.color');
+  for (let index = 0; index < allColorPallet.length; index += 1) {
     // remove class selected
-    item.className = item.className.replace(' selected', '');
-  });
+    allColorPallet[index].className = item.className.replace(' selected', '');
+  }
 }
 
 // function to change the selected color pallet
@@ -36,26 +37,29 @@ function applyBackgroundColor(event) {
 // Function clear-board - set all pixels with background white
 function clearBoard() {
   // For each pixel
-  document.querySelectorAll('.pixel').forEach(item => {
+  const allPixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < allPixels.length; index += 1) {
     // apply background color = white
-    item.style.backgroundColor = 'rgb(255,255,255)';
-  });
+    allPixels[index].style.backgroundColor = 'rgb(255,255,255)';
+  }
 }
 
 // Function to check value from input
 function checkInputSize(numSize) {
-  if (numSize === '' || numSize === 0) {
+  // if size is empty, alert user
+  if (numSize === '') {
     alert('Board inválido!');
     numSize = 5;
-  } else {
-      // Adjust to default size 5 >= size <= 50
-    if (numSize < 5) {
-      numSize = 5;
-    }
-    if (numSize > 50) {
-      numSize = 50;
-    }
+  } 
+  // Adjust to default size 5 >= size
+  if (numSize < 5) {
+    numSize = 5;
   }
+  // Adjust to default size size <= 50
+  if (numSize > 50) {
+    numSize = 50;
+  }
+  // Set input with adjusted size
   document.getElementById('board-size').value = numSize;
   return numSize;
 }
@@ -80,7 +84,7 @@ function appendBoardLines(parentNode, sizeBoard) {
     const boardLine = document.createElement('div');
     boardLine.className = 'board-line';
     // Create the pixels
-    appendPixels(boardLine, sizeBoard)
+    appendPixels(boardLine, sizeBoard);
     // Append the board line to board pixel
     parentNode.appendChild(boardLine);
   }
@@ -105,17 +109,17 @@ applySelectedClass(document.querySelector('.color'));
 
 // Assign the function changeSelectedColorPallet on all colors Pallet
 // For each color Pallet
-document.querySelectorAll('.color').forEach(item => {
-  // remove class selected
-  item.addEventListener('click', changeSelectedColorPallet);
-});
+const allColorPallet = document.querySelectorAll('.color');
+for (let index = 0; index < allColorPallet.length; index += 1) {
+  allColorPallet[index].addEventListener('click', changeSelectedColorPallet);
+}
 
 // Assign the function applyBackgroundColor on all pixels
 // For each pixel
-document.querySelectorAll('.pixel').forEach(item => {
-  // assign the function
-  item.addEventListener('click', applyBackgroundColor);
-});
+const allPixels = document.querySelectorAll('.pixel');
+for (let index = 0; index < allPixels.length; index += 1) {
+  allPixels[index].addEventListener('click', applyBackgroundColor);
+}
 
 // Assign the function clearBoard to button
 document.getElementById('clear-board').addEventListener('click', clearBoard);
