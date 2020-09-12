@@ -78,13 +78,13 @@ inputBoardSize.addEventListener('keyup', function () {
 });
 
 btnVqv.addEventListener('click', function () {
-  let valueBoardSize = inputBoardSize.value;
+  const valueBoardSize = inputBoardSize.value;
   if (valueBoardSize === '') {
     alert('Board inválido!');
   } else if (valueBoardSize < 5) {
-    createTable(5)
+    createTable(5);
   } else if (valueBoardSize > 50) {
-    createTable(50)
+    createTable(50);
   } else {
     createTable(valueBoardSize);
   }
