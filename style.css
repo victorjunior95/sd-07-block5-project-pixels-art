@@ -10,6 +10,10 @@
     margin: 5px;
 }
 
+.selected {
+    border: 3px inset;
+}
+
 .colorBlack {
     background-color: black;
 }
