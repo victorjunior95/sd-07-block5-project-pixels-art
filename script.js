@@ -1,14 +1,12 @@
 let color = 'black';
 
 // https://stackoverflow.com/a/25873123
-function randomHsl() {
-  return 'hsla(' + Math.random() * 360 + ', 100%, 50%, 1)';
-}
+const randomHsl = () => `hsla(${Math.random() * 360}, 100%, 50%, 1)`;
 // <------------------------------------------------------->
 
-let buttonColor1 = randomHsl();
-let buttonColor2 = randomHsl();
-let buttonColor3 = randomHsl();
+const buttonColor1 = randomHsl();
+const buttonColor2 = randomHsl();
+const buttonColor3 = randomHsl();
 
 document.querySelector('.button1').style.backgroundColor = buttonColor1;
 document.querySelector('.button2').style.backgroundColor = buttonColor2;
