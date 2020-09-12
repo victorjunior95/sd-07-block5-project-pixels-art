@@ -2,10 +2,10 @@ const colors = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('.pixel-board');
 
 function randomColor() {
-  for (let index = 1; index <= 3; index += 1){
-    const red = Math.round(Math.random()*256);
-    const yellow = Math.round(Math.random()*256);
-    const green = Math.round(Math.random()*256);
+  for (let index = 1; index <= 3; index += 1) {
+    const red = Math.round(Math.random() * 256);
+    const yellow = Math.round(Math.random() * 256);
+    const green = Math.round(Math.random() * 256);
 
     colors[index].style.backgroundColor = `rgb(${red}, ${yellow}, ${green})`;
   }
@@ -23,8 +23,8 @@ function clearBoard() {
 function createBoard(nbPixelValue) {
   const pixelLine = Math.sqrt(nbPixelValue);
   const boardLength = (pixelLine * 42.222) + 2.222;
-  document.querySelector('.pixel-board').style.height = boardLength + 'px';
-  document.querySelector('.pixel-board').style.width = boardLength + 'px';
+  document.querySelector('.pixel-board').style.height = `${boardLength}px`;
+  document.querySelector('.pixel-board').style.width = `${boardLength}px`;
 
   for (let index = 0; index < nbPixelValue; index += 1) {
     const pixelCreation = document.createElement('div');
@@ -87,14 +87,18 @@ function pixelEventListener() {
 pixelEventListener();
 
 function dynamicBoard() {
-  const matrixValue = document.querySelector('#board-size').value;
+  let matrixValue = document.querySelector('#board-size').value;
 
-  if (matrixValue === "") {
-    alert('Board inválido!');
-  } else if (matrixValue < 5 || matrixValue > 50) {
-    alert('Valor tem que ser entre 5 e 50!');
+  if (matrixValue === '') {
+    alert('Board inválido!'); 
   } else {
-    let pixelQty = matrixValue * matrixValue;
+    if (matrixValue < 5) {
+      matrixValue = 5;
+    }
+    if (matrixValue > 50) {
+      matrixValue = 50;
+    }
+    const pixelQty = matrixValue * matrixValue;
     clearBoard();
     createBoard(pixelQty);
     pixelEventListener();
