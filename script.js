@@ -5,33 +5,34 @@ const colorsPallet = {
   color4: 'blue',
 }
 
-let colorSelected = colorsPallet.color1;
+let colorCurrent = colorsPallet.color1;
 
 const colors = document.getElementsByClassName('color');
 
+let selectedCurrent;
+
+function removeClassSelected() {
+  let classes = selectedCurrent.className.split(' ');
+  selectedCurrent.className = `${classes[0]} ${classes[1]}`;
+}
+
+function addClassSelected(colorButton) {
+  colorButton.className += ' selected';
+  colorCurrent = colorsPallet[`${colorButton.id}`];
+  selectedCurrent = colorButton;
+}
+
 for (let index = 0; index < colors.length; index += 1) {
   colors[index].addEventListener('click', function (event) {
-    colorSelected = colorsPallet[`${event.target.id}`];
+    if (selectedCurrent) removeClassSelected();
+    addClassSelected(event.target);
   });
 }
 
 const pixels = document.getElementsByClassName('pixel');
 
-let pixelCurrent;
-
-function pixelDefault() {
-  pixelCurrent.className = 'pixel';
-}
-
-function addPixelCurrent(pixel) {
-  pixel.className += ' selected';
-  pixelCurrent = pixel;
-}
-
 for (let index = 0; index < pixels.length; index += 1) {
   pixels[index].addEventListener('click', function (event) {
-    if (pixelCurrent) pixelDefault();
-    addPixelCurrent(event.target);
-    if (pixelCurrent) pixelCurrent.style.backgroundColor = colorSelected;
+    event.target.style.backgroundColor = colorCurrent;
   });
 }
