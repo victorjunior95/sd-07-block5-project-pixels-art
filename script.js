@@ -3,6 +3,7 @@ const blue = document.getElementById('blue');
 const green = document.getElementById('green');
 const red = document.getElementById('red');
 const pixels = document.getElementsByClassName('pixel');
+const clear = document.getElementById('clear-board');
 
 function removeAll() {
   black.classList.remove('selected');
@@ -30,3 +31,11 @@ for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = getSelectedColor();
   });
 }
+
+function clearBoard() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+}
+
+clear.addEventListener('click', clearBoard);
