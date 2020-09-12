@@ -69,3 +69,7 @@ input {
   position: relative;
   margin: 20px auto;
 }
+
+.pixel {
+  background-color: rgb(255, 255, 255);
+}
