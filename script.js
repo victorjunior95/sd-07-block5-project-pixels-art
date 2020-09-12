@@ -34,6 +34,7 @@ function createTable(nValue) {
     for (let j = 0; j < nValue; j += 1) {
       const tableCell = document.createElement('td');
       tableCell.className = 'pixel';
+      tableCell.style.backgroundColor = 'white';
       tableRow.appendChild(tableCell);
     }
     newTable.appendChild(tableRow);
@@ -57,7 +58,7 @@ colorPalette.addEventListener('click', function (event) {
 });
 
 tableSection.addEventListener('click', function (elementEvent) {
-  if (elementEvent.target.className == 'pixel') {
+  if (elementEvent.target.className === 'pixel') {
     elementEvent.target.style.backgroundColor = selectedColor;
   }
   console.log(elementEvent.target);
@@ -79,8 +80,8 @@ inputBoardSize.addEventListener('keyup', function () {
 });
 
 btnVqv.addEventListener('click', function () {
-  const valueBoardSize = inputBoardSize.value;
-  if (valueBoardSize == '') {
+  let valueBoardSize = inputBoardSize.value;
+  if (valueBoardSize === '') {
     alert('Board inválido!');
   } else if (valueBoardSize <= 4) {
     valueBoardSize = 5;
