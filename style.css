@@ -1,0 +1,46 @@
+.black {
+  background-color: black;
+}
+
+.color , .pixel , .pixel-board{
+  border: 1px solid black;
+}
+
+.color-palette {
+  margin-bottom: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.pixel {
+  background-color: white;
+  display: table-column;
+}
+
+.pixel-board {
+  display: table;
+  height: 200px;
+  width: 200px;
+}
+
+.random-color1{
+  background-color: green;  
+}
+
+.random-color2{
+  background-color: red;  
+}
+
+.random-color3{
+  background-color: blue;  
+}
+
+.size-color-rectangle , .pixel {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+
+.tr {
+  display: table-cell;
+}
