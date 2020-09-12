@@ -3,6 +3,7 @@
   display: inline-block;
   padding: 24px;
 }
+
 .black {
   background-color: black;
 }
@@ -24,14 +25,14 @@
 }
 
 .pixels {
-  width: 250px;
-  height: 250px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  height: 250px;
+  width: 250px;
 }
 
 .pixel {
+  border: 1px solid black;
   width: 40px;
   height: 40px;
-  border: 1px solid black;    
 }

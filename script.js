@@ -1,21 +1,16 @@
 const clearButton = document.querySelector('#clear-board');
 const coloredPixels = document.querySelectorAll('.pixel');
-const pixelsBoard = document.querySelector('#pixel-board');
 const paletas = document.querySelectorAll('.color');
 let paletaID = 'black';
 
-function defineColor() {
-  let paleta = event.target;
-  paletaID = paleta.getAttribute('id');
-  console.log(paletaID)
+for (let paleta of paletas) {
+  paleta.addEventListener('click', function defineColor() {
+    const paletaSelecionada = event.target;
+    paletaID = paletaSelecionada.getAttribute('id');
+  });
 }
 
-
-for( let paleta of paletas) {
-  paleta.addEventListener('click', defineColor);
-}
 function paintBoard() {
-  console.log(paletaID)
   if (paletaID === 'red') {
     event.target.classList.remove('white');
     event.target.classList.add('red');
@@ -27,17 +22,15 @@ function paintBoard() {
     event.target.classList.add('green');
   } else {
     event.target.classList.remove('white');
-  event.target.classList.add('black');
+    event.target.classList.add('black');
   }
 }
 for (let coloredPixel of coloredPixels) {
-  coloredPixel.addEventListener('click', paintBoard)
+  coloredPixel.addEventListener('click', paintBoard);
 }
-
-
 
 clearButton.addEventListener('click', function clearBoard() {
   for (let i = 0; i < coloredPixels.length; i += 1) {
     coloredPixels[i].className = 'pixel white';
   }  
-});
+})
