@@ -50,6 +50,16 @@ function generateBoard() {
     if (sizeBoard == '' || sizeBoard == 0) {
         alert('Board inválido!');
     } else {
+        // Adjust to default size 5 >= size <= 50
+        if (sizeBoard < 5) {
+            sizeBoard = 5;
+            document.getElementById('board-size').value = 5;
+        }
+        if (sizeBoard > 50) {
+            sizeBoard = 50;
+            document.getElementById('board-size').value = 50;
+        }
+
         // Get the pixel board
         const pixelBoard = document.getElementById('pixel-board');
         // Clear the board
