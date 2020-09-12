@@ -1,0 +1,18 @@
+.title1{
+    text-align: center;
+    
+    
+}
+.palette-color{
+    margin: auto;
+    width: 420px;
+   
+}
+
+.color{
+   
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border:1px black solid
+}
