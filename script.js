@@ -28,7 +28,6 @@ function createTable(nValue) {
   tableElement.removeChild(tableElement.children[0]);
   const tableBody = document.createElement('tbody');
   tableElement.appendChild(tableBody);
-  console.log(tableElement);
   for (let i = 0; i < nValue; i += 1) {
     const tableRow = document.createElement('tr');
     tableRow.className = ('pixel-line');
@@ -40,7 +39,6 @@ function createTable(nValue) {
     }
     tableBody.appendChild(tableRow);
   }
-  return tableElement;
 }
 
 color1.style.backgroundColor = 'black';
@@ -83,10 +81,11 @@ btnVqv.addEventListener('click', function () {
   let valueBoardSize = inputBoardSize.value;
   if (valueBoardSize === '') {
     alert('Board inválido!');
-  } else if (valueBoardSize <= 4) {
-    valueBoardSize = 5;
-  } else if (valueBoardSize >= 51) {
-    valueBoardSize = 50;
+  } else if (valueBoardSize < 5) {
+    createTable(5)
+  } else if (valueBoardSize > 50) {
+    createTable(50)
+  } else {
+    createTable(valueBoardSize);
   }
-  createTable(valueBoardSize);
 });
