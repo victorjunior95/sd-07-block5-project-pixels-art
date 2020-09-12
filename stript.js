@@ -1,4 +1,5 @@
 window.onload = function(){
+    valorInicial()
     criarTela()
     criarPaleta()
 }
@@ -33,6 +34,11 @@ function criarPaleta(){
 }
 
 /* Crianto a Tela */
+
+function valorInicial(){
+    let printSize = document.querySelector("#board-size")
+    printSize.value = 5
+}
 
 function criarTela(){
     let printSize = tamanho()
