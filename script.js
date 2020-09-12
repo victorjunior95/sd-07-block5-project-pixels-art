@@ -4,6 +4,8 @@ const color3 = document.querySelector('#color-3');
 const color4 = document.querySelector('#color-4');
 const colorPalette = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
+const btnClear = document.querySelector('#clear-board');
+
 let selectedColor = 'black';
 
 function colorGeneration() {
@@ -32,10 +34,16 @@ colorPalette.addEventListener('click', function (event) {
     oldSelectedElement.className = oldClassName;
     event.target.className += ' selected';
     selectedColor = event.target.style.backgroundColor;
-    console.log(selectedColor);
   }
 });
 
 pixelBoard.addEventListener('click', function (elementEvent) {
   elementEvent.target.style.backgroundColor = selectedColor;
-})
+});
+
+btnClear.addEventListener('click', function () {
+  const pixelList = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixelList.length; index += 1) {
+    pixelList[index].style.backgroundColor = 'white';
+  }
+});
