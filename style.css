@@ -60,5 +60,11 @@
   #purple{
       background-color: purple;
   }
+  .selected{
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    border: 2px solid black
+  }
 
 
