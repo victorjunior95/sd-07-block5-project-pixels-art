@@ -33,6 +33,15 @@ function applyBackgroundColor(event) {
     event.target.style.backgroundColor = selectedColorRGB;
 }
 
+// Function clear-board - set all pixels with background white
+function clearBoard(){
+    // For each pixel 
+    document.querySelectorAll('.pixel').forEach(item => {
+        // apply background color = white
+        item.style.backgroundColor ='rgb(255, 255, 255)';
+    });
+}
+
 // Execute function to select the first color pallet
 applySelectedClass(document.querySelector(".color"));
 
@@ -49,5 +58,8 @@ document.querySelectorAll('.pixel').forEach(item => {
     // assign the function 
     item.addEventListener('click',applyBackgroundColor);
 });
+
+// Assign the function clearBoard to button
+document.getElementById('clear-board').addEventListener('click',clearBoard);
 
 
