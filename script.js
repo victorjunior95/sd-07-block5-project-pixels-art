@@ -9,18 +9,19 @@ const buttonRed = document.querySelector('.red');
 const buttonGreen = document.querySelector('.green');
 const buttonBlue = document.querySelector('.blue');
 
+let currentColor = '';
+
 buttonBlack.addEventListener('click', selectColor);
 buttonRed.addEventListener('click', selectColor);
 buttonGreen.addEventListener('click', selectColor);
 buttonBlue.addEventListener('click', selectColor);
 
 function selectColor(event) {
-  // event.target.classList[1]
+  currentColor = event.target.classList[1];
 }
 
-function fillColor() {
-  console.log('eita')
-
+function fillColor(event) {
+  event.target.style.backgroundColor = currentColor;
 }
 
 function addClickListener() {
