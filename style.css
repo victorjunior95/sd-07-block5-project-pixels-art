@@ -24,9 +24,9 @@
   border: 1px solid black;
 }
 
-button.selected::before {
+.selected:before {
   color: white;
-  content: "👆";
+  content: '👆';
 }
 
 .clear-board {
@@ -41,7 +41,7 @@ button.selected::before {
   background-color: white;
   border: 1px solid black;
   height: 40px;
-  margin-right: -1px;
   margin-bottom: -1px;
+  margin-right: -1px;
   width: 40px;
 }

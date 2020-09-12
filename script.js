@@ -7,14 +7,8 @@ const buttonColor = document.getElementsByClassName('color');
 const buttonClear = document.getElementById('clear-board');
 let currentColor = 'black';
 
-buttonBlack.addEventListener('click', selectColor);
-buttonRed.addEventListener('click', selectColor);
-buttonGreen.addEventListener('click', selectColor);
-buttonBlue.addEventListener('click', selectColor);
-buttonClear.addEventListener('click', clearBoard);
-
 function selectColor(event) {
-  for (let element of buttonColor) {
+  for (const element of buttonColor) {
     if (element.classList[2] === 'selected') {
       element.classList.toggle('selected');
     }
@@ -28,15 +22,20 @@ function fillColor(event) {
 }
 
 function addClickListener() {
-  for (let element of divPixel) {
+  for (const element of divPixel) {
     element.addEventListener('click', fillColor);
   }
 }
 
 function clearBoard() {
-  for (let element of divPixel) {
+  for (const element of divPixel) {
     element.style.backgroundColor = 'white';
   }
 }
 
+buttonBlack.addEventListener('click', selectColor);
+buttonRed.addEventListener('click', selectColor);
+buttonGreen.addEventListener('click', selectColor);
+buttonBlue.addEventListener('click', selectColor);
+buttonClear.addEventListener('click', clearBoard);
 addClickListener();
