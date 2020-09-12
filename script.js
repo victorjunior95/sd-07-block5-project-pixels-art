@@ -1,11 +1,10 @@
 let color = 'black';
 
 function resetSelector() {
-  document.querySelectorAll('.color').forEach(item);
-  {
+  document.querySelectorAll('.color').forEach((item) => {
     item.classList.remove = 'selected';
-  }
-}
+  });
+};
 
 const blackPicker = document.querySelector('.black');
 blackPicker.addEventListener('click', function () {
