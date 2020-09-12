@@ -5,19 +5,19 @@
 }
 
 .color1 {
-  background: black;
+  background-color: black;
 }
 
 .color2 {
-  background: red;
+  background-color: red;
 }
 
 .color3 {
-  background: green;
+  background-color: green;
 }
 
 .color4 {
-  background: blue;
+  background-color: blue;
 }
 
 .pixel-board {
@@ -31,7 +31,4 @@
   float: left;
   border: 1px solid black;
   box-sizing: border-box;
-}
-
-.pixel + .pixel {
 }
