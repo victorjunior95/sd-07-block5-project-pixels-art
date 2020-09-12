@@ -17,12 +17,16 @@ for( let paleta of paletas) {
 function paintBoard() {
   console.log(paletaID)
   if (paletaID === 'red') {
+    event.target.classList.remove('white');
     event.target.classList.add('red');
   } else if (paletaID === 'blue') {
+    event.target.classList.remove('white');
     event.target.classList.add('blue');
   } else if (paletaID === 'green') {
+    event.target.classList.remove('white');
     event.target.classList.add('green');
   } else {
+    event.target.classList.remove('white');
   event.target.classList.add('black');
   }
 }
