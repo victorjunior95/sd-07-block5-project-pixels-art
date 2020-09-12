@@ -1,10 +1,12 @@
 window.onload = function(){
-    valorInicial()
-    criarTela()
+    /* valorInicial() */
+    criarPrimeiraTela()
     criarPaleta()
 }
 
 /* Cor aleatória Simples - https://stackoverflow.com/questions/1484506/random-color-generator*/
+
+
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
@@ -35,9 +37,31 @@ function criarPaleta(){
 
 /* Crianto a Tela */
 
-function valorInicial(){
+/* function valorInicial(){
     let printSize = document.querySelector("#board-size")
     printSize.value = 5
+} */
+
+function criarPrimeiraTela(){
+    let printSize = 5
+    if (printSize != "") {
+        let tabela = document.querySelector("#pixel-board")
+        tabela.innerHTML = ""
+        for (let i = 0; i< printSize; i+=1){
+            let linha = document.createElement("tr")
+                for (let i = 0; i< printSize; i+=1) {
+                    let coluna = document.createElement("td")
+                    coluna.className = "pixel"
+                    coluna.style.height = "40px"
+                    coluna.style.width = "40px"
+                    coluna.style.backgroundColor = "branco"
+                    coluna.style.border = "black 1px solid"
+                    coluna.addEventListener("click", pintar)
+                    linha.append(coluna)
+                }
+            tabela.append(linha)
+       }
+    }
 }
 
 function criarTela(){
