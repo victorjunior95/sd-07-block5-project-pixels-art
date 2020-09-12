@@ -1,46 +1,48 @@
 const colors = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('.pixel-board');
 
-function dynamicBoard() {
-  let matrixValue = document.querySelector('#board-size').value;
+function randomColor() {
+  for (let index = 1; index <= 3; index += 1){
+    const red = Math.round(Math.random()*256);
+    const yellow = Math.round(Math.random()*256);
+    const green = Math.round(Math.random()*256);
 
-  if (matrixValue === 0) {
-    alert('Board inválido!');
-  } else if (matrixValue < 5 || matrixValue > 50) {
-    alert('Valor tem que ser entre 5 e 50!');
-  } else {
-    let pixelQty = matrixValue*matrixValue;
-    clearBoard();
-    createBoard(pixelQty);
-    pixelEventListener();
-    resetSelectedColor();
+    colors[index].style.backgroundColor = `rgb(${red}, ${yellow}, ${green})`;
   }
 }
+
+randomColor();
 
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixelBoard.removeChild(pixels[index]);
-    console.log(`removido pixel ${index+1}`);
   }
 }
 
 function createBoard(nbPixelValue) {
-  let pixelLine = Math.sqrt(nbPixelValue);
-  let boardLength = (pixelLine * 42.222) + 2.222;
+  const pixelLine = Math.sqrt(nbPixelValue);
+  const boardLength = (pixelLine * 42.222) + 2.222;
   document.querySelector('.pixel-board').style.height = boardLength + 'px';
   document.querySelector('.pixel-board').style.width = boardLength + 'px';
 
-  for (let index = 0; index < nbPixelValue; index += 1){
-    let pixelCreation = document.createElement('div');
+  for (let index = 0; index < nbPixelValue; index += 1) {
+    const pixelCreation = document.createElement('div');
     pixelCreation.className = 'pixel';
     pixelBoard.appendChild(pixelCreation);
-    console.log(`criado pixel ${index+1}`);
   }
 }
 
+function resetSelectedColor() {
+  colors[0].className = 'color size-color-rectangle black selected';
+  colors[1].className = 'color size-color-rectangle random-color1';
+  colors[2].className = 'color size-color-rectangle random-color2';
+  colors[3].className = 'color size-color-rectangle random-color3';
+  randomColor();
+}
+
 function clearPixel() {
-  let pixels = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll('.pixel');
 
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
@@ -74,20 +76,29 @@ function changeSelectedColor(event) {
   event.target.className += ' selected';
 }
 
-function resetSelectedColor() {
-  colors[0].className = 'color size-color-rectangle black selected';
-  colors[1].className = 'color size-color-rectangle random-color1';
-  colors[2].className = 'color size-color-rectangle random-color2';
-  colors[3].className = 'color size-color-rectangle random-color3';
+function pixelEventListener() {
+  const pixels = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', applyColor);
+  }
 }
 
 pixelEventListener();
 
-function pixelEventListener() {
-  let pixels = document.querySelectorAll('.pixel');
+function dynamicBoard() {
+  const matrixValue = document.querySelector('#board-size').value;
 
-  for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].addEventListener('click', applyColor);
+  if (matrixValue === "") {
+    alert('Board inválido!');
+  } else if (matrixValue < 5 || matrixValue > 50) {
+    alert('Valor tem que ser entre 5 e 50!');
+  } else {
+    let pixelQty = matrixValue * matrixValue;
+    clearBoard();
+    createBoard(pixelQty);
+    pixelEventListener();
+    resetSelectedColor();
   }
 }
 
