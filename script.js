@@ -50,7 +50,7 @@ function checkInputSize(numSize) {
   if (numSize === '') {
     alert('Board inválido!');
     numSize = 5;
-  } 
+  }
   // Adjust to default size 5 >= size
   if (numSize < 5) {
     numSize = 5;
@@ -186,9 +186,19 @@ colors.random = function () {
 function generateColorPallet() {
   // Get pallet elements
   const colorsPallet = document.querySelectorAll('.color');
+  // control repeat colors
+  let colorsApplied = [];
   // Set a random background color
   for (let indexColor = 1; indexColor < colorsPallet.length; indexColor += 1) {
-    colorsPallet[indexColor].style.backgroundColor = colors.random();
+    let randomColor = colors.random();
+    // while is a repeated color, change color
+    while (colorsApplied.indexOf(randomColor) >= 0) {
+      randomColor = colors.random();
+    }
+    // save random color
+    colorsApplied.push(randomColor);
+    // apply a random color
+    colorsPallet[indexColor].style.backgroundColor = randomColor;
   }
 }
 
