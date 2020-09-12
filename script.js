@@ -36,3 +36,11 @@ for (let index = 0; index < pixels.length; index += 1) {
     event.target.style.backgroundColor = colorCurrent;
   });
 }
+
+// limpar board
+const clearBoard = document.getElementById('clear-board');
+clearBoard.addEventListener('click', function(){
+  for(let index = 0; index < pixels.length; index += 1){
+    pixels[index].style.backgroundColor = 'white';
+  }
+})
