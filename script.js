@@ -92,7 +92,6 @@ function dynamicBoard() {
   if (matrixValue === '') {
     alert('Board inválido!');
   } else {
-
     switch (true) {
       case (matrixValue < 5):
         matrixValue = 5;
