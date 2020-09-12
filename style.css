@@ -17,3 +17,17 @@
   background-color: blue;
   border: 1px solid black;
 }
+
+.pixel-line {
+  float: left;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  /* display: inline-block; */
+  height: 40px;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  width: 40px;
+}
