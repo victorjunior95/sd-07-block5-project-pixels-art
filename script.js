@@ -40,3 +40,14 @@ document.querySelectorAll('.pixel').forEach((item) => {
     item.style.backgroundColor = color;
   });
 });
+
+const clearBoard = document.getElementById('clear-board');
+clearBoard.addEventListener('click', () => {
+  for (
+    let index = 0;
+    index < document.querySelectorAll('.pixel').length;
+    index += 1
+  ) {
+    document.querySelectorAll('.pixel')[index].style.backgroundColor = 'white';
+  }
+});
