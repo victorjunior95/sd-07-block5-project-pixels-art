@@ -47,19 +47,43 @@ function checkInputSize(numSize) {
   if (numSize === '' || numSize === 0) {
     alert('Board inválido!');
     numSize = 5;
-    document.getElementById('board-size').value = numSize;
   } else {
       // Adjust to default size 5 >= size <= 50
     if (numSize < 5) {
       numSize = 5;
-      document.getElementById('board-size').value = numSize;
     }
-    if (sizeBoard > 50) {
+    if (numSize > 50) {
       numSize = 50;
-      document.getElementById('board-size').value = numSize;
     }
   }
+  document.getElementById('board-size').value = numSize;
   return numSize;
+}
+
+// Function append pixels
+function appendPixels(parentNode, sizeBoard) {
+  for (let indexPixel = 0; indexPixel < sizeBoard; indexPixel += 1) {
+    // Create pixel element  <div class='pixel'></div>
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    // Assign event applyBackgroundColor
+    pixel.addEventListener('click', applyBackgroundColor);
+    // Append the pixel to board line
+    parentNode.appendChild(pixel);
+  }
+}
+
+// Function append board lines
+function appendBoardLines(parentNode, sizeBoard) {
+  for (let indexLine = 0; indexLine < sizeBoard; indexLine += 1) {
+    // Create the line <div class='board-line'>
+    const boardLine = document.createElement('div');
+    boardLine.className = 'board-line';
+    // Create the pixels
+    appendPixels(boardLine, sizeBoard)
+    // Append the board line to board pixel
+    parentNode.appendChild(boardLine);
+  }
 }
 
 // Function that generate the pixel board
@@ -67,29 +91,13 @@ function generateBoard() {
   // Get input value
   let sizeBoard = document.getElementById('board-size').value;
   // check input
-  sizeboard = checkInputSize(sizeBoard);
+  sizeBoard = checkInputSize(sizeBoard);
   // Get the pixel board
   const pixelBoard = document.getElementById('pixel-board');
   // Clear the board
   pixelBoard.innerHTML = '';
   // Create the board
-  for (let indexLine = 0; indexLine < sizeBoard; indexLine += 1) {
-    // Create the line <div class='board-line'>
-    const boardLine = document.createElement('div');
-    boardLine.className = 'board-line';
-    // Create the pixels
-    for (let indexPixel = 0; indexPixel < sizeBoard; indexPixel += 1) {
-      // Create pixel element  <div class='pixel'></div>
-      const pixel = document.createElement('div');
-      pixel.className = 'pixel';
-      // Assign event applyBackgroundColor
-      pixel.addEventListener('click', applyBackgroundColor);
-      // Append the pixel to board line
-      boardLine.appendChild(pixel);
-    }
-    // Append the board line to board pixel
-    pixelBoard.appendChild(boardLine);
-  }
+  appendBoardLines(pixelBoard, sizeBoard);
 }
 
 // Execute function to select the first color pallet
