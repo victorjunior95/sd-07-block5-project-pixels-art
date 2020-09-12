@@ -36,21 +36,23 @@ function criarPaleta(){
 
 function criarTela(){
     let printSize = tamanho()
-    let tabela = document.querySelector("#pixel-board")
-    tabela.innerHTML = ""
-    for (let i = 0; i< printSize; i+=1){
-        let linha = document.createElement("tr")
-            for (let i = 0; i< printSize; i+=1) {
-                let coluna = document.createElement("td")
-                coluna.className = "pixel"
-                coluna.style.height = "40px"
-                coluna.style.width = "40px"
-                coluna.style.backgroundColor = "branco"
-                coluna.style.border = "black 1px solid"
-                coluna.addEventListener("click", pintar)
-                linha.append(coluna)
-            }
-        tabela.append(linha)
+    if (printSize != "") {
+        let tabela = document.querySelector("#pixel-board")
+        tabela.innerHTML = ""
+        for (let i = 0; i< printSize; i+=1){
+            let linha = document.createElement("tr")
+                for (let i = 0; i< printSize; i+=1) {
+                    let coluna = document.createElement("td")
+                    coluna.className = "pixel"
+                    coluna.style.height = "40px"
+                    coluna.style.width = "40px"
+                    coluna.style.backgroundColor = "branco"
+                    coluna.style.border = "black 1px solid"
+                    coluna.addEventListener("click", pintar)
+                    linha.append(coluna)
+                }
+            tabela.append(linha)
+       }
     }
 }
 
