@@ -6,8 +6,7 @@ const colorPalette = document.querySelector('#color-palette');
 const btnClear = document.querySelector('#clear-board');
 const btnVqv = document.querySelector('#generate-board');
 const inputBoardSize = document.querySelector('#board-size');
-const tableElement = document.querySelector('table');
-const tableSection = document.querySelector('.pixel-section');
+const tableElement = document.querySelector('#pixel-board');
 
 let selectedColor = 'black';
 
@@ -26,10 +25,12 @@ function removeSelectedClass(stringClass) {
 }
 
 function createTable(nValue) {
-  let  newTable = document.createElement('table');
-  newTable.id = 'pixel-board';
+  tableElement.removeChild(tableElement.children[0]);
+  const tableBody = document.createElement('tbody');
+  tableElement.appendChild(tableBody);
+  console.log(tableElement);
   for (let i = 0; i < nValue; i += 1) {
-    let tableRow = document.createElement('tr');
+    const tableRow = document.createElement('tr');
     tableRow.className = ('pixel-line');
     for (let j = 0; j < nValue; j += 1) {
       const tableCell = document.createElement('td');
@@ -37,9 +38,9 @@ function createTable(nValue) {
       tableCell.style.backgroundColor = 'white';
       tableRow.appendChild(tableCell);
     }
-    newTable.appendChild(tableRow);
+    tableBody.appendChild(tableRow);
   }
-  return newTable;
+  return tableElement;
 }
 
 color1.style.backgroundColor = 'black';
@@ -57,11 +58,10 @@ colorPalette.addEventListener('click', function (event) {
   }
 });
 
-tableSection.addEventListener('click', function (elementEvent) {
+tableElement.addEventListener('click', function (elementEvent) {
   if (elementEvent.target.className === 'pixel') {
     elementEvent.target.style.backgroundColor = selectedColor;
   }
-  console.log(elementEvent.target);
 });
 
 btnClear.addEventListener('click', function () {
@@ -88,5 +88,5 @@ btnVqv.addEventListener('click', function () {
   } else if (valueBoardSize >= 51) {
     valueBoardSize = 50;
   }
-  tableSection.replaceChild(createTable(valueBoardSize), tableSection.children[0]);
+  createTable(valueBoardSize);
 });
