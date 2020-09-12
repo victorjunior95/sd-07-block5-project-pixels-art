@@ -6,7 +6,7 @@ let selectedColor = '';
 
 pixel.forEach((item) => {
   item.addEventListener('click', () => {
-    if (selectedColor == '') {
+    if (selectedColor === '') {
       item.style.backgroundColor = 'black';
     } else {
       item.style.backgroundColor = selectedColor;
@@ -16,9 +16,9 @@ pixel.forEach((item) => {
 
 colorPalette.forEach((color) => {
   color.addEventListener('click', () => {
-    let plusClass = document.getElementsByClassName('color selected');
+    const plusClass = document.getElementsByClassName('color selected');
 
-    if (plusClass[0] != undefined) {
+    if (plusClass[0] !== undefined) {
       plusClass[0].className = plusClass[0].className.replace(' selected', '');
     }
     selectedColor = getComputedStyle(color).backgroundColor;
