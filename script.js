@@ -187,7 +187,7 @@ function generateColorPallet() {
   // Get pallet elements
   const colorsPallet = document.querySelectorAll('.color');
   // control repeat colors
-  let colorsApplied = [];
+  const colorsApplied = [];
   // Set a random background color
   for (let indexColor = 1; indexColor < colorsPallet.length; indexColor += 1) {
     let randomColor = colors.random();
