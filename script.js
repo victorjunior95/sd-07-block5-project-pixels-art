@@ -12,23 +12,43 @@ const colorRed = document.getElementsByClassName('color')[3]
 
 
 colorBlack.addEventListener('click', function () {
-  const blackColor = colorBlack.style.backgroundColor
-  localStorage.setItem('color', blackColor)
+    colorBlack.className = 'color selected'
+    colorBlue.className = 'color'
+    colorRed.className='color'
+    colorGreen.className='color'
+    const colorSelected =document.querySelector('.selected')
+    const blackColor = colorSelected.style.backgroundColor
+    localStorage.setItem('color', blackColor)
 })
 
-colorBlue.addEventListener('click' , function(){
-    const blueColor = colorBlue.style.backgroundColor
-    localStorage.setItem('color' , blueColor)
+colorBlue.addEventListener('click', function () {
+    colorBlue.className = 'color selected'
+    colorGreen.className='color'
+    colorRed.className='color'
+    colorBlack.className='color'
+    const colorSelected = document.querySelector('.selected')
+    const blueColor = colorSelected.style.backgroundColor
+    localStorage.setItem('color', blueColor)
 })
 
-colorGreen.addEventListener('click' , function(){
-    const greenColor = colorGreen.style.backgroundColor
-    localStorage.setItem('color' , greenColor)
+colorGreen.addEventListener('click', function () {
+    colorGreen.className = 'color selected'
+    colorBlue.className = 'color'
+    colorRed.className='color'
+    colorBlack.className='color'
+    const colorSelected = document.querySelector('.selected')
+    const greenColor = colorSelected.style.backgroundColor
+    localStorage.setItem('color', greenColor)
 })
 
-colorRed.addEventListener('click' ,function(){
-    const redColor = colorRed.style.backgroundColor
-    localStorage.setItem('color' , redColor)
+colorRed.addEventListener('click', function () {
+    colorRed.className = 'color selected'
+    colorBlue.className = 'color'
+    colorGreen.className='color'
+    colorBlack.className='color'
+    const colorSelected = document.querySelector('.selected')
+    const redColor = colorSelected.style.backgroundColor
+    localStorage.setItem('color', redColor)
 })
 
 
@@ -36,12 +56,13 @@ colorRed.addEventListener('click' ,function(){
 const boxes = document.getElementsByClassName('pixel')[0]
 
 boxes.addEventListener('click', function () {
-    
-        boxes.style.backgroundColor = localStorage.getItem('color')
-    
+
+    boxes.style.backgroundColor = localStorage.getItem('color')
+
 })
+
 const select = document.querySelector('.selected').style.backgroundColor
-localStorage.setItem('color' , select)
+localStorage.setItem('color', select)
 
 
 /*for (let index = 0; index < boxes.length; index += 1) {
