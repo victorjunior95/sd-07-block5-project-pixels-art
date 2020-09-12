@@ -8,11 +8,13 @@ window.onload = function () {
   document.getElementsByClassName("color")[2].style.backgroundColor = "blue";
   document.getElementsByClassName("color")[3].style.backgroundColor = "green";
 
-  for (let i = 0; i < BOX_SIZE; i += 1) {
-    const horizontalDiv = document.createElement("div");
-    horizontalDiv.classList.add("horiDiv");
-    mother.appendChild(horizontalDiv);
-    verticalPixel(horizontalDiv);
+  function DefineSize() {
+    for (let i = 0; i < BOX_SIZE; i += 1) {
+      const horizontalDiv = document.createElement("div");
+      horizontalDiv.classList.add("horiDiv");
+      mother.appendChild(horizontalDiv);
+      verticalPixel(horizontalDiv);
+    }
   }
 
   function verticalPixel(motherDiv) {
@@ -38,6 +40,17 @@ window.onload = function () {
     const element = document.getElementsByClassName("pixel");
     for (let a = 0; a < element.length; a += 1) {
       element[a].style.backgroundColor = "white";
+    }
+  });
+
+  document.querySelector("#generate-board").addEventListener("click", () => {
+    const size = document.querySelector("#board-size").value;
+    if (size == "") {
+      return alert("Board inválido!");
+    } else {
+      BOX_SIZE = size;
+      //document.querySelector("#pixel-board").removeChild;
+      DefineSize();
     }
   });
 };
