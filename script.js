@@ -1,12 +1,7 @@
 const black = document.getElementById('black');
-const blue =  document.getElementById('blue');
+const blue = document.getElementById('blue');
 const green = document.getElementById('green');
-const pixels = document.getElementsByClassName('pixel')
-
-blue.addEventListener('click', () => selectColor(blue, 'blue'));
-black.addEventListener('click', () => selectColor(black, 'black'));
-green.addEventListener('click', () => selectColor(green, 'green'));
-red.addEventListener('click', () => selectColor(red, 'red'));
+const pixels = document.getElementsByClassName('pixel');
 
 function selectColor (element, color) {
   removeAll();
@@ -19,3 +14,8 @@ function removeAll () {
   green.classList.remove('selected');
   red.classList.remove('selected');
 }
+
+blue.addEventListener('click', () => selectColor(blue, 'blue'));
+black.addEventListener('click', () => selectColor(black, 'black'));
+green.addEventListener('click', () => selectColor(green, 'green'));
+red.addEventListener('click', () => selectColor(red, 'red'));
