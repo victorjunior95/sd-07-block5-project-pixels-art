@@ -22,10 +22,15 @@
 }
 
 #pixel-board {
-    
+    display: table;
+}
+
+.table-row {
+    display: table-row;
 }
 
 .pixel {
+    display: table-cell;
     background-color: white;
     height: 40x;
     width: 40px;
