@@ -1,19 +1,44 @@
-window.onload = criarTela
+window.onload = function(){
+    criarTela()
+    criarPaleta()
+}
 
-let color1 = document.querySelector(".c1")
-let color2 = document.querySelector(".c2")
-let color3 = document.querySelector(".c3")
-let color4 = document.querySelector(".c4")
+/* Cor aleatória Simples - https://stackoverflow.com/questions/1484506/random-color-generator*/
 
-color1.style.backgroundColor = "black"
-color2.style.backgroundColor = "red"
-color3.style.backgroundColor = "blue"
-color4.style.backgroundColor = "green"
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+/* Criando Paleta Aleatória */
+
+let color2 = getRandomColor()
+let color3 = getRandomColor()
+let color4 = getRandomColor()
+
+function criarPaleta(){
+    let bcolor1 = document.querySelector(".c1")
+    let bcolor2 = document.querySelector(".c2")
+    let bcolor3 = document.querySelector(".c3")
+    let bcolor4 = document.querySelector(".c4")
+
+    bcolor1.style.backgroundColor = "black"
+    bcolor2.style.backgroundColor = color2
+    bcolor3.style.backgroundColor = color3
+    bcolor4.style.backgroundColor = color4
+}
 
 /* Crianto a Tela */
 
 function criarTela(){
     let printSize = document.querySelector("#board-size").value
+    if (printSize < 5 ) {printSize = 5}
+    else if (printSize > 50) {printSize = 50}
+
     if (printSize == "") {
         alert("Board inválido!")
     }
@@ -74,7 +99,7 @@ function clickc1(){
 }
 
 function clickc2(){
-    corAtual = "red"
+    corAtual = color2
     c1.className = "color c1"
     c2.className = "color c2 selected"
     c3.className = "color c3"
@@ -82,7 +107,7 @@ function clickc2(){
 }
 
 function clickc3(){
-    corAtual = "blue"
+    corAtual = color3
     c1.className = "color c1"
     c2.className = "color c2"
     c3.className = "color c3 selected"
@@ -90,7 +115,7 @@ function clickc3(){
 }
 
 function clickc4(){
-    corAtual = "green"
+    corAtual = color4
     c1.className = "color c1"
     c2.className = "color c2"
     c3.className = "color c3"
