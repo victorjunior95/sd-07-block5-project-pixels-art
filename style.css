@@ -1,0 +1,37 @@
+body {
+  margin: 10px;
+}
+
+.color-palette {
+  width: 200px;
+  height: 42px;
+}
+.color {
+  border: black solid 1px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.color#color-01 {
+  background-color: #000000;
+}
+
+.color#color-02 {
+  background-color: #4D17BD;
+}
+
+.color#color-03 {
+  background-color: #FF160A;
+}
+
+.color#color-04 {
+  background-color: #FFB508;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: black solid 1px;
+  display: inline-block;
+}
