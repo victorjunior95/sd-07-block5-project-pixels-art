@@ -1,15 +1,15 @@
-document.querySelectorAll("#color-palette").forEach(removeClass);
-document.querySelectorAll("#color-palette").forEach(selectColor);
+document.querySelectorAll(".color").forEach(configureColorPaletteItemsAsClickable);
 
-function removeClass()
+function removeClass(item)
 {
     item.classList.remove("selected");
 }
 
-function selectColor()
+function configureColorPaletteItemsAsClickable(item)
 {
     item.addEventListener("click", function(){
-        item.className = "selected";
+        document.querySelectorAll(".color").forEach(removeClass);
+        item.classList.add("selected");
     })
 }
 
