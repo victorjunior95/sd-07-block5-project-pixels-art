@@ -5,9 +5,7 @@ const paleta = document.querySelectorAll('.color');
 
 
 function clearBoard() {
-  for (let i = 0; i < coloredPixels.length; i += 1) {
-    coloredPixels[i].classList.add('white');
-  }
+  pixelsBoard.classList.add('white');  
 }
 
 clearButton.addEventListener('click', clearBoard);
