@@ -58,7 +58,7 @@ function criarTela(){
 
 function tamanho(){
     let printSize = document.querySelector("#board-size").value
-    if (printSize == "") {alert("Board inválido!")}
+    if (printSize === "") {alert("Board inválido!")}
     else if (printSize > 50) {printSize = 50}
     else if (printSize < 5 ) {printSize = 5}
     return printSize
