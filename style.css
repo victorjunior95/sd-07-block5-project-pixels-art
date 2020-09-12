@@ -2,14 +2,17 @@
   background-color: black;
 }
 
-.color , .pixel , .pixel-board{
+.button-clear , .color-palette {
+  text-align: center;
+  width: 200px;
+}
+
+.color , .pixel , .pixel-board {
   border: 1px solid black;
 }
 
 .color-palette {
   margin-bottom: 10px;
-  text-align: center;
-  width: 200px;
 }
 
 .pixel {
@@ -19,20 +22,20 @@
 
 .pixel-board {
   display: table;
-  height: 200px;
-  width: 200px;
+  height: 212px;
+  width: 212px;
 }
 
-.random-color1{
-  background-color: green;  
+.random-color1 {
+  background-color: green;
 }
 
-.random-color2{
-  background-color: red;  
+.random-color2 {
+  background-color: red;
 }
 
-.random-color3{
-  background-color: blue;  
+.random-color3 {
+  background-color: blue;
 }
 
 .size-color-rectangle , .pixel {
