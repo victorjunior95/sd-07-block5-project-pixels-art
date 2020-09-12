@@ -20,3 +20,13 @@
   height: 100px;
   width: 10%;  
 }
+
+.pixel-content {
+  width: 250px;
+}
+.pixel {
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
