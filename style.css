@@ -1,3 +1,19 @@
+#pixel-board {
+    display: table;
+  }
+  
+  .linha {
+    display: table-row;
+  }
+  
+  .pixel {
+    display: table-cell;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+  }
+  
 .color {
   display: inline-block;
   height: 40px;
@@ -21,18 +37,4 @@
   background-color: green;
 }
 
-#pixel-board {
-  display: table;
-}
 
-.linha {
-  display: table-row;
-}
-
-.pixel {
-  display: table-cell;
-  background-color: white;
-  height: 40px;
-  width: 40px;
-  border: 1px solid black;
-}
