@@ -34,3 +34,8 @@
     border: rgb(196, 196, 196) solid 1px;
     background-color: rgb(235, 235, 235);
 }
+#pixel-board tr td {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}

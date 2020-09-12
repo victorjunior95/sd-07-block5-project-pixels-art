@@ -14,6 +14,9 @@ color4.style.backgroundColor = "green"
 
 function criarTela(){
     let printSize = document.querySelector("#board-size").value
+    if (printSize == "") {
+        alert("Board inválido!")
+    }
     let tabela = document.querySelector("#pixel-board")
     tabela.innerHTML = ""
     for (let i = 0; i< printSize; i+=1){
