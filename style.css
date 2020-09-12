@@ -11,7 +11,9 @@
 .board-pixel{
     width: 250px;
     height: 250px;
-    
+    padding:0px;
+    line-height: 0px;
+
     margin:auto
    
    
@@ -28,14 +30,14 @@
     display: inline-block;
     width: 40px;
     height: 40px;
+    background-color:white;
+    border:1px black solid;
+   
     
 }
-.pixel{
-    background-color:white;
-}
-.borda{
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    border:1px black solid
+
+
+
+.selected{
+    width: 100px;
 }
