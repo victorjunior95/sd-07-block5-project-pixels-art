@@ -6,6 +6,10 @@
   background-color: blue;
 }
 
+.clear-board {
+  margin-bottom: 20px;
+}
+
 .color {
   border: 1px solid black;
   display: inline-block;
