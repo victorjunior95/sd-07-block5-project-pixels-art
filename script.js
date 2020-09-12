@@ -51,4 +51,10 @@ for (let i = 0; i < qualPixel.length; i++) {
 
 
 
-//pra zerar os pixels talvez seja necessario pegar todos os elementos em um array e usar um for para branquear tudo. 
+//botão para limpar o desenho
+let botao = document.getElementById("clear-board");
+botao.addEventListener("click", function(){
+    for (i in qualPixel){
+        qualPixel[i].style.backgroundColor = "white";
+    }
+})
