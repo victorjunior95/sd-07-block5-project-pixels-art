@@ -53,6 +53,7 @@ generateTable.addEventListener('click', function () {
       newRow.appendChild(newBox)
     }
   }
+  eventListenerNewPixels()
 })
 
 // Loop to AddEventListener to all elements in the pixel board
@@ -78,4 +79,12 @@ function fillColor(event) {
 function removeTable () {
   tableContent = document.getElementsByTagName('tbody')[0]
   pixelBoard.removeChild(tableContent)
+}
+
+function eventListenerNewPixels () {
+  for (let pixel = 0; pixel < pixelSelection.length; pixel += 1) {
+    let pixelBox = pixelSelection[pixel];
+    pixelBox.addEventListener('click', fillColor);
+    console.log(pixelBox)
+  }
 }
