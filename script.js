@@ -1,3 +1,6 @@
+document.querySelectorAll('.pixel').forEach(item => {
+  item.classList.add('sectionPix');
+})
 // Function to make background shine.
 function changeBKGColor () {
   const body = document.getElementsByTagName('body')[0];
@@ -20,10 +23,9 @@ const pixelSS = document.querySelectorAll('.pixel');
 const clearBT = document.getElementById('clear-board');
 let saveClass = "";
 
-// Set pixels background white.
-pixelSS.forEach(item => {
-  item.classList.add('sectionPix')
-})
+document.querySelectorAll('.pixel').forEach(item => {
+  item.classList.remove('sectionPix');
+});
 
 // Function to add class 'selected' in palet itens, and add a class color of color selected.
 colorPalet.forEach(item => {
@@ -33,7 +35,7 @@ colorPalet.forEach(item => {
   });
     pixelSS.forEach(item2 => {
     item2.addEventListener('click', event => {
-    item2.classList.add(saveClass);   
+    item2.classList.add(saveClass);
     });
   });
 });
@@ -41,8 +43,7 @@ colorPalet.forEach(item => {
 // Function to clear all class color fron pixel itens.
 clearBT.addEventListener('click', function () {
   pixelSS.forEach(item2 => {
-  item2.className = "";
-  item2.classList.add('pixel');
+  item2.className = 'pixel';
   });
 });
 
