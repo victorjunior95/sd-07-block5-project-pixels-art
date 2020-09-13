@@ -111,5 +111,5 @@ generateBoard.addEventListener('click', function () {
       count = 0;
     }
   }
-  colorSelector();
+  return colorSelector();
 });
