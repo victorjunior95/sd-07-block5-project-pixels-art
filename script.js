@@ -15,3 +15,9 @@ for (let i = 0; i < fields.length; i += 1){
         fields[i].style.backgroundColor = colorSelected
     })
 }
+
+function clearBoard(){
+    for (let i = 0; i < fields.length; i += 1){
+       fields[i].style.backgroundColor = "rgb(255, 255, 255)"
+    }
+}
