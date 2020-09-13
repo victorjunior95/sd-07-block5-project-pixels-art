@@ -2,12 +2,6 @@ body {
   text-align: center;
 }
 
-table {
-  border-collapse: collapse;
-  display: table;
-  margin: 20px auto;
-}
-
 .color {
   border: 1px solid black;
   display: inline-block;
@@ -27,13 +21,16 @@ table {
 .pixel {
   background-color: white;
   border: 1px solid black;
-  border-collapse: collapse;
-  border-spacing: 0;
-  box-sizing: content-box;
   display: table-cell;
   height: 40px;
   width: 40px;
-  }
+}
+
+.pixel-board {
+  display: table;
+  height: 200px;
+  margin: 20px auto;
+  width: 200px;
 }
 
 .second-color {
