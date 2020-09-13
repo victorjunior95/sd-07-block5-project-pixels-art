@@ -22,6 +22,7 @@ let pixelSelection = document.getElementsByClassName('pixel');
 // Loop to AddEventListener to all elements in color palette
 for (let item = 0; item < paletteSelection.length; item += 1) {
   paletteSelection[item].addEventListener('click', selectColor);
+  console.log()
 }
 
 clearButton.addEventListener('click', function () {
@@ -30,11 +31,19 @@ clearButton.addEventListener('click', function () {
   }
 })
 
+
 generateTable.addEventListener('click', function () {
   removeTable()
   let newBody = document.createElement('tbody')
   pixelBoard.appendChild(newBody)
   let size = boardSizeInput.value
+  if (size === "") {
+    alert('Board inválido!')
+  } else if (size < 5) {
+    size = 5
+  } else if (size > 50) {
+    size = 50
+  }
   for (let row = 1; row <= size; row += 1) {
     let newRow = document.createElement('tr');
     newBody.appendChild(newRow)
@@ -50,11 +59,11 @@ generateTable.addEventListener('click', function () {
 for (let pixel = 0; pixel < pixelSelection.length; pixel += 1) {
   let pixelBox = pixelSelection[pixel];
   pixelBox.addEventListener('click', fillColor);
+  console.log(pixelBox)
 }
 
 // Function that pick a color (chosen element is tagged with a color selected class while previous selected color is changed to a color class name)
 function selectColor(event) {
-  console.log(selectedColor[0])
   selectedColor[0].className = 'color';
   event.target.className = 'color selected';
 }
