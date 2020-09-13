@@ -59,7 +59,6 @@ function generateGrid() {
   } else {
     alert('Board inválido!');
   }
-
 }
 
 function addRandomClass() {
