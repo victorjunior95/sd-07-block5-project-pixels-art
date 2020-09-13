@@ -1,31 +1,31 @@
-.red{
+.red {
   background-color: red;
 }
 
-.green{
+.green {
   background-color: green;
 }
 
-.blue{
+.blue {
   background-color: blue;
 }
 
-.black{
+.black {
   background-color: black;
 }
 
-.color{
+.color {
   border: 1px black solid;
   display: inline-block;
   height: 50px;
   width: 50px;
 }
 
-.line{
+.line {
   vertical-align: top;
 }
 
-.pixel{
+.pixel {
   vertical-align: top;
   display: inline-block;
   border: 1px black solid;
