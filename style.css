@@ -1,3 +1,18 @@
+body {
+  text-align: center;
+  background-color: rgb(235, 171, 98);
+}
+
+table {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+#color-palette {
+  margin-bottom: 20px;
+}
+
 #black {
   background-color: black;
 }
@@ -31,4 +46,12 @@
 
 #board-size {
   width: 30px;
+}
+
+footer {
+  text-align: center;
+}
+
+footer img {
+  width: 80px;
 }

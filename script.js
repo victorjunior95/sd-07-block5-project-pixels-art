@@ -14,6 +14,7 @@ window.onload = function () {
   let colorFour = document.getElementsByClassName('color')[3];
   let clearButton = document.getElementById('clear-board');
 
+  colorOne.style.backgroundColor = 'black'
   colorTwo.style.backgroundColor = generateRandom()
   colorThree.style.backgroundColor = generateRandom()
   colorFour.style.backgroundColor = generateRandom()
@@ -26,6 +27,7 @@ window.onload = function () {
 
   // Array of all elements with class color
   let paletteSelection = document.getElementsByClassName('color');
+
 
   // Array of all elements in the pixel board
   let pixelSelection = document.getElementsByClassName('pixel');
@@ -81,6 +83,7 @@ window.onload = function () {
   // function that fills a pixel and changes its background color to the selected one.
   function fillColor(event) {
     let color = selectedColor[0].style.backgroundColor;
+    console.log(color)
     event.target.style.backgroundColor = color;
   }
 
