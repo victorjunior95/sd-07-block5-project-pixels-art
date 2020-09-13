@@ -51,9 +51,9 @@ corGreen.addEventListener('click',verde)
 corBlue.addEventListener('click',azul)
 
 
-corPreta.addEventListener('click', function(){
-    Storage.setItem()
-})
+//corPreta.addEventListener('click', function(){
+   // Storage.setItem()
+//})
 
 
 
