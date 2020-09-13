@@ -47,3 +47,13 @@ body {
 .sectionPix {
   background-color: rgb(255 , 255 , 255);
 }
+
+.table{ 
+  display: table; 
+}
+.tr{ 
+  display: table-row; 
+}
+.td{ 
+  display: table-cell;
+}

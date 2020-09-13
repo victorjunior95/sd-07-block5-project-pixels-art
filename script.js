@@ -11,7 +11,7 @@ function changeBKGColor () {
   body.style.backgroundColor='rgb(' + rColorRGB + ' , ' + gColorRGB + ' , ' + bColorRGB + ')';
   title.style.color='rgb(' + rColorRGB + 1 + ' , ' + gColorRGB + ' , ' + bColorRGB + 1 + ')';
 }
-// const time = setInterval (changeBKGColor, 100);
+//const time = setInterval (changeBKGColor, 100);
 // Remove the bars fron the line above to see the efect.
 
 const color01 = document.getElementById('color-01');
@@ -22,10 +22,6 @@ const colorPalet = document.querySelectorAll('.color');
 const pixelSS = document.querySelectorAll('.pixel');
 const clearBT = document.getElementById('clear-board');
 let saveClass = "";
-
-document.querySelectorAll('.pixel').forEach(item => {
-  item.classList.remove('sectionPix');
-});
 
 // Function to add class 'selected' in palet itens, and add a class color of color selected.
 colorPalet.forEach(item => {
