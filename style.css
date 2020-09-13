@@ -4,12 +4,15 @@ body {
 
 table {
   border-collapse: collapse;
+  display: table;
   margin: 20px auto;
 }
 
 td {
   border: 1px solid black;
   border-collapse: collapse;
+  border-spacing: 0;
+  box-sizing: content-box;
   display: table-cell;
   height: 40px;
   width: 40px;
