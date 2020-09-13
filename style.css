@@ -1,17 +1,17 @@
-#pixel-board {
+.pixel-board {
   display: table;
-  }
-  
+}
+
 .linha {
   display: table-row;
-  }
-  
+}
+
 .pixel {
-  display: table-cell;
   background-color: white;
+  border: 1px solid black;
+  display: table-cell;
   height: 40px;
   width: 40px;
-  border: 1px solid black;
 }
 
 .color {
@@ -26,7 +26,7 @@
 }
 
 .color-2 {
-  background-color: red;
+  background-color: rgb(133, 123, 233);
 }
 
 .color-3 {
@@ -36,5 +36,3 @@
 .color-4 {
   background-color: green;
 }
-
-
