@@ -1,12 +1,28 @@
 const colors = document.querySelectorAll('.color');
+const tableData = document.querySelectorAll('.pixel');
 
-window.onload = function () {
-  colors[0].className += ' selected';
+for (let i = 0; i < 4; i += 1) {
+  colors[i].addEventListener('click', function () {
+    if (i === 0) {
+      colors[0].className += ' selected';
+      colors[1].className = 'color red';
+      colors[2].className = 'color blue';
+      colors[3].className = 'color green';
+    } else if (i === 1) {
+      colors[0].className = 'color black';
+      colors[1].className += ' selected';
+      colors[2].className = 'color blue';
+      colors[3].className = 'color green';
+    } else if (i === 2) {
+      colors[0].className = 'color black';
+      colors[1].className = 'color red';
+      colors[2].className += ' selected';
+      colors[3].className = 'color green';
+    } else if (i === 3) {
+      colors[0].className = 'color black';
+      colors[1].className = 'color red';
+      colors[2].className = 'color blue';
+      colors[3].className += ' selected';
+    }
+  })
 };
-
-document.querySelector('#clear-board').addEventListener('click', function () {
-  const tableData = document.querySelectorAll('.pixel');
-  for (let i = 0; i < tableData.length; i += 1) {
-    tableData[i].style.backgroundColor = 'white';
-  }
-});
