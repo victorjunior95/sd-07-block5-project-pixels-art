@@ -7,6 +7,22 @@ let purple = document.querySelector("#purple");
 let cor = "black";
 
 let ultima = document.querySelector(".selected");
+let cor2 = corAleatoria();
+let cor3 = corAleatoria();
+let cor4 = corAleatoria();
+azul.style.backgroundColor = cor2;
+red.style.backgroundColor = cor3;
+purple.style.backgroundColor = cor4;
+
+
+function corAleatoria() {
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    let aleatoria = "rgb(" + x + "," + y + "," + z + ")";
+    return (aleatoria)
+    }
+
 
 
 black.addEventListener("click",function(){
@@ -18,20 +34,20 @@ black.addEventListener("click",function(){
 azul.addEventListener("click",function(){
     document.getElementsByClassName("selected")[0].classList = "color";
     document.getElementById("blue").classList.add("selected");
-    cor = "blue"
+    cor = cor2;
 })
 
 red.addEventListener("click",function(){
     document.getElementsByClassName("selected")[0].classList = "color";
     document.getElementById("red").classList.add("selected");
-    cor = "red"
+    cor = cor3;
 })
 
 
 purple.addEventListener("click",function(){
     document.getElementsByClassName("selected")[0].classList = "color";
     document.getElementById("purple").classList.add("selected");
-    cor = "purple"
+    cor = cor4();
 })
 
 
@@ -62,6 +78,7 @@ vqv.addEventListener("click", function(){
         }
     }
     criarEventos();
+    
     }
 })
 

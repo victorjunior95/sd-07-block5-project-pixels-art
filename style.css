@@ -17,7 +17,7 @@
     width: 40px;
     height: 40px;
     background-color: white;
-    border: 1px black solid;
+    border: black solid 1px;
     box-sizing: content-box;
     padding: 0px;
     margin: -2px;
