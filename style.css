@@ -2,36 +2,26 @@ body {
   padding: 30px;
 }
 
-.color-black-index {
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+.black-index {
   background-color: black;
-  border: 1px solid black;
-  display: inline-block;
-  height: 40px;
-  width: 40px;
 }
 
-.color-blue {
+.blue {
   background-color: blue;
-  border: 1px solid black;
-  display: inline-block;
-  height: 40px;
-  width: 40px;
 }
 
-.color-yellow {
+.yellow {
   background-color: yellow;
-  border: 1px solid black;
-  display: inline-block;
-  height: 40px;
-  width: 40px;
 }
 
-.color-purple {
+.purple {
   background-color: purple;
-  border: 1px solid black;
-  display: inline-block;
-  height: 40px;
-  width: 40px;
 }
 
 #pixel-board {
