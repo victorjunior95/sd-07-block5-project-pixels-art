@@ -1,13 +1,7 @@
-//Index
-let externalIndex = 0; 
-/* Objetivo de contornar o problema de não poder passar um valor pra dentro de uma função com parâmetro!
-Para isso criei essa variável que é alterada por fora das funções. Assim o script tem a referência
-do índice a ser alterado. */
-
 // Color variables
-const arrayPalette = document.getElementsByClassName('color');
-const arrayPixels = document.getElementsByClassName('pixel') 
-let actualColor = 'black';
+let colorPalette = document.getElementsByClassName('color');
+let colorPixels = document.getElementsByClassName('pixel');
+let selectedColor = document.getElementsByClassName('selected');
 
 // Resize/Reset variables
 const inputColumns = document.getElementById('columns');
@@ -17,6 +11,7 @@ const pixelBoard = document.getElementById('pixel-board')
 let lineBoard = document.getElementsByClassName('line');
 let numberOfColumns = 5;
 let numberOfLines = 5;
+let pixelNumber = 0;
 
 
 // Functions: Resize/Reset
@@ -35,9 +30,9 @@ function pixelBoardReset() {
     elementCreator.className = classOf;
     insideOf.appendChild(elementCreator);
 }
-
 function boardCreator() {
     pixelBoardReset();
+    pixelNumber = 0;
     for (let line = 0 ; line < numberOfLines ; line += 1) {
         lineBoard = document.getElementsByClassName('line');
         pixelBoardFiller(pixelBoard, 'line');
@@ -45,31 +40,43 @@ function boardCreator() {
             pixelBoardFiller(lineBoard[line], 'pixel');
         }
     }
+    eventListenerToPixels()
 }
 
 // Functions: Color
 
+
 function getColorFromPalette() {
-    actualColor = arrayPalette[externalIndex].backgroundColor;
+    selectedColor[0].classList.remove('selected');
+    event.target.classList.add('selected');
+    selectedColor = document.getElementsByClassName('selected');
 }
 
 function changePixelColor() {
-    arrayColor[externalIndex]
+    selectedColor = document.getElementsByClassName('selected');
+    event.target.style.backgroundColor = selectedColor[0].style.backgroundColor;
 }
 
-function addEventArray() {
-    for (externalIndex = 0 ; externalIndex < arrayPalette.length ; externalIndex += 1) {
-        arrayPalette.addEventListener('click', getColorFromPalette);
-    }
-    for (externalIndex = 0 ; externalIndex < arrayPixel.length ; externalIndex += 1) {
-        arrayPixels[externalIndex].addEventListener('click', changePixelColor);
+// Functions: addEventListener to objects
+function eventListenerToColors() {
+    for (let index = 0 ; index < Object.keys(colorPalette).length ; index += 1) {
+        colorPalette[index].addEventListener('click', getColorFromPalette);
     }
 }
 
-boardCreator();
+function eventListenerToPixels() {
+    colorPixels = document.getElementsByClassName('pixel');
+    for (let index = 0 ; index < Object.keys(colorPixels).length ; index += 1) {
+        colorPixels[index].addEventListener('click', changePixelColor);
+    }
+}
+
+eventListenerToColors();
+eventListenerToPixels();
+
 resizeReset.addEventListener('click', assignSize);
-addEventArray();
 
-arrayPalette[1].style.backgroundColor = "red";
-arrayPalette[2].style.backgroundColor = "green";
-arrayPalette[3].style.backgroundColor = "blue";
+colorPalette[0].style.backgroundColor = "black";
+colorPalette[1].style.backgroundColor = "red";
+colorPalette[2].style.backgroundColor = "green";
+colorPalette[3].style.backgroundColor = "blue";
