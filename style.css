@@ -1,43 +1,35 @@
 .title1{
-    text-align: center;
-    
-    
+  text-align: center;
 }
+    
 .palette-color{
-    margin: auto;
-    width: 245px;
-   
+  margin: auto;
+  width: 245px;
 }
+   
 .board-pixel{
-    width: 235px;
-    height: 250px;
-    padding:0px;
-    line-height: 0px;
-    column-width:23px ;
-    position: relative;
-    margin:auto
-   
-   
-}
+  column-width:23px ;
+  height: 250px;
+  line-height: 0px;
+  margin:auto;
 
+  padding: 0px;
+  position: relative;
+  width: 235px;
+}
 
 .color{
-   
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border:1px black solid
+  border:1px black solid;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
 }
+
 .pixel{
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color:white;
-    border:1px black solid;
-   
-    
+  background-color:white;
+  border:1px black solid;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
 }
-
-
-
-
+   
