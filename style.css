@@ -1,0 +1,32 @@
+div #quadrado1 {
+    border: 1px solid black;
+    width: 65px;
+    height: 65px;
+    background-color:black;
+    margin: 12px;
+}
+div #quadrado2 {
+    border: 1px solid black;
+    width: 65px;
+    height: 65px;
+    background-color: red;
+    margin: 12px;
+}
+div #quadrado3 {
+    border: 1px solid black;
+    width: 65px;
+    height: 65px;
+    background-color: blue;
+    margin: 12px;
+}
+div #quadrado4 {
+    border: 1px solid black;
+    width: 65px;
+    height: 65px;
+    background-color: green;
+    margin: 12px;
+}
+
+.color {
+    display: inline-block;
+}
