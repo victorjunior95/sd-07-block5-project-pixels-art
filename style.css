@@ -35,16 +35,15 @@ body {
 }
 
 #pixel-board {
-  display:grid;
-  background-color:white;
+  display: grid;
+  background-color: white;
   height: 200px;
   width: 200px;
-  grid-template-columns:20% 20% 20% 20% 20%;
+  grid-template-columns: 20% 20% 20% 20% 20%;
 }
 
 .pixel {
   border: 1px solid black;
   height: 40px;
   width: 40px;
-
 }
