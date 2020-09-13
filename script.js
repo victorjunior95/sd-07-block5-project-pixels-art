@@ -21,7 +21,7 @@ function changePixelColor(item)
 {
     item.addEventListener("click", function(){
         color = window.getComputedStyle(selectedColor, null).getPropertyValue("background-color");
-        item.style.backgroundColor;
+        item.style.backgroundColor = color;
     })
 }
 
