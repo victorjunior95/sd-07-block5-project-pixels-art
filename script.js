@@ -51,7 +51,21 @@ function generateBoard(num){
 }
 
 document.querySelector('#generate-board').addEventListener('click',function(){
-  generateBoard(document.querySelector('#board-size').value)
+  let board = document.querySelector('#board-size')
+  
+  if(parseInt(board.value)>50){
+    generateBoard(50)
+  }
+  else if(parseInt(board.value)<5){
+    generateBoard(5)
+  }
+  else if(board.value != ''){
+    generateBoard(board.value)
+  }
+  else{
+    alert('Board inválido!')
+  }
+  
 })
 attribute();
 generateBoard(5);
