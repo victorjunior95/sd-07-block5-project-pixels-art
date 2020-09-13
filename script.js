@@ -13,6 +13,16 @@ function configureColorPaletteItemsAsClickable(item)
     })
 }
 
+let button = document.getElementById("clear-board");
+button.addEventListener("click", function(){
+    document.querySelectorAll(".pixel").forEach(changeBackgroundColorToWhite);
+})
+
+function changeBackgroundColorToWhite(item)
+{
+    item.style.backgroundColor = "white";
+}
+
 
 
 
