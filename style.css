@@ -1,25 +1,30 @@
 .color {
-  width: 10%;
-  height: 100px;
-  display: inline-block;
   border: black 1px solid;
+  display: inline-block;
+  height: 100px;
+  width: 10%;
 }
+
 #black {
-    background-color: black;
+  background-color: black;
 }
+
 #purple {
-    background-color: purple;
- 
+  background-color: purple;
 }
+
 #dark-purple {
-    background-color: #AB05F2;
+  background-color: #ab05f2;
 }
+
 #bluish-purple {
-    background-color: #5A13F2;
+  background-color: #5a13f2;
 }
+
 #blue {
-    background-color: #2745F2;
+  background-color: #2745f2;
 }
+
 #light-blue {
-    background-color: #138AF2;
+  background-color: #138af2;
 }

@@ -1,2 +1,1 @@
-const colorPalette = document.querySelector("#color-palette");
-
+const colorPalette = document.querySelector('#color-palette');
