@@ -21,3 +21,6 @@ table tr td {
     height: 40px;
 }
 
+.pixel {
+    background-color: rgb(255, 255, 255);
+}
