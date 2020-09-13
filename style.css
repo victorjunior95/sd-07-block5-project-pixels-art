@@ -1,8 +1,8 @@
 .color {
   border: black 1px solid;
   display: inline-block;
-  height: 100px;
-  width: 10%;
+  height: 80px;
+  width: 7.11%;
 }
 
 #black {
@@ -27,4 +27,16 @@
 
 #light-blue {
   background-color: #138af2;
+}
+
+.pixel {
+  background-color: white;
+  display: inline-block;
+  height: 70px;
+  width: 9%;
+}
+.perPixel {
+  border: black 1px solid;
+  height: 100%;
+  width: 99%;
 }
