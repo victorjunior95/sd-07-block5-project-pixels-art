@@ -5,6 +5,7 @@ font-size: large;
 
 #color-palette{
 display: flex;
+margin-bottom: 10px;
 
 }
 
@@ -36,18 +37,14 @@ display: flex;
 }
 
 .pixel-father{
- background-color: white;
- 
+ margin-top: 15px;
 }
 
-.pixel-line{
-   margin: 60px;
-}
 
 #pixel-board {
-    background-color: white;
     display: flex;
-
+    border-spacing: 0;
+    padding: 0;
   }
 
 .pixel {
