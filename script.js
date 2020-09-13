@@ -27,7 +27,8 @@ function clearColors() {
 
 function generateGrid() {
   const gridSize = setDefaultValues(document.getElementById('board-size').value);
-  if (gridSize > 0) {  const grid = document.getElementById('pixel-board');
+  if (gridSize > 0) {
+    const grid = document.getElementById('pixel-board');
     document.body.removeChild(grid);
     let newDivGrid = document.createElement('div');
     newDivGrid.className = 'new-grid';
@@ -64,11 +65,19 @@ function addRandomClass() {
   const classColorList = ['empty', 'red', 'blue', 'green', 'grey', 'yellow', 'purple', 'brown']
   const palletList = document.getElementsByClassName('color');
   for (let i = 1 ; i < palletList.length; i += 1) {
-    const chosenColor = classColorList[Math.ceil(Math.random() * 7)];
+    let j = 7;
+    const chosenColor = classColorList[Math.ceil(Math.random() * (palletList.length - 1))];
+    const index = classColorList.indexOf(chosenColor);
+    classColorList.splice(index, 1);
     const palletClassList = palletList[i].className.split(' ');
-    console.log(palletClassList[1]);
     palletList[i].classList.remove(palletClassList[1]);
     palletList[i].classList.add(chosenColor);
+  }
+}
+
+function checkRepeatedItems(array) {
+  for (let i = 0; i < array.length; i += 1) {
+
   }
 }
 
