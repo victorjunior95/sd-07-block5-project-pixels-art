@@ -14,9 +14,9 @@
 }
 
 .pixel {
-  vertical-align: top;
-  display: inline-block;
   border: 1px black solid;
+  display: inline-block;
   height: 40px;
+  vertical-align: top;
   width: 40px;
 }
