@@ -6,12 +6,13 @@ body {
   border: black solid 1px;
   color: white;
   display: inline-block;
-  width: 40px;
   height: 40px;
+  width: 40px;
 }
+
 .color-palette {
-  width: 200px;
   height: 42px;
+  width: 200px;
 }
 
 .color-01 {
@@ -31,14 +32,14 @@ body {
 }
 
 .pixel {
-  width: 40px;
-  height: 40px;
   border: black solid 1px;
   display: block;
   float: left;
+  height: 40px;
+  width: 40px;
 }
 
 .pixel-board{
-  width: 240px;
   height: 240px;
+  width: 240px;
 }
