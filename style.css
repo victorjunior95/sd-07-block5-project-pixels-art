@@ -1,5 +1,7 @@
+
 .title1{
   text-align: center;
+  
 }
     
 .palette-color{
@@ -8,13 +10,14 @@
 }
    
 .board-pixel{
-  width: 235px;
-  height: 250px;
-  padding:0px;
-  line-height: 0px;
+  width: 218px;
+  height: 218px;
+  
+  line-height: 1px;
   column-width:23px ;
   position: relative;
-  margin:auto;
+  margin: auto;
+  
 }
 
 .color{

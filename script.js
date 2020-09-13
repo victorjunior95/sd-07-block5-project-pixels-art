@@ -54,9 +54,9 @@ const boxes = document.querySelectorAll('.pixel');
 for (let index = 0; index < boxes.length; index += 1) {
   const selectBoxes = boxes[index];
   selectBoxes.addEventListener('click', function () {
-    selectBoxes.style.backgroundColor = localStorage.getItem('color')
-  })
-};
+  selectBoxes.style.backgroundColor = localStorage.getItem('color');
+  });
+}
 
 const select = document.querySelector('.selected').style.backgroundColor
 localStorage.setItem('color', select);
