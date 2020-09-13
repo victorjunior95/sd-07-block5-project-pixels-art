@@ -26,5 +26,9 @@
   border: solid 1px black;
   display: inline-block;
   height: 40px;
-  width: 40px;  
+  width: 40px;
+}
+
+.clear-board {
+  margin-bottom: 4px;
 }

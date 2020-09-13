@@ -3,6 +3,34 @@ let bluePallete = 0;
 let yellowPallete = 0;
 let greenPallete = 0;
 
+function clearBoard() {
+  document.getElementById('one').style.backgroundColor = "white";
+  document.getElementById('two').style.backgroundColor = "white";
+  document.getElementById('three').style.backgroundColor = "white";
+  document.getElementById('four').style.backgroundColor = "white";
+  document.getElementById('five').style.backgroundColor = "white";
+  document.getElementById('six').style.backgroundColor = "white";
+  document.getElementById('seven').style.backgroundColor = "white";
+  document.getElementById('eight').style.backgroundColor = "white";
+  document.getElementById('nine').style.backgroundColor = "white";
+  document.getElementById('ten').style.backgroundColor = "white";
+  document.getElementById('eleven').style.backgroundColor = "white";
+  document.getElementById('twelve').style.backgroundColor = "white";
+  document.getElementById('thirteen').style.backgroundColor = "white";
+  document.getElementById('fourteen').style.backgroundColor = "white";
+  document.getElementById('fifteen').style.backgroundColor = "white";
+  document.getElementById('sixteen').style.backgroundColor = "white";
+  document.getElementById('seventeen').style.backgroundColor = "white";
+  document.getElementById('eighteen').style.backgroundColor = "white";
+  document.getElementById('nineteen').style.backgroundColor = "white";
+  document.getElementById('twenty').style.backgroundColor = "white";
+  document.getElementById('twentyOne').style.backgroundColor = "white";
+  document.getElementById('twentyTwo').style.backgroundColor = "white";
+  document.getElementById('twentyThree').style.backgroundColor = "white";
+  document.getElementById('twentyFour').style.backgroundColor = "white";
+  document.getElementById('twentyFive').style.backgroundColor = "white";
+}
+
 function black() {
   document.getElementsByClassName('black').class = 'color black selected';
   document.getElementsByClassName('blue').class = 'color blue';
@@ -49,7 +77,7 @@ function green() {
 
 function one() {
   if (blackPallete === 1) {
-    document.getElementById("one").style.backgroundColor = "black"; 
+    document.getElementById("one").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("one").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -61,7 +89,7 @@ function one() {
 
 function two() {
   if (blackPallete === 1) {
-    document.getElementById("two").style.backgroundColor = "black"; 
+    document.getElementById("two").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("two").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -73,7 +101,7 @@ function two() {
 
 function three() {
   if (blackPallete === 1) {
-    document.getElementById("three").style.backgroundColor = "black"; 
+    document.getElementById("three").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("three").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -85,7 +113,7 @@ function three() {
 
 function four() {
   if (blackPallete === 1) {
-    document.getElementById("four").style.backgroundColor = "black"; 
+    document.getElementById("four").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("four").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -97,7 +125,7 @@ function four() {
 
 function five() {
   if (blackPallete === 1) {
-    document.getElementById("five").style.backgroundColor = "black"; 
+    document.getElementById("five").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("five").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -109,7 +137,7 @@ function five() {
 
 function six() {
   if (blackPallete === 1) {
-    document.getElementById("six").style.backgroundColor = "black"; 
+    document.getElementById("six").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("six").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -121,7 +149,7 @@ function six() {
   
 function seven() {
   if (blackPallete === 1) {
-    document.getElementById("seven").style.backgroundColor = "black"; 
+    document.getElementById("seven").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("seven").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -133,7 +161,7 @@ function seven() {
 
 function eight() {
   if (blackPallete === 1) {
-    document.getElementById("eight").style.backgroundColor = "black"; 
+    document.getElementById("eight").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("eight").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -145,7 +173,7 @@ function eight() {
 
 function nine() {
   if (blackPallete === 1) {
-    document.getElementById("nine").style.backgroundColor = "black"; 
+    document.getElementById("nine").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("nine").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -157,7 +185,7 @@ function nine() {
 
 function ten() {
   if (blackPallete === 1) {
-    document.getElementById("ten").style.backgroundColor = "black"; 
+    document.getElementById("ten").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("ten").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -169,7 +197,7 @@ function ten() {
 
 function eleven() {
   if (blackPallete === 1) {
-  document.getElementById("eleven").style.backgroundColor = "black"; 
+  document.getElementById("eleven").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("eleven").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -181,7 +209,7 @@ function eleven() {
 
 function twelve() {
   if (blackPallete === 1) {
-  document.getElementById("twelve").style.backgroundColor = "black"; 
+  document.getElementById("twelve").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("twelve").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -193,7 +221,7 @@ function twelve() {
 
 function thirteen() {
   if (blackPallete === 1) {
-  document.getElementById("thirteen").style.backgroundColor = "black"; 
+  document.getElementById("thirteen").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("thirteen").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -205,7 +233,7 @@ function thirteen() {
 
 function fourteen() {
   if (blackPallete === 1) {
-  document.getElementById("fourteen").style.backgroundColor = "black"; 
+  document.getElementById("fourteen").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("fourteen").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -217,7 +245,7 @@ function fourteen() {
 
 function fifteen() {
   if (blackPallete === 1) {
-  document.getElementById("fifteen").style.backgroundColor = "black"; 
+  document.getElementById("fifteen").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("fifteen").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -229,7 +257,7 @@ function fifteen() {
 
 function sixteen() {
   if (blackPallete === 1) {
-  document.getElementById("sixteen").style.backgroundColor = "black"; 
+  document.getElementById("sixteen").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("sixteen").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -241,7 +269,7 @@ function sixteen() {
 
 function seventeen() {
   if (blackPallete === 1) {
-  document.getElementById("seventeen").style.backgroundColor = "black"; 
+  document.getElementById("seventeen").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("seventeen").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -253,7 +281,7 @@ function seventeen() {
 
 function eighteen() {
   if (blackPallete === 1) {
-  document.getElementById("eighteen").style.backgroundColor = "black"; 
+  document.getElementById("eighteen").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("eighteen").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -265,7 +293,7 @@ function eighteen() {
 
 function nineteen() {
   if (blackPallete === 1) {
-  document.getElementById("nineteen").style.backgroundColor = "black"; 
+  document.getElementById("nineteen").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("nineteen").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -277,7 +305,7 @@ function nineteen() {
 
 function twenty() {
   if (blackPallete === 1) {
-  document.getElementById("twenty").style.backgroundColor = "black"; 
+  document.getElementById("twenty").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("twenty").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -289,7 +317,7 @@ function twenty() {
 
 function twentyOne() {
   if (blackPallete === 1) {
-  document.getElementById("twentyOne").style.backgroundColor = "black"; 
+  document.getElementById("twentyOne").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("twentyOne").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -301,7 +329,7 @@ function twentyOne() {
 
 function twentyTwo() {
   if (blackPallete === 1) {
-  document.getElementById("twentyTwo").style.backgroundColor = "black"; 
+  document.getElementById("twentyTwo").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("twentyTwo").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -313,7 +341,7 @@ function twentyTwo() {
 
 function twentyThree() {
   if (blackPallete === 1) {
-  document.getElementById("twentyThree").style.backgroundColor = "black"; 
+  document.getElementById("twentyThree").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("twentyThree").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -325,7 +353,7 @@ function twentyThree() {
 
 function twentyFour() {
   if (blackPallete === 1) {
-  document.getElementById("twentyFour").style.backgroundColor = "black"; 
+  document.getElementById("twentyFour").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("twentyFour").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
@@ -337,7 +365,7 @@ function twentyFour() {
 
 function twentyFive() {
   if (blackPallete === 1) {
-  document.getElementById("twentyFive").style.backgroundColor = "black"; 
+  document.getElementById("twentyFive").style.backgroundColor = "black";
   } else if (bluePallete === 1) {
     document.getElementById("twentyFive").style.backgroundColor = "blue";
   } else if (yellowPallete === 1) {
