@@ -27,8 +27,8 @@
 .pixels {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
 }
 
 .pixel {

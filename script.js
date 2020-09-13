@@ -4,8 +4,18 @@ const paletas = document.querySelectorAll('.color');
 let paletaID = 'black';
 
 function defineColor() {
+  checkSelected()
   const paletaSelecionada = event.target;
   paletaID = paletaSelecionada.getAttribute('id');
+  paletaSelecionada.classList.add('selected');
+}
+
+function checkSelected() {
+  for (let i = 0; i < paletas.length; i += 1){
+    if(paletas[i].classList.contains('selected')) {
+      paletas[i].classList.remove('selected');
+    }
+  }  
 }
 
 for (let k = 0; k < paletas.length; k += 1) {
