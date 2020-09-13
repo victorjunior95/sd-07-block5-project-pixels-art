@@ -27,6 +27,23 @@
   background-color: white;
   border: 1px solid black;
   display: inline-block;
-  margin: -1px 0px;
-  padding: 40px;
+  padding: 20px;
+  height: 40px;
+  width: 40px;
+}
+
+table {
+  border: none;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+button {
+  background-color: rgb(185, 185, 185);
+  border: none;
+  border-radius: 10px;
+  color: black;
+  font-weight: 700;
+  margin: 5px;
+  padding: 10px;
 }
