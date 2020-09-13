@@ -1,0 +1,41 @@
+body {
+  text-align: center;
+}
+
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
+
+.first-color {
+  background-color: black;
+}
+
+.second-color {
+  background-color: purple;
+}
+
+.third-color {
+  background-color: orange;
+}
+
+.forth-color {
+  background-color: wheat;
+}
+
+.pixel-board {
+  border: 1px solid black;
+  height: 400px;
+  margin: auto;
+  width: 400px;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
