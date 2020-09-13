@@ -44,12 +44,12 @@ function boardCreator() {
       document.getElementsByClassName('line')[line].appendChild(elementCreator);
     }
   }
+}
 
-  function assignSize() {
-    numberOfColumns = inputColumns.value;
-    numberOfLines = inputLines.value;
-    boardCreator();
-  }
+function assignSize() {
+  numberOfColumns = inputColumns.value;
+  numberOfLines = inputLines.value;
+  boardCreator();
   eventListenerToPixels();
 }
 
