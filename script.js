@@ -13,63 +13,63 @@ let numberOfLines = 5;
 
 // Functions: Resize/Reset
 function assignSize() {
-	numberOfColumns = inputColumns.value
-	numberOfLines = inputLines.value
-	boardCreator();
+  numberOfColumns = inputColumns.value
+  numberOfLines = inputLines.value
+  boardCreator();
 }
 
 function pixelBoardReset() {
-	pixelBoard.innerHTML = '';
+  pixelBoard.innerHTML = '';
 }
 
 function pixelBoardFiller(insideOf, classOf) {
-	let elementCreator = document.createElement('div');
-	elementCreator.className = classOf;
-	insideOf.appendChild(elementCreator);
+  let elementCreator = document.createElement('div');
+  elementCreator.className = classOf;
+  insideOf.appendChild(elementCreator);
 }
 function boardCreator() {
-	pixelBoardReset();
-	//refatorando construção de tabela
-	for (let line = 0 ; line < numberOfLines ; line += 1) {
-		let elementCreator = document.createElement('tr');
-		elementCreator.className = 'line';
-		pixelBoard.appendChild(elementCreator);
-		for (let column = 0 ; column < numberOfColumns ; column += 1) {
-			let elementCreator = document.createElement('td');
-			elementCreator.className = 'pixel';
-			document.getElementsByClassName('line')[line].appendChild(elementCreator);
-		}
-	}
+  pixelBoardReset();
+  //refatorando construção de tabela
+  for (let line = 0 ; line < numberOfLines ; line += 1) {
+    let elementCreator = document.createElement('tr');
+    elementCreator.className = 'line';
+    pixelBoard.appendChild(elementCreator);
+    for (let column = 0 ; column < numberOfColumns ; column += 1) {
+      let elementCreator = document.createElement('td');
+      elementCreator.className = 'pixel';
+      document.getElementsByClassName('line')[line].appendChild(elementCreator);
+    }
+  }
 
-	eventListenerToPixels()
+  eventListenerToPixels()
 }
 
 // Functions: Color
 
 
 function getColorFromPalette() {
-	selectedColor[0].classList.remove('selected');
-	event.target.classList.add('selected');
-	selectedColor = document.getElementsByClassName('selected');
+  selectedColor[0].classList.remove('selected');
+  event.target.classList.add('selected');
+  selectedColor = document.getElementsByClassName('selected');
 }
 
 function changePixelColor() {
-	selectedColor = document.getElementsByClassName('selected');
-	event.target.style.backgroundColor = selectedColor[0].style.backgroundColor;
+  selectedColor = document.getElementsByClassName('selected');
+  event.target.style.backgroundColor = selectedColor[0].style.backgroundColor;
 }
 
 // Functions: a	ddEventListener to objects
 function eventListenerToColors() {
-	for (let index = 0 ; index < Object.keys(colorPalette).length ; index += 1) {
-		colorPalette[index].addEventListener('click', getColorFromPalette);
-	}
+  for (let index = 0 ; index < Object.keys(colorPalette).length ; index += 1) {
+    colorPalette[index].addEventListener('click', getColorFromPalette);
+  }
 }
 
 function eventListenerToPixels() {
-	colorPixels = document.getElementsByClassName('pixel');
-	for (let index = 0 ; index < Object.keys(colorPixels).length ; index += 1) {
-		colorPixels[index].addEventListener('click', changePixelColor);
-	}
+  colorPixels = document.getElementsByClassName('pixel');
+  for (let index = 0 ; index < Object.keys(colorPixels).length ; index += 1) {
+    colorPixels[index].addEventListener('click', changePixelColor);
+  }
 }
 
 eventListenerToColors();

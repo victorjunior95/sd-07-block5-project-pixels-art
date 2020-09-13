@@ -1,23 +1,23 @@
 .color {
-	background-color:#000;
-	border:1px solid #000;
-	display:inline-block;
-	height:40px;
-	width:40px;
-	}
+  background-color:#000;
+  border:1px solid #000;
+  display:inline-block;
+  height:41px;
+  width:41px;
+  }
 
 .pixel {
-	background-color:#FFF;
-	border:1px solid #000;
-	border-collapse:collapse;
-	display:table-cell;
-	height:40px;
-	padding:0;
-	table-layout:fixed;
-	width:40px;
-	}
+  background-color:#FFF;
+  border:1px solid #000;
+  border-collapse:collapse;
+  display:table-cell;
+  height:40px;
+  padding:0;
+  table-layout:fixed;
+  width:40px;
+  }
 
 .pixelBoardClass {
-	border-collapse:collapse;
-	display: table;
-	}
+  border-collapse:collapse;
+  display: table;
+  }
