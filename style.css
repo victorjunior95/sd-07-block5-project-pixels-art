@@ -2,8 +2,8 @@
   background-color: black;
   border: 1px solid black;
   display: inline-block;
-  height: 41px;
-  width: 41px;
+  height: 40px;
+  width: 40px;
 }
 
 .pixel {
@@ -11,13 +11,23 @@
   border: 1px solid black;
   border-collapse: collapse;
   display: table-cell;
-  height: 40px;
+  height: 41px;
   padding: 0;
   table-layout: fixed;
-  width: 40px;
+  width: 41px;
 }
 
 .pixelBoardClass {
   border-collapse: collapse;
   display: table;
+}
+
+td {
+  display: table-cell;
+  height: 40px;
+  width: 40px;
+}
+
+tr {
+  display: table-row;
 }
