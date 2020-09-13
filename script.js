@@ -53,18 +53,20 @@ colorRed.addEventListener('click', function () {
 
 
 
-const boxes = document.getElementsByClassName('pixel')[0]
-
-boxes.addEventListener('click', function () {
-
-    boxes.style.backgroundColor = localStorage.getItem('color')
-
+const boxes = document.querySelectorAll('.pixel')
+for (let index = 0; index < boxes.length; index += 1) {
+    let selectBoxes = boxes[index]
+selectBoxes.addEventListener('click', function () {
+    
+    
+    selectBoxes.style.backgroundColor = localStorage.getItem('color')
+    
 })
-
+}
 const select = document.querySelector('.selected').style.backgroundColor
 localStorage.setItem('color', select)
 
 
-/*for (let index = 0; index < boxes.length; index += 1) {
+for (let index = 0; index < boxes.length; index += 1) {
     let selectBoxes = boxes[index]
-}*/
+}

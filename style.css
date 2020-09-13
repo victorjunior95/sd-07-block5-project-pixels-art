@@ -9,18 +9,17 @@
    
 }
 .board-pixel{
-    width: 250px;
+    width: 235px;
     height: 250px;
     padding:0px;
     line-height: 0px;
-
+    column-width:23px ;
+    position: relative;
     margin:auto
    
    
 }
-.black{
-    background-color: black;
-}
+
 
 .color{
    
