@@ -1,4 +1,5 @@
 document.querySelectorAll(".color").forEach(configureColorPaletteItemsAsClickable);
+let selectedColor;
 
 function removeClass(item)
 {
@@ -10,6 +11,17 @@ function configureColorPaletteItemsAsClickable(item)
     item.addEventListener("click", function(){
         document.querySelectorAll(".color").forEach(removeClass);
         item.classList.add("selected");
+        selectedColor = item;
+    })
+}
+
+document.querySelectorAll(".pixel").forEach(changePixelColor);
+
+function changePixelColor(item)
+{
+    item.addEventListener("click", function(){
+        color = window.getComputedStyle(selectedColor, null).getPropertyValue("background-color");
+        item.style.backgroundColor;
     })
 }
 
@@ -22,9 +34,3 @@ function changeBackgroundColorToWhite(item)
 {
     item.style.backgroundColor = "white";
 }
-
-
-
-
-
-
