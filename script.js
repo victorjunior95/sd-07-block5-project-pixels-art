@@ -2,6 +2,7 @@ const clearButton = document.querySelector('#clear-board');
 const paletas = document.querySelectorAll('.color');
 const boardSize = document.querySelector('#board-size');
 const generateButton = document.querySelector('#generate-board');
+const paintPixels = document.querySelectorAll('.pixel')
 const fullBoard = document.querySelector('#pixel-board');
 const eliminateBoard = document.querySelector('#eliminate-board');
 let paletaID = 'black';
@@ -41,9 +42,10 @@ function paintBoard() {
   }
 }
 
-// for (let i = 0; i < coloredPixels.length; i += 1) {
-//   coloredPixels[i].addEventListener('click', paintBoard);
-// }
+for (let i = 0; i < paintPixels.length; i += 1) {
+  paintPixels[i].addEventListener('click', paintBoard);
+}
+
 function verifyBoard() {
   let numberOfSquares = 0;
   let itsPossible = boardSize.value;
@@ -76,8 +78,17 @@ function sizeBoard() {
   }
 }
 
+function generateAlert() {
+  const emptyInput = boardSize.value;
+  if (emptyInput === '') {
+    alert('Board inválido!')
+  }
+}
+
 function generateBoard () {
+  generateAlert()
   createNewBoard()
+  fullBoard.classList.remove('quadro-nativo')
   let number = verifyBoard();
   sizeBoard()
   for (let i = 0; i < number; i += 1) {
