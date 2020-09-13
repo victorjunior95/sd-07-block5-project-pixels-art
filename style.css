@@ -11,6 +11,7 @@ body {
 
 .first-color {
   background-color: black;
+  border: 2px solid red;
 }
 
 .second-color {
@@ -27,15 +28,14 @@ body {
 
 .pixel-board {
   border: 1px solid black;
-  height: 400px;
   margin: auto;
-  width: 400px;
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
   display: inline-block;
-  height: 40px;
-  width: 40px;
+  height: 38px;
+  margin-bottom: -3.9px;
+  width: 38px;
 }
