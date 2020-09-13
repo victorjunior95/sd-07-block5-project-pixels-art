@@ -30,26 +30,27 @@ function generateGrid() {
   if (gridSize > 0) {
     const grid = document.getElementById('pixel-board');
     document.body.removeChild(grid);
-    let newDivGrid = document.createElement('div');
-    newDivGrid.className = 'new-grid';
-    document.body.appendChild(newDivGrid);
-    for (let i = 0; i < gridSize; i += 1) {
-        const rowDiv = document.createElement('div');
-        newDivGrid.appendChild(rowDiv);
-        rowDiv.className = 'div-row';
-        for (let i = 0; i < gridSize; i += 1) {
-            const newPixel = document.createElement('div');
-            newPixel.className = 'pixel';
-            newPixel.classList.add('white');
-            rowDiv.appendChild(newPixel);
-        }
-    }
-
-    newDivGrid.style.columnFill = "balance";
+    construcGridDivs(gridSize);
   } else {
       alert('Board inválido!');
   }
 
+}
+function construcGridDivs(gridSize) {
+  let newDivGrid = document.createElement('div');
+  newDivGrid.className = 'new-grid';
+  for (let i = 0; i < gridSize; i += 1) {
+    const rowDiv = document.createElement('div');
+    newDivGrid.appendChild(rowDiv);
+    rowDiv.className = 'div-row';
+    for (let i = 0; i < gridSize; i += 1) {
+        const newPixel = document.createElement('div');
+        newPixel.className = 'pixel';
+        newPixel.classList.add('white');
+        rowDiv.appendChild(newPixel);
+    }
+  document.body.appendChild(newDivGrid);
+  }
 }
 
 function setDefaultValues(value) {
