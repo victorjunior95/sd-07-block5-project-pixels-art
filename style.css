@@ -1,3 +1,11 @@
+.black {
+    background-color: black;
+}
+
+.blue {
+    background-color: blue;
+}
+
 .color {
   width: 40px;
   height: 40px;
@@ -5,18 +13,6 @@
   margin-right: 10px;
   margin-left: 10px;
   padding: 10px;
-}
-
-.black {
-  background-color: black;
-}
-
-.yellow {
-  background-color: yellow;
-}
-
-.blue {
-  background-color: blue;
 }
 
 .green {
@@ -28,10 +24,6 @@
   padding: 5px;
   margin-top: 20px;
 }
-.pixel-row {
-  display: table-row;
-  padding: 5px;
-}
 
 .pixel {
   display: table-cell;
@@ -40,4 +32,12 @@
   height: 40px;
   background-color: white;
   border: 1px solid black;
+}
+.pixel-row {
+    display: table-row;
+    padding: 5px;
+}
+
+.yellow {
+    background-color: yellow;
 }
