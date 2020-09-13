@@ -23,14 +23,13 @@ body {
   border: 1px solid black;
   display: table-cell;
   height: 40px;
-  width: 38px;
+  width: 40px;
+  padding: 0;
 }
 
 .pixel-board {
   display: table;
-  height: 200px;
   margin: 20px auto;
-  width: 200px;
 }
 
 .second-color {
