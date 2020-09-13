@@ -10,6 +10,7 @@ let ultima = document.querySelector(".selected");
 let cor2 = corAleatoria();
 let cor3 = corAleatoria();
 let cor4 = corAleatoria();
+
 azul.style.backgroundColor = cor2;
 red.style.backgroundColor = cor3;
 purple.style.backgroundColor = cor4;
@@ -22,8 +23,6 @@ function corAleatoria() {
     let aleatoria = "rgb(" + x + "," + y + "," + z + ")";
     return (aleatoria)
     }
-
-
 
 black.addEventListener("click",function(){
     document.getElementsByClassName("selected")[0].classList = "color";
@@ -57,6 +56,9 @@ let tamanho =0;
 
 input.addEventListener("change", function(){
     tamanho = input.value;
+    if (tamanho<5){
+        tamanho=5;
+    }
 })
 let vqv  = document.getElementById("generate-board");
 vqv.addEventListener("click", function(){
