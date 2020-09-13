@@ -63,9 +63,7 @@ vqv.addEventListener("click", function(){
     }
     criarEventos();
     }
-
 })
-
 
 //Mudar a cor dos pixels
 
@@ -86,7 +84,7 @@ criarEventos();
 let botao = document.getElementById("clear-board");
 botao.addEventListener("click", function(){
     let qualPixel = document.querySelectorAll(".pixel")
-    for (let i in qualPixel){
+    for (let i=0;i<qualPixel.length; i+=1){
         qualPixel[i].style.backgroundColor = "white";
     }
 })
