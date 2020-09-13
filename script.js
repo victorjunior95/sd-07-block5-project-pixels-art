@@ -1,5 +1,5 @@
+let selectedColor = document.getElementById("first-color");
 document.querySelectorAll(".color").forEach(configureColorPaletteItemsAsClickable);
-let selectedColor;
 
 function removeClass(item)
 {
