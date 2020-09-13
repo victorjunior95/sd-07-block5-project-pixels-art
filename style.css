@@ -26,13 +26,22 @@
 
 .pixels {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  height: 200px;
-  width: 200px;
+}
+
+.remove {
+  padding-top: 20px;
 }
 
 .pixel {
   border: 1px solid black;
   height: 40px;
   width: 40px;
+}
+
+.vqv {
+  display: inline-block;
+}
+
+.clean {
+  display: block;
 }
