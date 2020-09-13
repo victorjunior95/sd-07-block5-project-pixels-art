@@ -1,3 +1,6 @@
+.clear-board {
+    margin: 25px 0 15px 5px;
+}
 .color {
   width: 40px;
   height: 40px;
@@ -25,6 +28,7 @@
   display: table;
   padding: 5px;
 }
+
 .pixel-row {
   display: table-row;
   padding: 5px;
