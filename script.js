@@ -1,8 +1,8 @@
 const pixelBoard = document.querySelector('#pixel-board');
 let sizeOfBoard = [5, 5];
 let numberOfPixels = sizeOfBoard[0]*sizeOfBoard[1];
-pixelBoard.style.heigth = (sizeOfBoard[0] * 40) + 'px';
-pixelBoard.style.width = (sizeOfBoard[1] * 40) + 'px';
+pixelBoard.style.heigth = (sizeOfBoard[0] * 42) + 'px';
+pixelBoard.style.width = (sizeOfBoard[1] * 42) + 'px';
 
 window.onload = function () {
   //  pixels generator
