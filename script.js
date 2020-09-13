@@ -1,23 +1,26 @@
+// Define nossa cor padrão para pintar o quadro
 let color = 'black';
-
-// https://stackoverflow.com/a/25873123
+// Gera a cor do botão
+// Fonte: https://stackoverflow.com/a/25873123
 const randomHsl = () => `hsla(${Math.random() * 360}, 100%, 50%, 1)`;
 // <------------------------------------------------------->
 
+// Adiciona cada cor ao valor do botão
 const buttonColor1 = randomHsl();
 const buttonColor2 = randomHsl();
 const buttonColor3 = randomHsl();
-
+// Define o fundo de cada botão com a cor gerada a cima
 document.querySelector('.button1').style.backgroundColor = buttonColor1;
 document.querySelector('.button2').style.backgroundColor = buttonColor2;
 document.querySelector('.button3').style.backgroundColor = buttonColor3;
-
+// Remove a classe selected de cada botão
 const resetSelector = () => {
   document.querySelectorAll('.color').forEach((item) => {
     item.classList.remove('selected');
   });
 };
-
+// Bloco que cria os seletores de cores
+// TODO: Mudar a classe para de todos os botões
 const blackPicker = document.querySelector('.black');
 blackPicker.addEventListener('click', function () {
   color = 'black';
@@ -46,6 +49,7 @@ redPicker.addEventListener('click', function () {
   document.querySelector('.button3').classList.add('selected');
 });
 
+// Função que permite que pinte o fundo de cada quadrado com a cor selecionada
 // https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
 function colorSelector() {
   document.querySelectorAll('.pixel').forEach((item) => {
@@ -54,10 +58,10 @@ function colorSelector() {
     });
   });
 }
-
+// Chamando a função
 colorSelector();
 // <-------------------------------------------------------------------------------->
-
+// Função que limpa a cor do quadro
 const clearBoard = document.getElementById('clear-board');
 clearBoard.addEventListener('click', () => {
   for (
@@ -68,14 +72,14 @@ clearBoard.addEventListener('click', () => {
     document.querySelectorAll('.pixel')[index].style.backgroundColor = 'white';
   }
 });
-
+// Capturando o valor do tamanho do nosso quadro
 let boardSizeNumber;
 const boardSize = document.querySelector('#board-size');
 boardSize.addEventListener('keyup', () => {
   boardSizeNumber = document.querySelector('#board-size').value;
   boardSizeNumber *= boardSizeNumber;
 });
-
+// Função que deleta os quadrados do nosso quadro
 function resetBoard() {
   document.querySelectorAll('.col').forEach(function (a) {
     a.remove();
@@ -84,7 +88,7 @@ function resetBoard() {
     item.remove();
   });
 }
-
+// Função que cria um novo quadro com os parametros passados
 const generateBoard = document.querySelector('#generate-board');
 generateBoard.addEventListener('click', function () {
   if (boardSize.value <= 0) {
