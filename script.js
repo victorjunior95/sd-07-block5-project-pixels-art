@@ -36,5 +36,5 @@ clearButton.addEventListener('click', function clearBoard() {
   for (let i = 0; i < coloredPixels.length; i += 1) {
     coloredPixels[i].className = 'pixel white';
     paletaID = 'black';
-  } 
+  }
 });
