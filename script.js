@@ -1,5 +1,5 @@
 // Color variables
-let colorPalette = document.getElementsByClassName('color');
+const colorPalette = document.getElementsByClassName('color');
 let colorPixels = document.getElementsByClassName('pixel');
 let selectedColor = document.getElementsByClassName('selected');
 
@@ -57,18 +57,6 @@ function boardCreator() {
       document.getElementsByClassName('line')[line].appendChild(elementCreator);
     }
   }
-}//  Functions: Color
-
-
-function getColorFromPalette() {
-  selectedColor[0].classList.remove('selected');
-  event.target.classList.add('selected');
-  selectedColor = document.getElementsByClassName('selected');
-}
-
-function changePixelColor() {
-  selectedColor = document.getElementsByClassName('selected');
-  event.target.style.backgroundColor = selectedColor[0].style.backgroundColor;
 }
 
 function assignSize() {
