@@ -21,10 +21,6 @@
   width: 10%;  
 }
 
-.pixel-content {
-  width: 250px;
-}
-
 .pixel {
   background-color: white;
   border: 1px solid black;
