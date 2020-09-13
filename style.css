@@ -8,16 +8,6 @@ table {
   margin: 20px auto;
 }
 
-td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  border-spacing: 0;
-  box-sizing: content-box;
-  display: table-cell;
-  height: 40px;
-  width: 40px;
-}
-
 .color {
   border: 1px solid black;
   display: inline-block;
@@ -36,6 +26,14 @@ td {
 
 .pixel {
   background-color: white;
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-sizing: content-box;
+  display: table-cell;
+  height: 40px;
+  width: 40px;
+  }
 }
 
 .second-color {
