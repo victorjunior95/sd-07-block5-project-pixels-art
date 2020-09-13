@@ -64,3 +64,55 @@ clearBoard.addEventListener('click', () => {
     document.querySelectorAll('.pixel')[index].style.backgroundColor = 'white';
   }
 });
+
+let boardSizeNumber;
+const boardSize = document.querySelector('#board-size');
+boardSize.addEventListener('keyup', () => {
+  boardSizeNumber = document.querySelector('#board-size').value;
+  boardSizeNumber *= boardSizeNumber;
+});
+
+const generateBoard = document.querySelector('#generate-board');
+
+generateBoard.addEventListener('click', () => {
+  if (boardSize.value <= 0) {
+    return alert('Board inválido!');
+  }
+  if (boardSize.value < 5) {
+    boardSizeNumber = 5 * 5;
+  }
+  if (boardSize.value > 50) {
+    boardSizeNumber = 50 * 50;
+  }
+  let targetDiv = document.getElementById('pixel-board');
+  let count = 0;
+  resetBoard();
+  for (let index = 0; index < boardSizeNumber; index += 1) {
+    let newPixel = document.createElement('div');
+    newPixel.className = 'pixel';
+    targetDiv.appendChild(newPixel);
+    count += 1;
+    if (count === Math.sqrt(boardSizeNumber)) {
+      let spacer = document.createElement('div');
+      spacer.className = 'col';
+      targetDiv.appendChild(spacer);
+      count = 0;
+    }
+  }
+  // https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
+  document.querySelectorAll('.pixel').forEach((item) => {
+    item.addEventListener('click', () => {
+      item.style.backgroundColor = color;
+    });
+  });
+  // <-------------------------------------------------------------------------------->
+});
+
+function resetBoard() {
+  document.querySelectorAll('.col').forEach((a) => {
+    a.remove();
+  });
+  document.querySelectorAll('.pixel').forEach((item) => {
+    item.remove();
+  });
+}
