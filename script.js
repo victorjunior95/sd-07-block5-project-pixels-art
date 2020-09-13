@@ -1,7 +1,6 @@
-window.onload
 function selectingColor(event) {
   if (event.target.className.match(/selected/g)) {
-    return
+    return;
   }
   const selectedColor = document.querySelector('.selected');
   selectedColor.classList.remove('selected');
@@ -10,7 +9,7 @@ function selectingColor(event) {
 
 function paintingPixel(event) {
   if (event.target.classList.length > 1) {
-      event.target.classList.remove(event.target.classList[1]);
+    event.target.classList.remove(event.target.classList[1]);
   }
   const selectedColor = document.querySelector('.selected').classList[1];
   event.target.classList.add(selectedColor);
@@ -25,34 +24,6 @@ function clearColors() {
   }
 }
 
-function generateGrid() {
-  const gridSize = setDefaultValues(document.getElementById('board-size').value);
-  if (gridSize > 0) {
-    const grid = document.getElementById('pixel-board');
-    document.body.removeChild(grid);
-    construcGridDivs(gridSize);
-  } else {
-      alert('Board inválido!');
-  }
-
-}
-function construcGridDivs(gridSize) {
-  let newDivGrid = document.createElement('div');
-  newDivGrid.className = 'new-grid';
-  for (let i = 0; i < gridSize; i += 1) {
-    const rowDiv = document.createElement('div');
-    newDivGrid.appendChild(rowDiv);
-    rowDiv.className = 'div-row';
-    for (let i = 0; i < gridSize; i += 1) {
-        const newPixel = document.createElement('div');
-        newPixel.className = 'pixel';
-        newPixel.classList.add('white');
-        rowDiv.appendChild(newPixel);
-    }
-  document.body.appendChild(newDivGrid);
-  }
-}
-
 function setDefaultValues(value) {
   if (value < 5) {
     value = 5;
@@ -62,11 +33,39 @@ function setDefaultValues(value) {
   return value;
 }
 
+function construcGridDivs(gridSize) {
+  const newDivGrid = document.createElement('div');
+  newDivGrid.className = 'new-grid';
+  for (let i = 0; i < gridSize; i += 1) {
+    const rowDiv = document.createElement('div');
+    newDivGrid.appendChild(rowDiv);
+    rowDiv.className = 'div-row';
+    for (let j = 0; j < gridSize; j += 1) {
+      const newPixel = document.createElement('div');
+      newPixel.className = 'pixel';
+      newPixel.classList.add('white');
+      rowDiv.appendChild(newPixel);
+    }
+  }
+  document.body.appendChild(newDivGrid);
+}
+
+function generateGrid() {
+  const gridSize = setDefaultValues(document.getElementById('board-size').value);
+  if (gridSize > 0) {
+    const grid = document.getElementById('pixel-board');
+    document.body.removeChild(grid);
+    construcGridDivs(gridSize);
+  } else {
+    alert('Board inválido!');
+  }
+
+}
+
 function addRandomClass() {
-  const classColorList = ['empty', 'red', 'blue', 'green', 'grey', 'yellow', 'purple', 'brown']
+  const classColorList = ['empty', 'red', 'blue', 'green', 'grey', 'yellow', 'purple', 'brown'];
   const palletList = document.getElementsByClassName('color');
-  for (let i = 1 ; i < palletList.length; i += 1) {
-    let j = 7;
+  for (let i = 1; i < palletList.length; i += 1) {
     const chosenColor = classColorList[Math.ceil(Math.random() * (palletList.length - 1))];
     const index = classColorList.indexOf(chosenColor);
     classColorList.splice(index, 1);
@@ -76,19 +75,13 @@ function addRandomClass() {
   }
 }
 
-function checkRepeatedItems(array) {
-  for (let i = 0; i < array.length; i += 1) {
-
-  }
-}
-
 const colorPixelList = document.getElementsByClassName('color');
 for (let i = 0; i < 4; i += 1) {
   colorPixelList[i].addEventListener('click', selectingColor);
 }
 const pixelList = document.getElementsByClassName('pixel');
 for (let i = 0; i < pixelList.length; i += 1) {
-    pixelList[i].addEventListener('click', paintingPixel);
+  pixelList[i].addEventListener('click', paintingPixel);
 }
 const clearButton = document.getElementById('clear-board');
 clearButton.addEventListener('click', clearColors);
