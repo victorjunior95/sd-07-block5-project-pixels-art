@@ -1,8 +1,8 @@
 .color {
   border: solid 1px black;
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 40px;
+  width: 40px;
 }
 
 .black {
@@ -24,6 +24,6 @@
 .pixel {
     border: solid 1px black;
     display: inline-block;
-    height: 100px;
-    width: 100px;  
+    height: 40px;
+    width: 40px;  
 }
