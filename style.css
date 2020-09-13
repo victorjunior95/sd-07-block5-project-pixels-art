@@ -43,3 +43,7 @@ body {
   height: 240px;
   width: 240px;
 }
+
+.sectionPix {
+  background-color: rgb(255 , 255 , 255);
+}

@@ -1,15 +1,15 @@
-//Function to make background shine.
+// Function to make background shine.
 function changeBKGColor () {
-  let body = document.getElementsByTagName('body')[0];
-  let title = document.getElementsByTagName('h1')[0];
-  let rColorRGB = Math.floor(Math.random()*255);
-  let gColorRGB = Math.floor(Math.random()*255);
-  let bColorRGB = Math.floor(Math.random()*255);
-  body.style.backgroundColor='rgb('+rColorRGB+' , '+gColorRGB+' , '+bColorRGB+')';
-  title.style.color='rgb('+rColorRGB+1+','+gColorRGB+','+bColorRGB+1+')';
+  const body = document.getElementsByTagName('body')[0];
+  const title = document.getElementsByTagName('h1')[0];
+  const rColorRGB = Math.floor(Math.random()*255);
+  const gColorRGB = Math.floor(Math.random()*255);
+  const bColorRGB = Math.floor(Math.random()*255);
+  body.style.backgroundColor='rgb(' + rColorRGB + ' , ' + gColorRGB + ' , ' + bColorRGB + ')';
+  title.style.color='rgb(' + rColorRGB + 1 + ' , ' + gColorRGB + ' , ' + bColorRGB + 1 + ')';
 }
-const time = setInterval (changeBKGColor, 100);
-//Remove the bars fron the line above to see the efect.
+// const time = setInterval (changeBKGColor, 100);
+// Remove the bars fron the line above to see the efect.
 
 const color01 = document.getElementById('color-01');
 const color02 = document.getElementById('color-02');
@@ -19,7 +19,13 @@ const colorPalet = document.querySelectorAll('.color');
 const pixelSS = document.querySelectorAll('.pixel');
 const clearBT = document.getElementById('clear-board');
 let saveClass = "";
-//Function to add class 'selected' in palet itens, and add a class color of color selected.
+
+// Set pixels background white.
+pixelSS.forEach(item => {
+  item.classList.add('sectionPix')
+})
+
+// Function to add class 'selected' in palet itens, and add a class color of color selected.
 colorPalet.forEach(item => {
   item.addEventListener('click', event => {
   item.classList.add('selected');
@@ -31,7 +37,8 @@ colorPalet.forEach(item => {
     });
   });
 });
-//Function to clear all class color fron pixel itens.
+
+// Function to clear all class color fron pixel itens.
 clearBT.addEventListener('click', function () {
   pixelSS.forEach(item2 => {
   item2.className = "";
