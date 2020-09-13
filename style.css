@@ -1,0 +1,28 @@
+#title {
+    margin-left: 15px;
+}
+
+section {
+    margin-left: 25px;
+}
+
+.color {
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.pale {
+    width: 250px; 
+    justify-content: space-around;
+
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+    display: inline-block; 
+}
