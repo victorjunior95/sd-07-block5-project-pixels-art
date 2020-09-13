@@ -51,7 +51,7 @@ function construcGridDivs(gridSize) {
 }
 
 function generateGrid() {
-  const gridSize = document.getElementById('board-size').value;
+  let gridSize = document.getElementById('board-size').value;
   if (gridSize === '') {
     alert('Board inválido!');
   } else {
