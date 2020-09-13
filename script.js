@@ -14,12 +14,11 @@ for (let index = 0; index < 4; index += 1) {
 }
 
 const paletteColor = document.querySelectorAll('#color-palette');
-const boardPixel = document.querySelectorAll('pixel-board');
-
-paletteColor[0].style.backgroundColor = 'black';
-paletteColor[1].style.backgroundColor = 'red';
-paletteColor[2].style.backgroundColor = 'blue';
-paletteColor[3].style.backgroundColor = 'green';
+  
+for(let index = 0; index < paletteColor.length; index += 1) {
+    const colors = ['black', 'red', 'blue', 'green'];
+    paletteColor[index].style.backgroundColor = colors[index];
+}
 
 document.body.appendChild(document.createElement('button'));
 document.querySelector('button').setAttribute('id', 'clear-board');
@@ -31,78 +30,39 @@ document.querySelectorAll('section')[1].setAttribute('id', 'palete');
 document.querySelector('#palete').setAttribute('class', 'pale');
 document.querySelector('#palete').appendChild(document.createElement('table'));
 document.querySelector('#palete table').appendChild(document.createElement('tr'));
+
 for(let aux = 0; aux < 25; aux += 1) {
     document.querySelector('#palete tr').appendChild(document.createElement('td'));
     document.querySelectorAll('#palete td')[aux].setAttribute('id', 'pixel-board');
     document.querySelectorAll('#palete td')[aux].setAttribute('class', 'pixel');
 }
 
-const palete = document.querySelectorAll('#palete td');
+const boardPixel = document.querySelectorAll('#palete td');
 window.onload = initial;
 function initial() {
     paletteColor[0].className = 'selected';
-    for(let index = 0; index < 25; index += 1) {
-        palete[index].addEventListener('click', function () {
-            palete[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
+    for(let index = 0; index < boardPixel.length; index += 1) {
+        boardPixel[index].addEventListener('click', function () {
+            boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
         });
     }
 }
-
-paletteColor[0].addEventListener('click', function () {
-    paletteColor[0].className = 'selected';
-    paletteColor[1].className = 'color';
-    paletteColor[2].className = 'color';
-    paletteColor[3].className = 'color';
-    for(let index = 0; index < 25; index += 1) {
-        palete[index].addEventListener('click', function () {
-            palete[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
-        });
-    }
-});
-
-paletteColor[1].addEventListener('click', function () {
-    paletteColor[1].className = 'selected';
-    paletteColor[0].className = 'color';
-    paletteColor[2].className = 'color';
-    paletteColor[3].className = 'color';
-    for(let index = 0; index < 25; index += 1) {
-        palete[index].addEventListener('click', function () {
-            palete[index].style.backgroundColor = paletteColor[1].style.backgroundColor;
-        });
-    }
-});
-
-paletteColor[2].addEventListener('click', function () {
-    paletteColor[2].className = 'selected';
-    paletteColor[0].className = 'color';
-    paletteColor[1].className = 'color';
-    paletteColor[3].className = 'color';
-    for(let index = 0; index < 25; index += 1) {
-        palete[index].addEventListener('click', function () {
-            palete[index].style.backgroundColor = paletteColor[2].style.backgroundColor;
-        });
-    }
-});
-
-paletteColor[3].addEventListener('click', function () {
-    paletteColor[3].className = 'selected';
-    paletteColor[0].className = 'color';
-    paletteColor[2].className = 'color';
-    paletteColor[1].className = 'color';
-    for(let index = 0; index < 25; index += 1) {
-        palete[index].addEventListener('click', function () {
-            palete[index].style.backgroundColor = paletteColor[3].style.backgroundColor;
-        });
-    }
-});
+for (let aux = 0; aux < paletteColor.length; aux += 1) {
+   paletteColor[aux].addEventListener('click', function () {
+       paletteColor[aux].className = 'selected';
+   if (paletteColor[aux].className === 'selected'){
+     for(let index = 0; index < boardPixel.length; index += 1) {
+      boardPixel[index].addEventListener('click', function () {
+        boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;               
+      });        
+     }    
+   }
+ });
+}
 
 const botao = document.querySelector('#clear-board');
 botao.addEventListener('click', (event) => {
-    paletteColor[0].className = 'color';
-    paletteColor[1].className = 'color';
-    paletteColor[2].className = 'color';
-    paletteColor[3].className = 'color';
-    for(let index = 0; index < 25; index += 1) {
-        palete[index].style.backgroundColor = 'white';
+    for(let index = 0; index < boardPixel.length; index += 1) {
+        boardPixel[index].style.backgroundColor = 'white';
     }
 });
