@@ -26,13 +26,13 @@
 
 .pixels {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 20% 20% 20% 20% 20%;
   height: 250px;
   width: 250px;
 }
 
 .pixel {
   border: 1px solid black;
-  width: 40px;
   height: 40px;
+  width: 40px;
 }

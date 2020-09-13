@@ -3,11 +3,13 @@ const coloredPixels = document.querySelectorAll('.pixel');
 const paletas = document.querySelectorAll('.color');
 let paletaID = 'black';
 
-for (let paleta of paletas) {
-  paleta.addEventListener('click', function defineColor() {
-    const paletaSelecionada = event.target;
-    paletaID = paletaSelecionada.getAttribute('id');
-  });
+function defineColor() {
+  const paletaSelecionada = event.target;
+  paletaID = paletaSelecionada.getAttribute('id');
+}
+
+for (let k = 0; k < paletas.length; k += 1) {
+  paletas[k].addEventListener('click', defineColor);
 }
 
 function paintBoard() {
@@ -25,12 +27,14 @@ function paintBoard() {
     event.target.classList.add('black');
   }
 }
-for (let coloredPixel of coloredPixels) {
-  coloredPixel.addEventListener('click', paintBoard);
+
+for (let i = 0; i < coloredPixels.length; i += 1) {
+  coloredPixels[i].addEventListener('click', paintBoard);
 }
 
 clearButton.addEventListener('click', function clearBoard() {
   for (let i = 0; i < coloredPixels.length; i += 1) {
     coloredPixels[i].className = 'pixel white';
+    paletaID = 'black';
   }  
 })
