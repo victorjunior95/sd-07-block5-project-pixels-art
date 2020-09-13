@@ -11,5 +11,5 @@ let pixelBoard = document.querySelector('.pixel-board');
 
 // To select the black color when the page is loaded:
 window.addEventListener('load', function() {
-    black.pixel = 'color black selected';
+    black.className += 'selected';
 })
