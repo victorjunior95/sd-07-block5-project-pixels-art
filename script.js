@@ -4,6 +4,7 @@ let colorPixels = document.getElementsByClassName('pixel');
 let selectedColor = document.getElementsByClassName('selected');
 
 // Resize/Reset variables
+const clearBoard = document.getElementById('clear-board');
 const inputColumns = document.getElementById('columns');
 const inputLines = document.getElementById('lines');
 const resizeReset = document.getElementById('resize-reset');
@@ -66,10 +67,18 @@ function assignSize() {
   eventListenerToPixels();
 }
 
+function fillBoardWhite() {
+  for (let index = 0; Object.keys(colorPixels).length; index += 1) {
+    colorPixels[index].style.backgroundColor = 'white';
+  }
+}
+
 eventListenerToColors();
 eventListenerToPixels();
 
 resizeReset.addEventListener('click', assignSize);
+clearBoard.addEventListener('click', fillBoardWhite);
+
 
 colorPalette[0].style.backgroundColor = 'black';
 colorPalette[1].style.backgroundColor = 'red';
