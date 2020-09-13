@@ -61,10 +61,10 @@ function setDefaultValues(value) {
 }
 
 function addRandomClass() {
-  const classColorList = ['empty', 'white', 'red', 'blue', 'green', 'grey', 'yellow', 'purple', 'brown']
+  const classColorList = ['empty', 'red', 'blue', 'green', 'grey', 'yellow', 'purple', 'brown']
   const palletList = document.getElementsByClassName('color');
   for (let i = 1 ; i < palletList.length; i += 1) {
-    const chosenColor = classColorList[Math.ceil(Math.random() * 8)];
+    const chosenColor = classColorList[Math.ceil(Math.random() * 7)];
     const palletClassList = palletList[i].className.split(' ');
     console.log(palletClassList[1]);
     palletList[i].classList.remove(palletClassList[1]);
@@ -84,6 +84,4 @@ const clearButton = document.getElementById('clear-board');
 clearButton.addEventListener('click', clearColors);
 const generateGridButton = document.getElementById('generate-board');
 generateGridButton.addEventListener('click', generateGrid);
-for (let i = 1; i < colorPixelList.length; i += 1) {
-  colorPixelList[i].addEventListener('click', addRandomClass);
-}
+addRandomClass();
