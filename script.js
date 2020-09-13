@@ -26,7 +26,7 @@ function clearColors() {
 }
 
 function generateGrid() {
-  const gridSize = document.getElementById('board-size').value;
+  const gridSize = setDefaultValues(document.getElementById('board-size').value);
   if (gridSize > 0) {  const grid = document.getElementById('pixel-board');
     document.body.removeChild(grid);
     let newDivGrid = document.createElement('div');
@@ -51,6 +51,27 @@ function generateGrid() {
 
 }
 
+function setDefaultValues(value) {
+  if (value < 5) {
+    value = 5;
+  } else if (value > 50) {
+    value = 50;
+  }
+  return value;
+}
+
+function addRandomClass() {
+  const classColorList = ['empty', 'white', 'red', 'blue', 'green', 'grey', 'yellow', 'purple', 'brown']
+  const palletList = document.getElementsByClassName('color');
+  for (let i = 1 ; i < palletList.length; i += 1) {
+    const chosenColor = classColorList[Math.ceil(Math.random() * 8)];
+    const palletClassList = palletList[i].className.split(' ');
+    console.log(palletClassList[1]);
+    palletList[i].classList.remove(palletClassList[1]);
+    palletList[i].classList.add(chosenColor);
+  }
+}
+
 const colorPixelList = document.getElementsByClassName('color');
 for (let i = 0; i < 4; i += 1) {
   colorPixelList[i].addEventListener('click', selectingColor);
@@ -63,3 +84,6 @@ const clearButton = document.getElementById('clear-board');
 clearButton.addEventListener('click', clearColors);
 const generateGridButton = document.getElementById('generate-board');
 generateGridButton.addEventListener('click', generateGrid);
+for (let i = 1; i < colorPixelList.length; i += 1) {
+  colorPixelList[i].addEventListener('click', addRandomClass);
+}
