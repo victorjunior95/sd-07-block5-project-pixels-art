@@ -1,0 +1,22 @@
+.color {
+  height: 40px;
+  display: inline-block;
+  width: 40px;
+  border: 1px solid black;
+}
+
+#palette-one {
+  background-color: black;
+}
+
+#palette-two {
+  background-color: red;
+}
+
+#palette-three {
+  background-color: blue;
+}
+
+#palette-four {
+  background-color: green;
+}
