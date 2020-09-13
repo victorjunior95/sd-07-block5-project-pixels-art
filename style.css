@@ -24,7 +24,8 @@ section {
     width: 40px;
     height: 40px;
     border: solid 1px black;
-    display: inline-block; 
+    display: inline-block;
+    background-color: white; 
 }
 
 .selected {
@@ -33,4 +34,9 @@ section {
     border: solid 1px black;
     display: inline-block;
     margin-bottom: 10px; 
+}
+
+.botao {
+    margin-bottom: 10px;
+    margin-left: 25px;
 }
