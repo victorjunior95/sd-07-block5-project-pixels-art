@@ -58,6 +58,8 @@ input.addEventListener("change", function(){
     tamanho = input.value;
     if (tamanho<5){
         tamanho=5;
+    }else if (tamanho>50){
+        tamanho=50;
     }
 })
 let vqv  = document.getElementById("generate-board");
