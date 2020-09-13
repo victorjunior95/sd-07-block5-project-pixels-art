@@ -1,0 +1,12 @@
+.color-palette {
+  display: table-row;
+}
+
+.color-palette > div {
+  display: table-cell;
+  padding: 40px;
+}
+
+.color {
+  border: 1px solid black;
+}
