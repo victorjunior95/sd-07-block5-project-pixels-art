@@ -25,13 +25,16 @@ body {
   background-color: blue;
 }
 
-td {
+.pixel {
   background-color: white;
   border: 1px solid black;
+  display: inline-block;
   height: 40px;
+  margin: 1px;
   width: 40px;
 }
 
-table {
+.pixel-line {
+  height: 44px;
   margin: auto;
 }
