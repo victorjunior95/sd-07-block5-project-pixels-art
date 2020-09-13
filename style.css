@@ -5,26 +5,26 @@
   width: 10%;
 }
 
-#black {
+.black {
   background-color: black;
 }
 
-#purple {
+.purple {
   background-color: purple;
 }
 
-#dark-purple {
+.dark-purple {
   background-color: #ab05f2;
 }
 
-#bluish-purple {
+.bluish-purple {
   background-color: #5a13f2;
 }
 
-#blue {
+.blue {
   background-color: #2745f2;
 }
 
-#light-blue {
+.light-blue {
   background-color: #138af2;
 }
