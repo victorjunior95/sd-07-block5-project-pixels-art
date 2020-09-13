@@ -1,8 +1,26 @@
 
+
 const corPreta = document.querySelector('#colorBlack');
+
+window.onload = inicio;
+
+function inicio(){
+    for( let i= 1  ; i <= 25 ;i += 1){
+        caixaGeral[i] = document.querySelector("#p" + [i]);
+        caixaGeral[i].addEventListener("click", function(){
+        caixaGeral[i].style.backgroundColor = 'black';
+    })   
+    
+    }
+}
+
+
 const corRed = document.querySelector('#colorRed');
 const corGreen = document.querySelector('#colorGreen');
 const corBlue = document.querySelector('#colorBlue');
+
+
+
 let caixaGeral = []
 
 function preto(){
@@ -51,9 +69,7 @@ corGreen.addEventListener('click',verde)
 corBlue.addEventListener('click',azul)
 
 
-//corPreta.addEventListener('click', function(){
-   // Storage.setItem()
-//})
+
 
 
 
