@@ -1,0 +1,25 @@
+body {
+  background-color: rgb(253 , 251 , 251);
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.head-class {
+  box-shadow: 1px 1px 3px black;
+  margin-top: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  background-color: rgb(28 , 28 , 28);
+  color: white;
+  margin: 0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
