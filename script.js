@@ -50,11 +50,13 @@ let number = inputNumber.value * inputNumber.value;
 botaoGerar.addEventListener('click', (event) => {
     if (inputNumber.value === 0 || inputNumber.value < 5 || inputNumber.value > 50) {
         alert("Board inválido!");
-        inputNumber.value = 5;
-    }
-    number = inputNumber.value * inputNumber.value;
-    iniciar(number);
-});  
+        number = 0;
+    }else {
+        number = inputNumber.value * inputNumber.value;
+        iniciar(number);
+    }  
+});
+  
 iniciar(25);
 function iniciar(number) {
     for (let index = 0; index < number; index += 1) {
