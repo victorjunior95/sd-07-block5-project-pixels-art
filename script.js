@@ -4,7 +4,6 @@ for (let i = 0; i < 4; i += 1) {
   colors[i].addEventListener('click', function () {
     if (i === 0) {
       colors[0].className += ' selected';
-      colors[0].style.backgroundColor = 'black';
       colors[1].className = 'color red';
       colors[2].className = 'color blue';
       colors[3].className = 'color green';
@@ -33,11 +32,10 @@ for (let i = 0; i < 4; i += 1) {
 const tableData = document.querySelectorAll('.pixel');
 
 for (let i = 0; i < tableData.length; i += 1) {
-  tableData[i].addEventListener('click', function() {
+  tableData[i].addEventListener('click', function () {
     tableData[i].style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
-    })
+  });
   document.querySelector('#clear-board').addEventListener('click', function () {
     tableData[i].style.backgroundColor = 'white';
   });
 }
-
