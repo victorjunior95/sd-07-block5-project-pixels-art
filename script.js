@@ -71,12 +71,12 @@ vqv.addEventListener("click", function(){
     document.getElementById("pixel-board").innerHTML = ' ';
     
     for (let i =0;i<tamanho;i+=1){
-        let linha = document.createElement("div");
+        let linha = document.createElement("tr");
         linha.classList = "linha";
         document.getElementById("pixel-board").appendChild(linha);
         console.log ("linha");
         for (let j=0;j<tamanho;j+=1){
-            let pixel = document.createElement("div");
+            let pixel = document.createElement("td");
             pixel.classList = "pixel"
             document.getElementsByClassName("linha")[i].appendChild(pixel);
         }
