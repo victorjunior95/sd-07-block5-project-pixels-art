@@ -20,7 +20,6 @@ const resetSelector = () => {
   });
 };
 // Bloco que cria os seletores de cores
-// TODO: Mudar a classe para de todos os botões
 const blackPicker = document.querySelector('.black');
 blackPicker.addEventListener('click', function () {
   color = 'black';
@@ -28,22 +27,22 @@ blackPicker.addEventListener('click', function () {
   document.querySelector('.black').classList.add('selected');
 });
 
-const greenPicker = document.querySelector('.button1');
-greenPicker.addEventListener('click', function () {
+const colorOne = document.querySelector('.button1');
+colorOne.addEventListener('click', function () {
   color = buttonColor1;
   resetSelector();
   document.querySelector('.button1').classList.add('selected');
 });
 
-const bluePicker = document.querySelector('.button2');
-bluePicker.addEventListener('click', function () {
+const colorTwo = document.querySelector('.button2');
+colorTwo.addEventListener('click', function () {
   color = buttonColor2;
   resetSelector();
   document.querySelector('.button2').classList.add('selected');
 });
 
-const redPicker = document.querySelector('.button3');
-redPicker.addEventListener('click', function () {
+const colorThree = document.querySelector('.button3');
+colorThree.addEventListener('click', function () {
   color = buttonColor3;
   resetSelector();
   document.querySelector('.button3').classList.add('selected');
