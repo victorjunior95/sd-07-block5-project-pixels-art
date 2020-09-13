@@ -2,8 +2,8 @@ let selected = document.querySelector('.selected');
 let colors = document.querySelectorAll('.color');
 for (let i = 0; i < colors.length; i += 1) {
   colors[i].addEventListener('click', function () {
-    colors[i].classList.add('selected');
     selected.classList.remove('selected');
+    colors[i].classList.add('selected');
     selected = colors[i];
   });
 }
@@ -14,3 +14,8 @@ for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = getComputedStyle(selected).backgroundColor;
   });
 }
+document.querySelector('#clear-board').addEventListener('click',function(){
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor='white';
+  };
+})
