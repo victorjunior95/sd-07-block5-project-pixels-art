@@ -44,6 +44,7 @@ generateTable.addEventListener('click', function () {
       newRow.appendChild(newBox)
     }
   }
+})
 
 // Loop to AddEventListener to all elements in the pixel board
 for (let pixel = 0; pixel < pixelSelection.length; pixel += 1) {
@@ -51,10 +52,9 @@ for (let pixel = 0; pixel < pixelSelection.length; pixel += 1) {
   pixelBox.addEventListener('click', fillColor);
 }
 
-})
-
 // Function that pick a color (chosen element is tagged with a color selected class while previous selected color is changed to a color class name)
 function selectColor(event) {
+  console.log(selectedColor[0])
   selectedColor[0].className = 'color';
   event.target.className = 'color selected';
 }
@@ -70,5 +70,3 @@ function removeTable () {
   tableContent = document.getElementsByTagName('tbody')[0]
   pixelBoard.removeChild(tableContent)
 }
-
-
