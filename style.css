@@ -21,8 +21,10 @@
   background-color: green;
 }
 
-table, th, td {
+.pixel {
+  background-color: white;
   border: 1px solid black;
+  border-spacing: 0px;
   height: 40px;
   width: 40px;
 }
