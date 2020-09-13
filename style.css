@@ -1,8 +1,8 @@
 .color {
   border: black 1px solid;
   display: inline-block;
-  height: 80px;
-  width: 7.11%;
+  height: 40px;
+  width: 40px;
 }
 
 #black {
@@ -32,10 +32,11 @@
 .pixel {
   background-color: white;
   display: inline-block;
-  height: 70px;
-  width: 9%;
+  height: 40px;
+  width: 40px;
 }
 .perPixel {
+  background-color: white;
   border: black 1px solid;
   height: 100%;
   width: 99%;
