@@ -1,39 +1,23 @@
 body {
-  text-align: center;
   background-color: rgb(235, 171, 98);
+  text-align: center;
 }
 
 table {
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   margin-top: 20px;
 }
 
-#color-palette {
+.palette {
   margin-bottom: 20px;
 }
 
-#black {
-  background-color: black;
-}
-
-#red {
-  background-color: red;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#green {
-  background-color: green;
-}
-
-.color, .selected {
-  border: 1px solid black ;
+.color , .selected {
+  border: 1px solid black;
   display: inline-block;
   height: 100px;
-  width: 10%;  
+  width: 10%;
 }
 
 .pixel {
@@ -44,7 +28,7 @@ table {
   width: 40px;
 }
 
-#board-size {
+.board-size-input {
   width: 30px;
 }
 
