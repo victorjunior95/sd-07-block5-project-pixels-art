@@ -5,10 +5,10 @@
 /* Referência: https://medium.com/horadecodar/como-fazer-um-c%C3%ADrculo-com-css-de-forma-f%C3%A1cil-3e522ea82850*/
 .color {
     display: inline-block;
-    width: 100px;
-    height: 100px;
-    margin: 0;
+    width: 40px;
+    height: 40px;
     border: 1px solid black;
+    margin: 0px 0;
 }
 
 table {
@@ -19,7 +19,7 @@ table {
 
 table tr td {
     border: 1px solid black;
-    width: 100px;
-    height: 100px;
+    width: 40px;
+    height: 40px;
 }
 
