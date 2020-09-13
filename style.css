@@ -27,7 +27,8 @@
 .pixel {
     display: table-cell;
     padding: 5px;
-    width: 150px;
+    width: 40px;
+    height: 40px;
     background-color: white;
     border: #000000 solid 1px;
 }
