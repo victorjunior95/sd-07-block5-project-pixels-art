@@ -47,11 +47,15 @@ redPicker.addEventListener('click', function () {
 });
 
 // https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
-document.querySelectorAll('.pixel').forEach((item) => {
-  item.addEventListener('click', () => {
-    item.style.backgroundColor = color;
+function colorSelector() {
+  document.querySelectorAll('.pixel').forEach((item) => {
+    item.addEventListener('click', () => {
+      item.style.backgroundColor = color;
+    });
   });
-});
+}
+
+colorSelector();
 // <-------------------------------------------------------------------------------->
 
 const clearBoard = document.getElementById('clear-board');
@@ -72,8 +76,16 @@ boardSize.addEventListener('keyup', () => {
   boardSizeNumber *= boardSizeNumber;
 });
 
-const generateBoard = document.querySelector('#generate-board');
+function resetBoard() {
+  document.querySelectorAll('.col').forEach(function (a) {
+    a.remove();
+  });
+  document.querySelectorAll('.pixel').forEach((item) => {
+    item.remove();
+  });
+}
 
+const generateBoard = document.querySelector('#generate-board');
 generateBoard.addEventListener('click', () => {
   if (boardSize.value <= 0) {
     return alert('Board inválido!');
@@ -84,35 +96,20 @@ generateBoard.addEventListener('click', () => {
   if (boardSize.value > 50) {
     boardSizeNumber = 50 * 50;
   }
-  let targetDiv = document.getElementById('pixel-board');
+  const targetDiv = document.getElementById('pixel-board');
   let count = 0;
   resetBoard();
   for (let index = 0; index < boardSizeNumber; index += 1) {
-    let newPixel = document.createElement('div');
+    const newPixel = document.createElement('div');
     newPixel.className = 'pixel';
     targetDiv.appendChild(newPixel);
     count += 1;
     if (count === Math.sqrt(boardSizeNumber)) {
-      let spacer = document.createElement('div');
+      const spacer = document.createElement('div');
       spacer.className = 'col';
       targetDiv.appendChild(spacer);
       count = 0;
     }
   }
-  // https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
-  document.querySelectorAll('.pixel').forEach((item) => {
-    item.addEventListener('click', () => {
-      item.style.backgroundColor = color;
-    });
-  });
-  // <-------------------------------------------------------------------------------->
+  colorSelector();
 });
-
-function resetBoard() {
-  document.querySelectorAll('.col').forEach((a) => {
-    a.remove();
-  });
-  document.querySelectorAll('.pixel').forEach((item) => {
-    item.remove();
-  });
-}
