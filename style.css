@@ -1,3 +1,7 @@
+.asectionPix {
+  background-color: rgb(255 , 255 , 255);
+}
+
 body {
   margin: 10px;
 }
@@ -44,10 +48,6 @@ body {
   width: 240px;
 }
 
-.sectionPix {
-  background-color: rgb(255 , 255 , 255);
-}
-
 .table{ 
   display: table; 
 }
@@ -55,5 +55,5 @@ body {
   display: table-row; 
 }
 .td{ 
-  display: table-cell;
+ display: table-cell;
 }

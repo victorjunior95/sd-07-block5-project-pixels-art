@@ -1,6 +1,3 @@
-document.querySelectorAll('.pixel').forEach(item => {
-  item.classList.add('sectionPix');
-})
 // Function to make background shine.
 function changeBKGColor () {
   const body = document.getElementsByTagName('body')[0];
@@ -22,6 +19,9 @@ const colorPalet = document.querySelectorAll('.color');
 const pixelSS = document.querySelectorAll('.pixel');
 const clearBT = document.getElementById('clear-board');
 let saveClass = "";
+document.querySelectorAll('.pixel').forEach(item => {
+  item.addEventListener('click', () => item.classList.add('color-01'))
+});
 
 // Function to add class 'selected' in palet itens, and add a class color of color selected.
 colorPalet.forEach(item => {
