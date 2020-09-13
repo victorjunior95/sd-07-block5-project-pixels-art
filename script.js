@@ -51,17 +51,13 @@ function verifyBoard() {
   let itsPossible = boardSize.value;
   if(itsPossible < 5){
     numberOfSquares = 5 ;
-  } else if (itsPossible > 50) {
-    numberOfSquares = 50;
   } else {
     numberOfSquares = boardSize.value;
   }
   return numberOfSquares;
 }
-
 function sizeBoard() {
   fullBoard.style.gridTemplateColumns = '40px 40px 40px 40px 40px';
-  fullBoard.style.height = '200px';
   fullBoard.style.width = '200px';
   let numberOfcolumns = verifyBoard();
   if(numberOfcolumns % 3 === 0) {
@@ -75,8 +71,12 @@ function sizeBoard() {
   } else if (numberOfcolumns % 10 === 0) {
     fullBoard.style.gridTemplateColumns = '40px 40px 40px 40px 40px 40px 40px 40px 40px 40px';
     fullBoard.style.width = '400px';
+  } else if (numberOfcolumns >= 50) {
+    fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
+    fullBoard.style.width = '400px';
   }
 }
+
 
 function generateAlert() {
   const emptyInput = boardSize.value;
@@ -90,24 +90,27 @@ function generateBoard () {
   createNewBoard()
   fullBoard.classList.remove('quadro-nativo')
   let number = verifyBoard();
-  sizeBoard()
+  let numberOfPixels;
+  if (number <= 5) {
+    numberOfPixels = 5;
+  } 
+  numberOfPixels = boardSize.value;
+   sizeBoard()
   for (let i = 0; i < number; i += 1) {
     let square = document.createElement('div');
     square.className = 'pixel white';
     square.addEventListener('click', paintBoard);
     fullBoard.appendChild(square);
   }
-  console.log(boardSize.value);
   boardSize.value = '';
-  
+  paletaID = 'black';
 }
+
 function createNewBoard() {
-  console.log('clicou')
   const coloredPixels = document.querySelectorAll('.pixel')
-  console.log(coloredPixels);
-    for (let i = 0; i < coloredPixels.length; i += 1) {
-      fullBoard.removeChild(coloredPixels[i]);
-    }
+  for (let i = 0; i < coloredPixels.length; i += 1) {
+    fullBoard.removeChild(coloredPixels[i]);
+  }
 }
 
 eliminateBoard.addEventListener('click', createNewBoard);
