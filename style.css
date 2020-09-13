@@ -24,8 +24,13 @@
   background-color: white;
 }
 
+.quadro-nativo {
+  grid-template-columns: 40px 40px 40px 40px 40px;
+  height: 200px;
+  width: 200px;}
+
 .pixels {
-  display: grid;
+  display: grid;  
 }
 
 .remove {

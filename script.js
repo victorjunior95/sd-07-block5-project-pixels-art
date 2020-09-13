@@ -88,17 +88,18 @@ function generateBoard () {
   }
   console.log(boardSize.value);
   boardSize.value = '';
-  createNewBoard()  
+  
 }
-
 function createNewBoard() {
-  if (fullBoard.length > 0) {
-    const coloredPixels = document.querySelectorAll('.pixel')
-    for (let i = 0; i < fullBoard.length; i += 1) {
+  console.log('clicou')
+  const coloredPixels = document.querySelectorAll('.pixel')
+  console.log(coloredPixels);
+    for (let i = 0; i < coloredPixels.length; i += 1) {
       fullBoard.removeChild(coloredPixels[i]);
     }
-  }  
 }
+
+eliminateBoard.addEventListener('click', createNewBoard);
 
 generateButton.addEventListener('click', generateBoard);
 
