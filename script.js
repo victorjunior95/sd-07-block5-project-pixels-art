@@ -6,9 +6,13 @@ window.onload = function () {
   }
 
 let corSelecionada = document.querySelector('.color-1'); // define a variável com a cor preta inicial
+//let prop = window.getComputedStyle(paleta[1]).getPropertyValue("background-color");
 
 for (let index = 0; index < paleta.length; index += 1) { // insere class selected onde for clicado
   const corAtual = paleta[index]; // define a cor atual de acordo com o indice do array "paleta"
+  let prop = window.getComputedStyle(paleta[index]).getPropertyValue("background-color");
+  paleta[index].style.backgroundColor = prop;
+  console.log(prop);
   corAtual.addEventListener('click', function () {
     for (let index1 = 0; index1 < paleta.length; index1 += 1) { // apaga a classe selected de todos
         const removeClasse = paleta[index1];
@@ -16,6 +20,7 @@ for (let index = 0; index < paleta.length; index += 1) { // insere class selecte
       }
     corAtual.classList.add('selected');
     corSelecionada = corAtual; // armazena a cor atual numa variável global
+    rgbSelecionado = window.getComputedStyle(corSelecionada).getPropertyValue("background-color");
   });
 }
 
@@ -23,7 +28,7 @@ const quadro = document.querySelectorAll('.pixel'); // armazena todos os pixels 
 for (let index = 0; index < quadro.length; index += 1) {
   const pixelSelecionado = quadro[index];
   pixelSelecionado.addEventListener('click', function () {
-    pixelSelecionado.classList.add(corSelecionada.classList[1]);
+    pixelSelecionado.style.backgroundColor = rgbSelecionado;
         }); // add a segunda classe da div selecionada ao pixel clicado
 }
 
@@ -33,6 +38,7 @@ botaoLimpar.addEventListener('click', function () {
     const limpaQuadro = quadro[index];
       limpaQuadro.className = ''; // apaga todas as classes nela
       limpaQuadro.classList.add('pixel'); // insere a classe padrão de volta
+      limpaQuadro.style.backgroundColor = 'white';
   }
 });
 
@@ -73,3 +79,4 @@ function numberRGB() {
     return number;
 }
 };
+
