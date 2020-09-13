@@ -66,6 +66,9 @@
     display: inline-block;
     border: 2px solid black
   }
+  #board-size{
+      width: 100px;
+  }
 
 
 

@@ -34,26 +34,58 @@ purple.addEventListener("click",function(){
     cor = "purple"
 })
 
+
+// Tamanho do board definido pelo usuário
+let input = document.getElementById("board-size");
+let tamanho =0;
+
+input.addEventListener("change", function(){
+    tamanho = input.value;
+})
+let vqv  = document.getElementById("generate-board");
+vqv.addEventListener("click", function(){
+    if (tamanho === 0){
+        alert("Board inválido!")
+        
+    } else{
+    document.getElementById("pixel-board").innerHTML = ' ';
+    
+    for (let i =0;i<tamanho;i+=1){
+        let linha = document.createElement("div");
+        linha.classList = "linha";
+        document.getElementById("pixel-board").appendChild(linha);
+        console.log ("linha");
+        for (let j=0;j<tamanho;j+=1){
+            let pixel = document.createElement("div");
+            pixel.classList = "pixel"
+            document.getElementsByClassName("linha")[i].appendChild(pixel);
+        }
+    }
+    criarEventos();
+    }
+
+})
+
+
 //Mudar a cor dos pixels
 
-let qualPixel = document.querySelectorAll(".pixel")
-
-
+function criarEventos(){
+    let qualPixel = document.querySelectorAll(".pixel")
 for (let i = 0; i < qualPixel.length; i++) {
     (function(i) {
          qualPixel[i].addEventListener("click", function() {
            
-             qualPixel[i].style.backgroundColor = cor;
-            
+             qualPixel[i].style.backgroundColor = cor;          
         })
     })(i);
  }
-
-
+}
+criarEventos();
 
 //botão para limpar o desenho
 let botao = document.getElementById("clear-board");
 botao.addEventListener("click", function(){
+    let qualPixel = document.querySelectorAll(".pixel")
     for (let i in qualPixel){
         qualPixel[i].style.backgroundColor = "white";
     }
