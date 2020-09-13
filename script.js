@@ -57,24 +57,40 @@ function verifyBoard() {
   return numberOfSquares;
 }
 function sizeBoard() {
-  fullBoard.style.gridTemplateColumns = '40px 40px 40px 40px 40px';
-  fullBoard.style.width = '200px';
-  let numberOfcolumns = verifyBoard();
-  if(numberOfcolumns % 3 === 0) {
-    fullBoard.style.gridTemplateColumns = '40px 40px 40px';
-    fullBoard.style.height = '120px';
-    fullBoard.style.width = '120px';
-  } else if (numberOfcolumns % 7 === 0) {
-    fullBoard.style.gridTemplateColumns = '40px 40px 40px 40px 40px 40px 40px';
-    fullBoard.style.height = '280px';
-    fullBoard.style.width = '280px';
-  } else if (numberOfcolumns % 10 === 0) {
-    fullBoard.style.gridTemplateColumns = '40px 40px 40px 40px 40px 40px 40px 40px 40px 40px';
-    fullBoard.style.width = '400px';
-  } else if (numberOfcolumns >= 50) {
-    fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
-    fullBoard.style.width = '400px';
+  let columnsNumber = Math.sqrt(boardSize.value);  
+  console.log(columnsNumber)
+  let columnsIntNumber = parseInt(columnsNumber);
+  console.log(columnsIntNumber)
+  let heightAndWidth = columnsIntNumber * 40;
+  if (columnsIntNumber < 50) {
+    fullBoard.style.gridTemplateColumns = `repeat(${columnsIntNumber}, 1fr)`
+    fullBoard.style.height = `${heightAndWidth}px`;
+    fullBoard.style.width = `${heightAndWidth}px`;
+  } else {
+    fullBoard.style.gridTemplateColumns = `repeat(50, 1fr)`
+    fullBoard.style.height = `2000px`;
+    fullBoard.style.width = `2000px`;
   }
+
+  
+  // fullBoard.style.gridTemplateColumns = '40px 40px 40px 40px 40px';
+  // fullBoard.style.width = '200px';
+  // let numberOfcolumns = verifyBoard();
+  // if(numberOfcolumns % 3 === 0) {
+  //   fullBoard.style.gridTemplateColumns = '40px 40px 40px';
+  //   fullBoard.style.height = '120px';
+  //   fullBoard.style.width = '120px';
+  // } else if (numberOfcolumns % 7 === 0) {
+  //   fullBoard.style.gridTemplateColumns = '40px 40px 40px 40px 40px 40px 40px';
+  //   fullBoard.style.height = '280px';
+  //   fullBoard.style.width = '280px';
+  // } else if (numberOfcolumns % 10 === 0) {
+  //   fullBoard.style.gridTemplateColumns = '40px 40px 40px 40px 40px 40px 40px 40px 40px 40px';
+  //   fullBoard.style.width = '400px';
+  // } else if (numberOfcolumns >= 50) {
+  //   fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
+  //   fullBoard.style.width = '400px';
+  // }
 }
 
 
