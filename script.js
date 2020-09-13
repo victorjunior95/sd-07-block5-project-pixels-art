@@ -10,9 +10,7 @@ const resizeReset = document.getElementById('resize-reset');
 const pixelBoard = document.getElementById('pixel-board')
 let lineBoard = document.getElementsByClassName('line');
 let numberOfColumns = 5;
-let numberOfLines = 5;
-let pixelNumber = 0;
-
+let numberOfLines = 5; 
 
 // Functions: Resize/Reset
 function assignSize() {
@@ -32,14 +30,18 @@ function pixelBoardReset() {
 }
 function boardCreator() {
     pixelBoardReset();
-    pixelNumber = 0;
+    //refatorando construção de tabela
     for (let line = 0 ; line < numberOfLines ; line += 1) {
-        lineBoard = document.getElementsByClassName('line');
-        pixelBoardFiller(pixelBoard, 'line');
-        for (let column = 0 ; column < numberOfColumns ; column += 1){
-            pixelBoardFiller(lineBoard[line], 'pixel');
+        let elementCreator = document.createElement('tr');
+        elementCreator.className = 'line';
+        pixelBoard.appendChild(elementCreator);
+        for (let column = 0 ; column < numberOfColumns ; column += 1) {
+            let elementCreator = document.createElement('td');
+            elementCreator.className = 'pixel';
+            document.getElementsByClassName('line')[line].appendChild(elementCreator);
         }
     }
+
     eventListenerToPixels()
 }
 
@@ -57,7 +59,7 @@ function changePixelColor() {
     event.target.style.backgroundColor = selectedColor[0].style.backgroundColor;
 }
 
-// Functions: addEventListener to objects
+// Functions: a	ddEventListener to objects
 function eventListenerToColors() {
     for (let index = 0 ; index < Object.keys(colorPalette).length ; index += 1) {
         colorPalette[index].addEventListener('click', getColorFromPalette);
