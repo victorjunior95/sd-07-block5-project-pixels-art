@@ -51,13 +51,15 @@ function construcGridDivs(gridSize) {
 }
 
 function generateGrid() {
-  const gridSize = setDefaultValues(document.getElementById('board-size').value);
-  if (gridSize > 0) {
+  const gridSize = document.getElementById('board-size').value;
+  console.log(gridSize);
+  if (gridSize === "") {
+    alert('Board inválido!');
+  } else {
+    setDefaultValues(gridSize);
     const grid = document.getElementById('pixel-board');
     document.body.removeChild(grid);
     construcGridDivs(gridSize);
-  } else {
-    alert('Board inválido!');
   }
 }
 
