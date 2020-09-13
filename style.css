@@ -6,5 +6,22 @@ body {
   border: 1px solid black;
   display: inline-block;
   height: 100px;
+  margin: 0 10px;
   width: 100px;
+}
+
+.first-color {
+  background-color: black;
+}
+
+.fourth-color {
+  background-color: coral;
+}
+
+.second-color {
+  background-color: orange;
+}
+
+.third-color {
+  background-color: darkcyan;
 }
