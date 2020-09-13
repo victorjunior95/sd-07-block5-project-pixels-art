@@ -52,11 +52,10 @@ function construcGridDivs(gridSize) {
 
 function generateGrid() {
   const gridSize = document.getElementById('board-size').value;
-  console.log(gridSize);
-  if (gridSize === "") {
+  if (gridSize === '') {
     alert('Board inválido!');
   } else {
-    setDefaultValues(gridSize);
+    gridSize = setDefaultValues(gridSize);
     const grid = document.getElementById('pixel-board');
     document.body.removeChild(grid);
     construcGridDivs(gridSize);
