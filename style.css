@@ -5,8 +5,8 @@
   width: 100px;
 }
 
-.red {
-  background-color: red;
+.black {
+  background-color: black;
 }
 
 .blue {
@@ -19,4 +19,11 @@
 
 .green {
   background-color: green;
+}
+
+.pixel {
+    border: solid 1px black;
+    display: inline-block;
+    height: 100px;
+    width: 100px;  
 }
