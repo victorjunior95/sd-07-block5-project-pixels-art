@@ -38,7 +38,7 @@ colorGreen.addEventListener('click', function () {
   const colorSelected = document.querySelector('.selected');
   const greenColor = colorSelected.style.backgroundColor;
   localStorage.setItem('color', greenColor);
-})
+});
 
 colorRed.addEventListener('click', function () {
   colorRed.className = 'color selected';
@@ -48,15 +48,23 @@ colorRed.addEventListener('click', function () {
   const colorSelected = document.querySelector('.selected');
   const redColor = colorSelected.style.backgroundColor;
   localStorage.setItem('color', redColor);
-})
+});
 
 const boxes = document.querySelectorAll('.pixel');
 for (let index = 0; index < boxes.length; index += 1) {
   const selectBoxes = boxes[index];
   selectBoxes.addEventListener('click', function () {
-  selectBoxes.style.backgroundColor = localStorage.getItem('color');
+    selectBoxes.style.backgroundColor = localStorage.getItem('color');
   });
 }
 
+const buttonClear = document.querySelector('.clear');
+for (let index = 0; index < boxes.length; index += 1){
+  let boxexPixels = []
+  boxexPixels = boxes[index]
+  buttonClear.addEventListener('click', function () {
+    boxexPixels.style.backgroundColor = 'white'
+  })
+}
 const select = document.querySelector('.selected').style.backgroundColor
 localStorage.setItem('color', select);

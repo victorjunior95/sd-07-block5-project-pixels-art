@@ -1,38 +1,39 @@
 
-.title1{
+.title1 {
   text-align: center;
   align-items: center;
-  
 }
     
-.palette-color{
+.palette-color {
   margin-left: 225px;
   width: 245px;
-  
-}
+}  
 
-.board-pixel{
+.board-pixel {
   width: 212px;
   height: 212px;
   line-height: 1px;
   display: table;
   margin-left: 225px;
 }
+
+.clear {
+margin-left: 225px;
+border-radius: 20px;
+}
   
-.color{
-  border:1px black solid;
+.color {
+  border: 1px black solid;
   display: inline-block;
   height: 40px;
   width: 40px;
 }
 
-.pixel{
-  background-color:white;
-  border:1px black solid;
+.pixel { 
+  background-color: white;
+  border: 1px black solid;
   display: inline-block;
   height: 40px;
   width: 40px;
-  
 }
-
-   
+    
