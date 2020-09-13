@@ -56,7 +56,7 @@ botaoGerar.addEventListener('click', (event) => {
         iniciar(number);
     }  
 });
-  
+
 iniciar(25);
 function iniciar(number) {
     for (let index = 0; index < number; index += 1) {
@@ -94,6 +94,3 @@ function iniciar(number) {
         }
     });
 }
-
-
-
