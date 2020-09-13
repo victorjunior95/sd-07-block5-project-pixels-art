@@ -86,7 +86,7 @@ function resetBoard() {
 }
 
 const generateBoard = document.querySelector('#generate-board');
-generateBoard.addEventListener('click', () => {
+generateBoard.addEventListener('click', function () {
   if (boardSize.value <= 0) {
     return alert('Board inválido!');
   }
