@@ -1,5 +1,5 @@
 
-let colorEnter = document.querySelector('.black-index');
+let colorEnter = document.getElementById('black-index');
 document.querySelectorAll('.color').forEach(clickToConfigurePallete);
 
 
