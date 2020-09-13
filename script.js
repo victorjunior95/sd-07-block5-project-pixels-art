@@ -47,7 +47,7 @@ red.addEventListener("click",function(){
 purple.addEventListener("click",function(){
     document.getElementsByClassName("selected")[0].classList = "color";
     document.getElementById("purple").classList.add("selected");
-    cor = cor4();
+    cor = cor4;
 })
 
 
