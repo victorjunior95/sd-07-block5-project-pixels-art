@@ -3,7 +3,7 @@
 }
 
 section {
-    margin-left: 25px;
+    margin-left: 28px;
 }
 
 .color {
@@ -15,9 +15,21 @@ section {
 }
 
 .pale {
-    width: 250px;
-    justify-content: space-around;
+    width: 100%;
+}
 
+.pale table {
+    display: table; 
+}
+
+.pale tr {
+    display: table-row;
+    
+}
+
+.pale td {
+    display: table-cell;
+    margin: 0px; 
 }
 
 .pixel {
@@ -38,6 +50,14 @@ section {
 
 .botao {
     margin-bottom: 10px;
-    margin-left: 25px;
-    font-size: 15px;
+    margin-left: 15px;
+    font-size: 13px;
+}
+
+.input {
+    margin-left: 30px;
+}
+
+.gerar {
+    margin-left: 5px;
 }

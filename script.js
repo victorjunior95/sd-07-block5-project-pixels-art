@@ -20,8 +20,21 @@ for(let index = 0; index < paletteColor.length; index += 1) {
     paletteColor[index].style.backgroundColor = colors[index];
 }
 
+document.body.appendChild(document.createElement('input'));
+document.querySelector('input').setAttribute('id', 'board-size');
+document.querySelector('#board-size').setAttribute('class', 'input');
+document.querySelector('#board-size').setAttribute('type', 'number');
+document.querySelector('#board-size').setAttribute('min', '5');
+document.querySelector('#board-size').setAttribute('max', '50');
+document.querySelector('#board-size').setAttribute('step', '1');
+
 document.body.appendChild(document.createElement('button'));
-document.querySelector('button').setAttribute('id', 'clear-board');
+document.querySelectorAll('button')[0].setAttribute('id', 'generate-board');
+document.querySelector('#generate-board').setAttribute('class', 'gerar');
+document.querySelector('#generate-board').innerText = 'VQV';
+
+document.body.appendChild(document.createElement('button'));
+document.querySelectorAll('button')[1].setAttribute('id', 'clear-board');
 document.querySelector('#clear-board').setAttribute('class', 'botao');
 document.querySelector('#clear-board').innerText = 'Limpar';
 
@@ -29,40 +42,56 @@ document.body.appendChild(document.createElement('section'));
 document.querySelectorAll('section')[1].setAttribute('id', 'palete');
 document.querySelector('#palete').setAttribute('class', 'pale');
 document.querySelector('#palete').appendChild(document.createElement('table'));
-document.querySelector('#palete table').appendChild(document.createElement('tr'));
 
-for(let aux = 0; aux < 25; aux += 1) {
-    document.querySelector('#palete tr').appendChild(document.createElement('td'));
-    document.querySelectorAll('#palete td')[aux].setAttribute('id', 'pixel-board');
-    document.querySelectorAll('#palete td')[aux].setAttribute('class', 'pixel');
-}
-
-const boardPixel = document.querySelectorAll('#palete td');
-window.onload = initial;
-function initial() {
-    paletteColor[0].className = 'selected';
-    for(let index = 0; index < boardPixel.length; index += 1) {
-        boardPixel[index].addEventListener('click', function () {
+const botaoGerar = document.querySelector('#generate-board');
+const inputNumber = document.querySelector('#board-size');
+inputNumber.value = 5;
+let number = inputNumber.value * inputNumber.value;
+botaoGerar.addEventListener('click', (event) => {
+    if (inputNumber.value === 0 || inputNumber.value < 5 || inputNumber.value > 50) {
+        alert("Board inválido!");
+        inputNumber.value = 5;
+    }
+    number = inputNumber.value * inputNumber.value;
+    iniciar(number);
+});  
+iniciar(25);
+function iniciar(number) {
+    for (let index = 0; index < number; index += 1) {
+        document.querySelector('#palete table').appendChild(document.createElement('tr'));
+        for (let aux = 0; aux < inputNumber.value; aux += 1) {
+            document.querySelectorAll('#palete tr')[index].appendChild(document.createElement('td'));
+            document.querySelectorAll('#palete td')[index].setAttribute('id', 'pixel-board');
+            document.querySelectorAll('#palete td')[index].setAttribute('class', 'pixel');
+        }    
+    }
+    const boardPixel = document.querySelectorAll('#palete td');
+        paletteColor[0].className = 'selected';
+        for(let index = 0; index < boardPixel.length; index += 1) {
+            boardPixel[index].addEventListener('click', function () {
             boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
-        });
+           });
+        }
+    for (let aux = 0; aux < paletteColor.length; aux += 1) {
+       paletteColor[aux].addEventListener('click', function () {
+           paletteColor[aux].className = 'selected';
+       if (paletteColor[aux].className === 'selected'){
+         for(let index = 0; index < boardPixel.length; index += 1) {
+          boardPixel[index].addEventListener('click', function () {
+            boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;               
+          });        
+         }    
+       }
+       });
     }
-}
-for (let aux = 0; aux < paletteColor.length; aux += 1) {
-   paletteColor[aux].addEventListener('click', function () {
-       paletteColor[aux].className = 'selected';
-   if (paletteColor[aux].className === 'selected'){
-     for(let index = 0; index < boardPixel.length; index += 1) {
-      boardPixel[index].addEventListener('click', function () {
-        boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;               
-      });        
-     }    
-   }
- });
+
+     const botaoLimpar = document.querySelector('#clear-board');
+     botaoLimpar.addEventListener('click', (event) => {
+        for(let index = 0; index < boardPixel.length; index += 1) {
+            boardPixel[index].style.backgroundColor = 'white';
+        }
+    });
 }
 
-const botao = document.querySelector('#clear-board');
-botao.addEventListener('click', (event) => {
-    for(let index = 0; index < boardPixel.length; index += 1) {
-        boardPixel[index].style.backgroundColor = 'white';
-    }
-});
+
+
