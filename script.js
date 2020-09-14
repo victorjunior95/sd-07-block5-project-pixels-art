@@ -54,13 +54,18 @@ function removeTable() {
   pixelBoard.removeChild(tableContent);
 }
 
+// function that fills a pixel and changes its background color to the selected one.
+function fillColor(event) {
+  const color = selectedColor[0].style.backgroundColor;
+  event.target.style.backgroundColor = color;
+}
+
 function eventListenerNewPixels() {
   for (let pixel = 0; pixel < pixelSelection.length; pixel += 1) {
     const pixelBox = pixelSelection[pixel];
     pixelBox.addEventListener('click', fillColor);
   }
-}  
-
+}
 // generate table with N elements in height and width based on user input
 generateTable.addEventListener('click', function () {
   removeTable();
@@ -85,15 +90,8 @@ generateTable.addEventListener('click', function () {
   }
   eventListenerNewPixels();
 });
-
 // Loop to AddEventListener to all elements in the pixel board
 for (let pixel = 0; pixel < pixelSelection.length; pixel += 1) {
   const pixelBox = pixelSelection[pixel];
   pixelBox.addEventListener('click', fillColor);
-}
-
-// function that fills a pixel and changes its background color to the selected one.
-function fillColor(event) {
-  const color = selectedColor[0].style.backgroundColor;
-  event.target.style.backgroundColor = color;
 }
