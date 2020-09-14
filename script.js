@@ -13,8 +13,8 @@ for (let index = 0; index < colors.length; index += 1) {
   }
   // palette select color
   color.addEventListener('click', function (event) {
-    for (let indexPaletteColor = 0; indexPaletteColor < colorPalette.children.length; indexPaletteColor += 1) {
-      colorPalette.children[indexPaletteColor].className = 'color';
+    for (let indexPalCol = 0; indexPalCol < colorPalette.children.length; indexPalCol += 1) {
+      colorPalette.children[indexPalCol].className = 'color';
     }
     event.target.className += ' selected';
   });
@@ -23,33 +23,57 @@ for (let index = 0; index < colors.length; index += 1) {
 }
 
 // Board of pixels
-const pixelBoard = document.querySelector('#pixel-board');
-const numberRowsPixBoard = 5;
-const numberColumnsPixBoard = 5;
-for (let column = 0; column < numberColumnsPixBoard; column += 1) {
-  // Creating row for the pixels
-  const pixelsRow = document.createElement('div');
-  pixelsRow.className = 'pixels-row';
-  for (let row = 0; row < numberRowsPixBoard; row += 1) {
-    // Creating the pixel
-    const pixel = document.createElement('div');
-    pixel.className = 'pixel';
-
-    // Event for fill pixel with selected color
-    pixel.addEventListener('click', function (event) {
-      const selected = document.querySelector('.selected');
-      event.target.style.backgroundColor = selected.style.backgroundColor;
-    });
-    pixelsRow.appendChild(pixel);
+function createMatrix(dimension){
+  const pixelBoard = document.querySelector('#pixel-board');
+  pixelBoard.innerHTML = ''
+  const matrixDimension = dimension;
+  for (let column = 0; column < matrixDimension; column += 1) {
+    // Creating row for the pixels
+    const pixelsRow = document.createElement('div');
+    pixelsRow.className = 'pixels-row';
+    for (let row = 0; row < matrixDimension; row += 1) {
+      // Creating the pixel
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+  
+      // Event for fill pixel with selected color
+      pixel.addEventListener('click', function (event) {
+        const selected = document.querySelector('.selected');
+        event.target.style.backgroundColor = selected.style.backgroundColor;
+      });
+      pixelsRow.appendChild(pixel);
+    }
+    pixelBoard.appendChild(pixelsRow);
   }
-  pixelBoard.appendChild(pixelsRow);
 }
 
-// clear all pixels
 const clear = document.querySelector('#clear-board');
-const pixels = document.querySelectorAll('.pixel');
+// clear all pixels
 clear.addEventListener('click', function () {
+  const pixels = document.querySelectorAll('.pixel');
   for (let filledPixel = 0; filledPixel < pixels.length; filledPixel += 1) {
     pixels[filledPixel].style.backgroundColor = 'white';
   }
 });
+
+// create a customize matrix
+
+const generateBoard = document.querySelector('#generate-board');
+
+createMatrix(5);
+
+generateBoard.addEventListener('click', function () {
+  let boardSize = document.querySelector('#board-size');
+  if (boardSize.value === '') {
+    alert('Board inválido!')
+    boardSize.value = 5
+  }
+  else if (boardSize.value <= '5') {
+    boardSize.value = 5
+  }
+  else if (boardSize.value >= '50') {
+    boardSize.value = 50
+  }
+  createMatrix(boardSize.value)
+  
+})

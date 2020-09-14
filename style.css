@@ -23,3 +23,8 @@
 button {
   margin: 10px;
 }
+
+input {
+  width: 50px;
+  text-align: center;
+}
