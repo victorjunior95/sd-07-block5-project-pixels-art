@@ -7,7 +7,7 @@ for(let index = 0; index < paletteColor.length; index += 1) {
 
 const botaoGerar = document.querySelector('#generate-board');
 const inputNumber = document.querySelector('#board-size');
-//inputNumber.value = 5;
+inputNumber.value = 5;
 let number = inputNumber.value;
 botaoGerar.addEventListener('click', (event) => {
     if (inputNumber.value < 5) {
@@ -33,13 +33,13 @@ function initial(number) {
     document.querySelector('#pixel-board').appendChild(br);       
 }    
 
-    const boardPixel = document.querySelectorAll('#pixel-board .pixel');
-        paletteColor[0].className = 'selected';
+   const boardPixel = document.querySelectorAll('#pixel-board .pixel');
+      /*  paletteColor[0].className = 'selected';
         for(let index = 0; index < boardPixel.length; index += 1) {
             boardPixel[index].addEventListener('click', function () {
             boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
            });
-        }
+        }*/
     for (let aux = 0; aux < paletteColor.length; aux += 1) {
        paletteColor[aux].addEventListener('click', function () {
            paletteColor[aux].className = 'selected';
