@@ -1,4 +1,4 @@
-const paletteColor = document.querySelectorAll('#color-palette');
+const paletteColor = document.querySelectorAll('#color-palette .color');
   
 for(let index = 0; index < paletteColor.length; index += 1) {
     const colors = ['black', 'red', 'blue', 'green'];
@@ -26,15 +26,14 @@ function initial(number) {
     for(let aux = 0; aux < number; aux += 1) {
     for (let index = 0; index < number; index += 1) {
         let pixels = document.createElement('div');
-        pixels.id = 'pixel-board';
         pixels.className = 'pixel';            
-        document.querySelector('#palete').appendChild(pixels);         
+        document.querySelector('#pixel-board').appendChild(pixels);         
     }
     let br = document.createElement('br');
-    document.querySelector('#palete').appendChild(br);       
+    document.querySelector('#pixel-board').appendChild(br);       
 }    
 
-    const boardPixel = document.querySelectorAll('#palete div');
+    const boardPixel = document.querySelectorAll('#pixel-board .pixel');
         paletteColor[0].className = 'selected';
         for(let index = 0; index < boardPixel.length; index += 1) {
             boardPixel[index].addEventListener('click', function () {
