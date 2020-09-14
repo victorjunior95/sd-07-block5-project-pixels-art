@@ -8,7 +8,7 @@ function changeBKGColor () {
   body.style.backgroundColor='rgb(' + rColorRGB + ' , ' + gColorRGB + ' , ' + bColorRGB + ')';
   title.style.color='rgb(' + rColorRGB + 1 + ' , ' + gColorRGB + ' , ' + bColorRGB + 1 + ')';
 }
-const time = setInterval (changeBKGColor, 100);
+//const time = setInterval (changeBKGColor, 100);
 // Remove the bars fron the line above to see the efect.
 
 const color01 = document.getElementById('color-01');
@@ -17,7 +17,7 @@ const color03 = document.getElementById('color-03');
 const color04 = document.getElementById('color-04');
 const pixelSS = document.querySelectorAll('.pixel');
 const clearBT = document.getElementById('clear-board');
-let saveClass = "";
+let saveClass = 'color-01';
 
   document.querySelectorAll('.pixel').forEach(pixel => {
   pixel.className = 'pixel pixelBackG';
