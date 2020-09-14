@@ -16,7 +16,7 @@
         </div>
 
         <div>
-            <input id="board-size" type="number" min="5" max="50" required placeholder="Board-Size">
+            <input id="board-size" type="number" min="0" required placeholder="Board size">
             <button id="generate-board">VQV</button>
         </div>
 
@@ -67,6 +67,12 @@
                 <input id="columns" type="number" min="5" max="50" required placeholder="Width">
                 <input id="lines" type="number" min="5" max="50" required placeholder="Height">
                 <button id="resize-reset">Resize/Reset</button>
+        </div>
+
+        <div>
+            <input id="pixel-height" type="number" min="1" required placeholder="Pixel Width">
+            <input id="pixel-width" type="number" min="1" required placeholder="Pixel Height">
+            <button id="pixel-size">Pixel Resizer</button>
         </div>
         <script src="script.js"></script>
     </body>

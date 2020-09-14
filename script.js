@@ -9,8 +9,16 @@ const inputColumns = document.getElementById('columns');
 const inputLines = document.getElementById('lines');
 const resizeReset = document.getElementById('resize-reset');
 const pixelBoard = document.getElementById('pixel-board');
+const generateBoard = document.getElementById('generate-board');
+let pixelWidth = 42;
 let numberOfColumns = 5;
 let numberOfLines = 5;
+let boardSize = document.getElementById('board-size').value;
+
+//  Pixel Size
+let inputPixelHeight = document.getElementById('pixel-height');
+let inputPixelWidth = document.getElementById('pixel-width');
+const buttonPixelSize = document.getElementById('pixel-size');
 
 // Functions: Resize/Reset
 function pixelBoardReset() {
@@ -60,25 +68,60 @@ function boardCreator() {
   }
 }
 
+function proceduresToCreateBoard() {-w
+  boardCreator();
+  eventListenerToPixels();
+  pixelBoard.style.width = numberOfColumns * pixelWidth + `px`;
+}
+
 function assignSize() {
   numberOfColumns = inputColumns.value;
   numberOfLines = inputLines.value;
-  boardCreator();
-  eventListenerToPixels();
+  proceduresToCreateBoard()
+
+}
+
+function assignSizeForGenerateBoard() {
+  numberOfColumns = boardSize;
+  numberOfLines = boardSize;
+  proceduresToCreateBoard()
+}
+
+function testBeforeAssign() {
+  boardSize = document.getElementById('board-size').value;
+  if (boardSize == '') {
+    alert('Board inválido!');
+  } else if (boardSize >= 5 && boardSize <= 50) {
+    assignSizeForGenerateBoard();
+  } else if (boardSize < 5 ) {
+    boardSize = 5;
+    assignSizeForGenerateBoard();
+  } else if (boardSize > 50) {
+    boardSize = 50;
+    assignSizeForGenerateBoard();
+  } else {
+    alert('BBEEEErro Inesperado!');
+  }
 }
 
 function fillBoardWhite() {
-  for (let index = 0; Object.keys(colorPixels).length; index += 1) {
+  for (let index = 0; index < Object.keys(colorPixels).length; index += 1) {
     colorPixels[index].style.backgroundColor = 'white';
   }
+}
+
+function changeSizePixel() {
+  console.log('teste');
 }
 
 eventListenerToColors();
 eventListenerToPixels();
 
-resizeReset.addEventListener('click', assignSize);
+//  Buttons addEventListeners
 clearBoard.addEventListener('click', fillBoardWhite);
-
+resizeReset.addEventListener('click', assignSize);
+generateBoard.addEventListener('click', testBeforeAssign);
+buttonPixelSize.addEventListener('click', changeSizePixel);
 
 colorPalette[0].style.backgroundColor = 'black';
 colorPalette[1].style.backgroundColor = 'red';
