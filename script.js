@@ -17,27 +17,19 @@ function linhaTabela(tpTag, idVinculo, classVinculo) {
   quadradinho.className = classVinculo;
 }
 
-function colunaTabela(tpTag2, nmClasse, classVinculo2, index1) {
-  const quadradinho = document.createElement(tpTag2);
-  document.getElementsByClassName(classVinculo2)[index1].appendChild(quadradinho);
-  quadradinho.style.display = 'table-cell';
-  quadradinho.className = nmClasse;
-  if (quadradinho.className === 'pixel') {
-    quadradinho.addEventListener('click', this.backGndColor);
-  }
-}
-
 function backGndColor() {
   const backGndColorSelected =
     document.getElementsByClassName('color selected')[0].style.backgroundColor;
   this.style.backgroundColor = backGndColorSelected;
 }
 
-function coresEscolhas() {
-  const arrayCores = ['black', 'yellow', 'red', 'green'];
-  for (let i = 0; i < arrayCores.length; i += 1) {
-    document.getElementsByClassName('color')[i].style.backgroundColor = arrayCores[i];
-    document.getElementsByClassName('color')[i].addEventListener('click', this.selecionarCor);
+function colunaTabela(tpTag2, nmClasse, classVinculo2, index1) {
+  const quadradinho = document.createElement(tpTag2);
+  document.getElementsByClassName(classVinculo2)[index1].appendChild(quadradinho);
+  quadradinho.style.display = 'table-cell';
+  quadradinho.className = nmClasse;
+  if (quadradinho.className === 'pixel') {
+    quadradinho.addEventListener('click', backGndColor);
   }
 }
 
@@ -46,6 +38,14 @@ function selecionarCor() {
     document.getElementsByClassName('color selected')[0].classList.remove('selected');
   }
   this.classList.add('selected');
+}
+
+function coresEscolhas() {
+  const arrayCores = ['black', 'yellow', 'red', 'green'];
+  for (let i = 0; i < arrayCores.length; i += 1) {
+    document.getElementsByClassName('color')[i].style.backgroundColor = arrayCores[i];
+    document.getElementsByClassName('color')[i].addEventListener('click', selecionarCor);
+  }
 }
 
 function botaoLimpar() {
