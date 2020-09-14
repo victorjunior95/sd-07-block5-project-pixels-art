@@ -47,11 +47,11 @@ body {
   text-align: center;
 }
 
-.div-row {
-  /* display: inline-block; */
+.div-all {
+  height: 200px;
   margin: 0;
   padding: 0;
-  height: 41px;
+  width: 205px;
 }
 
 .pixel {

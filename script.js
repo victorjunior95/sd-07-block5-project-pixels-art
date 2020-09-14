@@ -40,25 +40,18 @@ function createPixelBoard(parent) {
   const sectionPixelBoard = document.createElement('section');
   sectionPixelBoard.className = ('pixel-board-section');
   parent.appendChild(sectionPixelBoard);
-  // Gerando a tabela (pixel-board)
-  // const basePixelBoard = document.createElement('table');
-  // basePixelBoard.className = 'table-pixels';
-  // basePixelBoard.setAttribute('id', 'pixel-board');
-  // sectionPixelBoard.appendChild(basePixelBoard);
+  // Criar a div base.
+  const divAll = document.createElement('div');
+  divAll.className = 'div-all';
+  sectionPixelBoard.appendChild(divAll);
   const rowNameId = ['a', 'b', 'c', 'd', 'e'];
-  for (let index = 0; index < rowNameId.length; index += 1) {
-    let colIdName = rowNameId[index];
-    const divRow = document.createElement('div');
-    divRow.className = 'div-row';
-    sectionPixelBoard.appendChild(divRow);
     // Preenche as div lines
-    for (let indexColBox = 0; indexColBox < rowNameId.length; indexColBox += 1) {
-      const tableCol = document.createElement('div')
-      tableCol.className = 'pixel';
-      tableCol.setAttribute('id', `${colIdName}${indexColBox}`);
-      tableCol.style.backgroundColor = 'white'
-      divRow.appendChild(tableCol);
-    }
+  for (let indexColBox = 0; indexColBox < 25; indexColBox += 1) {
+    const tableCol = document.createElement('div');
+    tableCol.className = 'pixel';
+    tableCol.setAttribute('id', indexColBox);
+    tableCol.style.backgroundColor = 'white';
+    divAll.appendChild(tableCol);
   }
 }
 createPixelBoard(mainPage);
