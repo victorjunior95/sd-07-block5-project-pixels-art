@@ -47,17 +47,20 @@ body {
   text-align: center;
 }
 
-.table-pixels {
-  border-collapse: collapse;
-  margin-top: 15px;
+.div-row {
+  /* display: inline-block; */
+  margin: 0;
+  padding: 0;
+  height: 41px;
 }
 
 .pixel {
   border: 1px solid black;
-  height: 40px;
+  display: inline-block;
+  height: 39px;
   margin: 0;
   padding: 0;
-  width: 40px;
+  width: 39px;
 }
 
 .footer-class {

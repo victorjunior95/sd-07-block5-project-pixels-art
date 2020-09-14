@@ -41,22 +41,23 @@ function createPixelBoard(parent) {
   sectionPixelBoard.className = ('pixel-board-section');
   parent.appendChild(sectionPixelBoard);
   // Gerando a tabela (pixel-board)
-  const basePixelBoard = document.createElement('table');
-  basePixelBoard.className = 'table-pixels';
-  basePixelBoard.setAttribute('id', 'pixel-board');
-  sectionPixelBoard.appendChild(basePixelBoard);
+  // const basePixelBoard = document.createElement('table');
+  // basePixelBoard.className = 'table-pixels';
+  // basePixelBoard.setAttribute('id', 'pixel-board');
+  // sectionPixelBoard.appendChild(basePixelBoard);
   const rowNameId = ['a', 'b', 'c', 'd', 'e'];
   for (let index = 0; index < rowNameId.length; index += 1) {
     let colIdName = rowNameId[index];
-    const tableRow = document.createElement('tr');
-    tableRow.className = 'table-row';
-    basePixelBoard.appendChild(tableRow);
-    for (let indexCol = 0; indexCol < rowNameId.length; indexCol += 1) {
-      const tableCol = document.createElement('td');
+    const divRow = document.createElement('div');
+    divRow.className = 'div-row';
+    sectionPixelBoard.appendChild(divRow);
+    // Preenche as div lines
+    for (let indexColBox = 0; indexColBox < rowNameId.length; indexColBox += 1) {
+      const tableCol = document.createElement('div')
       tableCol.className = 'pixel';
-      tableCol.setAttribute('id', `${colIdName}${indexCol}`);
+      tableCol.setAttribute('id', `${colIdName}${indexColBox}`);
       tableCol.style.backgroundColor = 'white'
-      tableRow.appendChild(tableCol);
+      divRow.appendChild(tableCol);
     }
   }
 }
