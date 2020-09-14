@@ -2,6 +2,7 @@
 const pixelBoard = document.querySelector("#pixel-board");
 const inputSizeBoard = document.querySelector("#inputSize");
 const buttonSizeBoard = document.querySelector("#buttonInput");
+let getColor = "black";
 // console.log(inputSizeBoard);
 let numberLines = 5;
 let numberElements = 5;
@@ -14,13 +15,15 @@ buttonSizeBoard.addEventListener("click", function () {
   executeAll();
 });
 
-function executeAll () {
+function executeAll() {
   clearBoard();
   createLine();
   createPixels();
+  updateColors();
+  changeColorPixel();
 }
 
-function clearBoard () {
+function clearBoard() {
   pixelBoard.innerHTML = "";
 }
 
@@ -62,18 +65,32 @@ const myPixels = document.querySelectorAll(".pixel");
 const colorSelected = document.querySelectorAll(".color");
 
 // VARIABLE TO STORE MY INITIAL COLOR
-function innicialColor (color) {
-let getColor = color;
-}
-innicialColor("black");
+
+
 
 // LOOP TO UPDATE MY LET GET COLOR
-for (let i = 0; i < colorSelected.length; i += 1) {
-  colorSelected[i].addEventListener("click", function (event) {
-    let divs = event.target;
-    getColor = divs.classList[1];
-  });
+function updateColors() {
+  for (let i = 0; i < colorSelected.length; i += 1) {
+    colorSelected[i].addEventListener("click", function (event) {
+      let divs = event.target;
+      getColor = divs.classList[1];
+      // console.log(innicialColor(divs.classList[1]));
+    });
+  }
 }
+updateColors();
+
+// LOOP TO SELECTED MY PIXEL ELEMENT AND CHANGE HIS BACKGROUND COLOR
+function changeColorPixel() {
+  for (let i = 0; i < myPixels.length; i += 1) {
+    myPixels[i].addEventListener("click", function (event) {
+      const onePixel = event.target;
+      onePixel.style.backgroundColor = getColor;
+      // console.log(getColor);
+    });
+  }
+}
+changeColorPixel();
 
 // LOOP TO ADD AND REMOVE NEW CLASS "SELECTED"
 for (let i = 0; i < colorSelected.length; i += 1) {
@@ -90,14 +107,7 @@ for (let i = 0; i < colorSelected.length; i += 1) {
   });
 }
 
-// LOOP TO SELECTED MY PIXEL ELEMENT AND CHANGE HIS BACKGROUND COLOR
-for (let i = 0; i < myPixels.length; i += 1) {
-  myPixels[i].addEventListener("click", function (event) {
-    const onePixel = event.target;
-    onePixel.style.backgroundColor = getColor;
-  });
-}
-
+// BUTTON CREATED TO CLEAR MY BACKGROUND
 const buttonClear = document.querySelector("#clear-board");
 
 buttonClear.addEventListener("click", function () {
