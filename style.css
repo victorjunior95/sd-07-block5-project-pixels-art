@@ -1,0 +1,28 @@
+
+#color-palette{
+
+}
+
+.color{
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+
+  border: 1px solid black;
+}
+
+#first{
+  background-color: black;
+}
+
+#second{
+  background-color: rgb(205, 193, 255);
+}
+
+#third{
+  background-color: rgb(234, 180, 100);
+}
+
+#forth{
+  background-color: rgb(115, 165, 128);
+}
