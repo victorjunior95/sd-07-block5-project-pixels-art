@@ -1,0 +1,23 @@
+.color {
+    height: 40px;
+    width: 40px;    
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.black {
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
