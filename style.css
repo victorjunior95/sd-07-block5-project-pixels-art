@@ -36,12 +36,32 @@ body {
 .color {
   border: 1px solid black;
   display: inline-block;
-  height: 50px;
+  height: 40px;
   margin-right: 5px;
   margin-top: 10px;
-  min-height: 50px;
-  min-width: 50px;
-  width: 50px;
+  min-height: 40px;
+  min-width: 40px;
+  width: 40px;
+}
+
+.black {
+  background-color: black;
+} 
+
+.oldlace {
+  background-color: oldlace;
+}
+
+.tomato {
+  background-color: tomato;
+}
+
+.mediumaquamarine {
+ background-color: mediumaquamarine; 
+}
+
+.dodgerblue {
+  background-color: dodgerblue;
 }
 
 .footer-class {

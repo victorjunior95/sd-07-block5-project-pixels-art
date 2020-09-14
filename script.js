@@ -27,9 +27,9 @@ function createPaletteColors(parent) {
   const colorsPalette = ['black', 'oldlace', 'tomato', 'mediumaquamarine', 'dodgerblue'];
   for (let index = 0; index < colorsPalette.length; index += 1) {
     const colorOfPalette = document.createElement('span');
-    colorOfPalette.className = 'color';
+    colorOfPalette.className = `color ${colorsPalette[index]}`;
     colorOfPalette.setAttribute('id', colorsPalette[index]);
-    colorOfPalette.style.backgroundColor = colorsPalette[index];
+    // colorOfPalette.style.backgroundColor = colorsPalette[index];
     palette.appendChild(colorOfPalette);
   }
 }
