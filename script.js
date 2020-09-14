@@ -43,13 +43,14 @@ function createBoard(numberOfLines) {
     for (let line = 0; line < numberOfLines; line += 1) {
       const divLine = document.createElement('div');
       divLine.className = 'pixel-line';
-      pixelBoard.appendChild(divLine);
+      
 
       for (let column = 0; column < numberOfLines; column += 1) {
         const divColumn = document.createElement('div');
         divColumn.className = 'pixel';
         divLine.appendChild(divColumn);
       }
+      pixelBoard.appendChild(divLine);
     }
     addClickListener();
     firstTime = false;
