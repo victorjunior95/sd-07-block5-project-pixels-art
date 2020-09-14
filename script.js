@@ -17,14 +17,14 @@ window.onload = function() {
     });
   });
 
-  //pixeis
+  // pixeis
   document.querySelectorAll('.pixel').forEach(item => {
     item.addEventListener('click', (event) => {
       event.target.style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
     });
   });
 
-  button.addEventListener('click', function() {
+  button.addEventListener('click', function () {
     let pixels = document.querySelectorAll('.pixel');
     pixels.forEach(item => {
       item.style.backgroundColor = 'White';
