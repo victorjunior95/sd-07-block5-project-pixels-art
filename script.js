@@ -11,11 +11,11 @@ function indexClick(item) {
     selectedColor = item;
   });
 }
-function clearAll() {
-  let pixels = document.querySelectorAll("#pixel");
-  document.querySelector("#clear-board").addEventListener("click", function () {
-    for (let i = 0; i < pixels.length; i += 1) {
-      pixels[i].style.backgroundColor = "rgb(255 , 255 , 255)";
-    }
+
+let buttonClearPixels = document.querySelector('button');
+let pixel = document.querySelectorAll('.pixel');
+buttonClearPixels.addEventListener('click', function() {
+  pixel.forEach((item) => {
+    item.style.backgroundColor = 'white';
   });
-}
+});
