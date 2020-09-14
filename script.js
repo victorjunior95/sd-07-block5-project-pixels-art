@@ -5,6 +5,7 @@ window.onload = function(){
     let colorGreen = document.getElementById("green");
     let colorRed = document.getElementById("red");
     let colorSelect = "black";
+    let btnClear = document.getElementById("clear-board");
     
     //Adicionando 4 eventos para selecionar cor específica
     colorBlue.addEventListener("click", function(){
@@ -46,5 +47,12 @@ window.onload = function(){
         pixelValor.addEventListener("click", function(){
         pixelValor.style.backgroundColor = colorSelect;
         });
-    } 
+    }
+    //Adicionando o evento de tornar os pixels branco novamente
+    btnClear.addEventListener("click", function(){
+        for(let indexClear = 0; indexClear <= 24; indexClear += 1){
+            let pixelClear = document.querySelectorAll("div .pixel")[indexClear];
+            pixelClear.style.backgroundColor = "white";
+        }
+    })
 }
