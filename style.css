@@ -1,5 +1,5 @@
 body {
-    width: 80%;
+    width: 100%;
     background-color: cornflowerblue;
     margin-left: auto;
     margin-right: auto;
@@ -35,21 +35,21 @@ h1 {
     background-color: blueviolet;
 }
 
-td {
-    background-color: white;
-    border: solid black 1px;
-    width: 40px;
-    height: 40px;
-}
-
-table {
+#pixel-board { 
+    display: table;
     margin-left: auto;
     margin-right: auto;
-    width: 5em;
-    height: 5em;
 }
 
-/* table#alter tr.dif td {
-	background: green;
-	} */
+.tr { 
+    display: table-row;
+}
+
+.pixel { 
+    display: table-cell;
+    border: solid black 1px;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+}
 
