@@ -1,3 +1,11 @@
+// código de como fazer uma cor aleatória tirada de: https://pt.stackoverflow.com/questions/5848/como-colorir-aleatoriamente-divs-com-um-array-de-cores-em-javascript
+
+document.querySelector('.second-color').style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+
+document.querySelector('.third-color').style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+
+document.querySelector('.fourth-color').style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+
 let selectPixel = document.querySelectorAll('.pixel');
 
 function changeColor(event) {
@@ -28,6 +36,8 @@ let clearButton = document.getElementById('clear-board');
 clearButton.addEventListener('click', function (){
   for(let list = 0; list < selectPixel.length; list += 1){
     let selectPixel = document.querySelectorAll('.pixel');
-  selectPixel[list].style.backgroundColor = 'white';
+    selectPixel[list].className = 'pixel td';
   }
 })
+
+console.log(corRandom);

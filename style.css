@@ -28,7 +28,7 @@ body {
 }
 
 .fourth-color {
-  background-color: coral;
+  background-color: "";
 }
 
 .pixel-board {
@@ -37,9 +37,9 @@ body {
 }
 
 .second-color {
-  background-color: orange;
+  background-color: "";
 }
 
 .third-color {
-  background-color: darkcyan;
+  background-color: "";
 }
