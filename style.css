@@ -40,12 +40,11 @@ body {
 .section-board {
   margin-top: 60px;
   text-align: center;
-  
 }
 
-.section-board .lines{
-    display: table;
-    margin: auto;
+.section-board .lines {
+  display: table;
+  margin: auto;
 }
 
 .pixel {
