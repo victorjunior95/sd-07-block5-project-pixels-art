@@ -4,3 +4,15 @@
     width: 75px;
     height: 75px;
 }
+#pixel-board{
+    display: table;
+}
+.tr{
+    display: table-row;
+}
+.td{
+    display: table-cell;
+}
+.pixel{
+    background-color: white;
+}
