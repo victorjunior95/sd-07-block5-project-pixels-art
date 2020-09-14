@@ -28,16 +28,16 @@
     #color4 {
         background-color: green;
     }
-    #container-pixels{
+    /* #container{
         margin-top: 10px;
         position: absolute;
         display: inline-block;
         align-content: center;    
-        /* border: 1px solid red;  */
+        border: 1px solid red; 
         width: 210px;
         height: 210px;
        
-    }
+    } */
     #clear-board{
         margin-top: 10px;
         margin-bottom: 20px;
