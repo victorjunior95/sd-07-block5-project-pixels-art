@@ -1,12 +1,26 @@
-let boardSizeLoaded =  5;
+let boardSizeLoaded = 5;
 
 function removeBoard() {
   const pixelBoard = document.getElementsByClassName('pixel-board')[0];
-  let boards = document.getElementsByClassName('pixel');
+  pixelBoard.innerHTML = '';
+}
 
-  for(let index = 0; index < boards.length; index += 1){
-    pixelBoard.removeChild(boards[index]);
-  }
+// add width and height in pixelboard
+function addPropertyInPixelBoard(size){
+  const pixelBoard = document.getElementsByClassName('pixel-board')[0];
+
+  pixelBoard.style.width = `${40 * size}px`;
+  pixelBoard.style.height = `${40 * size}px`;
+}
+
+// add property in div
+function addProperty(div) {
+  div.id = 'pixel';
+  div.className = 'pixel';
+  div.style.backgroundColor = 'white';
+  div.addEventListener('click', function (event) {
+    event.target.style.backgroundColor = colorCurrent;
+  });
 }
 
 // generate board
@@ -14,25 +28,28 @@ function generateBoard() {
   let boardSize = boardSizeLoaded * boardSizeLoaded;
 
   const pixelBoard = document.getElementsByClassName('pixel-board')[0];
-  pixelBoard.style.width = `${40 * boardSizeLoaded}px`;
-  pixelBoard.style.height = `${40 * boardSizeLoaded}px`;
 
-  for(let index = 1; index <= boardSize; index += 1){
+  // add width and height in pixelboard
+  addPropertyInPixelBoard(boardSizeLoaded);
+
+  for (let index = 1; index <= boardSize; index += 1) {
     let div = document.createElement('div');
-    div.id = 'pixel';
-    div.className = 'pixel';
+    addProperty(div);
     pixelBoard.appendChild(div);
   }
 }
-
 generateBoard();
 
 const inputBoard = document.getElementById('board-size');
 const btn = document.getElementById('generate-board');
-btn.addEventListener('click', function(){
-  boardSizeLoaded = inputBoard.value ? inputBoard.value : 5;
-  removeBoard();
-  generateBoard();
+btn.addEventListener('click', function () {
+  if (inputBoard.value == '') {
+    alert('Board inválido!');
+  } else {
+    boardSizeLoaded = inputBoard.value;
+    removeBoard();
+    generateBoard();
+  }
 })
 
 
@@ -69,16 +86,10 @@ for (let index = 0; index < colors.length; index += 1) {
 
 const pixels = document.getElementsByClassName('pixel');
 
-for (let index = 0; index < pixels.length; index += 1) {
-  pixels[index].addEventListener('click', function (event) {
-    event.target.style.backgroundColor = colorCurrent;
-  });
-}
-
 // limpar board
 const clearBoard = document.getElementById('clear-board');
-clearBoard.addEventListener('click', function(){
-  for(let index = 0; index < pixels.length; index += 1){
+clearBoard.addEventListener('click', function () {
+  for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
 })
