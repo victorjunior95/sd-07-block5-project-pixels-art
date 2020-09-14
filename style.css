@@ -1,27 +1,26 @@
-.color, .pixel{
+.color ,
+.pixel {
   border: 1px solid black;
-  height: 50px;
-  margin: 0;
-  width: 50px;
+  width: 40px;
+  height: 40px;
 }
 
-.colorUm {
+.colorPreta {
   background-color: black;
-
 }
 
-.colorDois {
+.colorVermelha {
   background-color: red;
 }
 
-.colorTres {
+.colorAzul {
   background-color: blue;
 }
 
-.colorQuatro {
+.colorVerde {
   background-color: green;
 }
 
-.pixel{
-    background-color: white;
+.pixel {
+  background-color: white;
 }
