@@ -80,10 +80,20 @@ window.onload = function(){
         }
     })
 
-    botaoCriaPixels.addEventListener('click', function(){
+    botaoCriaPixels.addEventListener('click', function(){        
         let qtd=document.getElementById('board-size');
         contaPixel=document.querySelectorAll('.pixel');
         qtdPixels=qtd.value;
-        criaGrid(qtdPixels);
+        if (qtdPixels>=1){
+            if (qtdPixels<5){
+                qtdPixels=5;
+            }
+            if (qtdPixels>50){
+                qtdPixels=50;
+            }
+            criaGrid(qtdPixels);
+        } else {
+            alert('Board inválido!');
+        }
     })
 }
