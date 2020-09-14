@@ -4,6 +4,7 @@
 
 .paletasClasses {
     margin-left: 25px;
+    display: table-cell;
 }
 
 .color {
