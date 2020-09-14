@@ -21,6 +21,10 @@
     background-color: blue;
 }
 
+.selected {
+    background-color: black;
+}
+
 .pixel {
     display: inline-block;
     height: 40px;
