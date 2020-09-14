@@ -49,3 +49,14 @@ for (index = 0; index < arrayPixels.length; index += 1) {
         pixel.style.backgroundColor = colorToAdd;
     });
 }
+
+// 9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
+let buttonClear = document.getElementById('clear-board');
+buttonClear.addEventListener('click', function () {
+    for (index = 0; index < arrayPixels.length; index += 1) {
+        let pixel = arrayPixels[index];
+        pixel.style.backgroundColor = "white";
+    }
+});
+
+
