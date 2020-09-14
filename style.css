@@ -1,6 +1,11 @@
 .color{
-    display: inline-block;
-    width: 100px;
-    height: 100px;;
-    border: 1px solid black;
+  border: 1px solid black;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
+
+.pixelBoard{
+    height: 210px;
+    width: 210px;
 }
