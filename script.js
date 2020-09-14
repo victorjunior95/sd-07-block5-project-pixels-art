@@ -1,3 +1,7 @@
+
+let selectedColor = document.getElementById('black-index');
+document.querySelectorAll('.color').forEach(clickConfigure);
+
 function changeClass(item) {
     item.classList.remove('selected');
 }
@@ -9,5 +13,6 @@ function clickConfigure(item) {
         selectedColor = item;
     });
 }
+
 
 
