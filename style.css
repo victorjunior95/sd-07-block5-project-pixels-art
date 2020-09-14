@@ -8,7 +8,11 @@ table {
 }
 
 #pixel-board {
-  margin-top: 40px;
+  margin-top: 20px;
+}
+
+#clear-board {
+  margin-top: 20px;
 }
 
 .color {
