@@ -16,6 +16,11 @@ function getRandomColor() {
 
 // -------------- ESCOLHER A COR DA PALETA -------------- //
 
+for (let index = 1; index < paleta.length; index += 1) {
+    let paletaSelecionada = paleta[index]
+    paletaSelecionada.classList.add("selected")
+}
+
 let selected = document.getElementsByClassName("color")[0]
 selected.addEventListener("click", function(){
     selected1.classList.remove('selected')
@@ -65,7 +70,7 @@ function trocaCor() {
 
 // -------------- BOTÂO CLEAR -------------- //
 
-let button = document.getElementById("button")
+let button = document.getElementById("clear-board")
 button.addEventListener("click", function() {
     for (let index = 0; index < quadro.length; index += 1) {
         quadro[index].style.backgroundColor = "white"
