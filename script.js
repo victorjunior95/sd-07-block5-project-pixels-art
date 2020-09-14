@@ -44,13 +44,6 @@ function escolherCor() {
     coratual = 'yellow';
   });
 }
-function pintar() {
-  linha1();
-  linha2();
-  linha3();
-  linha4();
-  linha5();
-}
 
 function linha1() {
   document.getElementById('p1').addEventListener('click', function () {
@@ -140,6 +133,14 @@ function linha5() {
   document.getElementById('p25').addEventListener('click', function () {
     document.getElementById('p25').style.background = coratual;
   });
+}
+
+function pintar() {
+  linha1();
+  linha2();
+  linha3();
+  linha4();
+  linha5();
 }
 
 window.onload = function () {
