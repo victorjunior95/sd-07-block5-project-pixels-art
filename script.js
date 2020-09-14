@@ -21,9 +21,16 @@ function changeColor(e){
 
 function addColor(e){
   let itemColor = document.getElementById(e.srcElement.id);
+  let itemColorId = itemColor.id;
   const style = window.getComputedStyle(itemColor, 'background-color');
 
   colorSelected = style.backgroundColor;
+
+  let itemSelectedPrevious = document.querySelector('.selected');
+  itemSelectedPrevious.classList.remove('selected');
+
+  let itemSelected = document.querySelector(`#${itemColorId}`);
+  itemSelected.classList.add('selected');
 
 }
 
