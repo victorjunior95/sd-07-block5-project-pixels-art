@@ -30,6 +30,9 @@
   border: 1px solid black;
   display: inline-block;
   height: 40px;
-  margin: 0;
   width: 40px;
+}
+
+.selected {
+    border: 3px solid greenyellow;
 }
