@@ -1,16 +1,8 @@
 const COR = ['black', 'red', 'blue', 'green'];
-
-
 const botaoLimpar = document.getElementById('clear-board');
 const pixels = document.querySelectorAll('.pixel');
-
-const colorBlack = document.querySelector('.colorBlack');
-const colorRed = document.querySelector('.colorRed');
-const colorBlue = document.querySelector('.colorBlue');
-const colorGreen = document.querySelector('.colorGreen');
-
-
 const colors = document.querySelectorAll('.color');
+const botaoSize = document.getElementById('generate-board');
 let posColor = 0;
 
 // Criar seleção de cores
@@ -45,6 +37,22 @@ botaoLimpar.addEventListener('click', function () {
 //Atribui cor aos pixels
 pixels.forEach((element) => {
   element.addEventListener('click', event => {
-      element.style.backgroundColor = COR[posColor];
+    element.style.backgroundColor = COR[posColor];
   });
 });
+
+//Definindo as ações do botão de seleção de tamanho pelo usuario
+function tamanhoPixels() {
+  let size = document.getElementById('board-size');
+  pixels.forEach((pixel) => {
+    if (size.value !== '') {
+      pixel.style.width = size.value + 'px';
+      pixel.style.height = size.value + 'px';
+    }
+    alert("Board inválido!")
+  });
+}
+
+window.onload = function () {
+  botaoSize.addEventListener('click', tamanhoPixels);
+}
