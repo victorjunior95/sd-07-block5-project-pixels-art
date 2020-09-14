@@ -18,7 +18,7 @@ body {
 
 .title {
   background-color: rgb(109, 89, 89);
-  color: WhiteSmoke;
+  color: whitesmoke;
   margin: 0;
   padding-bottom: 15px;
   padding-top: 15px;
@@ -29,7 +29,7 @@ body {
   min-height: 300px;
 }
 
-.color-palette{
+.color-palette {
   margin: 0;
 }
 
@@ -47,7 +47,7 @@ body {
 .footer-class {
   background-color: rgb(109, 89, 89);
   box-shadow: 1px 1px 3px black;
-  color: WhiteSmoke;
+  color: whitesmoke;
   height: 40px;
   line-height: 40px;
   text-align: center;

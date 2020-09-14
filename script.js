@@ -24,13 +24,13 @@ function createPaletteColors(parent) {
   palette.setAttribute('id', 'color-palette');
   parent.appendChild(palette);
 
-  const colorsPalette = ['Black', 'OldLace', 'Tomato', 'MediumAquamarine', 'DodgerBlue'];
+  const colorsPalette = ['black', 'oldlace', 'tomato', 'mediumaquamarine', 'dodgerblue'];
   for (let index = 0; index < colorsPalette.length; index += 1) {
-    let colorOfPalette = document.createElement('span');
+    const colorOfPalette = document.createElement('span');
     colorOfPalette.className = 'color';
     colorOfPalette.setAttribute('id', colorsPalette[index]);
     colorOfPalette.style.backgroundColor = colorsPalette[index];
-    palette.appendChild(colorOfPalette)
+    palette.appendChild(colorOfPalette);
   }
 }
 createPaletteColors(mainPage);
