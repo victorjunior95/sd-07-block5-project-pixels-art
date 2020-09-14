@@ -4,7 +4,6 @@ const buttonBlack = document.querySelector('.black');
 const buttonOne = document.querySelector('.first');
 const buttonTwo = document.querySelector('.second');
 const buttonThree = document.querySelector('.third');
-const buttonColor = document.getElementsByClassName('color');
 const buttonClear = document.getElementById('clear-board');
 const buttonCreateBoard = document.getElementById('generate-board');
 
@@ -39,8 +38,8 @@ function clearBoard() {
   });
 }
 
-function isEmpty() {
-  return (inputBoardSize.value.length === 0) ? alert('Board inválido!') : true;
+function hasValue() {
+  return (firstTime || inputBoardSize.value.length !== 0) ? createBoard(Number(inputBoardSize.value)) : alert('Board inválido!');
 }
 
 function checkNumber(numberOfLines) {
@@ -50,26 +49,24 @@ function checkNumber(numberOfLines) {
 }
 
 function createBoard(numberOfLines) {
-  if (firstTime || isEmpty()) {
-    numberOfLines = checkNumber(numberOfLines);
-    pixelBoard.innerHTML = '';
+  numberOfLines = checkNumber(numberOfLines);
+  pixelBoard.innerHTML = '';
 
-    for (let line = 0; line < numberOfLines; line += 1) {
-      const divLine = document.createElement('div');
-      divLine.className = 'pixel-line';
+  for (let line = 0; line < numberOfLines; line += 1) {
+    const divLine = document.createElement('div');
+    divLine.className = 'pixel-line';
 
-      for (let column = 0; column < numberOfLines; column += 1) {
-        const divColumn = document.createElement('div');
-        divColumn.className = 'pixel';
-        divLine.appendChild(divColumn);
-      }
-      pixelBoard.style.width = `${numberOfLines * 42}px`;
-      pixelBoard.style.height = `${numberOfLines * 42}px`;
-      pixelBoard.appendChild(divLine);
+    for (let column = 0; column < numberOfLines; column += 1) {
+      const divColumn = document.createElement('div');
+      divColumn.className = 'pixel';
+      divLine.appendChild(divColumn);
     }
-    addClickListener();
-    firstTime = false;
+    pixelBoard.style.width = `${numberOfLines * 42}px`;
+    pixelBoard.style.height = `${numberOfLines * 42}px`;
+    pixelBoard.appendChild(divLine);
   }
+  addClickListener();
+  firstTime = false;
 }
 
 function makeRandomColor() {
@@ -96,7 +93,7 @@ buttonOne.addEventListener('click', selectColor);
 buttonTwo.addEventListener('click', selectColor);
 buttonThree.addEventListener('click', selectColor);
 buttonClear.addEventListener('click', clearBoard);
-buttonCreateBoard.addEventListener('click', () => createBoard(Number(inputBoardSize.value)));
+buttonCreateBoard.addEventListener('click', () => hasValue());
 
 setColors();
 addClickListener();
