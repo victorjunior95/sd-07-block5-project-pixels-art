@@ -8,13 +8,24 @@
   </head>
   <body>
     <h1 id="title" class="title">Paleta de Cores</h1>
+
     <section id="color-palette" class="color-palette">
       <div class="color black selected"></div>
       <div class="color red selected"></div>
       <div class="color blue selected"></div>
       <div class="color green selected"></div>
     </section>
+
+    <section class="button">
+      <button type="button" id="clear-board" class="clear-board">Limpar</button>
+    </section>
     <section id="pixel-board" class="pixel-board"></section>
+
+    <section class="userElements">
+      <h2>Tamanho do Quadro</h2>
+      <input type="text" placeholder="Valor entre 5 e 50" class="inputElements" id="inputSize"/>
+      <button type="button" class="inputElements" id="buttonInput">Salvar</button>
+    </section>
     <script src="./script.js"></script>
   </body>
 </html>

@@ -57,6 +57,21 @@ for (let i = 0; i < myPixels.length; i += 1) {
   });
 }
 
+const buttonClear = document.querySelector("#clear-board");
+
+buttonClear.addEventListener("click", function () {
+  for (let i = 0; i < myPixels.length; i += 1) {
+  myPixels[i].style.backgroundColor = "white";
+  }
+})
+
 // TESTE PARA getPropertyValue()
 // let colorBlue = document.querySelector(".blue");
 // console.log(colorBlue.style.getPropertyValue("background-color"));
+
+const buttonSizeBoard = document.querySelector("#buttonInput");
+const inputSizeBoard = document.querySelector("#inputSize");
+
+buttonSizeBoard.addEventListener("click", function () {
+  pixelBoard.style.maxWidth = inputSizeBoard.value;
+})
