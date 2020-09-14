@@ -39,3 +39,10 @@ for (let i = 0; i < tableData.length; i += 1) {
     tableData[i].style.backgroundColor = 'white';
   });
 }
+
+document.querySelector('#generate-board').addEventListener('click', function () {
+  const userInput = document.querySelector('#board-size');
+  if (userInput.value === "") {
+    alert('Board inválido!')
+  }
+})
