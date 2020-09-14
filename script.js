@@ -1,42 +1,25 @@
-// Save the selected color
-let selectedColorRGB = '';
+firstColor = document.getElementsByClassName("color")[0];
+secondColor = document.getElementsByClassName("color")[1];
+thirdColor = document.getElementsByClassName("color")[2];
+fourthColor = document.getElementsByClassName("color")[3];
+allColors = document.getElementsByClassName("color");
+seletedColors = document.getElementsByClassName("color selected");
+selectedElement = document.getElementsByClassName("pixel");
 
-// function to apply selected class to color pallet
-function applySelectedClass(colorElement) {
-    // Apply the class selected
-    colorElement.className = colorElement.className + " selected";
+for (let index = 0; index <= allColors.length; index += 1) {
+    allColors[index].addEventListner('clik', colorSelection);
 
-    // Save color selected
-    selectedColorRGB = getComputedStyle(colorElement).getPropertyValue('background-color');
+for (let i = 0; i < selectedElement.length; i += 1) {
+    let pixelBox = selectedElement[i]
+    pixelBox.addEventListner ('click', fullFill);
 }
 
-// function to remove the class selected of all pallet
-function removeSelectedClass() {
-    // For each color Pallet 
-    document.querySelectorAll('.color').forEach(item => {
-        // remove class selected
-        item.className = item.className.replace('selected','');
-    });
+function colorSelection (event) {
+    seletedColors[0].className = 'color';
+    event.target.className ='color selected'
 }
 
-// function to change the selected color pallet
-function changeSelectedColorPallet(event) {
-    // remove selected class of all colors pallet
-    removeSelectedClass();
-
-    // appĺy selected class on target 
-    applySelectedClass(document.getElementById(event.target.id));
+function fullFill (event) {
+    let elementColor = seletedColors[0].id
+    event.target.style.backgroundColor = elementColor
 }
-
-// Execute function to select the first color pallet
-applySelectedClass(document.querySelector(".color"));
-
-// Assign the function changeSelectedColorPallet on all colors Pallet
-// For each color Pallet 
-document.querySelectorAll('.color').forEach(item => {
-    // remove class selected
-    item.addEventListener('click',changeSelectedColorPallet);
-});
-
-// console.log(selectedColorRGB);
-// document.querySelector(".pixel").style.backgroundColor = selectedColorRGB; 
