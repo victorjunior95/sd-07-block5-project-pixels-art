@@ -15,17 +15,7 @@
 }
 
 .pale {
-    width: 250px;
     margin-left: 25px;
-}
-
-.pale table {
-    display: table; 
-}
-
-.pale tr {
-    display: table-row;
-    
 }
 
 .pixel {
@@ -33,7 +23,9 @@
     height: 40px;
     border: solid 1px black;
     display: inline-block;
-    background-color: white; 
+    background-color: white;
+    margin-bottom: 0px;
+    
 }
 
 .selected {
