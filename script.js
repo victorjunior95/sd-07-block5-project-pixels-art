@@ -6,7 +6,10 @@ window.onload = function(){
     let colorRed = document.getElementById("red");
     let colorSelect = "black";
     let btnClear = document.getElementById("clear-board");
-    
+    //Bonus
+    let divMother = document.getElementById("pixel-board");
+    let btnVQV = document.getElementById("generate-board");
+      
     //Adicionando 4 eventos para selecionar cor específica
     colorBlue.addEventListener("click", function(){
         colorBlue.classList.add("selected");
@@ -40,9 +43,22 @@ window.onload = function(){
         colorRed.classList.remove("selected");
         colorSelect = "black"
     });
-    
-    //Usando estrutura de repetição para pintar os pixels
-    for(let index = 0; index <= 24; index += 1){
+    //Novo desafio
+    btnVQV.addEventListener("click", function(){
+        let inputNumb = document.getElementById("board-size");
+        let inputNumbQuad = (inputNumb.value * inputNumb.value);
+        for(let divIndex = 0; divIndex < inputNumb.value; divIndex += 1){
+            let linhaDiv = document.createElement("div");
+            divMother.appendChild(linhaDiv);
+            linhaDiv.className = "tr";
+            for(let divIndex2 = 0; divIndex2 < inputNumb.value; divIndex2 += 1){
+                let divPixelSon = document.createElement("div");
+                linhaDiv.appendChild(divPixelSon);
+                divPixelSon.className = "pixel";
+            }
+        }
+        //Usando estrutura de repetição para pintar os pixels
+    for(let index = 0; index < inputNumbQuad; index += 1){ 
         let pixelValor = document.querySelectorAll("div .pixel")[index];
         pixelValor.addEventListener("click", function(){
         pixelValor.style.backgroundColor = colorSelect;
@@ -50,9 +66,11 @@ window.onload = function(){
     }
     //Adicionando o evento de tornar os pixels branco novamente
     btnClear.addEventListener("click", function(){
-        for(let indexClear = 0; indexClear <= 24; indexClear += 1){
+        for(let indexClear = 0; indexClear < inputNumbQuad; indexClear += 1){
             let pixelClear = document.querySelectorAll("div .pixel")[indexClear];
             pixelClear.style.backgroundColor = "white";
         }
-    })
+    });
+    
+    });  
 }
