@@ -16,11 +16,6 @@ function getRandomColor() {
 
 // -------------- ESCOLHER A COR DA PALETA -------------- //
 
-for (let index = 1; index < paleta.length; index += 1) {
-    let paletaSelecionada = paleta[index]
-    paletaSelecionada.classList.add("selected")
-}
-
 let selected = document.getElementsByClassName("color")[0]
 selected.addEventListener("click", function(){
     selected1.classList.remove('selected')
