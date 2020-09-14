@@ -115,6 +115,32 @@ colorOne.style.background = rgb
      randomColorThree()
 
 
+     function ArrayNew(){
+
+        myArray = []
+                for (index = 0; index < boardSize.value ; index += 1){
+                    myArray.push([])
+                for (index2 = 0; index2 < boardSize.value; index2 += 1){
+                    myArray[index].push(3)
+                }
+              }
+        boardSize.value  = ''
+        currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color')
+        createBoard()
+        }
+
+        function checkBoardSize(){
+            if (boardSize.value === ''){
+                boardSize.value = 5
+                alert('Board inválido!')
+            }else if (boardSize.value < 5){
+                boardSize.value = 5
+            }else if (boardSize.value > 50){
+                boardSize.value = 50
+            }
+            return boardSize.value
+            }
+                 
   function removewBoard() {
     checkBoardSize()
     while (divPixelBoard.firstChild) {
@@ -122,29 +148,6 @@ colorOne.style.background = rgb
 }
 ArrayNew()
 }
-function checkBoardSize(){
-if (boardSize.value === ''){
-    boardSize.value = 5
-    alert('Board inválido!')
-}else if (boardSize.value < 5){
-    boardSize.value = 5
-}else if (boardSize.value > 50){
-    boardSize.value = 50
-}
-return boardSize.value
-}
-function ArrayNew(){
 
-myArray = []
-        for (index = 0; index < boardSize.value ; index += 1){
-            myArray.push([])
-        for (index2 = 0; index2 < boardSize.value; index2 += 1){
-            myArray[index].push(3)
-        }
-      }
-boardSize.value  = ''
-currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color')
-createBoard()
-}
 generateBoard.addEventListener('click', removewBoard)
   
