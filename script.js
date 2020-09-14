@@ -13,10 +13,14 @@
   }
 }
 //trata evento selecionar a cor
-// btnBlack = document.querySelectorAll('.color')[0];
-// btnOrange = document.querySelectorAll('.color')[1];
-// btnOrchid = document.querySelectorAll('.color')[2];
-// btnBlue = document.querySelectorAll('.color')[3];
+btnBlack = document.querySelectorAll('.color')[0];
+btnOrange = document.querySelectorAll('.color')[1];
+btnOrchid = document.querySelectorAll('.color')[2];
+btnBlue = document.querySelectorAll('.color')[3];
+
+btnBlack.addEventListener('click', function {
+    selected.style.backgroundColor = 
+})
 // Trata construção dinâmica
 // const numberInputBox = document.querySelector('#board-size');
 // const buttonInput = document.querySelector('#generate-board');
