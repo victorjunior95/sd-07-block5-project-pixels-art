@@ -9,6 +9,8 @@ function createEvent (pixelDiv) {
   pixelDiv.addEventListener('click', function () {
     const currentSelected = document.querySelector('.selected');
     pixelDiv.classList = currentSelected.classList;
+    //pixelDiv.classlist.remove('color', 'selected');
+    console.log(pixelDiv.classList)
   })
 }
 
@@ -51,8 +53,6 @@ function clearSelected () {
   }
 }
 
-//  cria tabela inicial
-createBoard(numberOfLines);
 
 //  evento de clique na paleta de cores
 for (index = 0; index < colors.length; index += 1) {
@@ -62,5 +62,7 @@ for (index = 0; index < colors.length; index += 1) {
   });
 }
 
-
-
+window.onload = function () {
+  //  cria tabela inicial
+  createBoard(numberOfLines);
+}
