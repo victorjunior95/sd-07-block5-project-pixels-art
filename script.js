@@ -86,7 +86,25 @@ function assignSize() {
 function assignSizeForGenerateBoard() {
   numberOfColumns = boardSize;
   numberOfLines = boardSize;
-  proceduresToCreateBoard()
+  proceduresToCreateBoard();
+}
+
+function scaleBoardSizeOffRange {
+  if (boardSize < 5) {
+    boardSize = 5;
+    assignSizeForGenerateBoard();
+  } else {
+    boardSize = 50;
+    assignSizeForGenerateBoard();
+  }
+} 
+
+function scaleBoardSizeOnRange() {
+  if (boardSize >= 5 && boardSize <= 50) {
+    assignSizeForGenerateBoard();
+  } else {
+    scaleBoardSizeOffRange
+  }
 }
 
 function testBeforeAssign() {
@@ -94,15 +112,7 @@ function testBeforeAssign() {
   if (boardSize === '') {
     alert('Board inválido!');
   } else {
-    if (boardSize >= 5 && boardSize <= 50) {
-      assignSizeForGenerateBoard();
-    } else if (boardSize < 5) {
-      boardSize = 5;
-      assignSizeForGenerateBoard();
-    } else if (boardSize > 50) {
-      boardSize = 50;
-      assignSizeForGenerateBoard();
-    }
+    scaleBoardSizeOnRange();
   }
 }
 
