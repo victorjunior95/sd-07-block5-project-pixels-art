@@ -44,7 +44,6 @@ function createPixelBoard(parent) {
   const divAll = document.createElement('div');
   divAll.className = 'div-all';
   sectionPixelBoard.appendChild(divAll);
-  const rowNameId = ['a', 'b', 'c', 'd', 'e'];
     // Preenche as div lines
   for (let indexColBox = 0; indexColBox < 25; indexColBox += 1) {
     const tableCol = document.createElement('div');
