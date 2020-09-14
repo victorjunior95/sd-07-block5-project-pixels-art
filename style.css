@@ -1,9 +1,9 @@
-#title {
+.titulo{
     margin-left: 15px;
 }
 
-section {
-    margin-left: 30px;
+.paletasClasses {
+    margin-left: 25px;
 }
 
 .color {
@@ -16,6 +16,7 @@ section {
 
 .pale {
     width: 250px;
+    margin-left: 25px;
 }
 
 .pale table {
@@ -50,7 +51,7 @@ section {
 }
 
 .input {
-    margin-left: 34px;
+    margin-left: 12px;
 }
 
 .gerar {
