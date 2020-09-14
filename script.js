@@ -20,6 +20,7 @@ colors.forEach((element, index, array) => {
   });
 })
 
+
 function retiraSelected(elements) {
   elements.forEach((elem) => {
     elem.className = elem.className.replace(' selected', '');
@@ -42,17 +43,21 @@ pixels.forEach((element) => {
 });
 
 //Definindo as ações do botão de seleção de tamanho pelo usuario
-function tamanhoPixels() {
+botaoSize.addEventListener('click', function () {
   let size = document.getElementById('board-size');
-  pixels.forEach((pixel) => {
-    if (size.value !== '') {
-      pixel.style.width = size.value + 'px';
-      pixel.style.height = size.value + 'px';
-    }
-    alert("Board inválido!")
-  });
-}
 
-window.onload = function () {
-  botaoSize.addEventListener('click', tamanhoPixels);
-}
+  if (size.value !== '') {
+    pixels.forEach((pixel) => {
+      if (parseInt(size.value) > 0) {
+        pixel.style.width = size.value + 'px';
+        pixel.style.height = size.value + 'px';
+        pixel.style.backgroundColor = 'white';
+        
+      }
+    });
+  }else{
+    alert("Board inválido!");
+  }
+  
+  size.value = '';
+});
