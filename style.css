@@ -3,9 +3,7 @@
     border: 1px solid black;
     padding: 50px;
     display: inline-block;
-
 }
-
 .black {
     background-color: black;
 }
@@ -17,4 +15,24 @@
 }
 .green {
     background-color: green;
+}
+.paletteColor, h1 {
+    background-color: bisque;
+    text-align: center;
+}
+.pixelBoard {
+    background-color: bisque;
+    padding: 45px;
+    border: 2px solid black;
+}
+.pixel-line {
+    background-color: bisque;
+    text-align: center;
+}
+.pixel {
+    background-color: white;
+    padding: 40px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 5px;
 }
