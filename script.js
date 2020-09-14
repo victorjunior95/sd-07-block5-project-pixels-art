@@ -1,7 +1,7 @@
 
-let limpar = document.getElementById("clear-board");
+let limpar = document.querySelector("#clear-board");
 
-let board = document.getElementsByClassName("pixel");
+let board = document.querySelectorAll(".pixel");
 
 function limparBoard(){
     for(let index in board){
@@ -12,10 +12,10 @@ function limparBoard(){
 limpar.addEventListener('click', limparBoard);
 
 
-let paletBlack = document.getElementById('color-black');
-let paletRed = document.getElementById('color-red');
-let paletGreen = document.getElementById('color-green');
-let paletBlue = document.getElementById('color-blue');
+let paletBlack = document.querySelector('#color-black');
+let paletRed = document.querySelector('#color-red');
+let paletGreen = document.querySelector('#color-green');
+let paletBlue = document.querySelector('#color-blue');
 
 let select = 'black';
 
