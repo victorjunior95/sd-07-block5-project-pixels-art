@@ -47,6 +47,8 @@ btn.addEventListener('click', function () {
     alert('Board inválido!');
   } else {
     boardSizeLoaded = inputBoard.value;
+    if(inputBoard.value > 50) boardSizeLoaded = 50;
+    if(inputBoard.value < 5) boardSizeLoaded = 5;
     removeBoard();
     generateBoard();
   }
