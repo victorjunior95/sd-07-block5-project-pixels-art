@@ -18,8 +18,38 @@ body {
 
 .title {
   background-color: rgb(109, 89, 89);
-  color: white;
+  color: WhiteSmoke;
   margin: 0;
   padding-bottom: 15px;
   padding-top: 15px;
+}
+
+.main-class {
+  margin: 0;
+  min-height: 300px;
+}
+
+.color-palette{
+  margin: 0;
+}
+
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  height: 50px;
+  margin-right: 5px;
+  margin-top: 10px;
+  min-height: 50px;
+  min-width: 50px;
+  width: 50px;
+}
+
+.footer-class {
+  background-color: rgb(109, 89, 89);
+  box-shadow: 1px 1px 3px black;
+  color: WhiteSmoke;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: auto;
 }
