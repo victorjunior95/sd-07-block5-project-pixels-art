@@ -17,11 +17,11 @@ const generateBoard = document.querySelector('#generate-board');
 const boardSize = document.querySelector('#board-size');
 
 function createBoard() {
-  for (i = 0; i < myArray.length; i += 1) {
+  for (index = 0; index < myArray.length; index += 1) {
       const container = document.createElement('div');
       container.className = 'container';
       divPixelBoard.appendChild(container);
-      for (j = 0; j < myArray[i].length; j += 1) {
+      for (index2 = 0; index2 < myArray[index].length; index2 += 1) {
           const divPixel = document.createElement('div');
             divPixel.className = 'pixel';
           container.appendChild(divPixel);
@@ -61,7 +61,7 @@ function createBoard() {
 
 let classPixel = document.querySelectorAll('.pixel');
 
-for(let e = 0 ; e < classPixel.length ; e++) {
+for(let e = 0 ; e < classPixel.length ; e += 1) {
     classPixel[e].addEventListener('click', function() {
       classPixel[e].style.background = currentColor
     });
@@ -69,7 +69,7 @@ for(let e = 0 ; e < classPixel.length ; e++) {
 
   function clearBoard(){
 
-    for(let e = 0 ; e < classPixel.length ; e++) {
+    for(let e = 0 ; e < classPixel.length ; e+= 1) {
           classPixel[e].style.background = 'white'
       }
 }
@@ -136,10 +136,10 @@ return boardSize.value
 function ArrayNew(){
 
 myArray = []
-        for (i = 0; i < boardSize.value ; i += 1){
+        for (index = 0; index < boardSize.value ; index += 1){
             myArray.push([])
-        for (j = 0; j < boardSize.value; j += 1){
-            myArray[i].push(3)
+        for (index2 = 0; index2 < boardSize.value; index2 += 1){
+            myArray[index].push(3)
         }
       }
 boardSize.value  = ''
