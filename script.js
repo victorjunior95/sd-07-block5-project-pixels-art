@@ -30,4 +30,13 @@ window.onload = function () {
     board.addEventListener('click', changeBackgroundColor),
     pixelBoard.appendChild(board);
   }
+
+  // limpa quadro de pixels
+  const clearBoardButton = document.querySelector('#clear-board');
+  clearBoardButton.addEventListener('click', function() {
+    const pixels = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  });
 };
