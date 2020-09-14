@@ -58,7 +58,7 @@ function verifyBoard() {
 }
 function sizeBoard() {
   const columnsNumber = Math.sqrt(boardSize.value);
-  const columnsIntNumber = parseInt(columnsNumber);
+  const columnsIntNumber = parseInt(columnsNumber, 10);
   const heightAndWidth = columnsIntNumber * 40;
   if (columnsIntNumber < 50) {
     fullBoard.style.gridTemplateColumns = `repeat(${columnsIntNumber}, 1fr)`;
