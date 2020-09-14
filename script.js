@@ -7,7 +7,7 @@ for(let index = 0; index < paletteColor.length; index += 1) {
 
 const botaoGerar = document.querySelector('#generate-board');
 const inputNumber = document.querySelector('#board-size');
-inputNumber.value = 5;
+//inputNumber.value = 5;
 let number = inputNumber.value;
 botaoGerar.addEventListener('click', (event) => {
     if (inputNumber.value < 5) {
