@@ -6,6 +6,7 @@ let green = document.querySelectorAll('.color')[2];
 let purple = document.querySelectorAll('.color')[3];
 let pixel = document.querySelectorAll('.pixel')[0];
 let pixelBoard = document.querySelector('.pixel-board');
+let button = document.getElementById('clear-board');
 
 // 2) Define the functions:
 
@@ -48,4 +49,12 @@ function selectPurple () {
 // To paint the blank squares:
 pixelBoard.addEventListener('click', function(pixel) {
   pixel.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+});
+
+// To clean the pixel board:
+button.addEventListener('click', function() {
+  let pixels = document.querySelectorAll('.pixel');
+  for (let index of pixels) {
+    index.style.backgroundColor = 'white';
+  }
 });
