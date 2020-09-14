@@ -13,3 +13,5 @@ function selectColorBlack() {
   const quadro = document.getElementsById('color1');
   quadro.className = 'selected';
 }
+
+selectColorBlack();
