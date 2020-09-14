@@ -1,16 +1,8 @@
-td {
+.color, .pixel{
   border: 1px solid black;
-  width: 50px;
   height: 50px;
   margin: 0;
-  padding: 0;
-}
-
-.color-palette tr td{
-    margin: 10px;
-}
-.color {
-  border: 1px solid black;
+  width: 50px;
 }
 
 .colorUm {
@@ -28,4 +20,8 @@ td {
 
 .colorQuatro {
   background-color: green;
+}
+
+.pixel{
+    background-color: white;
 }
