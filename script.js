@@ -23,6 +23,7 @@ function initialPixelBoard() {
       
       let pixelCell = document.createElement('div');
       pixelCell.classList.add('pixel', 'border');
+      pixelCell.style.backgroundColor = 'white';
       pixelRow.appendChild(pixelCell)
     }
     
