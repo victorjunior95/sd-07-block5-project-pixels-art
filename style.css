@@ -1,0 +1,31 @@
+body {
+  margin-left: 60px;
+}
+.main-title {
+  font-family: 'Kufam', cursive;
+  margin: 40px 30px;
+}
+
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
+
+.black {
+  background-color: black;
+}
+
+.salmon {
+  background-color: lightsalmon;
+}
+
+.green {
+  background-color: lightgreen;
+}
+
+.blue {
+    background-color: lightskyblue;
+}
