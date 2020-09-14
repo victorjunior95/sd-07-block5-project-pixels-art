@@ -1,9 +1,9 @@
 const pixelBoard = document.getElementById('pixel-board');
 const inputBoardSize = document.getElementById('board-size');
 const buttonBlack = document.querySelector('.black');
-const buttonRed = document.querySelector('.red');
-const buttonGreen = document.querySelector('.green');
-const buttonBlue = document.querySelector('.blue');
+const buttonOne = document.querySelector('.first');
+const buttonTwo = document.querySelector('.second');
+const buttonThree = document.querySelector('.third');
 const buttonColor = document.getElementsByClassName('color');
 const buttonClear = document.getElementById('clear-board');
 const buttonCreateBoard = document.getElementById('generate-board');
@@ -12,12 +12,10 @@ let currentColor = 'black';
 
 function selectColor(event) {
   for (const element of buttonColor) {
-    if (element.classList[2] === 'selected') {
-      element.classList.toggle('selected');
-    }
+    if (element.classList.contains('selected')) element.classList.toggle('selected');
   }
   event.target.classList.toggle('selected');
-  currentColor = event.target.classList[1];
+  currentColor = event.target.style.backgroundColor;
 }
 
 function fillColor(event) {
@@ -70,11 +68,32 @@ function checkNumber(numberOfLines) {
   return numberOfLines;
 }
 
+function makeRandomColor() {
+  var color = '';
+  while (color.length < 6) {
+    color += (Math.random()).toString(16).substr(-6).substr(-1)
+  }
+  return '#' + color;
+}
+
+function setColors() {
+  const colors = document.querySelectorAll('.color');
+  for (const element of colors) {
+    if (!(element.classList.contains('black'))) {
+      let color = makeRandomColor();
+      element.style.backgroundColor = color;
+    }
+  }
+  buttonBlack.style.backgroundColor = 'black';
+}
+
 buttonBlack.addEventListener('click', selectColor);
-buttonRed.addEventListener('click', selectColor);
-buttonGreen.addEventListener('click', selectColor);
-buttonBlue.addEventListener('click', selectColor);
+buttonOne.addEventListener('click', selectColor);
+buttonTwo.addEventListener('click', selectColor);
+buttonThree.addEventListener('click', selectColor);
 buttonClear.addEventListener('click', clearBoard);
 buttonCreateBoard.addEventListener('click', () => createBoard(Number(inputBoardSize.value)));
+
+setColors();
 addClickListener();
 createBoard(5);
