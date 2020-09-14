@@ -59,7 +59,7 @@ for (let i = 0; i < colorSelected.length; i += 1) {
     }
     // When the div be clicked, the class selected will be created in the div;
     divs.classList.add("selected");
-    console.log(document.querySelectorAll(".selected"));
+    // console.log(document.querySelectorAll(".selected"));
   });
 }
 
