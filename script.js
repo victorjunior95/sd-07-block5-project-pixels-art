@@ -6,7 +6,8 @@ let numberOfLines = 5;
 //  função que enche a linha
 function fillLine (line) {
   let pixelDiv = document.createElement('div');
-  pixelDiv.classList.add('pixel');
+  pixelDiv.classList.add('pixel', 'white');
+
   line.appendChild(pixelDiv);
 }
 
@@ -26,4 +27,22 @@ function createBoard (numberOfLines) {
   }
 }
 
+//  função que remove cor selecionada
+function clearSelected () {
+  for (index = 0; index < colors.length; index += 1) {
+    colors[index].classList.remove('selected');
+  }
+}
+
+//  cria tabela inicial
 createBoard(numberOfLines);
+
+//  evento de clique na paleta de cores
+for (index = 0; index < colors.length; index += 1) {
+  colors[index].addEventListener('click', function (event) {
+    clearSelected();
+    event.target.classList.add('selected');
+  });
+}
+
+//  evento de clique no quadro
