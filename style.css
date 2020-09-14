@@ -26,7 +26,7 @@ body {
 
 #pixel-board {
   display: grid;
-  background-color: white;
+  background-color:white;
   height: 200px;
   width: 200px;
   grid-template-columns: 20% 20% 20% 20% 20%;

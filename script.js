@@ -1,24 +1,15 @@
-
-let selectedColor = document.getElementById('black-index');
-document.querySelectorAll('.color').forEach(clickConfigure);
-
-function changeClass(item) {
-    item.classList.remove('selected');
-}
-
+let selectedColor = document.getElementById("black-index");
+document.querySelectorAll(".color").forEach(clickConfigure);
 function clickConfigure(item) {
-    item.addEventListener("click", function () {
-        document.querySelectorAll('.color').forEach(changeClass);
-        item.classList.add('selected');
-        selectedColor = item;
-    });
+  item.addEventListener("click", function () {
+    document.querySelectorAll(".color").forEach(changeClass);
+    item.classList.add("selected");
+    selectedColor = item;
+  });
 }
 
-let pixel = document.querySelectorAll('.pixel');
-
-document.getElementById('clear-board').addEventListener('click', function () {
-  for (index = 0; index < pixel.length; index += 1) {
-    pixel[index].style.backgroundColor = "white";
-  }
-})
-
+let button = document.getElementById("clear-board");
+button.addEventListener("click", function () {
+  let pixel = document.querySelectorAll(".pixel");
+  pixel.style.backgroundColor = "white";
+});
