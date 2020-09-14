@@ -1,9 +1,8 @@
 
 
-document.querySelector(".selected").classList.remove("selected");
+// document.querySelector(".selected").classList.remove("selected");
 
 
-function cleanBoard {
+// function cleanBoard {
 
-
-}
+// }
