@@ -4,7 +4,7 @@ window.onload = function(){
     let corDois=document.getElementById('cor-2');
     let corTres=document.getElementById('cor-3');
     let corQuatro=document.getElementById('cor-4');
-    let corSelecionada='rgb(1,1,1)';
+    let corSelecionada='rgb(0,0,0)';
 
     for (i=0; i<linhaPixel.length; i+=1){
         for (j=1; j<=5; j+=1){
