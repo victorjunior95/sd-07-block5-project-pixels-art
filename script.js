@@ -86,6 +86,12 @@ function generateBoard() {
   }
   limpa();
 
+  if(document.querySelector("#board-size").value > 50){
+    document.querySelector("#board-size").value = 50;
+  }else if(document.querySelector("#board-size").value < 5){
+    document.querySelector("#board-size").value = 5;
+  }
+
   let size = document.querySelector("#board-size").value - 5;
 
   for (let i = 1; i <= size; i += 1) {
