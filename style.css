@@ -9,10 +9,12 @@
 
 #pixel-board {
     display: table;
+    border: 1px solid black;
 }
 
 #pixel-board > div { 
     display: table-row; 
+    border: 1px solid black;
 }
 
 #pixel { 
