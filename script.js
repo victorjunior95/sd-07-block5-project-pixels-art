@@ -30,7 +30,7 @@ window.onload = function(){
             for (j=1; j<=qtdPixels; j+=1){
                 let criaDiv=document.createElement('div');
                 criaDiv.className='pixel';
-                criaDiv.innerText=`${i}+${j}`;
+                // criaDiv.innerText=`${i}+${j}`;
                 areaPixels.appendChild(criaDiv);
                 }
         }
