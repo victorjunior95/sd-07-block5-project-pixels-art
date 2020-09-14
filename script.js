@@ -1,6 +1,9 @@
 //  DEFINIÇÕES
 //  Selecionando paleta
 const divColors = document.querySelector('#color-palette');
+const color1 = document.querySelector('.color1');
+const color2 = document.querySelector('.color2');
+const color3 = document.querySelector('.color3');
 const boardSize = document.querySelector('#board-size');
 const generateBoard = document.querySelector('#generate-board');
 const cleaner = document.querySelector('#clear-board');
@@ -34,7 +37,6 @@ function clearBoard() {
     pixels[index].style.backgroundColor = '';
   }
 }
-
 //  Função responsável por criar rows da matriz
 function buildRow(number) {
   let divRow = document.createElement('div');
@@ -46,7 +48,6 @@ function buildRow(number) {
   }
   board.appendChild(divRow);
 }
-
 //  Função responsável por construir board
 function buildBoard(number) {
   board.innerHTML = '';
@@ -54,9 +55,20 @@ function buildBoard(number) {
     buildRow(number);
   }
 }
-
+function generateColor() {
+  let first = Math.floor(Math.random() * 256);
+  let second = Math.floor(Math.random() * 256);
+  let third = Math.floor(Math.random() * 256);
+  return `rgb(${first}, ${second}, ${third})`;
+}
 
 //  EVENTOS
+//  Gerando cores
+window.onload = function () {
+  color1.style.backgroundColor = generateColor();
+  color2.style.backgroundColor = generateColor();
+  color3.style.backgroundColor = generateColor();
+}
 //  Adicionando evento de clique nas cores da paleta
 divColors.addEventListener('click', function (event) {
   clearSelection();
