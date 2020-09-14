@@ -1,4 +1,4 @@
-.color{
+.color, .selected{
     border: 1px solid black;
     height: 50px;
     width: 50px;
@@ -6,19 +6,19 @@
     display: inline-block;
     font-size: 0px;
 }
-.color-black{
+#color-black{
     background-color: black;
 }
 
-.color-green{
+#color-green{
     background-color: green;
 }
 
-.color-purple{
+#color-purple{
     background-color: purple;
 }
 
-.color-orange{
+#color-orange{
     background-color: orange;
 }
 
@@ -32,8 +32,4 @@
     width: 40px;
     background-color: white;
     display: inline-block;
-}
-
-.selected {
-    background-color: black;
 }
