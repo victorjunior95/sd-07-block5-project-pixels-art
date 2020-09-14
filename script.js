@@ -5,7 +5,6 @@ cores[1].style.backgroundColor = 'blue';
 cores[2].style.backgroundColor = 'red';
 cores[3].style.backgroundColor = 'green';
 let pixelBoard = document.querySelector('#pixel-board');
-cores[0].className = "selected"
 for(index = 0; index < 25; index += 1){
     stylePixel();
 }
