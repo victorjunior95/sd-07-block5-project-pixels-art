@@ -9,7 +9,7 @@ function getRandomColor() {
     return color;
   }
   let paleta = document.querySelectorAll(".color")
-  for (let index = 0; index < paleta.length; index += 1) {
+  for (let index = 1; index < paleta.length; index += 1) {
       paleta[index].classList.add(getRandomColor())
       paleta[index].style.backgroundColor = getRandomColor()
   }
@@ -68,6 +68,6 @@ function trocaCor() {
 let button = document.getElementById("button")
 button.addEventListener("click", function() {
     for (let index = 0; index < quadro.length; index += 1) {
-        quadro[index].style.backgroundColor = ""
+        quadro[index].style.backgroundColor = "white"
     }
 })

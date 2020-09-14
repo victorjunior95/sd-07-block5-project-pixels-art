@@ -4,6 +4,9 @@
     border: 1px solid black;
     display: inline-block;
 }
+.black {
+    background-color: black;
+}
 
 #pixel-board{
     width: 250px;
