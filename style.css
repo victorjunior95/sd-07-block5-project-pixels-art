@@ -1,0 +1,30 @@
+.palette span {
+    display: inline-block;
+}
+
+.color {
+    border: 1px solid black;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.black {
+    background-color: black
+  
+}
+
+.green {
+    background-color: rgb(49, 71, 55);
+ 
+}
+.pink {
+    background-color: rgb(236, 175, 145);
+
+}
+
+.yellow {
+    background-color: rgb(254, 227, 148);
+
+}
