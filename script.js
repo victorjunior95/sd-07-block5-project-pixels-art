@@ -17,6 +17,6 @@ function stylePixel () {
     pixelBoard.appendChild(caixa)
 }
 
-for(index = 0; index < 20; index += 1){
+for(index = 0; index < 25; index += 1){
     stylePixel()
 }
