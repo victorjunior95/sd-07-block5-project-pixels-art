@@ -1,6 +1,6 @@
 //Clear button 
-const clearBtn = document.getElementById('clear-board');
-const pixelTable = document.getElementsByClassName('pixel');
+const clearBtn = document.querySelector('#clear-board');
+const pixelTable = document.querySelectorAll('.pixel');
 
 //Clear button  
 clearBtn.addEventListener('click', function () {
@@ -17,31 +17,31 @@ const blueColor = document.querySelector('.blue');
 const greenColor = document.querySelector('.green');
 let colorPallete = document.querySelector('.color');
 
-blackColor.addEventListener('click', function () {
-    colorPallete[1].classList.remove('selected');
-    colorPallete[2].classList.remove('selected');
-    colorPallete[3].classList.remove('selected');
-    colorPallete[0].classList.add('selected');
-  })
-
-yellowColor.addEventListener('click', function () {
-    colorPallete[0].classList.remove('selected');
-    colorPallete[2].classList.remove('selected');
-    colorPallete[3].classList.remove('selected');
-    colorPallete[1].classList.add('selected');
-})
-blueColor.addEventListener('click', function () {
-    colorPallete[0].classList.remove('selected');
-    colorPallete[1].classList.remove('selected');
-    colorPallete[3].classList.remove('selected');
-    colorPallete[2].classList.add('selected');
-})
-
 greenColor.addEventListener('click', function () {
-    colorPallete[0].classList.remove('selected');
-    colorPallete[1].classList.remove('selected');
-    colorPallete[3].classList.remove('selected');
-    colorPallete[2].classList.add('selected');
-})
+    blackColor.className = 'black color';
+    yellowColor.className = 'yellow color';
+    blueColor.className = 'blue color';
+    greenColor.className = 'green color selected'
+});
 
+blueColor.addEventListener('click', function () {
+    blackColor.className = 'black color';
+    yellowColor.className = 'yellow color';
+    greenColor.className = 'green color';
+    blueColor.className = 'blue color selected';
+    
+})
+yellowColor.addEventListener('click', function () {
+    blackColor.className = 'black color';
+    blueColor.className = 'blue color';
+    greenColor.className = 'green color';
+    yellowColor.className = 'yellow color selected';
+});
+
+blackColor.addEventListener('click', function () {
+    yellowColor.className = 'yellow color';
+    blueColor.className = 'blue color';
+    greenColor.className = 'green color';
+    blackColor.className = 'black color selected';
+});
 
