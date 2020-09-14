@@ -17,11 +17,11 @@ function chooseColor(event) {
   });
 }
 function paintPixel(event) {
-  let black = document.querySelector('.black');
-  let color1 = document.querySelector('.color1');
-  let color2 = document.querySelector('.color2');
-  let color3 = document.querySelector('.color3');
-  let colors = [black, color1, color2, color3];
+  const black = document.querySelector('.black');
+  const color1 = document.querySelector('.color1');
+  const color2 = document.querySelector('.color2');
+  const color3 = document.querySelector('.color3');
+  const colors = [black, color1, color2, color3];
   colors.forEach((color) => {
     let classes = color.className.split(' ');
     if (classes.length === 3) {
@@ -30,24 +30,23 @@ function paintPixel(event) {
   });
 }
 window.onload = function () {
-  let black = document.querySelector('.black');
-  let color1 = document.querySelector('.color1');
-  let color2 = document.querySelector('.color2');
-  let color3 = document.querySelector('.color3');
-  let colors = [color1, color2, color3];
-  let pixel = document.querySelectorAll('.pixel');
+  const black = document.querySelector('.black');
+  const color1 = document.querySelector('.color1');
+  const color2 = document.querySelector('.color2');
+  const color3 = document.querySelector('.color3');
+  const colors = [color1, color2, color3];
+  const pixel = document.querySelectorAll('.pixel');
 
   colors.forEach((color) => {
     let newColor = '#';
     for (let index = 0; index < 3; index += 1) {
-      newColor = `${newColor}${parseInt(255 * Math.random()).toString(16)}`;
+      newColor = `${newColor}${parseInt(255 * Math.random(),10).toString(16)}`;
+      console.log(newColor)
     }
     color.style.backgroundColor = newColor;
   });
-  console.log(parseInt(255 * Math.random()));
 
   black.style.backgroundColor = 'black';
-  console.log(black.style.backgroundColor);
 
   black.addEventListener('click', chooseColor);
   color1.addEventListener('click', chooseColor);
@@ -56,5 +55,6 @@ window.onload = function () {
   for (let index = 0; index < pixel.length; index += 1) {
     const element = pixel[index];
     element.addEventListener('click', paintPixel);
+    element.style.backgroundColor = "#ffffff"
   }
 };
