@@ -6,19 +6,19 @@ body {
 header {
     background-color: lightskyblue;
     height: 150px;
-    margin-top: 0%;
+    
   }
   
 #title {
   line-height: 120px;
-  text-align: center;
+  margin-left: 50px;
   font-family: Comic sans-serif;
   font-size: 2.8em;
 }
 
 main {
   background-color: lightgreen;
-  padding: 10px; */
+  padding: 0; */
 }
 
 .section-pallete {
@@ -28,32 +28,54 @@ main {
 
 #color-palette{
     display: inline-block; 
-    text-align: justify; 
+    text-align: center; 
 }
 
 .color {
   border: 1px solid black; 
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   display: inline-block; 
   padding: 15px; 
   cursor: pointer;
+  text-align: center;
 }
 
 #black {
-    background-color: black;
+   background-color: black;
+   color: black;
+   margin: 10px;
 }
 
 #blue {
-    background-color: blue;
+   background-color: blue;
+   color: blue;
+   margin: 10px;
 }
 
 #yellow{
-    background-color: yellow;
+   background-color: yellow;
+   color: yellow;
+   margin: 10px;
 }
 
 #green {
-    background-color: green;
+   background-color: green;
+   color: green;
+   margin: 10px;
+}
+
+#clear-board {
+  border-color: black;
+  border-radius: 10%;
+  height: 40px;
+  width: 150px;
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 100px;
+  cursor: pointer;
 }
 
 .select {
