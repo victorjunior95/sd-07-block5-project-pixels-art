@@ -13,7 +13,6 @@ for(index = 0; index < 25; index += 1){
     stylePixel();
 }
 
-
 // Cor preta selecionada
 cores[0].addEventListener('click', function () {
     for(index = 0; index < 4; index += 1){
@@ -47,6 +46,8 @@ cores[3].addEventListener('click', function () {
     pixelCor()
 })
 let pixel = document.querySelectorAll('.pixel')
+let apaga = document.querySelector('.clear')
+apaga.addEventListener('click', apagao)
 function pixelCor (){
     pixel.forEach(item => {
         item.addEventListener('click', function () {
@@ -67,4 +68,8 @@ function stylePixel () {
     pixelBoard.appendChild(caixa);
 }
 
-
+function apagao () {
+    pixel.forEach(item => {
+            item.style.backgroundColor = 'white';
+    })
+}
