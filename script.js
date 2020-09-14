@@ -78,32 +78,31 @@ function generateAlert() {
   }
 }
 
+function createNewBoard() {
+  const coloredPixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < coloredPixels.length; i += 1) {
+    fullBoard.removeChild(coloredPixels[i]);
+  }
+}
+
 function generateBoard() {
   generateAlert();
   createNewBoard();
   fullBoard.classList.remove('quadro-nativo');
   const number = verifyBoard();
-  let numberOfPixels;
   if (number <= 5) {
     numberOfPixels = 5;
-  } 
+  }
   numberOfPixels = boardSize.value;
-  sizeBoard()
+  sizeBoard();
   for (let i = 0; i < number; i += 1) {
-    let square = document.createElement('div');
+    const square = document.createElement('div');
     square.className = 'pixel white';
     square.addEventListener('click', paintBoard);
     fullBoard.appendChild(square);
   }
   boardSize.value = '';
   paletaID = 'black';
-}
-
-function createNewBoard() {
-  const coloredPixels = document.querySelectorAll('.pixel');
-  for (let i = 0; i < coloredPixels.length; i += 1) {
-    fullBoard.removeChild(coloredPixels[i]);
-  }
 }
 
 eliminateBoard.addEventListener('click', createNewBoard);
