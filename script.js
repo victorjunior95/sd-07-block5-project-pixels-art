@@ -8,38 +8,42 @@ let pixelBoard = document.querySelector('#pixel-board');
 for(index = 0; index < 25; index += 1){
     stylePixel();
 }
-
+cores[0].className += "selected"
 
 // Cor preta selecionada
 cores[0].addEventListener('click', function () {
     for(index = 0; index < 4; index += 1){
         cores[index].className = "color"
+        cores[index].className -= "selected"
     }
-    cores[0].className = "selected"
+    cores[0].className += "selected"
     pixelCor()
 })
 // Cor azul selecionada
 cores[1].addEventListener('click', function () {
     for(index = 0; index < 4; index += 1){
         cores[index].className = "color"
+        cores[index].className -= "selected"
     }
-    cores[1].className = "selected"
+    cores[1].className += "selected"
     pixelCor()
 })
 // Cor vermelha selecionada
 cores[2].addEventListener('click', function () {
     for(index = 0; index < 4; index += 1){
         cores[index].className = "color"
+        cores[index].className -= "selected"
     }
-    cores[2].className = "selected"
+    cores[2].className += "selected"
     pixelCor()
 })
 // Cor verde selecionada
 cores[3].addEventListener('click', function () {
     for(index = 0; index < 4; index += 1){
         cores[index].className = "color"
+        cores[index].className -= "selected"
     }
-    cores[3].className = "selected"
+    cores[3].className += "selected"
     pixelCor()
 })
 let pixel = document.querySelectorAll('.pixel')
