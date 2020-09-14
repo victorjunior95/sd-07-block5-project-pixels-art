@@ -15,8 +15,13 @@ window.onload = function () {
   }
 
   // criação da paleta de cores
-  const paletaCores = ['black', 'red', 'green', 'blue'];
-
+  let paletaCores = ['black'];
+  function rgbRandom() {
+    return Math.floor(Math.random() * 256)
+  }
+  for (let index = 1; index < 4; index += 1) {
+    paletaCores.push(`rgb(${rgbRandom()},${rgbRandom()},${rgbRandom()})`);
+  }
   for (let index = 0; index < divColor.length; index += 1) {
     divColor[index].style.backgroundColor = paletaCores[index];
     divColor[index].addEventListener('click', selectColor);
