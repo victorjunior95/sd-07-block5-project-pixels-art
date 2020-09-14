@@ -1,17 +1,17 @@
-let initialColor = document.querySelector(".selected");
-let red = document.getElemenquerySelector;
+let initialColor = document.querySelector("#blackColor");
+let red = document.getElementById("redColor");
 let blue = document.getElementById("blueColor");
 let green = document.getElementById("greenColor");
 let clear = document.getElementById("clear-board");
-let box = [];
+let board = [];
 
-window.onload = start;
+window.onload = inicio;
 
-function start() {
-  for (let index = 1; index <= 25; index += 1) {
-    box[index] = document.querySelector("#px" + [index]);
-    box[index].addEventListener("click", function () {
-      box[index].style.backgroundColor = "black";
+function inicio() {
+  for (let i = 1; i <= 25; i += 1) {
+    board[i] = document.querySelector("#px" + [i]);
+    board[i].addEventListener("click", function () {
+      board[i].style.backgroundColor = "black";
     });
   }
 }
