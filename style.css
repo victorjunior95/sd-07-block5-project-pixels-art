@@ -25,3 +25,14 @@
 
   background-color:rgb(0, 211, 166);
 }
+
+
+
+.pixel {
+    display: table-cell;
+    border: solid;
+    border-style: 1px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
