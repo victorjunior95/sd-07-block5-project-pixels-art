@@ -74,7 +74,6 @@ for(let e = 0 ; e < classPixel.length ; e += 1) {
   function clearBoard(){
    /*global createBoard e:true*/
     /*eslint no-undef: "error"*/
-  
     for(let e = 0 ; e < classPixel.length ; e+= 1) {
           classPixel[e].style.background = 'white'
       }
@@ -82,25 +81,25 @@ for(let e = 0 ; e < classPixel.length ; e += 1) {
 clear.addEventListener('click', clearBoard)   
 
 
-  colorThree.addEventListener('click', currentColorToThree)
-  colorTwo.addEventListener('click', currentColorToTwo)
-  colorOne.addEventListener('click', currentColorToOne)
-  colorBlack.addEventListener('click', currentColorToBlack)  
+colorThree.addEventListener('click', currentColorToThree)
+colorTwo.addEventListener('click', currentColorToTwo)
+colorOne.addEventListener('click', currentColorToOne)
+colorBlack.addEventListener('click', currentColorToBlack)  
 
 }
 createBoard()
 
-function randomColorOne() {
+  function randomColorOne() {
 let randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 let r = randomBetween(0, 255);
 let g = randomBetween(0, 255);
 let b = randomBetween(0, 255);
 let rgb = `rgb(${r},${g},${b})`;
-colorOne.style.background = rgb     
+colorOne.style.background = rgb
 }
  randomColorOne()
 
- function randomColorTwo() {
+  function randomColorTwo() {
     let randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
     let r = randomBetween(0, 255);
     let g = randomBetween(0, 255);
@@ -110,7 +109,7 @@ colorOne.style.background = rgb
  }
      randomColorTwo()
 
-     function randomColorThree() {
+  function randomColorThree() {
         let randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
         let r = randomBetween(0, 255);
         let g = randomBetween(0, 255);
@@ -121,7 +120,7 @@ colorOne.style.background = rgb
      randomColorThree()
 
 
-     function ArrayNew(){
+  function ArrayNew(){
     /*global ArrayNew index:true*/
     /*eslint no-undef: "error"*/
     /*global ArrayNew index2:true*/

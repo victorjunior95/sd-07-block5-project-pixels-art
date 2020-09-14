@@ -2,20 +2,17 @@
 #color-palette{
     position: relative;
     display: inline-block;
-    align-content: center;    
-    /* border: 2px solid red;  */
+    align-content: center;
     width: 210px;
     height: 45px;
     margin-bottom: 5PX;
     }
     .color{
-    /* position: absolute; */
     display: inline-block; 
     border: 1px solid black; 
     width: 40px;
     height: 40px;
     }
-    
     #color1 {
     background-color: black;
     }
@@ -28,22 +25,11 @@
     #color4 {
         background-color: green;
     }
-    /* #container{
-        margin-top: 10px;
-        position: absolute;
-        display: inline-block;
-        align-content: center;    
-        border: 1px solid red; 
-        width: 210px;
-        height: 210px;
-       
-    } */
     #clear-board{
         margin-top: 10px;
         margin-bottom: 20px;
     }
     .pixel{
-        /* margin: -1.9px ; */
         display: inline-block; 
         border: 1px solid black; 
         width: 40px;
@@ -52,5 +38,3 @@
         margin: 0.5px;
         }
     
-    
-       
