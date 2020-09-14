@@ -1,4 +1,4 @@
-let defaultColor = document.querySelector('.selected').style.backgroundColor;
+let defaultColor = document.querySelector('.selected');
 
 
 const selectColor = document.querySelector('.color-palette');
