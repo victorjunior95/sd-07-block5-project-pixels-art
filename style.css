@@ -8,7 +8,6 @@
 #color-palette{
     display: inline-flex;
     text-align: center;
-    align-items: flex-start;
 }
 
 #color-black{
