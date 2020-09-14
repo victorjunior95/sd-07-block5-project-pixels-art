@@ -1,5 +1,8 @@
+window.onload= function(){
 
+    let lines = document.querySelectorAll('.line');
 
+    fillPaletas(lines);
 
 
  function createBox(className) {
@@ -17,3 +20,7 @@
       }
     }
 }       
+
+
+
+}
