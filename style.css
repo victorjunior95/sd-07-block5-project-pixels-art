@@ -19,8 +19,6 @@ div#palette4{
 }
 section#pixel-board{
     display: block;
-    width: 210px;
-    height: 210px;
     overflow:inherit;
 }
 div.pixel{
@@ -29,4 +27,5 @@ div.pixel{
     border: solid 1px black;
     display: inline-block;
     text-align: justify;
+    background-color: white;
 }
