@@ -17,6 +17,10 @@ const generateBoard = document.querySelector('#generate-board');
 const boardSize = document.querySelector('#board-size');
 
 function createBoard() {
+    /*global createBoard index:true*/
+    /*eslint no-undef: "error"*/
+    /*global createBoard index2:true*/
+    /*eslint no-undef: "error"*/
   for (index = 0; index < myArray.length; index += 1) {
       const container = document.createElement('div');
       container.className = 'container';
@@ -68,7 +72,9 @@ for(let e = 0 ; e < classPixel.length ; e += 1) {
   }
 
   function clearBoard(){
-
+   /*global createBoard e:true*/
+    /*eslint no-undef: "error"*/
+  
     for(let e = 0 ; e < classPixel.length ; e+= 1) {
           classPixel[e].style.background = 'white'
       }
@@ -117,6 +123,8 @@ colorOne.style.background = rgb
 
      function ArrayNew(){
     /*global ArrayNew index:true*/
+    /*eslint no-undef: "error"*/
+    /*global ArrayNew index2:true*/
     /*eslint no-undef: "error"*/
         myArray = []
                 for (index = 0; index < boardSize.value ; index += 1){
