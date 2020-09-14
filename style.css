@@ -23,7 +23,7 @@
 .pixel {
     background-color: white;
     border: solid 1px black;
-    display: inline-block;
+    display: table-cell;
     height: 40px;
     margin: 0;
     padding: 0;
