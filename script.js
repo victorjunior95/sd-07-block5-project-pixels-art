@@ -50,7 +50,7 @@ window.onload = function () {
       return alert("Board inválido!");
     } else {
       BOX_SIZE = size;
-      //document.querySelector("#pixel-board").removeChild;
+      mother.innerHTML = "";
       DefineSize();
     }
   });

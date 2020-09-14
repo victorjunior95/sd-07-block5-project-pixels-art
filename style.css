@@ -18,3 +18,13 @@
   width: 40px;
   background-color: white;
 }
+
+h1 {
+  font-family: "Grandstander", cursive;
+}
+
+button {
+  font-family: "Roboto Slab", serif;
+  border: none;
+  border-radius: 100px;
+}
