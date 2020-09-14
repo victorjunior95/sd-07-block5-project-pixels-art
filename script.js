@@ -69,5 +69,3 @@ paletBlack.addEventListener('click',function(){
             });
     }; 
 });
-
-trocarCor();
