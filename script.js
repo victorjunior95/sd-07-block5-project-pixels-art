@@ -1,9 +1,9 @@
 
 
 let selected = document.querySelector('.selected');
-const corRed = document.getElementsByClassName('color colorRed')[0];
-const corGreen = document.getElementsByClassName('color colorGreen')[0];
-const corBlue = document.getElementsByClassName('color colorBlue')[0];
+const corRed = document.querySelector('.colorRed');
+const corGreen = document.querySelector('.colorGreen');
+const corBlue = document.querySelector('.colorBlue');
 const limpar = document.querySelector("#clear-board")
 let caixaGeral = []
 
