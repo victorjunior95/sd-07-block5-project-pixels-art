@@ -1,63 +1,62 @@
 let myArray = [
-    [[''],[''],[''],[''],['']],
-    [[''],[''],[''],[''],['']],
-    [[''],[''],[''],[''],['']],
-    [[''],[''],[''],[''],['']],
-    [[''],[''],[''],[''],['']],
+    [[''], [''], [''], [''], ['']],
+    [[''], [''], [''], [''], ['']],
+    [[''], [''], [''], [''], ['']],
+    [[''], [''], [''], [''], ['']],
+    [[''], [''], [''], [''], ['']],
 ]
 
-let currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue("background-color")
-let colorBlack = document.querySelector('#color1');
-let colorOne = document.querySelector('#color2');
-let colorTwo = document.querySelector('#color3');
-let colorThree = document.querySelector('#color4');
-let divPixelBoard = document.querySelector('#pixel-board')
-let clear = document.querySelector('#clear-board')
-let generateBoard = document.querySelector('#generate-board')
-let boardSize = document.querySelector('#board-size')
+let currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color');
+const colorBlack = document.querySelector('#color1');
+const colorOne = document.querySelector('#color2');
+const colorTwo = document.querySelector('#color3');
+const colorThree = document.querySelector('#color4');
+const divPixelBoard = document.querySelector('#pixel-board');
+const clear = document.querySelector('#clear-board');
+const generateBoard = document.querySelector('#generate-board');
+const boardSize = document.querySelector('#board-size');
 
 function createBoard() {
-    for(i = 0; i < myArray.length; i += 1){
-        let container = document.createElement('div')
-        container.className = "container"
-        divPixelBoard.appendChild(container)
-        for(j = 0; j < myArray[i].length; j += 1){
-            let divPixel = document.createElement('div')
-            divPixel.className = "pixel"
-            container.appendChild(divPixel);
+  for (i = 0; i < myArray.length; i += 1) {
+      const container = document.createElement('div');
+      container.className = 'container';
+      divPixelBoard.appendChild(container);
+      for (j = 0; j < myArray[i].length; j += 1) {
+          const divPixel = document.createElement('div');
+            divPixel.className = 'pixel';
+          container.appendChild(divPixel);
         }
-}
-function currentColorToBlack(){
-    currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue("background-color")
-    colorBlack.className = `color selected`;
-    colorOne.className = `color`;
-    colorTwo.className = `color`;
-    colorThree.className = `color`;
-
-}
-
-function currentColorToOne(){
-    currentColor = window.getComputedStyle(document.querySelector('#color2')).getPropertyValue("background-color")
-    colorOne.className = `color selected`;
-    colorBlack.className = `color`;
-    colorTwo.className = `color`;
-    colorThree.className = `color`;
+    }
+  function currentColorToBlack() {
+  currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color');
+  colorBlack.className = 'color selected';
+  colorOne.className = 'color';
+  colorTwo.className = 'color';
+  colorThree.className = 'color';
 }
 
-function currentColorToTwo(){
-    currentColor = window.getComputedStyle(document.querySelector('#color3')).getPropertyValue("background-color")
-    colorTwo.className = `color selected`;
-    colorBlack.className = `color`;
-    colorOne.className = `color`;
-    colorThree.className = `color`;
+  function currentColorToOne() {
+  currentColor = window.getComputedStyle(document.querySelector('#color2')).getPropertyValue('background-color');
+  colorOne.className = 'color selected';
+  colorBlack.className = 'color';
+  colorTwo.className = 'color';
+  colorThree.className = 'color';
 }
 
-function currentColorToThree(){
-    currentColor = window.getComputedStyle(document.querySelector('#color4')).getPropertyValue("background-color")
-    colorThree.className = `color selected`;
-    colorBlack.className = `color`;
-    colorOne.className = `color`;
-    colorTwo.className = `color`;
+  function currentColorToTwo() {
+  currentColor = window.getComputedStyle(document.querySelector('#color3')).getPropertyValue('background-color');
+  colorTwo.className = 'color selected';
+  colorBlack.className = 'color';
+  colorOne.className = 'color';
+  colorThree.className = 'color';
+}
+
+  function currentColorToThree() {
+  currentColor = window.getComputedStyle(document.querySelector('#color4')).getPropertyValue('background-color');
+  colorThree.className = 'color selected';
+  colorBlack.className = 'color';
+  colorOne.className = 'color';
+  colorTwo.className = 'color';
 }
 
 let classPixel = document.querySelectorAll('.pixel');
@@ -144,7 +143,7 @@ myArray = []
         }
       }
 boardSize.value  = ''
-currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue("background-color")
+currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color')
 createBoard()
 }
 generateBoard.addEventListener('click', removewBoard)
