@@ -1,13 +1,12 @@
 body {
   margin: 0;
-  background-color: bisque;
+  background-color: lightgreen;
 }
 
 header {
     background-color: lightskyblue;
-    height: 150px;
-    
-  }
+    height: 0;
+}
   
 #title {
   line-height: 120px;
@@ -17,16 +16,15 @@ header {
 }
 
 main {
-  background-color: lightgreen;
-  padding: 0; */
+  padding: 0; 
 }
 
-.section-palete {
+.section-palette {
     display: inline-block; 
     align-items: center; 
 }
 
-#color-palete{
+#color-palette {
     display: inline-block; 
     text-align: center; 
     margin-left: 80px;
@@ -54,7 +52,7 @@ main {
    margin: 10px;
 }
 
-#yellow{
+#yellow {
    background-color: yellow;
    color: yellow;
    margin: 10px;
@@ -113,7 +111,7 @@ main {
 .select {
 
 }
+
 footer {
-    background-color: lightskyblue;
-    height: 80px;
+    height: 0;
 }
