@@ -11,8 +11,8 @@ const inputLines = document.getElementById('lines');
 const resizeReset = document.getElementById('resize-reset');
 const pixelBoard = document.getElementById('pixel-board');
 const generateBoard = document.getElementById('generate-board');
-let pixelWidth = 42;
-let pixelHeight = 42;
+let pixelWidth = 40;
+let pixelHeight = 40;
 let numberOfColumns = 5;
 let numberOfLines = 5;
 let boardSize = document.getElementById('board-size').value;
@@ -28,8 +28,6 @@ function pixelBoardReset() {
 }
 
 //  Functions: Color
-
-
 function getColorFromPalette() {
   selectedColor[0].classList.remove('selected');
   event.target.classList.add('selected');
