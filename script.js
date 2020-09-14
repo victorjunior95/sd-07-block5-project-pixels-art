@@ -1,3 +1,8 @@
+const BLACK = 0;
+const RED = 1;
+const BLUE = 2;
+const GREEN = 3;
+
 const botaoLimpar = document.getElementById('clear-board');
 const pixels = document.querySelectorAll('.pixel');
 
@@ -6,9 +11,9 @@ const colorRed = document.querySelector('.colorRed');
 const colorBlue = document.querySelector('.colorBlue');
 const colorGreen = document.querySelector('.colorGreen');
 
-let colorSelected = null;
-const colors = document.querySelectorAll('.color');
 
+const colors = document.querySelectorAll('.color');
+let colorSelected = BLACK;
 
 // Criar seleção de cores
 /** Passos do algoritimo: 
@@ -21,7 +26,7 @@ colors.forEach((element, index, array) => {
   element.addEventListener('click', event => {
     retiraSelected(array);
     element.className += ' selected';
-    colorSelected = element;
+    colorSelected = index;
   });
 })
 
@@ -31,6 +36,7 @@ function retiraSelected(elements) {
   })
 }
 
+//Limpar cor dos pixels
 
 botaoLimpar.addEventListener('click', function () {
   for (const pixel of pixels) {
@@ -38,15 +44,18 @@ botaoLimpar.addEventListener('click', function () {
   }
 });
 
-//selecionar cor
-
+//Atribui cor aos pixels
 pixels.forEach((element) => {
   element.addEventListener('click', event => {
-    mudaCor()
+    if(colorSelected === BLACK) {
+      element.style.backgroundColor = "black";
+    }else if(colorSelected === RED){
+      element.style.backgroundColor = "red";
+    }else if(colorSelected === BLUE){
+      element.style.backgroundColor = "blue";
+    }else{
+      element.style.backgroundColor = "green";
+    }
   });
 });
 
-
-function mudaCor() {
-  console.log('clicado');
-}
