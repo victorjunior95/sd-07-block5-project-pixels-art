@@ -115,7 +115,7 @@ let r = randomBetween(0, 255);
 let g = randomBetween(0, 255);
 let b = randomBetween(0, 255);
 let rgb = `rgb(${r},${g},${b})`;
-colorThree.style.background = rgb     
+colorThree.style.background = rgb;
 }
 randomColorThree()
 
