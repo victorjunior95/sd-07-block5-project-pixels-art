@@ -1,4 +1,5 @@
 const color = document.querySelectorAll('.color');
+const clear = document.querySelector('#clear-board');
 let pixel = document.querySelectorAll('.pixel');
 let currentColor = 'black';
 
@@ -122,3 +123,8 @@ pixel[24].addEventListener('click', function () {
   pixel[24].style.backgroundColor = currentColor;
 });
 
+clear.addEventListener('click', function () {
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+});
