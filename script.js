@@ -2,11 +2,13 @@
 const divColors = document.querySelector('#color-palette');
 const colors = document.querySelectorAll('.color');
 let selectedDiv = document.querySelector('.selected');
+let selectedColor = getColor(selectedDiv);
 
 //  Adicionando evento de clique nas cores da paleta
 divColors.addEventListener('click', function (event) {
   clearSelection();
   addSelection(event.target);
+  selectedColor = getColor(selectedDiv);
 });
 
 //  FUNCTIONS
@@ -20,4 +22,10 @@ function addSelection (target) {
   console.log(target);
   target.classList.add('selected');
   selectedDiv = document.querySelector('.selected');
+};
+
+//Função Responsável por pegar a cor da div selecionada
+function getColor (selectedDiv) {
+  let property = window.getComputedStyle(selectedDiv, null).getPropertyValue('background-color');
+  return property;
 };
