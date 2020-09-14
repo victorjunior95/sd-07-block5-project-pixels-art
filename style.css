@@ -7,6 +7,23 @@
     display: table; 
 }
 
+#pixel-board {
+    display: table;
+}
+
+#pixel-board > div { 
+    display: table-row; 
+}
+
+#cell { 
+    display: table-cell; 
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
+
+
 /* 
 
 It's even easier to use parent > child selector relationship so the inner div do not need to have their css classes to be defined explicitly:
