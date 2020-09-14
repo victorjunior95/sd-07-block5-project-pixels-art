@@ -38,3 +38,14 @@ for (index = 0; index < arrayPalete.length; index += 1) {
         palete.classList.add('selected');
     });
 }
+
+// 8 - Ao clicar em um pixel dentro do quadro após selecionar uma cor na paleta, o pixel deve ser preenchido com esta cor.
+let arrayPixels = document.querySelectorAll('.pixel');
+for (index = 0; index < arrayPixels.length; index += 1) {
+    let pixel = arrayPixels[index];
+    pixel.addEventListener('click', function () {
+        let selectedClass = document.querySelector('.selected');
+        let colorToAdd = window.getComputedStyle(selectedClass).getPropertyValue("background-color");
+        pixel.style.backgroundColor = colorToAdd;
+    });
+}
