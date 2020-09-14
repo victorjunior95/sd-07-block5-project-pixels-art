@@ -1,6 +1,12 @@
 let colorPallete = document.getElementById('color-palette');
 let pixelBoard = document.getElementById('pixel-board');
 
+let firstColorPallete = colorPallete.children[0];
+
+
+window.onload = function () {
+    firstColorPallete.className += ' selected';
+};
 
 for (let indexLine = 0; indexLine < 5; indexLine += 1) {
     let lineBoard = document.createElement('div');
