@@ -1,0 +1,26 @@
+#color-palette {
+    width: 60%;
+}
+
+.color {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.preta {
+    background-color: black;
+}
+
+.azul {
+    background-color: blue;
+}
+
+.verde {
+    background-color: green;
+}
+
+.rosa {
+    background-color: pink;
+}
