@@ -6,6 +6,7 @@ const generateBoard = document.querySelector('#generate-board');
 const cleaner = document.querySelector('#clear-board');
 const board = document.querySelector('#pixel-board');
 let selectedDiv = document.querySelector('.selected');
+let selectedColor = getColor(selectedDiv);
 
 //  FUNCTIONS
 //  Função responsável por remover classe 'selected' da cor selecionada no momento
@@ -18,7 +19,7 @@ function addSelection(target) {
   selectedDiv = document.querySelector('.selected');
 }
 //  Função Responsável por pegar a cor da div selecionada
-function getColor(selectedDiv) {
+function getColor() {
   const property = window.getComputedStyle(selectedDiv, null).getPropertyValue('background-color');
   return property;
 }
@@ -54,15 +55,13 @@ function buildBoard(number) {
   }
 }
 
-//  DEFINIÇÕES PÓS FUNÇÕES
-let selectedColor = getColor(selectedDiv);
 
 //  EVENTOS
 //  Adicionando evento de clique nas cores da paleta
 divColors.addEventListener('click', function (event) {
   clearSelection();
   addSelection(event.target);
-  selectedColor = getColor(selectedDiv);
+  selectedColor = getColor();
 });
 //  Adicionando evento de clique na pixel-board
 board.addEventListener('click', function (event) {
@@ -74,6 +73,17 @@ cleaner.addEventListener('click', function () {
 });
 //  Adicionando evento de clique no botão generate board
 generateBoard.addEventListener('click', function () {
-  let number = boardSize.value;
-  buildBoard(number);
+  let number = 0
+  if (boardSize.value == '') {
+    alert('Board inválido!');
+  } else if (boardSize.value < 5){
+    number = 5;
+    buildBoard(number);
+  } else if (boardSize.value > 50){
+    number = 50;
+    buildBoard(number);
+  } else {
+    number = boardSize.value;
+    buildBoard(number);
+  }
 });
