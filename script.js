@@ -35,7 +35,7 @@ function fillLine(divLine) {
 }
 
 const myPixels = document.querySelectorAll(".pixel");
-const colorSelected = document.querySelectorAll(".selected");
+const colorSelected = document.querySelectorAll(".color");
 
 // VARIABLE TO STORE MY INITIAL COLOR
 let getColor = "black";
@@ -45,8 +45,22 @@ for (let i = 0; i < colorSelected.length; i += 1) {
   colorSelected[i].addEventListener("click", function (event) {
     let divs = event.target;
     getColor = divs.classList[1];
-    console.log (getColor);
-  })
+  });
+}
+
+// LOOP TO ADD AND REMOVE NEW CLASS "SELECTED"
+for (let i = 0; i < colorSelected.length; i += 1) {
+  colorSelected[i].addEventListener("click", function (event) {
+    let divs = event.target;
+    let checkClassName = document.querySelector(".selected");
+    // If the class selected existed, it will be removed 
+    if (checkClassName) {
+      checkClassName.classList.remove("selected");
+    }
+    // When the div be clicked, the class selected will be created in the div;
+    divs.classList.add("selected");
+    console.log(document.querySelectorAll(".selected"));
+  });
 }
 
 // LOOP TO SELECTED MY PIXEL ELEMENT AND CHANGE HIS BACKGROUND COLOR
@@ -61,17 +75,17 @@ const buttonClear = document.querySelector("#clear-board");
 
 buttonClear.addEventListener("click", function () {
   for (let i = 0; i < myPixels.length; i += 1) {
-  myPixels[i].style.backgroundColor = "white";
+    myPixels[i].style.backgroundColor = "white";
   }
-})
+});
 
 // TESTE PARA getPropertyValue()
 // let colorBlue = document.querySelector(".blue");
 // console.log(colorBlue.style.getPropertyValue("background-color"));
 
-const buttonSizeBoard = document.querySelector("#buttonInput");
-const inputSizeBoard = document.querySelector("#inputSize");
+// const buttonSizeBoard = document.querySelector("#buttonInput");
+// const inputSizeBoard = document.querySelector("#inputSize");
 
-buttonSizeBoard.addEventListener("click", function () {
-  pixelBoard.style.maxWidth = inputSizeBoard.value;
-})
+// buttonSizeBoard.addEventListener("click", function () {
+//   pixelBoard.style.maxWidth = inputSizeBoard.value;
+// })
