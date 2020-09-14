@@ -73,8 +73,8 @@ for (let i = 0; i < tableData.length; i += 1) {
 }
 
 function newColor(number) { // função para criar número do rgb
-  return newBackgroundColor = Math.floor(Math.random() * number); // random cria um nº qualquer de 0 a 1
-} // floor tira os decimais
+  return Math.floor(Math.random() * number);
+} // random cria um nº qualquer de 0 a 1 e floor tira os decimais
 
 function anyColor() { // para mudar o background aleatoriamente
   colors[1].style.backgroundColor = `rgb(${newColor(255)} , ${newColor(255)} , ${newColor(255)})`;
