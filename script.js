@@ -1,3 +1,4 @@
+const colors = document.querySelectorAll('.color');
 function newColor(number) { // função para criar número do rgb
   return Math.floor(Math.random() * number);
 } // random cria um nº qualquer de 0 a 1 e floor tira os decimais
@@ -8,9 +9,7 @@ function anyColor() { // para mudar o background aleatoriamente
 }
 
 window.onload = anyColor;
-
-const colors = document.querySelectorAll('.color');
-// definindo a paleta de cores
+// definindo a paleta selecionada
 for (let i = 0; i < 4; i += 1) {
   colors[i].addEventListener('click', function () {
     if (i === 0) {
