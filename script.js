@@ -39,6 +39,7 @@ function clearBoard() {
 }
 
 function createBoard(numberOfLines) {
+  numberOfLines = checkNumber(numberOfLines);
   if (isEmpty()) {
     pixelBoard.innerHTML = '';
     for (let line = 0; line < numberOfLines; line += 1) {
@@ -61,6 +62,12 @@ function isEmpty() {
   if (firstTime) return true;
   if (inputBoardSize.value.length === 0) return alert('Board inválido!');
   return true;
+}
+
+function checkNumber(numberOfLines) {
+  if (numberOfLines < 5) numberOfLines = 5;
+  if (numberOfLines > 50) numberOfLines = 50;
+  return numberOfLines;
 }
 
 buttonBlack.addEventListener('click', selectColor);
