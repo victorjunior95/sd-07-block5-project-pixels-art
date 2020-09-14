@@ -15,9 +15,9 @@ function selectColor(allElements, selectedElement) {
 // limpa o quadro de pixels
 function clearBoardPixel() {
   const pixels = document.querySelectorAll('.pixel');
-    for (let index = 0; index < pixels.length; index += 1) {
-      pixels[index].style.backgroundColor = 'white';
-    }
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
 }
 
 // gerador de cores rbg aleatório
@@ -33,8 +33,8 @@ function colorPaletteGenerator(elements) {
   }
   for (let index = 0; index < elements.length; index += 1) {
     elements[index].style.backgroundColor = paletaCores[index];
-    elements[index].addEventListener('click', function() {
-      selectColor(elements, this)
+    elements[index].addEventListener('click', function () {
+      selectColor(elements, this);
     });
   }
 }
@@ -47,7 +47,7 @@ function limitBoardSize(inputSize) {
   } else if (inputSize > 50) {
     size = 50;
   } else size = inputSize;
-  document.querySelector('#board-size').value = size;
+  document.querySelector('#board-size').value = '';
   return size;
 }
 
@@ -84,8 +84,8 @@ window.onload = function () {
 
   // criação do quadro de pixel personalizado, entre 5x5 e 50x50 pixels
   const generateBoardButton = document.querySelector('#generate-board');
-  generateBoardButton.addEventListener('click', function() {
-    let boardSizeInput = document.querySelector('#board-size').value;
-    pixelBoardGenerator(pixelBoard, boardSizeInput)
+  generateBoardButton.addEventListener('click', function () {
+    const boardSizeInput = document.querySelector('#board-size').value;
+    pixelBoardGenerator(pixelBoard, boardSizeInput);
   });
 };
