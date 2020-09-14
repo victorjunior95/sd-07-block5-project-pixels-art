@@ -1,19 +1,10 @@
-const blackColor = document.querySelector('.black');
-const yellowColor = document.querySelector('.yellow');
-const blueColor = document.querySelector('blue');
-const greenColor = document.querySelector('.green');
+const clearBtn = document.getElementById('clear-board');
+const pixelTable = document.querySelectorAll('.pixel');
 
-yellowColor.addEventListener('click', function() {
-    blackColor.className = 'color black';
-    yellowColor.className = 'color yellow selected';
-})
+// Clear button  
+clearBtn.addEventListener('click', function () {
+    for (let index = 0; index < pixelTable.length; index += 1) {
+    pixelTable[index].style.backgroundColor = 'white';
+}
+});
 
-// blueColor.addEventListener('click', function () {
-//     blackColor.className = 'color black';
-//     blueColor.className = 'color blue selected';
-// })
-
-// greenColor.addEventListener('click', function() {
-//     blackColor.className = 'color black';
-//     greenColor.className = 'color green selected';
-// }) 
