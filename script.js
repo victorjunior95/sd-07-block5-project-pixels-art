@@ -1,14 +1,14 @@
 let corUm = document.querySelector(".selected");
-blackColor.style.backgroundColor = "black"
+corUm.style.backgroundColor = "black"
 
 let corDois = document.querySelector("#cor2");
-redColor.style.backgroundColor = "purple";
+corDois.style.backgroundColor = "purple";
 
 let corTres = document.querySelector("#cor3");
-redColor.style.backgroundColor = "yellow";
+corTres.style.backgroundColor = "yellow";
 
 let corQuatro = document.querySelector("#cor4");
-redColor.style.backgroundColor = "red";
+corQuatro.style.backgroundColor = "red";
 
 // selecionando e removendo seleção
 corUm.addEventListener("click", function () {
@@ -31,8 +31,8 @@ document.querySelector(".selected").classList.remove("selected");
 corQuatro.classList.add("selected");
 });
 
-let pixel = document.querySelector(".pixel");
-
+let pixel = document.querySelectorAll(".pixel");
+console.log(pixel);
   
 function colorir(i){
   pixel[i].addEventListener('click', function () {
