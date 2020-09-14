@@ -1,0 +1,55 @@
+body {
+    width: 80%;
+    background-color: cornflowerblue;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    color: white;
+}
+
+.color {
+    border: solid black 1px;
+    display: inline-block;
+    margin: 1%;
+    width: 20px;
+    height: 20px;
+}
+
+#black {
+    background-color: black;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#pink {
+    background-color: pink;
+}
+
+#blueviolet {
+    background-color: blueviolet;
+}
+
+td {
+    background-color: white;
+    border: solid black 1px;
+    width: 40px;
+    height: 40px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 5em;
+    height: 5em;
+}
+
+/* table#alter tr.dif td {
+	background: green;
+	} */
+
