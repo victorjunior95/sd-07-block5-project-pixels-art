@@ -35,10 +35,6 @@ function createPaletteColors(parent) {
 }
 createPaletteColors(mainPage);
 // console.log(document.getElementById("black").style.backgroundColor);
-function createPixel() {
-  let pixel = document.createElement('div');
-  return pixel;
-}
 
 function createBasePixelBoard(parent) {
   const sectionPixelBoard = document.createElement('section');
@@ -47,16 +43,17 @@ function createBasePixelBoard(parent) {
   // Criar a div base.
   const divAll = document.createElement('div');
   divAll.className = 'pixel-board';
-  divAll.setAttribute('id', 'pixel-board')
+  divAll.setAttribute('id', 'pixel-board');
   sectionPixelBoard.appendChild(divAll);
-  const idLines = ['a', 'b', 'c', 'd', 'e']
-  for (let index = 1; index <= idLines.length; index += 1) {
+  const idLines = ['a', 'b', 'c', 'd', 'e'];
+  for (let lineIndex = 0; lineIndex < idLines.length; lineIndex += 1) {
     const divLine = document.createElement('div');
     divLine.className = 'line';
     divAll.appendChild(divLine);
-    for (let index = 0; index < idLines.length; index += 1) {
-      const pixel = createPixel('pixel');
-      pixel.setAttribute('id', `${idLines[index]}${index}`);
+    let lineActual = idLines[lineIndex]
+    for (let pixelIndex = 0; pixelIndex < idLines.length; pixelIndex += 1) {
+      const pixel = document.createElement('div');
+      pixel.setAttribute('id', `${lineActual}${pixelIndex}`);
       pixel.className = 'pixel';
       divLine.appendChild(pixel);
     }

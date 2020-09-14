@@ -47,20 +47,13 @@ body {
   text-align: center;
 }
 
-.div-all {
-  height: 205px;
-  margin: 0;
-  padding: 0;
-  width: 205px;
-}
-
 .pixel {
   border: 1px solid black;
   display: inline-block;
-  height: 38px;
+  height: 39px;
   margin-top: 0;
   padding: 0;
-  width: 38px;
+  width: 39px;
 }
 
 .footer-class {
