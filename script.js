@@ -1,7 +1,28 @@
 // MY VARIABLES AND CONSTANTS
 const pixelBoard = document.querySelector("#pixel-board");
+const inputSizeBoard = document.querySelector("#inputSize");
+const buttonSizeBoard = document.querySelector("#buttonInput");
+// console.log(inputSizeBoard);
 let numberLines = 5;
 let numberElements = 5;
+
+buttonSizeBoard.addEventListener("click", function () {
+  numberElements = inputSizeBoard.value;
+  numberLines = inputSizeBoard.value;
+  // console.log(numberElements);
+  // console.log(numberLines);
+  executeAll();
+});
+
+function executeAll () {
+  clearBoard();
+  createLine();
+  createPixels();
+}
+
+function clearBoard () {
+  pixelBoard.innerHTML = "";
+}
 
 // FUNCTION TO CREATE DIVS WITH CLASS "LINE"
 function createLine() {
@@ -14,10 +35,13 @@ function createLine() {
 createLine();
 
 // LOOP TO EXECUTE IN ALL LINES THE FUNCTION FILL LINE
-for (let i = 0; i < numberLines; i += 1) {
-  const line = document.querySelectorAll(".line");
-  fillLine(line[i]);
+function createPixels() {
+  for (let i = 0; i < numberLines; i += 1) {
+    const line = document.querySelectorAll(".line");
+    fillLine(line[i]);
+  }
 }
+createPixels();
 
 // FUNCTION TO CREATE MY PIXEL ELEMENTS AND THE CLASSES
 function createElement(classList) {
@@ -38,7 +62,10 @@ const myPixels = document.querySelectorAll(".pixel");
 const colorSelected = document.querySelectorAll(".color");
 
 // VARIABLE TO STORE MY INITIAL COLOR
-let getColor = "black";
+function innicialColor (color) {
+let getColor = color;
+}
+innicialColor("black");
 
 // LOOP TO UPDATE MY LET GET COLOR
 for (let i = 0; i < colorSelected.length; i += 1) {
@@ -53,7 +80,7 @@ for (let i = 0; i < colorSelected.length; i += 1) {
   colorSelected[i].addEventListener("click", function (event) {
     let divs = event.target;
     let checkClassName = document.querySelector(".selected");
-    // If the class selected existed, it will be removed 
+    // If the class selected existed, it will be removed
     if (checkClassName) {
       checkClassName.classList.remove("selected");
     }
@@ -82,10 +109,3 @@ buttonClear.addEventListener("click", function () {
 // TESTE PARA getPropertyValue()
 // let colorBlue = document.querySelector(".blue");
 // console.log(colorBlue.style.getPropertyValue("background-color"));
-
-// const buttonSizeBoard = document.querySelector("#buttonInput");
-// const inputSizeBoard = document.querySelector("#inputSize");
-
-// buttonSizeBoard.addEventListener("click", function () {
-//   pixelBoard.style.maxWidth = inputSizeBoard.value;
-// })

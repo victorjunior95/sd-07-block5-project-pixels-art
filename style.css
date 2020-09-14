@@ -34,13 +34,11 @@
 }
 
 .pixel-board {
-  max-width: 200px;
-  max-height: 200px;
   margin: auto;
+  text-align: center;
 }
 
 .line {
-  width: 200px;
   height: 40px;
   margin: 0;
   padding: 0;
