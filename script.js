@@ -27,10 +27,9 @@ function fillColor(event) {
 }
 
 function addClickListener() {
-  const div = document.querySelectorAll('.pixel');
-  for (const element of div) {
-    element.addEventListener('click', fillColor);
-  }
+  document.querySelectorAll('.pixel').forEach((div) => {
+    div.addEventListener('click', fillColor);
+  });
 }
 
 function clearBoard() {
