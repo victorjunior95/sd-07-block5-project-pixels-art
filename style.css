@@ -9,7 +9,10 @@
     margin: 0px 0;
 }
 
-
+#pixel-board {
+    min-width: 5px;
+    max-width: 50px;
+}
 
 .pixel {
     display: inline-block;
