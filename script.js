@@ -1,5 +1,5 @@
 window.onload = function(){
-    let linhaPixel=document.getElementsByClassName('linha-pixel');
+    let paleta=document.getElementsByClassName('color');
     let corUm=document.getElementById('cor-1');
     let corDois=document.getElementById('cor-2');
     let corTres=document.getElementById('cor-3');
@@ -11,6 +11,12 @@ window.onload = function(){
     let qtdPixels=5;
     let contaPixel=document.querySelectorAll('.pixel');
 
+    function criaRGB(){        
+        let corR=parseInt((Math.random())*256);
+        let corG=parseInt((Math.random())*256);
+        let corB=parseInt((Math.random())*256);
+        return corRGB=`rgb(${corR},${corG},${corB})`;
+    }
     
     function criaGrid(quantidade){
     if (contaPixel.length > 0){
@@ -36,6 +42,11 @@ window.onload = function(){
     }
 
     criaGrid(qtdPixels);
+
+    for (i=1; i<paleta.length; i+=1){
+        paleta[0].style.backgroundColor='rgb(0,0,0)';
+        paleta[i].style.backgroundColor=criaRGB();
+    }
 
     corUm.addEventListener('click',function(){
         corUm.className='color selected';
