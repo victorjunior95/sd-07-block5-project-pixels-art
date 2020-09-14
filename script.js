@@ -7,6 +7,7 @@ const buttonBlue = document.querySelector('.blue');
 const buttonColor = document.getElementsByClassName('color');
 const buttonClear = document.getElementById('clear-board');
 const buttonCreateBoard = document.getElementById('generate-board');
+let firstTime = true;
 let currentColor = 'black';
 
 function selectColor(event) {
@@ -37,28 +38,28 @@ function clearBoard() {
   }
 }
 
-function createBoard() {
+function createBoard(numberOfLines) {
   if (isEmpty()) {
     pixelBoard.innerHTML = '';
-    for (let line = 0; line < Number(inputBoardSize.value); line += 1) {
+    for (let line = 0; line < numberOfLines; line += 1) {
       const divLine = document.createElement('div');
       divLine.className = 'pixel-line';
       pixelBoard.appendChild(divLine);
 
-      for (let column = 0; column < Number(inputBoardSize.value); column += 1) {
+      for (let column = 0; column < numberOfLines; column += 1) {
         const divColumn = document.createElement('div');
         divColumn.className = 'pixel';
         divLine.appendChild(divColumn);
       }
     }
     addClickListener();
+    firstTime = false;
   }
 }
 
 function isEmpty() {
-  if (inputBoardSize.value.length === 0) {
-    return alert('Board inválido!');
-  }
+  if (firstTime) return true;
+  if (inputBoardSize.value.length === 0) return alert('Board inválido!');
   return true;
 }
 
@@ -67,5 +68,6 @@ buttonRed.addEventListener('click', selectColor);
 buttonGreen.addEventListener('click', selectColor);
 buttonBlue.addEventListener('click', selectColor);
 buttonClear.addEventListener('click', clearBoard);
-buttonCreateBoard.addEventListener('click', createBoard);
+buttonCreateBoard.addEventListener('click', () => createBoard(Number(inputBoardSize.value)));
 addClickListener();
+createBoard(5);
