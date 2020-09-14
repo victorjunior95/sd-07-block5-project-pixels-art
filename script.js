@@ -7,10 +7,13 @@ document.body.appendChild(document.createElement('section'));
 document.querySelector('section').setAttribute('id', 'sessao');
 document.querySelector('#sessao').appendChild(document.createElement('table'));
 document.querySelector('#sessao table').appendChild(document.createElement('tr'));
-for (let index = 0; index < 4; index += 1) {
+document.querySelector('#sessao tr').appendChild(document.createElement('td'));
+for (let index = 0; index < 5; index += 1) {
     document.querySelector('#sessao tr').appendChild(document.createElement('td'));
-    document.querySelectorAll('#sessao td')[index].setAttribute('id', 'color-palette')
-    document.querySelectorAll('#sessao td')[index].setAttribute('class', 'color')
+    document.querySelectorAll('#sessao td')[index].setAttribute('id', 'color-palette');
+    document.querySelectorAll('#sessao td')[index].setAttribute('class', 'color');
+    document.querySelectorAll('#sessao td')[0].removeAttribute('class');
+    document.querySelectorAll('#sessao td')[0].removeAttribute('id');   
 }
 
 const paletteColor = document.querySelectorAll('#color-palette');
@@ -46,7 +49,6 @@ document.querySelector('#palete table').appendChild(document.createElement('tr')
 
 const botaoGerar = document.querySelector('#generate-board');
 const inputNumber = document.querySelector('#board-size');
-inputNumber.value = 5;
 let number = inputNumber.value * inputNumber.value;
 botaoGerar.addEventListener('click', (event) => {
     if (inputNumber.value < 5) {
@@ -63,7 +65,6 @@ botaoGerar.addEventListener('click', (event) => {
     iniciar(number);  
 });
 
-iniciar(number)
 function iniciar(number) {
     for (let index = 0; index < number; index += 1) {
         document.querySelector('#palete tr').appendChild(document.createElement('td'));
