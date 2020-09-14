@@ -95,12 +95,3 @@ clearBoard.addEventListener('click', function () {
     pixels[index].style.backgroundColor = 'white';
   }
 });
-
-window.onload = function() {
-  const col = [1, 2, 3, 4];
-  const pixels = document.getElementsByClassName('pixel');
-  for(let index = 0; index < pixels.length; index += 1){
-    let colorNumber = Math.ceil(Math.random() * 4);
-    pixels[index].style.backgroundColor = `${colorsPallet[`color${colorNumber}`]}`;
-  }
-}
