@@ -1,8 +1,8 @@
 .color {
-  display: inline-block;
   border: solid 1px black;
-  width: 60px;
+  display: inline-block;
   height: 60px;
+  width: 60px;
 }
 
 .black {
@@ -10,7 +10,7 @@
 }
 
 .red {
-  background-color:red
+  background-color: red;
 }
 
 .blue {
@@ -19,4 +19,17 @@
 
 .green {
   background-color: green;
+}
+
+.pixel {
+  background-color: white;
+  border: solid 1px black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin:0px 0px;
+}
+
+.line {
+  margin-top: 70px;
 }
