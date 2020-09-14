@@ -40,20 +40,24 @@ function createPixelBoard(parent) {
   const sectionPixelBoard = document.createElement('section');
   sectionPixelBoard.className = ('pixel-board-section');
   parent.appendChild(sectionPixelBoard);
-  
+  // Gerando a tabela (pixel-board)
   const basePixelBoard = document.createElement('table');
   basePixelBoard.className = 'table-pixels';
-  basePixelBoard.setAttribute('id', 'pixel-board')
+  basePixelBoard.setAttribute('id', 'pixel-board');
   sectionPixelBoard.appendChild(basePixelBoard);
-  for (let index = 1; index <= 5; index += 1) {
+  const rowNameId = ['a', 'b', 'c', 'd', 'e'];
+  for (let index = 0; index < rowNameId.length; index += 1) {
+    let colIdName = rowNameId[index];
     const tableRow = document.createElement('tr');
-    tableRow.className = 'table-row'
+    tableRow.className = 'table-row';
     basePixelBoard.appendChild(tableRow);
-      for (let indexCol = 1; indexCol <= 5; indexCol += 1) {
-        const tableCol = document.createElement('td');
-        tableCol.className = 'pixel';
-        tableRow.appendChild(tableCol);
-      }
+    for (let indexCol = 0; indexCol < rowNameId.length; indexCol += 1) {
+      const tableCol = document.createElement('td');
+      tableCol.className = 'pixel';
+      tableCol.setAttribute('id', `${colIdName}${indexCol}`);
+      tableCol.style.backgroundColor = 'white'
+      tableRow.appendChild(tableCol);
+    }
   }
 }
 createPixelBoard(mainPage);
