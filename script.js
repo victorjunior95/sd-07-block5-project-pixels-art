@@ -116,7 +116,8 @@ colorOne.style.background = rgb
 
 
      function ArrayNew(){
-
+    /*global ArrayNew index:true*/
+    /*eslint no-undef: "error"*/
         myArray = []
                 for (index = 0; index < boardSize.value ; index += 1){
                     myArray.push([])
@@ -124,7 +125,7 @@ colorOne.style.background = rgb
                     myArray[index].push(3)
                 }
               }
-        boardSize.value  = ''
+        boardSize.value = ''
         currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color')
         createBoard()
         }
