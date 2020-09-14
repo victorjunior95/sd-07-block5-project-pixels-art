@@ -13,13 +13,11 @@
   display: table-cell;
   height: 41px;
   padding: 0;
-  table-layout: fixed;
   width: 41px;
 }
 
 .pixelBoardClass {
   border-collapse: collapse;
-  display: table;
 }
 
 td {

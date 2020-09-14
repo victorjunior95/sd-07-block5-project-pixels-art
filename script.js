@@ -68,7 +68,7 @@ function boardCreator() {
   }
 }
 
-function proceduresToCreateBoard() {-w
+function proceduresToCreateBoard() {
   boardCreator();
   eventListenerToPixels();
   pixelBoard.style.width = numberOfColumns * pixelWidth + `px`;
@@ -111,7 +111,13 @@ function fillBoardWhite() {
 }
 
 function changeSizePixel() {
-  console.log('teste');
+  pixelWidth = inputPixelWidth.value;
+  pixelHeight = inputPixelHeight.value;
+  for (let index = 0; index < Object.keys(colorPixels).length; index += 1) {
+    colorPixels[index].style.height = pixelHeight + 'px';
+    colorPixels[index].style.width = pixelWidth + 'px';
+  }
+  proceduresToCreateBoard();
 }
 
 eventListenerToColors();
