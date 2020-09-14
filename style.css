@@ -54,10 +54,10 @@ body {
 
 .pixel {
   border: 1px solid black;
-  height: 44px;
+  height: 40px;
   margin: 0;
   padding: 0;
-  width: 44px;
+  width: 40px;
 }
 
 .footer-class {
