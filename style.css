@@ -1,23 +1,31 @@
-.color ,
+.color,
 .pixel {
+  display: table-cell;
   border: 1px solid black;
   width: 40px;
   height: 40px;
 }
 
-.colorPreta {
+.color-palette>div>a {
+  display: inline-block;
+  /* coloca as divs em linha*/
+  margin: 5px;
+}
+
+
+.colorBlack {
   background-color: black;
 }
 
-.colorVermelha {
+.colorRed {
   background-color: red;
 }
 
-.colorAzul {
+.colorBlue {
   background-color: blue;
 }
 
-.colorVerde {
+.colorGreen {
   background-color: green;
 }
 
