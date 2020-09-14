@@ -1,9 +1,7 @@
-let pixel = document.getElementsByClassName("pixel");
-let selectedColor = document.getElementsByClassName("selected")[0].style;
-
+let pixel = document.getElementsByClassName("pixel")
 for (let index in pixel) {
+    let selectedColor = document.getElementsByClassName("selected")[0]
     pixel[index].addEventListener("click", function () {
-        //pixel[index].style.backgroundColor = selectedColor[0].backgroundColor;
-        console.log(selectedColor);
+        pixel[index].style.backgroundColor = getComputedStyle(selectedColor).backgroundColor
     })
 }
