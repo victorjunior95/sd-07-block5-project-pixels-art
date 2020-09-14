@@ -40,8 +40,9 @@ for (let i = 0; i < tableData.length; i += 1) {
   });
 }
 
+const userInput = document.querySelector('#board-size');
+
 document.querySelector('#generate-board').addEventListener('click', function () {
-  const userInput = document.querySelector('#board-size');
   if (userInput.value === '') {
     alert('Board inválido!');
   } else if (userInput.value < 5) {
@@ -49,4 +50,11 @@ document.querySelector('#generate-board').addEventListener('click', function () 
   } else if (userInput.value > 50) {
     userInput.value = 50;
   }
+
+  for (let i = 5; i < userInput.value; i += 1) {
+    const newLine = document.createElement('div');
+    newLine.className = "tr";
+    document.querySelector('.table').appendChild(newLine);
+  }
 });
+
