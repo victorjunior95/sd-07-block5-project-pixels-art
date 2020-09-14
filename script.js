@@ -21,3 +21,7 @@ function clearBoard(){
        fields[i].style.backgroundColor = "rgb(255, 255, 255)"
     }
 }
+
+function resizeBoard(){
+    
+}
