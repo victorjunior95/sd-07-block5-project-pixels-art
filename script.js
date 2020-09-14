@@ -6,7 +6,7 @@ function changePixelSelect(item) {
   for (let i in pixels2);
   item.addEventListener("click", () => {
     color = window
-      .getComputedStyle(selectedColor)
+      .getComputedStyle(selectedColor) //https://medium.com/@felquis/manipula%C3%A7%C3%A3o-de-pseudo-elements-com-javascript-7c8e2334885e#:~:text=O%20getComputedStyle%20retorna%20todos%20as,elemento%20%3Aafter%20ou%20%3Abefore.
       .getPropertyValue("background-color");
     item.style.backgroundColor = color;
   });
