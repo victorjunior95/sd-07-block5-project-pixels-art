@@ -14,7 +14,7 @@ function indexClick(item) {
 let pixels = document.querySelectorAll(".pixel");
 document.querySelector("#clear-board").addEventListener("click", function () {
   for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].style.backgroundColor = "white";
+    pixels[i].style.backgroundColor = "rgb(255 , 255 , 255)";
   }
 });
 
