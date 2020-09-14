@@ -1,0 +1,63 @@
+h1 {
+text-align: center;
+}
+
+.container {
+    border: 3px solid slategray;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.color {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    background-color: white;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.black {
+    background-color: black;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.royalblue {
+    background-color: royalblue;
+}
+
+.cyan {
+    background-color: cyan;
+}
+
+.square {
+    display: inline-block;
+}
+
+.line {
+    width: 216px;
+    height: 42px;
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    background-color: white;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.visit {
+    padding: 30px;
+}
