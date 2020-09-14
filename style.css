@@ -21,7 +21,7 @@
   background-color: #5a13f2;
 }
 
-#pixel-board {
+.pixel-board {
   display: table;
 }
 
