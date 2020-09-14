@@ -10,11 +10,15 @@ const buttonCreateBoard = document.getElementById('generate-board');
 let firstTime = true;
 let currentColor = 'black';
 
+function clearSelection() {
+  const button = document.querySelector('.selected');
+  button.classList.remove('selected');
+}
+
 function selectColor(event) {
-  for (const element of buttonColor) {
-    if (element.classList.contains('selected')) element.classList.toggle('selected');
-  }
-  event.target.classList.toggle('selected');
+  clearSelection();
+
+  event.target.classList.add('selected');
   currentColor = event.target.style.backgroundColor;
 }
 
