@@ -1,0 +1,40 @@
+.pixel {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    display: inline-block;
+    margin: 0px;
+    height: 40px;
+    width: 40px;
+}
+
+#color{
+    display: inline;
+    width: 5px;
+    height: 5px;
+}
+
+#black{
+    border: 1px solid rgb(0, 0, 0);
+    width: 5px;
+    height: 5px;
+    background-color: rgb(0, 0, 0);
+}
+
+#red{
+    border: 1px solid rgb(0, 0, 0);
+    width: 5px;
+    height: 5px;
+    background-color: rgb(255, 0, 0);
+}
+#green{
+    border: 1px solid rgb(0, 0, 0);
+    width: 5px;
+    height: 5px;
+    background-color: rgb(0, 255, 0);
+}
+#blue{
+    border: 1px solid rgb(0, 0, 0);
+    width: 5px;
+    height: 5px;
+    background-color: rgb(0, 0, 255);
+}
