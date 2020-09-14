@@ -13,7 +13,6 @@ function indexClick(item) {
 document.querySelectorAll('.color').forEach(indexClick);
 
 // Pintando o pixel
-const pixelsColor = document.querySelectorAll('.pixel');
 function changePixelSelect(item) {
   item.addEventListener('click', (color) => {
     color = window

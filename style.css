@@ -31,7 +31,7 @@ h1 {
   width: 40px;
 }
 
-.clear-board {
+#clear-board {
   background-color: white;
   border: solid 1px black;
   border-radius: 5px;
@@ -39,7 +39,7 @@ h1 {
   padding: 5px;
 }
 
-.clear-board:hover {
+#clear-board:hover {
   background-color: rgb(7, 102, 66);
 }
 
