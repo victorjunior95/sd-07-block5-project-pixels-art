@@ -28,3 +28,12 @@
     background-color: rgb(254, 227, 148);
 
 }
+
+.pixel {
+    border: 1px solid black;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 15%;
+    background-color: white;
+}
