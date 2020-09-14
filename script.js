@@ -28,28 +28,54 @@ buttonInput.addEventListener('click', function () {
     makeBoard(number)
   }
 })};
-
-// trata evento selecionar elementos com cor
-    let btnBlack = document.getElementsByClassName('color')[0];
-    let btnOrange = document.getElementsByClassName('color')[1];
-    let btnOrchid = document.getElementsByClassName('color')[2];;
-    let btnBlue = document.getElementsByClassName('color')[3];;
+// cria botões para selecionar cor
+    let btnBlack = document.querySelector('#black');
+    let btnOrange = document.querySelector('#orange');
+    let btnOrchid = document.querySelector('#orchid');
+    let btnBlue = document.querySelector('#blue');
     let color = 'black';
 
-// cria botões para selecionar cor
+// trata evento selecionar elementos com cor
     btnBlack.addEventListener('click', function () {
-      btnBlack.classList.add("selected");
-      color = 'black';
+      btnBlack.classList.add('selected');
+      btnOrange.classList.remove('selected');
+      btnOrchid.classList.remove('selected');
+      btnBlue.classList.remove('selected');
+      color = window.getComputedStyle(btnBlack).getPropertyValue("background-color");
+      console.log(color);
     });
     btnOrange.addEventListener('click', function () {
-      btnOrange.classList.add("selected");
-      color = 'rgb(239 , 123 , 69)';
+      btnOrange.classList.add('selected');
+      btnBlack.classList.remove('selected');
+      btnOrchid.classList.remove('selected');
+      btnBlue.classList.remove('selected');
+      color = window.getComputedStyle(btnOrange).getPropertyValue("background-color");
+      console.log(color);
     });
     btnOrchid.addEventListener('click', function () {
-      btnOrchid.classList.add("selected");
-      color = 'rgb(94 , 177 , 191)';
+      btnOrchid.classList.add('selected');
+      btnBlack.classList.remove('selected');
+      btnOrange.classList.remove('selected');
+      btnBlue.classList.remove('selected');
+      color = window.getComputedStyle(btnOrchid).getPropertyValue("background-color");
+      console.log(color);
     });
     btnBlue.addEventListener('click', function () {
-      btnBlue.classList.add("selected");
-      color = 'rgb(205 , 237 , 246)';
+      btnBlue.classList.add('selected');
+      btnBlack.classList.remove('selected');
+      btnOrchid.classList.remove('selected');
+      btnOrange.classList.remove('selected');
+      color = window.getComputedStyle(btnBlue).getPropertyValue("background-color");
+      console.log(color);
     });
+
+// trata evento acrescentar cor no quadradinho
+
+let boardSize = document.querySelectorAll('.pixel').length;
+
+for(index = 0; index < boardSize; index += 1) {
+  let selectedPixel = document.querySelectorAll('.pixel')[index];
+  selectedPixel.addEventListener('click', function () {
+    selectedPixel[index].style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+  })
+}
