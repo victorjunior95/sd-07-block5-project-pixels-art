@@ -1,7 +1,3 @@
-function newColor(number) { // função para criar número do rgb
-  let newBackgroundColor = Math.floor(Math.random() * number); // random cria um número qualquer de 0 a 1
-  return newBackgroundColor; // floor tira os decimais
-}
 const colors = document.querySelectorAll('.color');
 // definindo a paleta de cores
 for (let i = 0; i < 4; i += 1) {
@@ -11,24 +7,24 @@ for (let i = 0; i < 4; i += 1) {
       colors[1].className = 'color red';
       colors[2].className = 'color blue';
       colors[3].className = 'color green';
-    } else if (i === 1) {
-      colors[0].className = 'color black'; 
+    } else if (i === 1) { // 255 porque acho que é o maior valor do rgb
+      colors[0].className = 'color black'; // e porque será gerado um número entre 0 e 255
       colors[1].className += ' selected';
-      colors[1].style.backgroundColor = `rgb(${newColor(255)} , ${newColor(255)} , ${newColor(255)})`;
+      colors[1].style.backgroundColor = 'red';
       colors[2].className = 'color blue';
       colors[3].className = 'color green';
     } else if (i === 2) {
       colors[0].className = 'color black';
       colors[1].className = 'color red';
       colors[2].className += ' selected';
-      colors[2].style.backgroundColor = `rgb(${newColor(255)} , ${newColor(255)} , ${newColor(255)})`;
+      colors[2].style.backgroundColor = 'blue';
       colors[3].className = 'color green';
     } else if (i === 3) {
       colors[0].className = 'color black';
       colors[1].className = 'color red';
       colors[2].className = 'color blue';
       colors[3].className += ' selected';
-      colors[3].style.backgroundColor = `rgb(${newColor(255)} , ${newColor(255)} , ${newColor(255)})`;
+      colors[3].style.backgroundColor = 'green';
     }
   });
 }
@@ -70,10 +66,20 @@ const tableData = document.querySelectorAll('.pixel');
 for (let i = 0; i < tableData.length; i += 1) {
   tableData[i].addEventListener('click', function () {
     tableData[i].style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
-    // getComputedStyle(document.querySelector('.selected')).backgroundColor;
   });
   document.querySelector('#clear-board').addEventListener('click', function () {
     tableData[i].style.backgroundColor = 'white';
   });
 }
 
+function newColor(number) { // função para criar número do rgb
+  return newBackgroundColor = Math.floor(Math.random() * number); // random cria um nº qualquer de 0 a 1
+} // floor tira os decimais
+
+function anyColor() { // para mudar o background aleatoriamente
+  colors[1].style.backgroundColor = `rgb(${newColor(255)} , ${newColor(255)} , ${newColor(255)})`;
+  colors[2].style.backgroundColor = `rgb(${newColor(255)} , ${newColor(255)} , ${newColor(255)})`;
+  colors[3].style.backgroundColor = `rgb(${newColor(255)} , ${newColor(255)} , ${newColor(255)})`;
+}
+
+window.onload = anyColor;
