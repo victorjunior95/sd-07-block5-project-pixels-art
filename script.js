@@ -45,50 +45,6 @@ document.addEventListener(
   false
 );
 
-//------------------------------------------------------------------------------
-//FAZ A MESMA COISA QUE O BLOCO ANTERIOR, MAS SEM EVENT BUBBLING
-
-// let blackPixel = document.querySelector(".black");
-// let redPixel = document.querySelector(".red");
-// let bluePixel = document.querySelector(".blue");
-// let greenPixel = document.querySelector(".green");
-
-// blackPixel.addEventListener("click", function () {
-//   colorPicked.classList.remove("selected");
-//   blackPixel.classList.add("selected");
-//   colorPicked = document.querySelector(".selected");
-//   mouse = window
-//     .getComputedStyle(colorPicked, null)
-//     .getPropertyValue("background-color");
-// });
-
-// redPixel.addEventListener("click", function () {
-//   colorPicked.classList.remove("selected");
-//   redPixel.classList.add("selected");
-//   colorPicked = document.querySelector(".selected");
-//   mouse = window
-//     .getComputedStyle(colorPicked, null)
-//     .getPropertyValue("background-color");
-// });
-
-// bluePixel.addEventListener("click", function () {
-//   colorPicked.classList.remove("selected");
-//   bluePixel.classList.add("selected");
-//   colorPicked = document.querySelector(".selected");
-//   mouse = window
-//     .getComputedStyle(colorPicked, null)
-//     .getPropertyValue("background-color");
-// });
-
-// greenPixel.addEventListener("click", function () {
-//   colorPicked.classList.remove("selected");
-//   greenPixel.classList.add("selected");
-//   colorPicked = document.querySelector(".selected");
-//   mouse = window
-//     .getComputedStyle(colorPicked, null)
-//     .getPropertyValue("background-color");
-// });
-
 //----------------------------------------------------------------------------------
 
 document.addEventListener(
