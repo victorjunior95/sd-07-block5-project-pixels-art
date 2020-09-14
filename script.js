@@ -8,3 +8,8 @@ function quadroPixels() {
 }
 
 quadroPixels();
+
+window.onload = function () {
+  const quadro = document.getElementsById('color1');
+  quadro.className = 'selected';
+};
