@@ -84,7 +84,6 @@ clear.addEventListener('click', clearBoard)
 
 }
 createBoard()
-let secondPalette = document.querySelector('#color2')
 
 function randomColorOne() {
 let randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
