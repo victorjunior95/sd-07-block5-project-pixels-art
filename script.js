@@ -49,6 +49,7 @@ document.querySelector('#palete table').appendChild(document.createElement('tr')
 
 const botaoGerar = document.querySelector('#generate-board');
 const inputNumber = document.querySelector('#board-size');
+inputNumber.value = 5;
 let number = inputNumber.value * inputNumber.value;
 botaoGerar.addEventListener('click', (event) => {
     if (inputNumber.value < 5) {
@@ -58,13 +59,14 @@ botaoGerar.addEventListener('click', (event) => {
         alert("Board inválido!");
         inputNumber.value = 50;
     }
-    if (inputNumber.value > 10) {
+    if (inputNumber.value > 7) {
         document.querySelector('#palete').style.width = '100%';
     }
     number = inputNumber.value * inputNumber.value;
     iniciar(number);  
 });
 
+iniciar(number);
 function iniciar(number) {
     for (let index = 0; index < number; index += 1) {
         document.querySelector('#palete tr').appendChild(document.createElement('td'));
