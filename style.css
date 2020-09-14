@@ -60,6 +60,7 @@ button {
 .pixel {
   background-color: white;
   border: 1px solid black;
+  cursor: pointer;
   display: inline-block;
   height: 40px;
   margin: -2px;
