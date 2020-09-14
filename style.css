@@ -2,6 +2,10 @@ body {
   text-align: center;
 }
 
+.clear-board {
+  margin-top: 20px;
+}
+
 .color {
   border: 1px solid black;
   display: inline-block;
