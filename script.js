@@ -1,7 +1,7 @@
 window.onload = function() {
   let selected = document.querySelector('.selected')
-  console.log(selected)
-  
+  let button = document.querySelector('#clear-board')
+
   let selectColor = function() {
     selected.classList.remove('selected')   
     event.target.classList.add('selected')
@@ -25,6 +25,11 @@ window.onload = function() {
     })
   })
 
+  button.addEventListener('click', function() {
+    let pixels = document.querySelectorAll('.pixel')
+    pixels.forEach(item => {
+      item.style.backgroundColor = 'White'
+    })
+  })
 
-
-} 
+}
