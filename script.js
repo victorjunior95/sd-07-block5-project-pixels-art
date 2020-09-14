@@ -80,13 +80,13 @@ function makeRandomColor() {
 }
 
 function setColors() {
-  const colors = document.querySelectorAll('.color');
-  for (const element of colors) {
-    if (!(element.classList.contains('black'))) {
+  const buttons = document.querySelectorAll('.color');
+  buttons.forEach((button) => {
+    if (!button.classList.contains('black')) {
       const color = makeRandomColor();
-      element.style.backgroundColor = color;
+      button.style.backgroundColor = color;
     }
-  }
+  });
   buttonBlack.style.backgroundColor = 'black';
 }
 
