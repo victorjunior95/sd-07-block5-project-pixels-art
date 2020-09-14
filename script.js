@@ -3,6 +3,10 @@ let bluePallete = 0;
 let yellowPallete = 0;
 let greenPallete = 0;
 
+function changeSize() {
+  alert('Ok');
+}
+
 function clearBoard() {
   document.getElementById('one').style.backgroundColor = "white";
   document.getElementById('two').style.backgroundColor = "white";
