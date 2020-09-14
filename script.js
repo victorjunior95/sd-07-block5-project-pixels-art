@@ -1,3 +1,5 @@
+// -------------- ESCOLHER A COR DA PALETA -------------- //
+
 let selected = document.getElementsByClassName("color")[0]
 selected.addEventListener("click", function(){
     selected1.classList.remove('selected')
@@ -33,3 +35,18 @@ selected3.addEventListener("click", function(){
     console.log(selected3)
 })
 
+// -------------- MUDANDO A COR DOS PIXELS -------------- //
+
+let quadro = document.querySelectorAll('.pixel')
+for (let index = 0; index < quadro.length; index += 1) {
+    let pixelSelecionado = quadro[index]
+    pixelSelecionado.addEventListener("click", function() {
+        pixelSelecionado.style.backgroundColor = trocaCor()
+    })
+}
+
+function trocaCor() {
+    let selecionado = document.getElementsByClassName("selected")[0]
+    let cor = window.getComputedStyle(selecionado).backgroundColor
+    return cor
+}
