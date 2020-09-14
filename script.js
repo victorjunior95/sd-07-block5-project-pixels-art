@@ -33,10 +33,9 @@ function addClickListener() {
 }
 
 function clearBoard() {
-  const div = document.querySelectorAll('.pixel');
-  for (const element of div) {
-    element.style.backgroundColor = 'white';
-  }
+  document.querySelectorAll('.pixel').forEach((div) => {
+    div.style.backgroundColor = 'white';
+  });
 }
 
 function isEmpty() {
