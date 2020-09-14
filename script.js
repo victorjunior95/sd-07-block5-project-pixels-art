@@ -35,3 +35,25 @@ function createPaletteColors(parent) {
 }
 createPaletteColors(mainPage);
 // console.log(document.getElementById("black").style.backgroundColor);
+
+function createPixelBoard(parent) {
+  const sectionPixelBoard = document.createElement('section');
+  sectionPixelBoard.className = ('pixel-board-section');
+  parent.appendChild(sectionPixelBoard);
+  
+  const basePixelBoard = document.createElement('table');
+  basePixelBoard.className = 'table-pixels';
+  basePixelBoard.setAttribute('id', 'pixel-board')
+  sectionPixelBoard.appendChild(basePixelBoard);
+  for (let index = 1; index <= 5; index += 1) {
+    const tableRow = document.createElement('tr');
+    tableRow.className = 'table-row'
+    basePixelBoard.appendChild(tableRow);
+      for (let indexCol = 1; indexCol <= 5; indexCol += 1) {
+        const tableCol = document.createElement('td');
+        tableCol.className = 'pixel';
+        tableRow.appendChild(tableCol);
+      }
+  }
+}
+createPixelBoard(mainPage);
