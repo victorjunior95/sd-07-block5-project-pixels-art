@@ -1,0 +1,51 @@
+.color, .selected {
+    display:inline-flex;
+    width:50px;
+    height:50px;
+    margin:0px;
+    border:1px solid black;
+}
+
+.black {
+    background:black;
+}
+
+.blue {
+    background:blue;
+}
+
+.red {
+    background:red;
+}
+
+.green {
+    background:green;
+}
+
+.white {
+    background:white;
+}
+
+header {
+    text-align:center;
+}
+
+.color-box {
+    margin-left:39%;
+}
+
+.pixel-box {
+    margin-left:40%;
+}
+
+.pixel-board {
+    display:grid;
+    grid-template-columns: 40px 40px 40px 40px 40px;
+}
+
+.pixel {
+    width:40px;
+    height:40px;
+    border:1px solid black;
+    display:inline-block;
+}
