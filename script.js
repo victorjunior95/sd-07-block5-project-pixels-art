@@ -36,31 +36,6 @@ function clearBoard() {
   }
 }
 
-function createBoard(numberOfLines) {
-
-  numberOfLines = checkNumber(numberOfLines);
-  if (isEmpty()) {
-    pixelBoard.innerHTML = '';
-    for (let line = 0; line < numberOfLines; line += 1) {
-      const divLine = document.createElement('div');
-      divLine.className = 'pixel-line';
-      
-
-      for (let column = 0; column < numberOfLines; column += 1) {
-        const divColumn = document.createElement('div');
-        divColumn.className = 'pixel';
-        divLine.appendChild(divColumn);
-
-        pixelBoard.style.width = numberOfLines * 42 + 'px';
-        pixelBoard.style.height = numberOfLines * 42 + 'px';
-      }
-      pixelBoard.appendChild(divLine);
-    }
-    addClickListener();
-    firstTime = false;
-  }
-}
-
 function isEmpty() {
   if (firstTime) return true;
   if (inputBoardSize.value.length === 0) return alert('Board inválido!');
@@ -73,19 +48,43 @@ function checkNumber(numberOfLines) {
   return numberOfLines;
 }
 
-function makeRandomColor() {
-  var color = '';
-  while (color.length < 6) {
-    color += (Math.random()).toString(16).substr(-6).substr(-1)
+function createBoard(numberOfLines) {
+
+  numberOfLines = checkNumber(numberOfLines);
+  if (isEmpty()) {
+    pixelBoard.innerHTML = '';
+    for (let line = 0; line < numberOfLines; line += 1) {
+      const divLine = document.createElement('div');
+      divLine.className = 'pixel-line';
+
+      for (let column = 0; column < numberOfLines; column += 1) {
+        const divColumn = document.createElement('div');
+        divColumn.className = 'pixel';
+        divLine.appendChild(divColumn);
+
+        pixelBoard.style.width = `${numberOfLines * 42}px`;
+        pixelBoard.style.height = `${numberOfLines * 42}px`;
+      }
+      pixelBoard.appendChild(divLine);
+    }
+    addClickListener();
+    firstTime = false;
   }
-  return '#' + color;
+}
+
+function makeRandomColor() {
+  let color = '';
+  while (color.length < 6) {
+    color += (Math.random()).toString(16).substr(-6).substr(-1);
+  }
+  return `#${color}`;
 }
 
 function setColors() {
   const colors = document.querySelectorAll('.color');
   for (const element of colors) {
     if (!(element.classList.contains('black'))) {
-      let color = makeRandomColor();
+      const color = makeRandomColor();
       element.style.backgroundColor = color;
     }
   }
