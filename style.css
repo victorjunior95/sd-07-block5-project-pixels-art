@@ -16,15 +16,15 @@
 #black {
     background-color: black;
 }
-.red {
+#red {
     background-color: rgb(255, 0, 0);
 } 
 
-.green {
+#green {
     background-color: rgb(8, 114, 43);
 }
 
-.blue {
+#blue {
     background-color: rgb(7, 31, 136);
 }
 
