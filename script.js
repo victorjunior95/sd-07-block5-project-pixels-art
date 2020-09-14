@@ -1,4 +1,18 @@
 window.onload = function () {
+  // aletera a classe selected conforme seleção da paleta de cores
+  function selectColor() {
+    for (let index = 0; index < divColor.length; index += 1) {
+      divColor[index].className = 'color';
+    }
+    this.className = 'color selected';
+  }
+
+  // altera a cor do pixel selecionado no quadro de pixels
+  function changeBackgroundColor() {
+    const selectedColor = document.querySelector('.selected').style.backgroundColor;
+    this.style.backgroundColor = selectedColor;
+  }
+
   // criação da paleta de cores
   const paletaCores = ['black', 'red', 'green', 'blue'];
   const divColor = document.querySelectorAll('.color');
@@ -13,17 +27,7 @@ window.onload = function () {
   for (let pixel = 0; pixel < 25; pixel += 1) {
     const board = document.createElement('div');
     board.className = 'pixel';
+    board.addEventListener('click', changeBackgroundColor),
     pixelBoard.appendChild(board);
-  }
-
-  // selecionando a cor inicial (black);
-  let selectedColor = document.querySelector('.selected').style.backgroundColor;
-
-  // aletera a classe selected conforme seleção da paleta de cores
-  function selectColor() {
-    for (let index = 0; index < divColor.length; index += 1) {
-      divColor[index].className = 'color';
-    }
-    this.className = 'color selected';
   }
 };
