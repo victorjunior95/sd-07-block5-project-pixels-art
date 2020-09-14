@@ -1,7 +1,9 @@
+body {
+    margin: 20px;
+}
 .color {
     height: 40px;
-    width: 40px;    
-    margin: 10px;
+    width: 40px;   
     display: inline-block;
     border: 1px solid black;
 }
@@ -20,4 +22,23 @@
 
 .green {
     background-color: green;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.line {
+    width: 200px;
+    height: 40px;
+          
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: -3px;
+    background-color: white;    
 }
