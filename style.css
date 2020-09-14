@@ -1,5 +1,6 @@
 body {
   font-size: 14pt;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -57,3 +58,7 @@ section {
     margin: 0;
     padding: 0;
 }
+
+.size input{
+  width: 25px
+;}
