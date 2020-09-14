@@ -12,13 +12,14 @@ const resizeReset = document.getElementById('resize-reset');
 const pixelBoard = document.getElementById('pixel-board');
 const generateBoard = document.getElementById('generate-board');
 let pixelWidth = 42;
+let pixelHeight = 42;
 let numberOfColumns = 5;
 let numberOfLines = 5;
 let boardSize = document.getElementById('board-size').value;
 
 //  Pixel Size
-let inputPixelHeight = document.getElementById('pixel-height');
-let inputPixelWidth = document.getElementById('pixel-width');
+const inputPixelHeight = document.getElementById('pixel-height');
+const inputPixelWidth = document.getElementById('pixel-width');
 const buttonPixelSize = document.getElementById('pixel-size');
 
 // Functions: Resize/Reset
@@ -72,13 +73,14 @@ function boardCreator() {
 function proceduresToCreateBoard() {
   boardCreator();
   eventListenerToPixels();
-  pixelBoard.style.width = numberOfColumns * pixelWidth + `px`;
+  pixelBoard.style.width = numberOfColumns * pixelWidth;
+  pixelBoard.style.width += + 'px';
 }
 
 function assignSize() {
   numberOfColumns = inputColumns.value;
   numberOfLines = inputLines.value;
-  proceduresToCreateBoard()
+  proceduresToCreateBoard();
 
 }
 
@@ -90,11 +92,11 @@ function assignSizeForGenerateBoard() {
 
 function testBeforeAssign() {
   boardSize = document.getElementById('board-size').value;
-  if (boardSize == '') {
+  if (boardSize === '') {
     alert('Board inválido!');
   } else if (boardSize >= 5 && boardSize <= 50) {
     assignSizeForGenerateBoard();
-  } else if (boardSize < 5 ) {
+  } else if (boardSize < 5) {
     boardSize = 5;
     assignSizeForGenerateBoard();
   } else if (boardSize > 50) {
@@ -115,18 +117,20 @@ function changeSizePixel() {
   pixelWidth = inputPixelWidth.value;
   pixelHeight = inputPixelHeight.value;
   for (let index = 0; index < Object.keys(colorPixels).length; index += 1) {
-    colorPixels[index].style.height = pixelHeight + 'px';
-    colorPixels[index].style.width = pixelWidth + 'px';
+    colorPixels[index].style.height = pixelHeight;
+    colorPixels[index].style.height += 'px';
+    colorPixels[index].style.width = pixelWidth;
+    colorPixels[index].style.width += 'px';
   }
   proceduresToCreateBoard();
 }
 
-function zeroTo(maxNumber){
+function zeroTo(maxNumber) {
   return Math.floor(Math.random() * maxNumber);
 }
 
 function randomColor() {
-  return 'rgb(' + zeroTo(256) +  ',' + zeroTo(256) + ',' + zeroTo(256) + ')'
+  return 'rgb(' + zeroTo(256) + ',' + zeroTo(256) + ',' + zeroTo(256) + ')';
 }
 
 function randomizerPalette() {
