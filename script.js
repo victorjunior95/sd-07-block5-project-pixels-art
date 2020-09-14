@@ -8,10 +8,9 @@ const clearButton = document.getElementById('clear-board');
 function createEvent (pixelDiv) {
   pixelDiv.addEventListener('click', function () {
     const currentSelected = document.querySelector('.selected');
-    pixelDiv.classList = currentSelected.classList;
-    //pixelDiv.classlist.remove('color', 'selected');
-    console.log(pixelDiv.classList)
-  })
+    pixelDiv.classList = 'pixel';
+    pixelDiv.classList.add(currentSelected.classList[1]);
+  });
 }
 
 //  botão de limpar quadro
