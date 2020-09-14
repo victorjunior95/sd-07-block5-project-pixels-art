@@ -8,8 +8,6 @@ const boardSize = document.querySelector('#board-size');
 const generateBoard = document.querySelector('#generate-board');
 const cleaner = document.querySelector('#clear-board');
 const board = document.querySelector('#pixel-board');
-let selectedDiv = document.querySelector('.selected');
-let selectedColor = getColor(selectedDiv);
 
 //  FUNCTIONS
 //  Função responsável por remover classe 'selected' da cor selecionada no momento
@@ -32,18 +30,18 @@ function paint(target) {
 }
 //  Função responsável por limpar a board
 function clearBoard() {
-  let pixels = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = '';
   }
 }
 //  Função responsável por criar rows da matriz
 function buildRow(number) {
-  let divRow = document.createElement('div');
+  const divRow = document.createElement('div');
   divRow.className = 'row';
   for (let index = 0; index < number; index += 1) {
-    let divCell = document.createElement('div');
-    divCell.className = 'pixel'
+    const divCell = document.createElement('div');
+    divCell.className = 'pixel';
     divRow.appendChild(divCell);
   }
   board.appendChild(divRow);
@@ -55,12 +53,15 @@ function buildBoard(number) {
     buildRow(number);
   }
 }
-function generateColor() {
-  let first = Math.floor(Math.random() * 256);
-  let second = Math.floor(Math.random() * 256);
-  let third = Math.floor(Math.random() * 256);
+function generateColor() { //Inspirado em código achado no seguint url (https://stackoverflow.com/questions/1152024/best-way-to-generate-a-random-color-in-javascript/1152508)
+  const first = Math.floor(Math.random() * 256);
+  const second = Math.floor(Math.random() * 256);
+  const third = Math.floor(Math.random() * 256);
   return `rgb(${first}, ${second}, ${third})`;
 }
+//  DEFINIÇÕES PÓS FUNÇÕES
+let selectedDiv = document.querySelector('.selected');
+let selectedColor = getColor(selectedDiv);
 
 //  EVENTOS
 //  Gerando cores
@@ -68,7 +69,7 @@ window.onload = function () {
   color1.style.backgroundColor = generateColor();
   color2.style.backgroundColor = generateColor();
   color3.style.backgroundColor = generateColor();
-}
+};
 //  Adicionando evento de clique nas cores da paleta
 divColors.addEventListener('click', function (event) {
   clearSelection();
@@ -85,13 +86,13 @@ cleaner.addEventListener('click', function () {
 });
 //  Adicionando evento de clique no botão generate board
 generateBoard.addEventListener('click', function () {
-  let number = 0
-  if (boardSize.value == '') {
+  let number = 0;
+  if (boardSize.value === '') {
     alert('Board inválido!');
-  } else if (boardSize.value < 5){
+  } else if (boardSize.value < 5) {
     number = 5;
     buildBoard(number);
-  } else if (boardSize.value > 50){
+  } else if (boardSize.value > 50) {
     number = 50;
     buildBoard(number);
   } else {
