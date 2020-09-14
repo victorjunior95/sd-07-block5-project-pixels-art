@@ -9,19 +9,19 @@ body {
   width: 50px;
 }
 
-.first-color {
+.color0 {
   background-color: black;
 }
 
-.second-color {
+.color1 {
   background-color: purple;
 }
 
-.third-color {
+.color2 {
   background-color: orange;
 }
 
-.forth-color {
+.color3 {
   background-color: wheat;
 }
 
