@@ -29,8 +29,10 @@ function createPaletteColors(parent) {
     const colorOfPalette = document.createElement('span');
     colorOfPalette.className = `color ${colorsPalette[index]}`;
     colorOfPalette.setAttribute('id', colorsPalette[index]);
-    // colorOfPalette.style.backgroundColor = colorsPalette[index];
+    colorOfPalette.style.backgroundColor = colorsPalette[index];
     palette.appendChild(colorOfPalette);
   }
 }
 createPaletteColors(mainPage);
+
+console.log(document.getElementById("black").style.backgroundColor)

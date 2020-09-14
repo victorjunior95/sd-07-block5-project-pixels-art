@@ -44,6 +44,7 @@ body {
   width: 40px;
 }
 
+/*
 .black {
   background-color: black;
 }
@@ -57,12 +58,13 @@ body {
 }
 
 .mediumaquamarine {
- background-color: mediumaquamarine;
+  background-color: mediumaquamarine;
 }
 
 .dodgerblue {
   background-color: dodgerblue;
 }
+*/
 
 .footer-class {
   background-color: rgb(109, 89, 89);
