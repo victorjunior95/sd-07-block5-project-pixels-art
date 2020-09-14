@@ -64,4 +64,9 @@ body {
 .section-button button {
   height: 30px;
   font-weight: 600;
+  margin-right: 40px;
+}
+
+.section-button .input {
+  margin-left: 40px;
 }
