@@ -50,16 +50,20 @@ pixels.forEach(item => {
 
 buttonGenerateBoard.addEventListener('click', function() {
   numberOfLinesAndColunms = document.getElementById('board-size').value;
-  if (numberOfLinesAndColunms < 5 || numberOfLinesAndColunms > 50 || numberOfLinesAndColunms === null) {
+  if (numberOfLinesAndColunms === null) {
       alert('Board inválido!');
-  } else {
-      pixelBoard.innerHTML = '';
-      makeBoard(numberOfLinesAndColunms);
-      pixels = document.querySelectorAll('.pixel');
-      pixels.forEach(item => {
-        item.addEventListener('click', paintBoard);
-      });
-  }  
+  } else if (numberOfLinesAndColunms > 50) {
+    numberOfLinesAndColunms = 50;
+  } else if (numberOfLinesAndColunms < 5) {
+    numberOfLinesAndColunms = 5;
+  }
+    pixelBoard.innerHTML = '';
+    makeBoard(numberOfLinesAndColunms);
+    pixels = document.querySelectorAll('.pixel');
+    pixels.forEach(item => {
+      item.addEventListener('click', paintBoard);
+    });
+  
 });
 
 clearBoard.addEventListener('click', function() {
