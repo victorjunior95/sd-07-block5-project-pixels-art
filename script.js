@@ -34,14 +34,27 @@ function initialPixelBoard() {
   }
 };
 
-for (const btn of colors) {
-  btn.addEventListener('click', function () {
-    if (!event.target.classList.contains('selected')) {
-      selected.classList.remove('selected');
-      event.target.classList.add('selected');
-    }
-    selected = document.querySelector('.selected');
-  })
+function gettingTheColors() {
+  for (const btn of colors) {
+    btn.addEventListener('click', function () {
+      if (!event.target.classList.contains('selected')) {
+        selected.classList.remove('selected');
+        event.target.classList.add('selected');
+      }
+      selected = document.querySelector('.selected');
+    })
+  }
+};
+
+function paintTheBoard() {
+  const pixels = document.querySelectorAll('.pixel');
+  for (const cell of pixels) {
+    cell.addEventListener('click', function () {
+      event.target.style.backgroundColor = selected.style.backgroundColor;
+    })
+  }
 };
 
 initialPixelBoard();
+gettingTheColors();
+paintTheBoard();
