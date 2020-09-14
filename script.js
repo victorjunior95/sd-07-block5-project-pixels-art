@@ -26,11 +26,19 @@ function createPaletteColors(parent) {
 
   const colorsPalette = ['black', 'oldlace', 'tomato', 'dodgerblue'];
   for (let index = 0; index < colorsPalette.length; index += 1) {
-    const colorOfPalette = document.createElement('span');
-    colorOfPalette.className = `color ${colorsPalette[index]}`;
-    colorOfPalette.setAttribute('id', colorsPalette[index]);
-    colorOfPalette.style.backgroundColor = colorsPalette[index];
-    palette.appendChild(colorOfPalette);
+    if (index === 0) {
+      const colorOfPalette = document.createElement('span');
+      colorOfPalette.className = `color ${colorsPalette[index]} selected`;
+      colorOfPalette.setAttribute('id', colorsPalette[index]);
+      colorOfPalette.style.backgroundColor = colorsPalette[index];
+      palette.appendChild(colorOfPalette);
+    } else {
+      const colorOfPalette = document.createElement('span');
+      colorOfPalette.className = `color ${colorsPalette[index]}`;
+      colorOfPalette.setAttribute('id', colorsPalette[index]);
+      colorOfPalette.style.backgroundColor = colorsPalette[index];
+      palette.appendChild(colorOfPalette);
+    }
   }
 }
 createPaletteColors(mainPage);
