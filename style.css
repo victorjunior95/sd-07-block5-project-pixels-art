@@ -1,0 +1,22 @@
+.color {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgb(0, 0, 0);
+  display: inline-block;
+}
+
+#colorPalete1 {
+  background-color: black;
+}
+
+#colorPalete2 {
+  background-color: blue;
+}
+
+#colorPalete3 {
+  background-color: green;
+}
+
+#colorPalete4 {
+  background-color: yellow;
+}
