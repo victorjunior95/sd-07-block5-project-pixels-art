@@ -21,16 +21,16 @@ botaoGerar.addEventListener('click', (event) => {
         document.querySelector('#palete').style.width = '100%';
     }
     number = inputNumber.value * inputNumber.value;
-    iniciar(number);  
+   
 });
 
-iniciar(number);
-function iniciar(number) {
+
     for (let index = 0; index < number; index += 1) {
         document.querySelector('#palete tr').appendChild(document.createElement('td'));
         document.querySelectorAll('#palete td')[index].setAttribute('id', 'pixel-board');
         document.querySelectorAll('#palete td')[index].setAttribute('class', 'pixel');
-    }    
+    }
+
     const boardPixel = document.querySelectorAll('#palete td');
         paletteColor[0].className = 'selected';
         for(let index = 0; index < boardPixel.length; index += 1) {
@@ -58,4 +58,3 @@ function iniciar(number) {
             boardPixel[index].style.backgroundColor = 'white';
         }
     });
-}
