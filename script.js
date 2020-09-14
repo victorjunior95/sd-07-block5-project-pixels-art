@@ -4,6 +4,9 @@ const red = document.querySelector('#red');
 const green = document.querySelector('#green');
 const blue = document.querySelector('#blue');
 
+let selected = document.querySelector('.selected');
+const colors = document.querySelectorAll('.color')
+
 black.style.backgroundColor = 'black';
 red.style.backgroundColor = 'red';
 green.style.backgroundColor = 'green';
@@ -29,6 +32,16 @@ function initialPixelBoard() {
     
     pixelBoard.appendChild(pixelRow);
   }
-}             
+};
+
+for (const btn of colors) {
+  btn.addEventListener('click', function () {
+    if (!event.target.classList.contains('selected')) {
+      selected.classList.remove('selected');
+      event.target.classList.add('selected');
+    }
+    selected = document.querySelector('.selected');
+  })
+};
 
 initialPixelBoard();
