@@ -1,11 +1,11 @@
-let colorPalette = document.querySelector('#color-palette');
-let pixelBoard = document.querySelector('#pixel-board');
-let colors = document.querySelectorAll('.color');
-let pixels = document.querySelectorAll('.color');
-let selectedColor = 'black';
+const colorPalette = document.querySelector('#color-palette');
+const pixelBoard = document.querySelector('#pixel-board');
+const colors = document.querySelectorAll('.color');
+const pixels = document.querySelectorAll('.color');
+const selectedColor = 'black';
 
 colorPalette.addEventListener('color', function (event) {
-  let selected = document.querySelector('.selected');
+  const selected = document.querySelector('.selected');
   selected.classList.remove('selected');
   event.target.className += 'selected';
   selectedColor = event.target.style.backgroundColor;
