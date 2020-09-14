@@ -1,4 +1,4 @@
-.container {
+.color-palette {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -7,7 +7,7 @@
 .color {
   align-items: center;
   border: 1px solid black;
-  display: flex;
+  display: inline-block;
   height: 41px;
   justify-content: center;
   margin: 5px;
@@ -15,34 +15,17 @@
   width: 41px;
 }
 
-.black {
-  background-color: black;
-}
-
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
-}
-
 .pixel-board {
   display: table;
 }
 
-.tr {
+.line {
   display: table-row;
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
-  box-sizing: content-box;
   display: table-cell;
   height: 40px;
   width: 40px;
