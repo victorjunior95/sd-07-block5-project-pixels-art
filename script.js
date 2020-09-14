@@ -6,6 +6,8 @@ let redPixel = document.querySelector(".red");
 let bluePixel = document.querySelector(".blue");
 let greenPixel = document.querySelector(".green");
 
+let pixels = document.querySelectorAll(".pixel");
+
 window.onload = function () {
   mouse = window
     .getComputedStyle(colorPicked, null)
@@ -52,8 +54,12 @@ greenPixel.addEventListener("click", function () {
 
 //---------------------------------------------------------------//
 
-let pixel = document.querySelector(".pixel");
-
-pixel.addEventListener("click", function () {
-  pixel.style.backgroundColor = mouse;
-});
+document.addEventListener(
+  "click",
+  function (event) {
+    if (event.target.classList.contains("pixel")) {
+      event.target.style.backgroundColor = mouse;
+    }
+  },
+  false
+);
