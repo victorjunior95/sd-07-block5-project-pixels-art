@@ -13,7 +13,7 @@
         <h1 id="title">Paleta de Cores</h1>
     </header>
     <section id="color-palette">
-        <div class="color" id="black">
+        <div class="selected color" id="black">
         </div>
         <div class="color" id="orange">
         </div>
@@ -21,6 +21,12 @@
         </div>
         <div class="color" id="blueviolet">
         </div>
+    </section>
+    <section id="setPixels">
+        <p>Digite qual a quantidade de pixels por linha/ coluna</p>
+        <input id="board-size" type="number" min="1" max="50">
+        <button id="generate-board">VQV</button>
+        <button id="clear-board">Limpar</button>
     </section>
     <section id="pixel-board">
         <div class="tr">
@@ -59,6 +65,8 @@
             <div class="pixel"></div>
         </div>
     </section>
+    
+
     
 </body>
 </html>

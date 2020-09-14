@@ -21,24 +21,29 @@ h1 {
 
 #black {
     background-color: black;
+    cursor: pointer;
 }
 
 #orange {
     background-color: orange;
+    cursor: pointer;
 }
 
 #pink {
     background-color: pink;
+    cursor: pointer;
 }
 
 #blueviolet {
     background-color: blueviolet;
+    cursor: pointer;
 }
 
 #pixel-board { 
     display: table;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
 }
 
 .tr { 
