@@ -16,36 +16,38 @@ function getRandomColor() {
 
 // -------------- ESCOLHER A COR DA PALETA -------------- //
 
-let selected = document.getElementsByClassName("color")[0]
-selected.addEventListener("click", function(){
-    selected1.classList.remove('selected')
-    selected2.classList.remove('selected')
-    selected3.classList.remove('selected')
-    this.classList.add('selected')
-})
-let selected1 = document.getElementsByClassName("color")[1]
-selected1.addEventListener("click", function(){
-    selected.classList.remove('selected')
-    selected2.classList.remove('selected')
-    selected3.classList.remove('selected')
-    this.classList.add('selected')
-})
+    paleta[0].addEventListener("click", function() {
+        removeSelecionados()
+        this.classList.add("selected")
+    })
+    paleta[1].addEventListener("click", function() {
+        removeSelecionados()
+        this.classList.add("selected")
+    })
+    paleta[2].addEventListener("click", function() {
+        removeSelecionados()
+        this.classList.add("selected")
+    })
+    paleta[3].addEventListener("click", function() {
+        removeSelecionados()
+        this.classList.add("selected")
+    })
+    
+function removeSelecionados() {
+    paleta[0].classList.remove("selected")
+    paleta[1].classList.remove("selected")
+    paleta[2].classList.remove("selected")
+    paleta[3].classList.remove("selected")
+}
+// -------------- GERANDO PIXELS -------------- //
 
-let selected2 = document.getElementsByClassName("color")[2]
-selected2.addEventListener("click", function(){
-    selected.classList.remove('selected')
-    selected1.classList.remove('selected')
-    selected3.classList.remove('selected')
-    this.classList.add('selected')
-})
+let containerPixel = document.getElementById("pixel-board")
+for (let index = 0; index < 25; index += 1) {
+    let pixel = document.createElement('div')
+    pixel.className = "pixel"
+    containerPixel.appendChild(pixel)
 
-let selected3 = document.getElementsByClassName("color")[3]
-selected3.addEventListener("click", function(){
-    selected.classList.remove('selected')
-    selected1.classList.remove('selected')
-    selected2.classList.remove('selected')
-    this.classList.add('selected')
-})
+}
 
 // -------------- MUDANDO A COR DOS PIXELS -------------- //
 
