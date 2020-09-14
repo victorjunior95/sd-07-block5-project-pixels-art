@@ -1,0 +1,44 @@
+body {
+  background-color: rgb(0 , 78 , 152);
+  text-align: center;
+}
+
+h1 {
+  color: rgb(255, 103, 0);
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+button {
+  display: inline-block;
+  margin: 0 -3px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.color {
+  border: 1px solid black;
+  height: 80px;
+  width: 100px;
+}
+
+.first {
+  background-color: black;
+  border-radius: 50% 0 0 50%;
+}
+
+.second {
+  background-color: red;
+  color: red;
+}
+
+.third {
+  background-color: green;
+  color: green;
+}
+
+.last {
+  background-color: blue;
+  border-radius: 0 50% 50% 0;
+  color: blue;
+}
