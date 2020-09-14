@@ -5,6 +5,21 @@ window.onload = function () {
   mouse = window
     .getComputedStyle(colorPicked, null)
     .getPropertyValue("background-color");
+
+  let random1 = document.querySelector(".red");
+  let aletorio1 = Math.round(Math.random() * 255);
+  random1.style.backgroundColor =
+    "rgb(" + aletorio1 + "," + aletorio1 + "," + aletorio1 + ")";
+
+  let random2 = document.querySelector(".blue");
+  let aletorio2 = Math.round(Math.random() * 255);
+  random2.style.backgroundColor =
+    "rgb(" + aletorio2 + "," + aletorio2 + "," + aletorio2 + ")";
+
+  let random3 = document.querySelector(".green");
+  let aletorio3 = Math.round(Math.random() * 255);
+  random3.style.backgroundColor =
+    "rgb(" + aletorio3 + "," + aletorio3 + "," + aletorio3 + ")";
 };
 
 //----------------------------------------------------------------------------
@@ -86,9 +101,9 @@ function generateBoard() {
   }
   limpa();
 
-  if(document.querySelector("#board-size").value > 50){
+  if (document.querySelector("#board-size").value > 50) {
     document.querySelector("#board-size").value = 50;
-  }else if(document.querySelector("#board-size").value < 5){
+  } else if (document.querySelector("#board-size").value < 5) {
     document.querySelector("#board-size").value = 5;
   }
 
