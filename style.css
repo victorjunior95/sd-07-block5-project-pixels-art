@@ -1,9 +1,9 @@
 body {
   margin: 10px;
-  background-color: rgb(255 , 255 , 255);
 }
 
 .color {
+  border: black solid 1px;
   color: white;
   display: inline-block;
   height: 40px;
@@ -31,6 +31,10 @@ body {
   background-color: #ffb508;
 }
 
+div.td.pixel{
+  background-color: rgb(255 , 255 , 255);
+}
+
 .pixel {
   border: black solid 1px;
   display: block;
@@ -47,7 +51,6 @@ body {
 .table{ 
   display: table;
   border: black solid 1px;
-  background-color: rgb(255 , 255 , 255);
 }
 
 .tr{ 
