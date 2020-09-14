@@ -2,13 +2,14 @@ body {
     background-color: #B0C4DE;
 }
 
-#pixel-board {
+#pixel-board{
     position: absolute;
     background-color: white;
     border: 1px black solid;
     padding-bottom: 220px;
+    padding-right: 10px;
     height: 190px;
-    width: 410px;
+    width: 401px;
     top: 150px;
     left: 180px;
 
@@ -47,8 +48,7 @@ body {
     top: 5px;
     left: 66px;
 }
-
-#red {
+#red{
     position: absolute;
     display: inline-block;
     border: 1px black solid;
@@ -77,9 +77,10 @@ body {
     top: 5px;
     left: 122px;
 }
-
+.pixel{
+    border: 1px black solid;
+}
 #pixel-1 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
     left: 1px;
@@ -88,9 +89,7 @@ body {
     width: 40px;
     background-color: white;
 }
-
 #pixel-2 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
     left: 83px;
@@ -99,42 +98,34 @@ body {
     width: 40px;
     background-color: white;
 }
-
 #pixel-3 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 165px;
+    left:165px;
     top: 1px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-4 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 247px;
+    left:247px;
     top: 1px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-5 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 329px;
+    left:329px;
     top: 1px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-6 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
     left: 1px;
@@ -143,9 +134,7 @@ body {
     width: 40px;
     background-color: white;
 }
-
 #pixel-7 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
     left: 83px;
@@ -154,42 +143,34 @@ body {
     width: 40px;
     background-color: white;
 }
-
 #pixel-8 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 165px;
+    left:165px;
     top: 83px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-9 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 247px;
+    left:247px;
     top: 83px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-10 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 329px;
+    left:329px;
     top: 83px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-11 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
     left: 1px;
@@ -198,9 +179,7 @@ body {
     width: 40px;
     background-color: white;
 }
-
 #pixel-12 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
     left: 83px;
@@ -209,42 +188,34 @@ body {
     width: 40px;
     background-color: white;
 }
-
 #pixel-13 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 165px;
+    left:165px;
     top: 165px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-14 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 247px;
+    left:247px;
     top: 165px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-15 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 329px;
+    left:329px;
     top: 165px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-16 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
     left: 1px;
@@ -253,9 +224,7 @@ body {
     width: 40px;
     background-color: white;
 }
-
 #pixel-17 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
     left: 83px;
@@ -264,53 +233,43 @@ body {
     width: 40px;
     background-color: white;
 }
-
 #pixel-18 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 165px;
+    left:165px;
     top: 247px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-19 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 247px;
+    left:247px;
     top: 247px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-20 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 329px;
+    left:329px;
     top: 247px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-21 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 1px;
+    left:1px;
     top: 329px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-22 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
     left: 83px;
@@ -319,39 +278,34 @@ body {
     width: 40px;
     background-color: white;
 }
-
 #pixel-23 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 165px;
+    left:165px;
     top: 329px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
-
 #pixel-24 {
-    border: 1px black solid;
     position: absolute;
     padding: 20px;
-    left: 247px;
+    left:247px;
+    top: 329px;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+}
+#pixel-25 {
+    position: absolute;
+    padding: 20px;
+    left:329px;
     top: 329px;
     height: 40px;
     width: 40px;
     background-color: white;
 }
 
-#pixel-25 {
-    border: 1px black solid;
-    position: absolute;
-    padding: 20px;
-    left: 329px;
-    top: 329px;
-    height: 40px;
-    width: 40px;
-    background-color: white;
-}
 
 
 #color-palette {
