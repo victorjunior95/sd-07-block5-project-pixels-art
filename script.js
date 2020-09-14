@@ -1,5 +1,4 @@
 
-
 let selected = document.querySelector('.selected');
 const corRed = document.querySelector('.colorRed');
 const corGreen = document.querySelector('.colorGreen');
@@ -8,15 +7,18 @@ const limpar = document.querySelector("#clear-board")
 let caixaGeral = []
 
 window.onload = inicio;
-
 function inicio(){
     for( let i= 1  ; i <= 25 ;i += 1){
         caixaGeral[i] = document.querySelector("#p" + [i]);
         caixaGeral[i].addEventListener("click", function(){
         caixaGeral[i].style.backgroundColor = 'black';
     })   
+    caixaGeral[i].style.backgroundColor = `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
+
     
     }
+   
+      
 }
 
 function preto(){
