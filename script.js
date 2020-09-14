@@ -42,7 +42,11 @@ for (let i = 0; i < tableData.length; i += 1) {
 
 document.querySelector('#generate-board').addEventListener('click', function () {
   const userInput = document.querySelector('#board-size');
-  if (userInput.value === "") {
-    alert('Board inválido!')
+  if (userInput.value === '') {
+    alert('Board inválido!');
+  } else if (userInput.value < 5) {
+    userInput.value = 5;
+  } else if (userInput.value > 50) {
+    userInput.value = 50;
   }
-})
+});
