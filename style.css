@@ -1,0 +1,21 @@
+.color {
+    border: 1px solid black;
+    display: inline-block;
+    size: 10px;
+    height: 40px;
+    width: 40px;
+}
+.color-palette {
+    display: inline-block;
+}
+
+table {
+    border: 1px solid black;
+    background-color: white;
+}
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    background-color: white;
+}
