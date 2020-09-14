@@ -8,7 +8,7 @@ function changeBKGColor () {
   body.style.backgroundColor='rgb(' + rColorRGB + ' , ' + gColorRGB + ' , ' + bColorRGB + ')';
   title.style.color='rgb(' + rColorRGB + 1 + ' , ' + gColorRGB + ' , ' + bColorRGB + 1 + ')';
 }
-//const time = setInterval (changeBKGColor, 100);
+const time = setInterval (changeBKGColor, 100);
 // Remove the bars fron the line above to see the efect.
 
 const color01 = document.getElementById('color-01');
@@ -39,7 +39,7 @@ colorPalet.forEach(item => {
 // Function to clear all class color fron pixel itens.
 clearBT.addEventListener('click', function () {
   pixelSS.forEach(item2 => {
-  item2.className = 'pixel';
+  item2.className = 'td pixel';
   });
 });
 

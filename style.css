@@ -1,13 +1,9 @@
-.asectionPix {
+body {
+  margin: 10px;
   background-color: rgb(255 , 255 , 255);
 }
 
-body {
-  margin: 10px;
-}
-
 .color {
-  border: black solid 1px;
   color: white;
   display: inline-block;
   height: 40px;
@@ -49,11 +45,15 @@ body {
 }
 
 .table{ 
-  display: table; 
+  display: table;
+  border: black solid 1px;
+  background-color: rgb(255 , 255 , 255);
 }
+
 .tr{ 
   display: table-row; 
 }
+
 .td{ 
  display: table-cell;
 }
