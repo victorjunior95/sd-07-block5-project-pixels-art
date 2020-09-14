@@ -25,18 +25,6 @@ body {
   width: 40px;
 }
 
-.red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
-.blue {
-  background-color: blue;
-}
-
 .pixel-board {
   background-color: rgb(110, 110, 110);
   border: solid 2px black;
