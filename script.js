@@ -37,6 +37,7 @@ function clearBoard() {
 }
 
 function createBoard(numberOfLines) {
+
   numberOfLines = checkNumber(numberOfLines);
   if (isEmpty()) {
     pixelBoard.innerHTML = '';
@@ -49,6 +50,9 @@ function createBoard(numberOfLines) {
         const divColumn = document.createElement('div');
         divColumn.className = 'pixel';
         divLine.appendChild(divColumn);
+
+        pixelBoard.style.width = numberOfLines * 42 + 'px';
+        pixelBoard.style.height = numberOfLines * 42 + 'px';
       }
       pixelBoard.appendChild(divLine);
     }
