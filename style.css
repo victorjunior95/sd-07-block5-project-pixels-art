@@ -24,7 +24,19 @@
 .pixel {
   background-color: white;
   border: 1px solid black;
-  border-spacing: 0px;
+  border-spacing: 0;
   height: 40px;
   width: 40px;
+}
+
+#table {
+  display: table;
+}
+
+.tr {
+  display: table-row;
+}
+
+.td {
+  display: table-cell;
 }
