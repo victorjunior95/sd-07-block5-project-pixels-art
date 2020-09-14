@@ -34,4 +34,4 @@ function createPaletteColors(parent) {
   }
 }
 createPaletteColors(mainPage);
- console.log(document.getElementById("black").style.backgroundColor);
+// console.log(document.getElementById("black").style.backgroundColor);
