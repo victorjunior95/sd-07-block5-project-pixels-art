@@ -30,7 +30,6 @@ function colunaTabela(tpTag2, nmClasse, classVinculo2, index1) {
 function backGndColor() {
   const backGndColorSelected =
     document.getElementsByClassName('color selected')[0].style.backgroundColor;
-
   this.style.backgroundColor = backGndColorSelected;
 }
 
@@ -42,6 +41,12 @@ function coresEscolhas() {
   }
 }
 
+function selecionarCor() {
+  if (document.getElementsByClassName('color selected')[0]) {
+    document.getElementsByClassName('color selected')[0].classList.remove('selected');
+  }
+  this.classList.add('selected');
+}
 
 function botaoLimpar() {
   const pixels = document.getElementsByClassName('pixel');
