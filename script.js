@@ -4,7 +4,7 @@ const selectColor = document.querySelector('.color-palette');
 selectColor.addEventListener('click', function (event) {
   const select = document.querySelector('.selected');
   select.classList.remove('selected');
-  event.target.classList.add('selected');
+  event.target.className += ' selected';
   defaultColor = event.target.style.backgroundColor;
 });
 
