@@ -21,6 +21,10 @@
   background-color: #5a13f2;
 }
 
+#pixel-board {
+  display: table;
+}
+
 .pixel {
   background-color: white;
   border: 1px solid black;
