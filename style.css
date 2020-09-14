@@ -32,7 +32,6 @@ body {
 }
 
 .pixel {
-  background-color: rgb(255 , 255 , 255);
   border: black solid 1px;
   display: block;
   float: left;
@@ -46,9 +45,10 @@ body {
   width: 240px;
 }
 
-.table{ 
-  display: table;
+.table{
+  background-color: rgb(255 , 255 , 255); 
   border: black solid 1px;
+  display: table;
 }
 
 .tr{ 
