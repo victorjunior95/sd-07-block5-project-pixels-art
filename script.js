@@ -37,14 +37,11 @@ createPaletteColors(mainPage);
 // console.log(document.getElementById("black").style.backgroundColor);
 
 function createBasePixelBoard(parent) {
-  const sectionPixelBoard = document.createElement('section');
-  sectionPixelBoard.className = ('pixel-board-section');
-  parent.appendChild(sectionPixelBoard);
   // Criar a div base.
-  const divAll = document.createElement('div');
+  const divAll = document.createElement('section');
   divAll.className = 'pixel-board';
   divAll.setAttribute('id', 'pixel-board');
-  sectionPixelBoard.appendChild(divAll);
+  parent.appendChild(divAll);
   const idLines = ['a', 'b', 'c', 'd', 'e'];
   for (let lineIndex = 0; lineIndex < idLines.length; lineIndex += 1) {
     const divLine = document.createElement('div');
