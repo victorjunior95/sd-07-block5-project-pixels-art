@@ -6,18 +6,18 @@
     border: solid 1px black;
     
   }
-  .boxPaletas{
+  .color-palette{
     width: 80% ; 
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-   
-  }
-  div.paleta {
+    margin: 0px;
+    padding: 10px;
+    text-align: left;
+    
+   }
+
+  .color{
     height: 40px;
     width: 40px;
     display: inline-block;
-    background-color:blue;
     border: solid 1px black;
     border-radius: 5px;
     
