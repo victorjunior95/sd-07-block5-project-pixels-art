@@ -1,15 +1,12 @@
 let selected = document.querySelector('.selected');
-let randColors = document.querySelectorAll('.pick');
+const randColors = document.querySelectorAll('.pick');
 for (let i = 0; i < randColors.length; i += 1) {
-  randColors[i].style.backgroundColor = `rgb(${Math.round(
-    Math.random() * 255
-  )}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
+  randColors[i].style.backgroundColor = `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
 }
 
 const colors = document.querySelectorAll('.color');
 
 function colorize(event) {
-  console.log(event.target);
   selected.classList.remove('selected');
   event.target.classList.add('selected');
   selected = event.target;
