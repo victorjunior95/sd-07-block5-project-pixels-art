@@ -1,41 +1,60 @@
 function chooseColor(event) {
-  let black = document.querySelector(".black");
-  let red = document.querySelector(".red");
-  let green = document.querySelector(".green");
-  let blue = document.querySelector(".blue");
-  let colors = [black, red, green, blue];
+  let black = document.querySelector('.black');
+  let color1 = document.querySelector('.color1');
+  let color2 = document.querySelector('.color2');
+  let color3 = document.querySelector('.color3');
+  let colors = [black, color1, color2, color3];
   colors.forEach((color) => {
-    let classes = color.className.split(" ");
+    let classes = color.className.split(' ');
     if (classes.length === 3) {
       classes.pop();
-      let classe = classes.join(" ");
+      let classe = classes.join(' ');
       color.className = classe;
     }
-    if (classes[1] === event.target.className.split(" ")[1]) {
+    if (classes[1] === event.target.className.split(' ')[1]) {
       color.className = `${color.className} selected`;
     }
   });
-  colors.forEach((color) => {
-    console.log(color.className);
-  });
 }
 function paintPixel(event) {
-  event.target.style.backgroundColor = "black"
+  let black = document.querySelector('.black');
+  let color1 = document.querySelector('.color1');
+  let color2 = document.querySelector('.color2');
+  let color3 = document.querySelector('.color3');
+  let colors = [black, color1, color2, color3];
+  colors.forEach((color) => {
+    let classes = color.className.split(' ');
+    if (classes.length === 3) {
+      event.target.style.backgroundColor = color.style.backgroundColor;
+    }
+  });
 }
 window.onload = function () {
-  let black = document.querySelector(".black");
-  let red = document.querySelector(".red");
-  let green = document.querySelector(".green");
-  let blue = document.querySelector(".blue");
-  let pixel = document.querySelectorAll(".pixel");
-  let selectedColor = "black";
+  let black = document.querySelector('.black');
+  let color1 = document.querySelector('.color1');
+  let color2 = document.querySelector('.color2');
+  let color3 = document.querySelector('.color3');
+  let colors = [color1, color2, color3];
+  let pixel = document.querySelectorAll('.pixel');
 
-  black.addEventListener("click", chooseColor);
-  red.addEventListener("click", chooseColor);
-  green.addEventListener("click", chooseColor);
-  blue.addEventListener("click", chooseColor);
+  colors.forEach((color) => {
+    let newColor = '#';
+    for (let index = 0; index < 3; index += 1) {
+      newColor = `${newColor}${parseInt(255 * Math.random()).toString(16)}`;
+    }
+    color.style.backgroundColor = newColor;
+  });
+  console.log(parseInt(255 * Math.random()));
+
+  black.style.backgroundColor = 'black';
+  console.log(black.style.backgroundColor);
+
+  black.addEventListener('click', chooseColor);
+  color1.addEventListener('click', chooseColor);
+  color2.addEventListener('click', chooseColor);
+  color3.addEventListener('click', chooseColor);
   for (let index = 0; index < pixel.length; index += 1) {
     const element = pixel[index];
-    element.addEventListener("click", paintPixel);
+    element.addEventListener('click', paintPixel);
   }
 };
