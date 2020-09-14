@@ -1,51 +1,55 @@
 // Adding palette colors via script
-let colorPalette = document.querySelector('#color-palette');
-let colors = ['black', 'red', 'green', 'blue'];
+const colorPalette = document.querySelector('#color-palette');
+const colors = ['black', 'red', 'green', 'blue'];
 
 
 for (let index = 0; index < colors.length; index += 1) {
-  let color = document.createElement('div')
-  color.className = 'color'
+  const color = document.createElement('div');
+  color.className = 'color';
   color.style.backgroundColor = colors[index];
 
-  if (color.style.backgroundColor == 'black') {
-    color.className += ' selected'
+  if (color.style.backgroundColor === 'black') {
+    color.className += ' selected';
   }
   // palette select color
-  color.addEventListener('click', function(event) {
-    for (let index = 0; index < colorPalette.children.length; index +=1) {
-      colorPalette.children[index].className = 'color'
-      console.log(index)
+  color.addEventListener('click', function (event) {
+    for (let indexPaletteColor = 0; indexPaletteColor < colorPalette.children.length; indexPaletteColor += 1) {
+      colorPalette.children[indexPaletteColor].className = 'color';
     }
-    event.target.className += ' selected'
-  })
+    event.target.className += ' selected';
+  });
 
-  colorPalette.appendChild(color)
+  colorPalette.appendChild(color);
 }
 
 // Board of pixels
-let pixelBoard = document.querySelector('#pixel-board');
-let numberRowsPixBoard = 5;
-let numberColumnsPixBoard = 5;
+const pixelBoard = document.querySelector('#pixel-board');
+const numberRowsPixBoard = 5;
+const numberColumnsPixBoard = 5;
 for (let column = 0; column < numberColumnsPixBoard; column += 1) {
-  //Creating row for the pixels
-  let pixelsRow = document.createElement('div');
+  // Creating row for the pixels
+  const pixelsRow = document.createElement('div');
   pixelsRow.className = 'pixels-row';
   for (let row = 0; row < numberRowsPixBoard; row += 1) {
-    //  Creating the pixel
-    let pixel = document.createElement('div');
+    // Creating the pixel
+    const pixel = document.createElement('div');
     pixel.className = 'pixel';
 
     // Event for fill pixel with selected color
-    pixel.addEventListener('click', function(event) {
-      let selected = document.querySelector('.selected')
+    pixel.addEventListener('click', function (event) {
+      const selected = document.querySelector('.selected');
       event.target.style.backgroundColor = selected.style.backgroundColor;
-    })
-
+    });
     pixelsRow.appendChild(pixel);
   }
   pixelBoard.appendChild(pixelsRow);
 }
 
-// select color
-
+// clear all pixels
+const clear = document.querySelector('#clear-board');
+const pixels = document.querySelectorAll('.pixel');
+clear.addEventListener('click', function () {
+  for (let filledPixel = 0; filledPixel < pixels.length; filledPixel += 1) {
+    pixels[filledPixel].style.backgroundColor = 'white';
+  }
+});
