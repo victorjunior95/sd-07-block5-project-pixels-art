@@ -1,0 +1,52 @@
+body {
+  background-color: aquamarine;
+  text-align: center;
+}
+
+.color {
+  border: 1px solid black;
+  height: 50px;
+  margin-left: 3px;
+  width: 50px;
+}
+
+.pixel {
+  background-color: white;
+}
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+  width: 200px;
+}
+
+table tr {
+  height: 40px;
+}
+
+table td {
+  border: 1px solid black;
+}
+
+td:hover {
+  background-color: rgb(206, 206, 255);
+}
+
+article {
+  height: 135px;
+  margin: auto;
+  table-layout: fixed;
+}
+
+button {
+  margin: 5px;
+}
+
+nav {
+  display: table;
+  margin: auto;
+}
+
+.selected {
+  background-color: black;
+}
