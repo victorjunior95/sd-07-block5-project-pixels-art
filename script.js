@@ -64,7 +64,8 @@ colorTwo.className = 'color';
 }
 
 let classPixel = document.querySelectorAll('.pixel');
-
+/*eslint no-loop-func: "error"*/
+/*eslint-env es6*/
 for(let e = 0 ; e < classPixel.length ; e += 1) {
 classPixel[e].addEventListener('click', function() {
 classPixel[e].style.background = currentColor
