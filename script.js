@@ -6,7 +6,7 @@ function removeBoard() {
 }
 
 // add width and height in pixelboard
-function addPropertyInPixelBoard(size){
+function addPropertyInPixelBoard(size) {
   const pixelBoard = document.getElementsByClassName('pixel-board')[0];
 
   pixelBoard.style.width = `${40 * size}px`;
@@ -47,13 +47,12 @@ btn.addEventListener('click', function () {
     alert('Board inválido!');
   } else {
     boardSizeLoaded = inputBoard.value;
-    if(inputBoard.value > 50) boardSizeLoaded = 50;
-    if(inputBoard.value < 5) boardSizeLoaded = 5;
+    if (inputBoard.value > 50) boardSizeLoaded = 50;
+    if (inputBoard.value < 5) boardSizeLoaded = 5;
     removeBoard();
     generateBoard();
   }
 })
-
 
 const colorsPallet = {
   color1: 'black',
