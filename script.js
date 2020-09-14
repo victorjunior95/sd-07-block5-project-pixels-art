@@ -1,3 +1,7 @@
+function newColor(number) { // função para criar número do rgb
+  let newBackgroundColor = Math.floor(Math.random() * number); // random cria um número qualquer de 0 a 1
+  return newBackgroundColor; // floor tira os decimais
+}
 const colors = document.querySelectorAll('.color');
 // definindo a paleta de cores
 for (let i = 0; i < 4; i += 1) {
@@ -8,28 +12,28 @@ for (let i = 0; i < 4; i += 1) {
       colors[2].className = 'color blue';
       colors[3].className = 'color green';
     } else if (i === 1) {
-      colors[0].className = 'color black';
+      colors[0].className = 'color black'; 
       colors[1].className += ' selected';
-      colors[1].style.backgroundColor = 'red';
+      colors[1].style.backgroundColor = `rgb(${newColor(255)} , ${newColor(255)} , ${newColor(255)})`;
       colors[2].className = 'color blue';
       colors[3].className = 'color green';
     } else if (i === 2) {
       colors[0].className = 'color black';
       colors[1].className = 'color red';
       colors[2].className += ' selected';
-      colors[2].style.backgroundColor = 'blue';
+      colors[2].style.backgroundColor = `rgb(${newColor(255)} , ${newColor(255)} , ${newColor(255)})`;
       colors[3].className = 'color green';
     } else if (i === 3) {
       colors[0].className = 'color black';
       colors[1].className = 'color red';
       colors[2].className = 'color blue';
       colors[3].className += ' selected';
-      colors[3].style.backgroundColor = 'green';
+      colors[3].style.backgroundColor = `rgb(${newColor(255)} , ${newColor(255)} , ${newColor(255)})`;
     }
   });
 }
 
-function deleteAll () { // aparag tudo para fazer conforme o usuário desejar
+function deleteAll() { // apagar tudo para fazer conforme o usuário desejar
   while (document.querySelector('.pixel-board').firstChild) {
     document.querySelector('.pixel-board').removeChild(document.querySelector('.pixel-board').firstChild);
   }
@@ -46,7 +50,7 @@ document.querySelector('#generate-board').addEventListener('click', function () 
     userInput.value = 50;
   }
 
-  deleteAll ();
+  deleteAll();
 
   for (let k = 0; k < userInput.value; k += 1) {
     const newLine = document.createElement('div');
@@ -72,3 +76,4 @@ for (let i = 0; i < tableData.length; i += 1) {
     tableData[i].style.backgroundColor = 'white';
   });
 }
+
