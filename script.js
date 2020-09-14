@@ -40,4 +40,26 @@ function clearPixels(){
   }
 }
 
+function getNumber(number){
+  return Math.floor(Math.random() * Math.floor(number));
+}
+
+function createPalletes(){
+  let palette = document.querySelectorAll('.color');
+  let colorArray = [colorSelected];
+
+  for(let i = 0; i < 3; i += 1){
+    let value = `rgb(${getNumber(255)} , ${getNumber(255)}, ${getNumber(255)})`;
+
+    colorArray.push(value);
+  }
+
+  for(let i = 0; i < palette.length; i += 1){
+    palette[i].style.backgroundColor = colorArray[i];
+  }
+
+}
+
 btnClear.addEventListener('click', clearPixels);
+
+window.onload = createPalletes;
