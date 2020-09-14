@@ -4,6 +4,7 @@ body {
 
 .color {
   border: black solid 1px;
+  box-sizing: border-box;
   color: white;
   display: inline-block;
   height: 40px;
@@ -11,6 +12,7 @@ body {
 }
 
 .color-palette {
+  box-sizing: border-box;
   height: 40px;
   width: 180px;
 }
@@ -49,4 +51,8 @@ body {
   box-sizing: border-box;
   height: 200px;
   width: 200px;
+}
+
+.pixelBackG {
+  background-color: white;
 }

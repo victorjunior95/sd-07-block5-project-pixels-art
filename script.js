@@ -19,7 +19,7 @@ const pixelSS = document.querySelectorAll('.pixel');
 const clearBT = document.getElementById('clear-board');
 let saveClass = "";
 
-  document.querySelectorAll('.pixelBackG').forEach(pixel => {
+  document.querySelectorAll('.pixel').forEach(pixel => {
   pixel.className = 'pixel pixelBackG';
 });
 
