@@ -1,5 +1,5 @@
 const colors = document.querySelectorAll('.color');
-
+// definindo a paleta de cores
 for (let i = 0; i < 4; i += 1) {
   colors[i].addEventListener('click', function () {
     if (i === 0) {
@@ -29,19 +29,14 @@ for (let i = 0; i < 4; i += 1) {
   });
 }
 
-const tableData = document.querySelectorAll('.pixel');
-
-for (let i = 0; i < tableData.length; i += 1) {
-  tableData[i].addEventListener('click', function () {
-    tableData[i].style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
-  });
-  document.querySelector('#clear-board').addEventListener('click', function () {
-    tableData[i].style.backgroundColor = 'white';
-  });
+function deleteAll () { // aparag tudo para fazer conforme o usuário desejar
+  while (document.querySelector('.pixel-board').firstChild) {
+    document.querySelector('.pixel-board').removeChild(document.querySelector('.pixel-board').firstChild);
+  }
 }
 
 const userInput = document.querySelector('#board-size');
-
+// usuário escolhe o tamanho do quadro
 document.querySelector('#generate-board').addEventListener('click', function () {
   if (userInput.value === '') {
     alert('Board inválido!');
@@ -51,10 +46,29 @@ document.querySelector('#generate-board').addEventListener('click', function () 
     userInput.value = 50;
   }
 
-  for (let i = 5; i < userInput.value; i += 1) {
+  deleteAll ();
+
+  for (let k = 0; k < userInput.value; k += 1) {
     const newLine = document.createElement('div');
-    newLine.className = "tr";
-    document.querySelector('.table').appendChild(newLine);
+    newLine.className = 'tr';
+    document.querySelector('.pixel-board').appendChild(newLine);
+
+    for (let j = 0; j < userInput.value; j += 1) {
+      const newRowPixels = document.createElement('div');
+      newRowPixels.className = 'pixel';
+      newLine.appendChild(newRowPixels);
+    }
   }
 });
 
+const tableData = document.querySelectorAll('.pixel');
+// todos os pixels são clicáveis e recebem cor
+for (let i = 0; i < tableData.length; i += 1) {
+  tableData[i].addEventListener('click', function () {
+    tableData[i].style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+    // getComputedStyle(document.querySelector('.selected')).backgroundColor;
+  });
+  document.querySelector('#clear-board').addEventListener('click', function () {
+    tableData[i].style.backgroundColor = 'white';
+  });
+}

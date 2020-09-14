@@ -6,7 +6,16 @@
   background-color: blue;
 }
 
-.clear-board {
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.color-palette {
+  display: inline-block;
   margin-bottom: 20px;
 }
 
@@ -18,13 +27,10 @@
   width: 40px;
 }
 
-.color-palette {
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-.green {
-  background-color: green;
+.pixel-board {
+  display: table;
+  height: 2010px;
+  width: 2010px;
 }
 
 .pixel {
@@ -35,12 +41,6 @@
   width: 40px;
 }
 
-.pixel-board {
-  display: table;
-  height: 2010px;
-  width: 2010px;
-}
-
-.red {
-  background-color: red;
+.clear-board {
+  margin-bottom: 20px;
 }
