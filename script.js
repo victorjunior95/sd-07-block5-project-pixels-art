@@ -19,8 +19,8 @@ window.onload = function () {
     function setSelectedColor() {
         let setColor = event.target;
         if (selectedColor !== setColor) {
-            selectedColor.classList.remove("selected");
-            setColor.classList.add("selected");
+            selectedColor.classList[2].remove("selected");
+            setColor.classList[2].add("selected");
         }
     }
 
