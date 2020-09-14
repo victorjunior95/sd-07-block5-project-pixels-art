@@ -36,7 +36,7 @@ function fillLine(line) {
 }
 
 //  função que cria linha
-function createLine(numberOfLines) {
+function createLine() {
   const line = document.createElement('div');
   for (let column = 0; column < numberOfLines; column += 1) {
     fillLine(line);
@@ -45,7 +45,7 @@ function createLine(numberOfLines) {
 }
 
 //  função que cria tabela
-function createBoard(numberOfLines) {
+function createBoard() {
   for (let lineNumber = 0; lineNumber < numberOfLines; lineNumber += 1) {
     createLine(numberOfLines);
   }
