@@ -7,6 +7,7 @@ const buttonThree = document.querySelector('.third');
 const buttonColor = document.getElementsByClassName('color');
 const buttonClear = document.getElementById('clear-board');
 const buttonCreateBoard = document.getElementById('generate-board');
+
 let firstTime = true;
 let currentColor = 'black';
 
