@@ -1,5 +1,5 @@
 const pixelBoard = document.querySelector('#pixel-board');
-const colors = document.querySelectorAll('.color')
+const colors = document.querySelectorAll('.color');
 const numberOfLinesAndColunms = 5;
 
 function makeBoard() {
@@ -15,9 +15,17 @@ function makeBoard() {
       }
   }
 }
+makeBoard();
+
+const pixels = document.querySelectorAll('.pixel');
+
+function classTD(td) {
+  let tdClass = td.className = 'pixel';
+  return tdClass;
+} 
 
 colors.forEach(item => {
-  item.addEventListener('click', function() {
+  item.addEventListener('click', function(event) {
     event.target.classList.add('selected');
      colors.forEach(item => {
         if (item !== event.target) {
@@ -27,10 +35,10 @@ colors.forEach(item => {
   });
 });
 
-function classTD(td) {
-  let tdClass = td.className = 'pixel';
-  return tdClass;
-}
-
-makeBoard();
-
+pixels.forEach(item => {
+  item.addEventListener('click', function(event) {
+    const colorSelected = document.querySelector('.selected');
+    let bgColor = window.getComputedStyle(colorSelected, null).getPropertyValue('background-color');
+    event.target.style.backgroundColor = bgColor;
+  })
+})

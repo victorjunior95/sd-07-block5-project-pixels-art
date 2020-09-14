@@ -30,6 +30,7 @@
   border: 1px solid black;
   box-sizing: border-box;
   display: inline-block;
+  float: left;
   height: 40px;
   width: 40px;
 }
