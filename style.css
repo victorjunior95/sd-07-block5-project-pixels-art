@@ -11,8 +11,8 @@ body {
 }
 
 .color-palette {
-  height: 42px;
-  width: 200px;
+  height: 40px;
+  width: 180px;
 }
 
 .color-01 {
@@ -33,28 +33,20 @@ body {
 
 .pixel {
   border: black solid 1px;
+  box-sizing: border-box;
   display: block;
   float: left;
-  height: 41px;
+  height: 40px;
   padding: 0;
-  width: 41px;
+  width: 40px;
+}
+
+.pixelBackG {
+ background-color: white;
 }
 
 .pixel-board{
-  height: 240px;
-  width: 240px;
-}
-
-.table{
-  background-color: rgb(255 , 255 , 255); 
-  border: black solid 1px;
-  display: table;
-}
-
-.tr{ 
-  display: table-row; 
-}
-
-.td{ 
- display: table-cell;
+  box-sizing: border-box;
+  height: 200px;
+  width: 200px;
 }

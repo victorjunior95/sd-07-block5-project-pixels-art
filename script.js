@@ -8,14 +8,13 @@ function changeBKGColor () {
   body.style.backgroundColor='rgb(' + rColorRGB + ' , ' + gColorRGB + ' , ' + bColorRGB + ')';
   title.style.color='rgb(' + rColorRGB + 1 + ' , ' + gColorRGB + ' , ' + bColorRGB + 1 + ')';
 }
-const time = setInterval (changeBKGColor, 100);
+// const time = setInterval (changeBKGColor, 100);
 // Remove the bars fron the line above to see the efect.
 
 const color01 = document.getElementById('color-01');
 const color02 = document.getElementById('color-02');
 const color03 = document.getElementById('color-03');
 const color04 = document.getElementById('color-04');
-const colorPalet = document.querySelectorAll('.color');
 const pixelSS = document.querySelectorAll('.pixel');
 const clearBT = document.getElementById('clear-board');
 let saveClass = "";
@@ -23,23 +22,29 @@ document.querySelectorAll('.pixel').forEach(item => {
   item.addEventListener('click', () => item.classList.add('color-01'))
 });
 
-// Function to add class 'selected' in palet itens, and add a class color of color selected.
-colorPalet.forEach(item => {
-  item.addEventListener('click', event => {
-  item.classList.add('selected');
-  saveClass = item.classList[1];
-  });
-    pixelSS.forEach(item2 => {
-    item2.addEventListener('click', event => {
-    item2.classList.add(saveClass);
-    });
-  });
-});
+document.querySelectorAll('.pixelBackG').forEach(pixel => {
+  pixel.className = 'pixel pixelBackG';
+} )
 
 // Function to clear all class color fron pixel itens.
 clearBT.addEventListener('click', function () {
-  pixelSS.forEach(item2 => {
-  item2.className = 'td pixel';
+  for (let i = 0; i < pixelSS.length; i += 1) {
+    pixelSS[i].className = 'pixel pixelBackG';
+  }
+});
+
+// Function to add class 'selected' in palet itens, and add a class color of color selected.
+const colorPalet = document.querySelectorAll('.color');
+colorPalet.forEach(colorPalet => {
+  colorPalet.addEventListener('click', event => {
+    colorPalet.classList.add('selected');
+  saveClass = colorPalet.classList[1];
+  });
+    pixelSS.forEach(pixelSS => {
+      pixelSS.addEventListener('click', event => {
+        pixelSS.className = 'pixel color-01';
+        pixelSS.classList.add(saveClass);
+    });
   });
 });
 
