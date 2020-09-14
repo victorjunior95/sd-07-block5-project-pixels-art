@@ -21,3 +21,17 @@
 #color4 {
     background-color: green;
 }
+
+.pixel-board {
+    
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}
