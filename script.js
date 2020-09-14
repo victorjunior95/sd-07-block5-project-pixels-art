@@ -24,3 +24,6 @@ function fillAll(arrayLines) {
 }
 
 fillAll(lines);
+
+// 6 - Ao carregar a página, a cor preta da paleta já deve estar selecionada para pintar os pixels.
+document.querySelector('.color.black').className = 'color black selected';
