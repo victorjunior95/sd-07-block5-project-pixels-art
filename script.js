@@ -7,6 +7,7 @@ const fullBoard = document.querySelector('#pixel-board');
 const eliminateBoard = document.querySelector('#eliminate-board');
 let paletaID = 'black';
 
+
 function checkSelected() {
   for (let i = 0; i < paletas.length; i += 1) {
     if (paletas[i].classList.contains('selected')) {
@@ -90,12 +91,13 @@ function generateBoard() {
   createNewBoard();
   fullBoard.classList.remove('quadro-nativo');
   const number = verifyBoard();
+  let numberOfPixels;
   if (number <= 5) {
     numberOfPixels = 5;
   }
   numberOfPixels = boardSize.value;
   sizeBoard();
-  for (let i = 0; i < number; i += 1) {
+  for (let i = 0; i < numberOfPixels; i += 1) {
     const square = document.createElement('div');
     square.className = 'pixel white';
     square.addEventListener('click', paintBoard);
