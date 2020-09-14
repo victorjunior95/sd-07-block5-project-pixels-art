@@ -3,6 +3,10 @@ let sizeOfBoard = [5, 5];
 let numberOfPixels = sizeOfBoard[0] * sizeOfBoard[1];
 pixelBoard.style.heigth = (sizeOfBoard[0] * 42) + 'px';
 pixelBoard.style.width = (sizeOfBoard[1] * 42) + 'px';
+const fistColor = document.querySelector('.first-color');
+const secondColor = document.querySelector('.second-color');
+const thirdColor = document.querySelector('.third-color');
+const forthColor = document.querySelector('.forth-color');
 
 window.onload = function () {
   //  pixels generator
@@ -24,5 +28,14 @@ function paintPixel (readClass) {
   const coord = readClass.match(/\d/g);
   const setClass = '.px' + coord[0] + '-' + coord[1];
   const paint = document.querySelector(setClass);
-  paint.style.backgroundColor = 'black';
+
+  selectedColor();
+  paint.style.backgroundColor = selectedColor();
+}
+
+function selectedColor() {
+  let whatColorSelected = document.querySelector('.selected').classList[1];
+  let elem = document.querySelector('.' + whatColorSelected);
+  let color = getComputedStyle(elem).backgroundColor;
+  return color;
 }
