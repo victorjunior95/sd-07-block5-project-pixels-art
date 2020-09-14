@@ -1,8 +1,7 @@
-.color, .selected {
-    display:inline-flex;
+.color {
     width:50px;
     height:50px;
-    margin:0px;
+    display:inline-block;
     border:1px solid black;
 }
 
@@ -26,16 +25,9 @@
     background:white;
 }
 
-header {
-    text-align:center;
-}
-
-.color-box {
-    margin-left:39%;
-}
-
 .pixel-box {
-    margin-left:40%;
+    display:grid;
+    grid-template-columns: 40px 40px 40px 40px 40px;
 }
 
 .pixel-board {
