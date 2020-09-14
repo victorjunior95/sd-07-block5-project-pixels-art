@@ -103,7 +103,7 @@ function scaleBoardSizeOnRange() {
   if (boardSize >= 5 && boardSize <= 50) {
     assignSizeForGenerateBoard();
   } else {
-    scaleBoardSizeOffRange;
+    scaleBoardSizeOffRange();
   }
 }
 
