@@ -74,14 +74,13 @@ function proceduresToCreateBoard() {
   boardCreator();
   eventListenerToPixels();
   pixelBoard.style.width = numberOfColumns * pixelWidth;
-  pixelBoard.style.width += + 'px';
+  pixelBoard.style.width += 'px';
 }
 
 function assignSize() {
   numberOfColumns = inputColumns.value;
   numberOfLines = inputLines.value;
   proceduresToCreateBoard();
-
 }
 
 function assignSizeForGenerateBoard() {
@@ -94,16 +93,16 @@ function testBeforeAssign() {
   boardSize = document.getElementById('board-size').value;
   if (boardSize === '') {
     alert('Board inválido!');
-  } else if (boardSize >= 5 && boardSize <= 50) {
-    assignSizeForGenerateBoard();
-  } else if (boardSize < 5) {
-    boardSize = 5;
-    assignSizeForGenerateBoard();
-  } else if (boardSize > 50) {
-    boardSize = 50;
-    assignSizeForGenerateBoard();
   } else {
-    alert('BBEEEErro Inesperado!');
+    if (boardSize >= 5 && boardSize <= 50) {
+      assignSizeForGenerateBoard();
+    } else if (boardSize < 5) {
+      boardSize = 5;
+      assignSizeForGenerateBoard();
+    } else if (boardSize > 50) {
+      boardSize = 50;
+      assignSizeForGenerateBoard();
+    }
   }
 }
 
@@ -130,7 +129,14 @@ function zeroTo(maxNumber) {
 }
 
 function randomColor() {
-  return 'rgb(' + zeroTo(256) + ',' + zeroTo(256) + ',' + zeroTo(256) + ')';
+  let rgbColor = 'rgb(';
+  rgbColor += zeroTo(256);
+  rgbColor += ',';
+  rgbColor += zeroTo(256);
+  rgbColor += ',';
+  rgbColor += zeroTo(256);
+  rgbColor += ')';
+  return rgbColor;
 }
 
 function randomizerPalette() {
