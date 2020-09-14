@@ -16,4 +16,4 @@
         divLine.appendChild(box);
       }
     }
-            
+}       
