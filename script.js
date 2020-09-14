@@ -36,16 +36,16 @@ function fillLine(line) {
 }
 
 //  função que cria linha
-function createLine() {
+function createLine(numberOfColumns) {
   const line = document.createElement('div');
-  for (let column = 0; column < numberOfLines; column += 1) {
+  for (let column = 0; column < numberOfColumns; column += 1) {
     fillLine(line);
   }
   pixelBoard.appendChild(line);
 }
 
 //  função que cria tabela
-function createBoard() {
+function createBoard(numberOfLines) {
   for (let lineNumber = 0; lineNumber < numberOfLines; lineNumber += 1) {
     createLine(numberOfLines);
   }
