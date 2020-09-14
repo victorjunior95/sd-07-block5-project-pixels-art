@@ -4,15 +4,9 @@ window.onload = function () {
   const mother = document.querySelector('#pixel-board');
 
   document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
-  document.getElementsByClassName(
-    'color'
-  )[1].style.backgroundColor = corAleatoria();
-  document.getElementsByClassName(
-    'color'
-  )[2].style.backgroundColor = corAleatoria();
-  document.getElementsByClassName(
-    'color'
-  )[3].style.backgroundColor = corAleatoria();
+  document.getElementsByClassName('color')[1].style.backgroundColor = corAle();
+  document.getElementsByClassName('color')[2].style.backgroundColor = corAle();
+  document.getElementsByClassName('color')[3].style.backgroundColor = corAle();
 
   function DefineSize() {
     for (let i = 0; i < BOX_SIZE; i += 1) {
@@ -35,22 +29,17 @@ window.onload = function () {
     }
   }
 
-  const amountPaleta = 4;
-  const removerSelected = () => {
-    for (let a = 0; a < amountPaleta; a += 1) {
-      const color = document.getElementsByClassName('color')[a];
-      color.addEventListener('click', () => {
-        color.classList.remove('selected');
+  for (let i = 0; i < document.getElementsByClassName('color').length; i += 1) {
+    document
+      .getElementsByClassName('color')
+      [i].addEventListener('click', () => {
+        document
+          .getElementsByClassName('selected')[0]
+          .classList.remove('selected');
+        DEFAULT_COLOR = document.getElementsByClassName('color')[i].style
+          .backgroundColor;
+        document.getElementsByClassName('color')[i].classList.add('selected');
       });
-    }
-  };
-  for (let a = 0; a < amountPaleta; a += 1) {
-    const color = document.getElementsByClassName('color')[a];
-    color.addEventListener('click', () => {
-      DEFAULT_COLOR = color.style.backgroundColor;
-      color.classList.add('selected');
-      removerSelected();
-    });
   }
 
   document.querySelector('.clear').addEventListener('click', () => {
@@ -85,7 +74,7 @@ function aleatorio(inferior, superior) {
   return parseInt(inferior) + aleat;
 }
 
-function corAleatoria() {
+function corAle() {
   hexadecimal = new Array(
     '0',
     '1',
