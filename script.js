@@ -4,7 +4,7 @@ let limpar = document.querySelector("#clear-board");
 let board = document.querySelectorAll(".pixel");
 
 function limparBoard(){
-    for(let index in board){
+    for(let index = 0; index < board.length ; index ++){
         board[index].style.backgroundColor = "white";
     }
 }
@@ -20,7 +20,7 @@ let paletBlue = document.querySelector('#color-blue');
 let select = 'black';
 
 function trocarCor(){
-    for(let index in board){
+    for(let index = 0; index < board.length ; index ++){
         board[index].addEventListener("click", function() {
 			board[index].style.backgroundColor = select;
             });
@@ -29,7 +29,7 @@ function trocarCor(){
 
 paletRed.addEventListener('click',function(){
     select = 'red';
-    for(let index in board){
+    for(let index = 0; index < board.length ; index ++){
         board[index].addEventListener("click", function() {
 			board[index].style.backgroundColor = select;
             });
@@ -45,7 +45,7 @@ function selecionaGreen(){
 
 paletGreen.addEventListener('click',function(){
     select = 'green';
-    for(let index in board){
+    for(let index = 0; index < board.length ; index ++){
         board[index].addEventListener("click", function() {
 			board[index].style.backgroundColor = select;
             });
@@ -54,7 +54,7 @@ paletGreen.addEventListener('click',function(){
 
 paletBlue.addEventListener('click',function(){
     select = 'blue';
-    for(let index in board){
+    for(let index = 0; index < board.length ; index ++){
         board[index].addEventListener("click", function() {
 			board[index].style.backgroundColor = select;
             });
@@ -63,9 +63,11 @@ paletBlue.addEventListener('click',function(){
 
 paletBlack.addEventListener('click',function(){
     select = 'black';
-    for(let index in board){
+    for(let index = 0; index < board.length ; index ++){
         board[index].addEventListener("click", function() {
 			board[index].style.backgroundColor = select;
             });
     }; 
 });
+
+trocarCor();
