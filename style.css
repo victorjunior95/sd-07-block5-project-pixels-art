@@ -55,3 +55,13 @@ body {
   height: 40px;
   width: 40px;
 }
+
+.section-button {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.section-button button {
+  height: 30px;
+  font-weight: 600;
+}
