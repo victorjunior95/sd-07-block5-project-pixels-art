@@ -9,10 +9,15 @@
 <body>
   
   <h1 id="title">Paleta de Cores</h1>
-  <button class="color , selected , first">Preto</button>
-  <button class="color , second">Vermelho</button>
-  <button class="color , third">Verde</button>
-  <button class="color , last">Azul</button>
+  <section id="color-palette">
+    <button class="color , selected , first">Preto</button>
+    <button class="color , second">Vermelho</button>
+    <button class="color , third">Verde</button>
+    <button class="color , last">Azul</button>
+  </section>
+
+  <button class="clear" id="clear-board">Limpar</button>
+  
   <div class="board" id="pixel-board">
     <div class="pixel"></div>
     <div class="pixel"></div>
@@ -40,8 +45,7 @@
     <div class="pixel"></div>
     <div class="pixel"></div>
   </div>
-  <button class="clear" id="clear-board">Limpar</button>
-
+  
   <script src="./script.js"></script>
 </body>
 </html>
