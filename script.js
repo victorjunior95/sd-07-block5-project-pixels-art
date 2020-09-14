@@ -41,4 +41,10 @@ window.onload = function(){
         corTres.className='color';
         corQuatro.className='color  selected';
     })
+
+    document.querySelectorAll('.pixel').forEach(item => {
+        item.addEventListener('click', event => {
+          item.style.backgroundColor='rgb(0,0,0)';
+        })
+      })
 }
