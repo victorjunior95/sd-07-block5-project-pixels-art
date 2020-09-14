@@ -54,28 +54,27 @@ function testBoardSize() {
   } else if (boardSize.value > 50) {
     boardSize.value = 50;
     return true;
-  } else {
-    return true;
   }
 }
 function makeBoard() {
   const boardSize = document.querySelector('#board-size');
   const pixelBoard = document.querySelector('#pixel-board');
-  if (testBoardSize()) {
-    pixelBoard.innerHTML = '';
-    const N = boardSize.value;
-    for (let row = 0; row < N; row += 1) {
-      const newRow = document.createElement('div');
-      newRow.className = 'line';
-      for (let column = 0; column < N; column += 1) {
-        const newPixel = document.createElement('div');
-        newPixel.className = 'pixel';
-        newRow.appendChild(newPixel);
-      }
-      pixelBoard.appendChild(newRow);
-    }
-    pixelsEventListeners();
+  if (testBoardSize() === false) {
+    return;
   }
+  pixelBoard.innerHTML = '';
+  const N = boardSize.value;
+  for (let row = 0; row < N; row += 1) {
+    const newRow = document.createElement('div');
+    newRow.className = 'line';
+    for (let column = 0; column < N; column += 1) {
+      const newPixel = document.createElement('div');
+      newPixel.className = 'pixel';
+      newRow.appendChild(newPixel);
+    }
+    pixelBoard.appendChild(newRow);
+  }
+  pixelsEventListeners();
 }
 function randomColor() {
   let newColor = '#';
