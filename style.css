@@ -22,18 +22,22 @@
 }
 
 #pixel-board {
-    display: table;
+    display: inline-block;
 }
 
-.table-row {
-    display: table-row;
+#board-size {
+    width: 190px;
+}
+
+.pixel-line {
     height: 40px;
+    border: 1px solid black;
 }
 
 .pixel {
     background-color: white;
     border: 1px solid black;
-    display: table-cell;
+    display: inline-block;
     height: 40px;
     width: 40px;
 }
