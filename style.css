@@ -10,10 +10,10 @@ h1 {
 }
 
 button {
+  cursor: pointer;
   display: inline-block;
   margin: 0 -3px;
   padding: 0;
-  cursor: pointer;
 }
 
 .color {
@@ -49,22 +49,20 @@ button {
   color: blue;
 }
 
-.board {
-  height: 208px;  
-  margin: auto;
-  margin-bottom: 15px;
-  padding-top: 2px;
-  width: 210px;
+p {
+  color: rgb(235, 235, 235);
+  font-family: sans-serif;
+  font-weight: 900;
+  word-spacing: 2
+  0px;
 }
 
-.pixel {
-  background-color: white;
-  border: 1px solid black;
-  cursor: pointer;
-  display: inline-block;
+input {
+  border: 3px solid rgb(255 , 103 , 0);
+  border-radius: 20px;
+  font-weight: 900;
   height: 40px;
-  margin: -2px;
-  width: 40px;
+  width: 200px;
 }
 
 .clear {
@@ -81,5 +79,18 @@ button {
 .clear:hover {
   background-color: rgb(255 , 103 , 0);
   color: rgb(0 , 78 , 152);
-  font-weight: bolder;
+  font-weight: 900;
+}
+
+.board {
+  display: grid;
+  background-color: rgb(255 , 103 , 0);
+  width: 500px;
+  margin: auto;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
 }
