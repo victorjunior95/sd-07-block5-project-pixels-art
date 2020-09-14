@@ -1,6 +1,6 @@
 let palette = document.querySelector("#color-palette")
 let listOfColors = palette.childNodes
-let fields = document.querySelectorAll("td")
+let fields = document.querySelectorAll(".pixel")
 
 palette.addEventListener("click", (event)=>{
     let selected = document.querySelector(".selected")

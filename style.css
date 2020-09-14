@@ -9,19 +9,17 @@
     margin: 0px 0;
 }
 
-table {
-    border-collapse: collapse;
-    margin-top: 0;
-}
 
-
-table tr td {
-    border: 1px solid black;
-}
 
 .pixel {
+    display: inline-block;
+    margin: -3px;
     background-color: rgb(255, 255, 255);
     width: 40px;
     height: 40px;
-    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+#clear-board {
+    margin-bottom: 14px;
 }
