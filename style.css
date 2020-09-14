@@ -7,6 +7,14 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.pixel { 
+    display: table-cell;
+    border: solid black 1px;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+}
+
 h1 {
     color: white;
 }
@@ -19,22 +27,22 @@ h1 {
     height: 20px;
 }
 
-#black {
+.black {
     background-color: black;
     cursor: pointer;
 }
 
-#orange {
+.orange {
     background-color: orange;
     cursor: pointer;
 }
 
-#pink {
+.pink {
     background-color: pink;
     cursor: pointer;
 }
 
-#blueviolet {
+.blueviolet {
     background-color: blueviolet;
     cursor: pointer;
 }
@@ -50,11 +58,5 @@ h1 {
     display: table-row;
 }
 
-.pixel { 
-    display: table-cell;
-    border: solid black 1px;
-    background-color: white;
-    height: 40px;
-    width: 40px;
-}
+
 
