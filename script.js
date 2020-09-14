@@ -8,3 +8,26 @@ black.style.backgroundColor = 'black';
 red.style.backgroundColor = 'red';
 green.style.backgroundColor = 'green';
 blue.style.backgroundColor = 'blue';
+
+//Drawing the pixel board;
+function initialPixelBoard() {
+  let boardSize = 5;
+  let pixelBoard = document.querySelector('.pixel-board');
+
+  for (let rows = 0; rows < boardSize; rows += 1) {
+    
+    let pixelRow = document.createElement('div');
+    pixelRow.classList.add('pixel-row');  
+    
+    for (let cells = 0; cells < boardSize; cells += 1) {
+      
+      let pixelCell = document.createElement('div');
+      pixelCell.classList.add('pixel', 'border');
+      pixelRow.appendChild(pixelCell)
+    }
+    
+    pixelBoard.appendChild(pixelRow);
+  }
+}             
+
+initialPixelBoard();

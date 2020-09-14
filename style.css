@@ -1,12 +1,18 @@
-.color-palette {
+.pixel-board {
+  display: table;
+}
+
+.color-palette,
+.pixel-row {
   display: table-row;
 }
 
-.color-palette > div {
+.color-palette > div,
+.pixel {
   display: table-cell;
   padding: 40px;
 }
 
-.color {
+.border {
   border: 1px solid black;
 }
