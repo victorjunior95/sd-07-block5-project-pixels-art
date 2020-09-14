@@ -22,16 +22,17 @@
 }
 
 .line {
-  margin: 0;
-  padding: 0;
+  display: table-row;
 }
 
 .pixel {
-  border: solid 1px black;
-  display: inline-block;
-  height: 40px;
-  margin: 0;
-  padding: 0;
-  width: 40px;
   background-color: white;
+  border: solid 1px black;
+  display: table-cell;
+  height: 40px;
+  width: 40px;
+}
+
+section {
+  display: table;
 }
