@@ -45,6 +45,7 @@ body {
     padding-right: 50px;
     padding-bottom: 20px;
     background-color: blue;
+    border: 1px black solid;
     top: 5px;
     left: 66px;
 }
