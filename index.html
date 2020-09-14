@@ -8,21 +8,23 @@
 </head>
 <body>
   <h1 id="title">Paleta de Cores</h1>
+  
+  
+  <p><label for="size-board">Tamanho: </label><input type="number" id="board-size" min="0" placeholder="De 5 à 50"></p>
+  <button class="generator-button" id="generate-board">VQV</button>
+  
   <section id="color-palette">
-    
-    <p><label for="size-board">Tamanho: </label><input type="number" id="size-board" min="5" max="50" placeholder="De 5 à 50"></p>
-    
-    <button class="color , selected , first">Preto</button>
-    <button class="color , second">Vermelho</button>
-    <button class="color , third">Verde</button>
-    <button class="color , last">Azul</button>
+    <button class="color , first">Primeira cor</button>
+    <button class="color , second">Segunda cor</button>
+    <button class="color , third">Terceira cor</button>
+    <button class="color , last">Quarta cor</button>
   </section>
   <button class="clear" id="clear-board">Limpar</button>
 
   <section class="board" id="pixel-board">
-      
-  </section>
   
-  <script src="./script.js"></script>
+  </section>
+
+<script src="./script.js"></script>
 </body>
 </html>
