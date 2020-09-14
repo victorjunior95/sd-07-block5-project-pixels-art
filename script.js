@@ -5,6 +5,7 @@ window.onload = function(){
     let corTres=document.getElementById('cor-3');
     let corQuatro=document.getElementById('cor-4');
     let corSelecionada='rgb(0,0,0)';
+    let botãoLimpar=document.getElementById('clear-board');
 
     for (i=0; i<linhaPixel.length; i+=1){
         for (j=1; j<=5; j+=1){
@@ -56,4 +57,11 @@ window.onload = function(){
           item.style.backgroundColor=corSelecionada;
         })
       })
+
+    botãoLimpar.addEventListener('click', function(){
+        let selectDiv=document.querySelectorAll('.pixel');
+        for (i=0; i<selectDiv.length; i+=1){
+            selectDiv[i].style.backgroundColor='rgb(255,255,255';
+        }
+    })
 }
