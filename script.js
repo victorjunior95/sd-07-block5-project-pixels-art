@@ -21,7 +21,7 @@ for (let i = 1; i <= 5; i += 1) {
 
     for (let k = 1; k <= 5; k += 1) {
 
-        aux += "<div id='cell'>"+i+k+" </div>";
+        aux += "<div id='pixel'>"+i+k+" </div>";
         
     }
 
