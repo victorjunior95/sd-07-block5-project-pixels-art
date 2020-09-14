@@ -31,7 +31,7 @@ const paletteSelection = document.getElementsByClassName('color');
 // Array of all elements in the pixel board
 const pixelSelection = document.getElementsByClassName('pixel');
 
-  // Function that pick a color (chosen element is tagged with a color selected class while previous selected color is changed to a color class name)
+  // Function that picks a color
 function selectColor(event) {
   selectedColor[0].className = 'color';
   event.target.className = 'color selected';
