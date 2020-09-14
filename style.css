@@ -16,8 +16,8 @@ body {
   border: black solid 1px;
   display: inline-block;
   margin-left: 30px;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
 }
 
 .section-palette .black {
@@ -34,4 +34,19 @@ body {
 
 .section-palette .green {
   background-color: green;
+}
+
+.section-board {
+  margin-top: 60px;
+  text-align: center;
+}
+
+
+
+.pixel {
+  border: black solid 1px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  
 }
