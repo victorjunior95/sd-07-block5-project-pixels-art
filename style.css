@@ -9,13 +9,7 @@
 .pixel {
   background-color: white;
   border: 1px solid black;
-  border-collapse: collapse;
   display: table-cell;
-  height: 40px;
-  padding: 0;
-  width: 40px;
-}
-
-.pixelBoardClass {
-  border-collapse: collapse;
+  height: 41px;
+  width: 41px;
 }
