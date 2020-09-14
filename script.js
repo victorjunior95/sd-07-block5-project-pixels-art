@@ -1,38 +1,14 @@
-window.onload = function() {
-  let pixelBoard = document.getElementById("pixel-board");
-
-function createTable() {
-
-
-  for (let index = 0; index < 5; index++) {
-
-      let line = document.createElement("div");
-      pixelBoard.appendChild(line).className = "line";
-
-      for (let index = 0; index < 5; index++) {
-
-          let pixel = document.createElement("div");
-          line.appendChild(pixel).className = "pixel";
-      }
-    }
-  }
-
-  createTable();
-
-  let cadaPixel = pixelBoard.querySelectorAll('.pixel');
-
-  for (let index = 0; index < cadaPixel.length; index++) {
-
-      let c = cadaPixel[index];
-      c.addEventListener('click', function(){
-          //pegarCor();
-          console.log('oi')
-      });
-  }
+window.onload = function(){
+  //Declarando variáveis
+  let color = document.querySelectorAll(".color");
+  let listPixel = document.querySelector("#pixel-board");
 
 
+  //Declarando as cores de fundo
+  document.getElementById("blue").style.backgroundColor = "blue";
+  document.getElementById("green").style.backgroundColor = "green";
+  document.getElementById("red").style.backgroundColor = "red";
+  document.getElementById("yellow").style.backgroundColor = "yellow";
 
-   //   getComputedStyle([elemento]).backgroundColor;
-
-
+  document.getElementById("black").style.backgroundColor = "black";
 }
