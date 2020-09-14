@@ -20,3 +20,17 @@
     background-color: rgb(205 , 237 , 246);
 }
 
+.pixel {
+    background-color: white;
+    border: solid 1px black;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.line {
+
+    height: 42px;;
+}
