@@ -1,16 +1,15 @@
-/* "order/properties-alphabetical-order": null */
 #color-palette {
-  position: relative;
-  display: inline-block;
   align-content: center;
-  width: 210px;
+  display: inline-block;
   height: 45px;
-  margin-bottom: 5PX;
+  margin-bottom: 5px;
+  position: relative;
+  width: 210px;
 }
 
 .color {
-  display: inline-block;
   border: 1px solid black;
+  display: inline-block;
   width: 40px;
   height: 40px;
 }
@@ -32,15 +31,15 @@
 }
 
 #clear-board {
-  margin-top: 10px;
   margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .pixel {
-  display: inline-block;
-  border: 1px solid black;
-  width: 40px;
-  height: 40px;
   background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
   margin: 0.5px;
+  width: 40px;
 }
