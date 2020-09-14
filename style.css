@@ -18,8 +18,14 @@ button {
 
 .color {
   border: 1px solid black;
+  height: 60px;
+  margin-bottom: 50px;
+  transition: 0.3s;
+  width: 80px;
+}
+
+.color:hover {
   height: 80px;
-  width: 100px;
 }
 
 .first {
@@ -41,4 +47,38 @@ button {
   background-color: blue;
   border-radius: 0 50% 50% 0;
   color: blue;
+}
+
+.board {
+  height: 208px;  
+  margin: auto;
+  margin-bottom: 15px;
+  padding-top: 2px;
+  width: 210px;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  margin: -2px;
+  width: 40px;
+}
+
+.clear {
+  background-color: rgb(58 , 110 , 165);
+  border: none;
+  border-radius: 20px;
+  color: rgb(235 , 235 , 235);
+  height: 50px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  width: 200px;
+}
+
+.clear:hover {
+  background-color: rgb(255 , 103 , 0);
+  color: rgb(0 , 78 , 152);
+  font-weight: bolder;
 }
