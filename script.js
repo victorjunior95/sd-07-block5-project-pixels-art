@@ -6,7 +6,7 @@ cores[2].style.backgroundColor = 'red';
 cores[3].style.backgroundColor = 'green';
 let pixelBoard = document.querySelector('#pixel-board');
 window.onload = function (){
-    cores[0].className = "selected"
+    cores[0].classList.add("selected");
     pixelCor()
 }
 for(index = 0; index < 25; index += 1){
@@ -19,7 +19,7 @@ cores[0].addEventListener('click', function () {
     for(index = 0; index < 4; index += 1){
         cores[index].className = "color"
     }
-    cores[0].className = "selected"
+    cores[0].classList.add("selected");
     pixelCor()
 })
 // Cor azul selecionada
@@ -27,7 +27,7 @@ cores[1].addEventListener('click', function () {
     for(index = 0; index < 4; index += 1){
         cores[index].className = "color"
     }
-    cores[1].className = "selected"
+    cores[1].classList.add("selected");
     pixelCor()
 })
 // Cor vermelha selecionada
@@ -35,7 +35,7 @@ cores[2].addEventListener('click', function () {
     for(index = 0; index < 4; index += 1){
         cores[index].className = "color"
     }
-    cores[2].className = "selected"
+    cores[2].classList.add("selected");
     pixelCor()
 })
 // Cor verde selecionada
@@ -43,7 +43,7 @@ cores[3].addEventListener('click', function () {
     for(index = 0; index < 4; index += 1){
         cores[index].className = "color"
     }
-    cores[3].className = "selected"
+    cores[3].classList.add("selected");
     pixelCor()
 })
 let pixel = document.querySelectorAll('.pixel')
