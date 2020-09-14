@@ -26,10 +26,10 @@
 }
 
 .pixel {
- background-color: white;
-  display: inline-block;
+  background-color: white;
   border: 1px solid black;
-  width: 39px;
-  height: 39px;
+  display: inline-block;
+  height: 40px;
   margin: 0;
+  width: 40px;
 }
