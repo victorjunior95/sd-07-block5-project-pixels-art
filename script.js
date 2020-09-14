@@ -1,6 +1,9 @@
 let selectBlackColor = document.querySelector('.selected');
 selectBlackColor.addEventListener('click', function() {
   selectBlackColor.classList.add('.selected');
+  colorRed.classList.remove('.selected');
+  colorBlue.classList.remove('.selected');
+  colorGreen.classList.remove('.selected');
 });
 
 let colorRed = document.querySelector('.red');
