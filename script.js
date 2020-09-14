@@ -1,30 +1,31 @@
 const pixelBoard = document.querySelector('#pixel-board');
 const colors = document.querySelectorAll('.color');
-const numberOfLinesAndColunms = 5;
-const clearBoard = document.querySelector('.clear-board')
+const clearBoard = document.querySelector('.clear-board');
+const buttonGenerateBoard = document.querySelector('.generate-board');
+let numberOfLinesAndColunms = 5;
 
-function makeBoard() {
+function makeBoard(numberOfLinesAndColunms) {
   for (let index = 0; index < numberOfLinesAndColunms; index += 1) {
-    let tr = document.createElement('div');
-    tr.style.display.tr;
-    pixelBoard.appendChild(tr);
-    for (let j = 0; j < numberOfLinesAndColunms; j += 1) {
+      let tr = document.createElement('div');
+      tr.style.display.tr;
+      pixelBoard.appendChild(tr);
+  for (let j = 0; j < numberOfLinesAndColunms; j += 1) {
       let td = document.createElement('div');
-        td.style.display.td;
-        classTD(td);
-        tr.appendChild(td)
-      }
+      td.style.display.td;
+      classTD(td);
+      tr.appendChild(td)
+    }
   }
-}
+};
 
-makeBoard();
+makeBoard(numberOfLinesAndColunms);
 
-const pixels = document.querySelectorAll('.pixel');
+let pixels = document.querySelectorAll('.pixel');
 
 function classTD(td) {
   let tdClass = td.className = 'pixel';
   return tdClass;
-} 
+}; 
 
 colors.forEach(item => {
   item.addEventListener('click', function(event) {
@@ -37,12 +38,28 @@ colors.forEach(item => {
   });
 });
 
+function paintBoard(event) {
+  const colorSelected = document.querySelector('.selected');
+  let bgColor = window.getComputedStyle(colorSelected, null).getPropertyValue('background-color');
+  event.target.style.backgroundColor = bgColor;
+}
+
 pixels.forEach(item => {
-  item.addEventListener('click', function(event) {
-    const colorSelected = document.querySelector('.selected');
-    let bgColor = window.getComputedStyle(colorSelected, null).getPropertyValue('background-color');
-    event.target.style.backgroundColor = bgColor;
-  });
+  item.addEventListener('click', paintBoard);
+});
+
+buttonGenerateBoard.addEventListener('click', function() {
+  numberOfLinesAndColunms = document.getElementById('board-size').value;
+  if (numberOfLinesAndColunms < 5 || numberOfLinesAndColunms > 50 || numberOfLinesAndColunms === null) {
+      alert('Board inválido!');
+  } else {
+      pixelBoard.innerHTML = '';
+      makeBoard(numberOfLinesAndColunms);
+      pixels = document.querySelectorAll('.pixel');
+      pixels.forEach(item => {
+        item.addEventListener('click', paintBoard);
+      });
+  }  
 });
 
 clearBoard.addEventListener('click', function() {
