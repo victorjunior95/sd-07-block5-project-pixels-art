@@ -1,6 +1,3 @@
-/* - A página deve possuir uma paleta de quatro cores distintas.
-As seguintes verificações serão feitas:
-A paleta de cores deve ser um elemento com id denominado color-palette, ao passo que cada cor individual da paleta de cores deve possuir a classe color;
 .color {
     border: solid 1px black;
     height: 50px;
