@@ -50,11 +50,10 @@ function testBoardSize() {
     return false;
   } else if (boardSize.value < 5) {
     boardSize.value = 5;
-    return true;
   } else if (boardSize.value > 50) {
     boardSize.value = 50;
-    return true;
   }
+  return true;
 }
 function makeBoard() {
   const boardSize = document.querySelector('#board-size');
