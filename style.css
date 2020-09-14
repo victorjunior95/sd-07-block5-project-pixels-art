@@ -20,3 +20,14 @@
 .blue {
   background-color: blue;
 }
+
+.white {
+  background-color: white;
+}
+
+.pixel {
+  border: solid black 1px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
