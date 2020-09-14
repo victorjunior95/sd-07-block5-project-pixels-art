@@ -27,3 +27,14 @@ fillAll(lines);
 
 // 6 - Ao carregar a página, a cor preta da paleta já deve estar selecionada para pintar os pixels.
 document.querySelector('.color.black').className = 'color black selected';
+
+// 7 - Ao clicar em uma das cores da paleta, a cor selecionada é que vai ser usada para preencher os pixels no quadro.
+let arrayPalete = document.querySelectorAll('.color');
+for (index = 0; index < arrayPalete.length; index += 1) {
+    let palete = arrayPalete[index];
+    palete.addEventListener('click', function () {
+        let selectedClass = document.querySelector('.selected');
+        selectedClass.classList.remove('selected');
+        palete.classList.add('selected');
+    });
+}
