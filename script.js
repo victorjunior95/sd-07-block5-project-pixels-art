@@ -96,3 +96,4 @@ buttonCreateBoard.addEventListener('click', () => createBoard(Number(inputBoardS
 
 setColors();
 addClickListener();
+createBoard(5);
