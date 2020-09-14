@@ -25,19 +25,14 @@
     background-color:white;
 }
 
-.pixel-box {
-    display:grid;
-    grid-template-columns: 40px 40px 40px 40px 40px;
-}
-
 .pixel-board {
-    display:grid;
-    grid-template-columns: 40px 40px 40px 40px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    width:250px;
 }
 
 .pixel {
     width:40px;
     height:40px;
     border:1px solid black;
-    display:inline-block;
 }
