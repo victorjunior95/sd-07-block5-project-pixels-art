@@ -15,6 +15,7 @@ function makeBoard() {
       }
   }
 }
+
 makeBoard();
 
 const pixels = document.querySelectorAll('.pixel');
@@ -40,5 +41,5 @@ pixels.forEach(item => {
     const colorSelected = document.querySelector('.selected');
     let bgColor = window.getComputedStyle(colorSelected, null).getPropertyValue('background-color');
     event.target.style.backgroundColor = bgColor;
-  })
-})
+  });
+});
