@@ -25,7 +25,15 @@ function createTable() {
 
       let c = cadaPixel[index];
       c.addEventListener('click', function(){
-
+          //pegarCor();
+          console.log('oi' + c.n)
       });
   }
+
+  function pegaCor() {
+
+      getComputedStyle([elemento]).backgroundColor;
+  }
+
+
 }
