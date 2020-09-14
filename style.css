@@ -2,6 +2,16 @@ body {
     background-color: #B0C4DE;
 }
 
+#pixel-board{
+    position: absolute;
+    background-color: black;
+    border: 1px black solid;
+    padding-bottom: 220px;
+    padding-left: 220px;
+    top: 150px;
+    left: 180px;
+}
+
 #title {
     position: absolute;
     left: 190px;
@@ -63,6 +73,209 @@ body {
     top: 5px;
     left: 122px;
 }
+
+#pixel-1 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left: 1px;
+    top: 1px;
+    background-color: white;
+}
+#pixel-2 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left: 45px;
+    top: 1px;
+    background-color: white;
+}
+#pixel-3 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:89px;
+    top: 1px;
+    background-color: white;
+}
+#pixel-4 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:133px;
+    top: 1px;
+    background-color: white;
+}
+#pixel-5 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:177px;
+    top: 1px;
+    background-color: white;
+}
+#pixel-6 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:1px;
+    top: 45px;
+    background-color: white;
+}
+#pixel-7 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left: 45px;
+    top: 45px;
+    background-color: white;
+}
+#pixel-8 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:89px;
+    top: 45px;
+    background-color: white;
+}
+#pixel-9 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:133px;
+    top: 45px;
+    background-color: white;
+}
+#pixel-10 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:177px;
+    top: 45px;
+    background-color: white;
+}
+#pixel-11 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left: 1px;
+    top: 89px;
+    background-color: white;
+}
+#pixel-12 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left: 45px;
+    top: 89px;
+    background-color: white;
+}
+#pixel-13 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:89px;
+    top: 89px;
+    background-color: white;
+}
+#pixel-14 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:133px;
+    top: 89px;
+    background-color: white;
+}
+#pixel-15 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:177px;
+    top: 89px;
+    background-color: white;
+}
+#pixel-16 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left: 1px;
+    top: 133px;
+    background-color: white;
+}
+#pixel-17 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left: 45px;
+    top: 133px;
+    background-color: white;
+}
+#pixel-18 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:89px;
+    top: 133px;
+    background-color: white;
+}
+#pixel-19 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:133px;
+    top: 133px;
+    background-color: white;
+}
+#pixel-20 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:177px;
+    top: 133px;
+    background-color: white;
+}
+#pixel-21 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left:1px;
+    top: 177px;
+    background-color: white;
+}
+#pixel-22 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left: 45px;
+    top: 177px;
+    background-color: white;
+}
+#pixel-23 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left: 89px;
+    top: 177px;
+    background-color: white;
+}
+#pixel-24 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left: 133px;
+    top: 177px;
+    background-color: white;
+}
+#pixel-25 {
+    position: absolute;
+    border: 1px black solid;
+    padding: 20px;
+    left: 177px;
+    top: 177px;
+    background-color: white;
+}
+
+
 
 #color-palette {
     position: absolute;
