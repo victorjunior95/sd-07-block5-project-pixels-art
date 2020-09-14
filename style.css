@@ -1,29 +1,29 @@
-div #quadrado1 {
-    border: 1px solid black;
+ .quadrado1 {
+border: 1px solid #000;
     width: 65px;
     height: 65px;
-    background-color:black;
+    background-color:#000;
     margin: 12px;
 }
-div #quadrado2 {
-    border: 1px solid black;
+ .quadrado2 {
+    border: 1px solid #000;
     width: 65px;
     height: 65px;
-    background-color: red;
+    background-color: #f00;
     margin: 12px;
 }
-div #quadrado3 {
-    border: 1px solid black;
+ .quadrado3 {
+    border: 1px solid #000;
     width: 65px;
     height: 65px;
-    background-color: blue;
+    background-color: #00f;
     margin: 12px;
 }
-div #quadrado4 {
-    border: 1px solid black;
+ .quadrado4 {
+    border: 1px solid #000;
     width: 65px;
     height: 65px;
-    background-color: green;
+    background-color: #0f0;
     margin: 12px;
 }
 
@@ -31,16 +31,33 @@ div #quadrado4 {
     display: inline-block;
 }
 
-th {
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
 
-}
 
 #clear-board{
     margin: 25px;
     padding: 5px;
     font-size: 25px;
     background-color: cadetblue;
+}
+
+#pixel-board{
+    display: table;
+    margin: 45px;
+
+}
+.tr {
+    display: table-row;
+}
+
+.pixel {
+    display: table-cell;
+    border: 1px solid #000;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
+
+.selected {
+    outline: 2px dashed #000;
+    
 }
