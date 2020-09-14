@@ -4,18 +4,6 @@
     border: 1px solid black;
     display: inline-block;
 }
-.black {
-    background-color: black;
-}
-.red {
-    background-color: red;
-}
-.green {
-    background-color: green;
-}
-.yellow {
-    background-color: yellow;
-}
 
 #pixel-board{
     width: 250px;
