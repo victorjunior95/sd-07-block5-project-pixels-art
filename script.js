@@ -1,11 +1,10 @@
 
 
-const corPreta = document.getElementsByClassName('color colorBlack')[0];
+let selected = document.querySelector('.selected');
 const corRed = document.getElementsByClassName('color colorRed')[0];
 const corGreen = document.getElementsByClassName('color colorGreen')[0];
 const corBlue = document.getElementsByClassName('color colorBlue')[0];
 const limpar = document.querySelector("#clear-board")
-console.log(corPreta)
 let caixaGeral = []
 
 window.onload = inicio;
@@ -62,7 +61,7 @@ function limpeza(){
     }
 }
 
-corPreta.addEventListener('click',preto)
+selected.addEventListener('click',preto)
 corRed.addEventListener('click',vermelho)
 corGreen.addEventListener('click',verde)
 corBlue.addEventListener('click',azul)
