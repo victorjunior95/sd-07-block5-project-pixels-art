@@ -1,4 +1,5 @@
 // Color variables
+const buttonRandomPalette = document.getElementById('random-palette');
 const colorPalette = document.getElementsByClassName('color');
 let colorPixels = document.getElementsByClassName('pixel');
 let selectedColor = document.getElementsByClassName('selected');
@@ -120,6 +121,20 @@ function changeSizePixel() {
   proceduresToCreateBoard();
 }
 
+function zeroTo(maxNumber){
+  return Math.floor(Math.random() * maxNumber);
+}
+
+function randomColor() {
+  return 'rgb(' + zeroTo(256) +  ',' + zeroTo(256) + ',' + zeroTo(256) + ')'
+}
+
+function randomizerPalette() {
+  colorPalette[1].style.backgroundColor = randomColor();
+  colorPalette[2].style.backgroundColor = randomColor();
+  colorPalette[3].style.backgroundColor = randomColor();
+}
+
 eventListenerToColors();
 eventListenerToPixels();
 
@@ -128,8 +143,7 @@ clearBoard.addEventListener('click', fillBoardWhite);
 resizeReset.addEventListener('click', assignSize);
 generateBoard.addEventListener('click', testBeforeAssign);
 buttonPixelSize.addEventListener('click', changeSizePixel);
+buttonRandomPalette.addEventListener('click', randomizerPalette);
 
 colorPalette[0].style.backgroundColor = 'black';
-colorPalette[1].style.backgroundColor = 'red';
-colorPalette[2].style.backgroundColor = 'green';
-colorPalette[3].style.backgroundColor = 'blue';
+randomizerPalette();
