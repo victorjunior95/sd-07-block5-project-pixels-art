@@ -32,5 +32,10 @@
 }
 
 .pixel-board {
-  background-color: white;
+  background-color: black;
+  display: contents;
+}
+
+button {
+  margin-bottom: 10px;
 }
