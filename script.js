@@ -36,9 +36,16 @@ function clearBoard() {
     element.style.backgroundColor = '#ffffff';
   }
 }
+function pixelsEventListeners() {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    const element = pixel[index];
+    element.addEventListener('click', paintPixel);
+  }
+}
 function makeBoard() {
   const boardSize = document.querySelector('#board-size');
-  let pixelBoard = document.querySelector('#pixel-board');
+  const pixelBoard = document.querySelector('#pixel-board');
   if (boardSize.value === '') {
     alert('Board inválido!');
     return ;
@@ -59,11 +66,19 @@ function makeBoard() {
     }
     pixelBoard.appendChild(newRow);
   }
-  const pixel = document.querySelectorAll('.pixel');
-  for (let index = 0; index < pixel.length; index += 1) {
-    const element = pixel[index];
-    element.addEventListener('click', paintPixel);
+  pixelsEventListeners();
+}
+function randomColor() {
+  let newColor = '#';
+  for (let index = 0; index < 3; index += 1) {
+    const randNumber = parseInt(255 * Math.random(), 10);
+    if (randNumber < 16) {
+      newColor = `${newColor}0${randNumber.toString(16)}`;
+    } else {
+      newColor = `${newColor}${randNumber.toString(16)}`;
+    }
   }
+  return newColor;
 }
 window.onload = function () {
   const black = document.querySelector('.black');
@@ -71,21 +86,11 @@ window.onload = function () {
   const color2 = document.querySelector('.color2');
   const color3 = document.querySelector('.color3');
   const colors = [color1, color2, color3];
-  const pixel = document.querySelectorAll('.pixel');
   const clearBoardButton = document.querySelector('#clear-board');
   const generateBoard = document.querySelector('#generate-board');
 
   colors.forEach((color) => {
-    let newColor = '#';
-    for (let index = 0; index < 3; index += 1) {
-      const randNumber = parseInt(255 * Math.random(), 10);
-      if (randNumber < 16) {
-        newColor = `${newColor}0${randNumber.toString(16)}`;
-      } else {
-        newColor = `${newColor}${randNumber.toString(16)}`;
-      }
-    }
-    color.style.backgroundColor = newColor;
+    color.style.backgroundColor = randomColor();
   });
 
   black.style.backgroundColor = 'black';
@@ -96,8 +101,5 @@ window.onload = function () {
   color3.addEventListener('click', chooseColor);
   clearBoardButton.addEventListener('click', clearBoard);
   generateBoard.addEventListener('click', makeBoard);
-  for (let index = 0; index < pixel.length; index += 1) {
-    const element = pixel[index];
-    element.addEventListener('click', paintPixel);
-  }
+  pixelsEventListeners();
 };
