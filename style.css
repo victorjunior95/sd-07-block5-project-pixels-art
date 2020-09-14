@@ -3,9 +3,10 @@ body {
 }
 
 #clear-board{
+    width: 100px;
     position: absolute;
     top: 120px;
-    left: 365px;
+    left: 338px;
 }
 #pixel-board {
     position: absolute;
