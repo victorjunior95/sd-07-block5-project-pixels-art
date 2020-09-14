@@ -1,3 +1,10 @@
+.color {
+  border: solid 1px black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+
 .black {
   background-color: black;
 }
@@ -12,14 +19,4 @@
 
 .blue {
   background-color: blue;
-}
-
-.black,
-.green,
-.red,
-.blue {
-  border: solid 1px black;
-  display: inline-block;
-  height: 40px;
-  width: 40px;
 }
