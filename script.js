@@ -36,7 +36,7 @@ function currentColorToBlack(){
 
 }
 
-function currentColorToRed(){
+function currentColorToOne(){
     currentColor = window.getComputedStyle(document.querySelector('#color2')).getPropertyValue("background-color")
     colorOne.className = `color selected`;
     colorBlack.className = `color`;
@@ -44,7 +44,7 @@ function currentColorToRed(){
     colorThree.className = `color`;
 }
 
-function currentColorToBlue(){
+function currentColorToTwo(){
     currentColor = window.getComputedStyle(document.querySelector('#color3')).getPropertyValue("background-color")
     colorTwo.className = `color selected`;
     colorBlack.className = `color`;
@@ -52,7 +52,7 @@ function currentColorToBlue(){
     colorThree.className = `color`;
 }
 
-function currentColorToGreen(){
+function currentColorToThree(){
     currentColor = window.getComputedStyle(document.querySelector('#color4')).getPropertyValue("background-color")
     colorThree.className = `color selected`;
     colorBlack.className = `color`;
@@ -77,9 +77,9 @@ for(let e = 0 ; e < classPixel.length ; e++) {
 clear.addEventListener('click', clearBoard)   
 
 
-  colorThree.addEventListener('click', currentColorToGreen)
-  colorTwo.addEventListener('click', currentColorToBlue)
-  colorOne.addEventListener('click', currentColorToRed)
+  colorThree.addEventListener('click', currentColorToThree)
+  colorTwo.addEventListener('click', currentColorToTwo)
+  colorOne.addEventListener('click', currentColorToOne)
   colorBlack.addEventListener('click', currentColorToBlack)  
 
 }
