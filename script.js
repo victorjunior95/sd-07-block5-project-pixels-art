@@ -49,10 +49,10 @@ function checkNumber(numberOfLines) {
 }
 
 function createBoard(numberOfLines) {
-
-  numberOfLines = checkNumber(numberOfLines);
   if (firstTime || isEmpty()) {
+    numberOfLines = checkNumber(numberOfLines);
     pixelBoard.innerHTML = '';
+
     for (let line = 0; line < numberOfLines; line += 1) {
       const divLine = document.createElement('div');
       divLine.className = 'pixel-line';
