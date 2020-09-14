@@ -1,6 +1,7 @@
 const pixelBoard = document.querySelector('#pixel-board');
 const colors = document.querySelectorAll('.color');
 const numberOfLinesAndColunms = 5;
+const clearBoard = document.querySelector('.clear-board')
 
 function makeBoard() {
   for (let index = 0; index < numberOfLinesAndColunms; index += 1) {
@@ -42,4 +43,10 @@ pixels.forEach(item => {
     let bgColor = window.getComputedStyle(colorSelected, null).getPropertyValue('background-color');
     event.target.style.backgroundColor = bgColor;
   });
+});
+
+clearBoard.addEventListener('click', function() {
+  pixels.forEach(item => {
+    item.style.backgroundColor = 'white';
+  })
 });
