@@ -3,8 +3,8 @@
   border-width: 1px;
   border-style: solid;
   display: inline-block;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
 }
 
 .pixel {
@@ -12,8 +12,8 @@
   border-width: 1px;
   border-style: solid;
   display: inline-block;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   background-color: white;
 }
 
@@ -34,8 +34,8 @@
 }
 
 #pixel-board {
-  width: 160px;
-  height: 160px;
+  width: 210px;
+  height: 210px;
   border: 1px;
   border-style: solid;
   border-color: black;
