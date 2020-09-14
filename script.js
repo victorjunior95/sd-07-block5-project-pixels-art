@@ -12,3 +12,12 @@ for (counter = 0; counter < amountOfSquares;counter +=1){
 }
 
 
+
+document.addEventListener('click', function (event) {
+    if ( event.target.classList.contains( 'color' ) ) {
+        let selectColor = document.querySelector('.selected');
+        selectColor.classList.remove('selected');
+        event.target.classList.add('selected');   
+    }
+})
+
