@@ -21,7 +21,7 @@
   background-color: yellow;
 }
 
-#pixel-board {
+.tela {
   margin-top: 10px;
 }
 
@@ -31,6 +31,10 @@
   display: inline-block;
   height: 40px;
   width: 40px;
+}
+
+.bot {
+    margin-top: 20px;
 }
 
 .selected {
