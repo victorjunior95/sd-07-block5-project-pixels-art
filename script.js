@@ -1,4 +1,4 @@
-const bot = document.getElementById('apagar');
+const bot = document.getElementById('clear-board');
 const cpreto = document.getElementById('cpreto');
 const cvermelho = document.getElementById('cvermelho');
 const cazul = document.getElementById('cazul');
