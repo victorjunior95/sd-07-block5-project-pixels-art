@@ -4,7 +4,7 @@ let selectedColor = document.getElementById('black-index');
 // Escolhendo a cor na paleta
 function indexClick(item) {
   item.addEventListener('click', function () {
-    document.querySelectorAll('.color');
+    document.querySelectorAll('color selected');
     item.classList.add('selected');
     selectedColor = item;
     item.classList.remove('selected');
