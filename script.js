@@ -50,7 +50,7 @@ function createBasePixelBoard(parent) {
     const divLine = document.createElement('div');
     divLine.className = 'line';
     divAll.appendChild(divLine);
-    let lineActual = idLines[lineIndex]
+    const lineActual = idLines[lineIndex];
     for (let pixelIndex = 0; pixelIndex < idLines.length; pixelIndex += 1) {
       const pixel = document.createElement('div');
       pixel.setAttribute('id', `${lineActual}${pixelIndex}`);
