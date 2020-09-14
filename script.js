@@ -8,6 +8,8 @@ const boardSize = document.querySelector('#board-size');
 const generateBoard = document.querySelector('#generate-board');
 const cleaner = document.querySelector('#clear-board');
 const board = document.querySelector('#pixel-board');
+let selectedDiv = document.querySelector('.selected');
+let selectedColor;
 
 //  FUNCTIONS
 //  Função responsável por remover classe 'selected' da cor selecionada no momento
@@ -53,15 +55,14 @@ function buildBoard(number) {
     buildRow(number);
   }
 }
-function generateColor() { //Inspirado em código achado no seguint url (https://stackoverflow.com/questions/1152024/best-way-to-generate-a-random-color-in-javascript/1152508)
+function generateColor() { // Inspirado em código achado no seguint url (https://stackoverflow.com/questions/1152024/best-way-to-generate-a-random-color-in-javascript/1152508)
   const first = Math.floor(Math.random() * 256);
   const second = Math.floor(Math.random() * 256);
   const third = Math.floor(Math.random() * 256);
   return `rgb(${first}, ${second}, ${third})`;
 }
 //  DEFINIÇÕES PÓS FUNÇÕES
-let selectedDiv = document.querySelector('.selected');
-let selectedColor = getColor(selectedDiv);
+selectedColor = getColor(selectedDiv);
 
 //  EVENTOS
 //  Gerando cores
