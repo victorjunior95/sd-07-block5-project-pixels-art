@@ -19,6 +19,15 @@ const pixelSS = document.querySelectorAll('.pixel');
 const clearBT = document.getElementById('clear-board');
 let saveClass = "";
 
+  document.querySelectorAll('.pixelBackG').forEach(pixel => {
+  pixel.className = 'pixel pixelBackG';
+});
+
+document.querySelectorAll('.pixel').forEach(item => {
+  item.addEventListener('click', () => item.classList.add('color-01'))
+});
+
+
 // Function to clear all class color fron pixel itens.
 clearBT.addEventListener('click', function () {
   for (let i = 0; i < pixelSS.length; i += 1) {
