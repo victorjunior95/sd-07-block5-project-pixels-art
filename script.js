@@ -56,9 +56,9 @@ function createBasePixelBoard(parent) {
     divAll.appendChild(divLine);
     for (let index = 0; index < idLines.length; index += 1) {
       const pixel = createPixel('pixel');
-      pixel.setAttribute('id', `${idLines[index]}${index}`)
+      pixel.setAttribute('id', `${idLines[index]}${index}`);
       pixel.className = 'pixel';
-      divLine.appendChild(pixel)
+      divLine.appendChild(pixel);
     }
   }
 }
