@@ -1,8 +1,9 @@
 let palette = document.getElementsByClassName('color');
 let pixel = document.getElementsByClassName('pixel');
 let colorSelected = 'rgb(0, 0, 0)';
+let btnClear = document.getElementById('clear-board');
 
-//console.log(palette);
+const defaultColor =  'rgb(255, 255, 255)';
 
 for(let i=0; i < pixel.length; i += 1){
   pixel[i].addEventListener('click', changeColor);
@@ -25,3 +26,11 @@ function addColor(e){
   colorSelected = style.backgroundColor;
 
 }
+
+function clearPixels(){
+  for(let i=0; i < pixel.length; i += 1){
+    pixel[i].style.backgroundColor = defaultColor;
+  }
+}
+
+btnClear.addEventListener('click', clearPixels);
