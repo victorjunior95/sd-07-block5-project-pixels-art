@@ -45,9 +45,9 @@ function createLine(numberOfColumns) {
 }
 
 //  função que cria tabela
-function createBoard(numberOfLines) {
-  for (let lineNumber = 0; lineNumber < numberOfLines; lineNumber += 1) {
-    createLine(numberOfLines);
+function createBoard(numberOfLinesIn) {
+  for (let lineNumber = 0; lineNumber < numberOfLinesIn; lineNumber += 1) {
+    createLine(numberOfLinesIn);
   }
 }
 
