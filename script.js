@@ -14,5 +14,11 @@ function clickConfigure(item) {
     });
 }
 
+let pixel = document.querySelectorAll('.pixel');
 
+document.getElementById('clear-board').addEventListener('click', function () {
+  for (index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = "white";
+  }
+})
 
