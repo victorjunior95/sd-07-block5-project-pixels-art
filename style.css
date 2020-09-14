@@ -50,11 +50,10 @@ body {
 .pixel {
   border: 1px solid black;
   display: inline-block;
-  height: 39px;
-  line-height: 41px;
+  height: 42px;
   margin-top: 0;
   padding: 0;
-  width: 39px;
+  width: 42px;
 }
 
 .footer-class {

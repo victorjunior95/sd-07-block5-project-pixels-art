@@ -38,7 +38,7 @@ createPaletteColors(mainPage);
 
 function createBasePixelBoard(parent) {
   // Criar a div base.
-  const divAll = document.createElement('section');
+  const divAll = document.createElement('div');
   divAll.className = 'pixel-board';
   divAll.setAttribute('id', 'pixel-board');
   parent.appendChild(divAll);
