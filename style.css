@@ -16,3 +16,14 @@
 #paleta-quatro {
     background-color: yellow;
 }
+
+#pixel-board{
+    width: 250px;
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    display: inline-block;
+}
