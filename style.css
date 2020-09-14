@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(253 , 251 , 251);
+    background-color: rgb(255 , 255 , 255);
     font-family: Arial, Helvetica, sans-serif;
   }
   
@@ -18,12 +18,25 @@ header {
 .center {
     text-align: center;
 }
+.centerSection {
+  text-align: center;
+}
+
 .color {
   background-color: black;
   border: 1px black solid;
   display: inline-block;
   height: 60px;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 0px;
   width: 60px;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 41px;
+  width: 41px;
 }
