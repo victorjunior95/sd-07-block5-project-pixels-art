@@ -21,6 +21,7 @@ botaoGerar.addEventListener('click', (event) => {
     initial(number);
 });
 
+initial(number);
 function initial(number) {
     for(let aux = 0; aux < number; aux += 1) {
     for (let index = 0; index < number; index += 1) {
