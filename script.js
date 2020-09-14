@@ -1,3 +1,4 @@
+// trata evento construir o tabuleiro
 const numberInputBox = document.querySelector('#board-size');
 const buttonInput = document.querySelector('#generate-board');
 // trata construção para 5
@@ -12,6 +13,8 @@ const buttonInput = document.querySelector('#generate-board');
       lPixelBoard.appendChild(pixel);
   }
 }
+
+//trata evento selecionar a cor
 
 
 // Trata construção dinâmica
