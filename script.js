@@ -81,7 +81,7 @@ window.onload = function(){
     })
 
     botaoCriaPixels.addEventListener('click', function(){
-        let qtd=document.getElementById('board-sizey');
+        let qtd=document.getElementById('board-size');
         contaPixel=document.querySelectorAll('.pixel');
         qtdPixels=qtd.value;
         criaGrid(qtdPixels);
