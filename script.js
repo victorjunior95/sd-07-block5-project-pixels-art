@@ -1,4 +1,3 @@
-
 const colorPalet = document.getElementById('color-palette');
 window.onload = function () {
   for (let indice = 0; indice < 4 ; indice += 1) {
@@ -12,7 +11,7 @@ const draw = document.getElementById('pixel-board');
 let size = document.getElementsByName('size');
 
   //Adcionando valor padrão
-  if (size.value == undefined){
+  if (size.value == undefined) {
    size = 5;
   ;}
   for (let index = 0; index < size ; index += 1) {

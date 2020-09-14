@@ -6,7 +6,7 @@ body {
 .container {
   height: 768px;  
   margin: 0;
-  margin-left:auto ;
+  margin-left: auto ;
   margin-right: auto;
   padding: 0;
   width: 1366px;
@@ -16,13 +16,13 @@ body {
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   margin-top: 10px;
 }
 .containerInt {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid red;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid red;
 }
 .drawPixel {
   border: 1px solid lightgreen;
@@ -36,7 +36,7 @@ section {
   display: flex;
 }
 .color {
-  border:1px solid black;
+  border: 1px solid black;
   display: inline-block;
   height: 40px;
   margin-left: 5px;
