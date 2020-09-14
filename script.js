@@ -1,35 +1,34 @@
-//Documento já começa com a cor preto escolhido como padrão
-let selectedColor = document.getElementById("black-index");
+// Documento já começa com a cor preto escolhido como padrão
+let selectedColor = document.getElementById('black-index');
 
 // Escolhendo a cor na paleta
-document.querySelectorAll(".color").forEach(indexClick);
 function indexClick(item) {
-  item.addEventListener("click", function () {
-    document.querySelectorAll(".color");
-    item.classList.add("selected");
+  item.addEventListener('click', function () {
+    document.querySelectorAll('.color');
+    item.classList.add('selected');
     selectedColor = item;
-    item.classList.remove("selected");
+    item.classList.remove('selected');
   });
 }
+document.querySelectorAll('.color').forEach(indexClick);
 
-//pintando o pixel
-let pixelsColor = document.querySelectorAll(".pixel");
-document.querySelectorAll(".pixel").forEach(changePixelSelect);
+// Pintando o pixel
+const pixelsColor = document.querySelectorAll('.pixel');
 function changePixelSelect(item) {
-  for (let i in pixelsColor);
-  item.addEventListener("click", () => {
+  item.addEventListener('click', (color) => {
     color = window
       .getComputedStyle(selectedColor)
-      .getPropertyValue("background-color");
+      .getPropertyValue('background-color');
     item.style.backgroundColor = color;
   });
 }
+document.querySelectorAll('.pixel').forEach(changePixelSelect);
 
-//botão de limpar
-let pixels = document.querySelectorAll(".pixel");
-let clearAllPixels = document.getElementById("clear-board");
-clearAllPixels.addEventListener("click", () => {
+// Botão de limpar
+const pixels = document.querySelectorAll('.pixel');
+const clearAllPixels = document.getElementById('clear-board');
+clearAllPixels.addEventListener('click', () => {
   for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].style.backgroundColor = "white";
+    pixels[index].style.backgroundColor = 'white';
   }
 });

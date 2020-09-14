@@ -1,6 +1,6 @@
 body {
-  background-color: rgb(15 , 163 , 107);
-  font-family: rawline,Open Sans,Arial,sans-serif;
+  background-color: rgb(15, 163, 107);
+  font-family: rawline, Open Sans, Arial, sans-serif;
   text-align: center;
 }
 
@@ -32,7 +32,7 @@ h1 {
 }
 
 .clear-board {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   border: solid 1px black;
   border-radius: 5px;
   margin-top: 5px;
@@ -40,11 +40,11 @@ h1 {
 }
 
 .clear-board:hover {
-  background-color:  rgb(7, 102, 66);
+  background-color: rgb(7, 102, 66);
 }
 
 .pixel-board {
-  background-color:  rgb(7, 102, 66);
+  background-color: rgb(7, 102, 66);
   border: solid 2px black;
   border-radius: 10px;
   margin: 20px auto;
@@ -53,7 +53,7 @@ h1 {
 }
 
 .linha {
-  background-color:  rgb(7, 102, 66);
+  background-color: rgb(7, 102, 66);
 }
 
 .pixel {
@@ -66,11 +66,10 @@ h1 {
 }
 
 .rodape {
-  background-color: rgb(000 , 000 , 000);
+  background-color: black;
   border: 2px;
   color: white;
   margin-top: 72px;
   padding: 1px;
-  /* position: fixed; */
   text-align: center;
 }
