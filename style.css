@@ -31,4 +31,8 @@
 
 .clear-board {
   margin-bottom: 4px;
+  border: solid 1px green;
+  display: inline-block;
+  height: 40px;
+  width: 50px;
 }

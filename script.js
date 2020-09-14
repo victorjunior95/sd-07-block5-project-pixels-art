@@ -32,7 +32,7 @@ function clearBoard() {
 }
 
 function black() {
-  document.getElementsByClassName('black').class = 'color black selected';
+  document.getElementsByClassName('black').class = 'selected color black';
   document.getElementsByClassName('blue').class = 'color blue';
   document.getElementsByClassName('yellow').class = 'color yellow';
   document.getElementsByClassName('green').class = 'color green';
@@ -43,7 +43,7 @@ function black() {
 }
 
 function blue() {
-  document.getElementsByClassName('blue').class = 'color blue selected';
+  document.getElementsByClassName('blue').class = 'selected color blue';
   document.getElementsByClassName('black').class = 'color black';
   document.getElementsByClassName('yellow').class = 'color yellow';
   document.getElementsByClassName('green').class = 'color green';
@@ -54,7 +54,7 @@ function blue() {
 }
 
 function yellow() {
-  document.getElementsByClassName('yellow').class = 'color yellow selected';
+  document.getElementsByClassName('yellow').class = 'selected color yellow';
   document.getElementsByClassName('black').class = 'color black';
   document.getElementsByClassName('blue').class = 'color blue';
   document.getElementsByClassName('green').class = 'color green';
@@ -65,7 +65,7 @@ function yellow() {
 }
 
 function green() {
-  document.getElementsByClassName('green').class = 'color green selected';
+  document.getElementsByClassName('green').class = 'selected color green';
   document.getElementsByClassName('black').class = 'color black';
   document.getElementsByClassName('blue').class = 'color blue';
   document.getElementsByClassName('yellow').class = 'color yellow';
