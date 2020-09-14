@@ -1,0 +1,19 @@
+div.color{
+    width: 80px;
+    height: 80px;
+    border: solid 1px black;
+    display: inline-block;
+    text-align: center;
+}
+div#palette1{
+    background-color: black;
+}
+div#palette2{
+    background-color: cornflowerblue;
+}
+div#palette3{
+    background-color: pink;
+}
+div#palette4{
+    background-color: darkcyan;
+}
