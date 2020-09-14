@@ -42,31 +42,34 @@ document.body.appendChild(document.createElement('section'));
 document.querySelectorAll('section')[1].setAttribute('id', 'palete');
 document.querySelector('#palete').setAttribute('class', 'pale');
 document.querySelector('#palete').appendChild(document.createElement('table'));
+document.querySelector('#palete table').appendChild(document.createElement('tr'));
 
 const botaoGerar = document.querySelector('#generate-board');
 const inputNumber = document.querySelector('#board-size');
 inputNumber.value = 5;
 let number = inputNumber.value * inputNumber.value;
 botaoGerar.addEventListener('click', (event) => {
-    if (inputNumber.value === 0 || inputNumber.value < 5 || inputNumber.value > 50) {
+    if (inputNumber.value < 5) {
         alert("Board inválido!");
-        number = 0;
-    }else {
-        number = inputNumber.value * inputNumber.value;
-        iniciar(number);
-    }  
+        inputNumber.value = 5;
+    }else if (inputNumber.value > 50) {
+        alert("Board inválido!");
+        inputNumber.value = 50;
+    }
+    if (inputNumber.value > 10) {
+        document.querySelector('#palete').style.width = '100%';
+    }
+    number = inputNumber.value * inputNumber.value;
+    iniciar(number);  
 });
 
-iniciar(25);
+iniciar(number)
 function iniciar(number) {
     for (let index = 0; index < number; index += 1) {
-        document.querySelector('#palete table').appendChild(document.createElement('tr'));
-        for (let aux = 0; aux < inputNumber.value; aux += 1) {
-            document.querySelectorAll('#palete tr')[index].appendChild(document.createElement('td'));
-            document.querySelectorAll('#palete td')[index].setAttribute('id', 'pixel-board');
-            document.querySelectorAll('#palete td')[index].setAttribute('class', 'pixel');
-        }    
-    }
+        document.querySelector('#palete tr').appendChild(document.createElement('td'));
+        document.querySelectorAll('#palete td')[index].setAttribute('id', 'pixel-board');
+        document.querySelectorAll('#palete td')[index].setAttribute('class', 'pixel');
+    }    
     const boardPixel = document.querySelectorAll('#palete td');
         paletteColor[0].className = 'selected';
         for(let index = 0; index < boardPixel.length; index += 1) {
@@ -79,16 +82,17 @@ function iniciar(number) {
            paletteColor[aux].className = 'selected';
        if (paletteColor[aux].className === 'selected'){
          for(let index = 0; index < boardPixel.length; index += 1) {
-          boardPixel[index].addEventListener('click', function () {
-            boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;               
+            boardPixel[index].addEventListener('click', function () {
+            boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;
+            paletteColor[aux].className = 'color';               
           });        
          }    
        }
        });
     }
 
-     const botaoLimpar = document.querySelector('#clear-board');
-     botaoLimpar.addEventListener('click', (event) => {
+    const botaoLimpar = document.querySelector('#clear-board');
+    botaoLimpar.addEventListener('click', (event) => {
         for(let index = 0; index < boardPixel.length; index += 1) {
             boardPixel[index].style.backgroundColor = 'white';
         }

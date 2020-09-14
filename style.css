@@ -15,7 +15,7 @@ section {
 }
 
 .pale {
-    width: 500px;
+    width: 250px;
 }
 
 .pale table {
@@ -25,11 +25,6 @@ section {
 .pale tr {
     display: table-row;
     
-}
-
-.pale td {
-    display: table-cell;
-    margin: 0px; 
 }
 
 .pixel {
