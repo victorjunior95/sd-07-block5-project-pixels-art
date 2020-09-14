@@ -4,16 +4,16 @@
     border: 1px solid black;
     display: inline-block;
 }
-#paleta-um {
+.black {
     background-color: black;
 }
-#paleta-dois {
+.red {
     background-color: red;
 }
-#paleta-tres {
+.green {
     background-color: green;
 }
-#paleta-quatro {
+.yellow {
     background-color: yellow;
 }
 
@@ -29,6 +29,3 @@
     background-color: white;
 }
 
-.selected {
-    background-color: violet;
-}
