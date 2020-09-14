@@ -89,7 +89,7 @@ function assignSizeForGenerateBoard() {
   proceduresToCreateBoard();
 }
 
-function scaleBoardSizeOffRange {
+function scaleBoardSizeOffRange() {
   if (boardSize < 5) {
     boardSize = 5;
     assignSizeForGenerateBoard();
@@ -97,13 +97,13 @@ function scaleBoardSizeOffRange {
     boardSize = 50;
     assignSizeForGenerateBoard();
   }
-} 
+}
 
 function scaleBoardSizeOnRange() {
   if (boardSize >= 5 && boardSize <= 50) {
     assignSizeForGenerateBoard();
   } else {
-    scaleBoardSizeOffRange
+    scaleBoardSizeOffRange;
   }
 }
 
