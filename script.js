@@ -2,7 +2,7 @@ const clearButton = document.querySelector('#clear-board');
 const paletas = document.querySelectorAll('.color');
 const boardSize = document.querySelector('#board-size');
 const generateButton = document.querySelector('#generate-board');
-const paintPixels = document.querySelectorAll('.pixel')
+const paintPixels = document.querySelectorAll('.pixel');
 const fullBoard = document.querySelector('#pixel-board');
 const eliminateBoard = document.querySelector('#eliminate-board');
 let paletaID = 'black';
@@ -48,70 +48,47 @@ for (let i = 0; i < paintPixels.length; i += 1) {
 
 function verifyBoard() {
   let numberOfSquares = 0;
-  let itsPossible = boardSize.value;
-  if(itsPossible < 5){
-    numberOfSquares = 5 ;
+  const itsPossible = boardSize.value;
+  if (itsPossible < 5) {
+    numberOfSquares = 5;
   } else {
     numberOfSquares = boardSize.value;
   }
   return numberOfSquares;
 }
 function sizeBoard() {
-  let columnsNumber = Math.sqrt(boardSize.value);  
-  console.log(columnsNumber)
-  let columnsIntNumber = parseInt(columnsNumber);
-  console.log(columnsIntNumber)
-  let heightAndWidth = columnsIntNumber * 40;
+  const columnsNumber = Math.sqrt(boardSize.value);
+  const columnsIntNumber = parseInt(columnsNumber);
+  const heightAndWidth = columnsIntNumber * 40;
   if (columnsIntNumber < 50) {
-    fullBoard.style.gridTemplateColumns = `repeat(${columnsIntNumber}, 1fr)`
-    fullBoard.style.height = `${heightAndWidth}px`;
-    fullBoard.style.width = `${heightAndWidth}px`;
+    fullBoard.style.gridTemplateColumns = `repeat(${columnsIntNumber}, 1fr)`;
+    fullBoard.style.maxHeight = `${heightAndWidth}px`;
+    fullBoard.style.maxWidth = `${heightAndWidth}px`;
   } else {
-    fullBoard.style.gridTemplateColumns = `repeat(50, 1fr)`
-    fullBoard.style.height = `2000px`;
-    fullBoard.style.width = `2000px`;
+    fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
+    fullBoard.style.maxHeight = '2000px';
+    fullBoard.style.maxWidth = '2000px';
   }
-
-  
-  // fullBoard.style.gridTemplateColumns = '40px 40px 40px 40px 40px';
-  // fullBoard.style.width = '200px';
-  // let numberOfcolumns = verifyBoard();
-  // if(numberOfcolumns % 3 === 0) {
-  //   fullBoard.style.gridTemplateColumns = '40px 40px 40px';
-  //   fullBoard.style.height = '120px';
-  //   fullBoard.style.width = '120px';
-  // } else if (numberOfcolumns % 7 === 0) {
-  //   fullBoard.style.gridTemplateColumns = '40px 40px 40px 40px 40px 40px 40px';
-  //   fullBoard.style.height = '280px';
-  //   fullBoard.style.width = '280px';
-  // } else if (numberOfcolumns % 10 === 0) {
-  //   fullBoard.style.gridTemplateColumns = '40px 40px 40px 40px 40px 40px 40px 40px 40px 40px';
-  //   fullBoard.style.width = '400px';
-  // } else if (numberOfcolumns >= 50) {
-  //   fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
-  //   fullBoard.style.width = '400px';
-  // }
 }
-
 
 function generateAlert() {
   const emptyInput = boardSize.value;
   if (emptyInput === '') {
-    alert('Board inválido!')
+    alert('Board inválido!');
   }
 }
 
-function generateBoard () {
-  generateAlert()
-  createNewBoard()
-  fullBoard.classList.remove('quadro-nativo')
-  let number = verifyBoard();
+function generateBoard() {
+  generateAlert();
+  createNewBoard();
+  fullBoard.classList.remove('quadro-nativo');
+  const number = verifyBoard();
   let numberOfPixels;
   if (number <= 5) {
     numberOfPixels = 5;
   } 
   numberOfPixels = boardSize.value;
-   sizeBoard()
+  sizeBoard()
   for (let i = 0; i < number; i += 1) {
     let square = document.createElement('div');
     square.className = 'pixel white';
@@ -123,7 +100,7 @@ function generateBoard () {
 }
 
 function createNewBoard() {
-  const coloredPixels = document.querySelectorAll('.pixel')
+  const coloredPixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < coloredPixels.length; i += 1) {
     fullBoard.removeChild(coloredPixels[i]);
   }

@@ -21,8 +21,8 @@
 }
 
 .white {
-  color: white;
   background-color: white;
+  color: white;
 }
 
 .quadro-nativo {
@@ -32,7 +32,7 @@
 }
 
 .pixels {
-  display: grid;  
+  display: grid;
 }
 
 .remove {
