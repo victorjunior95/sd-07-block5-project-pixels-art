@@ -52,6 +52,7 @@ function createBasePixelBoard(parent) {
       const pixel = document.createElement('div');
       pixel.setAttribute('id', `${lineActual}${pixelIndex}`);
       pixel.className = 'pixel';
+      pixel.style.backgroundColor = 'white'
       divLine.appendChild(pixel);
     }
   }
