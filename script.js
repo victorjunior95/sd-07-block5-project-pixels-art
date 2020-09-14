@@ -1,11 +1,13 @@
-let defaultColor = document.querySelector('.selected');
+let defaultColor = document.querySelector('.selected').style.backgroundColor;
 
 
 const selectColor = document.querySelector('.color-palette');
 selectColor.addEventListener('click', function (event) {
-  const select = document.querySelector('.selected');
-  select.classList.remove('selected');
-  select.classList.add('selected');
+  if (!event.target.classList.contains('selected')) {
+    const select = document.querySelector('.selected');
+    select.classList.remove('selected');
+    select.classList.add('selected');
+  }
   defaultColor = event.target.style.backgroundColor;
 });
 
