@@ -1,8 +1,8 @@
 .color {
-  display: inline-block;
   border: 1px solid black;
-  width: 50px;
+  display: inline-block;
   height: 50px;
+  width: 50px;
 }
 
 .preto {
@@ -19,4 +19,17 @@
 
 .amarelo {
   background-color: yellow;
+}
+
+#pixel-board {
+  margin-top: 10px;
+}
+
+.pixel {
+ background-color: white;
+  display: inline-block;
+  border: 1px solid black;
+  width: 39px;
+  height: 39px;
+  margin: 0;
 }
