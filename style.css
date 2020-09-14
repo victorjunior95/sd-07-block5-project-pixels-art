@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 15px;
+}
+
+.header {
+  text-align: center;
+}
+
+.section-palette {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.section-palette .color {
+  border: black solid 1px;
+  display: inline-block;
+  margin-left: 30px;
+  height: 100px;
+  width: 100px;
+}
+
+.section-palette .black {
+  background-color: black;
+}
+
+.section-palette .red {
+  background-color: red;
+}
+
+.section-palette .blue {
+  background-color: blue;
+}
+
+.section-palette .green {
+  background-color: green;
+}
