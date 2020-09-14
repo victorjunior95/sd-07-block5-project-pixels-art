@@ -23,8 +23,8 @@
     border-style: solid;
 }
 
-.linha-pixel{
-    /* display: inline-block; */
+#clear-board{
+    margin: 10px;
 }
 
 .pixel{
