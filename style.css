@@ -1,26 +1,43 @@
 .color {
     width: 40px;
     height: 40px;
-    float: left;
+    display: inline-block;
     border: solid black 1px;
     margin: 2px;
 }
 
-.color selected {
-    background-color: black;
+.selected {
+    width: 40px;
+    height: 40px;
+    border: solid black 1px;
+    display: inline-block;
 }
 
 #black {
     background-color: black;
 }
-#red {
+.red {
     background-color: rgb(255, 0, 0);
 } 
 
-#green {
+.green {
     background-color: rgb(8, 114, 43);
 }
 
-#blue {
+.blue {
     background-color: rgb(7, 31, 136);
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: solid black 1px;
+}
+
+#pixel-board{
+    display: table;
+}
+
+.line {
+    display: table-row;
 }
