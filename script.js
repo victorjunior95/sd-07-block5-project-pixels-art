@@ -43,30 +43,39 @@ function pixelsEventListeners() {
     element.addEventListener('click', paintPixel);
   }
 }
+function testBoardSize() {
+  const boardSize = document.querySelector('#board-size');
+  if (boardSize.value === '') {
+    alert('Board inválido!');
+    return false;
+  } else if (boardSize.value < 5) {
+    boardSize.value = 5;
+    return true;
+  } else if (boardSize.value > 50) {
+    boardSize.value = 50;
+    return true;
+  } else {
+    return true;
+  }
+}
 function makeBoard() {
   const boardSize = document.querySelector('#board-size');
   const pixelBoard = document.querySelector('#pixel-board');
-  if (boardSize.value === '') {
-    alert('Board inválido!');
-    return ;
-  } else if (boardSize.value < 5) {
-    boardSize.value = 5;
-  } else if (boardSize.value > 50) {
-    boardSize.value = 50;
-  }
-  pixelBoard.innerHTML = '';
-  const N = boardSize.value;
-  for (let row = 0; row < N; row += 1) {
-    const newRow = document.createElement('div');
-    newRow.className = 'line';
-    for (let column = 0; column < N; column += 1) {
-      const newPixel = document.createElement('div');
-      newPixel.className = 'pixel';
-      newRow.appendChild(newPixel);
+  if (testBoardSize()) {
+    pixelBoard.innerHTML = '';
+    const N = boardSize.value;
+    for (let row = 0; row < N; row += 1) {
+      const newRow = document.createElement('div');
+      newRow.className = 'line';
+      for (let column = 0; column < N; column += 1) {
+        const newPixel = document.createElement('div');
+        newPixel.className = 'pixel';
+        newRow.appendChild(newPixel);
+      }
+      pixelBoard.appendChild(newRow);
     }
-    pixelBoard.appendChild(newRow);
+    pixelsEventListeners();
   }
-  pixelsEventListeners();
 }
 function randomColor() {
   let newColor = '#';
