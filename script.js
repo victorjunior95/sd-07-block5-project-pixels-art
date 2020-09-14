@@ -1,26 +1,32 @@
 window.onload= function(){
-
-    let lines = document.querySelectorAll('.line');
-
-    fillPaletas(lines);
-
-
+    let tamanhoLinha=5;
+    let lines = document.querySelectorAll('.pixel');
+   
  function createBox(className) {
-    let box = document.createElement("div");
+    let box = document.createElement('div');
     box.className = className;
     return box;
   }
 
   // vou estudar ainda essa trecho sujeito a modificaçoes 
-  function fillLine(divLine) {
-    for (let lineColumn = 1; lineColumn <= basePyramid; lineColumn += 1) {
-      if(lineColumn >= controlLeft && lineColumn <= controlRight) {
+  function criarlinhas(lines) {
+    for (let lineColumn = 1; lineColumn <= tamanhoLinha; lineColumn += 1) {
+      //mais uma condiçao para a proximas de baixo
+      for (let index = 0; index < lines.length; index++) {
+          
         let box = createBox("box");
-        divLine.appendChild(box);
+        lines.appendChild(box);
       }
+      }  
+     
     }
 }       
 
+function colorir(){
+
+    console.log('coloriu')
+   // document.getElementById();
 
 
 }
+
