@@ -39,9 +39,7 @@ function clearBoard() {
 }
 
 function isEmpty() {
-  if (firstTime) return true;
-  if (inputBoardSize.value.length === 0) return alert('Board inválido!');
-  return true;
+  return (inputBoardSize.value.length === 0) ? alert('Board inválido!') : true;
 }
 
 function checkNumber(numberOfLines) {
@@ -53,7 +51,7 @@ function checkNumber(numberOfLines) {
 function createBoard(numberOfLines) {
 
   numberOfLines = checkNumber(numberOfLines);
-  if (isEmpty()) {
+  if (firstTime || isEmpty()) {
     pixelBoard.innerHTML = '';
     for (let line = 0; line < numberOfLines; line += 1) {
       const divLine = document.createElement('div');
