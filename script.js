@@ -41,11 +41,25 @@ window.onload = function () {
   });
 
   // criação do quadro de pixel personalizado, entre 5 e 50 pixels
+  // limitando o input '#board-size' entre 5 e 50
+  function limitBoardSize(inputSize) {
+    let size = '';
+    if (inputSize < 5) {
+      size =  5;
+    } else if (inputSize > 50) {
+      size =  50;
+    } else size = inputSize;
+    document.querySelector('#board-size').value = size;
+    return size;
+  };
+
+  // gerando o pixel board
   function customPixelBoard() {
-    const boardSizeInput = document.querySelector('#board-size').value;
+    let boardSizeInput = document.querySelector('#board-size').value;
     if (boardSizeInput === '') {
       alert('Board inválido!');
-    } else if (boardSizeInput >= 5 && boardSizeInput <= 50) {
+    } else {
+      boardSizeInput = limitBoardSize(boardSizeInput);
       pixelBoard.innerHTML = '';
       pixelBoard.style.maxWidth = (boardSizeInput * 40) + (boardSizeInput * 2) + 'px' ;
       for (let pixel = 0; pixel < Math.pow(boardSizeInput, 2); pixel += 1) {
