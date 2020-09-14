@@ -11,21 +11,11 @@
   border: 1px solid black;
   border-collapse: collapse;
   display: table-cell;
-  height: 41px;
+  height: 40px;
   padding: 0;
-  width: 41px;
+  width: 40px;
 }
 
 .pixelBoardClass {
   border-collapse: collapse;
-}
-
-td {
-  display: table-cell;
-  height: 40px;
-  width: 40px;
-}
-
-tr {
-  display: table-row;
 }
