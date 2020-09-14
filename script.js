@@ -38,10 +38,6 @@ function clearBoard() {
   });
 }
 
-function hasValue() {
-  return (firstTime || inputBoardSize.value.length !== 0) ? createBoard(Number(inputBoardSize.value)) : alert('Board inválido!');
-}
-
 function checkNumber(numberOfLines) {
   if (numberOfLines < 5) numberOfLines = 5;
   if (numberOfLines > 50) numberOfLines = 50;
@@ -67,6 +63,10 @@ function createBoard(numberOfLines) {
   }
   addClickListener();
   firstTime = false;
+}
+
+function hasValue() {
+  return (firstTime || inputBoardSize.value.length !== 0) ? createBoard(Number(inputBoardSize.value)) : alert('Board inválido!');
 }
 
 function makeRandomColor() {
