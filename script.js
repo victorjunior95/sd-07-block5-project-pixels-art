@@ -10,7 +10,7 @@ function quadroPixels() {
 quadroPixels();
 
 function selectColorBlack() {
-  const quadro = document.getElementsById('color1');
+  const quadro = document.getElementById('color1');
   quadro.className = 'selected';
 }
 
