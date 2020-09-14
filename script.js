@@ -66,6 +66,12 @@ window.onload = function () {
       return alert('Board inválido!');
     } else {
       BOX_SIZE = size;
+      if (parseInt(size) < 5) {
+        BOX_SIZE = 5;
+      }
+      if (parseInt(size) > 50) {
+        BOX_SIZE = 50;
+      }
       mother.innerHTML = '';
       DefineSize();
     }
