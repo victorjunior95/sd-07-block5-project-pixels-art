@@ -1,44 +1,52 @@
 function chooseColor(event) {
-  const black = document.querySelector(".black");
-  const color1 = document.querySelector(".color1");
-  const color2 = document.querySelector(".color2");
-  const color3 = document.querySelector(".color3");
+  const black = document.querySelector('.black');
+  const color1 = document.querySelector('.color1');
+  const color2 = document.querySelector('.color2');
+  const color3 = document.querySelector('.color3');
   const colors = [black, color1, color2, color3];
   colors.forEach((color) => {
-    const classes = color.className.split(" ");
+    const classes = color.className.split(' ');
     if (classes.length === 3) {
       classes.pop();
-      let classe = classes.join(" ");
+      const classe = classes.join(' ');
       color.className = classe;
     }
-    if (classes[1] === event.target.className.split(" ")[1]) {
+    if (classes[1] === event.target.className.split(' ')[1]) {
       color.className = `${color.className} selected`;
     }
   });
 }
 function paintPixel(event) {
-  const black = document.querySelector(".black");
-  const color1 = document.querySelector(".color1");
-  const color2 = document.querySelector(".color2");
-  const color3 = document.querySelector(".color3");
+  const black = document.querySelector('.black');
+  const color1 = document.querySelector('.color1');
+  const color2 = document.querySelector('.color2');
+  const color3 = document.querySelector('.color3');
   const colors = [black, color1, color2, color3];
   colors.forEach((color) => {
-    let classes = color.className.split(" ");
-    if (classes.length === 3 && classes[2] === "selected") {
+    const classes = color.className.split(' ');
+    if (classes.length === 3 && classes[2] === 'selected') {
       event.target.style.backgroundColor = color.style.backgroundColor;
     }
   });
 }
+function clearBoard() {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    const element = pixel[index];
+    element.style.backgroundColor = '#ffffff';
+  }
+}
 window.onload = function () {
-  const black = document.querySelector(".black");
-  const color1 = document.querySelector(".color1");
-  const color2 = document.querySelector(".color2");
-  const color3 = document.querySelector(".color3");
+  const black = document.querySelector('.black');
+  const color1 = document.querySelector('.color1');
+  const color2 = document.querySelector('.color2');
+  const color3 = document.querySelector('.color3');
   const colors = [color1, color2, color3];
-  const pixel = document.querySelectorAll(".pixel");
+  const pixel = document.querySelectorAll('.pixel');
+  const clearBoardButton = document.querySelector('#clear-board');
 
   colors.forEach((color) => {
-    let newColor = "#";
+    let newColor = '#';
     for (let index = 0; index < 3; index += 1) {
       let randNumber = parseInt(255 * Math.random(), 10);
       if (randNumber < 16) {
@@ -50,15 +58,15 @@ window.onload = function () {
     color.style.backgroundColor = newColor;
   });
 
-  black.style.backgroundColor = "black";
+  black.style.backgroundColor = 'black';
 
-  black.addEventListener("click", chooseColor);
-  color1.addEventListener("click", chooseColor);
-  color2.addEventListener("click", chooseColor);
-  color3.addEventListener("click", chooseColor);
+  black.addEventListener('click', chooseColor);
+  color1.addEventListener('click', chooseColor);
+  color2.addEventListener('click', chooseColor);
+  color3.addEventListener('click', chooseColor);
+  clearBoardButton.addEventListener('click', clearBoard);
   for (let index = 0; index < pixel.length; index += 1) {
     const element = pixel[index];
-    element.addEventListener("click", paintPixel);
-    // element.style.backgroundColor = "#ffffff";
+    element.addEventListener('click', paintPixel);
   }
 };
