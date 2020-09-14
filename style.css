@@ -1,3 +1,34 @@
 .color {
     border: black solid 1px;
+    display: table-cell; 
 }
+
+.color-palette {
+    display: table; 
+}
+
+/* 
+
+It's even easier to use parent > child selector relationship so the inner div do not need to have their css classes to be defined explicitly:
+
+.display-table {
+    display: table; 
+}
+.display-table > div { 
+    display: table-row; 
+}
+.display-table > div > div { 
+    display: table-cell;
+    padding: 5px;
+}
+
+<div class="display-table">
+    <div>
+        <div>0, 0</div>
+        <div>0, 1</div>
+    </div>
+    <div>
+        <div>1, 0</div>
+        <div>1, 1</div>
+    </div>
+</div> */
