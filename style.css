@@ -35,5 +35,12 @@ th {
     border: 1px solid black;
     width: 40px;
     height: 40px;
+
 }
 
+#clear-board{
+    margin: 25px;
+    padding: 5px;
+    font-size: 25px;
+    background-color: cadetblue;
+}
