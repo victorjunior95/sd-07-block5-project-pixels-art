@@ -33,3 +33,7 @@
   vertical-align: top;
   width: 40px;
 }
+
+button {
+  margin: 15px 20px;
+}

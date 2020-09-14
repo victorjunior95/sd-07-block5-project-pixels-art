@@ -3,6 +3,12 @@ const pixelBoard = document.getElementById('pixel-board');
 const colors = document.querySelectorAll('.color');
 let numberOfLines = 5;
 const clearButton = document.getElementById('clear-board');
+const generateBoardBttn = document.getElementById('generate-board');
+
+//  remove board
+function removeBoard () {
+  pixelBoard.innerHTML = '';
+}
 
 //  evento de clique no quadro
 function createEvent (pixelDiv) {
@@ -61,7 +67,22 @@ for (index = 0; index < colors.length; index += 1) {
   });
 }
 
-window.onload = function () {
-  //  cria tabela inicial
-  createBoard(numberOfLines);
-}
+//  escolha de tamanho
+generateBoardBttn.addEventListener('click', function () {
+  const resizer = document.getElementById('board-size');
+  if (resizer.value <= 0 ) {
+    alert('Board inválido!');
+    return
+  }
+  if (resizer.value < 5 ) {
+    resizer.value = 5;
+  }
+  if (resizer.value > 50 ) {
+    resizer.value = 50;
+  }
+  removeBoard();
+  createBoard(resizer.value);
+});
+
+//  cria tabela inicial
+createBoard(numberOfLines);
