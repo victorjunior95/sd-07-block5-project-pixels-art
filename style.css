@@ -39,32 +39,8 @@ body {
   height: 40px;
   margin-right: 5px;
   margin-top: 10px;
-  min-height: 40px;
-  min-width: 40px;
   width: 40px;
 }
-
-/*
-.black {
-  background-color: black;
-}
-
-.oldlace {
-  background-color: oldlace;
-}
-
-.tomato {
-  background-color: tomato;
-}
-
-.mediumaquamarine {
-  background-color: mediumaquamarine;
-}
-
-.dodgerblue {
-  background-color: dodgerblue;
-}
-*/
 
 .footer-class {
   background-color: rgb(109, 89, 89);
