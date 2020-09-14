@@ -50,8 +50,9 @@ pixels.forEach(item => {
 
 buttonGenerateBoard.addEventListener('click', function() {
   numberOfLinesAndColunms = document.getElementById('board-size').value;
-  if (numberOfLinesAndColunms === null) {
-      alert('Board inválido!');
+  if (numberOfLinesAndColunms === '') {
+    alert('Board inválido!');
+    numberOfLinesAndColunms = 5;
   } else if (numberOfLinesAndColunms > 50) {
     numberOfLinesAndColunms = 50;
   } else if (numberOfLinesAndColunms < 5) {
