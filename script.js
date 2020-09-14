@@ -1,11 +1,14 @@
-window.onload = cores[0].className = "selected"
+
 let cores = document.querySelectorAll('.color');
 cores[0].style.backgroundColor = 'black';
 cores[1].style.backgroundColor = 'blue';
 cores[2].style.backgroundColor = 'red';
 cores[3].style.backgroundColor = 'green';
 let pixelBoard = document.querySelector('#pixel-board');
-
+window.onload = function (){
+    cores[0].className = "selected"
+    pixelCor()
+}
 for(index = 0; index < 25; index += 1){
     stylePixel();
 }
