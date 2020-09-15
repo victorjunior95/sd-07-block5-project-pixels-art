@@ -4,6 +4,7 @@
     height: 25px;
     border: 1px solid black;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .first-color {
@@ -32,5 +33,10 @@
     width: 40px;
     border: 1px solid black;
     background-color: white;
+    border-radius: 10%;
     cursor: pointer;
+}
+
+.button {
+    margin: 10px 10px 10px 1px;
 }

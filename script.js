@@ -18,7 +18,16 @@ for (let index = 0; index < seletorDeCores.length; index += 1) {
 
 // Função para trocar de cor
 function changeColor () {
-    console.log(getComputedStyle(this).backgroundColor);
     let selectedColor = document.getElementsByClassName("selected")[0];
     selectedColor.style.backgroundColor = getComputedStyle(this).backgroundColor;
+}
+
+let clearButton = document.getElementById("clear-board");
+clearButton.addEventListener("click", clearColors);
+
+// Função para limpar as cores
+function clearColors () {
+    for (let index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = "";
+    }
 }
