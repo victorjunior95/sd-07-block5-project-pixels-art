@@ -22,6 +22,7 @@ document.querySelectorAll(".pixel").forEach(item => {
         })
     })
 }
+
 botaoCorAzul.addEventListener("click", function(){
     for (index = 0; index < cores.length; index += 1) {
         cores[index].classList.remove("selected")
@@ -35,7 +36,6 @@ document.querySelectorAll(".pixel").forEach(item => {
 })
 })
 })
-
 
 botaoCorVerde.addEventListener("click", function(){
     for (index = 0; index < cores.length; index += 1) {
@@ -51,7 +51,6 @@ document.querySelectorAll(".pixel").forEach(item => {
 })
 })
 
-
 botaoCorCinza.addEventListener("click", function(){
     for (index = 0; index < cores.length; index += 1) {
         cores[index].classList.remove("selected")
@@ -64,4 +63,13 @@ document.querySelectorAll(".pixel").forEach(item => {
 
 })
 })
+})
+
+let limpar = document.getElementById("clear-board");
+
+limpar.addEventListener("click", function(){
+    let pixels = document.querySelectorAll(".pixel");
+    for (index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = "rgb(255, 255, 255)"
+    }
 })
