@@ -1,9 +1,14 @@
 body {
-  margin-left: 60px;
+  text-align: center;
+}
+
+button {
+  margin: 10px;
 }
 
 .main-title {
-  font-family: "Kufam", cursive;
+  color: darkmagenta;
+  font-family: 'Kufam', cursive;
   margin: 40px 30px;
 }
 
@@ -32,11 +37,7 @@ body {
 }
 
 .pixel-board {
-  margin-left: 50px;
   margin-top: 30px;
-  
-  /* max-height: 200px;
-  max-width: 200px; */
 }
 
 .pixel-line {
@@ -49,4 +50,9 @@ body {
   display: inline-block;
   height: 40px;
   width: 40px;
+}
+
+footer {
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
