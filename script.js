@@ -92,8 +92,8 @@ btnCreate.addEventListener('click', function () {
 clear.addEventListener('click', function () {
   const pixel = document.querySelectorAll('.pixel');
   for (let indexPixel = 0; indexPixel < pixel.length; indexPixel += 1) {
-      pixel[indexPixel].style.backgroundColor = 'white';
-   }
+    pixel[indexPixel].style.backgroundColor = 'white';
+  }
 });
 
 // Selected color
