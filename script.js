@@ -1,8 +1,9 @@
+let color = document.querySelectorAll('.color');
+let selected = document.querySelectorAll('.pixel');
+let clear = document.querySelector('#clear-board');
 
-    let color = document.querySelectorAll('.color');
-    let selected = document.querySelectorAll('.pixel');
-    let clear = document.querySelector('#clear-board');
-    clearAll();
+clearAll();
+setClass();
 
 function clearAll() {
     clear.addEventListener('click', function () {
@@ -11,5 +12,8 @@ function clearAll() {
         }
     });
 }
-
-
+function setClass(){
+    let div = document.querySelector('#black');
+    div.classList.remove('color');
+    div.classList.add('selected');
+}
