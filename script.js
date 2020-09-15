@@ -36,12 +36,11 @@ btnBlue.addEventListener('click', function () {
 //  trata evento acrescentar cor no quadradinho
 let board = document.getElementsByClassName('pixel');
 function trocaCor() {
-
-  for(let index = 0; index < board.length; index += 1) {
+  for (let index = 0; index < board.length; index += 1) {
     board[index].addEventListener('click', function () {
-    board[index].style.backgroundColor = color
-   });
- }
+    board[index].style.backgroundColor = color;
+    });
+  }
 }
 //  cria linhas e quadradinhos
 const pixelBoard = document.querySelector('#pixel-board');
@@ -80,6 +79,7 @@ buttonInput.addEventListener('click', function () {
 //  cria botão que limpa tudo
 const btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
-  for(let index = 0; index < board.length; index += 1) {
-    board[index].style.backgroundColor = 'white'
-}});
+  for (let index = 0; index < board.length; index += 1) {
+    board[index].style.backgroundColor = 'white';
+  }
+});
