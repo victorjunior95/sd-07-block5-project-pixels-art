@@ -20,7 +20,7 @@ function criarCorAleatoria () {
 //atribuindo cor preto para primeira cor da paleta de cores.
 const palleta1 = document.querySelector("#color-1");
 palleta1.style.backgroundColor = 'black';
-//função para as div pallet 2 3 4
+//função para cores aleatórias para as pallet id 2, 3 e 4.
 function mudaCorPaleta () {
     const palleta2 = document.querySelector("#color-2");
     const palleta3 = document.querySelector("#color-3");
@@ -30,7 +30,8 @@ function mudaCorPaleta () {
     palleta4.style.backgroundColor = criarCorAleatoria ();
 }
 
-let corSelecionada = 'black';
+
+let corSelecionada = 'black'; //setando cor preta por default
 function manipularEventpixel (event) {
     const colorirBox = event.target;
     colorirBox.style.backgroundColor = corSelecionada;
@@ -78,5 +79,5 @@ window.onload = () => {
     createBox ();
     createPixelsBoard();
     botaoCriarGrid ();
-    
+
 }

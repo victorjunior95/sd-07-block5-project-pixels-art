@@ -1,20 +1,38 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
 }
 
-#color-palette {
-display: inline-block;
-width: 50%;
+.color {
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  display: inline-block;
+  height: 40px;
+  margin-left: 20px;
+  width: 40px;
 }
 
-.flex-box {
-  display: flex;
-  flex-wrap: nowrap;
+.clear {
+  margin-top: 50px;
 }
-.color {
-  width: 40px;
+
+.board {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  margin-top: 50px;
+  width: 200px;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px;
+  border-color: black;
+  border-style: solid;
   height: 40px;
-  border: 1px solid black;
-  display: inline-block;
+  width: 40px;
+}
+
+.generate-board {
+  margin-bottom: 20px;
 }
