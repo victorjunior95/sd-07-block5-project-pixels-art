@@ -49,8 +49,16 @@ h1 {
 #pixel-board {
   background-color: blueviolet;
   display: inline-block;
-  height: 200px;
-  width: 200px;
+  height: 210px;
+  width: 210px;
+}
+
+.linha {
+  margin-top: -4px;
+}
+
+.linha:first-child {
+  margin-top: 0;
 }
 
 .pixel {
@@ -63,5 +71,5 @@ h1 {
   display: inline-block;
   /* Pesquisar sobre display: grid */
   /* https://www.origamid.com/projetos/css-grid-layout-guia-completo/  */
-  margin: -4px;
+  /* margin: -4px; */
 }
