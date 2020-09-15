@@ -50,6 +50,13 @@ window.onload = function(){
         pixelValor.style.backgroundColor = colorSelect;
         });
     }
+    //Apagando o quadro inicial
+    btnClear.addEventListener("click", function(){
+        for(let indexClear = 0; indexClear < 25; indexClear += 1){
+            let pixelClear = document.querySelectorAll("div .pixel")[indexClear];
+            pixelClear.style.backgroundColor = "white";
+        }
+    });
     //Novo desafio
     btnVQV.addEventListener("click", function(){
         //Checando o valor input
