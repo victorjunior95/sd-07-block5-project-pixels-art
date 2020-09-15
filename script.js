@@ -126,6 +126,7 @@ buttonClear.addEventListener("click", function () {
   for (let i = 0; i < myPixels.length; i += 1) {
     myPixels[i].style.backgroundColor = "white";
   }
+  pixelBoard.style.backgroundColor = "white";
 });
 }
 clearColors();
