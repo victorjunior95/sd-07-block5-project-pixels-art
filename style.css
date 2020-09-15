@@ -1,3 +1,11 @@
+.black {
+  background-color: black;
+}
+
+.blue {
+  background-color: blue;
+}
+
 .color {
   height: 40px;
   width: 40px;
@@ -5,28 +13,22 @@
   border: black solid 1px;
 }
 
-.black {
-  background-color: black;
+.green {
+  background-color: green;
 }
 
 .red {
   background-color: red;
 }
 
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
+.pixel {
+  border: black solid 1px;
+  background-color: white;
 }
 
 #pixel-board {
   display: grid;
-  grid-template-columns: 40px 40px 40px 40px 40px;
-  grid-template-rows: 40px 40px 40px 40px 40px;
+  grid-template-columns: 38px 38px 38px 38px 38px;
+  grid-template-rows: 38px 38px 38px 38px 38px;
 }
 
-.pixel {
-  border: black solid 1px;
-}
