@@ -42,6 +42,6 @@
 }
 .selected {
 
-  border: inset;
+  border-style: inset;
 
 }
