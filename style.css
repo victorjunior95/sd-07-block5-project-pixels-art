@@ -1,0 +1,25 @@
+.color{
+  border:1px solid black;
+  height:100px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100px;
+  display: inline-block;
+
+}
+
+.colorPalette .black{
+  background: black;
+}
+
+.colorPalette .red{
+  background: red;
+}
+
+.colorPalette .blue{
+  background: blue;
+}
+
+.colorPalette .green{
+  background: green;
+}
