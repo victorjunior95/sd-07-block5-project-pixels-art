@@ -42,7 +42,7 @@
         }
 
         else {
-            if (tamanho.value <= 5) {
+            if (tamanho.value <= 5 && tamanho.value>=0) {
                 tamanho.value = 5;
             }
 
