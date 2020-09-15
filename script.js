@@ -7,7 +7,6 @@ const color = document.getElementsByClassName('color');
 
 for (let i = 0; i < color.length; i += 1) {
   color[i].addEventListener('click', function(e){
-      //color.classList.remove("selected");
 
         colorSelected.classList.remove("selected");
         e.target.classList.add('selected');
@@ -16,10 +15,8 @@ for (let i = 0; i < color.length; i += 1) {
   });
 }
 
-
-
-  const clearButton = document.getElementById('clear-board');
-  clearButton.addEventListener('click', function() {
+const clearButton = document.getElementById('clear-board');
+clearButton.addEventListener('click', function() {
     const pixels = document.querySelectorAll('.pixel');
     for (let index = 0; index < pixels.length; index += 1) {
 
@@ -52,10 +49,11 @@ function createTable() {
 
   for (let index = 0; index < cadaPixel.length; index += 1) {
 
-      let c = cadaPixel[index];
-      c.addEventListener('click', function(){
+      let corN = cadaPixel[index];
+      corN.addEventListener('click', function(e){
           //pegarCor();
-          console.log('oi')
+          //e.target.style.backgroundColor = getComputedStyle(colorSelected).backgroundColor;
+          console.log('o')
       });
   }
 }

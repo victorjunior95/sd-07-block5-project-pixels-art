@@ -1,6 +1,6 @@
 .color{
   display: inline-block;
-  border: solid black 1px;
+  border: 1px solid rgb(0, 0, 0);;
   width: 40px;
   height: 40px;
 }
@@ -43,4 +43,5 @@
 .selected {
 
   border: inset;
+
 }
