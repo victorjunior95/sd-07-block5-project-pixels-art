@@ -72,13 +72,12 @@ boardConstructor(5,5);
 
 // Condition
 for (let cont = 0; cont < colorPalet.children.length; cont +=1){
-    if(cont == 0){
-    colorPalet.children[cont].style.backgroundColor = 'black';
-  }else{
-    colorPalet.children[cont].style.backgroundColor = colorRandom();
-  }
+  if(cont == 0){
+  colorPalet.children[cont].style.backgroundColor = 'black';
+}else{
+  colorPalet.children[cont].style.backgroundColor = colorRandom();
 }
-
+}
 // Events
 btnCreate.addEventListener('click', function () {
   let line = document.querySelector('#board-size');
