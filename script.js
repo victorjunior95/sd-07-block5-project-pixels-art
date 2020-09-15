@@ -117,8 +117,8 @@ function ArrayNew() {
   for (let index = 0; index < boardSize.value; index += 1) {
     myArray.push([]);
     for (let index2 = 0; index2 < boardSize.value; index2 += 1) {
-        myArray[index].push(3);
-      }
+      myArray[index].push(3);
+    }
   }
   boardSize.value = '';
   currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color');
@@ -130,19 +130,19 @@ function checkBoardSize() {
     boardSize.value = 5;
     alert('Board inválido!');
   } else if (boardSize.value < 5) {
-      boardSize.value = 5;
-    } else if (boardSize.value > 50) {
-          boardSize.value = 50;
-        }
+    boardSize.value = 5;
+  } else if (boardSize.value > 50) {
+      boardSize.value = 50;
+    }
   return boardSize.value;
 }
 
 function removewBoard() {
   checkBoardSize();
-    while (divPixelBoard.firstChild) {
+  while (divPixelBoard.firstChild) {
       divPixelBoard.removeChild(divPixelBoard.firstChild);
     }
-  ArrayNew()
+  ArrayNew();
 }
 
 generateBoard.addEventListener('click', removewBoard);
