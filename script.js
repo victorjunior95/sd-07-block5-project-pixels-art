@@ -1,9 +1,8 @@
-//trata evento criar o board e limpa-lo para o usuário colocar o número que quiser
+//  trata evento criar o board e limpa-lo para o usuário colocar o número que quiser
 window.onload = function () {
   makeBoard(5);
-}
+};
 const pixelBoard = document.querySelector('#pixel-board');
-const numberInputBox = document.querySelector('#board-size');
 const buttonInput = document.querySelector('#generate-board');
 function makeBoard (number) {
 pixelBoard.innerHTML = '';
@@ -82,13 +81,10 @@ function trocaCor(){
   })
 }
 
-// // cria botão que limpa tudo
+//  cria botão que limpa tudo
 let btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
     document.querySelectorAll('.pixel').forEach((item) =>{
-     item.style.backgroundColor = 'white';
-     })
- })
-
-
-
+      item.style.backgroundColor = 'white';
+      })
+})
