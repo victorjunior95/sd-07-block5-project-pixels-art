@@ -66,7 +66,7 @@ function userBoard() {
     let userBoardSize = document.getElementById('board-size');
 
     if (userBoardSize.value == '') {
-      alert('Board inválido');
+      alert('Board inválido!');
     } else if (userBoardSize.value >= 0 && userBoardSize.value <5){
       userBoardSize.stepUp(5 - userBoardSize.value);
     } else if (userBoardSize.value > 50) {
