@@ -75,10 +75,14 @@ function selectedColorClass() {
     // Item clicado
     const idClicked = event.target.id;
     const elementClicked = document.getElementById(idClicked);
-    // Açøes do click na paleta
+    // Troca de seleção de cores na paleta.,
     if (event.target.nodeName === 'SPAN') {
       elementSelected.classList.remove('selected');
       elementClicked.classList.add('selected');
+    }
+    let isPixel = document.getElementById(idClicked).classList[0];
+    if (isPixel === 'pixel') {
+      elementClicked.style.backgroundColor = idSelected;
     }
   });
 }
