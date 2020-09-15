@@ -2,6 +2,7 @@ let palette = document.querySelector("#color-palette")
 let fields = document.querySelectorAll(".pixel")
 let boardSize = document.querySelector("#board-size").value
 let generateBoard = document.querySelector("#generate-board")
+let colors = ["red", "blue", "green", "aliceblue", "brown", "purple", "gray", "violet", "pink", "yellow"]
 
 palette.addEventListener("click", (event)=>{
     let selected = document.querySelector(".selected")
@@ -30,3 +31,5 @@ generateBoard.addEventListener("click", ()=>{
         fields[i].style.height = boardSize + "px"
     }
 })
+
+window
