@@ -1,3 +1,4 @@
+//  https://github.com/Marxneves/Trybe/blob/master/Projetos/pixels-art/script.js
 const colorPalette = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
 
