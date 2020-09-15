@@ -91,6 +91,10 @@ window.onload = function () {
     paleta[3] = paletas.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling;
     paleta[0].className = "color selected";
 
+    paleta[1].style.backgroundColor = "rgb("+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+")";
+    paleta[2].style.backgroundColor = "rgb("+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+")";
+    paleta[3].style.backgroundColor = "rgb("+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+")";
+
     paleta[0].addEventListener("click", function() {
         paleta[0].className = "color selected";
         paleta[1].className = "color";
