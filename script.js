@@ -1,5 +1,5 @@
 window.onload = function () {
-
+    
     let board = document.querySelectorAll(".pixel");
     let clearButton = document.querySelector("#clear-board");
     let setNumberTable = document.querySelector("#generate-board"); /* button */
@@ -9,8 +9,7 @@ window.onload = function () {
     let color2 = document.querySelector(".orange");
     let color3 = document.querySelector(".pink");
     let color4 = document.querySelector(".blue");
-/*     let father = documento.querySelectorAll(".line");
-    console.log(father); */
+    let boardTotal = document.querySelector("#pixel-board");
 
     /* Mudar a cor selecionada */
     color1.addEventListener("click", setSelectedColor);
@@ -28,10 +27,29 @@ window.onload = function () {
         return selectedColor;
     }
 
+    /* Colocar cores aleatórias */
+    /* https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript/Elementos_construtivos/Events */
+    getRandomColors();
+    
+    /* Colocar cores aleatórias */
+    /* https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript/Elementos_construtivos/Events */
+    function getRandomColors () {
+        let variable1 = Math.floor(Math.random()* 255) + 1;
+        let variable2 = Math.floor(Math.random()* 255) + 1;
+        let variable3 = Math.floor(Math.random()* 255) + 1;
+        color2.style.backgroundColor = "rgb(" + variable1 + "," + variable2 + "," + variable3 + ")";
+        color3.style.backgroundColor = 'rgb(' + variable2 + ',' + variable3 + ',' + variable1 + ')';
+        color4.style.backgroundColor = 'rgb(' + variable3 + ',' + variable1 + ',' + variable2 + ')';
+        console.log(color2);
+        console.log(color3);
+        console.log(color4);
+        console.log(color4.style.backgroundColor);
+    }
+
     /* Pintar quadro de pixels */
     selectPixel()
     function selectPixel () {
-        for (index = 0; index < board.length; index += 1) {
+        for (let index = 0; index < board.length; index += 1) {
             board[index].addEventListener("click", paintPixels);
         }
     }
@@ -39,29 +57,38 @@ window.onload = function () {
     function paintPixels() {
         let setPixel = event.target;
         console.log(setPixel);
-        paintColor = document.querySelector(".selected").classList[1];
+        paintColor = window.getComputedStyle(document.querySelector(".selected")).backgroundColor;
         setPixel.classList.remove("black");
         setPixel.classList.remove("orange");
         setPixel.classList.remove("pink");
         setPixel.classList.remove("blue");
-        setPixel.classList.add(paintColor);
+        setPixel.style.backgroundColor = paintColor;
+        console.log(document.querySelector(".selected"));
+        console.log(document.querySelector(".selected").style);
         console.log(paintColor);
+        console.log(window.getComputedStyle(document.querySelector(".selected")).backgroundColor);
     }
+    /* Style da classe é alterado apenas para o elemento e não é alterada a classe em si usando o classlist[1]*/
 
     /* Limpando o quadro de pixels */
     clearButton.addEventListener("click", clearPixels);
     
     function clearPixels() {
         let numberOfPixels = board.length;
-        for (index = 0; index < numberOfPixels; index += 1) {
+        for (let index = 0; index < numberOfPixels; index += 1) {
             board[index].className = "pixel";
         }
     }
 
     /* Definindo tamanho do quadro de pixels pelo usuário */
-    /* setNumberTable.addEventListener("click", setPixelBoardSize); */
-    setNumberTable.addEventListener("click", alertFunction);
-    
+    setNumberTable.addEventListener("click", functionColection);
+
+    function functionColection() {
+        alertFunction();
+        deleteBoard();
+        createNewBoard();
+    }
+
     function alertFunction() {
         let setNumberValue = numberTable.value;
         console.log(setNumberValue);
@@ -76,15 +103,28 @@ window.onload = function () {
         }
     }
 
- /*   
-    setNumberTable.addEventListener("click", creatingPixelsLine);
-        function creatingPixelsLine () {
-        let newNumber = numberTable.value - 5;
-        for (index = 0; index <= newNumber; index += 1) {
-            let createPixel = document.createElement("div");
-            createPixel.setAttribute("class", "pixel");
-            /* https://developer.mozilla.org/pt-BR/docs/Web/API/Element/setAttribute */
-            /* father[index].appendChild(createPixel);
+    function deleteBoard() {
+        boardTotal.innerHTML = "";
+        /*  for (index = 0; index < boardTotal.children.length; index += 1) {
+            boardTotal.removeChild(boardTotal.children[index]);
+        } */
+    }
+
+    function createNewBoard() {
+        let setNumberValue = numberTable.value;
+        if (setNumberValue >= 5 && setNumberValue <=50) {
+            for (let index = 0; index < setNumberValue; index += 1) {
+                let newLine = document.createElement("div");
+                boardTotal.appendChild(newLine);
+                newLine.setAttribute("class", "line");
+                let setColumn = document.querySelectorAll(".line");
+                for (let jIndex = 0; jIndex < setNumberValue; jIndex += 1) {
+                    let newColumn = document.createElement("div");
+                    setColumn[index].appendChild(newColumn);
+                    newColumn.setAttribute("class", "pixel");
+                    console.log(newColumn);
+                }
+            }
         }
-    } */
+    }
 }
