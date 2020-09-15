@@ -5,27 +5,23 @@ const buttonGenerateBoard = document.querySelector('.generate-board');
 let numberOfLinesAndColunms = 5;
 
 for (let index = 0; index < colors.length; index += 1) {
-  let RGB1 = Math.ceil(Math.random() * 255);
-  let RGB2 = Math.ceil(Math.random() * 255);
-  let RGB3 = Math.ceil(Math.random() * 255);
+  const RGB1 = Math.ceil(Math.random() * 255);
+  const RGB2 = Math.ceil(Math.random() * 255);
+  const RGB3 = Math.ceil(Math.random() * 255);
 
   if (index === 0) {
-    colors[index].style.backgroundColor = 'black'
+    colors[index].style.backgroundColor = 'black';
   } else {
-  colors[index].style.backgroundColor = `rgb(${RGB1},${RGB2},${RGB3})`
+    colors[index].style.backgroundColor = `rgb(${RGB1},${RGB2},${RGB3})`;
   }
 }
 
-
-
-function makeBoard(numberOfLinesAndColunms) {
-  for (let index = 0; index < numberOfLinesAndColunms; index += 1) {
-      let tr = document.createElement('div');
-      tr.style.display.tr;
-      pixelBoard.appendChild(tr);
-  for (let j = 0; j < numberOfLinesAndColunms; j += 1) {
-      let td = document.createElement('div');
-      td.style.display.td;
+function makeBoard(lineAndColunms) {
+  for (let index = 0; index < lineAndColunms; index += 1) {
+    const tr = document.createElement('div');
+    pixelBoard.appendChild(tr);
+    for (let j = 0; j < lineAndColunms; j += 1) {
+      const td = document.createElement('div');
       classTD(td);
       tr.appendChild(td)
     }
@@ -39,12 +35,12 @@ let pixels = document.querySelectorAll('.pixel');
 function classTD(td) {
   let tdClass = td.className = 'pixel';
   return tdClass;
-}; 
+};
 
 colors.forEach(item => {
     item.addEventListener('click', function(event) {
     event.target.classList.add('selected');
-     colors.forEach(item => {
+      colors.forEach(item => {
         if (item !== event.target) {
           item.classList.remove('selected');
         }
@@ -78,7 +74,7 @@ buttonGenerateBoard.addEventListener('click', function() {
     pixels.forEach(item => {
       item.addEventListener('click', paintBoard);
     });
-  
+
 });
 
 clearBoard.addEventListener('click', function() {
