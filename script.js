@@ -4,29 +4,29 @@ const colors = document.querySelectorAll('.color');
 //  Drawing the pixel board;
 function initialPixelBoard(boardSize) {
   const pixelBoard = document.querySelector('.pixel-board');
-  for (let rows = 0; rows < boardSize; rows += 1) { 
+  for (let rows = 0; rows < boardSize; rows += 1) {
     const pixelRow = document.createElement('div');
     pixelRow.classList.add('pixel-row');
-    for (let cells = 0; cells < boardSize; cells += 1) {  
+    for (let cells = 0; cells < boardSize; cells += 1) {
       const pixelCell = document.createElement('div');
       pixelCell.classList.add('pixel', 'border');
       pixelCell.style.backgroundColor = 'white';
       pixelRow.appendChild(pixelCell);
-    }  
+    }
     pixelBoard.appendChild(pixelRow);
   }
-};
+}
 
 function randomColors() {
   colors[0].style.backgroundColor = 'black';
 
   for (let random = 1; random < colors.length; random += 1) {
-    let randomRed = Math.ceil(Math.random() * 255) + 1;
-    let randomGreen = Math.ceil(Math.random() * 255) + 1;
-    let randomBlue = Math.ceil(Math.random() * 255) + 1;
+    const randomRed = Math.ceil(Math.random() * 255) + 1;
+    const randomGreen = Math.ceil(Math.random() * 255) + 1;
+    const randomBlue = Math.ceil(Math.random() * 255) + 1;
     colors[random].style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
-  };
-};
+  }
+}
 
 function gettingTheColors() {
   for (const btn of colors) {

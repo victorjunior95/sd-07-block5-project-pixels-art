@@ -2,13 +2,11 @@
   display: table;
 }
 
-.color-palette , 
-.pixel-row {
+.color-palette , .pixel-row {
   display: table-row;
 }
 
-.color-palette > div , 
-.pixel {
+.color-palette > div , .pixel {
   display: table-cell;
   height: 40px;
   width: 40px;
