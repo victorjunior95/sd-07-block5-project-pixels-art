@@ -100,13 +100,14 @@ clear.addEventListener('click', function (){
 
 let selectColor = document.querySelectorAll('.color');
 
-for (let index in selectColor){
-  selectColor[index].addEventListener('click', function (event){
+for (let index = 0; index < selectColor.length; index += 1){
+  let inputColor = selectColor[index];
+  inputColor.addEventListener('click', function (event){
     for(let colorIndex = 0; colorIndex < colorPalet.children.length; colorIndex += 1) {
       colorPalet.children[colorIndex].className = 'color';
     }
     event.target.className += ' selected';
   });
+
 }
-
-
+  
