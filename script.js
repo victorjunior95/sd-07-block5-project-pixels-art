@@ -21,67 +21,135 @@
 // Note que o elemento que deverá receber a classe selected deve ser um dos elementos que possuem a classe color, como especificado no requisito 2.
 
 
-window.onload = function () { 
+
     
     let pixelboard = document.getElementById("pixel-board");
-    let colorpalette = document.getElementById("color-palette");    
-    let colors = ['black', 'red', 'blue', 'green'];
     let clear = document.getElementById("clear-board");
-
+    let body = document.body;
     let aux="";
     let indice;
     let i;
     let k;
-    let l;
-    let c;
-    let pixel;
+    let pixel;    
+    let generate = document.getElementById("generate-board");
+    let tamanho = document.getElementById("board-size");
 
-    aux = "";
+    generate.addEventListener("click", function() {
 
-    for (i = 1; i <= 5; i += 1) {
-    
-        for (k = 1; k <= 5; k += 1) {
+        if (tamanho.value =="") {
 
-            indice = i+""+k;
-            aux += "<div id='"+indice+"' class='pixel'></div>";
-                        
+            alert("Board inválido!");
         }
 
-        pixelboard.innerHTML += "<div>"+aux+"</div>";
-        aux = "";
-
-    }
-
-    pixelboard.innerHTML += "</div>";
-
-    for (i = 1; i <= 5; i += 1) {
-    
-        for (k = 1; k <= 5; k += 1) {
-
-            indice = i+""+k;
-            pixel = document.getElementById(indice);
-            pixel.addEventListener('click', function (event) {
-                const selected = document.querySelector('.selected');
-                event.target.style.backgroundColor = selected.style.backgroundColor;
-              });
-    
-        }
-
-    }
-
-    clear.addEventListener("click", function() {
-        for (i = 1; i <= 5; i += 1) {
-    
-            for (k = 1; k <= 5; k += 1) {
-    
-                indice = i+""+k;
-                pixel = document.getElementById(indice);
-                pixel.style.backgroundColor = "white";
-        
+        else {
+            if (tamanho.value <= 5) {
+                tamanho.value = 5;
             }
-    
+
+            if (tamanho.value >= 50) {
+                tamanho.value = 50;
+            }
+
+            console.log(tamanho);
+
+            pixelboard.innerHTML = "";
+
+            for (i = 1; i <= tamanho.value; i += 1) {
+            
+                for (k = 1; k <= tamanho.value; k += 1) {
+
+                    indice = i+""+k;
+                    aux += "<div id='"+indice+"' class='pixel'></div>";
+                                
+                }
+
+                pixelboard.innerHTML += "<div>"+aux+"</div>";
+                aux = "";
+
+            }
+
+            pixelboard.innerHTML += "</div>";
+
+            for (i = 1; i <= tamanho.value; i += 1) {
+            
+                for (k = 1; k <= tamanho.value; k += 1) {
+
+                    indice = i+""+k;
+                    pixel = document.getElementById(indice);
+                    pixel.addEventListener('click', function (event) {
+
+                        const selected = document.querySelector('.selected');
+                        event.target.style.backgroundColor = selected.style.backgroundColor;
+
+                    });
+                }
+            }
+
+            clear.addEventListener("click", function() {
+
+                for (i = 1; i <= tamanho.value; i += 1) {
+            
+                    for (k = 1; k <= tamanho.value; k += 1) {
+            
+                        indice = i+""+k;
+                        pixel = document.getElementById(indice);
+                        pixel.style.backgroundColor = "white";
+                
+                    }    
+                }
+            });
         }
     });
+
+    body.style.backgroundColor = "rgb("+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+")";
+
+
+
+        for (i = 1; i <= 5; i += 1) {
+        
+            for (k = 1; k <= 5; k += 1) {
+
+                indice = i+""+k;
+                aux += "<div id='"+indice+"' class='pixel'></div>";
+                            
+            }
+
+            pixelboard.innerHTML += "<div>"+aux+"</div>";
+            aux = "";
+
+        }
+
+        pixelboard.innerHTML += "</div>";
+
+        for (i = 1; i <= 5; i += 1) {
+        
+            for (k = 1; k <= 5; k += 1) {
+
+                indice = i+""+k;
+                pixel = document.getElementById(indice);
+                pixel.addEventListener('click', function (event) {
+
+                    const selected = document.querySelector('.selected');
+                    event.target.style.backgroundColor = selected.style.backgroundColor;
+
+                });
+            }
+        }
+
+        clear.addEventListener("click", function() {
+
+            for (i = 1; i <= t; i += 1) {
+        
+                for (k = 1; k <= t; k += 1) {
+        
+                    indice = i+""+k;
+                    pixel = document.getElementById(indice);
+                    pixel.style.backgroundColor = "white";
+            
+                }    
+            }
+        });
+
 
     let paletas = document.getElementById("color-palette");
     let paleta=[];
@@ -96,58 +164,34 @@ window.onload = function () {
     paleta[3].style.backgroundColor = "rgb("+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+", "+Math.floor(Math.random() * 255)+")";
 
     paleta[0].addEventListener("click", function() {
+
         paleta[0].className = "color selected";
         paleta[1].className = "color";
         paleta[2].className = "color";
-        paleta[3].className = "color";
-
-        
+        paleta[3].className = "color";        
     });
 
     paleta[1].addEventListener("click", function() {
+
         paleta[1].className = "color selected";
         paleta[0].className = "color";
         paleta[2].className = "color";
         paleta[3].className = "color";
-
     });
 
     paleta[2].addEventListener("click", function() {
+
         paleta[2].className = "color selected";
         paleta[1].className = "color";
         paleta[0].className = "color";
         paleta[3].className = "color";
-
     });
 
     paleta[3].addEventListener("click", function() {
+
         paleta[3].className = "color selected";
         paleta[1].className = "color";
         paleta[2].className = "color";
         paleta[0].className = "color";
-
     });
 
-    
-    
-
-    function changecolor(i,k) {
-
-        // let paletas = document.getElementById("color-palette");
-        // let paleta=[];
-        // paleta[0] = paletas.firstElementChild;
-        // paleta[1] = paletas.firstElementChild.nextElementSibling;
-        // paleta[2] = paletas.firstElementChild.nextElementSibling.nextElementSibling;
-        // paleta[3] = paletas.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling;
-
-               
-        indice = i+""+k;
-        let pixelselected = document.getElementById(indice);
-        console.log(indice);       
-    }
-
-    changecolor(l,c);
-
-
-
-}
