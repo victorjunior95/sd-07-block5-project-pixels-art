@@ -38,7 +38,7 @@ window.onload = function(){
     });
 
     for(let index = 0; index <= 24; index += 1){
-        let pixelValor = document.querySelectorAll("div .pixel")[index];
+        let pixelValor = document.querySelectorAll(".pixel")[index];
         pixelValor.addEventListener("click", function(){
         pixelValor.style.backgroundColor = colorSelect;
         });
@@ -46,7 +46,7 @@ window.onload = function(){
     
     btnClear.addEventListener("click", function(){
         for(let indexClear = 0; indexClear <= 24; indexClear += 1){
-            let pixelClear = document.querySelectorAll("div .pixel")[indexClear];
+            let pixelClear = document.querySelectorAll(".pixel")[indexClear];
             pixelClear.style.backgroundColor = "white";
         }
     })

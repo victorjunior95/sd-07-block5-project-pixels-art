@@ -21,11 +21,11 @@
 } 
 
 #green {
-    background-color: rgb(8, 114, 43);
+    background-color: rgb(0, 128, 0);
 }
 
 #blue {
-    background-color: rgb(7, 31, 136);
+    background-color: rgb(0, 0, 255);
 }
 
 .pixel {
