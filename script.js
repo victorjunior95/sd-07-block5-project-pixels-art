@@ -132,16 +132,16 @@ function checkBoardSize() {
   } else if (boardSize.value < 5) {
     boardSize.value = 5;
   } else if (boardSize.value > 50) {
-      boardSize.value = 50;
-    }
+    boardSize.value = 50;
+  }
   return boardSize.value;
 }
 
 function removewBoard() {
   checkBoardSize();
   while (divPixelBoard.firstChild) {
-      divPixelBoard.removeChild(divPixelBoard.firstChild);
-    }
+    divPixelBoard.removeChild(divPixelBoard.firstChild);
+  }
   ArrayNew();
 }
 
