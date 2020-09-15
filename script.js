@@ -61,7 +61,6 @@ sizeBoard.addEventListener('keydown', function (event) {
   
 generatorButton.addEventListener('click', createPixels);
 
-
 function removeOldPixels() {
   while (board.firstChild) {
     board.removeChild(board.firstChild);
@@ -79,7 +78,6 @@ function createPixels() {
   removeOldPixels();
 
   // https://developer.cdn.mozilla.net/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/pow - potencia;
-
   // https://developer.mozilla.org/en-US/docs/Web/CSS/repeat - (criando a quantidade suficiente pra preencher o grid) display grid mais no CSS;
 
   for (let index = 1; index <= Math.pow(size, 2); index += 1) {
@@ -133,14 +131,12 @@ function paint(position) {
   pixels[position].addEventListener('click', function () {
     pixels[position].style.backgroundColor = currentColor;
   });
-  clearButton();
 }
 
-function clearButton() {
-  clear.addEventListener('click', function () {
-    board.style.backgroundColor = 'white';
-    for (let index = 0; index < pixels.length; index += 1) {
-      pixels[index].style.backgroundColor = 'white';
-    }
-  });
-}
+clear.addEventListener('click', function () {
+  board.style.backgroundColor = 'white';
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
+
