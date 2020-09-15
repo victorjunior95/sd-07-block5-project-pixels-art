@@ -1,26 +1,38 @@
 .color-palette {
-  height: 100px;
+  height: 60px;
+  margin-bottom: 30px;
 }
 
 .color {
-  display: inline-block;
   border: 1px solid black;
+  display: inline-block;
   height: 50px;
   width: 50px;
 }
 
-.color-palette #cor1 {
-  background-color: red;
-}
-
-.color-palette #cor2 {
+.cor1 {
   background-color: black;
 }
 
-.color-palette #cor3 {
+.cor2 {
+  background-color: red;
+}
+
+.cor3 {
   background-color: blue;
 }
 
-.color-palette #cor4 {
+.cor4 {
   background-color: yellow;
+}
+
+.linha {
+  display: flex;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
 }
