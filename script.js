@@ -1,7 +1,7 @@
 window.onload = function() {
   const pixelBoard = document.getElementById("pixel-board"); 
   const qtMatrix = 5;
-  const widthPixels = 40;
+  const widthPixels = 42;
   createLine(); 
 
   const btBlack = document.getElementById("black");
@@ -15,7 +15,7 @@ window.onload = function() {
   function createLine (){
     pixelBoard.style.width = qtMatrix*widthPixels+"px";    
        for(let pixels = 0; pixels < qtMatrix*5; pixels+=1){
-            let pixel = document.createElement("button");
+            let pixel = document.createElement("div");
             pixel.className="pixel";
             pixel.addEventListener('click', changeBackground);
             pixelBoard.appendChild(pixel);
@@ -83,7 +83,7 @@ window.onload = function() {
       parent.children[index].classList.remove();  // remove as classes de todos os elementos         
       parent.children[index].classList.add('white');
     }    
-        
+       
   });
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/  
