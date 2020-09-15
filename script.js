@@ -21,7 +21,7 @@ boardSize.addEventListener('input', function () {
 });
 // Função responsável por criar as linhas
 function createLine() {
-  for (let i = 0; i < parseInt(boardSizeValue,0); i += 1) {
+  for (let i = 0; i < parseInt(boardSizeValue, 0); i += 1) {
     // Cria um elemento div e atrubui a classe e id line
     const line = document.createElement('div');
     line.className = 'line';
@@ -75,13 +75,13 @@ function createBoard() {
 }
 // Adiciona um evento ao botão btnGenerateBoard
 btnGenerateBoard.addEventListener('click', function () {
-    // Se o valor de boardSizeValue for vazio retorna um alert
-    if (boardSizeValue === '') {
-      alert('Board inválido!');
-    }
-    // Chama a função createBoard
-    createBoard();
-  });
+  // Se o valor de boardSizeValue for vazio retorna um alert
+  if (boardSizeValue === '') {
+    alert('Board inválido!');
+  }
+  // Chama a função createBoard
+  createBoard();
+});
 // Função responsável por selecionar a cor
 function selected() {
   for (let i = 0; i < color.length; i += 1) {
