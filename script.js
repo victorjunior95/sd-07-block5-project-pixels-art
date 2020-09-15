@@ -10,19 +10,19 @@ window.onload = function () {
       }
     }
   }
-  
+
   // Cria o quadro de pixels
   function createBoard() {
     const boardHeight = 5;
-    for (let boardColumn = 0; boardColumn < boardHeight; boardColumn +=1) {
+    for (let boardColumn = 0; boardColumn < boardHeight; boardColumn += 1) {
       const baseLine = document.createElement('div');
       baseLine.className = 'line';
       document.getElementById('pixel-board').appendChild(baseLine);
-        for (let count = 0; count < boardHeight; count +=1) {
+      for (let count = 0; count < boardHeight; count += 1) {
         const pixel = document.createElement('div');
         pixel.className = 'pixel';
         pixel.addEventListener('click', changeColor);
-        document.getElementsByClassName('line')[boardColumn].appendChild(pixel)
+        document.getElementsByClassName('line')[boardColumn].appendChild(pixel);
       }
     }
   }
