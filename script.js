@@ -1,15 +1,17 @@
 // Adding palette colors via script
 const colorPalette = document.querySelector('#color-palette');
-const colors = ['black', genRandomColor(), genRandomColor(), genRandomColor()];
 
-function genRandomColor () {
-
-  return `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`
+// Generate random color for palette colors
+function genRandomColor() {
+  return `rgb(${randomNumber0to255()}, ${randomNumber0to255()}, ${randomNumber0to255()})`;
 }
 
-function randomNumber() {
+// Random number generator from 0 to 255
+function randomNumber0to255() {
   return Math.round(Math.random() * 255);
 }
+
+const colors = ['black', genRandomColor(), genRandomColor(), genRandomColor()];
 
 for (let index = 0; index < colors.length; index += 1) {
   const color = document.createElement('div');
@@ -72,8 +74,8 @@ createMatrix(5);
 
 generateBoard.addEventListener('click', function () {
   const boardSize = document.querySelector('#board-size');
-  if (boardSize.value === '') { 
-  alert('Board inválido!'); 
+  if (boardSize.value === '') {
+    alert('Board inválido!');
   } else {
     if (boardSize.value <= 5) boardSize.value = 5;
     else if (boardSize.value >= 50) boardSize.value = 50;
