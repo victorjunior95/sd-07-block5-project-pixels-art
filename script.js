@@ -13,7 +13,7 @@ function getRandomNumber() {
   return Math.floor(Math.random() * 255);
 }
 
-function generateColor() {  
+function generateColor() {
   black.style.backgroundColor = 'black';
   for (let color = 1; color < paletas.length; color += 1) {
     paletas[color].style.backgroundColor = `rgb(${getRandomNumber()} , ${getRandomNumber()} , ${getRandomNumber()})`;
