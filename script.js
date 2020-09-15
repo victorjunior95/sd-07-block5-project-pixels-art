@@ -17,6 +17,7 @@ function criarCorAleatoria () {
     return RGB
 }
 
+//atribuindo cor preto para primeira cor da paleta de cores.
 const palleta1 = document.querySelector("#color-1");
 palleta1.style.backgroundColor = 'black';
 //função para as div pallet 2 3 4
@@ -29,23 +30,15 @@ function mudaCorPaleta () {
     palleta4.style.backgroundColor = criarCorAleatoria ();
 }
 
-/*
-//setando cores na paleta
-let palletColors = document.querySelectorAll(".color");
-palletColors[0].style.backgroundColor = 'black';
-*/
-/* 
+ 
 let grid = (document.querySelector('#pixel-board'));
-//criação do pixel
+//criação do pixel com classe pixel.
 function createBox (pixel) {
     let box = document.createElement('div');
     box.className = 'pixel'
     return box;
 }
 
-grid.appendChild(createBox());
-
-*/
 window.onload = () => {
     mudaCorPaleta ();
 }
