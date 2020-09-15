@@ -2,8 +2,8 @@ window.onload = function () {
 
     let board = document.querySelectorAll(".pixel");
     let clearButton = document.querySelector("#clear-board");
-    let setNumberTable = document.querySelector("#generate-board");
-    let numberTable = document.querySelector("#board-size");
+    let setNumberTable = document.querySelector("#generate-board"); /* button */
+    let numberTable = document.querySelector("#board-size"); /* input */
     let selectedColor = document.querySelector(".selected");
     let color1 = document.querySelector(".black");
     let color2 = document.querySelector(".orange");
@@ -30,7 +30,7 @@ window.onload = function () {
     selectPixel()
     function selectPixel () {
         for (index = 0; index < board.length; index += 1) {
-            board[index].addEventListener('click', paintPixels);
+            board[index].addEventListener("click", paintPixels);
         }
     }
 
@@ -55,4 +55,24 @@ window.onload = function () {
             board[index].className = "pixel";
         }
     }
+
+    /* Definindo tamanho do quadro de pixels pelo usuário */
+    /* setNumberTable.addEventListener("click", setPixelBoardSize); */
+    setNumberTable.addEventListener("click", alertFunction);
+    
+    function alertFunction() {
+        let setNumberValue = numberTable.value;
+        console.log(setNumberValue);
+         if (setNumberValue < 1) {
+            alert("Board inválido!");
+        } else if (setNumberValue < 5) {
+            numberTable.value = 5;
+            alert("Número mínimo: 5!");
+        } else if (setNumberValue > 50) {
+            numberTable.value = 50;
+            alert("Número máximo: 50!");
+        }
+    }
+
+    
 }
