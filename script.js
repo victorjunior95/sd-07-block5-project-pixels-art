@@ -36,25 +36,6 @@ window.onload = function () {
     let c;
     let pixel;
 
-    for (i = 0;i < 4;i++) {
-
-        aux = document.createElement("div");
-        aux.className = "color";
-        if (colors[i] == "black") {
-
-            aux.style.backgroundColor = colors[i]+" selected";
-        }
-        else
-        {
-            aux.style.backgroundColor = colors[i];
-        }        
-        colorpalette.appendChild(aux);
-
-        
-    }
-
-
-
     aux = "";
 
     for (i = 1; i <= 5; i += 1) {
@@ -63,8 +44,7 @@ window.onload = function () {
 
             indice = i+""+k;
             aux += "<div id='"+indice+"' class='pixel'></div>";
-            
-            
+                        
         }
 
         pixelboard.innerHTML += "<div>"+aux+"</div>";
@@ -109,7 +89,7 @@ window.onload = function () {
     paleta[1] = paletas.firstElementChild.nextElementSibling;
     paleta[2] = paletas.firstElementChild.nextElementSibling.nextElementSibling;
     paleta[3] = paletas.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling;
-    paleta[0].className = "selected";
+    paleta[0].className = "color selected";
 
     paleta[0].addEventListener("click", function() {
         paleta[0].className = "selected";
