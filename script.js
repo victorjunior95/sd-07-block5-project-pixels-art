@@ -16,6 +16,11 @@ for (let index = 0; index < colors.length; index += 1) {
   }
 }
 
+function classTD(td) {
+  td.className = 'pixel';
+  return td;
+}
+
 function makeBoard(lineAndColunms) {
   for (let index = 0; index < lineAndColunms; index += 1) {
     const tr = document.createElement('div');
@@ -23,42 +28,37 @@ function makeBoard(lineAndColunms) {
     for (let j = 0; j < lineAndColunms; j += 1) {
       const td = document.createElement('div');
       classTD(td);
-      tr.appendChild(td)
+      tr.appendChild(td);
     }
   }
-};
+}
 
 makeBoard(numberOfLinesAndColunms);
 
 let pixels = document.querySelectorAll('.pixel');
 
-function classTD(td) {
-  let tdClass = td.className = 'pixel';
-  return tdClass;
-};
-
 colors.forEach(item => {
-    item.addEventListener('click', function(event) {
+  item.addEventListener('click', function (event) {
     event.target.classList.add('selected');
       colors.forEach(item => {
         if (item !== event.target) {
           item.classList.remove('selected');
         }
-      });
-  });
-});
+      })
+  })
+})
 
 function paintBoard(event) {
   const colorSelected = document.querySelector('.selected');
-  let bgColor = window.getComputedStyle(colorSelected, null).getPropertyValue('background-color');
+  const bgColor = window.getComputedStyle(colorSelected, null).getPropertyValue('background-color');
   event.target.style.backgroundColor = bgColor;
 }
 
 pixels.forEach(item => {
   item.addEventListener('click', paintBoard);
-});
+})
 
-buttonGenerateBoard.addEventListener('click', function() {
+buttonGenerateBoard.addEventListener('click', function () {
   numberOfLinesAndColunms = document.getElementById('board-size').value;
   if (numberOfLinesAndColunms === '') {
     alert('Board inválido!');
@@ -68,17 +68,17 @@ buttonGenerateBoard.addEventListener('click', function() {
   } else if (numberOfLinesAndColunms < 5) {
     numberOfLinesAndColunms = 5;
   }
-    pixelBoard.innerHTML = '';
-    makeBoard(numberOfLinesAndColunms);
-    pixels = document.querySelectorAll('.pixel');
-    pixels.forEach(item => {
-      item.addEventListener('click', paintBoard);
-    });
+  pixelBoard.innerHTML = '';
+  makeBoard(numberOfLinesAndColunms);
+  pixels = document.querySelectorAll('.pixel');
+  pixels.forEach(item => {
+    item.addEventListener('click', paintBoard);
+  })
 
-});
+})
 
-clearBoard.addEventListener('click', function() {
+clearBoard.addEventListener('click', function () {
   pixels.forEach(item => {
     item.style.backgroundColor = 'white';
-  });
-});
+  })
+})
