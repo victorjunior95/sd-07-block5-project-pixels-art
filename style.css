@@ -27,6 +27,17 @@ h1 {
     height: 20px;
 }
 
+#pixel-board { 
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.tr { 
+    display: table-row;
+}
+
 .black {
     background-color: black;
     cursor: pointer;
@@ -46,17 +57,3 @@ h1 {
     background-color: blue;
     cursor: pointer;
 }
-
-#pixel-board { 
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-}
-
-.tr { 
-    display: table-row;
-}
-
-
-

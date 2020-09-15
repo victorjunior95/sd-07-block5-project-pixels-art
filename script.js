@@ -39,4 +39,14 @@ window.onload = function () {
         setPixel.classList.add(paintColor);
         console.log(paintColor);
     }
+
+    /* Limpando o quadro de pixels */
+    clearButton.addEventListener("click", clearPixels);
+    
+    function clearPixels() {
+        let numberOfPixels = board.length;
+        for (index = 0; index < numberOfPixels; index += 1) {
+            board[index].className = "pixel";
+        }
+    }
 }
