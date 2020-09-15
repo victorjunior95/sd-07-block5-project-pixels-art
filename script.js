@@ -18,7 +18,7 @@ const generateBoard = document.querySelector('#generate-board');
 const boardSize = document.querySelector('#board-size');
 
 function createBoard() {
-    index;
+    let index;
     for (index = 0; index < myArray.length; index += 1) {
         const container = document.createElement('div');
         container.className = 'container';
