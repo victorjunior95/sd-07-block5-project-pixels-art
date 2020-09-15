@@ -1,26 +1,41 @@
 // MY VARIABLES AND CONSTANTS
 const pixelBoard = document.querySelector("#pixel-board");
-const inputSizeBoard = document.querySelector("#inputSize");
-const buttonSizeBoard = document.querySelector("#buttonInput");
+const inputSizeBoard = document.querySelector("#board-size");
+const buttonSizeBoard = document.querySelector("#generate-board");
 let getColor = "black";
 // console.log(inputSizeBoard);
-let numberLines = 5;
-let numberElements = 5;
+let numberLines = 0;
+let numberElements = 0;
 
 buttonSizeBoard.addEventListener("click", function () {
-  numberElements = inputSizeBoard.value;
-  numberLines = inputSizeBoard.value;
-  // console.log(numberElements);
-  // console.log(numberLines);
+  if (inputSizeBoard.value == "") {
+    alert("Board inválido!");
+  } else if (inputSizeBoard.value <= 5) {
+    numberLines = 5;
+    numberElements = 5;
+    getColor = "black";
+  } else if (inputSizeBoard.value >= 50) {
+    numberLines = 50;
+    numberElements = 50;
+    getColor = "black";
+  } else if (inputSizeBoard.value > 5 && inputSizeBoard.value < 50) {
+    numberElements = inputSizeBoard.value;
+    numberLines = inputSizeBoard.value;
+    getColor = "black";
+    // console.log(numberElements);
+    // console.log(numberLines);
+  }
   executeAll();
 });
 
 function executeAll() {
   clearBoard();
+  paletteRandom();
   createLine();
   createPixels();
   updateColors();
   changeColorPixel();
+  clearColors();
 }
 
 function clearBoard() {
@@ -61,20 +76,15 @@ function fillLine(divLine) {
   }
 }
 
-const myPixels = document.querySelectorAll(".pixel");
-const colorSelected = document.querySelectorAll(".color");
-
-// VARIABLE TO STORE MY INITIAL COLOR
-
-
-
 // LOOP TO UPDATE MY LET GET COLOR
 function updateColors() {
+  const colorSelected = document.querySelectorAll(".color");
   for (let i = 0; i < colorSelected.length; i += 1) {
     colorSelected[i].addEventListener("click", function (event) {
       let divs = event.target;
-      getColor = divs.classList[1];
-      // console.log(innicialColor(divs.classList[1]));
+      getColor = divs.style.backgroundColor
+      // getColor = divs.classList[1];
+      // console.log(getColor);
     });
   }
 }
@@ -94,6 +104,7 @@ function changeColorPixel() {
 changeColorPixel();
 
 // LOOP TO ADD AND REMOVE NEW CLASS "SELECTED"
+const colorSelected = document.querySelectorAll(".color");
 for (let i = 0; i < colorSelected.length; i += 1) {
   colorSelected[i].addEventListener("click", function (event) {
     let divs = event.target;
@@ -109,14 +120,27 @@ for (let i = 0; i < colorSelected.length; i += 1) {
 }
 
 // BUTTON CREATED TO CLEAR MY BACKGROUND
+function clearColors () {
 const buttonClear = document.querySelector("#clear-board");
-
 buttonClear.addEventListener("click", function () {
+  const myPixels = document.querySelectorAll(".pixel");
   for (let i = 0; i < myPixels.length; i += 1) {
     myPixels[i].style.backgroundColor = "white";
   }
 });
+}
+clearColors();
 
+function paletteRandom () {
+  let randomNumber1 = Math.round(Math.random()*1000000);
+  let randomNumber2 = Math.round(Math.random()*1000000);
+  let randomNumber3 = Math.round(Math.random()*1000000);
+  let palette = document.querySelectorAll(".color");
+  palette[1].style.backgroundColor = "#" + randomNumber1;
+  palette[2].style.backgroundColor = "#" + randomNumber2;
+  palette[3].style.backgroundColor = "#" + randomNumber3;
+}
+paletteRandom();
 // TESTE PARA getPropertyValue()
 // let colorBlue = document.querySelector(".blue");
 // console.log(colorBlue.style.getPropertyValue("background-color"));
