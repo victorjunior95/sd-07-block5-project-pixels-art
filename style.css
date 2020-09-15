@@ -45,9 +45,20 @@ h1 {
     background-color: purple;
 }
 
+main {
+    text-align: center;
+}
+
 #pixel-board {
     display: inline-block;
+    height: 210px;
+    width: 210px;
 }
+
+.linha {
+    margin-bottom: -4px;
+}
+
 
 .pixel {
     background-color: white;
@@ -57,5 +68,6 @@ h1 {
     display: inline-block;
     height: 40px;
     width: 40px;
-    margin: -3px;
+
 }
+

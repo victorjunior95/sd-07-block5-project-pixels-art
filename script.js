@@ -31,6 +31,7 @@ color[i].addEventListener("click", function() {
     let selected = document.querySelector(".selected");
     selected.classList.remove("selected");
     color[i].classList.add('selected');
+    // event.target.className += " selected"
    
     
     })
