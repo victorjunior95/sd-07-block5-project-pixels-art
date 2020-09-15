@@ -10,7 +10,9 @@ const inputNumber = document.querySelector('#board-size');
 inputNumber.value = 5;
 let number = inputNumber.value;
 botaoGerar.addEventListener('click', (event) => {
-    if (inputNumber.value < 5) {
+    if(inputNumber.value === ''){
+        alert("Board inválido!");
+    }else if (inputNumber.value < 5) {
         alert("Board inválido!");
         inputNumber.value = 5;
     }else if (inputNumber.value > 50) {
@@ -39,8 +41,10 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
        paletteColor[aux].addEventListener('click', function () {
 
     for (let sel = 0; sel < paletteColor.length; sel += 1) {
-        if (paletteColor[sel].className === 'selected' || paletteColor[sel].className === 'color selected') {
-            paletteColor[sel].className = 'color';
+        if (paletteColor[sel].className === 'selected' || 
+        paletteColor[sel].className === 'color selected') {
+            paletteColor[sel].classList.remove('selected');
+            paletteColor[sel].classList.add('color');
         }
     }
            paletteColor[aux].className = 'selected';
