@@ -40,13 +40,13 @@ let pixels = document.querySelectorAll('.pixel');
 colors.forEach(item => {
   item.addEventListener('click', function (event) {
     event.target.classList.add('selected');
-      colors.forEach(item => {
-        if (item !== event.target) {
-          item.classList.remove('selected');
-        }
-      })
-  })
-})
+    colors.forEach(item => {
+      if (item !== event.target) {
+        item.classList.remove('selected');
+      }
+    });
+  });
+});
 
 function paintBoard(event) {
   const colorSelected = document.querySelector('.selected');
@@ -56,7 +56,7 @@ function paintBoard(event) {
 
 pixels.forEach(item => {
   item.addEventListener('click', paintBoard);
-})
+});
 
 buttonGenerateBoard.addEventListener('click', function () {
   numberOfLinesAndColunms = document.getElementById('board-size').value;
@@ -73,12 +73,11 @@ buttonGenerateBoard.addEventListener('click', function () {
   pixels = document.querySelectorAll('.pixel');
   pixels.forEach(item => {
     item.addEventListener('click', paintBoard);
-  })
-
-})
+  });
+});
 
 clearBoard.addEventListener('click', function () {
   pixels.forEach(item => {
     item.style.backgroundColor = 'white';
-  })
-})
+  });
+});
