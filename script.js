@@ -5,6 +5,7 @@ const generateButton = document.querySelector('#generate-board');
 const paintPixels = document.querySelectorAll('.pixel');
 const fullBoard = document.querySelector('#pixel-board');
 const eliminateBoard = document.querySelector('#eliminate-board');
+const black = document.querySelector('#black');
 let paletaID = 'black';
 let cor;
 
@@ -12,8 +13,7 @@ function getRandomNumber() {
   return Math.floor(Math.random() * 255);
 }
 
-function generateColor() {
-  const black = document.querySelector('#black');
+function generateColor() {  
   black.style.backgroundColor = 'black';
   for (let color = 1; color < paletas.length; color += 1) {
     paletas[color].style.backgroundColor = `rgb(${getRandomNumber()} , ${getRandomNumber()} , ${getRandomNumber()})`;
@@ -43,7 +43,7 @@ for (let k = 0; k < paletas.length; k += 1) {
   paletas[k].addEventListener('click', defineColor);
 }
 
-function paintBoard() {  
+function paintBoard() {
   if (paletaID === 'red') {
     event.target.classList.remove('white');
     event.target.style.backgroundColor = cor;
