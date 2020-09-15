@@ -15,21 +15,21 @@ let pixelboard = document.getElementById("pixel-board");
 
 // pixelboard.innerHTML = "<div id='pixel-board'>";
 
-for (let i = 1; i <= 5; i += 1) {
+// for (let i = 1; i <= 5; i += 1) {
 
-    let aux="";
+//     let aux="";
 
-    for (let k = 1; k <= 5; k += 1) {
+//     for (let k = 1; k <= 5; k += 1) {
 
-        aux += "<div class='pixel'>"+i+k+" </div>";
+//         aux += "<div class='pixel'>"+i+k+" </div>";
         
-    }
+//     }
 
-    pixelboard.innerHTML += "<div>"+aux+"</div>";
+//     pixelboard.innerHTML += "<div>"+aux+"</div>";
 
-}
+// }
 
-pixelboard.innerHTML += "</div>";
+// pixelboard.innerHTML += "</div>";
 
 // 6 - Ao carregar a página, a cor preta da paleta já deve estar selecionada para pintar os pixels.
 // As seguintes verificações serão feitas:
@@ -37,11 +37,11 @@ pixelboard.innerHTML += "</div>";
 // Note que o elemento que deverá receber a classe selected deve ser um dos elementos que possuem a classe color, como especificado no requisito 2.
 
 
-// window.onload = function () { 
+window.onload = function () { 
 
-//     let paletas = document.getElementById("color-palette");
-//     let paleta=[];
-//     paleta[0] = paletas.firstElementChild;
-//     paleta[0].className = "selected";
+    let paletas = document.getElementById("color-palette");
+    let paleta=[];
+    paleta[0] = paletas.firstElementChild;
+    paleta[0].className = "selected";
     
-// }
+}
