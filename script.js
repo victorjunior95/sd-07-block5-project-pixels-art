@@ -138,9 +138,9 @@
 
         clear.addEventListener("click", function() {
 
-            for (i = 1; i <= t; i += 1) {
+            for (i = 1; i <= 5; i += 1) {
         
-                for (k = 1; k <= t; k += 1) {
+                for (k = 1; k <= 5; k += 1) {
         
                     indice = i+""+k;
                     pixel = document.getElementById(indice);
