@@ -22,21 +22,25 @@
 }
 
 
-#black {
+.black {
   background-color:rgb(0, 0, 0);
 }
 
-#red {
+.red {
 
   background-color: rgb(255, 0, 0);
 }
 
-#blue {
+.blue {
 
   background-color: rgb(0, 0, 166);
 }
 
-#green {
+.green {
 
   background-color:rgb(0, 211, 166);
+}
+.selected {
+
+  border: inset;
 }
