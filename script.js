@@ -23,9 +23,9 @@ for (let index = 0; index < colors.length; index += 1) {
 }
 
 // Board of pixels
-function createMatrix(dimension){
+function createMatrix(dimension) {
   const pixelBoard = document.querySelector('#pixel-board');
-  pixelBoard.innerHTML = ''
+  pixelBoard.innerHTML = '';
   const matrixDimension = dimension;
   for (let column = 0; column < matrixDimension; column += 1) {
     // Creating row for the pixels
@@ -35,7 +35,7 @@ function createMatrix(dimension){
       // Creating the pixel
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
-  
+
       // Event for fill pixel with selected color
       pixel.addEventListener('click', function (event) {
         const selected = document.querySelector('.selected');
@@ -63,17 +63,11 @@ const generateBoard = document.querySelector('#generate-board');
 createMatrix(5);
 
 generateBoard.addEventListener('click', function () {
-  let boardSize = document.querySelector('#board-size');
-  if (boardSize.value === '') {
-    alert('Board inválido!')
-    boardSize.value = 5
+  const boardSize = document.querySelector('#board-size');
+  if (boardSize.value === '') { alert('Board inválido!'); }
+  else {
+    if (boardSize.value <= 5) { boardSize.value = 5; }
+    else if (boardSize.value >= 50) { boardSize.value = 50; }
+    createMatrix(boardSize.value);
   }
-  else if (boardSize.value <= '5') {
-    boardSize.value = 5
-  }
-  else if (boardSize.value >= '50') {
-    boardSize.value = 50
-  }
-  createMatrix(boardSize.value)
-  
-})
+});
