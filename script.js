@@ -1,5 +1,5 @@
 const cores = document.querySelectorAll('.color');
-const selectedColor = document.querySelector('.selected');
+let selectedColor = document.querySelector('.selected');
 let background = getComputedStyle(selectedColor).backgroundColor;// porque tem que separar em dois?
 for (let i=0; i<cores.length; i += 1) {
 cores[i].addEventListener('click', pegaCor);
