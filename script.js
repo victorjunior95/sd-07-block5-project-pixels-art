@@ -7,7 +7,6 @@ const fullBoard = document.querySelector('#pixel-board');
 const eliminateBoard = document.querySelector('#eliminate-board');
 let paletaID = 'black';
 
-
 function checkSelected() {
   for (let i = 0; i < paletas.length; i += 1) {
     if (paletas[i].classList.contains('selected')) {
@@ -47,28 +46,27 @@ for (let i = 0; i < paintPixels.length; i += 1) {
   paintPixels[i].addEventListener('click', paintBoard);
 }
 
-function verifyBoard() {
-  let numberOfSquares = 0;
-  const itsPossible = boardSize.value;
-  if (itsPossible < 5) {
-    numberOfSquares = 5;
-  } else {
-    numberOfSquares = boardSize.value;
-  }
-  return numberOfSquares;
-}
 function sizeBoard() {
-  const rowNumbers = Math.sqrt(boardSize.value);
-  const rowsIntNumbers = parseInt(rowNumbers, 10);
-  const heightAndWidth = rowsIntNumbers * 40;
-  if (rowsIntNumbers < 50) {
-    fullBoard.style.gridTemplateColumns = `repeat(${boardSize.value}, 1fr)`;
-    fullBoard.style.maxHeight = `${heightAndWidth}px`;
-    fullBoard.style.maxWidth = `${heightAndWidth}px`;
-  } else {
+  let inputValue = Number(boardSize.value);
+  if (inputValue < 5) {
+    inputValue = 5;
+    fullBoard.style.gridTemplateColumns = 'repeat(5, 1fr)';
+    fullBoard.style.gridTemplatesRows = 'repeat(5, 1fr)';
+    fullBoard.style.height = '200px';
+    fullBoard.style.width = '200px';
+  } else if (inputValue < 50) {
+    const heightAndWidth = inputValue * 40;
+    fullBoard.style.gridTemplateColumns = `repeat(${inputValue}, 1fr)`;
+    fullBoard.style.gridTemplateRows = `repeat(${inputValue}, 1fr)`;
+    fullBoard.style.height = `${heightAndWidth}`;
+    fullBoard.style.width = `${heightAndWidth}`;
+    console.log(heightAndWidth);
+  } else if (inputValue > 50) {
+    inputValue = 50;
     fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
-    fullBoard.style.maxHeight = '2000px';
-    fullBoard.style.maxWidth = '2000px';
+    fullBoard.style.gridTemplateRows = 'repeat(50, 1fr)';
+    fullBoard.style.height = '2000px';
+    fullBoard.style.width = '2000px';
   }
 }
 
@@ -87,32 +85,11 @@ function createNewBoard() {
 }
 
 function generateBoard() {
-  generateAlert()
-  createNewBoard()
-  let inputValue = Number(boardSize.value);
-  console.log(inputValue);
-  if (inputValue < 5) {
-    inputValue = 5;
-    fullBoard.style.gridTemplateColumns = 'repeat(5, 1fr)';
-    fullBoard.style.gridTemplatesRows = 'repeat(5, 1fr)';
-    fullBoard.style.height = '200px';
-    fullBoard.style.width = '200px';
-  } else if (inputValue < 50) {
-    let heightAndWidth = inputValue * 40;
-    fullBoard.style.gridTemplateColumns = `repeat(${inputValue}, 1fr)`;
-    fullBoard.style.gridTemplateRows = `repeat(${inputValue}, 1fr)`;
-    fullBoard.style.height = `${heightAndWidth}`;
-    fullBoard.style.width = `${heightAndWidth}`;
-    console.log(heightAndWidth);
-  } else if (inputValue > 50) {
-    inputValue = 50;
-    fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
-    fullBoard.style.gridTemplateRows = 'repeat(50, 1fr)';
-    fullBoard.style.height = '2000px';
-    fullBoard.style.width = '2000px';
-  }
-  let numberOfPixels = Math.pow(inputValue, 2);
-  console.log(numberOfPixels);
+  generateAlert();
+  createNewBoard();
+  sizeBoard();
+  const inputValue = Number(boardSize.value);
+  const numberOfPixels = Math.pow(inputValue, 2);
   for (let i = 1; i <= numberOfPixels; i += 1) {
     const square = document.createElement('div');
     square.className = 'pixel white';
