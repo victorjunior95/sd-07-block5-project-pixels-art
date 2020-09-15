@@ -1,0 +1,26 @@
+.color-palette {
+  height: 100px;
+}
+
+.color {
+  display: inline-block;
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+}
+
+.color-palette #cor1 {
+  background-color: red;
+}
+
+.color-palette #cor2 {
+  background-color: black;
+}
+
+.color-palette #cor3 {
+  background-color: blue;
+}
+
+.color-palette #cor4 {
+  background-color: yellow;
+}
