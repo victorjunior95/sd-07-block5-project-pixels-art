@@ -12,8 +12,8 @@
 }
 #pixel-board{
     display: table;
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
 }
 .tr{
     display: table-row;
@@ -21,8 +21,6 @@
 .pixel{
     display: table-cell;
     background-color: white;
-    /* width: 40px;
-    height: 40px; */
     border: solid black 1px;
 }
 #black{
