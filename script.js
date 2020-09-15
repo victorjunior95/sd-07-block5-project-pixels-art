@@ -2,42 +2,6 @@
 window.onload = function () {
   makeBoard(5);
 };
-const pixelBoard = document.querySelector('#pixel-board');
-const buttonInput = document.querySelector('#generate-board');
-// trata evento acrescentar cor no quadradinho
-function trocaCor() {
-  document.querySelectorAll('.pixel').forEach((item) => {
-    item.addEventListener('click', () => {
-      item.style.backgroundColor = color;
-    });
-  });
-}
-function makeBoard(number) {
-  pixelBoard.innerHTML = '';
-  for (let lIndex = 0; lIndex < number; lIndex += 1) {
-    const lPixelBoard = document.createElement('div');
-    lPixelBoard.className = 'line';
-    pixelBoard.appendChild(lPixelBoard);
-    for (let pIndex = 0; pIndex < number; pIndex += 1) {
-      const pixel = document.createElement('div');
-      pixel.className = 'pixel';
-      lPixelBoard.appendChild(pixel);
-    } trocaCor();
-  }
-  buttonInput.addEventListener('click', function () {
-  const numberInput = document.querySelector('#board-size').value;
-  let number = numberInput;
-  if (number === '') {
-    alert('Board inválido!');
-  }
-  else if (number < 5) {
-    makeBoard(5);
-  } else if (number > 50) {
-    makeBoard(50);
-  } else {
-    makeBoard(number);
-  }
-})};
 // cria botões para selecionar cor
 const btnBlack = document.querySelector('#black');
 const btnOrange = document.querySelector('#orange');
@@ -74,8 +38,44 @@ let color = 'black';
     btnOrange.classList.remove('selected');
     color = window.getComputedStyle(btnBlue).getPropertyValue('background-color');
   });
+const pixelBoard = document.querySelector('#pixel-board');
+const buttonInput = document.querySelector('#generate-board');
+// trata evento acrescentar cor no quadradinho
+function trocaCor() {
+  document.querySelectorAll('.pixel').forEach((item) => {
+    item.addEventListener('click', () => {
+      item.style.backgroundColor = color;
+    });
+  });
+}
+function makeBoard(number) {
+  pixelBoard.innerHTML = '';
+  for (let lIndex = 0; lIndex < number; lIndex += 1) {
+    const lPixelBoard = document.createElement('div');
+    lPixelBoard.className = 'line';
+    pixelBoard.appendChild(lPixelBoard);
+    for (let pIndex = 0; pIndex < number; pIndex += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      lPixelBoard.appendChild(pixel);
+    } trocaCor();
+  }
+  buttonInput.addEventListener('click', function () {
+  const numberInput = document.querySelector('#board-size').value;
+  let number = numberInput;
+  if (number === '') {
+    alert('Board inválido!');
+  }
+  else if (number < 5) {
+    makeBoard(5);
+  } else if (number > 50) {
+    makeBoard(50);
+  } else {
+    makeBoard(number);
+  }
+})};
 //  cria botão que limpa tudo
-let btnClear = document.querySelector('#clear-board');
+const btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
   document.querySelectorAll('.pixel').forEach((item) => {
       item.style.backgroundColor = 'white';
