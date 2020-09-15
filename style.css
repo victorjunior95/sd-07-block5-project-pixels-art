@@ -1,5 +1,6 @@
 body {
-    margin: 0;
+    margin: auto;
+
 }
 #title {
     font-size: 30px;
@@ -24,6 +25,10 @@ body {
     box-sizing: border-box;
 }
 
+.space {
+    height: 50px;
+}
+
 .green {
     background-color: green;
 }
@@ -42,10 +47,14 @@ body {
 
 .line {
     margin: auto;
+    height: 50px;
+    text-align: center;
 }
 
-.box {
+.pixel {
     height: 50px;
     width: 50px;
     border: solid 1px black;
+    display: inline-block;
+    box-sizing: border-box;
 }
