@@ -39,3 +39,17 @@ header {
 .color1 {
     background-color: burlywood;
 }
+
+#pixel-board {
+    background-color: purple;
+}
+
+.pixel {
+    width:40px;
+    height: 40px;
+    background-color: white;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    display: inline-block;
+}
