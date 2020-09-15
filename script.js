@@ -63,9 +63,9 @@ window.onload = function () {
   makeBoard(5);
 };
 buttonInput.addEventListener('click', function () {
-    const numberInput = document.querySelector('#board-size').value;
-    const number = numberInput;
-    if (number === '') {
+  const numberInput = document.querySelector('#board-size').value;
+  const number = numberInput;
+  if (number === '') {
       alert('Board inválido!');
     } else if (number < 5) {
       makeBoard(5);
