@@ -1,6 +1,5 @@
 body {
-  margin: 0;
-  margin: auto;
+  margin: 0 auto;
   padding-top: 5px;
   text-align: center;
 }
@@ -30,7 +29,7 @@ h1 {
 .size-handler input {
   background-color: aquamarine;
   border: 3px dashed black;
-  font-family: 'Patua One', cursive;
+  font-family: Patua One, cursive;
   font-size: large;
   height: 30px;
   padding: 4px 8px;
@@ -44,7 +43,7 @@ h1 {
 
 .action-button {
   border: 3px dashed black;
-  font-family: 'Patua One', cursive;
+  font-family: Patua One, cursive;
   font-size: large;
   margin-left: 10px;
   padding: 4px 8px;
