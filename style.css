@@ -1,4 +1,4 @@
-.color ul li{
+.color-palette div{
     display: inline-block;
     list-style: none;
     width: 30px;
@@ -6,16 +6,28 @@
     border: 1px solid black;
     margin: 5px;
 }
-.black {
+
+.black{
     background-color: black;
 }
-.orange {
-    background-color: orange;
+
+.blue {
+   
+    background-color: rgb(39, 36, 185);
 }
 .pink {
     background-color: pink;
 }
+
 .green {
     background-color: green;
 }
+
+.pixel {
+    background-color: white;
+    border: 1px solid black;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+  }
     
