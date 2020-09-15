@@ -1,25 +1,44 @@
-firstColor = document.getElementsByClassName("color")[0];
-secondColor = document.getElementsByClassName("color")[1];
-thirdColor = document.getElementsByClassName("color")[2];
-fourthColor = document.getElementsByClassName("color")[3];
-allColors = document.getElementsByClassName("color");
-seletedColors = document.getElementsByClassName("color selected");
-selectedElement = document.getElementsByClassName("pixel");
+window.onload = function () {
+    let black = document.getElementById("color-black");
+    let green = document.getElementById("color-green");
+    let pourple = document.getElementById("color-pourple");
+    let orange = document.getElementById("color-orange");
+    let pixel = document.getElementsByClassName("pixel")
+    let choosenColor = black;
 
-for (let index = 0; index <= allColors.length; index += 1) {
-    allColors[index].addEventListner('clik', colorSelection);
+    green.addEventListener('click', function () {
+        green.classList.add("slected");
+        black.classList.remove("slected");
+        pourple.classList.remove("slected");
+        orange.classList.remove("slected");
+        let choosenColor = green;
 
-for (let i = 0; i < selectedElement.length; i += 1) {
-    let pixelBox = selectedElement[i]
-    pixelBox.addEventListner ('click', fullFill);
-}
-
-function colorSelection (event) {
-    seletedColors[0].className = 'color';
-    event.target.className ='color selected'
-}
-
-function fullFill (event) {
-    let elementColor = seletedColors[0].id
-    event.target.style.backgroundColor = elementColor
+    })
+    pourple.addEventListener('click', function () {
+        pourple.classList.add("slected");
+        black.classList.remove("slected");
+        green.classList.remove("slected");
+        orange.classList.remove("slected");
+        let choosenColor = pourple;
+    })
+    orange.addEventListener('click', function () {
+        orange.classList.add("slected");
+        black.classList.remove("slected");
+        green.classList.remove("slected");
+        pourple.classList.remove("slected");
+        let choosenColor = orange
+    })
+    black.addEventListener('click', function () {
+        black.classList.add("slected");
+        orange.classList.remove("slected");
+        green.classList.remove("slected");
+        pourple.classList.remove("slected");
+        let choosenColor = black;
+    })
+    for(let index = 0; index <= 24; index += 1){
+        let pixelValor = document.querySelectorAll("div .pixel")[index];
+        pixelValor.addEventListener("click", function(){
+        pixelValor.style.backgroundColor = choosenColor;
+        })
+    }
 }

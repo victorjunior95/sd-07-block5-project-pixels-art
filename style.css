@@ -1,10 +1,8 @@
-.color, .selected{
+.color{
     border: 1px solid black;
-    height: 50px;
-    width: 50px;
-    padding: 10px;
+    height: 40px;
+    width: 40px;
     display: inline-block;
-    font-size: 0px;
 }
 #color-black{
     background-color: black;
@@ -14,7 +12,7 @@
     background-color: green;
 }
 
-#color-purple{
+#color-pourple{
     background-color: purple;
 }
 
@@ -24,6 +22,7 @@
 
 #pixel-board{
     background-color: white;
+    display: table;
 }
 
 .pixel{
@@ -31,5 +30,15 @@
     height: 40px;
     width: 40px;
     background-color: white;
-    display: inline-block;
+    display: table-cell
 }
+
+.colorClass {
+    display: table-row
+}
+
+.selected{
+    display: inline-block;
+    border: solid black 1px;
+    width: 40px;
+    height: 40px;
