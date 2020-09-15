@@ -1,3 +1,15 @@
+window.onload = function () {
+  let randomColor = document.getElementsByClassName("color");
+  for (let indexColor = 1; indexColor < randomColor.length; indexColor += 1) {
+    let colorValueOne = Math.floor(Math.random() * 256);
+    let colorValueTwo = Math.floor(Math.random() * 256);
+    let colorValueThree = Math.floor(Math.random() * 256);
+    randomColor[
+      indexColor
+    ].style.backgroundColor = `rgb(${colorValueOne}, ${colorValueTwo}, ${colorValueThree})`;
+  }
+};
+
 let paint = document.getElementsByClassName("selected")[0];
 let background = window.getComputedStyle(paint).backgroundColor;
 let selectedColor = document.getElementById("color-palette");
