@@ -46,6 +46,15 @@ window.onload = function(){
     //Novo desafio
     btnVQV.addEventListener("click", function(){
         let inputNumb = document.getElementById("board-size");
+        if(inputNumb.value >= 50){
+            inputNumb.value = 50;
+        }
+        else if(inputNumb.value <= 5){
+            inputNumb.value = 5;
+        }
+        else{
+            inputNumb = inputNumb;
+        }
         let inputNumbQuad = (inputNumb.value * inputNumb.value);
         for(let divIndex = 0; divIndex < inputNumb.value; divIndex += 1){
             let linhaDiv = document.createElement("div");
