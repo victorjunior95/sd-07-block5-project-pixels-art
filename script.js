@@ -43,38 +43,34 @@ function makeBoard(number) {
       btnOrange.classList.remove('selected');
       btnOrchid.classList.remove('selected');
       btnBlue.classList.remove('selected');
-      color = window.getComputedStyle(btnBlack).getPropertyValue("background-color");
-      console.log(color);
+      color = window.getComputedStyle(btnBlack).getPropertyValue('background-color');
     });
     btnOrange.addEventListener('click', function () {
       btnOrange.classList.add('selected');
       btnBlack.classList.remove('selected');
       btnOrchid.classList.remove('selected');
       btnBlue.classList.remove('selected');
-      color = window.getComputedStyle(btnOrange).getPropertyValue("background-color");
-      console.log(color);
+      color = window.getComputedStyle(btnOrange).getPropertyValue('background-color');
     });
     btnOrchid.addEventListener('click', function () {
       btnOrchid.classList.add('selected');
       btnBlack.classList.remove('selected');
       btnOrange.classList.remove('selected');
       btnBlue.classList.remove('selected');
-      color = window.getComputedStyle(btnOrchid).getPropertyValue("background-color");
-      console.log(color);
+      color = window.getComputedStyle(btnOrchid).getPropertyValue('background-color');
     });
     btnBlue.addEventListener('click', function () {
       btnBlue.classList.add('selected');
       btnBlack.classList.remove('selected');
       btnOrchid.classList.remove('selected');
       btnOrange.classList.remove('selected');
-      color = window.getComputedStyle(btnBlue).getPropertyValue("background-color");
-      console.log(color);
+      color = window.getComputedStyle(btnBlue).getPropertyValue('background-color');
     });
 
 // trata evento acrescentar cor no quadradinho
 function trocaCor(){
-  document.querySelectorAll('.pixel').forEach((item) =>{
-    item.addEventListener('click', () =>{
+  document.querySelectorAll('.pixel').forEach((item) => {
+    item.addEventListener('click', () => {
       item.style.backgroundColor = color;
     })
   })
@@ -83,7 +79,7 @@ function trocaCor(){
 //  cria botão que limpa tudo
 let btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
-    document.querySelectorAll('.pixel').forEach((item) =>{
+    document.querySelectorAll('.pixel').forEach((item) => {
       item.style.backgroundColor = 'white';
       })
 })
