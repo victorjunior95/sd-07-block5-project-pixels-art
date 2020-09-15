@@ -66,6 +66,7 @@ window.onload = function(){
         }
         else if(inputNumb.value == 0){
             alert("Board inválido!");
+            inputNumb.value = 5;
         }
         else if(inputNumb.value <= 5){
             inputNumb.value = 5;
