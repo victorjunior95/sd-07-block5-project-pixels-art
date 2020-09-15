@@ -3,7 +3,7 @@ const generatorButton = document.querySelector('#generate-board');
 const board = document.querySelector('#pixel-board');
 const arrayColorOfPalette = document.querySelectorAll('.color');
 
-// const clear = document.querySelector('#clear-board');
+const clear = document.querySelector('#clear-board');
 
 let size = null;
 
@@ -101,20 +101,21 @@ function changeSelect (position) {
 function loopForPaint () {
   let pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
-    paint(pixels[index]);
+    paint(pixels, index);
   }
 }
 
-function paint (local) {
-  local.addEventListener('click', function () {
-    local.style.backgroundColor = currentColor;
+function paint (pixels, position) {
+  pixels[position].addEventListener('click', function () {
+    pixels[position].style.backgroundColor = currentColor;
   });
+  clearButton (pixels);
 }
 
-// clear.addEventListener('click', function () {
-//   for (let index = 0; index < pixel.length; index += 1) {
-//     pixel[index].style.backgroundColor = 'white';
-//   }
-// });
-
-// classList
+function clearButton (pixels) {
+  clear.addEventListener('click', function () {
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  });
+}
