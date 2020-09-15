@@ -20,3 +20,20 @@
 .color4 {
   background-color: yellow;
 }
+
+.pixel {
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+}
+
+.pixelBoard {
+  display: table;
+}
+
+.tr {
+  display: table-row;
+}
+.td {
+  display: table-cell;
+}
