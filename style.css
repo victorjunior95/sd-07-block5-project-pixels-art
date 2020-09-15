@@ -71,3 +71,7 @@ h1 , h2 {
 .blue {
   background-color: blue;
 }
+
+.selected {
+  border: 1px solid white;
+}

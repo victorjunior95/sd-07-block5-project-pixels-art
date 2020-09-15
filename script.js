@@ -1,5 +1,6 @@
 const linesCols = 5;
 const divPixelBoard = document.getElementById('pixel-board');
+const btnClearBoard = document.getElementById('clear-board');
 let selected = 'black';
 
 function createLines(numberOfLines) {
@@ -24,9 +25,15 @@ function fillLinesWithPixels(numberOfPixels) {
 
 function getColor() {
   const palletePixels = document.getElementsByClassName('pallete-pixel');
-  document.addEventListener('click', function (event) {
+  document.addEventListener(
+    'click',
+    function (event) {
       if (event.target.classList.contains('pallete-pixel')) {
-        for (let element = 0; element <= palletePixels.length - 1; element += 1) {
+        for (
+          let element = 0;
+          element <= palletePixels.length - 1;
+          element += 1
+        ) {
           palletePixels[element].classList.remove('selected');
         }
         event.target.className += ' selected';
@@ -38,15 +45,26 @@ function getColor() {
 }
 
 function paintPixel() {
-  document.addEventListener('click', function (event) {
+  document.addEventListener(
+    'click',
+    function (event) {
       if (event.target.classList.contains('pixel')) {
         event.target.style.backgroundColor = selected;
       }
-    }, false
-  ); 
+    },
+    false
+  );
+}
+
+function clearPixelBoard() {
+  const pixelBoard = document.getElementsByClassName('pixel');
+  for (let pixel = 0; pixel <= pixelBoard.length - 1; pixel += 1) {
+    pixelBoard[pixel].style.backgroundColor = 'white';
+  }
 }
 
 createLines(linesCols);
 fillLinesWithPixels(linesCols);
 getColor();
 paintPixel();
+btnClearBoard.addEventListener('click', clearPixelBoard);
