@@ -43,8 +43,16 @@ window.onload = function(){
         colorRed.classList.remove("selected");
         colorSelect = "black"
     });
+    //Colorindo o quadro inicial
+    for(let index = 0; index < 24; index += 1){ 
+        let pixelValor = document.querySelectorAll("div .pixel")[index];
+        pixelValor.addEventListener("click", function(){
+        pixelValor.style.backgroundColor = colorSelect;
+        });
+    }
     //Novo desafio
     btnVQV.addEventListener("click", function(){
+        //Checando o valor input
         let inputNumb = document.getElementById("board-size");
         if(inputNumb.value >= 50){
             inputNumb.value = 50;
@@ -58,6 +66,19 @@ window.onload = function(){
         else{
             inputNumb = inputNumb;
         }
+        //Excluindo div's antigas
+        let divTr4 = document.querySelectorAll("div .tr")[4];
+        divMother.removeChild(divTr4);
+        let divTr3 = document.querySelectorAll("div .tr")[3];
+        divMother.removeChild(divTr3);
+        let divTr2 = document.querySelectorAll("div .tr")[2];
+        divMother.removeChild(divTr2);
+        let divTr1 = document.querySelectorAll("div .tr")[1];
+        divMother.removeChild(divTr1);
+        let divTr0 = document.querySelectorAll("div .tr")[0];
+        divMother.removeChild(divTr0);
+        
+        //Criando div's e incluindo-as no quadro
         let inputNumbQuad = (inputNumb.value * inputNumb.value);
         for(let divIndex = 0; divIndex < inputNumb.value; divIndex += 1){
             let linhaDiv = document.createElement("div");
