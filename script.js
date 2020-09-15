@@ -1,5 +1,6 @@
 const linesCols = 5;
 const divPixelBoard = document.getElementById('pixel-board');
+let selected = 'black';
 
 function createLines(numberOfLines) {
   for (let lines = 1; lines <= numberOfLines; lines += 1) {
@@ -21,5 +22,31 @@ function fillLinesWithPixels(numberOfPixels) {
   }
 }
 
+function getColor() {
+  document.addEventListener(
+    'click',
+    function (event) {
+      if (event.target.classList.contains('pallete-pixel')) {
+        selected = event.target.id;
+      }
+    },
+    false
+  );
+}
+
+function paintPixel() {
+  document.addEventListener(
+    'click',
+    function (event) {
+      if (event.target.classList.contains('pixel')) {
+        event.target.style.backgroundColor = selected;
+      }
+    },
+    false
+  ); 
+}
+
 createLines(linesCols);
 fillLinesWithPixels(linesCols);
+getColor();
+paintPixel();
