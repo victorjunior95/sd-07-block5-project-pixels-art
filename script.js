@@ -23,6 +23,7 @@ function colorRandom(){
   return color;
 }
 
+
 function boardConstructor (size){
   for (let index = 0; index < size ; index += 1) {
     // Criando Linha
@@ -30,13 +31,18 @@ function boardConstructor (size){
     line.className = 'line'
     // Inserindo linha a div container
     draw.appendChild(line);
-  for(let indexY = 0; indexY < size; indexY += 1) {
-    // Criando pixel
-    let square = document.createElement('div');
-    square.className = 'pixel';
-    // Adcionando pixel a linha
-    line.appendChild(square);
-  }
+    for(let indexY = 0; indexY < size; indexY += 1) {
+      // Criando pixel
+      let square = document.createElement('div');
+      square.className = 'pixel';
+      // Adcionando pixel a linha
+      line.appendChild(square);
+
+      square.addEventListener('click', function (event) {
+        const selectd = document.querySelector('.selected');
+        event.target.style.backgroundColor = selectd.style.backgroundColor;
+      });
+    }
   }
 }
 
@@ -89,3 +95,18 @@ clear.addEventListener('click', function (){
       pixel[indexPixel].style.backgroundColor = 'white';
    }
 });
+
+// Selected color
+
+let selectColor = document.querySelectorAll('.color');
+
+for (let index in selectColor){
+  selectColor[index].addEventListener('click', function (event){
+    for(let colorIndex = 0; colorIndex < colorPalet.children.length; colorIndex += 1) {
+      colorPalet.children[colorIndex].className = 'color';
+    }
+    event.target.className += ' selected';
+  });
+}
+
+
