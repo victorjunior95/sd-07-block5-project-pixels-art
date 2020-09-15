@@ -76,6 +76,26 @@ button {
   border-radius: 0 50% 50% 0;
 }
 
+.clear {
+  background-color: rgb(58, 110, 165);
+  border: none;
+  border-radius: 20px;
+  color: rgb(235, 235, 235);
+  display: block;
+  height: 50px;
+  margin: auto;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  width: 200px;
+}
+
+.clear:hover {
+  background-color: rgb(255, 103, 0);
+  color: rgb(0, 78, 152);
+  font-weight: 900;
+}
+
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/repeat - display grid  mais no JS*/
 
 .board {
@@ -96,22 +116,4 @@ button {
   cursor: pointer;
   height: 40px;
   width: 40px;
-}
-
-.clear {
-  background-color: rgb(58, 110, 165);
-  border: none;
-  border-radius: 20px;
-  color: rgb(235, 235, 235);
-  height: 50px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  transition: 0.5s;
-  width: 200px;
-}
-
-.clear:hover {
-  background-color: rgb(255, 103, 0);
-  color: rgb(0, 78, 152);
-  font-weight: 900;
 }
