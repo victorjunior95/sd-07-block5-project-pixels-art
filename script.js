@@ -80,4 +80,9 @@ for(index = 0; index < boardSize.length; index += 1) {
   })
 }
 
+//cria botão que limpa tudo
+let btnClear = document.querySelector('#clear-board');
+btnClear.addEventListener('click', function () {
+  boardSize.style.backgroundColor ='white';
+})
 
