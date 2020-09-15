@@ -17,7 +17,9 @@ let clearAllBtn = document.querySelector('#clear-board');
 // Chama a função selected
 selected();
 // Chama a função clearAll
-clearAll ();
+clearAll();
+// Chama a função createEventPixel
+createEventPixel();
 // Adiciona um evento no input e retorna o valor digitado pelo usuário;
 boardSize.addEventListener('input', function () {
     boardSizeValue = document.querySelector('#board-size').value;
@@ -26,12 +28,12 @@ boardSize.addEventListener('input', function () {
 // Adiciona um evento ao botão btnGenerateBoard
 btnGenerateBoard.addEventListener('click', function () {
     // Se o valor de boardSizeValue for vazio retorna um alert
-    if (boardSizeValue == '') {
+    if (boardSizeValue === '') {
         alert('Board inválido!');
     }
     // Chama a função createBoard
     createBoard();
-})
+});
 // Função responsavel de criar o quadro chamando outras funções
 function createBoard () {
     deleteBoard();
