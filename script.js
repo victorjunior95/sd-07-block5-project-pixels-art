@@ -26,6 +26,7 @@ selectedColorBlack.addEventListener('click', function () {
 
   removeSelected();
   selectedColorBlack.classList.add('selected');
+  return selectedColorBlack.style.backgroundColor;
 });
 
 selectedColorRed.addEventListener('click', function () {
@@ -33,6 +34,7 @@ selectedColorRed.addEventListener('click', function () {
 
   removeSelected();
   selectedColorRed.classList.add('selected');
+  return selectedColorRed.style.backgroundColor;
 });
 
 selectedColorGreen.addEventListener('click', function () {
@@ -40,6 +42,7 @@ selectedColorGreen.addEventListener('click', function () {
 
   removeSelected();
   selectedColorGreen.classList.add('selected');
+  return selectedColorGreen.style.backgroundColor;
 });
 
 selectedColorYellow.addEventListener('click', function () {
@@ -47,4 +50,11 @@ selectedColorYellow.addEventListener('click', function () {
 
   removeSelected();
   selectedColorYellow.classList.add('selected');
+});
+
+const btn = document.getElementById('clear-board');
+const clear = document.getElementById('pixel-board');
+
+btn.addEventListener('click', function () {
+  clear.style.backgroundColor = 'white';
 });
