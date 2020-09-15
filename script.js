@@ -1,14 +1,9 @@
-//  trata evento criar o board e limpa-lo para o usuário colocar o número que quiser
-window.onload = function () {
-  makeBoard(5);
-};
 // cria botões para selecionar cor
 const btnBlack = document.querySelector('#black');
 const btnOrange = document.querySelector('#orange');
 const btnOrchid = document.querySelector('#orchid');
 const btnBlue = document.querySelector('#blue');
 let color = 'black';
-
 // trata evento selecionar elementos com cor
   btnBlack.addEventListener('click', function () {
     btnBlack.classList.add('selected');
@@ -41,13 +36,6 @@ let color = 'black';
 const pixelBoard = document.querySelector('#pixel-board');
 const buttonInput = document.querySelector('#generate-board');
 // trata evento acrescentar cor no quadradinho
-function trocaCor() {
-  document.querySelectorAll('.pixel').forEach((item) => {
-    item.addEventListener('click', () => {
-      item.style.backgroundColor = color;
-    });
-  });
-}
 function makeBoard(number) {
   pixelBoard.innerHTML = '';
   for (let lIndex = 0; lIndex < number; lIndex += 1) {
@@ -60,6 +48,18 @@ function makeBoard(number) {
       lPixelBoard.appendChild(pixel);
     } trocaCor();
   }
+}
+function trocaCor() {
+  document.querySelectorAll('.pixel').forEach((item) => {
+    item.addEventListener('click', () => {
+      item.style.backgroundColor = color;
+    });
+  });
+}
+//  trata evento criar o board com 5 pixel ao abrir a página
+window.onload = function () {
+  makeBoard(5);
+};
   buttonInput.addEventListener('click', function () {
   const numberInput = document.querySelector('#board-size').value;
   let number = numberInput;
@@ -73,7 +73,7 @@ function makeBoard(number) {
   } else {
     makeBoard(number);
   }
-})};
+});
 //  cria botão que limpa tudo
 const btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
