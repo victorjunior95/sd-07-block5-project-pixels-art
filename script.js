@@ -4,8 +4,8 @@ const inputSizeBoard = document.querySelector("#board-size");
 const buttonSizeBoard = document.querySelector("#generate-board");
 let getColor = "black";
 // console.log(inputSizeBoard);
-let numberLines = 0;
-let numberElements = 0;
+let numberLines = 5;
+let numberElements = 5;
 
 buttonSizeBoard.addEventListener("click", function () {
   if (inputSizeBoard.value == "") {
