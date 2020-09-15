@@ -97,14 +97,6 @@ sizeBoard.addEventListener('keydown', function (event) {
 
 generatorButton.addEventListener('click', createPixels);
 
-function loopForColor() {
-  for (let index = 0; index < arrayColorOfPalette.length; index += 1) {
-    getTheColor(index);
-  }
-}
-
-loopForColor();
-
 function changeSelect(position) {
   arrayColorOfPalette[position].classList.add('selected');
   for (let index = 0; index < arrayColorOfPalette.length; index += 1) {
@@ -121,6 +113,14 @@ function getTheColor(index) {
     changeSelect(index);
   });
 }
+
+function loopForColor() {
+  for (let index = 0; index < arrayColorOfPalette.length; index += 1) {
+    getTheColor(index);
+  }
+}
+
+loopForColor();
 
 clear.addEventListener('click', function () {
   board.style.backgroundColor = 'white';
