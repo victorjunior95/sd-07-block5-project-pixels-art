@@ -2,6 +2,14 @@ body {
   font-family: montserrat, sans-serif;
 }
 
+.title {
+  text-align: center;
+}
+
+.color-palete{
+  text-align: center;
+}
+
 .color {
   border: 1px solid black;
   display: inline-block;
@@ -23,4 +31,26 @@ body {
 
 .purple {
   background-color: purple;
+}
+
+.pixel-board {
+  display: inline-block;
+}
+
+.pixel-board > div {
+  display: table-row;
+}
+
+.pixel-board > div > div {
+  display: table-cell;
+}
+
+.pixel {
+  height: 38px;
+  width: 38px;
+  background-color: white;
+  border: 1px solid black;
+}
+.box {
+  text-align: center;
 }
