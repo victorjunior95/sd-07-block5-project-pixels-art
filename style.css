@@ -44,14 +44,11 @@ h1 {
   background-color: green;
 }
 
-.pixel-board {
-  background-color: salmon;
-}
-
 .pixel {
   background-color: white;
   border: 1px solid black;
   display: inline-block;
   height: 40px;
+  margin: -3px;
   width: 40px;
 }
