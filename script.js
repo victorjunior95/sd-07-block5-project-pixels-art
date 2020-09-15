@@ -39,7 +39,7 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
        paletteColor[aux].addEventListener('click', function () {
 
     for (let sel = 0; sel < paletteColor.length; sel += 1) {
-        if (paletteColor[sel].className === 'selected') {
+        if (paletteColor[sel].className === 'selected' || paletteColor[sel].className === 'color selected') {
             paletteColor[sel].className = 'color';
         }
     }
