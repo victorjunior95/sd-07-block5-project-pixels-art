@@ -71,11 +71,13 @@ buttonInput.addEventListener('click', function () {
 
 // trata evento acrescentar cor no quadradinho
 
-let boardSize = document.querySelectorAll('.pixel').length;
+let boardSize = document.querySelectorAll('.pixel');
 
-for(index = 0; index < boardSize; index += 1) {
+for(index = 0; index < boardSize.length; index += 1) {
   let selectedPixel = document.querySelectorAll('.pixel')[index];
   selectedPixel.addEventListener('click', function () {
     selectedPixel[index].style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
   })
 }
+
+
