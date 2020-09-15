@@ -60,7 +60,7 @@ window.onload = function () {
 
     /* Definindo tamanho do quadro de pixels pelo usuário */
     /* setNumberTable.addEventListener("click", setPixelBoardSize); */
-    setNumberTable.addEventListener("click", alertFunction);
+ /*    setNumberTable.addEventListener("click", alertFunction);
     setNumberTable.addEventListener("click", creatingPixelsLine);
     
     function alertFunction() {
@@ -83,7 +83,7 @@ window.onload = function () {
             let createPixel = document.createElement("div");
             createPixel.setAttribute("class", "pixel");
             /* https://developer.mozilla.org/pt-BR/docs/Web/API/Element/setAttribute */
-            father[index].appendChild(createPixel);
+            /* father[index].appendChild(createPixel);
         }
-    }
+    } */
 }
