@@ -1,7 +1,88 @@
+const select = document.querySelector('#color-palette');
+
+select.addEventListener('click', function () {
+  alert('Ok');
+  if (event.target.id == 'green' ) {
+    alert('green');
+    document.getElementById('black').className = 'color black';
+    document.getElementById('blue').className = 'color blue';
+    document.getElementById('yellow').className = 'color yellow';
+    document.getElementById('green').className = 'color green selected';
+
+  } else if (event.target.id == 'black') {
+    alert('black');
+    document.getElementById('black').className = 'color black selected';
+    document.getElementById('blue').className = 'color blue';
+    document.getElementById('yellow').className = 'color yellow';
+    document.getElementById('green').className = 'color green';
+    
+  } else if (event.target.id == 'blue') {
+    alert('blue');
+    document.getElementById('black').className = 'color black';
+    document.getElementById('blue').className = 'color blue selected';
+    document.getElementById('yellow').className = 'color yellow';
+    document.getElementById('green').className = 'color green';
+
+  } else if (event.target.id == 'yellow') {
+    alert('yellow');
+    document.getElementById('black').className = 'color black';
+    document.getElementById('blue').className = 'color blue';
+    document.getElementById('yellow').className = 'color yellow selected';
+    document.getElementById('green').className = 'color green';
+  }
+
+
+
+  
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 let blackPallete = 1;
 let bluePallete = 0;
 let yellowPallete = 0;
 let greenPallete = 0;
+
 
 function changeSize() {
   alert('Ok');
@@ -378,3 +459,4 @@ function twentyFive() {
     document.getElementById("twentyFive").style.backgroundColor = "green";
   }
 }
+*/
