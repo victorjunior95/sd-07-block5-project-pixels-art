@@ -3,7 +3,6 @@ const pixelBoard = document.querySelector("#pixel-board");
 const inputSizeBoard = document.querySelector("#board-size");
 const buttonSizeBoard = document.querySelector("#generate-board");
 let getColor = "black";
-// console.log(inputSizeBoard);
 let numberLines = 5;
 let numberElements = 5;
 
@@ -95,7 +94,7 @@ function changeColorPixel() {
   const myPixels = document.querySelectorAll(".pixel");
   for (let i = 0; i < myPixels.length; i += 1) {
     myPixels[i].addEventListener("click", function (event) {
-      const onePixel = event.target;
+      let onePixel = event.target;
       onePixel.style.backgroundColor = getColor;
       // console.log(getColor);
     });
