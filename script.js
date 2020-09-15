@@ -5,10 +5,10 @@ window.onload = function () {
     let setNumberTable = document.querySelector("#generate-board");
     let numberTable = document.querySelector("#board-size");
     let selectedColor = document.querySelector(".selected");
-    let color1 = document.querySelector("#black");
-    let color2 = document.querySelector("#orange");
-    let color3 = document.querySelector("#pink");
-    let color4 = document.querySelector("#blueviolet");
+    let color1 = document.querySelector(".black");
+    let color2 = document.querySelector(".orange");
+    let color3 = document.querySelector(".pink");
+    let color4 = document.querySelector(".blue");
 
     /* Mudar a cor selecionada */
     color1.addEventListener("click", setSelectedColor);
@@ -19,8 +19,9 @@ window.onload = function () {
     function setSelectedColor() {
         let setColor = event.target;
         if (selectedColor !== setColor) {
-            selectedColor.classList[2].remove("selected");
-            setColor.classList[2].add("selected");
+            selectedColor.classList.remove("selected");
+            setColor.classList.add("selected");
+            console.log(setColor);
         }
     }
 
@@ -31,10 +32,10 @@ window.onload = function () {
             board[index].addEventListener('click', paintPixels);
         }
     }
-
     function paintPixels() {
         let setPixel = event.target;
-        let paintColor = document.querySelector('.selected').classList[1];  
+        console.log(setPixel);
+        let paintColor = document.querySelector(".selected").classList[1];  
         setPixel.classList.add(paintColor);
         console.log(paintColor);
     }
