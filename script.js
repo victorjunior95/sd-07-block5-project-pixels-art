@@ -5,7 +5,6 @@ var yellow = document.querySelector(".yellow");
 var colors = document.getElementsByClassName("color");
 
 function selectorB () {
-    //encontrar elemento com 'selected'
     for (let i = 0; i < colors.length; i += 1) {
         colors[i].classList.remove("selected");
         console.log(colors[i])
@@ -17,7 +16,6 @@ function selectorB () {
 }
 
 function selectorG () {
-    //encontrar elemento com 'selected'
     for (let i = 0; i < colors.length; i += 1) {
         colors[i].classList.remove("selected");
         console.log(colors[i])
@@ -29,7 +27,6 @@ function selectorG () {
 }
 
 function selectorR () {
-    //encontrar elemento com 'selected'
     for (let i = 0; i < colors.length; i += 1) {
         colors[i].classList.remove("selected");
         console.log(colors[i])
@@ -41,7 +38,6 @@ function selectorR () {
 }
 
 function selectorY () {
-    //encontrar elemento com 'selected'
     for (let i = 0; i < colors.length; i += 1) {
         colors[i].classList.remove("selected");
         console.log(colors[i])
@@ -56,3 +52,5 @@ black.addEventListener('click', selectorB);
 green.addEventListener('click', selectorG);
 red.addEventListener('click', selectorR);
 yellow.addEventListener('click', selectorY);
+
+window.onload = selectorB;
