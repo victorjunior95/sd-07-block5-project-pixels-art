@@ -2,6 +2,7 @@ const sizeBoard = document.querySelector('#board-size');
 const generatorButton = document.querySelector('#generate-board');
 const board = document.querySelector('#pixel-board');
 const arrayColorOfPalette = document.querySelectorAll('.color');
+const pixels = document.querySelectorAll('.pixel');
 
 const clear = document.querySelector('#clear-board');
 
@@ -29,13 +30,19 @@ function returnOrClick() {
   generatorButton.addEventListener('click', createPixels);
 }
 
+function removeOldPixels() {
+  while (board.firstChild) {
+    board.removeChild(board.firstChild);
+  }
+}
+
 function createPixels() {
   size = parseInt(size);
 
+  removeOldPixels();
   // https://developer.cdn.mozilla.net/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/pow - potencia;
 
   // https://developer.mozilla.org/en-US/docs/Web/CSS/repeat - (criando a quantidade suficiente pra preencher o grid) display grid mais no CSS;
-
 
   for (let index = 1; index <= Math.pow(size, 2); index += 1) {
     const newPixel = document.createElement('div');
@@ -99,20 +106,19 @@ function changeSelect(position) {
 }
 
 function loopForPaint() {
-  const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
-    paint(pixels, index);
+    paint(index);
   }
 }
 
-function paint(pixels, position) {
+function paint(position) {
   pixels[position].addEventListener('click', function () {
     pixels[position].style.backgroundColor = currentColor;
   });
-  clearButton(pixels);
+  clearButton();
 }
 
-function clearButton(pixels) {
+function clearButton() {
   clear.addEventListener('click', function () {
     for (let index = 0; index < pixels.length; index += 1) {
       pixels[index].style.backgroundColor = 'white';

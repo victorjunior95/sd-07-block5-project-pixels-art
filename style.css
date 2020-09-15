@@ -94,10 +94,14 @@ button {
   display: grid;
   justify-content: center;
   margin: auto;
+  grid-template-columns: repeat(5, 40px);
+  grid-template-rows: repeat(5, 40px);
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
   cursor: pointer;
+  height: 40px;
+  width: 40px;
 }
