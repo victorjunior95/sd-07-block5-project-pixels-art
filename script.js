@@ -18,3 +18,13 @@ for (let i = 0; i < numberLines; i += 1) {
     }
 
 }
+
+
+for (let i = 0; i < color.length; i += 1) {
+    color[i].addEventListener("click", function() {
+        let selected = document.querySelector(".selected");
+        selected.classList.remove('selected');
+        color[i].classList.add('selected');
+
+    })
+}

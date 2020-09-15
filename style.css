@@ -3,6 +3,10 @@ h1 {
     text-align: center;
 }
 
+body {
+    margin: 0;
+}
+
 header {
     background-color: blue;
     width: 100%;
@@ -20,6 +24,7 @@ header {
     text-align: center;
     border: solid;
     border-color: black;
+    border-width: 1px;
     width: 100px;
     height: 100px;
 }
@@ -52,5 +57,5 @@ header {
     border-color: black;
     border-width: 1px;
     display: inline-block;
-    margin: 0;
+    margin: -4px;
 }
