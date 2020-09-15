@@ -63,23 +63,22 @@ window.onload = function () {
   makeBoard(5);
 };
   buttonInput.addEventListener('click', function () {
-  const numberInput = document.querySelector('#board-size').value;
-  let number = numberInput;
-  if (number === '') {
-    alert('Board inválido!');
-  }
-  else if (number < 5) {
-    makeBoard(5);
-  } else if (number > 50) {
-    makeBoard(50);
-  } else {
-    makeBoard(number);
-  }
-});
+    const numberInput = document.querySelector('#board-size').value;
+    const number = numberInput;
+    if (number === '') {
+      alert('Board inválido!');
+    } else if (number < 5) {
+      makeBoard(5);
+    } else if (number > 50) {
+      makeBoard(50);
+    } else {
+      makeBoard(number);
+    }
+  });
 //  cria botão que limpa tudo
 const btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
   document.querySelectorAll('.pixel').forEach((item) => {
-      item.style.backgroundColor = 'white';
-    });
+    item.style.backgroundColor = 'white';
+  });
 });
