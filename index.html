@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pixels Art</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script type="text/javascript" src="script.js"></script>
-    </head>
-    <body>
-        <header>
-            <h1 id="title">Paleta de Cores</h1>
-        </header>
-        <!--para colocar cada classe lado a lado usei dento da color-palette fotsize = 0, assim com o in line block elas se comportam como blocos-->
-        <section id="color-palette">
-            <div id="color-black" class="color selected"></div>
-            <div id="color-green" class="color"></div>
-            <div id="color-pourple" class="color"></div>
-            <div id="color-orange" class="color"></div>
-        </section>
-        <br>
-        <!--uma div para cada linha do meu quadro de pixels-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Paleta de Cores</h1>
+        <div id="color-palette" class="tools">
+            <div class="color1 color selected"></div>
+            <div class="color2 color"></div>
+            <div class="color3 color"></div>
+            <div class="color4 color"></div>
+        </div>
+    </header>
+    <main>
         <div id="pixel-board">
-            <div class="colorClass">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-            <div class="colorClass">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-            <div class="colorClass">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-            <div class="colorClass">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-            <div class="colorClass">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        </div>
-    </body>
 
+        </div>
+
+        <!-- <div id="pixel-board">
+            <div class="linha">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="linha">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="linha">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="linha">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="linha">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+        </div> -->
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+</body>
 </html>

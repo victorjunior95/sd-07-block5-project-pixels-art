@@ -1,45 +1,57 @@
-.color{
-    border: 1px solid black;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-}
-#color-black{
-    background-color: black;
-}
-
-#color-green{
+body {
+    margin: 0;
+  }
+  header {
+    background-color: blue;
+    height: 200px;
+    width: 100%;
+  }
+  h1 {
     background-color: green;
-}
-
-#color-pourple{
-    background-color: purple;
-}
-
-#color-orange{
-    background-color: orange;
-}
-
-#pixel-board{
-    background-color: white;
-    display: table;
-}
-
-.pixel{
-    border: 1px solid black;
-    height: 40px;
-    width: 40px;
-    background-color: white;
-    display: table-cell
-}
-
-.colorClass {
-    display: table-row
-}
-
-.selected {
+    margin: 0;
+    padding: 0;
+    display: block;
+    text-align: center;
+  }
+  .tools {
+    background-color: red;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .color {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
     display: inline-block;
-    border: solid black 1px;
-    width: 40px;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+  }
+  .color1 {
+    background-color: black;
+  }
+  .color2 {
+    background-color: blue;
+  }
+  .color3 {
+    background-color: green;
+  }
+  .color4 {
+    background-color: crimson;
+  }
+  #pixel-board {
+    background-color: blueviolet;
+    display: inline-block;
+  }
+  .pixel {
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
     height: 40px;
-}
+    width: 40px;
+    display: inline-block;
+    /* Pesquisar sobre display: grid */
+    /* https://www.origamid.com/projetos/css-grid-layout-guia-completo/  */
+    margin: -4px;
+  }

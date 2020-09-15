@@ -1,44 +1,36 @@
-window.onload = function () {
-    let black = document.getElementById("color-black");
-    let green = document.getElementById("color-green");
-    let pourple = document.getElementById("color-pourple");
-    let orange = document.getElementById("color-orange");
-    let pixel1 = document.getElementsByClassName("pixel")
-    let choosenColor = "color-black";
+let numberLines = 5;
+let pixelBoard = document.getElementById("pixel-board");
 
-    green.addEventListener('click', function () {
-        green.classList.add("slected");
-        black.classList.remove("slected");
-        pourple.classList.remove("slected");
-        orange.classList.remove("slected");
-        let choosenColor = "color-green";
+let pixel = [];
+let linha = [];
 
-    })
-    pourple.addEventListener('click', function () {
-        pourple.classList.add("slected");
-        black.classList.remove("slected");
-        green.classList.remove("slected");
-        orange.classList.remove("slected");
-        let choosenColor = "color-pourple";
-    })
-    orange.addEventListener('click', function () {
-        orange.classList.add("slected");
-        black.classList.remove("slected");
-        green.classList.remove("slected");
-        pourple.classList.remove("slected");
-        let choosenColor = "color-orange"
-    })
-    black.addEventListener('click', function () {
-        black.classList.add("slected");
-        orange.classList.remove("slected");
-        green.classList.remove("slected");
-        pourple.classList.remove("slected");
-        let choosenColor = "color-black";
-    })
-    for(let index = 0; pixel1.length <= 24; index += 1){
-        let pixelValor = document.getElementsByClassName("pixel")[index];
-        pixelValor.addEventListener("click", function(){
-        pixelValor.style.backgroundColor = choosenColor;
-        })
-    }
+let k = 0
+for (let i = 0; i < numberLines; i += 1) {
+  linha[i] = document.createElement("div");
+  linha[i].className = "linha"
+  pixelBoard.appendChild(linha[i]);
+
+  for(let j = 0; j < numberLines; j += 1) {
+    pixel[k] = document.createElement("div")
+    pixel[k].className = "pixel"
+    linha[i].appendChild(pixel[k])
+    k = k + 1;
+  }
+
+}
+
+let color = document.querySelectorAll(".color");
+
+//usar o indexOf é um método de busca dentro do array
+
+for (let i = 0; i < color.length; i += 1) {
+  color[i].addEventListener("click", function(event) {
+    let selected = document.querySelector(".selected")
+    //console.log(selected)
+    selected.classList.remove('selected');
+
+    //color[i].classList.add('selected');
+    event.target.className += " selected"
+
+  })
 }
