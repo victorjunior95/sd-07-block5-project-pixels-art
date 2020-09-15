@@ -52,10 +52,9 @@ button {
 .pixel {
   background-color: white;
   border: 1px solid black;
-  display: table-cell;
   cursor: pointer;
+  display: table-cell;
   height: 40px;
-  margin: 0;
   padding: 0;
   width: 40px;
 }

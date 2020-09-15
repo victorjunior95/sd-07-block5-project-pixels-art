@@ -4,7 +4,7 @@ const data = {
 };
 
 function changeSelectedColor(selectedColor) {
-  data.selectedColor = parseInt(selectedColor.id);
+  data.selectedColor = parseInt(selectedColor.id, 10);
   document.querySelectorAll('.color').forEach((color) => {
     if (color === selectedColor) {
       color.classList.add('selected');
