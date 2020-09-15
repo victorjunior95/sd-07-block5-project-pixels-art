@@ -42,10 +42,26 @@ Após selecionar uma outra cor na paleta, deve ser possível pintar os pixels co
 
 Somente o pixel que foi clicado deverá ser preenchido com a cor selecionada, sem influenciar na cor dos demais pixels.
 */
-let colorSelec = "black";
+let colorSelec = "black", pixelList;
 
 //Armazena div que contém a tabulação;
-let pixelBoard = document.getElementById("pixel-board");
+var pixelBoard = document.getElementById("pixel-board");
+var paleteColor = document.querySelectorAll("#color-palette div"); 
+
+
+function colorChange() {
+
+    
+
+};
+
+/*function setColor (coluna) {
+
+    let a = "#coluna" + toString(coluna);
+    console.log(a);
+    //console.log(pixelBoard.getElementById(a));
+
+};*/
  
 //Cria tabulação;
 function pixelsAndLines() { 
@@ -55,7 +71,7 @@ function pixelsAndLines() {
 
         //Criando linhas
         let linePixel = document.createElement('div');
-        linePixel.id = `#linha${i+1}`;
+        linePixel.className = `.linha${i+1}`;
         linePixel.style.height = '40px' ;
         pixelBoard.appendChild(linePixel);
         
@@ -71,6 +87,11 @@ function pixelsAndLines() {
             pixelElement.style.backgroundColor = 'white';
             pixelElement.style.border = '1px solid black' ;
             pixelElement.style.display = 'inline-block';
+            pixelElement.onclick = () => {
+
+                pixelElement.style.backgroundColor = colorSelec;
+
+            };
             //tentar link com css
 
             linePixel.appendChild(pixelElement);
@@ -78,7 +99,40 @@ function pixelsAndLines() {
         };
     
     };
-
+    
 };
 
+
+
+//Interações.
+/*function pixel() {
+
+// Puxa elementos botões em html e css.
+pixelList = pixelBoard.querySelectorAll('div > div');
+//for percorre lista de elementos botões
+for( let i = 0 ; i < pixelList.length ; i++ ) {
+    console.log(i);
+    pixelList[i].addEventListener('click', setColor);
+};
+
+};
+*/
+
+function events () {
+
+    for( let i = 0 ; i < paleteColor.length ; i++) {
+
+        paleteColor[i].addEventListener('click', () => {
+
+            colorSelec = paleteColor[i].id.replace("Color", "");
+
+        });
+
+    };
+
+
+
+}
+events ();
 document.addEventListener('onload', pixelsAndLines());
+//document.addEventListener('onload', pixel());
