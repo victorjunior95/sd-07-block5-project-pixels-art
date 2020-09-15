@@ -37,11 +37,11 @@ pixelboard.innerHTML += "</div>";
 // Note que o elemento que deverá receber a classe selected deve ser um dos elementos que possuem a classe color, como especificado no requisito 2.
 
 
-window.onload = function () { 
+// window.onload = function () { 
 
-    let paletas = document.getElementById("color-palette");
-    let paleta=[];
-    paleta[0] = paletas.firstElementChild;
-    paleta[0].className = "selected";
+//     let paletas = document.getElementById("color-palette");
+//     let paleta=[];
+//     paleta[0] = paletas.firstElementChild;
+//     paleta[0].className = "selected";
     
-}
+// }
