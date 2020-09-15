@@ -9,6 +9,11 @@ function criarCorAleatoria () {
     let G = gerarNumeros();
     let B = gerarNumeros();
     const RGB = `rgb(${R}, ${G}, ${B})`;
+    if (R == 255 && G == 255 && B == 255) { // se R = 255, se G = 255, se B = 255, estarei gerando novos números!
+        R = Math.ceil(Math.random() * 255);
+        G = Math.ceil(Math.random() * 255);
+        B = Math.ceil(Math.random() * 255);
+    }
     return RGB
 }
 
