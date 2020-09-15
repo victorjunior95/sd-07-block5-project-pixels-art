@@ -42,7 +42,6 @@ function changeColor() {
 }
 
 function changeCanvas() {
-  console.log(colorBrush);
   document.querySelectorAll('.pixel').forEach((canvasindex) => {
     canvasindex.addEventListener('click', (event) => {
       event.target.className = `pixel ${colorBrush}`;
@@ -63,20 +62,20 @@ function clearBoard() {
 }
 
 function reSizeBoard() {
-  let resBoard = document.querySelector('#generate-board');
+  const resBoard = document.querySelector('#generate-board');
   resBoard.addEventListener('click', function () {
-    newBoardSize = document.querySelector('#board-size');
+    const newBoardSize = document.querySelector('#board-size');
     if (newBoardSize.value < 5) {
-        boardSize = 5;
+      boardSize = 5;
     }
     if (newBoardSize.value > 50) {
-        boardSize = 50;
+      boardSize = 50;
     }
-    if (newBoardSize.value >= 5 && newBoardSize.value <=50) {
-        boardSize = newBoardSize.value
+    if (newBoardSize.value >= 5 && newBoardSize.value <= 50) {
+      boardSize = newBoardSize.value;
     }
     if (newBoardSize.value === '') {
-        alert('Board inválido!')
+      alert('Board inválido!')
     }
     colorBrush = 'black';
     createBoard(boardSize);
@@ -84,12 +83,12 @@ function reSizeBoard() {
     changeCanvas();
   });
 }
-  
-  window.onload = function () {
-    createBoard(boardSize);
-    changeColor();
-    changeCanvas();
 
-    clearBoard();
-    reSizeBoard();
-  };
+window.onload = function () {
+  createBoard(boardSize);
+  changeColor();
+  changeCanvas();
+
+  clearBoard();
+  reSizeBoard();
+};
