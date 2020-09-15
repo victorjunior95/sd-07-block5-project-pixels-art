@@ -14,19 +14,19 @@
   width: 40px;
 }
 
-#color1 {
+.palette0{
   background-color: black;
 }
 
-#color2 {
+.palette1 {
   background-color: red;
 }
 
-#color3 {
+.palette2 {
   background-color: blue;
 }
 
-#color4 {
+.palette3 {
   background-color: green;
 }
 

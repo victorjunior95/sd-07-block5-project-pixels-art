@@ -30,33 +30,33 @@ function createBoard() {
   }
   function currentColorToBlack() {
     currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color');
-    colorBlack.className = 'color selected';
-    colorOne.className = 'color';
-    colorTwo.className = 'color';
-    colorThree.className = 'color';
+    colorBlack.className = 'color palette0 selected';
+    colorOne.className = 'color palette1';
+    colorTwo.className = 'color palette2';
+    colorThree.className = 'color palette3';
   }
   function currentColorToOne() {
     currentColor = window.getComputedStyle(document.querySelector('#color2')).getPropertyValue('background-color');
-    colorOne.className = 'color selected';
-    colorBlack.className = 'color';
-    colorTwo.className = 'color';
-    colorThree.className = 'color';
+    colorOne.className = 'color palette1 selected';
+    colorBlack.className = 'color palette0';
+    colorTwo.className = 'color palette2';
+    colorThree.className = 'color palette3';
   }
 
   function currentColorToTwo() {
     currentColor = window.getComputedStyle(document.querySelector('#color3')).getPropertyValue('background-color');
-    colorTwo.className = 'color selected';
-    colorBlack.className = 'color';
-    colorOne.className = 'color';
-    colorThree.className = 'color';
+    colorTwo.className = 'color palette2 selected';
+    colorBlack.className = 'color palette0';
+    colorOne.className = 'color palette1';
+    colorThree.className = 'color palette3';
   }
 
   function currentColorToThree() {
     currentColor = window.getComputedStyle(document.querySelector('#color4')).getPropertyValue('background-color');
-    colorThree.className = 'color selected';
-    colorBlack.className = 'color';
-    colorOne.className = 'color';
-    colorTwo.className = 'color';
+    colorThree.className = 'color palette3 selected';
+    colorBlack.className = 'color palette0';
+    colorOne.className = 'color palette1';
+    colorTwo.className = 'color palette2';
   }
 
   const classPixel = document.querySelectorAll('.pixel');
