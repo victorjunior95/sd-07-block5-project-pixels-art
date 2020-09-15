@@ -10,9 +10,9 @@ header {
 
 h1 {
   background-color: gray;
-  text-align: center;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .tools {
@@ -24,8 +24,8 @@ h1 {
   border: 1px solid black;
   display: inline-block;
   height: 100px;
-  width: 100px;
   margin: 10px;
+  width: 100px;
 }
 
 .palette-one {
@@ -42,4 +42,16 @@ h1 {
 
 .palette-four {
   background-color: green;
+}
+
+.pixel-board {
+  background-color: salmon;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
 }
