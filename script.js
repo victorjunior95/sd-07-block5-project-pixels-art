@@ -1,4 +1,4 @@
-const linesCols = 12;
+const linesCols = 5;
 const palletePixels = document.getElementsByClassName('pallete-pixel');
 const divPixelBoard = document.getElementById('pixel-board');
 const btnClearBoard = document.getElementById('clear-board');
@@ -39,7 +39,7 @@ function getColor() {
         event.target.className += ' selected';
         selected = event.target.style.backgroundColor;
       }
-    }, false
+    }
   );
 }
 
@@ -50,7 +50,7 @@ function paintPixel() {
       if (event.target.classList.contains('pixel')) {
         event.target.style.backgroundColor = selected;
       }
-    }, false
+    }
   );
 }
 
