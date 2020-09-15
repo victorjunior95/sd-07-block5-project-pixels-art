@@ -33,9 +33,9 @@ let color = 'black';
     btnOrange.classList.remove('selected');
     color = window.getComputedStyle(btnBlue).getPropertyValue('background-color');
   });
+//  cria linhas e quadradinhos
 const pixelBoard = document.querySelector('#pixel-board');
 const buttonInput = document.querySelector('#generate-board');
-// trata evento acrescentar cor no quadradinho
 function makeBoard(number) {
   pixelBoard.innerHTML = '';
   for (let lIndex = 0; lIndex < number; lIndex += 1) {
@@ -49,6 +49,7 @@ function makeBoard(number) {
     } trocaCor();
   }
 }
+// trata evento acrescentar cor no quadradinho
 function trocaCor() {
   document.querySelectorAll('.pixel').forEach((item) => {
     item.addEventListener('click', () => {
