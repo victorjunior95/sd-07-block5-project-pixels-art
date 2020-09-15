@@ -44,7 +44,7 @@ window.onload = function(){
         colorSelect = "black"
     });
     //Colorindo o quadro inicial
-    for(let index = 0; index < 24; index += 1){ 
+    for(let index = 0; index < 25; index += 1){ 
         let pixelValor = document.querySelectorAll("div .pixel")[index];
         pixelValor.addEventListener("click", function(){
         pixelValor.style.backgroundColor = colorSelect;
