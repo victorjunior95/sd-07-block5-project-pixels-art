@@ -1,52 +1,56 @@
 <!DOCTYPE html>
-<html lang = "pt-br">
+<html lang = 'pt-br'>
     <head>
-        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset = "UTF-8">
+        <meta name = 'viewport' content='width=device-width, initial-scale=1.0'>
+        <meta charset = 'UTF-8'>
         <title>Paleta de Cores</title>
-        <link rel = "stylesheet" type = "text/css" href = "style.css" media = "screen">
+        <link rel = 'stylesheet' type = 'text/css' href = 'style.css' media = 'screen'>
     </head>
     <body>
             <h1 id = 'title'>Paleta de Cores</h1>
             <div id="color-palette" class=>
-                <div class="color selected"></div>
-                <div class="color"></div>
-                <div class="color"></div>
-                <div class="color"></div>
+                <div class='color selected'></div>
+                <div class='color'></div>
+                <div class='color'></div>
+                <div class='color'></div>
             </div>
             <div>
                 <button id = 'clear-board'>Limpar</button>
             </div>
+            <div>
+                <input id='board-size' type='number' name = 'vqv' min='5' max='50' required placeholder='5'>
+                <button id = 'generate-board'>VQV</button>
+            </div>
         <main id = 'pixel-board'>
-            <section class = 'center'>
+            <section class = 'line'>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
             </section>
-            <section class = 'center'>
+            <section class = 'line'>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
             </section>
-            <section class = 'center'>
+            <section class = 'line'>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
             </section>
-            <section class = 'center'>
+            <section class = 'lider'>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
             </section>
-            <section class = 'center'>
+            <section class = 'lider'>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
                 <div class = 'pixel'></div>
