@@ -1,0 +1,16 @@
+#pixel-board {
+    width: 200px;
+    height: 200px;
+}
+#preto {
+    background-color: black;
+}
+#color {
+    border: 1px solid black;
+}
+#pixel {
+    width: 40px;
+    height: 40px;
+    color: white;
+    border: 1px black;
+}
