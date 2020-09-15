@@ -31,3 +31,16 @@ body {
 .color4 {
     background: yellow;
 }
+.linha {
+    line-height: 0px;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+.coluna {
+    height: 40px;
+    width: 40px;
+    border: black 1px solid;
+    display: inline-block;
+    color: white;
+}
