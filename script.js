@@ -22,7 +22,7 @@ window.onload = function () {
     }
   }
 
-  createBoard();
+  // createBoard();
 
   function selectedColor() {
     for (let checker = 0; checker < document.getElementsByClassName('color').length; checker += 1) {
