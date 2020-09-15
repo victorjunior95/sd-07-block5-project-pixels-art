@@ -83,7 +83,7 @@ function updateColors() {
       let divs = event.target;
       getColor = divs.style.backgroundColor
       // getColor = divs.classList[1];
-      // console.log(getColor);
+      console.log(getColor);
     });
   }
 }
@@ -135,6 +135,7 @@ function paletteRandom () {
   let randomNumber2 = Math.round(Math.random()*1000000);
   let randomNumber3 = Math.round(Math.random()*1000000);
   let palette = document.querySelectorAll(".color");
+  palette[0].style.backgroundColor = "black";
   palette[1].style.backgroundColor = "#" + randomNumber1;
   palette[2].style.backgroundColor = "#" + randomNumber2;
   palette[3].style.backgroundColor = "#" + randomNumber3;
