@@ -18,11 +18,11 @@ botaoGerar.addEventListener('click', (event) => {
         inputNumber.value = 50;
     }
     number = inputNumber.value;
-    initial(number);
+    //initial(number);
 });
 
-initial(number);
-function initial(number) {
+//initial(number);
+//function initial(number) {
     for(let aux = 0; aux < number; aux += 1) {
     for (let index = 0; index < number; index += 1) {
         let pixels = document.createElement('div');
@@ -34,14 +34,27 @@ function initial(number) {
 }    
 
 const boardPixel = document.querySelectorAll('#pixel-board .pixel');
+
+    for(let index = 0; index < boardPixel.length; index += 1) {
+        boardPixel[index].addEventListener('click', function () {          
+            boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
+        });
+    }
+
     for (let aux = 0; aux < paletteColor.length; aux += 1) {
        paletteColor[aux].addEventListener('click', function () {
+
+    for (let sel = 0; sel < paletteColor.length; sel += 1) {
+        if (paletteColor[sel].className === 'selected') {
+            paletteColor[sel].className = 'color';
+        }
+    }
            paletteColor[aux].className = 'selected';
        if (paletteColor[aux].className === 'selected'){
          for(let index = 0; index < boardPixel.length; index += 1) {
             boardPixel[index].addEventListener('click', function () {
             boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;
-            paletteColor[aux].className = 'color';               
+            //paletteColor[aux].className = 'color';               
           });        
          }    
        }
@@ -54,4 +67,4 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
             boardPixel[index].style.backgroundColor = 'white';
         }
     });
-}
+//}
