@@ -63,7 +63,7 @@ h1 , h2 {
 }
 
 .button {
-  background-color: rgb(24 , 131 , 113);
+  background-color: rgb(24, 131, 113);
   border: none;
   border-radius: 8px;
   color: white;
@@ -79,5 +79,5 @@ h1 , h2 {
 
 .button:hover {
   background-color: cornflowerblue;
-  box-shadow: 0 12px 16px 0 rgba(0 , 0 , 0 , 0.24) , 0 17px 50px 0 rgba(0 , 0 , 0 , 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
