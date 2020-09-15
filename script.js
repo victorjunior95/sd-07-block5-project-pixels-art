@@ -92,7 +92,7 @@ window.onload = function () {
     paleta[0].className = "color selected";
 
     paleta[0].addEventListener("click", function() {
-        paleta[0].className = "selected";
+        paleta[0].className = "color selected";
         paleta[1].className = "color";
         paleta[2].className = "color";
         paleta[3].className = "color";
@@ -101,7 +101,7 @@ window.onload = function () {
     });
 
     paleta[1].addEventListener("click", function() {
-        paleta[1].className = "selected";
+        paleta[1].className = "color selected";
         paleta[0].className = "color";
         paleta[2].className = "color";
         paleta[3].className = "color";
@@ -109,7 +109,7 @@ window.onload = function () {
     });
 
     paleta[2].addEventListener("click", function() {
-        paleta[2].className = "selected";
+        paleta[2].className = "color selected";
         paleta[1].className = "color";
         paleta[0].className = "color";
         paleta[3].className = "color";
@@ -117,7 +117,7 @@ window.onload = function () {
     });
 
     paleta[3].addEventListener("click", function() {
-        paleta[3].className = "selected";
+        paleta[3].className = "color selected";
         paleta[1].className = "color";
         paleta[2].className = "color";
         paleta[0].className = "color";
