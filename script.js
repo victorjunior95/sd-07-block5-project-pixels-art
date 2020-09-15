@@ -69,7 +69,6 @@ window.onload = function () {
   }
 
   //Função para apagar as cores do quadro:
-
   let button = document.getElementById("clear-board");
 
   function eraseAll() {
@@ -80,6 +79,7 @@ window.onload = function () {
 
   button.addEventListener('click', eraseAll);
 
+  //Criando o quadro dinamicamente:
   let body = document.querySelector(".table");
 
   for (let i = 0; i <= arrayColors.length; i++) {
@@ -94,7 +94,6 @@ window.onload = function () {
   }
 
   //Função para mudar a cor:
-
   let lines = document.querySelectorAll(".pixel");
 
   function changeColor(event) {
@@ -104,4 +103,50 @@ window.onload = function () {
   for (let index = 0; index < lines.length; index++) {
     lines[index].addEventListener("click", changeColor);
   }
+
+  //Função para gerar um quadro no tamanho que o usuário solicitar:
+
+  let button2 = document.getElementById("generate-board");
+  let inputSizeNumber = document.getElementById("board-size");
+
+  button2.addEventListener('click', function () {
+
+    if (inputSizeNumber.value <= 0) {
+      return alert('Board inválido!');
+    }
+    if (inputSizeNumber.value < 5) {
+      inputSizeNumber.value = 5;
+    }
+    if (inputSizeNumber.value > 50) {
+      inputSizeNumber.value = 50*50;
+    }
+
+    while (body.firstChild) {
+      body.removeChild(body.firstChild);
+    }
+
+    for (let i = 0; i < inputSizeNumber.value; i++) {
+      let boxLine = document.createElement("div");
+      boxLine.className = "tr";
+      body.appendChild(boxLine);
+      for (let j = 0; j < inputSizeNumber.value; j++) {
+        let boxCol = document.createElement("div");
+        boxCol.className = "pixel"
+        boxLine.appendChild(boxCol);
+        boxCol.style.backgroundColor = "white";
+      }
+    }
+
+    let lines = document.querySelectorAll(".pixel");
+
+    function changeColor(event) {
+      event.target.style.backgroundColor = selectedColor;
+    }
+
+    for (let index = 0; index < lines.length; index++) {
+      lines[index].addEventListener("click", changeColor);
+    }
+  })
+
+
 }
