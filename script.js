@@ -82,67 +82,67 @@ function createBoard() {
 createBoard();
 
 function randomColorOne() {
-    const randomBetween = (min, max) => min + Math.floor(Math.random() * ((max - min) + 1));
-    const r = randomBetween(0, 255);
-    const g = randomBetween(0, 255);
-    const b = randomBetween(0, 255);
-    const rgb = `rgb(${r},${g},${b})`;
-    colorOne.style.background = rgb;
+  const randomBetween = (min, max) => min + Math.floor(Math.random() * ((max - min) + 1));
+  const r = randomBetween(0, 255);
+  const g = randomBetween(0, 255);
+  const b = randomBetween(0, 255);
+  const rgb = `rgb(${r},${g},${b})`;
+  colorOne.style.background = rgb;
 }
 randomColorOne();
 
 function randomColorTwo() {
-    const randomBetween = (min, max) => min + Math.floor(Math.random() * ((max - min) + 1));
-    const r = randomBetween(0, 255);
-    const g = randomBetween(0, 255);
-    const b = randomBetween(0, 255);
-    const rgb = `rgb(${r},${g},${b})`;
-    colorTwo.style.background = rgb;
-  }
+  const randomBetween = (min, max) => min + Math.floor(Math.random() * ((max - min) + 1));
+  const r = randomBetween(0, 255);
+  const g = randomBetween(0, 255);
+  const b = randomBetween(0, 255);
+  const rgb = `rgb(${r},${g},${b})`;
+  colorTwo.style.background = rgb;
+}
 randomColorTwo();
 
 function randomColorThree() {
-    const randomBetween = (min, max) => min + Math.floor(Math.random() * ((max - min) + 1));
-    const r = randomBetween(0, 255);
-    const g = randomBetween(0, 255);
-    const b = randomBetween(0, 255);
-    const rgb = `rgb(${r},${g},${b})`;
-    colorThree.style.background = rgb;
+  const randomBetween = (min, max) => min + Math.floor(Math.random() * ((max - min) + 1));
+  const r = randomBetween(0, 255);
+  const g = randomBetween(0, 255);
+  const b = randomBetween(0, 255);
+  const rgb = `rgb(${r},${g},${b})`;
+  colorThree.style.background = rgb;
 }
 randomColorThree();
 
 
 function ArrayNew() {
-    myArray = [];
-    for (let index = 0; index < boardSize.value; index += 1) {
+  myArray = [];
+  for (let index = 0; index < boardSize.value; index += 1) {
       myArray.push([]);
       for (let index2 = 0; index2 < boardSize.value; index2 += 1) {
-          myArray[index].push(3);
-        }
+        myArray[index].push(3);
+      }
     }
-    boardSize.value = '';
-    currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color')
-    createBoard();
-  }
+  boardSize.value = '';
+  currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color');
+  createBoard();
+}
 
 function checkBoardSize() {
-    if (boardSize.value === '') {
-      boardSize.value = 5
+  if (boardSize.value === '') {
+      boardSize.value = 5;
       alert('Board inválido!');
-        } else if (boardSize.value < 5) {
+    } else if (boardSize.value < 5) {
           boardSize.value = 5;
         } else if (boardSize.value > 50) {
           boardSize.value = 50;
         }
-return boardSize.value
+  return boardSize.value
 }
 
-  function removewBoard() {
-    checkBoardSize()
+function removewBoard() {
+    checkBoardSize();
     while (divPixelBoard.firstChild) {
-        divPixelBoard.removeChild(divPixelBoard.firstChild);
+      divPixelBoard.removeChild(divPixelBoard.firstChild);
     }
-ArrayNew()
-}
+    ArrayNew()
+  }
 
-generateBoard.addEventListener('click', removewBoard)
+generateBoard.addEventListener('click', removewBoard);
