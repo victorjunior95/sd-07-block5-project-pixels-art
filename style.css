@@ -60,5 +60,6 @@ h1 {
   width: 40px;
   display: inline-block;
   /* Pesquisar sobre display: grid */
+  /* https://www.origamid.com/projetos/css-grid-layout-guia-completo/  */
   margin: -4px;
 }
