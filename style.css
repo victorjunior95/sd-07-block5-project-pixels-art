@@ -45,14 +45,13 @@ body {
 
 .line {
     margin: auto;
-    height: 50px;
+    height: 41px;
     text-align: center;
 }
 
 .pixel {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border: solid 1px black;
     display: inline-block;
-    box-sizing: border-box;
 }
