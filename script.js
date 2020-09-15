@@ -1,6 +1,7 @@
 
 let cores = document.querySelectorAll(".color");
-let background;
+let selectedColor = document.querySelector(".selected");
+let background = getComputedStyle(selectedColor).backgroundColor;// porque tem que separar em dois?
 for (let i=0; i<cores.length; i+= 1) {
     cores[i].addEventListener("click",pegaCor);
     function pegaCor() {
@@ -24,5 +25,7 @@ for (let i=0; i<caixas.length; i+= 1) {
 function cleanBoard() {
     for (let i=0; i<caixas.length; i+= 1) {
         caixas[i].style.backgroundColor = document.querySelector("#pixel-board").style.backgroundColor;
+        //porque aqui não teve que separar?
+        // porque ele não aceita: caixas[i].style.backgroundColor = white;?
     }
 }
