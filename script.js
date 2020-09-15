@@ -40,12 +40,20 @@ window.onload = function () {
 
         aux = document.createElement("div");
         aux.className = "color";
-        aux.style.backgroundColor = colors[i];
+        if (colors[i] == "black") {
+
+            aux.style.backgroundColor = colors[i]+" selected";
+        }
+        else
+        {
+            aux.style.backgroundColor = colors[i];
+        }        
         colorpalette.appendChild(aux);
+
+        
     }
 
-    aux = document.querySelectorAll(".color")[0];
-    aux.className = "selected";
+
 
     aux = "";
 
