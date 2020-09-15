@@ -34,11 +34,11 @@ btnBlue.addEventListener('click', function () {
   color = window.getComputedStyle(btnBlue).getPropertyValue('background-color');
 });
 //  trata evento acrescentar cor no quadradinho
-let board = document.getElementsByClassName('pixel');
+const board = document.getElementsByClassName('pixel');
 function trocaCor() {
   for (let index = 0; index < board.length; index += 1) {
     board[index].addEventListener('click', function () {
-    board[index].style.backgroundColor = color;
+      board[index].style.backgroundColor = color;
     });
   }
 }
