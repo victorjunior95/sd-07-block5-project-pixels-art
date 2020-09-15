@@ -14,10 +14,8 @@ blue.style.backgroundColor = 'blue';
 
 
 //Drawing the pixel board;
-function initialPixelBoard() {
-  let boardSize = 5;
-  let pixelBoard = document.querySelector('.pixel-board');
-
+function initialPixelBoard(boardSize) {
+  const pixelBoard = document.querySelector('.pixel-board');
   for (let rows = 0; rows < boardSize; rows += 1) {
     
     let pixelRow = document.createElement('div');
@@ -49,6 +47,7 @@ function gettingTheColors() {
 
 function paintTheBoard() {
   const pixels = document.querySelectorAll('.pixel');
+
   for (const cell of pixels) {
     cell.addEventListener('click', function () {
       event.target.style.backgroundColor = selected.style.backgroundColor;
@@ -59,20 +58,32 @@ function paintTheBoard() {
 
 //User-generated border
 function userBoard() {
-  //const userBoardSize = document.getElementById('board-size').value;
-  const userBoard = document.querySelector('.pixel-board');
+  const pixelBoard = document.querySelector('.pixel-board');
   const generateBoard = document.querySelector('#generate-board');
 
   generateBoard.addEventListener('click', function () {
 
     let userBoardSize = document.getElementById('board-size');
 
-    if (userBoardSize.value >= 0 && userBoardSize.value < 5 ) {
+    if (userBoardSize.value == '') {
+      alert('Board inválido');
+    } else if (userBoardSize.value >= 0 && userBoardSize.value <5){
       userBoardSize.stepUp(5 - userBoardSize.value);
     } else if (userBoardSize.value > 50) {
       userBoardSize.stepDown(userBoardSize.value - 50);
-    }
+    };
 
+    // if (userBoardSize.value >= 0 && userBoardSize.value < 5 ) {
+    //   userBoardSize.stepUp(5 - userBoardSize.value); 
+    // } else if (userBoardSize.value > 50) {
+    //   userBoardSize.stepDown(userBoardSize.value - 50);
+    // } else if (userBoardSize.value === '') {
+    //   alert('Board inválido!');
+    // };
+    pixelBoard.innerHTML = '';
+    initialPixelBoard(userBoardSize.value);
+    gettingTheColors();
+    paintTheBoard();
   });
 
 };
@@ -84,7 +95,7 @@ document.querySelector('#clear-board').addEventListener('click', function () {
   }
 });
 
-initialPixelBoard();
+initialPixelBoard(5);
 gettingTheColors();
 paintTheBoard();
 
