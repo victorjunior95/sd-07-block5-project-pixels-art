@@ -47,27 +47,30 @@ for (let i = 0; i < paintPixels.length; i += 1) {
 }
 
 function sizeBoard() {
-  let inputValue = Number(boardSize.value);
+  const inputValue = Number(boardSize.value);
+  let squareValue = 0;
   if (inputValue < 5) {
-    inputValue = 5;
+    squareValue = 5;
     fullBoard.style.gridTemplateColumns = 'repeat(5, 1fr)';
     fullBoard.style.gridTemplatesRows = 'repeat(5, 1fr)';
     fullBoard.style.height = '200px';
     fullBoard.style.width = '200px';
   } else if (inputValue < 50) {
+    squareValue = inputValue;
     const heightAndWidth = inputValue * 40;
     fullBoard.style.gridTemplateColumns = `repeat(${inputValue}, 1fr)`;
     fullBoard.style.gridTemplateRows = `repeat(${inputValue}, 1fr)`;
     fullBoard.style.height = `${heightAndWidth}`;
     fullBoard.style.width = `${heightAndWidth}`;
     console.log(heightAndWidth);
-  } else if (inputValue > 50) {
-    inputValue = 50;
+  } else {
+    squareValue = 50;
     fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
     fullBoard.style.gridTemplateRows = 'repeat(50, 1fr)';
     fullBoard.style.height = '2000px';
     fullBoard.style.width = '2000px';
   }
+  return squareValue;
 }
 
 function generateAlert() {
@@ -86,9 +89,8 @@ function createNewBoard() {
 
 function generateBoard() {
   generateAlert();
-  createNewBoard();
-  sizeBoard();
-  const inputValue = Number(boardSize.value);
+  createNewBoard();  
+  const inputValue = sizeBoard();
   const numberOfPixels = Math.pow(inputValue, 2);
   for (let i = 1; i <= numberOfPixels; i += 1) {
     const square = document.createElement('div');
