@@ -38,10 +38,6 @@
   margin-left: 30px;
 }
 
-.line {
-  display: inline-block;
-}
-
 .pixel {
   border: black 1px solid;
   padding: 10px;
@@ -49,4 +45,5 @@
   height: 40px;
   background-color: white;
   float: inline-start;
+  display: inline-block;
 }
