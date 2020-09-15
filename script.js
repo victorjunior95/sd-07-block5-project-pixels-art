@@ -1,14 +1,14 @@
 // Adding palette colors via script
 const colorPalette = document.querySelector('#color-palette');
 
-// Generate random color for palette colors
-function genRandomColor() {
-  return `rgb(${randomNumber0to255()}, ${randomNumber0to255()}, ${randomNumber0to255()})`;
-}
-
 // Random number generator from 0 to 255
 function randomNumber0to255() {
   return Math.round(Math.random() * 255);
+}
+
+// Generate random color for palette colors
+function genRandomColor() {
+  return `rgb(${randomNumber0to255()}, ${randomNumber0to255()}, ${randomNumber0to255()})`;
 }
 
 const colors = ['black', genRandomColor(), genRandomColor(), genRandomColor()];
