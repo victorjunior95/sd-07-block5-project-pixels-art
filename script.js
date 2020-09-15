@@ -35,13 +35,14 @@ resetPixel.addEventListener("click", function () {
 buttonVqv.addEventListener("click", function () {
   // console.log(sizeBoard.value)
   if (sizeBoard.value == "") {
-    alert("Board inválido");
+    alert("Board inválido!");
+    return;
   } else if (sizeBoard.value <= 5) {
     sizeBoard.value = 5;
   } else if (sizeBoard.value >= 50) {
     sizeBoard.value = 50;
   }
-  console.log(sizeBoard.value)
+  console.log(sizeBoard.value);
 
   while (document.querySelector("#pixel-board").firstChild) {
     document
