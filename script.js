@@ -4,6 +4,20 @@ const clearBoard = document.querySelector('.clear-board');
 const buttonGenerateBoard = document.querySelector('.generate-board');
 let numberOfLinesAndColunms = 5;
 
+for (let index = 0; index < colors.length; index += 1) {
+  let RGB1 = Math.ceil(Math.random() * 255);
+  let RGB2 = Math.ceil(Math.random() * 255);
+  let RGB3 = Math.ceil(Math.random() * 255);
+
+  if (index === 0) {
+    colors[index].style.backgroundColor = 'black'
+  } else {
+  colors[index].style.backgroundColor = `rgb(${RGB1},${RGB2},${RGB3})`
+  }
+}
+
+
+
 function makeBoard(numberOfLinesAndColunms) {
   for (let index = 0; index < numberOfLinesAndColunms; index += 1) {
       let tr = document.createElement('div');
@@ -28,7 +42,7 @@ function classTD(td) {
 }; 
 
 colors.forEach(item => {
-  item.addEventListener('click', function(event) {
+    item.addEventListener('click', function(event) {
     event.target.classList.add('selected');
      colors.forEach(item => {
         if (item !== event.target) {
@@ -70,5 +84,5 @@ buttonGenerateBoard.addEventListener('click', function() {
 clearBoard.addEventListener('click', function() {
   pixels.forEach(item => {
     item.style.backgroundColor = 'white';
-  })
+  });
 });
