@@ -49,6 +49,8 @@ h1 {
 #pixel-board {
   background-color: blueviolet;
   display: inline-block;
+  height: 200px;
+  width: 200px;
 }
 
 .pixel {
