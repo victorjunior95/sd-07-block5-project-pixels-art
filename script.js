@@ -14,27 +14,16 @@ const color = document.querySelectorAll('.color');
 let selectedDiv = document.querySelector('.selected');
 // Seleciona o button com id #clear-board
 let clearAllBtn = document.querySelector('#clear-board');
-// Chama a função createEventPixel
-createEventPixel();
 // Adiciona um evento no input e retorna o valor digitado pelo usuário;
 boardSize.addEventListener('input', function () {
   boardSizeValue = document.querySelector('#board-size').value;
   return boardSizeValue;
 });
-// Adiciona um evento ao botão btnGenerateBoard
-btnGenerateBoard.addEventListener('click', function () {
-  // Se o valor de boardSizeValue for vazio retorna um alert
-  if (boardSizeValue === '') {
-    alert('Board inválido!');
-  }
-  // Chama a função createBoard
-  createBoard();
-});
 // Função responsável por criar as linhas
-function createLine () {
-  for (let i = 0; i < parseInt(boardSizeValue); i += 1) {
+function createLine() {
+  for (let i = 0; i < parseInt(boardSizeValue,0); i += 1) {
     // Cria um elemento div e atrubui a classe e id line
-    let line = document.createElement('div');
+    const line = document.createElement('div');
     line.className = 'line';
     line.id = 'line';
     // Adiciona a div criada a pixelBoard
@@ -42,13 +31,13 @@ function createLine () {
   }
 }
 // Função responsável por criar cada pixel em cada linha
-function createPixel () {
+function createPixel() {
   // Seleciona todas as divs com classe line
-  let line = document.querySelectorAll('.line');
+  const line = document.querySelectorAll('.line');
   for (let i = 0; i < line.length; i += 1) {
     for (let j = 0; j < line.length; j += 1) {
       // criando um uma div e atribuindo a classe pixel
-      let pixelMaker = document.createElement('div');
+      const pixelMaker = document.createElement('div');
       pixelMaker.className = 'pixel';
       // Adiciona a div criada na linha selecionada
       line[j].appendChild(pixelMaker);
@@ -56,13 +45,13 @@ function createPixel () {
   }
 }
 // Função responsável por apagar o quadro
-function deleteBoard () {
-    // Enquanto pixelBoard tiver algum filho será deletado o primeiro filho
-    while (pixelBoard.hasChildNodes()) {
-        pixelBoard.removeChild(pixelBoard.childNodes[0])
-    }
+function deleteBoard() {
+  // Enquanto pixelBoard tiver algum filho será deletado o primeiro filho
+  while (pixelBoard.hasChildNodes()) {
+    pixelBoard.removeChild(pixelBoard.childNodes[0]);
+  }
 }
-function createEventPixel () {
+function createEventPixel() {
   // Atualiza a variavel allPixels
   allPixels = document.querySelectorAll('.pixel');
   for (let j = 0; j < allPixels.length; j += 1) {
@@ -75,15 +64,26 @@ function createEventPixel () {
     });
   }
 }
+// Chama a função createEventPixel
+createEventPixel();
 // Função responsavel de criar o quadro chamando outras funções
-function createBoard () {
+function createBoard() {
   deleteBoard();
   createLine();
   createPixel();
   createEventPixel();
 }
+// Adiciona um evento ao botão btnGenerateBoard
+btnGenerateBoard.addEventListener('click', function () {
+    // Se o valor de boardSizeValue for vazio retorna um alert
+    if (boardSizeValue === '') {
+      alert('Board inválido!');
+    }
+    // Chama a função createBoard
+    createBoard();
+  });
 // Função responsável por selecionar a cor
-function selected () {
+function selected() {
   for (let i = 0; i < color.length; i += 1) {
     // Cria um evento em cada div com classe color
     color[i].addEventListener('click', function () {
@@ -99,7 +99,7 @@ function selected () {
 // Chama a função selected
 selected();
 // Função responsável por limpar o quadro
-function clearAll () {
+function clearAll() {
   // Atualiza a variavel clearAllBtn
   clearAllBtn = document.querySelector('#clear-board');
   // Adiciona um evento a clearAllBtn
