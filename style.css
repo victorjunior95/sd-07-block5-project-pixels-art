@@ -23,3 +23,17 @@
 .colorPalette .green{
   background: green;
 }
+
+.pixel-board{
+  text-align:center;
+}
+
+.pixel{
+  background-color: white;
+  border:black solid 1px;
+  display: table-cell;
+  border-collapse: collapse;
+  height: 40px;
+  width: 40px;
+
+}
