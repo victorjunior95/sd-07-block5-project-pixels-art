@@ -18,12 +18,11 @@ const generateBoard = document.querySelector('#generate-board');
 const boardSize = document.querySelector('#board-size');
 
 function createBoard() {
-    let index;
-    for (index = 0; index < myArray.length; index += 1) {
+    for (let index = 0; index < myArray.length; index += 1) {
         const container = document.createElement('div');
         container.className = 'container';
         divPixelBoard.appendChild(container);
-        for (index2 = 0; index2 < myArray[index].length; index2 += 1) {
+        for (let index2 = 0; index2 < myArray[index].length; index2 += 1) {
             const divPixel = document.createElement('div');
             divPixel.className = 'pixel';
             container.appendChild(divPixel);
@@ -116,9 +115,9 @@ randomColorThree()
 
 function ArrayNew(){
     myArray = []
-    for (index = 0; index < boardSize.value ; index += 1){
+    for (let index = 0; index < boardSize.value ; index += 1){
         myArray.push([])
-        for (index2 = 0; index2 < boardSize.value; index2 += 1){
+        for (let index2 = 0; index2 < boardSize.value; index2 += 1){
             myArray[index].push(3)
             }
             }
