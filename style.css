@@ -1,8 +1,8 @@
 .color {
     display: inline-block;
     border: black solid 1px;
-    height: 70px;
-    width: 70px;
+    height: 40px;
+    width: 40px;
     position: relative;
 }
 
@@ -20,4 +20,16 @@
 
 #color4 {
     background-color: green;
+}
+
+.pixel {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border: black solid 1px;
+}
+
+.linhas {
+    display: block;
 }
