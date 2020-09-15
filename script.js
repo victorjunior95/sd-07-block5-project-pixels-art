@@ -3,13 +3,20 @@ for (let i = 0; i < 4; i += 1) {
   const colorPalette = document.getElementById('color-palette');
   const colorDiv = document.createElement('div');
   colorPalette.appendChild(colorDiv);
+  
 
   const arrayOfColors = ['black', 'salmon', 'green', 'blue'];
   for (let j = 0; j < arrayOfColors.length; j += 1) {
     if (i === j) {
       colorDiv.className = `color ${arrayOfColors[j]}`;
-    }
+    } 
   }
+
+  if (colorDiv.classList.contains('black')) {
+    colorDiv.className += ' selected';
+  }
+
+  colorDiv.addEventListener('click', selectedColor);
 };
 
 // Cria o quadro de pixels
@@ -18,6 +25,7 @@ window.onload = function () {
   function createBox() {
     const box = document.createElement('div');
     box.className = 'pixel';
+    box.addEventListener('click', paintPixel);
     return box;
   }
   for (let i = 0; i < 5; i += 1) {
@@ -31,30 +39,20 @@ window.onload = function () {
 };
 
 // Seleciona a cor para pintar o pixel
-let selectedColor = document.querySelectorAll('.color');
-for (let index = 0; index < selectedColor.length; index += 1) {
-  if (selectedColor[index].className === 'color black') {
-    selectedColor[index].className += ' selected';
-  }
+
+let color = 'black';
+function selectedColor(event) {
+  let divSelected = document.querySelector('.selected');
+  color = window.getComputedStyle(event.target).getPropertyValue('background-color');
+  divSelected.classList.remove('selected');
+  event.target.classList.add('selected');
 }
 
-function pickedColor() {
-  let pickColor = document.querySelector('.selected');
-  let color = window.getComputedStyle(pickColor).getPropertyValue('background-color');
+// Pinta o pixel
 
+function paintPixel(event) {
+  event.target.style.backgroundColor = color;
 }
-
-// let pickColor = selectedColor;
-// pickColor.addEventListener('click', pickedColor);
-
-// function paintPixel() {
-  
-//   let pickedPixel = document.querySelectorAll('pixel');
-//   pickedPixel.style.backgroundColor = pickedColor;
-// }
-
-// let pickedPix = document.querySelector('pixel');
-// pickedPix.addEventListener('click', paintPixel);
 
 // Reseta a cor branca dos pixels
 function turnWhite() {
