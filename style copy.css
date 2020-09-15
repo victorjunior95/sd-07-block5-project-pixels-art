@@ -4,14 +4,20 @@
     display: inline-block;
     border: solid 1px black;
 }
-
-
+.black{
+    background-color: black;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.green{
+    background-color: green;
+}
 .white{
     background-color: white;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    border: solid 1px black;
 }
 .black, 
 .red, 
@@ -27,7 +33,4 @@ button {
     display: inline-block;
     border: solid 1px black;
     background-color: white;
-}
-.pixels-row{
-    height: 42px;
 }
