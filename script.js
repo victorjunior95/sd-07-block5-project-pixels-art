@@ -67,6 +67,15 @@ function createBasePixelBoard(parent) {
 }
 createBasePixelBoard(mainPage);
 
+function createButton(parent){
+  const buttonClear = document.createElement('button');
+  buttonClear.className = 'clear-board';
+  buttonClear.setAttribute('id',  'clear-board');
+  buttonClear.innerText = 'LIMPAR';
+  parent.appendChild(buttonClear);
+}
+createButton(mainPage);
+
 function selectedColorClass() {
   document.body.addEventListener('click', function (event) {
     // Item atual selecionado
@@ -84,6 +93,14 @@ function selectedColorClass() {
     const isPixel = document.getElementById(idClicked).classList[0];
     if (isPixel === 'pixel') {
       elementClicked.style.backgroundColor = idSelected;
+    }
+    // Limpando a board
+    if (event.target.nodeName === 'BUTTON') {
+      let clearAllPixel = document.querySelectorAll('.pixel');
+      for (let index = 0; index < clearAllPixel.length; index += 1){
+        clearAllPixel[index].style.backgroundColor = 'white';
+        //console.log(clearAllPixel[index])
+      }
     }
   });
 }
