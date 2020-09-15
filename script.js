@@ -1,5 +1,7 @@
 window.onload = function () {
 
+  //Função para gerar paleta de cores aletória.
+
   function randomColor(parametro) {
     let firstNumber = Math.ceil(Math.random() * 255);
     let secondNumber = Math.ceil(Math.random() * 255);
@@ -9,7 +11,7 @@ window.onload = function () {
     return parametro = string;
   }
 
-  let colorGenerated = ";"
+  let colorGenerated = "";
 
   //Referência dos elementos .color.
   let arrayColors = document.querySelectorAll(".color");
@@ -66,18 +68,6 @@ window.onload = function () {
     }
   }
 
-  //Função para mudar a cor:
-
-  let lines = document.querySelectorAll(".pixel");
-
-  function changeColor(event) {
-    event.target.style.backgroundColor = selectedColor;
-  }
-
-  for (let index = 0; index < lines.length; index++) {
-    lines[index].addEventListener("click", changeColor);
-  }
-
   //Função para apagar as cores do quadro:
 
   let button = document.getElementById("clear-board");
@@ -90,11 +80,28 @@ window.onload = function () {
 
   button.addEventListener('click', eraseAll);
 
-  //Função para gerar paleta de cores aletória.
+  let body = document.querySelector(".table");
 
+  for (let i = 0; i <= arrayColors.length; i++) {
+    let boxLine = document.createElement("div");
+    boxLine.className = "tr";
+    body.appendChild(boxLine);
+    for (let j = 0; j <= arrayColors.length; j++) {
+      let boxCol = document.createElement("div");
+      boxCol.className = "pixel"
+      boxLine.appendChild(boxCol);
+    }
+  }
 
-  let firstNumber = Math.ceil(Math.random() * 255);
-  let secondNumber = Math.ceil(Math.random() * 255);
-  let thirdNumber = Math.ceil(Math.random() * 255);
-  
+  //Função para mudar a cor:
+
+  let lines = document.querySelectorAll(".pixel");
+
+  function changeColor(event) {
+    event.target.style.backgroundColor = selectedColor;
+  }
+
+  for (let index = 0; index < lines.length; index++) {
+    lines[index].addEventListener("click", changeColor);
+  }
 }
