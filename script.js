@@ -12,6 +12,7 @@ red.style.backgroundColor = 'red';
 green.style.backgroundColor = 'green';
 blue.style.backgroundColor = 'blue';
 
+
 //Drawing the pixel board;
 function initialPixelBoard() {
   let boardSize = 5;
@@ -54,6 +55,14 @@ function paintTheBoard() {
     })
   }
 };
+
+//Clearing the board
+document.querySelector('#clear-board').addEventListener('click', function () {
+  const pixels = document.querySelectorAll('.pixel');
+  for (const cell of pixels) {
+    cell.style.backgroundColor = 'white';
+  }
+});
 
 initialPixelBoard();
 gettingTheColors();
