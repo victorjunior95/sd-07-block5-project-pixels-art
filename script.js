@@ -35,4 +35,12 @@ window.onload = function () {
   for (let index = 0; index < document.getElementsByClassName('color').length; index += 1) {
     document.getElementsByClassName('color')[index].addEventListener('click', selectedColor);
   }
+
+  function cleaner() {
+    for (let count = 0; count < document.getElementsByClassName('pixel').length; count += 1) {
+      document.getElementsByClassName('pixel')[count].style.backgroundColor = "white";
+    }
+  }
+
+  document.getElementsByTagName('button')[0].addEventListener('click', cleaner);
 };
