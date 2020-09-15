@@ -1,6 +1,6 @@
-const colors = document.querySelectorAll('.color');
-const grid = document.querySelectorAll('.pixel');
-let colorSelected = document.querySelector('.selected').style.backgroundColor;
+// const colors = document.querySelectorAll('.color');
+// const grid = document.querySelectorAll('.pixel');
+// let colorSelected = document.querySelector('.selected').style.backgroundColor;
 
 
 // let corAtual = "black"

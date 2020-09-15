@@ -43,27 +43,3 @@ h1 {
 .palette-four {
   background-color: green;
 }
- 
-.pixel-board {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.pixel {
-  background-color: white;
-  border: 1px solid black;
-  height: 40px;
-  width: 40px;
-}
-
-.table {
-  display: table;
-}
-
-.tr {
-  display: table-row;
-}
-
-.td {
-  display: table-cell;
-}
