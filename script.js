@@ -35,12 +35,6 @@ botaoGerar.addEventListener('click', (event) => {
 
 const boardPixel = document.querySelectorAll('#pixel-board .pixel');
 
-    for(let index = 0; index < boardPixel.length; index += 1) {
-        boardPixel[index].addEventListener('click', function () {          
-            boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
-        });
-    }
-
     for (let aux = 0; aux < paletteColor.length; aux += 1) {
        paletteColor[aux].addEventListener('click', function () {
 
@@ -53,8 +47,7 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
        if (paletteColor[aux].className === 'selected'){
          for(let index = 0; index < boardPixel.length; index += 1) {
             boardPixel[index].addEventListener('click', function () {
-            boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;
-            //paletteColor[aux].className = 'color';               
+            boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;            
           });        
          }    
        }
@@ -67,4 +60,14 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
             boardPixel[index].style.backgroundColor = 'white';
         }
     });
+
+window.onload = function() {
+    for(let index = 0; index < boardPixel.length; index += 1) {
+        paletteColor[0].className = 'selected';
+        boardPixel[index].addEventListener('click', function () {          
+            boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
+        });
+    }
+}
+
 //}
