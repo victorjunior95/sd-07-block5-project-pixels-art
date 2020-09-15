@@ -9,7 +9,7 @@ let size = '';
 let currentColor = 'black';
 
 function getRandom() {
-  return Math.floor(Math.random() * 100);
+  return Math.floor(Math.random() * 255);
 }
 
 for (let index = 0; index < pixels.length; index += 1) {
@@ -17,7 +17,7 @@ for (let index = 0; index < pixels.length; index += 1) {
 }
 
 for (let index = 1; index < arrayColorOfPalette.length; index += 1) {
-  const randomRGBColor = `rgb(${index} , ${getRandom()} , ${getRandom()})`;
+  const randomRGBColor = `rgb(${getRandom()} , ${getRandom()} , ${getRandom()})`;
 
   arrayColorOfPalette[index].style.backgroundColor = randomRGBColor;
   arrayColorOfPalette[index].style.color = randomRGBColor;
@@ -30,14 +30,12 @@ currentColor = 'black';
 loopForColor();
 loopForPaint();
 
-// window.onload = function () {
-//   pixels = document.querySelectorAll('.pixel')
-
-  
-
-//   loopForColor();
-//   loopForPaint();
-// };
+window.onload = function () {
+  arrayColorOfPalette[0].classList.add('selected');
+  arrayColorOfPalette[0].style.backgroundColor = 'black';
+  arrayColorOfPalette[0].style.color = 'black';
+  currentColor = 'black';
+};
 
 generatorButton.addEventListener('click', function () {
   if (size === '') {
