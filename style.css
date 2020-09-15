@@ -16,10 +16,14 @@
 .green{
     background-color: green;
 }
-
-#pixel-board{
-    border: solid 1px red;
+.black, 
+.red, 
+.blue, 
+.green,
+button {
+    cursor:pointer;
 }
+
 .pixel{
     width: 40px;
     height: 40px;
