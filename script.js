@@ -61,13 +61,14 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
         }
     });
 
-window.onload = function() {
+window.onload = initPage;
+
+function initPage(){
     for(let index = 0; index < boardPixel.length; index += 1) {
         paletteColor[0].className = 'selected';
         boardPixel[index].addEventListener('click', function () {          
             boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
-        });
+        });        
     }
 }
-
 //}
