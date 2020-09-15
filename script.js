@@ -1,15 +1,15 @@
 // Seleciona o id #board-size
-let boardSize = document.querySelector('#board-size');
+const boardSize = document.querySelector('#board-size');
 // Seleciona o id #generate-board
-let btnGenerateBoard = document.querySelector('#generate-board')
+const btnGenerateBoard = document.querySelector('#generate-board');
 // Seleciona o id #pixel-board
-let pixelBoard = document.querySelector('#pixel-board');
+const pixelBoard = document.querySelector('#pixel-board');
 // Declaração de variavel
 let boardSizeValue = '';
 // Seleciona todas as divs com classe .pixel
 let allPixels = document.querySelectorAll('.pixel');
 // Seleciona todas as divs com classe color
-let color = document.querySelectorAll('.color');
+const color = document.querySelectorAll('.color');
 // Seleciona a div com classe selected
 let selectedDiv = document.querySelector('.selected');
 // Seleciona o button com id #clear-board
