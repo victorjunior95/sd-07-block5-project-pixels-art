@@ -37,16 +37,34 @@ function manipularEventpixel (event) {
     colorirBox.style.backgroundColor = corSelecionada;
 }
 
+function manipulaPalete(event) { //inserida função
+    const oldDiv = document.querySelector('.selected');
+    const atualDiv = event.target;
+  
+    oldDiv.classList.remove('selected');
+    atualDiv.classList.add('selected');
+  
+    corSelecionada = window
+      .getComputedStyle(atualDiv, null)
+      .getPropertyValue('background-color');
+  }
+
+
+
+
 let grid = (document.querySelector('#pixel-board')); //variável global
 //criação do pixel com classe pixel.
-function createBox (pixel) {
+function createBox (color) { //inserir param color
     let box = document.createElement('div'); 
     box.className = 'pixel'; //setando classe pixel
-    box.style.backgroundColor = 'white'; //linha 44 até 47 estilizando css
+    box.style.backgroundColor = 'color'; //linha 44 até 47 estilizando css, alterei de white para color
     box.style.width = '40px';
     box.style.height = '40px';
     box.style.border = '1px black';
     box.addEventListener('click', manipularEventpixel); //caso clique no box, será chamada função manipularEventpixel
+    if (color == 'black') { //inserido condição para inserir classe selected para cor preta default.
+        box.classList.add('selected');
+    } 
     return box;
 }
 
@@ -72,6 +90,16 @@ function createPixelsBoard(){
 function botaoCriarGrid () {
     const botaoCriarMatriz = document.querySelector("#generate-board");
     botaoCriarMatriz.addEventListener('click', createPixelsBoard); //caso clique no botão, a função createPixelsBoard será executada.
+}
+
+function limparGrid () { //função para limpar o grid
+  const limparGrida = document.querySelector('#clear-board'); //capturar o id do botão para limpar
+  limpar.addEventListener('click', function () { //adicionando event click
+    const grid = document.querySelectorAll('.pixel'); //constante com todas as box
+    for (let index = 0; index < grid.length; index += 1) { //iterando sobre os box do grid
+      grid[index].style.backgroundColor = 'white'; //atribuindo cor branco na box com classe .pixel
+    }
+  });
 }
 
 window.onload = () => {
