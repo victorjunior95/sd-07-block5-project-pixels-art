@@ -1,10 +1,16 @@
-let blackColor = document.querySelector('#container').childNodes[3].children[0];
-let print = document.querySelector('#pixel-board').childNodes[1];
+
+    let color = document.querySelectorAll('.color');
+    let selected = document.querySelectorAll('.pixel');
 
 
-// if (blackColor.getAttribute('id') === 'black') {
-//     blackColor.className = "selected";
-//     // print.style.backgroundColor = "black";
-// }
+    changingColor();
 
-//console.log(blackColor);
+    function changingColor() {
+        for (let index = 0; index < color.length; index += 1) {
+            color[index].addEventListener("click", function () {
+                let holdIt = color[0].getAttribute(this.id);
+                console.log(holdIt);
+            });
+        }
+    }
+
