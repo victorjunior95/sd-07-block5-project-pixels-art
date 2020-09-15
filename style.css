@@ -6,17 +6,25 @@
 }
 
 #colorPalete1 {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
 
 #colorPalete2 {
-  background-color: blue;
+  background-color: rgb(0, 0, 255);
 }
 
 #colorPalete3 {
-  background-color: green;
+  background-color: rgb(0, 128, 0);
 }
 
 #colorPalete4 {
   background-color: yellow;
+}
+
+.pixel{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  border: 1px rgb(0, 0, 0) solid;
 }
