@@ -36,9 +36,9 @@ function gettingTheColors() {
         event.target.classList.add('selected');
       }
       selected = document.querySelector('.selected');
-    })
+    });
   }
-};
+}
 
 function paintTheBoard() {
   const pixels = document.querySelectorAll('.pixel');
@@ -48,7 +48,7 @@ function paintTheBoard() {
       event.target.style.backgroundColor = selected.style.backgroundColor;
     })
   }
-};
+}
 
 
 //  User-generated border
@@ -57,7 +57,6 @@ function userBoard() {
   const generateBoard = document.querySelector('#generate-board');
 
   generateBoard.addEventListener('click', function () {
-
     const userBoardSize = document.getElementById('board-size');
 
     if (userBoardSize.value === '') {
@@ -66,15 +65,14 @@ function userBoard() {
       userBoardSize.stepUp(5 - userBoardSize.value);
     } else if (userBoardSize.value > 50) {
       userBoardSize.stepDown(userBoardSize.value - 50);
-    };
+    }
 
     pixelBoard.innerHTML = '';
     initialPixelBoard(userBoardSize.value);
     gettingTheColors();
     paintTheBoard();
   });
-
-};
+}
 //  Clearing the board
 document.querySelector('#clear-board').addEventListener('click', function () {
   const pixels = document.querySelectorAll('.pixel');
