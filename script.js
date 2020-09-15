@@ -18,5 +18,21 @@ for (let index = 0; index < numberLines; index += 1) {
         k = k + 1;
     }
 }
-console.log(linha);
 
+let color = document.querySelectorAll(".color");
+
+for (let index = 0; index < color.length; index += 1) {
+    color[index].addEventListener("click", function(event) {
+        let selected = document.querySelector(".selected");
+        // remover o select
+        selected.classList.remove("selected");
+
+        // acrescentar o select na cor certa
+        //color[index].classList.add("selected");
+        /* com o event.target */ event.target.className += " selected"
+        //
+    })
+}
+
+
+// pesquisar sobre o uso do indexOf, método de busca dentro do array
