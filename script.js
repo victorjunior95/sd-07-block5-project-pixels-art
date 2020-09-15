@@ -13,17 +13,12 @@ window.onload = function () {
 
   // Cria o quadro de pixels
   function createBoard() {
-    const boardHeight = 5;
-    for (let boardColumn = 0; boardColumn < boardHeight; boardColumn += 1) {
-      const baseLine = document.createElement('div');
-      baseLine.className = 'line';
-      document.getElementById('pixel-board').appendChild(baseLine);
-      for (let index = 0; index < boardHeight; index += 1) {
-        const pixel = document.createElement('div');
-        pixel.className = 'pixel';
-        pixel.addEventListener('click', changeColor);
-        document.getElementsByClassName('line')[boardColumn].appendChild(pixel);
-      }
+    const boardSize = 25;
+    for (let count = 0; count < boardSize; count += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      pixel.addEventListener('click', changeColor);
+      document.getElementById('pixel-board').appendChild(pixel);
     }
   }
 
