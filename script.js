@@ -24,6 +24,7 @@ function clearBoard(){
 }
 
 generateBoard.addEventListener("click", ()=>{
+    let boardSize = document.querySelector("#board-size").value
     for (let i = 0; i < fields.length; i++){
         fields[i].style.width = boardSize + "px"
         fields[i].style.height = boardSize + "px"
