@@ -1,4 +1,5 @@
-const linesCols = 5;
+const linesCols = 12;
+const palletePixels = document.getElementsByClassName('pallete-pixel');
 const divPixelBoard = document.getElementById('pixel-board');
 const btnClearBoard = document.getElementById('clear-board');
 let selected = 'black';
@@ -24,7 +25,6 @@ function fillLinesWithPixels(numberOfPixels) {
 }
 
 function getColor() {
-  const palletePixels = document.getElementsByClassName('pallete-pixel');
   document.addEventListener(
     'click',
     function (event) {
@@ -37,10 +37,9 @@ function getColor() {
           palletePixels[element].classList.remove('selected');
         }
         event.target.className += ' selected';
-        selected = event.target.id;
+        selected = event.target.style.backgroundColor;
       }
-    },
-    false
+    }, false
   );
 }
 
@@ -51,8 +50,7 @@ function paintPixel() {
       if (event.target.classList.contains('pixel')) {
         event.target.style.backgroundColor = selected;
       }
-    },
-    false
+    }, false
   );
 }
 
@@ -63,8 +61,26 @@ function clearPixelBoard() {
   }
 }
 
+function generateRandomValue() {
+  return (Math.random() * 255).toFixed(0);
+}
+
+function generateRandomColor() {
+  const redValue = generateRandomValue();
+  const greenValue = generateRandomValue();
+  const blueValue = generateRandomValue();
+
+  return `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+}
+
 createLines(linesCols);
 fillLinesWithPixels(linesCols);
 getColor();
 paintPixel();
 btnClearBoard.addEventListener('click', clearPixelBoard);
+
+window.onload = () => {
+  for (let element = 1; element <= palletePixels.length - 1; element += 1) {
+    palletePixels[element].style.backgroundColor = generateRandomColor();
+  }
+};
