@@ -37,6 +37,8 @@ pixelboard.innerHTML += "</div>";
 // Note que o elemento que deverá receber a classe selected deve ser um dos elementos que possuem a classe color, como especificado no requisito 2.
 
 
-let paleta1 = document.getElementById("color-palette");
-console.log(paleta1.firstElementChild);
-paleta1.firstElementChild.className = "selected";
+let paletas = document.getElementById("color-palette");
+let paleta=[];
+paleta[0] = paletas.firstElementChild;
+
+paleta[0].className = "selected";
