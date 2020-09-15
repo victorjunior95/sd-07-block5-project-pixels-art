@@ -24,27 +24,124 @@
 window.onload = function () { 
     
     let pixelboard = document.getElementById("pixel-board");
+    let colorpalette = document.getElementById("color-palette");    
+    let colors = ['black', 'red', 'blue', 'green'];
 
-    // pixelboard.innerHTML = "<div id='pixel-board'>";
+    let aux="";
+    let indice;
+    let i;
+    let k;
+    let l;
+    let c;
+    let pixel;
 
-    for (let i = 1; i <= 5; i += 1) {
+    for (i = 0;i < 4;i++) {
 
-        let aux="";
+        aux = document.createElement("div");
+        aux.className = "color";
+        aux.style.backgroundColor = colors[i];
+        colorpalette.appendChild(aux);
 
-        for (let k = 1; k <= 5; k += 1) {
+        if (aux.style.backgroundColor == "black") {
+            aux.style.className = "selected";
+        }
+    }
 
-            aux += "<div class='pixel'>"+i+k+" </div>";
+    aux = "";
+
+    for (i = 1; i <= 5; i += 1) {
+    
+        for (k = 1; k <= 5; k += 1) {
+
+            indice = i+""+k;
+            aux += "<div id='"+indice+"' class='pixel'></div>";
+            
             
         }
 
         pixelboard.innerHTML += "<div>"+aux+"</div>";
+        aux = "";
 
     }
 
     pixelboard.innerHTML += "</div>";
+
+    for (i = 1; i <= 5; i += 1) {
+    
+        for (k = 1; k <= 5; k += 1) {
+
+            indice = i+""+k;
+            pixel = document.getElementById(indice);
+            pixel.addEventListener('click', function (event) {
+                const selected = document.querySelector('.selected');
+                event.target.style.backgroundColor = selected.style.backgroundColor;
+              });
+    
+        }
+
+    }
+
     let paletas = document.getElementById("color-palette");
     let paleta=[];
     paleta[0] = paletas.firstElementChild;
+    paleta[1] = paletas.firstElementChild.nextElementSibling;
+    paleta[2] = paletas.firstElementChild.nextElementSibling.nextElementSibling;
+    paleta[3] = paletas.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling;
     paleta[0].className = "selected";
+
+    paleta[0].addEventListener("click", function() {
+        paleta[0].className = "selected";
+        paleta[1].className = "color";
+        paleta[2].className = "color";
+        paleta[3].className = "color";
+
+        
+    });
+
+    paleta[1].addEventListener("click", function() {
+        paleta[1].className = "selected";
+        paleta[0].className = "color";
+        paleta[2].className = "color";
+        paleta[3].className = "color";
+
+    });
+
+    paleta[2].addEventListener("click", function() {
+        paleta[2].className = "selected";
+        paleta[1].className = "color";
+        paleta[0].className = "color";
+        paleta[3].className = "color";
+
+    });
+
+    paleta[3].addEventListener("click", function() {
+        paleta[3].className = "selected";
+        paleta[1].className = "color";
+        paleta[2].className = "color";
+        paleta[0].className = "color";
+
+    });
+
     
+    
+
+    function changecolor(i,k) {
+
+        // let paletas = document.getElementById("color-palette");
+        // let paleta=[];
+        // paleta[0] = paletas.firstElementChild;
+        // paleta[1] = paletas.firstElementChild.nextElementSibling;
+        // paleta[2] = paletas.firstElementChild.nextElementSibling.nextElementSibling;
+        // paleta[3] = paletas.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling;
+
+               
+        indice = i+""+k;
+        let pixelselected = document.getElementById(indice);
+        console.log(indice);       
+    }
+
+    changecolor(l,c);
+
+
+
 }
