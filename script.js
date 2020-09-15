@@ -1,4 +1,5 @@
 const colorDefined = document.getElementsByClassName('color');
+const cleanTheBoard = document.querySelector('#clear-board');
 let pixelElements = document.getElementsByClassName('pixel');
 let firstMainColor = document.getElementsByClassName('selected');
 
@@ -11,6 +12,7 @@ function ClickPalette() {
     });
   };
 }
+
 function ClickPixels() {
   pixelElements = document.getElementsByClassName('pixel');
   for (let index = 0; index < Object.keys(pixelElements).length; index += 1) {
@@ -27,6 +29,11 @@ colorDefined[3].style.backgroundColor = 'blue';
 ClickPalette();
 ClickPixels();
 
+cleanTheBoard.addEventListener('click', function ()  {
+  for (let index = 0; index < Object.keys(pixelElements).length; index += 1) {
+    pixelElements[index].style.backgroundColor = 'white';
+  }
+});
 
 
 
