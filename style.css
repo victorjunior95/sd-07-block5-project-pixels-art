@@ -1,0 +1,40 @@
+#color-palette {
+  display: inline-block;
+  width: 100%;
+}
+
+.color {
+  border: black 1px solid;
+  margin: 3px;
+  padding: 10px 10px;
+  width: 10px;
+  height: 10px;
+  float: inline-start;
+}
+
+.black {
+  background-color:black;
+}
+
+.red {
+  background-color: red;
+  }
+.green {
+  background-color: rgb(21, 255, 0);
+}
+
+.blue {
+  background-color: blue;
+}
+
+#pixel-board {
+  display: inline-block;
+}
+
+.pixel {
+  border: black 1px solid;
+  padding: 10px 10px;
+  width: 10px;
+  height: 10px;
+  float: inline-start;
+}
