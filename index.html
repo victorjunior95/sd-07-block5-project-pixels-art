@@ -20,19 +20,23 @@
    </div>
    <h1>Tamanho</h1>
    <div class="size">
-    Proporção: <input type="number" name="linha" id="board-size" placeholder="5" min="1"> x
-    <input type="number" name="culuna" id="coluna" placeholder="5" min="1">
+    Proporção: <input type="number" name="linha" id="board-size" placeholder="5" min="1" max="50"> x
+    <input type="number" name="culuna" id="coluna" placeholder="5" min="1" max="50">
     <buton class="create" id="generate-board">
       VQV
     </button>
+    
    </div>
+   <button id="clear-bord">Limpar</button>
   </div>
   <div class="drawPixel" id="drawPixel">
     <div id="pixel-board"></div>
   </div>
 </section>
 </div>
-
+<footer>
+  <p>Created with &#10084 by FIlipi Firmino</p>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
