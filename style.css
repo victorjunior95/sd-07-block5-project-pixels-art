@@ -38,10 +38,20 @@ h1{
 }
 #pixel-board{
     display: inline-block;
+    height:210px;
+    width: 210px;
+}
+.linha{
+    margin-top: -4px;
+}
+.linha:first-child{
+    margin-top:0;
+}
+main{
+    text-align: center;
 }
 .pixel{
     border-color: black;
     border-style: solid;
     border-width: 1px;
-    margin: -4px;
 }
