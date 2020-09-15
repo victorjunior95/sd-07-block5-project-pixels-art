@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   background-color: rgb(253, 251, 251);
 }
 
@@ -8,7 +9,7 @@ body {
   text-align: center;
 }
 
-#color-palette {
+.paletaDeCores {
   padding: 10px;
   text-align: center;
 }
@@ -22,7 +23,7 @@ body {
 }
 
 #blackColor {
-  background-color: rgb(61, 61, 61);
+  background-color: black;
 }
 
 #redColor {
@@ -51,6 +52,7 @@ body {
 }
 
 .pixel-board {
+  background-color: red;
 }
 
 .pixel {
