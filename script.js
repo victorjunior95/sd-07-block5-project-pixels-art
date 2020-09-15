@@ -8,6 +8,7 @@ window.onload = function() {
   const btRed = document.getElementById("red");
   const btBlue = document.getElementById("blue");
   const btGreen = document.getElementById("green");
+  const btClear = document.getElementById("clear-board");
   const selectedClasse = document.getElementsByClassName("color black selected");
   selectedClasse.className="color black"; 
   /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/  
@@ -70,6 +71,19 @@ window.onload = function() {
     selectedClasse.className = this.className;// muda a classe do pixels clicado para a mesma classe da seleção de cor
     this.classList.add('selected');// adiciona a classe selected ao seletor de cor
     return selectedClasse; // retorna a classe com a cor selecionada  
+        
+  });
+
+  /*---------------------------------------------------------------------------*/
+  
+  btClear.addEventListener('click', function(){
+    
+    let parent = pixelBoard; // pega o elemento pai 
+    console.log(parent);    
+    for(let index = 0; index < parent.children.length; index +=1 ){
+      parent.children[index].classList.remove();  // remove as classes de todos os elementos         
+      parent.children[index].classList.add('white');
+    }    
         
   });
 
