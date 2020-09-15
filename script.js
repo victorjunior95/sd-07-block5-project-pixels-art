@@ -12,10 +12,10 @@ function createdPaleta() {
     square.className = 'color';
     colorPalet.appendChild(square);
   }
-};
+}
 
 // Color random
-function colorRandom(){
+function colorRandom() {
   let color = '#';
   for (let index = 0; index < 6; index += 1) {
     color += hexaDecimal[Math.floor(Math.random() * 16)];
@@ -24,8 +24,8 @@ function colorRandom(){
 }
 
 
-function boardConstructor (size) {
-  for (let index = 0; index < size ; index += 1) {
+function boardConstructor(size) {
+  for (let index = 0; index < size; index += 1) {
     // Criando Linha
     const line = document.createElement('div');
     line.className = 'line';
@@ -49,17 +49,17 @@ function boardConstructor (size) {
 // Remove
 function remove() {
   const filho = draw.childNodes;
-  for (let indice = filho.length - 1; indice >= 0; indice -= 1){
+  for (let indice = filho.length - 1; indice >= 0; indice -= 1) {
     draw.removeChild(filho[indice]);
   }
 }
 
 // Reload Board
-function reload (line) {
-  if (line === '' ) {
+function reload(line) {
+  if (line === '') {
     alert('Board inválido!');
   } else {
-    if(line < 5 ) {
+    if (line < 5) {
       line = 5;
     } else if (line > 50) {
       line = 50;
@@ -73,7 +73,7 @@ createdPaleta();
 boardConstructor(5);
 
 // Condition
-for (let cont = 0; cont < colorPalet.children.length; cont +=1) {
+for (let cont = 0; cont < colorPalet.children.length; cont += 1) {
   if (cont === 0) {
     colorPalet.children[cont].style.backgroundColor = 'black';
     colorPalet.children[cont].className += ' selected';
@@ -84,7 +84,7 @@ for (let cont = 0; cont < colorPalet.children.length; cont +=1) {
 
 // Events
 btnCreate.addEventListener('click', function () {
-  let line = document.querySelector ('#board-size');
+  let line = document.querySelector('#board-size');
   line = line.value;
   reload(line);
 });
@@ -92,17 +92,16 @@ btnCreate.addEventListener('click', function () {
 clear.addEventListener('click', function () {
    const pixel = document.querySelectorAll('.pixel');
    for (let indexPixel = 0; indexPixel < pixel.length; indexPixel += 1) {
-    pixel[indexPixel].style.backgroundColor = 'white';
+     pixel[indexPixel].style.backgroundColor = 'white';
     }
 });
 
 // Selected color
-
 const selectColor = document.querySelectorAll('.color');
 
 for (let index = 0; index < selectColor.length; index += 1) {
   const inputColor = selectColor[index];
-  inputColor.addEventListener ('click', function (event) {
+  inputColor.addEventListener('click', function(event) {
     for (let colorIndex = 0; colorIndex < colorPalet.children.length; colorIndex += 1) {
       colorPalet.children[colorIndex].className = 'color';
     }
