@@ -80,7 +80,8 @@ function selectedColorClass() {
       elementSelected.classList.remove('selected');
       elementClicked.classList.add('selected');
     }
-    let isPixel = document.getElementById(idClicked).classList[0];
+    // Pintando o pixel
+    const isPixel = document.getElementById(idClicked).classList[0];
     if (isPixel === 'pixel') {
       elementClicked.style.backgroundColor = idSelected;
     }
