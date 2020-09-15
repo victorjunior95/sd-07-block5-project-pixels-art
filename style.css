@@ -4,7 +4,7 @@ body {
 
 header {
   background-color: blue;
-  height: 150px;
+  height: 200px;
   width: 100%;
 }
 h1 {
@@ -44,4 +44,21 @@ h1 {
 
 .color4 {
   background-color: crimson;
+}
+
+#pixel-board {
+  background-color: blueviolet;
+  display: inline-block;
+}
+
+.pixel {
+  background-color: white;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  /* Pesquisar sobre display: grid */
+  margin: -4px;
 }
