@@ -21,8 +21,9 @@ window.onload = function () {
         if (selectedColor !== setColor) {
             selectedColor.classList.remove("selected");
             setColor.classList.add("selected");
-            console.log(setColor);
+            selectedColor = document.querySelector(".selected");
         }
+        return selectedColor;
     }
 
     /* Pintar quadro de pixels */
@@ -32,10 +33,15 @@ window.onload = function () {
             board[index].addEventListener('click', paintPixels);
         }
     }
+
     function paintPixels() {
         let setPixel = event.target;
         console.log(setPixel);
-        let paintColor = document.querySelector(".selected").classList[1];  
+        paintColor = document.querySelector(".selected").classList[1];
+        setPixel.classList.remove("black");
+        setPixel.classList.remove("orange");
+        setPixel.classList.remove("pink");
+        setPixel.classList.remove("blue");
         setPixel.classList.add(paintColor);
         console.log(paintColor);
     }
