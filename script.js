@@ -5,6 +5,7 @@ window.onload = function() {
     const paleta = document.getElementsByClassName("color");
     const pixels = document.getElementsByClassName("pixel")
     const mainContainer = document.getElementById("mainContainer")
+    const pixelBoard = document.getElementById("pixel-board")
     
 
     function fillPalette(){
@@ -18,15 +19,13 @@ window.onload = function() {
     }
 
     function createFirstBoard(){
-        const pixelBoard = document.createElement("div");
-        pixelBoard.id = "pixel-board"
         for(let index = 0; index < 5; index+=1){
             let line = document.createElement("div")
             line.className = "line"
             for ( let index2 = 0; index2 < 5; index2 +=1 ) {
                 let pixel = document.createElement("div")
                 pixel.className = "pixel"
-                pixel.style.backgroundColor = "white"
+                pixel.style.backgroundColor = 'rgb(255, 255, 255)'
                 line.appendChild(pixel)     
             }
         pixelBoard.appendChild(line)
