@@ -1,6 +1,7 @@
 let palette = document.querySelector("#color-palette")
-let listOfColors = palette.childNodes
 let fields = document.querySelectorAll(".pixel")
+let boardSize = document.querySelector("#board-size").value
+let generateBoard = document.querySelector("#generate-board")
 
 palette.addEventListener("click", (event)=>{
     let selected = document.querySelector(".selected")
@@ -22,6 +23,9 @@ function clearBoard(){
     }
 }
 
-function resizeBoard(){
-    
-}
+generateBoard.addEventListener("click", ()=>{
+    for (let i = 0; i < fields.length; i++){
+        fields[i].style.width = boardSize + "px"
+        fields[i].style.height = boardSize + "px"
+    }
+})
