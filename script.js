@@ -3,6 +3,7 @@
         - Variável que vai armazenar cor selecionada;
         - Escultador de eventos para fazer ao clicar
         -
+    -criar objeto pixel
     - criar função initialize para carregar tudo
     - 
 */
@@ -41,3 +42,43 @@ Após selecionar uma outra cor na paleta, deve ser possível pintar os pixels co
 
 Somente o pixel que foi clicado deverá ser preenchido com a cor selecionada, sem influenciar na cor dos demais pixels.
 */
+let colorSelec = "black";
+
+//Armazena div que contém a tabulação;
+let pixelBoard = document.getElementById("pixel-board");
+ 
+//Cria tabulação;
+function pixelsAndLines() { 
+
+    //Cria linhas
+    for( let i = 0 ; i < 5 ; i++ ) {
+
+        //Criando linhas
+        let linePixel = document.createElement('div');
+        linePixel.id = `#linha${i+1}`;
+        linePixel.style.height = '40px' ;
+        pixelBoard.appendChild(linePixel);
+        
+
+        for( let j = 0 ; j < 5 ; j++ ) {
+
+            //Criando pixels
+            let pixelElement = document.createElement('div');
+            pixelElement.className = ".pixel";
+            pixelElement.id = `#coluna${j+1}`;
+            pixelElement.style.width = '40px';
+            pixelElement.style.height = '40px';
+            pixelElement.style.backgroundColor = 'white';
+            pixelElement.style.border = '1px solid black' ;
+            pixelElement.style.display = 'inline-block';
+            //tentar link com css
+
+            linePixel.appendChild(pixelElement);
+
+        };
+    
+    };
+
+};
+
+document.addEventListener('onload', pixelsAndLines());
