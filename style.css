@@ -1,0 +1,43 @@
+#blackColor{
+  background-color: black;
+  border: 1px solid black;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+#greenColor{
+  background-color: green;
+  border: 1px solid black;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+
+}
+
+#redColor{
+  background-color: red;
+  border: 1px solid black;
+  display: inline;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+
+}
+
+#pinkColor{
+  background-color: pink;
+  border: 1px solid black;
+  display: inline;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+
+}
+.pixel{
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+
+}

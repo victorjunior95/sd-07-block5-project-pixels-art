@@ -1,0 +1,43 @@
+/* 
+    - criar função ao clicar;
+        - Variável que vai armazenar cor selecionada;
+        - Escultador de eventos para fazer ao clicar
+        -
+    - criar função initialize para carregar tudo
+    - 
+*/
+/* 
+7 - Ao clicar em uma das cores da paleta, a cor selecionada é que vai ser usada para preencher os pixels no quadro.
+As seguintes verificações serão feitas:
+A classe selected deve ser adicionada à cor selecionada na paleta, ao mesmo tempo em que é removida da cor anteriormente selecionada;
+
+Somente uma das cores da paleta deve ter a classe selected de cada vez;
+
+Note que os elementos que deverão receber a classe selected devem ser os mesmos elementos que possuem a classe color, como especificado no requisito 2.
+
+
+*/
+
+/*4 - A página deve possuir um quadro de pixels, com 25 pixels.
+As seguintes verificações serão feitas:
+
+O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento;
+
+O quadro de "pixels" deve possuir o id denominado pixel-board, ao passo que cada "pixel" individual dentro do quadro deve possuir a classe denominada pixel;
+
+O quadro de "pixels" deve aparecer abaixo da paleta de cores.
+
+6 - Ao carregar a página, a cor preta da paleta já deve estar selecionada para pintar os pixels.
+As seguintes verificações serão feitas:
+O elemento da cor preta deve possuir, inicialmente, a classe selected;
+
+Note que o elemento que deverá receber a classe selected deve ser um dos elementos que possuem a classe color, como especificado no requisito 2.
+
+8 - Ao clicar em um pixel dentro do quadro após selecionar uma cor na paleta, o pixel deve ser preenchido com esta cor.
+As seguintes verificações serão feitas:
+Ao carregar a página deve ser possível pintar os pixels de preto;
+
+Após selecionar uma outra cor na paleta, deve ser possível pintar os pixels com essa cor;
+
+Somente o pixel que foi clicado deverá ser preenchido com a cor selecionada, sem influenciar na cor dos demais pixels.
+*/
