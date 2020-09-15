@@ -47,6 +47,7 @@ apaga.addEventListener('click', apagao)
 const inputButton = document.querySelector('#generate-board')
 
 inputButton.addEventListener('click', function () {
+    nulll ()
     let inputValue = inputSize();
         pixelBoard.style.height = (inputValue * 42) + 'px';
         pixelBoard.style.width = (inputValue * 42) + 'px';
@@ -107,4 +108,11 @@ function RgbAlea () {
     cores[2].style.backgroundColor = `rgb(${Math.ceil(Math.random () * 255)}, ${Math.ceil(Math.random () * 255)}, ${Math.ceil(Math.random () * 255)})`;
     cores[3].style.backgroundColor = `rgb(${Math.ceil(Math.random () * 255)}, ${Math.ceil(Math.random () * 255)}, ${Math.ceil(Math.random () * 255)})`;
   
+}
+
+function nulll () {
+    let inputValue = document.querySelector('#board-size').value
+    if(inputValue == ''){
+        alert('Board inválido!')
+    }
 }
