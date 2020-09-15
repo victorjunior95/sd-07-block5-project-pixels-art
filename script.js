@@ -14,6 +14,6 @@ function clearAll() {
 }
 function setClass(){
     let div = document.querySelector('#black');
-    div.classList.remove('color');
     div.classList.add('selected');
+    console.log(div);
 }
