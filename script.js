@@ -1,6 +1,23 @@
 window.onload = function() {
 
 
+//selecionando paleta
+let colorSelected = document.querySelector('.selected');
+const color = document.getElementsByClassName('color');
+
+for (let i = 0; i < color.length; i += 1) {
+  color[i].addEventListener('click', function(e){
+      //color.classList.remove("selected");
+
+        colorSelected.classList.remove("selected");
+        e.target.classList.add('selected');
+        colorSelected = e.target;
+
+  });
+}
+
+
+
   const clearButton = document.getElementById('clear-board');
   clearButton.addEventListener('click', function() {
     const pixels = document.querySelectorAll('.pixel');
@@ -11,7 +28,7 @@ window.onload = function() {
   }
   )
 
-/* function createTable() {
+function createTable() {
 
   let pixelBoard = document.getElementById("pixel-board");
 
@@ -41,7 +58,7 @@ window.onload = function() {
           console.log('oi')
       });
   }
-} */
+}
 
 
 
