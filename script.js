@@ -35,7 +35,8 @@ let grid = (document.querySelector('#pixel-board'));
 //criação do pixel com classe pixel.
 function createBox (pixel) {
     let box = document.createElement('div');
-    box.className = 'pixel'
+    box.className = 'pixel';
+    box.style.backgroundColor = 'white';
     return box;
 }
 
