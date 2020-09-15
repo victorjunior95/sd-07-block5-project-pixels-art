@@ -13,10 +13,10 @@ function createBoard(linesColumns) {
   for (let line = 0; line < linesColumns; line += 1) {
     const bline = createBox('line center');
     pixelStart.appendChild(bline);
-    let finalWidth = 40 * linesColumns;
+    const finalWidth = 40 * linesColumns;
     pixelStart.appendChild(bline).style.width = finalWidth;
     for (let column = 0; column < linesColumns; column += 1) {
-      let pixel = createBox('pixel');
+      const pixel = createBox('pixel');
       bline.appendChild(pixel);
     }
   }
@@ -37,7 +37,6 @@ function changeColor() {
       // fist try vvvvvv
       // className to string then trim start and end to keep only the main
       // ns = s.substring(6,s.length-9);
-      console.log(colorBrush);
     });
   });
 }
@@ -46,7 +45,7 @@ function changeCanvas() {
   console.log(colorBrush);
   document.querySelectorAll('.pixel').forEach((canvasindex) => {
     canvasindex.addEventListener('click', (event) => {
-      event.target.className = 'pixel ' + colorBrush;
+      event.target.className = `pixel ${colorBrush}`;
       // I had to change the order in CSS to work the color of the pixel changes on event.target
     });
   });
@@ -54,8 +53,8 @@ function changeCanvas() {
 
 
 function clearBoard() {
-  const clearBoard = document.querySelector('#clear-board');
-  clearBoard.addEventListener('click', function () {
+  const clearButton = document.querySelector('#clear-board');
+  clearButton.addEventListener('click', function () {
     colorBrush = 'black';
     createBoard(boardSize);
     changeColor();
@@ -76,6 +75,10 @@ function reSizeBoard() {
     if (newBoardSize.value >= 5 && newBoardSize.value <=50) {
         boardSize = newBoardSize.value
     }
+    if (newBoardSize.value === '') {
+        alert('Board inválido!')
+    }
+    colorBrush = 'black';
     createBoard(boardSize);
     changeColor();
     changeCanvas();
@@ -86,6 +89,7 @@ function reSizeBoard() {
     createBoard(boardSize);
     changeColor();
     changeCanvas();
+
     clearBoard();
     reSizeBoard();
   };
