@@ -2,16 +2,16 @@
   display: table;
 }
 
-.color-palette,
+.color-palette , 
 .pixel-row {
   display: table-row;
 }
 
-.color-palette > div,
+.color-palette > div , 
 .pixel {
   display: table-cell;
-  width: 40px;
   height: 40px;
+  width: 40px;
 }
 
 .border {

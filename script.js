@@ -1,34 +1,18 @@
-//Defining the colors
-const black = document.querySelector('#black');
-const red = document.querySelector('#red');
-const green = document.querySelector('#green');
-const blue = document.querySelector('#blue');
-
 let selected = document.querySelector('.selected');
-const colors = document.querySelectorAll('.color')
+const colors = document.querySelectorAll('.color');
 
-// black.style.backgroundColor = 'black';
-// red.style.backgroundColor = 'red';
-// green.style.backgroundColor = 'green';
-// blue.style.backgroundColor = 'blue';
-
-
-//Drawing the pixel board;
+//  Drawing the pixel board;
 function initialPixelBoard(boardSize) {
   const pixelBoard = document.querySelector('.pixel-board');
-  for (let rows = 0; rows < boardSize; rows += 1) {
-    
-    let pixelRow = document.createElement('div');
-    pixelRow.classList.add('pixel-row');  
-    
-    for (let cells = 0; cells < boardSize; cells += 1) {
-      
-      let pixelCell = document.createElement('div');
+  for (let rows = 0; rows < boardSize; rows += 1) { 
+    const pixelRow = document.createElement('div');
+    pixelRow.classList.add('pixel-row');
+    for (let cells = 0; cells < boardSize; cells += 1) {  
+      const pixelCell = document.createElement('div');
       pixelCell.classList.add('pixel', 'border');
       pixelCell.style.backgroundColor = 'white';
-      pixelRow.appendChild(pixelCell)
-    }
-    
+      pixelRow.appendChild(pixelCell);
+    }  
     pixelBoard.appendChild(pixelRow);
   }
 };
@@ -67,18 +51,18 @@ function paintTheBoard() {
 };
 
 
-//User-generated border
+//  User-generated border
 function userBoard() {
   const pixelBoard = document.querySelector('.pixel-board');
   const generateBoard = document.querySelector('#generate-board');
 
   generateBoard.addEventListener('click', function () {
 
-    let userBoardSize = document.getElementById('board-size');
+    const userBoardSize = document.getElementById('board-size');
 
-    if (userBoardSize.value == '') {
+    if (userBoardSize.value === '') {
       alert('Board inválido!');
-    } else if (userBoardSize.value >= 0 && userBoardSize.value <5){
+    } else if (userBoardSize.value >= 0 && userBoardSize.value < 5) {
       userBoardSize.stepUp(5 - userBoardSize.value);
     } else if (userBoardSize.value > 50) {
       userBoardSize.stepDown(userBoardSize.value - 50);
@@ -91,7 +75,7 @@ function userBoard() {
   });
 
 };
-//Clearing the board
+//  Clearing the board
 document.querySelector('#clear-board').addEventListener('click', function () {
   const pixels = document.querySelectorAll('.pixel');
   for (const cell of pixels) {
@@ -103,5 +87,4 @@ initialPixelBoard(5);
 randomColors();
 gettingTheColors();
 paintTheBoard();
-
 userBoard();
