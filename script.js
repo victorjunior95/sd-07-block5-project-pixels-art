@@ -62,7 +62,7 @@ function makeBoard(number) {
 window.onload = function () {
   makeBoard(5);
 };
-  buttonInput.addEventListener('click', function () {
+buttonInput.addEventListener('click', function () {
     const numberInput = document.querySelector('#board-size').value;
     const number = numberInput;
     if (number === '') {
@@ -74,7 +74,7 @@ window.onload = function () {
     } else {
       makeBoard(number);
     }
-  });
+});
 //  cria botão que limpa tudo
 const btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
