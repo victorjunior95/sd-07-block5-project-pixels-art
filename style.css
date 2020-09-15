@@ -12,3 +12,35 @@ h1 {
     padding: 0;
     text-align: center;
 }
+
+.tools-palette {
+    background-color:yellow;
+    text-align: center;
+    padding: 20px;
+}
+
+.color {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    
+}
+
+.color1 {
+    background-color: black;
+}
+
+.color2 {
+    background-color: red;
+}
+
+.color3 {
+    background-color: green;
+}
+
+.color4 {
+    background-color: purple;
+}
