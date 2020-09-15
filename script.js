@@ -15,7 +15,7 @@ for(let lIndex = 0; lIndex < number; lIndex +=1){
       let pixel = document.createElement('div');
       pixel.className = 'pixel'
       lPixelBoard.appendChild(pixel);
-  }
+  } trocaCor()
 }
 buttonInput.addEventListener('click', function () {
   const numberInput = document.querySelector('#board-size').value;
@@ -70,20 +70,21 @@ buttonInput.addEventListener('click', function () {
     });
 
 // trata evento acrescentar cor no quadradinho
-
-let boardSize = document.querySelectorAll('.pixel');
-
-for(index = 0; index < boardSize.length; index += 1) {
-  let selectedPixel = document.querySelectorAll('.pixel')[index];
-  selectedPixel.addEventListener('click', function () {
-    selectedPixel[index].style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+function trocaCor(){
+  document.querySelectorAll('.pixel').forEach((item) =>{
+    item.addEventListener('click', () =>{
+      item.style.backgroundColor = color;
+    })
   })
 }
 
-//cria botão que limpa tudo
+// // cria botão que limpa tudo
 let btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
-  
-  document.querySelectorAll('.pixel').style.backgroundColor = 'white';
-})
+    document.querySelectorAll('.pixel').forEach((item) =>{
+     item.style.backgroundColor = 'white';
+     })
+ })
+
+
 
