@@ -16,3 +16,23 @@ for (let i = 0; i < numberLines; i += 1) {
     }
 }
 
+/*
+let black = document.querySelector(".black");
+let red = document.querySelector(".red");
+let blue = document.querySelector(".blue");
+let green = document.querySelector(".green");
+*/
+
+let color = document.querySelectorAll(".color");
+console.log(color);
+
+for (let c = 0; c < color.length; c += 1) {
+    color[c].addEventListener("click", function(event) {
+        let selected = document.querySelector(".selected");
+        selected.classList.remove('selected');
+        //color[c].classList.add('selected');
+        event.target.className += " selected";
+    });
+}
+
+
