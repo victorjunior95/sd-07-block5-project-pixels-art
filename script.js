@@ -68,12 +68,12 @@ buttonInput.addEventListener('click', function () {
   if (number === '') {
     alert('Board inválido!');
   } else if (number < 5) {
-      makeBoard(5);
-    } else if (number > 50) {
-      makeBoard(50);
-    } else {
-      makeBoard(number);
-    }
+    makeBoard(5);
+  } else if (number > 50) {
+    makeBoard(50);
+  } else {
+    makeBoard(number);
+  }
 });
 //  cria botão que limpa tudo
 const btnClear = document.querySelector('#clear-board');
