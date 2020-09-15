@@ -53,3 +53,7 @@ table , th , td {
   height: 40px;
   width: 40px;
 }
+
+.select-size {
+  padding-top: 5px;
+}

@@ -4,6 +4,9 @@ const green = document.getElementById('green');
 const red = document.getElementById('red');
 const pixels = document.getElementsByClassName('pixel');
 const clear = document.getElementById('clear-board');
+const generateBoard = document.getElementById('generate-board');
+const inputGenerateBoard = document.getElementById('board-size');
+const changeColor = document.getElementById('change-colors');
 
 function removeAll() {
   black.classList.remove('selected');
@@ -39,3 +42,30 @@ function clearBoard() {
 }
 
 clear.addEventListener('click', clearBoard);
+generateBoard.addEventListener('click', generateBoardWithSize);
+
+function generateBoardWithSize() {
+  if(!inputGenerateBoard.value) {
+    alert('Board inválido!')
+  } else {
+    console.log('clicked')
+  }
+}
+
+function generateColor() {
+  const first = Math.floor(Math.random()*256);
+  const second = Math.floor(Math.random()*256);
+  const third = Math.floor(Math.random()*256);
+  return `rgb(${first} , ${second} , ${third})`;
+}
+
+function newColors() {
+  blue.style.backgroundColor = generateColor();
+  red.style.backgroundColor = generateColor();
+  green.style.backgroundColor = generateColor();
+}
+
+changeColor.addEventListener('click', newColors);
+document.onload = newColors();
+
+
