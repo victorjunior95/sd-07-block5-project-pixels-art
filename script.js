@@ -41,11 +41,10 @@ window.onload = function () {
         aux.className = "color";
         aux.style.backgroundColor = colors[i];
         colorpalette.appendChild(aux);
-
-        if (aux.style.backgroundColor == "black") {
-            aux.style.className = "selected";
-        }
     }
+
+    aux = document.querySelectorAll(".color")[0];
+    aux.className = "selected";
 
     aux = "";
 
