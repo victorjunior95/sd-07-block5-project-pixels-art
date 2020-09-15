@@ -21,7 +21,6 @@ for (let i = 1; i < colors.length; i = i + 1){
     }
     randoms.push(number)
     colors[i].style.backgroundColor = options[number]
-    console.log(number)
 }
 
 for (let i = 0; i < fields.length; i += 1){
@@ -39,6 +38,15 @@ function clearBoard(){
 
 generateBoard.addEventListener("click", ()=>{
     let boardSize = document.querySelector("#board-size").value
+    if (boardSize == ""){
+        alert('Board inválido!')
+    }
+    else if (parseInt(boardSize) > 50){
+        boardSize = 50
+    }
+    else if (parseInt(boardSize) < 5){
+        boardSize = 5
+    }
     for (let i = 0; i < fields.length; i++){
         fields[i].style.width = boardSize + "px"
         fields[i].style.height = boardSize + "px"
