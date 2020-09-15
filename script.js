@@ -15,35 +15,6 @@ for (let i = 0; i < color.length; i += 1) {
   });
 }
 
-const clearButton = document.getElementById('clear-board');
-clearButton.addEventListener('click', function() {
-    const pixels = document.querySelectorAll('.pixel');
-    for (let index = 0; index < pixels.length; index += 1) {
-
-      pixels[index].style.backgroundColor = "rgb(255,255,255)";
-    }
-  }
-  )
-
-function createTable() {
-
-  let pixelBoard = document.getElementById("pixel-board");
-
-  for (let index = 0; index < 5; index += 1) {
-
-      let line = document.createElement("div");
-      pixelBoard.appendChild(line).className = "line";
-
-      for (let index = 0; index < 5; index++) {
-
-          let pixel = document.createElement("div");
-          line.appendChild(pixel).className = "pixel";
-      }
-    }
-  }
-
-
-
 let cadaPixel = document.querySelectorAll('.pixel');
 
 for (let index = 0; index < cadaPixel.length; index += 1) {
@@ -55,3 +26,46 @@ for (let index = 0; index < cadaPixel.length; index += 1) {
  }
 
 }
+//limpando a board
+const clearButton = document.getElementById('clear-board');
+clearButton.addEventListener('click', function() {
+    const pixels = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixels.length; index += 1) {
+
+      pixels[index].style.backgroundColor = "rgb(255,255,255)";
+    }
+  }
+  )
+
+
+let size = document.getElementById('board-size').value;
+let buttonGenerateBoard = document.getElementById('generate-board');
+buttonGenerateBoard.addEventListener('click', function(){
+
+    
+
+});
+//crianda tabela
+function createBoard() {
+
+  let pixelBoard = document.getElementById("pixel-board");
+  pixelBoard.innerHTML = '';
+
+  for (let index = 0; index < size.length; index += 1) {
+
+      let line = document.createElement("div");
+      pixelBoard.appendChild(line).className = "line";
+
+      for (let indexLine = 0; indexLine < size.length; indexLine += 1) {
+
+          let pixel = document.createElement("div");
+          line.appendChild(pixel).className = "pixel";
+      }
+    }
+  }
+
+
+
+
+
+
