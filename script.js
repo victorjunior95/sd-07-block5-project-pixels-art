@@ -3,7 +3,7 @@ const colorPalet = document.getElementById('color-palette');
 const draw = document.getElementById('pixel-board');
 const btnCreate = document.querySelector('#generate-board');
 const hexaDecimal = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
-const clear = document.querySelector('#clear-bord');
+const clear = document.querySelector('#clear-board');
 
 // Created pallet color
 function createdPaleta () {
@@ -85,7 +85,7 @@ btnCreate.addEventListener('click', function () {
   line = line.value
   colun = colun.value
   reload(line, colun)
-})
+});
 
 clear.addEventListener('click', function (){
    const pixel = document.querySelectorAll('.pixel');
