@@ -24,7 +24,7 @@ function createPaletteColors(parent) {
   palette.setAttribute('id', 'color-palette');
   parent.appendChild(palette);
 
-  const colorsPalette = ['black', 'oldlace', 'tomato', 'dodgerblue'];
+  const colorsPalette = ['black', 'oldlace', 'tomato', 'dodgerblue', 'green', 'gold'];
   for (let index = 0; index < colorsPalette.length; index += 1) {
     if (index === 0) {
       const colorOfPalette = document.createElement('span');
@@ -42,7 +42,18 @@ function createPaletteColors(parent) {
   }
 }
 createPaletteColors(mainPage);
-// console.log(document.getElementById("black").style.backgroundColor);
+
+function createButton(parent){
+  const SectionButtonClear = document.createElement('section');
+  SectionButtonClear.className = 'section-button-clear';
+  parent.appendChild(SectionButtonClear);
+  const buttonClear = document.createElement('button');
+  buttonClear.className = 'clear-board';
+  buttonClear.setAttribute('id',  'clear-board');
+  buttonClear.innerText = 'Limpar';
+  SectionButtonClear.appendChild(buttonClear);
+}
+createButton(mainPage);
 
 function createBasePixelBoard(parent) {
   // Criar a div base.
@@ -50,7 +61,7 @@ function createBasePixelBoard(parent) {
   divAll.className = 'pixel-board';
   divAll.setAttribute('id', 'pixel-board');
   parent.appendChild(divAll);
-  const idLines = ['a', 'b', 'c', 'd', 'e'];
+  const idLines = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
   for (let lineIndex = 0; lineIndex < idLines.length; lineIndex += 1) {
     const divLine = document.createElement('div');
     divLine.className = 'line';
@@ -66,15 +77,6 @@ function createBasePixelBoard(parent) {
   }
 }
 createBasePixelBoard(mainPage);
-
-function createButton(parent){
-  const buttonClear = document.createElement('button');
-  buttonClear.className = 'clear-board';
-  buttonClear.setAttribute('id',  'clear-board');
-  buttonClear.innerText = 'LIMPAR';
-  parent.appendChild(buttonClear);
-}
-createButton(mainPage);
 
 function selectedColorClass() {
   document.body.addEventListener('click', function (event) {
