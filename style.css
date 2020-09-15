@@ -1,5 +1,5 @@
 #color-palette {
-  display: inline-block;
+  display: flex;
   width: 100%;
   margin-left: 80px;
   margin-bottom: 10px;
@@ -22,7 +22,7 @@
 }
 
 .green {
-  background-color: rgb(21, 255, 0);
+  background-color: green;
 }
 
 .blue {
@@ -39,5 +39,6 @@
   padding: 10px;
   width: 40px;
   height: 40px;
+  background-color: white;
   float: inline-start;
 }

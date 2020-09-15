@@ -1,12 +1,11 @@
-window.onload = function() {
-
+window.onload = function () {
   // Muda a cor do pixel selecionado
   function changeColor() {
     const pixel = event.target;
     for (let checker = 0; checker < document.getElementsByClassName('color').length; checker += 1) {
       for (let searcher = 0; searcher < document.getElementsByClassName('color')[checker].classList.length; searcher += 1) {
         if ((document.getElementsByClassName('color')[checker].classList[searcher]) === 'selected') {
-          pixel.classList.add(document.getElementsByClassName('color')[checker].classList[1]);
+          pixel.style.backgroundColor = document.getElementsByClassName('color')[checker].classList[1];
         }
       }
     }
@@ -41,4 +40,4 @@ window.onload = function() {
   for (let index = 0; index < document.getElementsByClassName('color').length; index += 1) {
     document.getElementsByClassName('color')[index].addEventListener('click', selectedColor);
   }
-}
+};
