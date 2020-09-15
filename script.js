@@ -9,6 +9,11 @@ const buttonCreateBoard = document.getElementById('generate-board');
 
 let firstTime = true;
 let currentColor = 'black';
+let canvasSize = 5;
+
+function clearInput() {
+  inputBoardSize.value = '';
+}
 
 function clearSelection() {
   const button = document.querySelector('.selected');
@@ -41,6 +46,7 @@ function clearBoard() {
 function checkNumber(numberOfLines) {
   if (numberOfLines < 5) numberOfLines = 5;
   if (numberOfLines > 50) numberOfLines = 50;
+  canvasSize = numberOfLines;
   return numberOfLines;
 }
 
@@ -57,16 +63,23 @@ function createBoard(numberOfLines) {
       divColumn.className = 'pixel';
       divLine.appendChild(divColumn);
     }
-    pixelBoard.style.width = `${numberOfLines * 42}px`;
-    pixelBoard.style.height = `${numberOfLines * 42}px`;
     pixelBoard.appendChild(divLine);
   }
+  pixelBoard.style.width = `${numberOfLines * 42}px`;
+  pixelBoard.style.height = `${numberOfLines * 42}px`;
+  clearInput();
+  updatePlaceholder();
   addClickListener();
   firstTime = false;
 }
 
 function hasValue() {
   return (firstTime || inputBoardSize.value.length !== 0) ? createBoard(Number(inputBoardSize.value)) : alert('Board inválido!');
+}
+
+function updatePlaceholder() {
+  const message = `Tamanho do canvas: ${canvasSize}`;
+  inputBoardSize.setAttribute('placeholder', message);
 }
 
 function makeRandomColor() {
@@ -85,6 +98,7 @@ function setColors() {
       button.style.backgroundColor = color;
     }
   });
+  document.body.style.backgroundColor = makeRandomColor();
   buttonBlack.style.backgroundColor = 'black';
 }
 
@@ -97,4 +111,4 @@ buttonCreateBoard.addEventListener('click', () => hasValue());
 
 setColors();
 addClickListener();
-createBoard(5);
+createBoard(canvasSize);
