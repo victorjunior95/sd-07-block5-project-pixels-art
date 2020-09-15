@@ -1,8 +1,6 @@
 //selecionar a cor preta
-window.onload = function() {
-    let select = document.getElementById("color1")
-    select.className += " select"
-}
+window.onload = pintarPreta
+   
 
 let botaoCorPreta = document.getElementById("color1");
 let botaoCorAzul = document.getElementById("color2");
@@ -10,26 +8,25 @@ let botaoCorVerde = document.getElementById("color3");
 let botaoCorCinza = document.getElementById("color4");
 let cores = document.getElementsByClassName("color");
 
-botaoCorPreta.addEventListener("click", function(){
+botaoCorPreta.addEventListener("click", pintarPreta)
+
+function pintarPreta() {
     for (index = 0; index < cores.length; index += 1) {
-        cores[index].classList.remove("select")
+        cores[index].classList.remove("selected")
     }
-    botaoCorPreta.classList.add("select")
+    botaoCorPreta.classList.add("selected")
 let corPreta = window.getComputedStyle(botaoCorPreta, null).getPropertyValue("background-color");
 document.querySelectorAll(".pixel").forEach(item => {
     item.addEventListener("click", function() {
         item.style.backgroundColor = corPreta
-
-})
-})
-})
-
-
+        })
+    })
+}
 botaoCorAzul.addEventListener("click", function(){
     for (index = 0; index < cores.length; index += 1) {
-        cores[index].classList.remove("select")
+        cores[index].classList.remove("selected")
     }
-    botaoCorAzul.classList.add("select")
+    botaoCorAzul.classList.add("selected")
 let corAzul = window.getComputedStyle(botaoCorAzul, null).getPropertyValue("background-color");
 document.querySelectorAll(".pixel").forEach(item => {
     item.addEventListener("click", function() {
@@ -42,9 +39,9 @@ document.querySelectorAll(".pixel").forEach(item => {
 
 botaoCorVerde.addEventListener("click", function(){
     for (index = 0; index < cores.length; index += 1) {
-        cores[index].classList.remove("select")
+        cores[index].classList.remove("selected")
     }
-    botaoCorVerde.classList.add("select")
+    botaoCorVerde.classList.add("selected")
 let corVerde = window.getComputedStyle(botaoCorVerde, null).getPropertyValue("background-color");
 document.querySelectorAll(".pixel").forEach(item => {
     item.addEventListener("click", function() {
@@ -57,9 +54,9 @@ document.querySelectorAll(".pixel").forEach(item => {
 
 botaoCorCinza.addEventListener("click", function(){
     for (index = 0; index < cores.length; index += 1) {
-        cores[index].classList.remove("select")
+        cores[index].classList.remove("selected")
     }
-    botaoCorCinza.classList.add("select")
+    botaoCorCinza.classList.add("selected")
 let corCinza = window.getComputedStyle(botaoCorCinza, null).getPropertyValue("background-color");
 document.querySelectorAll(".pixel").forEach(item => {
     item.addEventListener("click", function() {
