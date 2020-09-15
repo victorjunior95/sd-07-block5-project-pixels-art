@@ -62,7 +62,7 @@ function sizeBoard() {
   const rowsIntNumbers = parseInt(rowNumbers, 10);
   const heightAndWidth = rowsIntNumbers * 40;
   if (rowsIntNumbers < 50) {
-    fullBoard.style.gridTemplateColumns = `repeat(${rowsIntNumbers}, 1fr)`;
+    fullBoard.style.gridTemplateColumns = `repeat(${boardSize.value}, 1fr)`;
     fullBoard.style.maxHeight = `${heightAndWidth}px`;
     fullBoard.style.maxWidth = `${heightAndWidth}px`;
   } else {
@@ -87,17 +87,33 @@ function createNewBoard() {
 }
 
 function generateBoard() {
-  generateAlert();
-  createNewBoard();
-  fullBoard.classList.remove('quadro-nativo');
-  const number = verifyBoard();
-  let numberOfPixels;
-  if (number <= 5) {
-    numberOfPixels = 5;
+  generateAlert()
+  createNewBoard()
+  let inputValue = Number(boardSize.value);
+  console.log(inputValue);
+  if (inputValue < 5) {
+    inputValue = 5;
+    fullBoard.style.gridTemplateColumns = 'repeat(5, 1fr)';
+    fullBoard.style.gridTemplatesRows = 'repeat(5, 1fr)';
+    fullBoard.style.height = '200px';
+    fullBoard.style.width = '200px';
+  } else if (inputValue < 50) {
+    let heightAndWidth = inputValue * 40;
+    fullBoard.style.gridTemplateColumns = `repeat(${inputValue}, 1fr)`;
+    fullBoard.style.gridTemplateRows = `repeat(${inputValue}, 1fr)`;
+    fullBoard.style.height = `${heightAndWidth}`;
+    fullBoard.style.width = `${heightAndWidth}`;
+    console.log(heightAndWidth);
+  } else if (inputValue > 50) {
+    inputValue = 50;
+    fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
+    fullBoard.style.gridTemplateRows = 'repeat(50, 1fr)';
+    fullBoard.style.height = '2000px';
+    fullBoard.style.width = '2000px';
   }
-  numberOfPixels = boardSize.value;
-  sizeBoard();
-  for (let i = 0; i < numberOfPixels; i += 1) {
+  let numberOfPixels = Math.pow(inputValue, 2);
+  console.log(numberOfPixels);
+  for (let i = 1; i <= numberOfPixels; i += 1) {
     const square = document.createElement('div');
     square.className = 'pixel white';
     square.addEventListener('click', paintBoard);
