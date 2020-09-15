@@ -40,11 +40,11 @@ let paletas = document.getElementById("color-palette");
 let paleta=[];
 paleta[0] = paletas.firstElementChild;
 
-window.onload() = firstselection;
+// window.onload() = firstselection;
 
-function firstselection() {
-    paleta[0].className = "selected";
-}
+// function firstselection() {
+//     paleta[0].className = "selected";
+// }
 
 
 
