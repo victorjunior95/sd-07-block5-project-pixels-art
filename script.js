@@ -16,15 +16,14 @@ function makeBoard(number) {
       lPixelBoard.appendChild(pixel);
     } trocaCor();
   }
-buttonInput.addEventListener('click', function () {
+  buttonInput.addEventListener('click', function () {
   const numberInput = document.querySelector('#board-size').value;
   let number = numberInput;
-  let pixelBoard = document.querySelector('#pixel-board');
-  if(number === '') {
-    alert('Board inválido!')
+  if (number === '') {
+    alert('Board inválido!');
   }
   else if (number < 5) {
-    makeBoard(5)
+    makeBoard(5);
   } else if (number > 50) {
     makeBoard(50);
   } else {
