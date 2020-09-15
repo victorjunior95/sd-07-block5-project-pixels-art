@@ -62,7 +62,6 @@ function sizeBoard() {
     fullBoard.style.gridTemplateRows = `repeat(${inputValue}, 1fr)`;
     fullBoard.style.height = `${heightAndWidth}`;
     fullBoard.style.width = `${heightAndWidth}`;
-    console.log(heightAndWidth);
   } else {
     squareValue = 50;
     fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
@@ -89,9 +88,9 @@ function createNewBoard() {
 
 function generateBoard() {
   generateAlert();
-  createNewBoard();  
+  createNewBoard();
   const inputValue = sizeBoard();
-  const numberOfPixels = Math.pow(inputValue, 2);
+  const numberOfPixels = inputValue ** 2;
   for (let i = 1; i <= numberOfPixels; i += 1) {
     const square = document.createElement('div');
     square.className = 'pixel white';
