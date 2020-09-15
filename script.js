@@ -19,13 +19,14 @@ window.onload = function() {
 
     function createFirstBoard(){
         const pixelBoard = document.createElement("div");
-        pixelBoard.classList.add("pixel-board") 
+        pixelBoard.id = "pixel-board"
         for(let index = 0; index < 5; index+=1){
             let line = document.createElement("div")
             line.className = "line"
             for ( let index2 = 0; index2 < 5; index2 +=1 ) {
                 let pixel = document.createElement("div")
                 pixel.className = "pixel"
+                pixel.style.backgroundColor = "white"
                 line.appendChild(pixel)     
             }
         pixelBoard.appendChild(line)
@@ -37,14 +38,22 @@ window.onload = function() {
     fillPalette();
     createFirstBoard();
     
+    //adiciona um leitor de eventos em cada cor da paleta
     for (const color of paleta) {
         color.addEventListener('click',function(){
             for(let index = 0; index < paleta.length; index += 1 ){
                 paleta[index].classList.remove('selected')
             }
+            color.classList.add("selected")
         })
     }
 
+    for (const pixel of pixels) {
+        pixel.addEventListener('click',function(){
+            let colorSelected = document.querySelector(".selected")
+            pixel.style.backgroundColor = colorSelected.style.backgroundColor
+        })
+    }
     
 }
 
