@@ -33,3 +33,7 @@
 .linhas {
     display: block;
 }
+
+#pixel-board {
+    position: relative;
+}
