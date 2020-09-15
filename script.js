@@ -13,4 +13,9 @@ window.onload = function () {
       divLine.appendChild(divColumn);
     }
   }
+
+  let getDiv = document.querySelector('.color1');
+  let attribute = getDiv.getAttribute('class')
+  getDiv.className = `${attribute} selected`;
 };
+
