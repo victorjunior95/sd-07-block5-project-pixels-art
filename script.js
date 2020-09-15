@@ -13,11 +13,11 @@ let color = 'black';
     color = window.getComputedStyle(btnBlack).getPropertyValue('background-color');
   });
   btnOrange.addEventListener('click', function () {
-  btnOrange.classList.add('selected');
-  btnBlack.classList.remove('selected');
-  btnOrchid.classList.remove('selected');
-  btnBlue.classList.remove('selected');
-  color = window.getComputedStyle(btnOrange).getPropertyValue('background-color');
+    btnOrange.classList.add('selected');
+    btnBlack.classList.remove('selected');
+    btnOrchid.classList.remove('selected');
+    btnBlue.classList.remove('selected');
+    color = window.getComputedStyle(btnOrange).getPropertyValue('background-color');
   });
   btnOrchid.addEventListener('click', function () {
     btnOrchid.classList.add('selected');
