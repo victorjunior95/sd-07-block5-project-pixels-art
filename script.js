@@ -2,6 +2,7 @@ function quadroPixels() {
   for (let i = 0; i < 25; i += 1) {
     const quadro = document.getElementById('pixel-board');
     const divQuadro = document.createElement('div');
+    divQuadro.id = `pixel${i + 1}`;
     divQuadro.className = 'pixel';
     quadro.appendChild(divQuadro);
   }
@@ -26,7 +27,6 @@ selectedColorBlack.addEventListener('click', function () {
 
   removeSelected();
   selectedColorBlack.classList.add('selected');
-  return selectedColorBlack.style.backgroundColor;
 });
 
 selectedColorRed.addEventListener('click', function () {
@@ -34,7 +34,6 @@ selectedColorRed.addEventListener('click', function () {
 
   removeSelected();
   selectedColorRed.classList.add('selected');
-  return selectedColorRed.style.backgroundColor;
 });
 
 selectedColorGreen.addEventListener('click', function () {
@@ -42,7 +41,6 @@ selectedColorGreen.addEventListener('click', function () {
 
   removeSelected();
   selectedColorGreen.classList.add('selected');
-  return selectedColorGreen.style.backgroundColor;
 });
 
 selectedColorYellow.addEventListener('click', function () {
@@ -53,8 +51,9 @@ selectedColorYellow.addEventListener('click', function () {
 });
 
 const btn = document.getElementById('clear-board');
-const clear = document.getElementById('pixel-board');
-
 btn.addEventListener('click', function () {
-  clear.style.backgroundColor = 'white';
+  for (let i = 0; i < 25; i += 1) {
+    const divQuadro = document.getElementById(`pixel${i + 1}`);
+    divQuadro.style.backgroundColor = 'white';
+  }
 });
