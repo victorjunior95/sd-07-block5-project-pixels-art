@@ -41,20 +41,19 @@ table , th , td {
 
 .pixel-board {
   clear: both;
+  display: table;
   margin-top: 5px;
 }
 
-#table{ 
+/* #table {
   display: table;
+} */
+
+.tr {
+  display: table-row;
 }
 
-.tr{ 
-  display: table-row; 
-}
-
-.td{ 
-  display: table-cell;
+.td {
   border: 1px solid black;
-  height: 41px;
-  width: 41px;
+  display: table-cell;
 }
