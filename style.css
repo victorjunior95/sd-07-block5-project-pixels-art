@@ -1,4 +1,4 @@
-#color-palette {
+.color-palette {
   align-content: center;
   display: inline-block;
   height: 45px;
@@ -30,7 +30,7 @@
   background-color: green;
 }
 
-#clear-board {
+.clear-board {
   margin-bottom: 20px;
   margin-top: 10px;
 }
