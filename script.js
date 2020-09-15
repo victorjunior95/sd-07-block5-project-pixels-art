@@ -65,7 +65,8 @@ window.onload = initPage;
 
 function initPage(){
     for(let index = 0; index < boardPixel.length; index += 1) {
-        paletteColor[0].className = 'selected';
+        paletteColor[0].classList.add('selected');
+        paletteColor[0].classList.add('color');
         boardPixel[index].addEventListener('click', function () {          
             boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
         });        
