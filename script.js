@@ -43,6 +43,11 @@ function clearBoard() {
   });
 }
 
+function updatePlaceholder() {
+  const message = `Tamanho do canvas: ${canvasSize}`;
+  inputBoardSize.setAttribute('placeholder', message);
+}
+
 function checkNumber(numberOfLines) {
   if (numberOfLines < 5) numberOfLines = 5;
   if (numberOfLines > 50) numberOfLines = 50;
@@ -77,11 +82,6 @@ function hasValue() {
   return (firstTime || inputBoardSize.value.length !== 0) ? createBoard(Number(inputBoardSize.value)) : alert('Board inválido!');
 }
 
-function updatePlaceholder() {
-  const message = `Tamanho do canvas: ${canvasSize}`;
-  inputBoardSize.setAttribute('placeholder', message);
-}
-
 function makeRandomColor() {
   let color = '';
   while (color.length < 6) {
@@ -99,6 +99,7 @@ function setColors() {
     }
   });
   document.body.style.backgroundColor = makeRandomColor();
+  inputBoardSize.style.backgroundColor = makeRandomColor();
   buttonBlack.style.backgroundColor = 'black';
 }
 
