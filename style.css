@@ -7,6 +7,16 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#main {
+    background-color: pink;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+}
+
+header {
+    background-color: cornflowerblue;
+}
 .pixel { 
     display: table-cell;
     border: solid black 1px;
@@ -58,12 +68,11 @@ h1 {
 
 p {
     color: violet;
-    width: 30%;
+    width: 100%;
     font-weight: bold;
-    margin: 20px auto;
+    margin: auto;
     background-color: white;
-    border-radius: 5px;
-    padding: 10px; 
+    padding: 10px 0; 
 }
 
 #color-palette {
@@ -112,4 +121,8 @@ input[type="number"] {
     height: 50px;
     cursor: pointer;
     margin: 5px auto;
+}
+
+#inputTypes {
+    margin: 20px auto;
 }
