@@ -23,7 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sd-07-block5-project-todo-list" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -31,6 +31,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -43,7 +44,9 @@
       <updated>1599839600988</updated>
       <workItem from="1599839602058" duration="2144000" />
       <workItem from="1600135264874" duration="2745000" />
-      <workItem from="1600172333789" duration="4158000" />
+      <workItem from="1600172333789" duration="21130000" />
+      <workItem from="1600198286668" duration="189000" />
+      <workItem from="1600198494501" duration="377000" />
     </task>
     <servers />
   </component>
@@ -51,9 +54,13 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="493" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1599846493552">
+    <state x="493" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1600188662003">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state x="493" y="155" width="424" height="491" key="FileChooserDialogImpl/54.27.1312.741/1366.77.1680.1050@54.27.1312.741" timestamp="1599846493552" />
+    <state x="493" y="155" width="424" height="491" key="FileChooserDialogImpl/54.27.1312.741/1366.77.1680.1050@54.27.1312.741" timestamp="1600188662003" />
+    <state x="199" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1600198455716">
+      <screen x="54" y="27" width="1312" height="741" />
+    </state>
+    <state x="199" y="31" width="1022" height="737" key="SettingsEditor/54.27.1312.741/1366.77.1680.1050@54.27.1312.741" timestamp="1600198455716" />
   </component>
 </project>
