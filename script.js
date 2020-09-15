@@ -49,8 +49,9 @@ window.onload = function () {
     /* Pintar quadro de pixels */
     selectPixel()
     function selectPixel () {
-        for (let index = 0; index < board.length; index += 1) {
-            board[index].addEventListener("click", paintPixels);
+        let newBoard = document.querySelectorAll(".pixel");
+        for (let index = 0; index < newBoard.length; index += 1) {
+            newBoard[index].addEventListener("click", paintPixels);
         }
     }
 
@@ -74,9 +75,10 @@ window.onload = function () {
     clearButton.addEventListener("click", clearPixels);
     
     function clearPixels() {
-        let numberOfPixels = board.length;
+        let newBoard = document.querySelectorAll(".pixel");
+        let numberOfPixels = newBoard.length;
         for (let index = 0; index < numberOfPixels; index += 1) {
-            board[index].className = "pixel";
+            newBoard[index].style.backgroundColor = "white";
         }
     }
 
@@ -125,6 +127,7 @@ window.onload = function () {
                     console.log(newColumn);
                 }
             }
+            selectPixel();
         }
     }
 }
