@@ -24,7 +24,7 @@ function createPaletteColors(parent) {
   palette.setAttribute('id', 'color-palette');
   parent.appendChild(palette);
 
-  const colorsPalette = ['black', 'oldlace', 'tomato', 'dodgerblue', 'green', 'gold'];
+  const colorsPalette = ['black', 'oldlace', 'tomato', 'dodgerblue']; // , 'green', 'gold'
   for (let index = 0; index < colorsPalette.length; index += 1) {
     if (index === 0) {
       const colorOfPalette = document.createElement('span');
@@ -43,13 +43,13 @@ function createPaletteColors(parent) {
 }
 createPaletteColors(mainPage);
 
-function createButton(parent){
+function createButton(parent) {
   const SectionButtonClear = document.createElement('section');
   SectionButtonClear.className = 'section-button-clear';
   parent.appendChild(SectionButtonClear);
   const buttonClear = document.createElement('button');
   buttonClear.className = 'clear-board';
-  buttonClear.setAttribute('id',  'clear-board');
+  buttonClear.setAttribute('id', 'clear-board');
   buttonClear.innerText = 'Limpar';
   SectionButtonClear.appendChild(buttonClear);
 }
@@ -61,7 +61,7 @@ function createBasePixelBoard(parent) {
   divAll.className = 'pixel-board';
   divAll.setAttribute('id', 'pixel-board');
   parent.appendChild(divAll);
-  const idLines = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+  const idLines = ['a', 'b', 'c', 'd', 'e']; // , 'f', 'g', 'h', 'i', 'j'
   for (let lineIndex = 0; lineIndex < idLines.length; lineIndex += 1) {
     const divLine = document.createElement('div');
     divLine.className = 'line';
@@ -98,10 +98,9 @@ function selectedColorClass() {
     }
     // Limpando a board
     if (event.target.nodeName === 'BUTTON') {
-      let clearAllPixel = document.querySelectorAll('.pixel');
-      for (let index = 0; index < clearAllPixel.length; index += 1){
+      const clearAllPixel = document.querySelectorAll('.pixel');
+      for (let index = 0; index < clearAllPixel.length; index += 1) {
         clearAllPixel[index].style.backgroundColor = 'white';
-        //console.log(clearAllPixel[index])
       }
     }
   });
