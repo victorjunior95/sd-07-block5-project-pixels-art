@@ -39,7 +39,7 @@ function getColor() {
         event.target.className += ' selected';
         selected = event.target.style.backgroundColor;
       }
-    }
+    },
   );
 }
 
@@ -50,7 +50,7 @@ function paintPixel() {
       if (event.target.classList.contains('pixel')) {
         event.target.style.backgroundColor = selected;
       }
-    }
+    },
   );
 }
 
@@ -80,7 +80,8 @@ paintPixel();
 btnClearBoard.addEventListener('click', clearPixelBoard);
 
 window.onload = () => {
-  for (let element = 1; element <= palletePixels.length - 1; element += 1) {
+  for (let element = 0; element <= palletePixels.length - 1; element += 1) {
     palletePixels[element].style.backgroundColor = generateRandomColor();
   }
+  palletePixels[0].style.backgroundColor = 'black';
 };
