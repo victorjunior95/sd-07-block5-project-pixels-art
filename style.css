@@ -43,3 +43,18 @@ table , th , td {
   clear: both;
   margin-top: 5px;
 }
+
+#table{ 
+  display: table;
+}
+
+.tr{ 
+  display: table-row; 
+}
+
+.td{ 
+  display: table-cell;
+  border: 1px solid black;
+  height: 41px;
+  width: 41px;
+}
