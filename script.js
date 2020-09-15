@@ -36,9 +36,15 @@ pixelboard.innerHTML += "</div>";
 // O elemento da cor preta deve possuir, inicialmente, a classe selected;
 // Note que o elemento que deverá receber a classe selected deve ser um dos elementos que possuem a classe color, como especificado no requisito 2.
 
-
 let paletas = document.getElementById("color-palette");
 let paleta=[];
 paleta[0] = paletas.firstElementChild;
 
-paleta[0].className = "selected";
+window.onload() = firstselection;
+
+function firstselection() {
+    paleta[0].className = "selected";
+}
+
+
+
