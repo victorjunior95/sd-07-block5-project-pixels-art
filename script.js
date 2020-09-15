@@ -19,60 +19,60 @@ const boardSize = document.querySelector('#board-size');
 
 function createBoard() {
   for (let index = 0; index < myArray.length; index += 1) {
-      const container = document.createElement('div');
-      container.className = 'container';
-      divPixelBoard.appendChild(container);
-      for (let index2 = 0; index2 < myArray[index].length; index2 += 1) {
-          const divPixel = document.createElement('div');
-          divPixel.className = 'pixel';
-          container.appendChild(divPixel);
-          }
-    }
+    const container = document.createElement('div');
+    container.className = 'container';
+    divPixelBoard.appendChild(container);
+    for (let index2 = 0; index2 < myArray[index].length; index2 += 1) {
+        const divPixel = document.createElement('div');
+        divPixel.className = 'pixel';
+        container.appendChild(divPixel);
+      }
+  }
   function currentColorToBlack() {
-  currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color');
-  colorBlack.className = 'color selected';
-  colorOne.className = 'color';
-  colorTwo.className = 'color';
-  colorThree.className = 'color';
-}
+    currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color');
+    colorBlack.className = 'color selected';
+    colorOne.className = 'color';
+    colorTwo.className = 'color';
+    colorThree.className = 'color';
+  }
   function currentColorToOne() {
-  currentColor = window.getComputedStyle(document.querySelector('#color2')).getPropertyValue('background-color');
-  colorOne.className = 'color selected';
-  colorBlack.className = 'color';
-  colorTwo.className = 'color';
-  colorThree.className = 'color';
-}
+    currentColor = window.getComputedStyle(document.querySelector('#color2')).getPropertyValue('background-color');
+    colorOne.className = 'color selected';
+    colorBlack.className = 'color';
+    colorTwo.className = 'color';
+    colorThree.className = 'color';
+  }
 
   function currentColorToTwo() {
-  currentColor = window.getComputedStyle(document.querySelector('#color3')).getPropertyValue('background-color');
-  colorTwo.className = 'color selected';
-  colorBlack.className = 'color';
-  colorOne.className = 'color';
-  colorThree.className = 'color';
-}
+    currentColor = window.getComputedStyle(document.querySelector('#color3')).getPropertyValue('background-color');
+    colorTwo.className = 'color selected';
+    colorBlack.className = 'color';
+    colorOne.className = 'color';
+    colorThree.className = 'color';
+  }
 
   function currentColorToThree() {
-  currentColor = window.getComputedStyle(document.querySelector('#color4')).getPropertyValue('background-color');
-  colorThree.className = 'color selected';
-  colorBlack.className = 'color';
-  colorOne.className = 'color';
-  colorTwo.className = 'color';
-}
+    currentColor = window.getComputedStyle(document.querySelector('#color4')).getPropertyValue('background-color');
+    colorThree.className = 'color selected';
+    colorBlack.className = 'color';
+    colorOne.className = 'color';
+    colorTwo.className = 'color';
+  }
 
   const classPixel = document.querySelectorAll('.pixel');
 
   for (let e = 0; e < classPixel.length; e += 1) {
-  classPixel[e].addEventListener('click', function () {
-      classPixel[e].style.background = currentColor;
-    });
-}
+    classPixel[e].addEventListener('click', function () {
+    classPixel[e].style.background = currentColor;
+  });
+  }
 
   function clearBoard() {
-  for (let e = 0; e < classPixel.length; e += 1) {
-      classPixel[e].style.background = 'white';
-    }
-}
-  clear.addEventListener('click', clearBoard)
+    for (let e = 0; e < classPixel.length; e += 1) {
+    classPixel[e].style.background = 'white';
+  }
+  }
+  clear.addEventListener('click', clearBoard);
 
   colorThree.addEventListener('click', currentColorToThree);
   colorTwo.addEventListener('click', currentColorToTwo);
