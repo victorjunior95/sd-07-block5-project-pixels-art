@@ -1,13 +1,24 @@
 window.onload = function () {
 
+  function randomColor(parametro) {
+    let firstNumber = Math.ceil(Math.random() * 255);
+    let secondNumber = Math.ceil(Math.random() * 255);
+    let thirdNumber = Math.ceil(Math.random() * 255);
+    let string = "rgb(" + firstNumber + "," + secondNumber + "," + thirdNumber + ")";
+    parametro = string;
+    return parametro = string;
+  }
+
+  let colorGenerated = ";"
+
   //Referência dos elementos .color.
   let arrayColors = document.querySelectorAll(".color");
 
   //BackgroundColor de cada posição.
   arrayColors[0].style.backgroundColor = "black";
-  arrayColors[1].style.backgroundColor = "red";
-  arrayColors[2].style.backgroundColor = "grey";
-  arrayColors[3].style.backgroundColor = "yellow";
+  arrayColors[1].style.backgroundColor = randomColor(colorGenerated);
+  arrayColors[2].style.backgroundColor = randomColor(colorGenerated);
+  arrayColors[3].style.backgroundColor = randomColor(colorGenerated);
 
   let selectedColor = document.querySelectorAll(".color.selected")[0].style.backgroundColor;
 
@@ -79,5 +90,11 @@ window.onload = function () {
 
   button.addEventListener('click', eraseAll);
 
+  //Função para gerar paleta de cores aletória.
 
+
+  let firstNumber = Math.ceil(Math.random() * 255);
+  let secondNumber = Math.ceil(Math.random() * 255);
+  let thirdNumber = Math.ceil(Math.random() * 255);
+  
 }
