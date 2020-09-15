@@ -26,8 +26,6 @@
 
 .pixel {
   background-color: white;
-  height: 41px;
-  width: 41px;
 }
 
 table {
@@ -45,10 +43,6 @@ table , th , td {
   margin-top: 5px;
 }
 
-/* #table {
-  display: table;
-} */
-
 .tr {
   display: table-row;
 }
@@ -56,4 +50,6 @@ table , th , td {
 .td {
   border: 1px solid black;
   display: table-cell;
+  height: 40px;
+  width: 40px;
 }
