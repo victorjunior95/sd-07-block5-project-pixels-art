@@ -14,6 +14,7 @@ for(let index =0; index < numberLines; index += 1){
         pixel[k] = document.createElement("div");
         pixel[k].className = "pixel";
         linha[index].appendChild(pixel[k]);
+        k = k + 1;
     }
 }
 

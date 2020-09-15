@@ -42,7 +42,7 @@ h1{
     width: 210px;
 }
 .linha{
-    margin-top: -4px;
+    margin-bottom: -4px;
 }
 .linha:first-child{
     margin-top:0;
