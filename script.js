@@ -26,6 +26,7 @@ window.onload = function () {
     let pixelboard = document.getElementById("pixel-board");
     let colorpalette = document.getElementById("color-palette");    
     let colors = ['black', 'red', 'blue', 'green'];
+    let clear = document.getElementById("clear-board");
 
     let aux="";
     let indice;
@@ -79,6 +80,20 @@ window.onload = function () {
         }
 
     }
+
+    clear.addEventListener("click", function() {
+        for (i = 1; i <= 5; i += 1) {
+    
+            for (k = 1; k <= 5; k += 1) {
+    
+                indice = i+""+k;
+                pixel = document.getElementById(indice);
+                pixel.style.backgroundColor = "white";
+        
+            }
+    
+        }
+    });
 
     let paletas = document.getElementById("color-palette");
     let paleta=[];
