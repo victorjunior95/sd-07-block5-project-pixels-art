@@ -23,10 +23,13 @@ function fillLinesWithPixels(numberOfPixels) {
 }
 
 function getColor() {
-  document.addEventListener(
-    'click',
-    function (event) {
+  const palletePixels = document.getElementsByClassName('pallete-pixel');
+  document.addEventListener('click', function (event) {
       if (event.target.classList.contains('pallete-pixel')) {
+        for (let element = 0; element <= palletePixels.length - 1; element += 1) {
+          palletePixels[element].classList.remove('selected');
+        }
+        event.target.className += ' selected';
         selected = event.target.id;
       }
     },
@@ -35,14 +38,11 @@ function getColor() {
 }
 
 function paintPixel() {
-  document.addEventListener(
-    'click',
-    function (event) {
+  document.addEventListener('click', function (event) {
       if (event.target.classList.contains('pixel')) {
         event.target.style.backgroundColor = selected;
       }
-    },
-    false
+    }, false
   ); 
 }
 
