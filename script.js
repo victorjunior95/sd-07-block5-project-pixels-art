@@ -39,7 +39,7 @@ function getColor() {
         event.target.className += ' selected';
         selected = event.target.style.backgroundColor;
       }
-    },
+    }, false,
   );
 }
 
@@ -50,7 +50,7 @@ function paintPixel() {
       if (event.target.classList.contains('pixel')) {
         event.target.style.backgroundColor = selected;
       }
-    },
+    }, false,
   );
 }
 
