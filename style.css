@@ -9,6 +9,11 @@ h1 {
   text-transform: uppercase;
 }
 
+form {
+  display: inline-block;
+  margin-right: 30px;
+}
+
 p {
   color: rgb(235, 235, 235);
   font-family: sans-serif;
@@ -29,12 +34,13 @@ input {
   border: 3px solid rgb(255, 103, 0);
   border-radius: 20px;
   color: white;
-  display: block;
+  display: inline-block;
   font-family: sans-serif;
   font-weight: 900;
   height: 30px;
   margin: auto;
   margin-bottom: 20px;
+  margin-left: 30px;
   transition: 0.5s;
   width: 200px;
 }
@@ -70,6 +76,28 @@ button {
   border-radius: 0 50% 50% 0;
 }
 
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/repeat - display grid  mais no JS*/
+
+.board {
+  align-content: initial;
+  display: grid;
+  height: 202px;
+  justify-content: initial;
+  margin: auto;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(5, 40px);
+  grid-template-rows: repeat(5, 40px);
+  width: 202px;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+
 .clear {
   background-color: rgb(58, 110, 165);
   border: none;
@@ -86,22 +114,4 @@ button {
   background-color: rgb(255, 103, 0);
   color: rgb(0, 78, 152);
   font-weight: 900;
-}
-
-  /* https://developer.mozilla.org/en-US/docs/Web/CSS/repeat - display grid  mais no JS*/
-
-.board {
-  display: grid;
-  justify-content: center;
-  margin: auto;
-  grid-template-columns: repeat(5, 40px);
-  grid-template-rows: repeat(5, 40px);
-}
-
-.pixel {
-  background-color: white;
-  border: 1px solid black;
-  cursor: pointer;
-  height: 40px;
-  width: 40px;
 }

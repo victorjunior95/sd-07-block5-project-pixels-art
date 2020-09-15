@@ -2,31 +2,58 @@ const sizeBoard = document.querySelector('#board-size');
 const generatorButton = document.querySelector('#generate-board');
 const board = document.querySelector('#pixel-board');
 const arrayColorOfPalette = document.querySelectorAll('.color');
-const pixels = document.querySelectorAll('.pixel');
+let pixels = document.querySelectorAll('.pixel');
 
 const clear = document.querySelector('#clear-board');
 
-let size = null;
+let size = '';
 
 let currentColor = 'black';
 
+window.onload = function () {
+  pixels = document.querySelectorAll('.pixel')
+  for(let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+  arrayColorOfPalette[0].classList.add('selected');
+  arrayColorOfPalette[0].style.backgroundColor = 'black';
+  arrayColorOfPalette[0].style.color = 'black';
+  currentColor = 'black';
+  selectColorsOfPalette();
+};
+
+generatorButton.addEventListener('click', function () {
+  if (size === '') {
+    printAlert();
+  }
+});
+
+function printAlert() {
+  alert('Board inválido!');
+}
+
 sizeBoard.addEventListener('keyup', function () {
   size = sizeBoard.value;
-  if (size > 50) {
-    size = 50;
-  }
-  if (size < 5) {
-    size = 5;
-  }
+  
   returnOrClick();
 });
 
 function returnOrClick() {
-  sizeBoard.addEventListener('keydown', function (event) {
-    if (event.keyCode === 13) {
-      createPixels();
-     }
-  });
+
+  // Inviável usar por conta do meu conhecimento atual e do requisito de valor mínimo imposto no projeto;
+
+  // sizeBoard.addEventListener('keydown', function (event) {
+  //   if (event.keyCode === 13) {
+
+  //     // https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault - preventDefault() previne o evento padrão que no caso do input number ao apertar a tecla enter de valor (13) seria dar submit;
+
+  //     event.preventDefault();
+  //     createPixels();
+  //   }
+  // });
+  if (size > 50) {
+    size = 50;
+  }
   generatorButton.addEventListener('click', createPixels);
 }
 
@@ -37,7 +64,12 @@ function removeOldPixels() {
 }
 
 function createPixels() {
-  size = parseInt(size);
+  if (size === '') {
+    printAlert();
+  }
+  if (size < 5) {
+    size = 5;
+  }
 
   removeOldPixels();
   // https://developer.cdn.mozilla.net/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/pow - potencia;
@@ -58,7 +90,9 @@ function makeBoard() {
 
   board.style.gridTemplateColumns = `repeat(${size}, 40px)`;
   board.style.gridTemplateRows = `repeat(${size}, 40px)`;
-  loopForPaint();
+  board.style.justifyContent = 'center';
+  pixels = document.querySelectorAll('.pixel');
+  selectColorsOfPalette();
 }
 
 function getRandom() {
@@ -72,16 +106,8 @@ function selectColorsOfPalette() {
     arrayColorOfPalette[index].style.color = randomRGBColor;
   }
   loopForColor();
+  loopForPaint();
 }
-
-selectColorsOfPalette();
-
-window.onload = function () {
-  arrayColorOfPalette[0].classList.add('selected');
-  arrayColorOfPalette[0].style.backgroundColor = 'black';
-  arrayColorOfPalette[0].style.color = 'black';
-  currentColor = 'black';
-};
 
 function loopForColor() {
   for (let index = 0; index < arrayColorOfPalette.length; index += 1) {
@@ -113,6 +139,7 @@ function loopForPaint() {
 
 function paint(position) {
   pixels[position].addEventListener('click', function () {
+    
     pixels[position].style.backgroundColor = currentColor;
   });
   clearButton();
