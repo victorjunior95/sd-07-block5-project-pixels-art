@@ -28,13 +28,13 @@ function createPaletteColors(parent) {
   for (let index = 0; index < colorsPalette.length; index += 1) {
     if (index === 0) {
       const colorOfPalette = document.createElement('span');
-      colorOfPalette.className = `color ${colorsPalette[index]} selected`;
+      colorOfPalette.className = `color selected`;
       colorOfPalette.setAttribute('id', colorsPalette[index]);
       colorOfPalette.style.backgroundColor = colorsPalette[index];
       palette.appendChild(colorOfPalette);
     } else {
       const colorOfPalette = document.createElement('span');
-      colorOfPalette.className = `color ${colorsPalette[index]}`;
+      colorOfPalette.className = `color`;
       colorOfPalette.setAttribute('id', colorsPalette[index]);
       colorOfPalette.style.backgroundColor = colorsPalette[index];
       palette.appendChild(colorOfPalette);
@@ -66,3 +66,23 @@ function createBasePixelBoard(parent) {
   }
 }
 createBasePixelBoard(mainPage);
+
+function selectedColorClass(){
+  document.body.addEventListener('click', function (event){
+      // Dados do evento
+      let isSelected = event.target.className;
+      isSelected = isSelected.split(' ');
+      // Item atual selecionado
+      let idSelected = document.querySelectorAll('.selected')[0].id;
+      let elementSelected = document.getElementById(idSelected);
+      // Item clicado
+      let idClicked = event.target.id;
+      let elementClicked = document.getElementById(idClicked);
+      // Açøes do click na paleta
+      if (event.target.nodeName === 'SPAN') {
+        elementSelected.classList.remove('selected');
+        elementClicked.classList.add('selected');
+    }
+  })
+}
+selectedColorClass();
