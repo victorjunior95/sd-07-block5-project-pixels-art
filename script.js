@@ -101,7 +101,8 @@ function loopForColor() {
 
 function getTheColor(index) {
   arrayColorOfPalette[index].addEventListener('click', function () {
-    currentColor = arrayColorOfPalette[index].style.backgroundColor;
+    // Estilo computado do elemento - Isaac
+    currentColor = window.getComputedStyle(arrayColorOfPalette[index]).backgroundColor;
     changeSelect(index);
   });
 }
