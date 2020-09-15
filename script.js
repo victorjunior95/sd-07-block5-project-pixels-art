@@ -29,7 +29,6 @@ function createTable() {
 
   let pixelBoard = document.getElementById("pixel-board");
 
-
   for (let index = 0; index < 5; index += 1) {
 
       let line = document.createElement("div");
@@ -44,23 +43,15 @@ function createTable() {
   }
 
 
- function pintandoElementos(){
-  let cadaPixel = pixelBoard.querySelectorAll('.pixel');
 
-  for (let index = 0; index < cadaPixel.length; index += 1) {
+let cadaPixel = document.querySelectorAll('.pixel');
 
-      let corN = cadaPixel[index];
-      corN.addEventListener('click', function(e){
-          //pegarCor();
-          //e.target.style.backgroundColor = getComputedStyle(colorSelected).backgroundColor;
-          console.log('o')
-      });
-  }
-}
+for (let index = 0; index < cadaPixel.length; index += 1) {
 
-
-
-   //   getComputedStyle([elemento]).backgroundColor;
-
+     let corN = cadaPixel[index];
+     corN.addEventListener('click', function(e){
+         e.target.style.backgroundColor = getComputedStyle(colorSelected).backgroundColor;
+     })
+ }
 
 }
