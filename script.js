@@ -14,57 +14,46 @@ const color = document.querySelectorAll('.color');
 let selectedDiv = document.querySelector('.selected');
 // Seleciona o button com id #clear-board
 let clearAllBtn = document.querySelector('#clear-board');
-// Chama a função selected
-selected();
-// Chama a função clearAll
-clearAll();
 // Chama a função createEventPixel
 createEventPixel();
 // Adiciona um evento no input e retorna o valor digitado pelo usuário;
 boardSize.addEventListener('input', function () {
-    boardSizeValue = document.querySelector('#board-size').value;
-    return boardSizeValue;
+  boardSizeValue = document.querySelector('#board-size').value;
+  return boardSizeValue;
 });
 // Adiciona um evento ao botão btnGenerateBoard
 btnGenerateBoard.addEventListener('click', function () {
-    // Se o valor de boardSizeValue for vazio retorna um alert
-    if (boardSizeValue === '') {
-        alert('Board inválido!');
-    }
-    // Chama a função createBoard
-    createBoard();
+  // Se o valor de boardSizeValue for vazio retorna um alert
+  if (boardSizeValue === '') {
+    alert('Board inválido!');
+  }
+  // Chama a função createBoard
+  createBoard();
 });
-// Função responsavel de criar o quadro chamando outras funções
-function createBoard () {
-    deleteBoard();
-    createLine();
-    createPixel();
-    createEventPixel();
-}
 // Função responsável por criar as linhas
 function createLine () {
-    for (let i = 0; i < parseInt(boardSizeValue); i += 1) {
-        // Cria um elemento div e atrubui a classe e id line
-        let line = document.createElement('div');
-        line.className = 'line';
-        line.id = 'line';
-        // Adiciona a div criada a pixelBoard
-        pixelBoard.appendChild(line);
-    }
+  for (let i = 0; i < parseInt(boardSizeValue); i += 1) {
+    // Cria um elemento div e atrubui a classe e id line
+    let line = document.createElement('div');
+    line.className = 'line';
+    line.id = 'line';
+    // Adiciona a div criada a pixelBoard
+    pixelBoard.appendChild(line);
+  }
 }
 // Função responsável por criar cada pixel em cada linha
 function createPixel () {
-    // Seleciona todas as divs com classe line
-    let line = document.querySelectorAll('.line');
-    for (let i = 0; i < line.length; i += 1) {
-        for (let j = 0; j < line.length; j += 1) {
-            // criando um uma div e atribuindo a classe pixel
-            let pixelMaker = document.createElement('div');
-            pixelMaker.className = 'pixel';
-            // Adiciona a div criada na linha selecionada
-            line[j].appendChild(pixelMaker);
-        }
+  // Seleciona todas as divs com classe line
+  let line = document.querySelectorAll('.line');
+  for (let i = 0; i < line.length; i += 1) {
+    for (let j = 0; j < line.length; j += 1) {
+      // criando um uma div e atribuindo a classe pixel
+      let pixelMaker = document.createElement('div');
+      pixelMaker.className = 'pixel';
+      // Adiciona a div criada na linha selecionada
+      line[j].appendChild(pixelMaker);
     }
+  }
 }
 // Função responsável por apagar o quadro
 function deleteBoard () {
@@ -74,43 +63,54 @@ function deleteBoard () {
     }
 }
 function createEventPixel () {
-    // Atualiza a variavel allPixels
-    allPixels = document.querySelectorAll('.pixel');
-    for (let j = 0; j < allPixels.length; j += 1) {
-        // Cria um evento em cada pixel
-        allPixels[j].addEventListener('click', function () {
-            // Atualiza a variavel selectedDiv
-            selectedDiv = document.querySelector('.selected');
-            // Atribui o atual style.backgroundColor da selectedDiv a allPixels selecionado
-            allPixels[j].style.backgroundColor = window.getComputedStyle(selectedDiv).backgroundColor;
-        });
-    }
+  // Atualiza a variavel allPixels
+  allPixels = document.querySelectorAll('.pixel');
+  for (let j = 0; j < allPixels.length; j += 1) {
+    // Cria um evento em cada pixel
+    allPixels[j].addEventListener('click', function () {
+      // Atualiza a variavel selectedDiv
+      selectedDiv = document.querySelector('.selected');
+      // Atribui o atual style.backgroundColor da selectedDiv a allPixels selecionado
+      allPixels[j].style.backgroundColor = window.getComputedStyle(selectedDiv).backgroundColor;
+    });
+  }
+}
+// Função responsavel de criar o quadro chamando outras funções
+function createBoard () {
+  deleteBoard();
+  createLine();
+  createPixel();
+  createEventPixel();
 }
 // Função responsável por selecionar a cor
 function selected () {
-    for (let i = 0; i < color.length; i += 1) {
-        // Cria um evento em cada div com classe color
-        color[i].addEventListener('click', function () {
-            // Atualiza a variavel selectedDiv
-            selectedDiv = document.querySelector('.selected');
-            // Remove a classe select da div selecionada
-            selectedDiv.classList.remove('selected');
-            // Adicona a classe selected a div color clicada
-            color[i].classList.add('selected');
-        });
-    }
+  for (let i = 0; i < color.length; i += 1) {
+    // Cria um evento em cada div com classe color
+    color[i].addEventListener('click', function () {
+      // Atualiza a variavel selectedDiv
+      selectedDiv = document.querySelector('.selected');
+      // Remove a classe select da div selecionada
+      selectedDiv.classList.remove('selected');
+      // Adicona a classe selected a div color clicada
+      color[i].classList.add('selected');
+    });
+  }
 }
+// Chama a função selected
+selected();
 // Função responsável por limpar o quadro
 function clearAll () {
-    // Atualiza a variavel clearAllBtn
-    clearAllBtn = document.querySelector('#clear-board');
-    // Adiciona um evento a clearAllBtn
-    clearAllBtn.addEventListener('click', function () {
-        // Atualiza a variavel allPixels
-        allPixels = document.querySelectorAll('.pixel');
-        for (let j = 0; j < allPixels.length; j += 1) {
-            // Passa por todos pixels mudando a cor de background para white
-            allPixels[j].style.backgroundColor = 'white';
-        }
-    });
+  // Atualiza a variavel clearAllBtn
+  clearAllBtn = document.querySelector('#clear-board');
+  // Adiciona um evento a clearAllBtn
+  clearAllBtn.addEventListener('click', function () {
+    // Atualiza a variavel allPixels
+    allPixels = document.querySelectorAll('.pixel');
+    for (let j = 0; j < allPixels.length; j += 1) {
+      // Passa por todos pixels mudando a cor de background para white
+      allPixels[j].style.backgroundColor = 'white';
+    }
+  });
 }
+// Chama a função clearAll
+clearAll();
