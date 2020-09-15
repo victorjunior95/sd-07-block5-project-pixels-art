@@ -1,12 +1,12 @@
-window.onload = function () {
+window.onload = function() {
 
   // Muda a cor do pixel selecionado
   function changeColor() {
-    let pixel = event.target;
-    for (checker = 0; checker < document.getElementsByClassName('color').length; checker +=1) {
-      for (searcher =0; searcher < document.getElementsByClassName('color')[checker].classList.length; searcher +=1) {
+    const pixel = event.target;
+    for (let checker = 0; checker < document.getElementsByClassName('color').length; checker + = 1) {
+      for (let searcher = 0; searcher < document.getElementsByClassName('color')[checker].classList.length; searcher + = 1) {
         if ((document.getElementsByClassName('color')[checker].classList[searcher]) === 'selected') {
-          pixel.classList.add(document.getElementsByClassName('color')[checker].classList[1])
+          pixel.classList.add(document.getElementsByClassName('color')[checker].classList[1]);
         }
       }
     }
@@ -15,15 +15,15 @@ window.onload = function () {
   // Cria o quadro de pixels
   function createBoard() {
     const boardHeight = 5;
-    for (let boardColumn = 0; boardColumn < boardHeight; boardColumn +=1) {
-      let baseLine = document.createElement('div');
+    for (let boardColumn = 0; boardColumn < boardHeight; boardColumn + = 1) {
+      const baseLine = document.createElement('div');
       baseLine.className = 'line';
       document.getElementById('pixel-board').appendChild(baseLine);
-      for (let index = 0; index < boardHeight; index +=1) {
-        let pixel = document.createElement('div');
+      for (let index = 0; index < boardHeight; index + = 1) {
+        const pixel = document.createElement('div');
         pixel.className = 'pixel';
         pixel.addEventListener('click', changeColor);
-        document.getElementsByClassName('line')[boardColumn].appendChild(pixel)
+        document.getElementsByClassName('line')[boardColumn].appendChild(pixel);
       }
     }
   }
@@ -31,15 +31,14 @@ window.onload = function () {
   createBoard();
 
   function selectedColor() {
-    for (checker = 0; checker < document.getElementsByClassName('color').length; checker +=1) {
+    for (let checker = 0; checker < document.getElementsByClassName('color').length; checker + = 1) {
       document.getElementsByClassName('color')[checker].classList.remove('selected');
     }
-    let brush = event.target;
+    const brush = event.target;
     brush.classList.add('selected');
   }
 
-  for (let index = 0; index < document.getElementsByClassName('color').length; index +=1) {
-      document.getElementsByClassName('color')[index].addEventListener('click', selectedColor);
+  for (let index = 0; index < document.getElementsByClassName('color').length; index + = 1) {
+    document.getElementsByClassName('color')[index].addEventListener('click', selectedColor);
   }
-
 }
