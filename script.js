@@ -12,28 +12,32 @@ function getRandom() {
   return Math.floor(Math.random() * 100);
 }
 
-window.onload = function () {
-  pixels = document.querySelectorAll('.pixel')
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].style.backgroundColor = 'white';
+}
 
-  for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].style.backgroundColor = 'white';
-  }
+for (let index = 1; index < arrayColorOfPalette.length; index += 1) {
+  const randomRGBColor = `rgb(${index} , ${getRandom()} , ${getRandom()})`;
 
-  for (let index = 1; index < arrayColorOfPalette.length; index += 1) {
-    const randomRGBColor = `rgb(${index} , ${getRandom()} , ${getRandom()})`;
+  arrayColorOfPalette[index].style.backgroundColor = randomRGBColor;
+  arrayColorOfPalette[index].style.color = randomRGBColor;
+}
 
-    arrayColorOfPalette[index].style.backgroundColor = randomRGBColor;
-    arrayColorOfPalette[index].style.color = randomRGBColor;
-  }
+arrayColorOfPalette[0].classList.add('selected');
+arrayColorOfPalette[0].style.backgroundColor = 'black';
+arrayColorOfPalette[0].style.color = 'black';
+currentColor = 'black';
+loopForColor();
+loopForPaint();
 
-  arrayColorOfPalette[0].classList.add('selected');
-  arrayColorOfPalette[0].style.backgroundColor = 'black';
-  arrayColorOfPalette[0].style.color = 'black';
-  currentColor = 'black';
+// window.onload = function () {
+//   pixels = document.querySelectorAll('.pixel')
 
-  loopForColor();
-  loopForPaint();
-};
+  
+
+//   loopForColor();
+//   loopForPaint();
+// };
 
 generatorButton.addEventListener('click', function () {
   if (size === '') {
@@ -120,7 +124,6 @@ function changeSelect(position) {
 }
 
 function loopForPaint() {
-  alert('ok')
   for (let index = 0; index < pixels.length; index += 1) {
     paint(index);
   }
@@ -137,7 +140,7 @@ function clearButton() {
   clear.addEventListener('click', function () {
     board.style.backgroundColor = 'white';
     for (let index = 0; index < pixels.length; index += 1) {
-      pixels[index].style.backgroundColor = 'rgb(221, 221, 221)';
+      pixels[index].style.backgroundColor = 'white';
     }
   });
 }
