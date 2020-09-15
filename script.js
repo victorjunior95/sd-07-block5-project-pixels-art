@@ -30,3 +30,13 @@ for (let i = 1; i <= 5; i += 1) {
 }
 
 pixelboard.innerHTML += "</div>";
+
+// 6 - Ao carregar a página, a cor preta da paleta já deve estar selecionada para pintar os pixels.
+// As seguintes verificações serão feitas:
+// O elemento da cor preta deve possuir, inicialmente, a classe selected;
+// Note que o elemento que deverá receber a classe selected deve ser um dos elementos que possuem a classe color, como especificado no requisito 2.
+
+
+let paleta1 = document.getElementById("color-palette");
+console.log(paleta1.firstElementChild);
+paleta1.firstElementChild.className = "selected";
