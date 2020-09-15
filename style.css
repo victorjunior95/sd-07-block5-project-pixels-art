@@ -6,7 +6,7 @@ body {
   text-align: center;
 }
 
-.color-palete{
+.color-palete {
   text-align: center;
 }
 
@@ -18,6 +18,10 @@ body {
 }
 
 .black {
+  background-color: black;
+}
+
+.selected {
   background-color: black;
 }
 
@@ -46,11 +50,12 @@ body {
 }
 
 .pixel {
-  height: 38px;
-  width: 38px;
   background-color: white;
   border: 1px solid black;
+  height: 40px;
+  width: 40px;
 }
+
 .box {
   text-align: center;
 }
