@@ -56,6 +56,26 @@ function paintTheBoard() {
   }
 };
 
+
+//User-generated border
+function userBoard() {
+  //const userBoardSize = document.getElementById('board-size').value;
+  const userBoard = document.querySelector('.pixel-board');
+  const generateBoard = document.querySelector('#generate-board');
+
+  generateBoard.addEventListener('click', function () {
+
+    let userBoardSize = document.getElementById('board-size');
+
+    if (userBoardSize.value >= 0 && userBoardSize.value < 5 ) {
+      userBoardSize.stepUp(5 - userBoardSize.value);
+    } else if (userBoardSize.value > 50) {
+      userBoardSize.stepDown(userBoardSize.value - 50);
+    }
+
+  });
+
+};
 //Clearing the board
 document.querySelector('#clear-board').addEventListener('click', function () {
   const pixels = document.querySelectorAll('.pixel');
@@ -67,3 +87,5 @@ document.querySelector('#clear-board').addEventListener('click', function () {
 initialPixelBoard();
 gettingTheColors();
 paintTheBoard();
+
+userBoard();
