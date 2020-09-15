@@ -93,7 +93,7 @@ function botaoCriarGrid () {
 }
 
 function limparGrid () { //função para limpar o grid
-  const limparGrida = document.querySelector('#clear-board'); //capturar o id do botão para limpar
+  const limpar = document.querySelector('#clear-board'); //capturar o id do botão para limpar
   limpar.addEventListener('click', function () { //adicionando event click
     const grid = document.querySelectorAll('.pixel'); //constante com todas as box
     for (let index = 0; index < grid.length; index += 1) { //iterando sobre os box do grid
@@ -107,5 +107,5 @@ window.onload = () => {
     createBox ();
     createPixelsBoard();
     botaoCriarGrid ();
-
+    limparGrid ();
 }
