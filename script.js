@@ -9,8 +9,8 @@ window.onload = function () {
     let color2 = document.querySelector(".orange");
     let color3 = document.querySelector(".pink");
     let color4 = document.querySelector(".blue");
-    let father = documento.querySelectorAll(".line");
-    console.log(father);
+/*     let father = documento.querySelectorAll(".line");
+    console.log(father); */
 
     /* Mudar a cor selecionada */
     color1.addEventListener("click", setSelectedColor);
