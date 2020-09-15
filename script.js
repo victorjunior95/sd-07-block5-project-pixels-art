@@ -140,8 +140,9 @@ function paint(position) {
 
 function clearButton() {
   clear.addEventListener('click', function () {
+    board.style.backgroundColor = 'white';
     for (let index = 0; index < pixels.length; index += 1) {
-      pixels[index].style.backgroundColor = 'rgb(211, 211, 211)';
+      pixels[index].style.backgroundColor = 'white';
     }
   });
 }
