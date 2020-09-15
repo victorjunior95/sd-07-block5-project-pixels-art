@@ -5,7 +5,7 @@ h1 {
 .container {
   border: 3px solid slategray;
   box-sizing: border-box;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
   width: 100%;
 }
