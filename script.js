@@ -1,8 +1,9 @@
 let palette = document.querySelector("#color-palette")
 let fields = document.querySelectorAll(".pixel")
+let colors = document.querySelectorAll(".color")
 let boardSize = document.querySelector("#board-size").value
 let generateBoard = document.querySelector("#generate-board")
-let colors = ["red", "blue", "green", "aliceblue", "brown", "purple", "gray", "violet", "pink", "yellow"]
+let options = ["red", "blue", "green", "aliceblue", "brown", "purple", "gray", "violet", "pink", "yellow", "coral", "orange", "gold", "darkkhaki", "peachpuff", "springgreen", "mediumspringgreen", "cyan", "teal", "slateblue", "indigo", "deeppink", "seagreen", "seashell", "darkslategray", "sandybrown", "chocolate", "peru", "wheat", "blueviolet", "magenta"]
 
 palette.addEventListener("click", (event)=>{
     let selected = document.querySelector(".selected")
@@ -10,6 +11,10 @@ palette.addEventListener("click", (event)=>{
     color = event.target
     color.classList.add("selected")
 })
+
+for (let i = 1; i < colors.length; i = i + 1){
+    colors[i].style.backgroundColor = options[Math.floor(Math.random() * colors.length) + 1]
+}
 
 for (let i = 0; i < fields.length; i += 1){
     fields[i].addEventListener("click", ()=>{
@@ -32,4 +37,4 @@ generateBoard.addEventListener("click", ()=>{
     }
 })
 
-window
+
