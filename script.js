@@ -18,71 +18,70 @@ const generateBoard = document.querySelector('#generate-board');
 const boardSize = document.querySelector('#board-size');
 
 function createBoard() {
-    for (let index = 0; index < myArray.length; index += 1) {
-        const container = document.createElement('div');
-        container.className = 'container';
-        divPixelBoard.appendChild(container);
-        for (let index2 = 0; index2 < myArray[index].length; index2 += 1) {
-            const divPixel = document.createElement('div');
-            divPixel.className = 'pixel';
-            container.appendChild(divPixel);
-            }
+  for (let index = 0; index < myArray.length; index += 1) {
+      const container = document.createElement('div');
+      container.className = 'container';
+      divPixelBoard.appendChild(container);
+      for (let index2 = 0; index2 < myArray[index].length; index2 += 1) {
+          const divPixel = document.createElement('div');
+          divPixel.className = 'pixel';
+          container.appendChild(divPixel);
+          }
+    }
+  function currentColorToBlack() {
+  currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color');
+  colorBlack.className = 'color selected';
+  colorOne.className = 'color';
+  colorTwo.className = 'color';
+  colorThree.className = 'color';
 }
-function currentColorToBlack() {
-    currentColor = window.getComputedStyle(document.querySelector('#color1')).getPropertyValue('background-color');
-    colorBlack.className = 'color selected';
-    colorOne.className = 'color';
-    colorTwo.className = 'color';
-    colorThree.className = 'color';
-}
-function currentColorToOne() {
-    currentColor = window.getComputedStyle(document.querySelector('#color2')).getPropertyValue('background-color');
-    colorOne.className = 'color selected';
-    colorBlack.className = 'color';
-    colorTwo.className = 'color';
-    colorThree.className = 'color';
-}
-
-function currentColorToTwo() {
-    currentColor = window.getComputedStyle(document.querySelector('#color3')).getPropertyValue('background-color');
-    colorTwo.className = 'color selected';
-    colorBlack.className = 'color';
-    colorOne.className = 'color';
-    colorThree.className = 'color';
+  function currentColorToOne() {
+  currentColor = window.getComputedStyle(document.querySelector('#color2')).getPropertyValue('background-color');
+  colorOne.className = 'color selected';
+  colorBlack.className = 'color';
+  colorTwo.className = 'color';
+  colorThree.className = 'color';
 }
 
-function currentColorToThree() {
-    currentColor = window.getComputedStyle(document.querySelector('#color4')).getPropertyValue('background-color');
-    colorThree.className = 'color selected';
-    colorBlack.className = 'color';
-    colorOne.className = 'color';
-    colorTwo.className = 'color';
+  function currentColorToTwo() {
+  currentColor = window.getComputedStyle(document.querySelector('#color3')).getPropertyValue('background-color');
+  colorTwo.className = 'color selected';
+  colorBlack.className = 'color';
+  colorOne.className = 'color';
+  colorThree.className = 'color';
 }
 
-let classPixel = document.querySelectorAll('.pixel');
-
-for(let e = 0 ; e < classPixel.length ; e += 1) {
-    classPixel[e].addEventListener('click', function() {
-        classPixel[e].style.background = currentColor
-        });
+  function currentColorToThree() {
+  currentColor = window.getComputedStyle(document.querySelector('#color4')).getPropertyValue('background-color');
+  colorThree.className = 'color selected';
+  colorBlack.className = 'color';
+  colorOne.className = 'color';
+  colorTwo.className = 'color';
 }
 
-function clearBoard(){
-    for(let e = 0 ; e < classPixel.length ; e+= 1) {
-        classPixel[e].style.background = 'white'
-        }
+  const classPixel = document.querySelectorAll('.pixel');
+
+  for (let e = 0; e < classPixel.length; e += 1) {
+  classPixel[e].addEventListener('click', function () {
+      classPixel[e].style.background = currentColor;
+    });
 }
-clear.addEventListener('click', clearBoard)
 
-colorThree.addEventListener('click', currentColorToThree)
-colorTwo.addEventListener('click', currentColorToTwo)
-colorOne.addEventListener('click', currentColorToOne)
-colorBlack.addEventListener('click', currentColorToBlack)
-
+  function clearBoard() {
+  for (let e = 0; e < classPixel.length; e += 1) {
+      classPixel[e].style.background = 'white';
+    }
 }
-createBoard()
+  clear.addEventListener('click', clearBoard)
 
-function randomColorOne() {
+  colorThree.addEventListener('click', currentColorToThree);
+  colorTwo.addEventListener('click', currentColorToTwo);
+  colorOne.addEventListener('click', currentColorToOne);
+  colorBlack.addEventListener('click', currentColorToBlack);
+}
+createBoard();
+
+  function randomColorOne() {
     let randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
     let r = randomBetween(0, 255);
     let g = randomBetween(0, 255);
@@ -92,7 +91,7 @@ function randomColorOne() {
 }
 randomColorOne()
 
-function randomColorTwo() {
+  function randomColorTwo() {
     let randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
     let r = randomBetween(0, 255);
     let g = randomBetween(0, 255);
@@ -102,7 +101,7 @@ function randomColorTwo() {
 }
 randomColorTwo()
 
-function randomColorThree() {
+  function randomColorThree() {
     let randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
     let r = randomBetween(0, 255);
     let g = randomBetween(0, 255);
@@ -113,7 +112,7 @@ function randomColorThree() {
 randomColorThree()
 
 
-function ArrayNew(){
+  function ArrayNew(){
     myArray = []
     for (let index = 0; index < boardSize.value ; index += 1){
         myArray.push([])
@@ -126,7 +125,7 @@ currentColor = window.getComputedStyle(document.querySelector('#color1')).getPro
 createBoard()
 }
 
-function checkBoardSize(){
+  function checkBoardSize(){
     if (boardSize.value === ''){
         boardSize.value = 5
         alert('Board inválido!')
@@ -139,7 +138,7 @@ function checkBoardSize(){
 return boardSize.value
 }
 
-function removewBoard() {
+  function removewBoard() {
     checkBoardSize()
     while (divPixelBoard.firstChild) {
         divPixelBoard.removeChild(divPixelBoard.firstChild);
