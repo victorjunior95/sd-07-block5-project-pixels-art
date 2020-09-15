@@ -35,6 +35,7 @@ window.onload = function() {
     }
 
     fillPalette();
+    paleta[0].classList.add("selected")
     createFirstBoard();
     
     //adiciona um leitor de eventos em cada cor da paleta
