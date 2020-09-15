@@ -1,29 +1,87 @@
 window.onload = function() {
-  const pixelBoard = document.getElementById("pixel-board");
+  const pixelBoard = document.getElementById("pixel-board"); 
   const qtMatrix = 5;
-  
+  createLine();
+   
+ 
+  const btBlack = document.getElementById("black");
+  const btRed = document.getElementById("red");
+  const btBlue = document.getElementById("blue");
+  const btGreen = document.getElementById("green");
+  const selectedClasse = document.getElementsByClassName("color black selected");
+  /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/  
  
   function createLine (){
-      
-      let pixel = document.createElement("div");
-      pixel.className="color";
-      for (let line = 0; line < qtMatrix; line +=1){
-        let pixelLine = document.createElement("div");
-        pixelBoard.appendChild(pixelLine);
-       for(let pixels = 0; pixels < qtMatrix; pixels+=1){
-            let pixel = document.createElement("div");
+    pixelBoard.style.width = qtMatrix*40+"px";    
+       for(let pixels = 0; pixels < qtMatrix*5; pixels+=1){
+            let pixel = document.createElement("button");
             pixel.className="pixel";
-            pixelLine.appendChild(pixel);
-
+            pixel.addEventListener('click', changeBackground);
+            pixelBoard.appendChild(pixel);
        }
-      }
-
   }
-  createLine();
+ /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/  
+  function changeBackground(){
+    this.className=selectedClasse.className;
+    console.log(this.className);
+  }
+  
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/  
+  btBlack.addEventListener('click', function(){
+    let parent = this.parentNode; // pega o elemento pai     
+        for(let index = 0; index < parent.children.length; index +=1 ){
+            parent.children[index].classList.remove('selected');           
+        }
+        selectedClasse.className = this.className;
+        this.classList.add('selected');
+  });
+/*---------------------------------------------------------------------------*/
+  btRed.addEventListener('click', function(){
+    let parent = this.parentNode; // pega o elemento pai     
+    for(let index = 0; index < parent.children.length; index +=1 ){
+      parent.children[index].classList.remove('selected');  // remove a classe 'selected' de todos os elementos         
+    }
+    selectedClasse.className = this.className;// muda a classe do pixels clicado para a mesma classe da seleção de cor
+    this.classList.add('selected');// adiciona a classe selected ao seletor de cor
+    return selectedClasse; // retorna a classe com a cor selecionada  
+        
+  });
+  /*---------------------------------------------------------------------------*/
+  
+  btBlue.addEventListener('click', function(){
+    let parent = this.parentNode; // pega o elemento pai     
+    for(let index = 0; index < parent.children.length; index +=1 ){
+      parent.children[index].classList.remove('selected');  // remove a classe 'selected' de todos os elementos         
+    }
+    selectedClasse.className = this.className;// muda a classe do pixels clicado para a mesma classe da seleção de cor
+    this.classList.add('selected');// adiciona a classe selected ao seletor de cor
+    return selectedClasse; // retorna a classe com a cor selecionada  
+        
+  });
 
-    
+  /*---------------------------------------------------------------------------*/
+  
+  btGreen.addEventListener('click', function(){
+    let parent = this.parentNode; // pega o elemento pai     
+    for(let index = 0; index < parent.children.length; index +=1 ){
+      parent.children[index].classList.remove('selected');  // remove a classe 'selected' de todos os elementos         
+    }
+    selectedClasse.className = this.className;// muda a classe do pixels clicado para a mesma classe da seleção de cor
+    this.classList.add('selected');// adiciona a classe selected ao seletor de cor
+    return selectedClasse; // retorna a classe com a cor selecionada  
+        
+  });
 
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/  
 }
+
+
+
+
+
+
+
+
 
 
 
