@@ -6,27 +6,26 @@ let buttonGenerateBoard = document.getElementById('generate-board').addEventList
 function createBoard() {
 
   let customBoard = document.querySelector('#board-size').value;
+      customBoard === '' ? alert("Board inválido!") : true;
+      customBoard < 5 ? customBoard = 5 : true;
+      customBoard > 50 ? customBoard = 50 : true;
 
-  if(customBoard >= 5 && customBoard < 50) {
+      console.log(customBoard)
 
-    let pixelBoard = document.getElementById("pixel-board");
-        pixelBoard.innerHTML = '';
+      let pixelBoard = document.getElementById("pixel-board");
+          pixelBoard.innerHTML = '';
 
-        for (let index = 0; index < customBoard; index += 1) {
+          for (let index = 0; index < customBoard; index += 1) {
 
-            let line = document.createElement("div");
-            pixelBoard.appendChild(line).className = "tr";
+              let line = document.createElement("div");
+              pixelBoard.appendChild(line).className = "tr";
 
-            for (let indexLine = 0; indexLine < customBoard; indexLine += 1) {
+              for (let indexLine = 0; indexLine < customBoard; indexLine += 1) {
 
-                let pixel = document.createElement("div");
-                line.appendChild(pixel).className = "pixel";
-            }
-        }
-      }else {
-
-      alert("Board inválido!");
-    }
+                  let pixel = document.createElement("div");
+                  line.appendChild(pixel).className = "pixel";
+              }
+          }
 
     let cadaPixel = document.querySelectorAll('.pixel');
 
