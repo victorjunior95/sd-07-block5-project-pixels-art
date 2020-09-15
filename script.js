@@ -66,13 +66,13 @@ window.onload = function () {
          if (setNumberValue < 1) {
             alert("Board inválido!");
         } else if (setNumberValue < 5) {
-            numberTable.value = 5;
+            /* numberTable.value = 5; */
             alert("Número mínimo: 5!");
         } else if (setNumberValue > 50) {
-            numberTable.value = 50;
+            /* numberTable.value = 50; */
             alert("Número máximo: 50!");
         }
     }
 
-    
+
 }
