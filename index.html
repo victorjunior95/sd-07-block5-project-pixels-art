@@ -17,46 +17,14 @@
         </div>
     </header>
     <section>
-        <button id="clear-board">Limpar</button>
-        <div class="container" id="pixel-board">
-            <div class="line" id="line">
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-            </div>
-            <div class="line" id="line">
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-            </div>
-            <div class="line" id="line">
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-            </div>
-            <div class="line" id="line">
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-
-            </div>
-            <div class="line" id="line">
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>                
-            </div>
-            
+        <div>
+            <button id="clear-board">Limpar</button>
         </div>
+        <div>
+            <label><input type="number" id="board-size" name="quantity" min="0" max="50"></label>
+            <button id="generate-board">VQV</button>
+        </div>
+        <div class="container" id="pixel-board"></div>
     </section>
     <script src="script.js"></script>
 </body>
