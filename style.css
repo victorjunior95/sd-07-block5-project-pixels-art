@@ -19,17 +19,17 @@ h1 {
 .tools {
     background-color: red;
     text-align: center;
-    padding: 10px;
+    padding-top: 10px;
 }
 
 .color {
     border-color: black;
     border-style: solid;
     border-width: 1px;
-    background-color: aqua;
     display: inline-block;
     width: 100px;
     height: 100px;
+    margin: 10px;
 }
 
 .color1 {
@@ -45,5 +45,5 @@ h1 {
 }
 
 .color4 {
-    background-color: aqua;
+    background-color: crimson;
 }
