@@ -54,6 +54,6 @@ const btn = document.getElementById('clear-board');
 btn.addEventListener('click', function () {
   for (let i = 0; i < 25; i += 1) {
     const divQuadro = document.getElementById(`pixel${i + 1}`);
-    divQuadro.style.backgroundColor = 'rgb(255, 255, 255)';
+    divQuadro.style.backgroundColor = 'rgb(255, 0, 0)';
   }
 });
