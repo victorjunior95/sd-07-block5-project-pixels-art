@@ -30,16 +30,53 @@ function mudaCorPaleta () {
     palleta4.style.backgroundColor = criarCorAleatoria ();
 }
 
- 
-let grid = (document.querySelector('#pixel-board'));
+let corSelecionada = 'black';
+function manipularEventpixel (event) {
+    const colorirBox = event.target;
+    colorirBox.style.backgroundColor = corSelecionada;
+}
+
+let grid = (document.querySelector('#pixel-board')); //variável global
 //criação do pixel com classe pixel.
 function createBox (pixel) {
-    let box = document.createElement('div');
-    box.className = 'pixel';
-    box.style.backgroundColor = 'white';
+    let box = document.createElement('div'); 
+    box.className = 'pixel'; //setando classe pixel
+    box.style.backgroundColor = 'white'; //linha 44 até 47 estilizando css
+    box.style.width = '40px';
+    box.style.height = '40px';
+    box.style.border = '1px black';
+    box.addEventListener('click', manipularEventpixel); //caso clique no box, será chamada função manipularEventpixel
     return box;
+}
+
+//criação do grid
+function createPixelsBoard(){ 
+    const elementCreatedBoard = document.getElementById('pixel-board'); //capturou o elemento acima do grid
+    let inputQuantityBoard = document.getElementById('board-size').value; //capturando o valor digitado pelo usuário
+    if (inputQuantityBoard < 5 || inputQuantityBoard === undefined || inputQuantityBoard === null
+    ){
+        inputQuantityBoard = 5; //acertando o valor para 5
+        alert('Board Inválido!');
+    } else if (inputQuantityBoard > 50) {
+        inputQuantityBoard = 50; //acertando o valor para 50
+        alert('Board Inválido!');
+    }
+    const matrixGenerated = inputQuantityBoard * inputQuantityBoard; //para geração de matriz quadrada
+    elementCreatedBoard.querySelectorAll('*').forEach((n)=> n.remove()); //aqui estou iterando sobre tudo para remover o grid
+    for (let i = 0; i < matrixGenerated; i += 1) {
+        elementCreatedBoard.appendChild(createBox('pixel')); //após correção do input do número, a função chamará a função createBox.
+    }
+}
+
+function botaoCriarGrid () {
+    const botaoCriarMatriz = document.querySelector("#generate-board");
+    botaoCriarMatriz.addEventListener('click', createPixelsBoard); //caso clique no botão, a função createPixelsBoard será executada.
 }
 
 window.onload = () => {
     mudaCorPaleta ();
+    createBox ();
+    createPixelsBoard();
+    botaoCriarGrid ();
+    
 }
