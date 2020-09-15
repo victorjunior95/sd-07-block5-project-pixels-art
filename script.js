@@ -4,6 +4,14 @@ window.onload = function () {
 };
 const pixelBoard = document.querySelector('#pixel-board');
 const buttonInput = document.querySelector('#generate-board');
+// trata evento acrescentar cor no quadradinho
+function trocaCor() {
+  document.querySelectorAll('.pixel').forEach((item) => {
+    item.addEventListener('click', () => {
+      item.style.backgroundColor = color;
+    });
+  });
+}
 function makeBoard(number) {
   pixelBoard.innerHTML = '';
   for (let lIndex = 0; lIndex < number; lIndex += 1) {
@@ -31,11 +39,11 @@ function makeBoard(number) {
   }
 })};
 // cria botões para selecionar cor
-    let btnBlack = document.querySelector('#black');
-    let btnOrange = document.querySelector('#orange');
-    let btnOrchid = document.querySelector('#orchid');
-    let btnBlue = document.querySelector('#blue');
-    let color = 'black';
+const btnBlack = document.querySelector('#black');
+const btnOrange = document.querySelector('#orange');
+const btnOrchid = document.querySelector('#orchid');
+const btnBlue = document.querySelector('#blue');
+let color = 'black';
 
 // trata evento selecionar elementos com cor
   btnBlack.addEventListener('click', function () {
@@ -66,16 +74,6 @@ function makeBoard(number) {
     btnOrange.classList.remove('selected');
     color = window.getComputedStyle(btnBlue).getPropertyValue('background-color');
   });
-
-// trata evento acrescentar cor no quadradinho
-function trocaCor() {
-  document.querySelectorAll('.pixel').forEach((item) => {
-    item.addEventListener('click', () => {
-      item.style.backgroundColor = color;
-    });
-  });
-}
-
 //  cria botão que limpa tudo
 let btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
