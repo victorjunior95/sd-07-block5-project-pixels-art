@@ -10,19 +10,24 @@ window.onload = function () {
       }
     }
   }
-
+  
   // Cria o quadro de pixels
   function createBoard() {
-    const boardSize = 25;
-    for (let count = 0; count < boardSize; count += 1) {
-      const pixel = document.createElement('div');
-      pixel.className = 'pixel';
-      pixel.addEventListener('click', changeColor);
-      document.getElementById('pixel-board').appendChild(pixel);
+    const boardHeight = 5;
+    for (let boardColumn = 0; boardColumn < boardHeight; boardColumn +=1) {
+      const baseLine = document.createElement('div');
+      baseLine.className = 'line';
+      document.getElementById('pixel-board').appendChild(baseLine);
+        for (let count = 0; count < boardHeight; count +=1) {
+        const pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        pixel.addEventListener('click', changeColor);
+        document.getElementsByClassName('line')[boardColumn].appendChild(pixel)
+      }
     }
   }
 
-  // createBoard();
+  createBoard();
 
   function selectedColor() {
     for (let checker = 0; checker < document.getElementsByClassName('color').length; checker += 1) {
@@ -35,12 +40,12 @@ window.onload = function () {
   for (let index = 0; index < document.getElementsByClassName('color').length; index += 1) {
     document.getElementsByClassName('color')[index].addEventListener('click', selectedColor);
   }
-
+  /*
   function cleaner() {
     for (let count = 0; count < document.getElementsByClassName('pixel').length; count += 1) {
       document.getElementsByClassName('pixel')[count].style.backgroundColor = 'white';
     }
   }
 
-  document.getElementsByTagName('button')[0].addEventListener('click', cleaner);
+  document.getElementsByTagName('button')[0].addEventListener('click', cleaner); */
 };
