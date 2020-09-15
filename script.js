@@ -24,16 +24,12 @@ for (let index = 1; index < arrayColorOfPalette.length; index += 1) {
 }
 
 arrayColorOfPalette[0].classList.add('selected');
-arrayColorOfPalette[0].style.backgroundColor = 'black';
-arrayColorOfPalette[0].style.color = 'black';
 currentColor = 'black';
 loopForColor();
 loopForPaint();
 
 window.onload = function () {
   arrayColorOfPalette[0].classList.add('selected');
-  arrayColorOfPalette[0].style.backgroundColor = 'black';
-  arrayColorOfPalette[0].style.color = 'black';
   currentColor = 'black';
 };
 

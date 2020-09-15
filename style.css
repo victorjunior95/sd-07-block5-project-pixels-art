@@ -69,11 +69,25 @@ button {
 }
 
 .first {
+  background-color: black;
+  color: black;
   border-radius: 50% 0 0 50%;
 }
 
+.second {
+  background-color: red;
+  color: red;
+}
+
+.third {
+  background-color: red;
+  color: red;
+}
+
 .last {
+  background-color: blue;
   border-radius: 0 50% 50% 0;
+  color: blue;
 }
 
 .clear {
