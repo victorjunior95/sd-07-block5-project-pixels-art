@@ -9,6 +9,8 @@ window.onload = function () {
     let color2 = document.querySelector(".orange");
     let color3 = document.querySelector(".pink");
     let color4 = document.querySelector(".blue");
+    let father = documento.querySelectorAll(".line");
+    console.log(father);
 
     /* Mudar a cor selecionada */
     color1.addEventListener("click", setSelectedColor);
@@ -59,6 +61,7 @@ window.onload = function () {
     /* Definindo tamanho do quadro de pixels pelo usuário */
     /* setNumberTable.addEventListener("click", setPixelBoardSize); */
     setNumberTable.addEventListener("click", alertFunction);
+    setNumberTable.addEventListener("click", creatingPixelsLine);
     
     function alertFunction() {
         let setNumberValue = numberTable.value;
@@ -66,13 +69,21 @@ window.onload = function () {
          if (setNumberValue < 1) {
             alert("Board inválido!");
         } else if (setNumberValue < 5) {
-            /* numberTable.value = 5; */
+            numberTable.value = 5;
             alert("Número mínimo: 5!");
         } else if (setNumberValue > 50) {
-            /* numberTable.value = 50; */
+            numberTable.value = 50;
             alert("Número máximo: 50!");
         }
     }
 
-
+    function creatingPixelsLine () {
+        let newNumber = numberTable.value - 5;
+        for (index = 0; index <= newNumber; index += 1) {
+            let createPixel = document.createElement("div");
+            createPixel.setAttribute("class", "pixel");
+            /* https://developer.mozilla.org/pt-BR/docs/Web/API/Element/setAttribute */
+            father[index].appendChild(createPixel);
+        }
+    }
 }
