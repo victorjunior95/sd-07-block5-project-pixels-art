@@ -15,21 +15,21 @@ sizeBoard.addEventListener('keyup', function () {
     size = 50;
   }
   if (size < 5) {
-    size = 5
+    size = 5;
   }
-  returnOrClick ();
+  returnOrClick();
 });
 
-function returnOrClick () {
-    sizeBoard.addEventListener('keydown', function (event) {
-      if (event.keyCode == 13) {
-        createPixels();
-      }
-    });
-    generatorButton.addEventListener('click', createPixels);
+function returnOrClick() {
+  sizeBoard.addEventListener('keydown', function (event) {
+    if (event.keyCode === 13) {
+      createPixels();
+     }
+  });
+  generatorButton.addEventListener('click', createPixels);
 }
 
-function createPixels () {
+function createPixels() {
   size = parseInt(size);
 
   // https://developer.cdn.mozilla.net/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/pow - potencia;
@@ -38,81 +38,81 @@ function createPixels () {
 
 
   for (let index = 1; index <= Math.pow(size, 2); index += 1) {
-    let newPixel = document.createElement('div');
+    const newPixel = document.createElement('div');
     newPixel.className = 'pixel';
     board.appendChild(newPixel);
   }
-  makeBoard ();
+  makeBoard();
 }
 
-function makeBoard () {
+function makeBoard() {
 
   // https://developer.mozilla.org/en-US/docs/Web/CSS/repeat - (preenchendo colunas e linhas com os elementos criados no passo acima) display grid mais no CSS;
 
   board.style.gridTemplateColumns = `repeat(${size}, 40px)`;
   board.style.gridTemplateRows = `repeat(${size}, 40px)`;
-  loopForPaint ();
+  loopForPaint();
 }
 
-function getRandom () {
+function getRandom() {
   return Math.floor(Math.random() * 100);
 }
 
-function selectColorsOfPalette () {
+function selectColorsOfPalette() {
   for (let index = 1; index < arrayColorOfPalette.length; index += 1) {
-    let randomRGBColor = `rgb(${getRandom ()} , ${getRandom ()} , ${getRandom()})`;
+    const randomRGBColor = `rgb(${index} , ${getRandom()} , ${getRandom()})`;
     arrayColorOfPalette[index].style.backgroundColor = randomRGBColor;
     arrayColorOfPalette[index].style.color = randomRGBColor;
   }
-  loopForColor ();
+  loopForColor();
 }
 
-selectColorsOfPalette ();
+selectColorsOfPalette();
 
-window.onload = function() {
+window.onload = function () {
   arrayColorOfPalette[0].classList.add('selected');
   arrayColorOfPalette[0].style.backgroundColor = 'black';
   arrayColorOfPalette[0].style.color = 'black';
   currentColor = 'black';
-}
+};
 
-function loopForColor () {
+function loopForColor() {
   for (let index = 0; index < arrayColorOfPalette.length; index += 1) {
-    getTheColor (index);
+    getTheColor(index);
   }
 }
 
-function getTheColor (index) {
+function getTheColor(index) {
   arrayColorOfPalette[index].addEventListener('click', function () {
     currentColor = arrayColorOfPalette[index].style.color;
-    changeSelect (index);
+    changeSelect(index);
   });
 }
 
-function changeSelect (position) {
+function changeSelect(position) {
   arrayColorOfPalette[position].classList.add('selected');
   for (let index = 0; index < arrayColorOfPalette.length; index += 1) {
-    if (index != position) {
+    if (index !== position) {
       arrayColorOfPalette[index].classList.remove('selected');
     }
   }
-} 
+}
 
-function loopForPaint () {
-  let pixels = document.querySelectorAll('.pixel');
+function loopForPaint() {
+  const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     paint(pixels, index);
   }
 }
 
-function paint (pixels, position) {
+function paint(pixels, position) {
   pixels[position].addEventListener('click', function () {
     pixels[position].style.backgroundColor = currentColor;
   });
-  clearButton (pixels);
+  clearButton(pixels);
 }
 
-function clearButton (pixels) {
+function clearButton(pixels) {
   clear.addEventListener('click', function () {
     for (let index = 0; index < pixels.length; index += 1) {
       pixels[index].style.backgroundColor = 'white';
