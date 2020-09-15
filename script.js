@@ -105,7 +105,6 @@ window.onload = function () {
   }
 
   //Função para gerar um quadro no tamanho que o usuário solicitar:
-
   let button2 = document.getElementById("generate-board");
   let inputSizeNumber = document.getElementById("board-size");
 
@@ -118,7 +117,7 @@ window.onload = function () {
       inputSizeNumber.value = 5;
     }
     if (inputSizeNumber.value > 50) {
-      inputSizeNumber.value = 50 * 50;
+      inputSizeNumber.value = 50;
     }
 
     while (body.firstChild) {
