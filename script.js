@@ -9,9 +9,9 @@ let fourthColor = document.getElementById('fourth-color');
 fourthColor.style.backgroundColor = randomColor();
 
 function randomColor() {
-    let x = (Math.random() * 256);
-    let y = (Math.random() * 256);
-    let z = (Math.random() * 256);
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
     let bgColor = "rgb(" + x + "," + y + "," + z + ")";
     return bgColor;
 }
