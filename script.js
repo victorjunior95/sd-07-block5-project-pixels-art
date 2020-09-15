@@ -82,6 +82,7 @@ updateColors();
 
 // LOOP TO SELECTED MY PIXEL ELEMENT AND CHANGE HIS BACKGROUND COLOR
 function changeColorPixel() {
+  const myPixels = document.querySelectorAll(".pixel");
   for (let i = 0; i < myPixels.length; i += 1) {
     myPixels[i].addEventListener("click", function (event) {
       const onePixel = event.target;
