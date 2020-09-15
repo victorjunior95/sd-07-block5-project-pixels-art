@@ -49,6 +49,9 @@ window.onload = function(){
         if(inputNumb.value >= 50){
             inputNumb.value = 50;
         }
+        else if(inputNumb.value == 0){
+            alert("Board inválido!");
+        }
         else if(inputNumb.value <= 5){
             inputNumb.value = 5;
         }
