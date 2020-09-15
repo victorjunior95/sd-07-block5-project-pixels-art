@@ -8,27 +8,6 @@ window.onload = function () {
   reSizeBoard();
 };
 
-function clearBoard() {
-  let clearBoard = document.querySelector("#clear-board");
-  clearBoard.addEventListener("click", function () {
-    colorBrush = "black";
-    createBoard(boardSize);
-    changeColor();
-    changeCanvas();
-  });
-}
-
-function reSizeBoard() {
-  let resBoard = document.querySelector("#generate-board");
-  resBoard.addEventListener("click", function () {
-    newBoardSize = document.querySelector("#board-size");
-    boardSize = newBoardSize.value
-    createBoard(boardSize);
-    changeColor();
-    changeCanvas();
-  });
-}
-
 function createBox(className) {
   let element = document.createElement("div");
   element.className = className;
@@ -79,3 +58,34 @@ function changeCanvas() {
     });
   });
 }
+
+
+function clearBoard() {
+    let clearBoard = document.querySelector("#clear-board");
+    clearBoard.addEventListener("click", function () {
+      colorBrush = "black";
+      createBoard(boardSize);
+      changeColor();
+      changeCanvas();
+    });
+  }
+  
+function reSizeBoard() {
+    let resBoard = document.querySelector("#generate-board");
+    resBoard.addEventListener("click", function () {
+      newBoardSize = document.querySelector("#board-size");
+      if (newBoardSize.value < 5) {
+          boardSize = 5;
+      }
+      if (newBoardSize.value > 50) {
+          boardSize = 50;
+      }
+      if (newBoardSize.value >= 5 && newBoardSize.value <=50) {
+          boardSize = newBoardSize.value
+      }
+      createBoard(boardSize);
+      changeColor();
+      changeCanvas();
+    });
+  }
+  
