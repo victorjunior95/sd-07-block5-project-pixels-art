@@ -118,7 +118,7 @@ window.onload = function () {
       inputSizeNumber.value = 5;
     }
     if (inputSizeNumber.value > 50) {
-      inputSizeNumber.value = 50*50;
+      inputSizeNumber.value = 50 * 50;
     }
 
     while (body.firstChild) {
@@ -138,7 +138,6 @@ window.onload = function () {
     }
 
     let lines = document.querySelectorAll(".pixel");
-
     function changeColor(event) {
       event.target.style.backgroundColor = selectedColor;
     }
@@ -147,6 +146,4 @@ window.onload = function () {
       lines[index].addEventListener("click", changeColor);
     }
   })
-
-
 }
