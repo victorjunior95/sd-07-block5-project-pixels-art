@@ -3,21 +3,22 @@
     width: 25px;
     height: 25px;
     border: 1px solid black;
+    border-radius: 50%;
 }
 
-.black {
+.first-color {
     background-color: black;
 }
 
-.green {
+.second-color {
     background-color: green;
 }
 
-.red {
+.third-color {
     background-color: red;
 }
 
-.blue {
+.fourth-color {
     background-color: blue;
 }
 
