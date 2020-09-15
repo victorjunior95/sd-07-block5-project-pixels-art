@@ -51,7 +51,8 @@ function makeBoard () {
 
   board.style.gridTemplateColumns = `repeat(${size}, 40px)`;
   board.style.gridTemplateRows = `repeat(${size}, 40px)`;
-} 
+  loopForPaint ();
+}
 
 function getRandom () {
   return Math.floor(Math.random() * 100);
@@ -63,6 +64,7 @@ function selectColorsOfPalette () {
     arrayColorOfPalette[index].style.backgroundColor = randomRGBColor;
     arrayColorOfPalette[index].style.color = randomRGBColor;
   }
+  loopForColor ();
 }
 
 selectColorsOfPalette ();
@@ -74,44 +76,40 @@ window.onload = function() {
   currentColor = 'black';
 }
 
-function getTheColor () {
+function loopForColor () {
   for (let index = 0; index < arrayColorOfPalette.length; index += 1) {
-    teste2 (index);
-    // arrayColorOfPalette[index].addEventListener('click', function (event) {
-    //   alert(event.target);
-    // });
+    getTheColor (index);
   }
 }
 
-function teste2 (index) {
+function getTheColor (index) {
   arrayColorOfPalette[index].addEventListener('click', function () {
-    alert('ola');
+    currentColor = arrayColorOfPalette[index].style.color;
+    changeSelect (index);
   });
 }
 
-function paint () {
-  alert('ola')   // <<<< Esse funciona
+function changeSelect (position) {
+  arrayColorOfPalette[position].classList.add('selected');
+  for (let index = 0; index < arrayColorOfPalette.length; index += 1) {
+    if (index != position) {
+      arrayColorOfPalette[index].classList.remove('selected');
+    }
+  }
+} 
+
+function loopForPaint () {
   let pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
-  alert('ola') // <<<<< Esse não funciona
-    
-    teste(pixels[index]);
-    // alert('alo')
-    // pixels[index].addEventListener('click', function () {
-    //   pixels[index].style.backgroundColor = currentColor;
-    //   alert('alo')
-    // });
+    paint(pixels[index]);
   }
 }
 
-function teste (local) {
+function paint (local) {
   local.addEventListener('click', function () {
-    alert('alo')
-  })
+    local.style.backgroundColor = currentColor;
+  });
 }
-
-getTheColor();
-paint();
 
 // clear.addEventListener('click', function () {
 //   for (let index = 0; index < pixel.length; index += 1) {
