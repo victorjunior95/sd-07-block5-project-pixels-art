@@ -39,14 +39,20 @@ button {
   padding: 10px 15px;
 }
 
-table {
+.table {
   border-collapse: collapse;
+  display: table;
   margin-bottom: 30px;
+}
+
+.tr {
+  display: table-row;
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
+  display: table-cell;
   cursor: pointer;
   height: 40px;
   margin: 0;
