@@ -58,11 +58,11 @@ function verifyBoard() {
   return numberOfSquares;
 }
 function sizeBoard() {
-  const columnsNumber = Math.sqrt(boardSize.value);
-  const columnsIntNumber = parseInt(columnsNumber, 10);
-  const heightAndWidth = columnsIntNumber * 40;
-  if (columnsIntNumber < 50) {
-    fullBoard.style.gridTemplateColumns = `repeat(${columnsIntNumber}, 1fr)`;
+  const rowNumbers = Math.sqrt(boardSize.value);
+  const rowsIntNumbers = parseInt(rowNumbers, 10);
+  const heightAndWidth = rowsIntNumbers * 40;
+  if (rowsIntNumbers < 50) {
+    fullBoard.style.gridTemplateColumns = `repeat(${rowsIntNumbers}, 1fr)`;
     fullBoard.style.maxHeight = `${heightAndWidth}px`;
     fullBoard.style.maxWidth = `${heightAndWidth}px`;
   } else {
