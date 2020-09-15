@@ -16,7 +16,7 @@
   display: inline-block;
   border: 1px solid black;
 }
-
+/* 
 .black {
   background-color: black;
 }
@@ -31,7 +31,7 @@
 
 .green {
   background-color: green;
-}
+} */
 
 .pixel-board {
   margin: auto;
