@@ -5,8 +5,6 @@ const generateButton = document.querySelector('#generate-board');
 const paintPixels = document.querySelectorAll('.pixel');
 const fullBoard = document.querySelector('#pixel-board');
 const eliminateBoard = document.querySelector('#eliminate-board');
-const colorPalette = document.querySelector('#color-palette');
-const body = document.querySelector('body');
 let paletaID = 'black';
 let cor;
 
@@ -15,14 +13,15 @@ function getRandomNumber() {
 }
 
 function generateColor() {
+  const black = document.querySelector('#black');
+  black.style.backgroundColor = 'black';
   for (let color = 1; color < paletas.length; color += 1) {
-    paletas[color].style.backgroundColor = `rgb(${getRandomNumber()} , ${getRandomNumber()} , ${getRandomNumber()})`
-  }  
+    paletas[color].style.backgroundColor = `rgb(${getRandomNumber()} , ${getRandomNumber()} , ${getRandomNumber()})`;
+  }
+  cor = black.style.backgroundColor;
 }
 
 window.onload = generateColor();
-
-
 
 function checkSelected() {
   for (let i = 0; i < paletas.length; i += 1) {
@@ -38,15 +37,13 @@ function defineColor() {
   paletaID = paletaSelecionada.getAttribute('id');
   paletaSelecionada.classList.add('selected');
   cor = event.target.style.backgroundColor;
-  
 }
 
 for (let k = 0; k < paletas.length; k += 1) {
   paletas[k].addEventListener('click', defineColor);
 }
 
-function paintBoard() {
-  console.log(cor)
+function paintBoard() {  
   if (paletaID === 'red') {
     event.target.classList.remove('white');
     event.target.style.backgroundColor = cor;
@@ -58,7 +55,7 @@ function paintBoard() {
     event.target.style.backgroundColor = cor;
   } else {
     event.target.classList.remove('white');
-    event.target.classList.add('black');
+    event.target.style.backgroundColor = cor;
   }
 }
 
@@ -66,29 +63,30 @@ for (let i = 0; i < paintPixels.length; i += 1) {
   paintPixels[i].addEventListener('click', paintBoard);
 }
 
-function verifyBoard() {
-  let numberOfSquares = 0;
-  const itsPossible = boardSize.value;
-  if (itsPossible < 5) {
-    numberOfSquares = 5;
-  } else {
-    numberOfSquares = boardSize.value;
-  }
-  return numberOfSquares;
-}
 function sizeBoard() {
-  const rowNumbers = Math.sqrt(boardSize.value);
-  const rowsIntNumbers = parseInt(rowNumbers, 10);
-  const heightAndWidth = rowsIntNumbers * 40;
-  if (rowsIntNumbers < 50) {
-    fullBoard.style.gridTemplateColumns = `repeat(${boardSize.value}, 1fr)`;
-    fullBoard.style.maxHeight = `${heightAndWidth}px`;
-    fullBoard.style.maxWidth = `${heightAndWidth}px`;
+  const inputValue = Number(boardSize.value);
+  let squareValue = 0;
+  if (inputValue < 5) {
+    squareValue = 5;
+    fullBoard.style.gridTemplateColumns = 'repeat(5, 1fr)';
+    fullBoard.style.gridTemplatesRows = 'repeat(5, 1fr)';
+    fullBoard.style.height = '200px';
+    fullBoard.style.width = '200px';
+  } else if (inputValue < 50) {
+    squareValue = inputValue;
+    const heightAndWidth = inputValue * 40;
+    fullBoard.style.gridTemplateColumns = `repeat(${inputValue}, 1fr)`;
+    fullBoard.style.gridTemplateRows = `repeat(${inputValue}, 1fr)`;
+    fullBoard.style.height = `${heightAndWidth}`;
+    fullBoard.style.width = `${heightAndWidth}`;
   } else {
+    squareValue = 50;
     fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
-    fullBoard.style.maxHeight = '2000px';
-    fullBoard.style.maxWidth = '2000px';
+    fullBoard.style.gridTemplateRows = 'repeat(50, 1fr)';
+    fullBoard.style.height = '2000px';
+    fullBoard.style.width = '2000px';
   }
+  return squareValue;
 }
 
 function generateAlert() {
@@ -106,32 +104,10 @@ function createNewBoard() {
 }
 
 function generateBoard() {
-  generateAlert()
-  createNewBoard()
-  let inputValue = Number(boardSize.value);
-  console.log(inputValue);
-  if (inputValue < 5) {
-    inputValue = 5;
-    fullBoard.style.gridTemplateColumns = 'repeat(5, 1fr)';
-    fullBoard.style.gridTemplatesRows = 'repeat(5, 1fr)';
-    fullBoard.style.height = '200px';
-    fullBoard.style.width = '200px';
-  } else if (inputValue < 50) {
-    let heightAndWidth = inputValue * 40;
-    fullBoard.style.gridTemplateColumns = `repeat(${inputValue}, 1fr)`;
-    fullBoard.style.gridTemplateRows = `repeat(${inputValue}, 1fr)`;
-    fullBoard.style.height = `${heightAndWidth}`;
-    fullBoard.style.width = `${heightAndWidth}`;
-    console.log(heightAndWidth);
-  } else if (inputValue > 50) {
-    inputValue = 50;
-    fullBoard.style.gridTemplateColumns = 'repeat(50, 1fr)';
-    fullBoard.style.gridTemplateRows = 'repeat(50, 1fr)';
-    fullBoard.style.height = '2000px';
-    fullBoard.style.width = '2000px';
-  }
-  let numberOfPixels = Math.pow(inputValue, 2);
-  console.log(numberOfPixels);
+  generateAlert();
+  createNewBoard();
+  const inputValue = sizeBoard();
+  const numberOfPixels = inputValue ** 2;
   for (let i = 1; i <= numberOfPixels; i += 1) {
     const square = document.createElement('div');
     square.className = 'pixel white';
@@ -139,7 +115,7 @@ function generateBoard() {
     fullBoard.appendChild(square);
   }
   boardSize.value = '';
-  paletaID = 'black';
+  cor = black.style.backgroundColor;
 }
 
 eliminateBoard.addEventListener('click', createNewBoard);
@@ -151,6 +127,6 @@ clearButton.addEventListener('click', function clearBoard() {
   for (let i = 0; i < coloredPixels.length; i += 1) {
     coloredPixels[i].className = 'pixel';
     coloredPixels[i].style.background = 'white';
-    paletaID = 'black';
+    cor = black.style.backgroundColor;
   }
 });
