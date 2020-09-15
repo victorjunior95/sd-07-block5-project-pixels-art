@@ -1,65 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="script.js"></script>
-</head>
-<body>
-   <header>
-       <h1 id="title">Paleta de Cores</h1>
-   </header>
-   <section>
-        <nav>
-            <div id="color-palette" class="container">
-                <div class="color black"></div>
-                <div class="color gray"></div>
-                <div class="color royalblue"></div>
-                <div class="color cyan"></div>
-            </div>
-        </nav>
-        <article>
-            <div id="pixel-board" class="square container">
-                <div class="line center">
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                </div>
-                <div class="line center">
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                </div>
-                <div class="line center">
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                </div>
-                <div class="line center">
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                </div>
-                <div class="line center">
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                    <div class="pixel"></div>
-                </div>
-            </div>
-
-        </article>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">Paleta de Cores</h1>
+    </header>
+    <section>
+      <nav>
+        <div><button id="clear-board" class="container">Limpar</button></div>
+        <div id="color-palette" class="container">
+          <div class="color black selected"></div>
+          <div class="color gray"></div>
+          <div class="color royalblue"></div>
+          <div class="color cyan"></div>
+        </div>
+      </nav>
+      <article>
+        <div id="pixel-board" class="square container"></div>
+      </article>
     </section>
-</body>
+  </body>
 </html>
