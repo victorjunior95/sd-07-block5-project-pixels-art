@@ -69,9 +69,6 @@ createBasePixelBoard(mainPage);
 
 function selectedColorClass() {
   document.body.addEventListener('click', function (event) {
-    // Dados do evento
-    const isSelected = event.target.className;
-    isSelected = isSelected.split(' ');
     // Item atual selecionado
     const idSelected = document.querySelectorAll('.selected')[0].id;
     const elementSelected = document.getElementById(idSelected);
