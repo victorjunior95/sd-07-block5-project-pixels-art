@@ -18,7 +18,24 @@ for (let i = 0; i < numberLines; i += 1) {
   }
 
 }
-console.log(pixel);
+
+let color = document.querySelectorAll(".color");
+
+//usar o indexOf é um método de busca dentro do array
+
+for (let i = 0; i < color.length; i += 1) {
+  color[i].addEventListener("click", function(event) {
+    let selected = document.querySelector(".selected")
+    //console.log(selected)
+    selected.classList.remove('selected');
+
+    //color[i].classList.add('selected');
+    event.target.className += " selected"
+
+  })
+}
+
+
 
 
 
