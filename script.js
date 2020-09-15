@@ -9,3 +9,5 @@ function limpar() {
     pixels[index].style.backgroundColor = 'white';
   }
 }
+
+
