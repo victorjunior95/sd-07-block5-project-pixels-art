@@ -12,10 +12,6 @@ function getRandom() {
   return Math.floor(Math.random() * 255);
 }
 
-for (let index = 0; index < pixels.length; index += 1) {
-  pixels[index].style.backgroundColor = 'white';
-}
-
 for (let index = 1; index < arrayColorOfPalette.length; index += 1) {
   const randomRGBColor = `rgb(${getRandom()} , ${getRandom()} , ${getRandom()})`;
 
@@ -25,8 +21,6 @@ for (let index = 1; index < arrayColorOfPalette.length; index += 1) {
 
 arrayColorOfPalette[0].classList.add('selected');
 currentColor = 'black';
-loopForColor();
-loopForPaint();
 
 window.onload = function () {
   arrayColorOfPalette[0].classList.add('selected');
@@ -40,20 +34,8 @@ generatorButton.addEventListener('click', function () {
 });
 
 sizeBoard.addEventListener('keyup', function () {
-  size = sizeBoard.value;  
+  size = sizeBoard.value;
 });
-
-sizeBoard.addEventListener('keydown', function (event) {
-  if (event.keyCode === 13) {
-
-    // https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault - preventDefault() previne o evento padrão que no caso do input number ao apertar a tecla enter de valor (13) seria dar submit;
-
-    event.preventDefault();
-    createPixels();
-  }
-});
-  
-generatorButton.addEventListener('click', createPixels);
 
 function removeOldPixels() {
   while (board.firstChild) {
@@ -61,6 +43,29 @@ function removeOldPixels() {
   }
 }
 
+function paint(position) {
+  pixels[position].addEventListener('click', function () {
+    pixels[position].style.backgroundColor = currentColor;
+  });
+}
+
+function loopForPaint() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    paint(index);
+  }
+}
+
+loopForPaint();
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/repeat - (preenchendo colunas e linhas com os elementos criados no passo acima) display grid mais no CSS linha 115 - 117;
+
+function makeBoard() {
+  board.style.gridTemplateColumns = `repeat(${size}, 40px)`;
+  board.style.gridTemplateRows = `repeat(${size}, 40px)`;
+  board.style.justifyContent = 'center';
+  pixels = document.querySelectorAll('.pixel');
+  loopForPaint();
+}
 function createPixels() {
   if (size > 50) {
     size = 50;
@@ -69,12 +74,11 @@ function createPixels() {
     size = 5;
   }
 
+// https://developer.cdn.mozilla.net/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/pow - potencia;
+// https://developer.mozilla.org/en-US/docs/Web/CSS/repeat - (criando a quantidade suficiente pra preencher o grid) display grid mais no CSS;
+
   removeOldPixels();
-
-  // https://developer.cdn.mozilla.net/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/pow - potencia;
-  // https://developer.mozilla.org/en-US/docs/Web/CSS/repeat - (criando a quantidade suficiente pra preencher o grid) display grid mais no CSS;
-
-  for (let index = 1; index <= Math.pow(size, 2); index += 1) {
+  for (let index = 1; index <= size ** 2; index += 1) {
     const newPixel = document.createElement('div');
     newPixel.className = 'pixel';
     board.appendChild(newPixel);
@@ -82,20 +86,31 @@ function createPixels() {
   makeBoard();
 }
 
-function makeBoard() {
+// https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault - preventDefault() previne o evento padrão que no caso do input number ao apertar a tecla enter de valor (13) seria dar submit;
 
-  // https://developer.mozilla.org/en-US/docs/Web/CSS/repeat - (preenchendo colunas e linhas com os elementos criados no passo acima) display grid mais no CSS;
+sizeBoard.addEventListener('keydown', function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    createPixels();
+  }
+});
 
-  board.style.gridTemplateColumns = `repeat(${size}, 40px)`;
-  board.style.gridTemplateRows = `repeat(${size}, 40px)`;
-  board.style.justifyContent = 'center';
-  pixels = document.querySelectorAll('.pixel');
-  loopForPaint();
-}
+generatorButton.addEventListener('click', createPixels);
 
 function loopForColor() {
   for (let index = 0; index < arrayColorOfPalette.length; index += 1) {
     getTheColor(index);
+  }
+}
+
+loopForColor();
+
+function changeSelect(position) {
+  arrayColorOfPalette[position].classList.add('selected');
+  for (let index = 0; index < arrayColorOfPalette.length; index += 1) {
+    if (index !== position) {
+      arrayColorOfPalette[index].classList.remove('selected');
+    }
   }
 }
 
@@ -107,31 +122,9 @@ function getTheColor(index) {
   });
 }
 
-function changeSelect(position) {
-  arrayColorOfPalette[position].classList.add('selected');
-  for (let index = 0; index < arrayColorOfPalette.length; index += 1) {
-    if (index !== position) {
-      arrayColorOfPalette[index].classList.remove('selected');
-    }
-  }
-}
-
-function loopForPaint() {
-  for (let index = 0; index < pixels.length; index += 1) {
-    paint(index);
-  }
-}
-
-function paint(position) {
-  pixels[position].addEventListener('click', function () {
-    pixels[position].style.backgroundColor = currentColor;
-  });
-}
-
 clear.addEventListener('click', function () {
   board.style.backgroundColor = 'white';
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
 });
-

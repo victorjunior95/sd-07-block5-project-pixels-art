@@ -70,8 +70,8 @@ button {
 
 .first {
   background-color: black;
-  color: black;
   border-radius: 50% 0 0 50%;
+  color: black;
 }
 
 .second {
@@ -80,8 +80,8 @@ button {
 }
 
 .third {
-  background-color: red;
-  color: red;
+  background-color: green;
+  color: green;
 }
 
 .last {
@@ -110,17 +110,15 @@ button {
   font-weight: 900;
 }
 
-  /* https://developer.mozilla.org/en-US/docs/Web/CSS/repeat - display grid  mais no JS*/
-
 .board {
   align-content: initial;
   display: grid;
+  grid-template-columns: repeat(5, 40px);
+  grid-template-rows: repeat(5, 40px);
   height: 202px;
   justify-content: initial;
   margin: auto;
   margin-bottom: 20px;
-  grid-template-columns: repeat(5, 40px);
-  grid-template-rows: repeat(5, 40px);
   width: 202px;
 }
 
