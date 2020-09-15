@@ -1,25 +1,24 @@
 
-let cores = document.querySelectorAll('.color');
+const cores = document.querySelectorAll('.color');
 cores[0].style.backgroundColor = 'black';
-cores[1].style.backgroundColor = 'blue';
-cores[2].style.backgroundColor = 'red';
-cores[3].style.backgroundColor = 'green';
-let pixelBoard = document.querySelector('#pixel-board');
+RgbAlea()
+const pixelBoard = document.querySelector('#pixel-board');
 window.onload = function (){
     cores[0].classList.add("selected");
     pixelCor()
 }
-for(index = 0; index < 25; index += 1){
-    stylePixel();
+generatePixel(25)
+function generatePixel (quadrados) {
+    for(index = 0; index < quadrados; index += 1){
+        stylePixel();
 }
-
+}
 // Cor preta selecionada
 cores[0].addEventListener('click', function () {
     for(index = 0; index < 4; index += 1){
         cores[index].className = "color"
     }
     cores[0].classList.add("selected");
-    pixelCor()
 })
 // Cor azul selecionada
 cores[1].addEventListener('click', function () {
@@ -27,7 +26,6 @@ cores[1].addEventListener('click', function () {
         cores[index].className = "color"
     }
     cores[1].classList.add("selected");
-    pixelCor()
 })
 // Cor vermelha selecionada
 cores[2].addEventListener('click', function () {
@@ -35,7 +33,6 @@ cores[2].addEventListener('click', function () {
         cores[index].className = "color"
     }
     cores[2].classList.add("selected");
-    pixelCor()
 })
 // Cor verde selecionada
 cores[3].addEventListener('click', function () {
@@ -43,12 +40,24 @@ cores[3].addEventListener('click', function () {
         cores[index].className = "color"
     }
     cores[3].classList.add("selected");
-    pixelCor()
 })
 let pixel = document.querySelectorAll('.pixel')
-let apaga = document.querySelector('.clear')
+const apaga = document.querySelector('.clear')
 apaga.addEventListener('click', apagao)
+const inputButton = document.querySelector('#generate-board')
+
+inputButton.addEventListener('click', function () {
+    let inputValue = inputSize();
+        pixelBoard.style.height = (inputValue * 42) + 'px';
+        pixelBoard.style.width = (inputValue * 42) + 'px';
+        removeAll()
+        generatePixel(inputValue * inputValue)
+        pixelCor()
+
+})
+
 function pixelCor (){
+    pixel = document.querySelectorAll('.pixel')
     pixel.forEach(item => {
         item.addEventListener('click', function () {
             item.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
@@ -72,4 +81,30 @@ function apagao () {
     pixel.forEach(item => {
             item.style.backgroundColor = 'white';
     })
+}
+
+function inputSize () {
+ let inputValue = document.querySelector('#board-size').value
+    if(inputValue > 50){
+        return inputValue = 50
+    }
+    else if(inputValue < 5){
+      return inputValue = 5
+    }
+    else {
+        return inputValue
+    }
+}
+
+function removeAll (){
+    while (pixelBoard.firstElementChild) {
+        pixelBoard.removeChild(pixelBoard.firstElementChild);
+    }
+}
+
+function RgbAlea () {
+    cores[1].style.backgroundColor = `rgb(${Math.ceil(Math.random () * 255)}, ${Math.ceil(Math.random () * 255)}, ${Math.ceil(Math.random () * 255)})`;
+    cores[2].style.backgroundColor = `rgb(${Math.ceil(Math.random () * 255)}, ${Math.ceil(Math.random () * 255)}, ${Math.ceil(Math.random () * 255)})`;
+    cores[3].style.backgroundColor = `rgb(${Math.ceil(Math.random () * 255)}, ${Math.ceil(Math.random () * 255)}, ${Math.ceil(Math.random () * 255)})`;
+  
 }
