@@ -1,30 +1,34 @@
-const colorDefined = document.querySelectorAll('.color');
-const matrixLine = document.querySelector('#pixel-board');
-const matrixColumn = document.getElementsByClassName('centerSection');
-let cellBox;
-let sizeBoard = 5;
+const colorDefined = document.getElementsByClassName('color');
+let pixelElements = document.getElementsByClassName('pixel');
+let firstMainColor = document.getElementsByClassName('selected');
+
+function ClickPalette() {
+  for (let index = 0; index < Object.keys(colorDefined).length; index += 1) {
+    colorDefined[index].addEventListener('click', function () { 
+      firstMainColor[0].classList.remove('selected');
+      event.target.classList.add('selected');
+      firstMainColor = document.getElementsByClassName('selected')
+    });
+  };
+}
+function ClickPixels() {
+  pixelElements = document.getElementsByClassName('pixel');
+  for (let index = 0; index < Object.keys(pixelElements).length; index += 1) {
+    pixelElements[index].addEventListener('click', function () {
+      firstMainColor = document.getElementsByClassName('selected');
+      event.target.style.backgroundColor = firstMainColor[0].style.backgroundColor;
+    });
+  }
+}
 colorDefined[0].style.backgroundColor = 'black';
 colorDefined[1].style.backgroundColor = 'red';
 colorDefined[2].style.backgroundColor = 'green';
 colorDefined[3].style.backgroundColor = 'blue';
-//for (index = 0; index < sizeBoard; index += 1) {
-//    cellLine = createLine('centerSection');
-//    matrixColumn[index].appendChild(cellLine);
-//}
-//for (index = 1; index <= sizeBoard; index += 1) {
-//    cellBox = createBox('pixel');
-//    matrixLine.appendChild(cellBox);
-//}
+ClickPalette();
+ClickPixels();
 
-//function createLine(className) {
-//    let line = document.createElement('section');
-//    line.ClassName = className;
-//    return line;
-//
-//}
-//function createColumn(className) {
-//    let box = document.createElement("div");
-//    box.className = className;
-//    return box;
-//}
+
+
+
+
 
