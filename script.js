@@ -1,6 +1,6 @@
 //gerando numeros aleatórios
 function gerarNumeros () {
-    return Math.ceil(Math.random() * 255);
+    return Math.floor(Math.random() * 255 +1);
 }
 
 //função para criar cor aleatória
