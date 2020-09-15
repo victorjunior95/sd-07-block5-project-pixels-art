@@ -6,11 +6,11 @@
 }
 
 #color1 {
-    background-color: black;
+    background-color:rgb(0, 0, 0);
 }
 
 #color2 {
-    background-color: blue;
+    background-color:rgb(0, 0, 255);
 }
 
 #color3 {
@@ -26,5 +26,11 @@
     width: 40px;
     height: 40px;
     display: inline-block;
-    background-color: white;
+    background-color:rgb(255, 255, 255);
+}
+
+#clear {
+    padding: 5px;
+    margin: 3px;
+    margin-left: 50px;
 }
