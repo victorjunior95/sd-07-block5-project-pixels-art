@@ -16,6 +16,9 @@ header {
 
 .tools {
     text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
 }
 
 .color {
