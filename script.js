@@ -38,7 +38,7 @@ window.onload = function () {
 
   function cleaner() {
     for (let count = 0; count < document.getElementsByClassName('pixel').length; count += 1) {
-      document.getElementsByClassName('pixel')[count].style.backgroundColor = "white";
+      document.getElementsByClassName('pixel')[count].style.backgroundColor = 'white';
     }
   }
 
