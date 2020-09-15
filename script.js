@@ -90,10 +90,10 @@ btnCreate.addEventListener('click', function () {
 });
 
 clear.addEventListener('click', function () {
-   const pixel = document.querySelectorAll('.pixel');
-   for (let indexPixel = 0; indexPixel < pixel.length; indexPixel += 1) {
-     pixel[indexPixel].style.backgroundColor = 'white';
-    }
+  const pixel = document.querySelectorAll('.pixel');
+  for (let indexPixel = 0; indexPixel < pixel.length; indexPixel += 1) {
+      pixel[indexPixel].style.backgroundColor = 'white';
+   }
 });
 
 // Selected color
@@ -101,7 +101,7 @@ const selectColor = document.querySelectorAll('.color');
 
 for (let index = 0; index < selectColor.length; index += 1) {
   const inputColor = selectColor[index];
-  inputColor.addEventListener('click', function(event) {
+  inputColor.addEventListener('click', function (event) {
     for (let colorIndex = 0; colorIndex < colorPalet.children.length; colorIndex += 1) {
       colorPalet.children[colorIndex].className = 'color';
     }
