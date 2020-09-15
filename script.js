@@ -6,7 +6,6 @@ const colorPalette = document.querySelector('#color-palette');
 const btnClear = document.querySelector('#clear-board');
 const btnVqv = document.querySelector('#generate-board');
 const inputBoardSize = document.querySelector('#board-size');
-const tableElement = document.querySelector('.pixel-section');
 
 let selectedColor = 'black';
 
@@ -24,20 +23,18 @@ function removeSelectedClass(stringClass) {
   return classArray.join(' ');
 }
 
-function createTable(nValue) {
-  tableElement.removeChild(tableElement.children[0]);
-  const tableBody = document.createElement('div');
-  tableElement.appendChild(tableBody);
+function createPixelBoard(nValue) {
+  const pixelBoard = document.querySelector('#pixel-board');
+  pixelBoard.innerHTML = '';
   for (let i = 0; i < nValue; i += 1) {
-    const tableRow = document.createElement('div');
-    tableRow.className = ('pixel-line');
+    const pixelLine = document.createElement('div');
+    pixelLine.className = 'pixel-line';
     for (let j = 0; j < nValue; j += 1) {
-      const tableCell = document.createElement('div');
-      tableCell.className = 'pixel';
-      tableCell.style.backgroundColor = 'white';
-      tableRow.appendChild(tableCell);
+      const pixelElement = document.createElement('div');
+      pixelElement.className = 'pixel';
+      pixelLine.appendChild(pixelElement);
     }
-    tableBody.appendChild(tableRow);
+    pixelBoard.appendChild(pixelLine);
   }
 }
 
@@ -56,7 +53,9 @@ colorPalette.addEventListener('click', function (event) {
   }
 });
 
-tableElement.addEventListener('click', function (elementEvent) {
+const pixelBoard = document.querySelector('#pixel-board');
+
+pixelBoard.addEventListener('click', function (elementEvent) {
   if (elementEvent.target.className === 'pixel') {
     elementEvent.target.style.backgroundColor = selectedColor;
   }
@@ -69,23 +68,15 @@ btnClear.addEventListener('click', function () {
   }
 });
 
-inputBoardSize.addEventListener('keyup', function () {
-  if (inputBoardSize.value <= 4) {
-    inputBoardSize.value = 5;
-  } else if (inputBoardSize.value >= 51) {
-    inputBoardSize.value = 50;
-  }
-});
-
 btnVqv.addEventListener('click', function () {
   const valueBoardSize = inputBoardSize.value;
   if (valueBoardSize === '') {
     alert('Board inválido!');
   } else if (valueBoardSize < 5) {
-    createTable(5);
+    createPixelBoard(5);
   } else if (valueBoardSize > 50) {
-    createTable(50);
+    createPixelBoard(50);
   } else {
-    createTable(valueBoardSize);
+    createPixelBoard(valueBoardSize);
   }
 });
