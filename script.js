@@ -6,16 +6,16 @@ const pixelBoard = document.querySelector('#pixel-board');
 const buttonInput = document.querySelector('#generate-board');
 function makeBoard(number) {
   pixelBoard.innerHTML = '';
-    for(let lIndex = 0; lIndex < number; lIndex +=1){
-      let lPixelBoard = document.createElement('div');
-      lPixelBoard.className ='line';
-      pixelBoard.appendChild(lPixelBoard);
-      for(let pIndex = 0; pIndex < number; pIndex +=1 ) {
-          let pixel = document.createElement('div');
-          pixel.className = 'pixel'
-          lPixelBoard.appendChild(pixel);
-      } trocaCor()
-    }
+  for (let lIndex = 0; lIndex < number; lIndex += 1) {
+    const lPixelBoard = document.createElement('div');
+    lPixelBoard.className = 'line';
+    pixelBoard.appendChild(lPixelBoard);
+    for (let pIndex = 0; pIndex < number; pIndex += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      lPixelBoard.appendChild(pixel);
+    } trocaCor();
+  }
 buttonInput.addEventListener('click', function () {
   const numberInput = document.querySelector('#board-size').value;
   let number = numberInput;
