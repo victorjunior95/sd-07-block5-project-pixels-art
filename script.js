@@ -78,7 +78,7 @@ window.onload = function () {
         let newBoard = document.querySelectorAll(".pixel");
         let numberOfPixels = newBoard.length;
         for (let index = 0; index < numberOfPixels; index += 1) {
-            newBoard[index].style.backgroundColor = "white";
+            newBoard[index].style.backgroundColor = "rgb(255, 255, 255)";
         }
     }
 
