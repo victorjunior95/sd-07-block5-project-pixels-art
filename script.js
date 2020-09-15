@@ -24,13 +24,9 @@ window.onload = function () {
 
 generatorButton.addEventListener('click', function () {
   if (size === '') {
-    printAlert();
+    alert('Board inválido!');
   }
 });
-
-function printAlert() {
-  alert('Board inválido!');
-}
 
 sizeBoard.addEventListener('keyup', function () {
   size = sizeBoard.value;
@@ -64,9 +60,6 @@ function removeOldPixels() {
 }
 
 function createPixels() {
-  if (size === '') {
-    printAlert();
-  }
   if (size < 5) {
     size = 5;
   }
@@ -148,7 +141,7 @@ function paint(position) {
 function clearButton() {
   clear.addEventListener('click', function () {
     for (let index = 0; index < pixels.length; index += 1) {
-      pixels[index].style.backgroundColor = 'white';
+      pixels[index].style.backgroundColor = 'rgb(211, 211, 211)';
     }
   });
 }
