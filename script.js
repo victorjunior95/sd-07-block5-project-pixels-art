@@ -1,14 +1,9 @@
 'use strict'
 
-paintItBlack();
+paintIt();
 setClass();
 clearAll();
 selectedFunc();
-
-function setClass() {
-    let div = document.querySelector('#black');
-    div.classList.add('selected');
-}
 
 function clearAll() {
     let clear = document.querySelector('#clear-board');
@@ -39,17 +34,14 @@ function selectedFunc() {
     });
 }
 
-function paintItBlack() {
+function paintIt() {
     let selected = document.querySelectorAll('.pixel');
-    let color = document.querySelectorAll('.color');
-        for (let item = 0; item < selected.length; item += 1) {
-            selected[item].addEventListener('click', function () {
-                let atributoDiv = document.querySelector('.selected').getAttribute('class');
-                if (atributoDiv !== 'color selected') {
-                  console.log("classe nunca foi encontrada.");
-                } else {
-                    selected[item].style.backgroundColor = document.querySelector('.selected').getAttribute('id');
-                }
-            });
-        }
+    for (let item = 0; item < selected.length; item += 1) {
+        selected[item].addEventListener('click', function () {
+            let atributoDiv = document.querySelector('.selected').getAttribute('class');
+            if (atributoDiv === 'color selected') {
+                selected[item].style.backgroundColor = document.querySelector('.selected').getAttribute('id');
+            }
+        });
     }
+}

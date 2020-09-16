@@ -7,9 +7,9 @@ body {
     border: 20px solid;
     border-image-slice: 1;
     border-image-source: conic-gradient(
-            hsl(100,100%,60%),
-            hsl(200,100%,60%),
-            hsl(100,100%,60%));
+            hsl(100, 100%, 60%),
+            hsl(200, 100%, 60%),
+            hsl(100, 100%, 60%));
 }
 
 #clear-board {
@@ -31,7 +31,7 @@ body {
     left: 100px;
 }
 
-#title{
+#title {
     position: absolute;
     padding-left: 100px;
     top: 10px;
