@@ -7,9 +7,6 @@
 .exibition {
     display: inline-block;
 }
-.selected {
-    border: 2px dashed gray;
-}
 .exibition-color {
     height: 50px;
     width: 50px;
