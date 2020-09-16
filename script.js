@@ -59,7 +59,7 @@ function makeBoard(number) {
   }
 }
 //  gera numeros para cores randomicas
-function getRandomArray () {
+function getRandomArray() {
   const array = [];
   for (let index = 0; index < 3; index += 1) {
     const number = Math.round(Math.random() * 255);
