@@ -1,5 +1,6 @@
 const select = document.querySelector('#color-palette');
 const paint = document.querySelector('#pixel-board');
+const clear = document.querySelector('#clear-board');
 
 select.addEventListener('click', function () {
   if (event.target.id == 'green' ) {
@@ -33,8 +34,12 @@ paint.addEventListener('click', function () {
   event.target.className = `pixel ${newClass}`;
 });
 
-
-
+clear.addEventListener('click', function () {
+  let boardLength = document.querySelectorAll('#pixel-board .pixel').length;
+  for (index = 0; index < boardLength; index += 1) {
+    document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
+  }
+})
 
 
 
