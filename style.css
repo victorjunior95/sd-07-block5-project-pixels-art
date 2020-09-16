@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Merriweather;
+    src: url("./Merriweather-Regular.ttf");
+}
+
 body {
     margin: 0;
     background-image: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190623/ourmid/pngtree-simple-technology-quality-light-effect-hd-background-image_237701.jpg");
@@ -11,6 +16,10 @@ header {
 }
 
 h1 {
+    font-family: Merriweather;
+    font-size: 40px;
+    color: rgb(212, 155, 55);
+    text-shadow: 2px 2px black;
     margin: 0;
     padding: 0;
     display: block;
