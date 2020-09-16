@@ -2,7 +2,7 @@ let selectedColor = '';
 let gridPaleta = document.querySelectorAll('.color');
 let pixels = document.querySelectorAll('.pixel');
 
-const buttonClear = document.querySelector('.clear-board');
+const buttonClear = document.querySelector('#clear-board');
 
 buttonClear.addEventListener('click', () => {
   for (let i=0; i<pixels.length; i += 1){
