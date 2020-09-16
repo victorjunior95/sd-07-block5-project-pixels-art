@@ -15,21 +15,5 @@ paleta.addEventListener('click', function() {
   pixels.style = paleta;
 });
 
-window.onload = function () {
-  makeBoard(5);
-};
 
-buttonInput.addEventListener('click', function () {
-  const numberInput = document.querySelector('#board-size').value;
-  const number = numberInput;
-  if (number === '') {
-    alert('Board inválido!');
-  } else if (number < 5) {
-    makeBoard(5);
-  } else if (number > 50) {
-    makeBoard(50);
-  } else {
-    makeBoard(number);
-  }
-});
 
