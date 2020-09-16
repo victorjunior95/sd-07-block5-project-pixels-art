@@ -1,11 +1,12 @@
 body {
-    background-color: rgb(255 , 255 , 255);
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-.center {
-    text-align: center;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+.center {
+  text-align: center;
+}
+
 .centerSection {
   text-align: center;
 }
@@ -23,7 +24,7 @@ body {
   background-color: white;
   border: 1px solid black;
   box-sizing: border-box;
-  display: table-cell; 
+  display: table-cell;
   height: 40px;
   width: 40px;
 }
