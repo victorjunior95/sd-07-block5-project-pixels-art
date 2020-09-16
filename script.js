@@ -8,6 +8,7 @@ let numberLines = 5;
 let pixelBoard = document.querySelector("#pixel-board");
 
 let lines = [];
+// pixel está armazenando todos os quadradinhos pixels, e conseguimos acessar elas pelo índice do array
 let pixel = [];
 let k = 0;
 for(index = 0; index < numberLines; index += 1){
@@ -33,6 +34,20 @@ for(let index = 0; index < color.length; index += 1){
         selected.classList.remove("selected");
         // poderia ser passado como parâmetro da função um "event" e na linha abaixo: "event.target.className += " selected"""
         color[index].classList.add("selected");
-        console.log(color[index]);          
     })
 }
+
+for (let index = 0; index < pixel.length; index += 1){
+    pixel[index].addEventListener("click", function(){
+        let selected = document.querySelector(".selected");
+        console.log(selected);
+        pixel[index].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
+    });
+}
+
+let buttonLimpar = document.querySelector("#botao-limpar");
+buttonLimpar.addEventListener("click", function(){
+    for(let index = 0; index < pixel.length; index += 1){
+        pixel[index].style.backgroundColor = "white";
+    };
+});
