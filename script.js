@@ -10,6 +10,24 @@ let button = document.getElementById('clear-board');
 
 // 2) Define the functions:
 
+// To create the squares:
+let numberLines = 5;
+let k = 0;
+let lines = [];
+let square = [];
+
+for (let i = 0; i < numberLines; i += 1) {
+  lines[i] = document.createElement('div');
+  pixelBoard.appendChild(lines[i]);
+  lines[i].classList.add('lines')
+  for (let j = 0; j < numberLines; j +=1) {
+    square[k] = document.createElement('div');
+    lines[i].appendChild(square[k]);
+    square[k].classList.add('pixel');
+    k += 1;
+  }
+}
+
 // To define the black color:
 black.style.backgroundColor = 'black';
 window.addEventListener('load', function () {
