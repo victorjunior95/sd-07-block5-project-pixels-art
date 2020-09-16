@@ -15,7 +15,9 @@ function createEvent(pixelDiv) {
   pixelDiv.addEventListener('click', function () {
     const currentSelected = document.querySelector('.selected');
     pixelDiv.classList = 'pixel';
-    pixelDiv.classList.add(currentSelected.classList[1]);
+    colorToPaint = currentSelected.style.backgroundColor;
+    pixelDiv.style.backgroundColor = colorToPaint;
+    
   });
 }
 
@@ -84,12 +86,13 @@ generateBoardBttn.addEventListener('click', function () {
   createBoard(resizer.value);
 });
 
-function getRandom () {
+function getRandom() {
   return Math.random() * 255;
 }
 
 function randomColors() {
-  for (index = 1; index <= 3; index += 1) {
+  colors[0].style.backgroundColor = 'black';
+  for (let index = 1; index <= 3; index += 1) {
     colors[index].style.backgroundColor = `rgb(${getRandom()} , ${getRandom()} , ${getRandom()})`;
   }
 }
