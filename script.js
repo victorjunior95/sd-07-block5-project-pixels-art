@@ -1,13 +1,20 @@
 // Coloca primeira cor (preta) como selecionada ao carregar a página
 window.onload = function () {
+    selectFirstColor ();
+    clickablePixel();
+}
+
+function selectFirstColor () {
     let firstColor = document.getElementsByClassName("first-color")[0];
     firstColor.classList.add("selected");
 }
 
 // Looping para adicionar Event Listener em todos os pixels para pintar quando clicar
-let pixels = document.getElementsByClassName("pixel");
-for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].addEventListener("click", paintPixel);
+function clickablePixel () {
+    let pixels = document.getElementsByClassName("pixel");
+    for (let index = 0; index < pixels.length; index += 1) {
+        pixels[index].addEventListener("click", paintPixel);
+    }
 }
 
 // Função para pintar o pixel
@@ -37,5 +44,41 @@ clearButton.addEventListener("click", clearColors);
 function clearColors () {
     for (let index = 0; index < pixels.length; index += 1) {
         pixels[index].style.backgroundColor = "";
+    }
+}
+
+let defineGenerateBoardButton = document.getElementById("generate-board");
+defineGenerateBoardButton.addEventListener("click", generateBoard);
+
+// Função para definir número de pixels
+function generateBoard () {
+    let numeroDePixels = parseInt(document.getElementById("board-size").value);
+    if (numeroDePixels > 4 && numeroDePixels < 51) {
+        deleteBoard();
+        populateBoard();
+        console.log("populateBoard");
+    }
+}
+
+function deleteBoard () {
+    let pixelBoard = document.getElementById("pixel-board");
+        while (pixelBoard.childElementCount > 0) {
+            pixelBoard.removeChild(pixelBoard.lastChild);
+        }
+}
+
+function populateBoard () {
+    let pixelBoard = document.getElementById("pixel-board");
+    let numeroDePixels = parseInt(document.getElementById("board-size").value);
+    for (numeroDeLinhas = 0; numeroDeLinhas < numeroDePixels; numeroDeLinhas += 1) {
+        // criar linha
+        let novaLinha = document.createElement("div");
+        pixelBoard.appendChild(novaLinha);
+        for (numeroDeColunas = 0; numeroDeColunas < numeroDePixels; numeroDeColunas += 1) {
+            let novoPixel = document.createElement("div");
+            novoPixel.className = "pixel";
+            novaLinha.appendChild(novoPixel);
+        }
+    clickablePixel();
     }
 }
