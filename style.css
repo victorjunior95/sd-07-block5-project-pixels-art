@@ -41,3 +41,9 @@ text-align: center;
 
     background-color:yellow;
 }
+#pixel-board{
+
+    background-color: violet;
+    display: inline-block;
+    
+}
