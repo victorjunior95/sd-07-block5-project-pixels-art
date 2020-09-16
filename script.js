@@ -67,10 +67,6 @@ function selectedItemPallet () {
 function createBox (color) { //inserir param color
     let box = document.createElement('div'); 
     box.className = 'pixel'; //setando classe pixel
-    box.style.backgroundColor = 'color'; //linha 44 até 47 estilizando css, alterei de white para color
-    box.style.width = '40px';
-    box.style.height = '40px';
-    box.style.border = '1px black';
     box.addEventListener('click', manipularEventpixel); //caso clique no box, será chamada função manipularEventpixel
     return box;
 }
@@ -89,8 +85,8 @@ function createPixelsBoard(){
     }
     const matrixGenerated = inputQuantityBoard * inputQuantityBoard; //para geração de matriz quadrada
     elementCreatedBoard.querySelectorAll('*').forEach((n)=> n.remove()); //aqui estou iterando sobre tudo para remover o grid
-    for (let i = 0; i < matrixGenerated; i += 1) {
-        elementCreatedBoard.appendChild(createBox('pixel')); //após correção do input do número, a função chamará a função createBox.
+    for (let index = 0; index < matrixGenerated; index += 1) {
+        elementCreatedBoard.appendChild(createBox('pixel')); 
     }
 }
 
