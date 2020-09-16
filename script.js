@@ -22,6 +22,8 @@ function creatPixelBoard(value) {
 }
 
 
+creatPixelBoard(5);
+
 let pixelSelected = document.querySelectorAll('.pixel');
 pixelSelected.forEach(changePixelSelected);
 function changePixelSelected (value) {
