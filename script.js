@@ -1,7 +1,22 @@
 
 let limpar = document.querySelector("#clear-board");
-
 let board = document.querySelectorAll(".pixel");
+let tamanhoBoard = document.querySelector('#board-size');
+
+
+function validaInput(){
+    if(tamanhoBoard.value != ""){
+        console.log('Deu certo');
+    }
+    else{
+        alert('Board inválido!');
+    };
+};
+
+
+tamanhoBoard.addEventListener('keyup', validaInput)
+
+
 
 function limparBoard(){
     for(let index = 0; index < board.length ; index ++){
