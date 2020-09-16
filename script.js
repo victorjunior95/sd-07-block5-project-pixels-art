@@ -83,9 +83,6 @@ function createBoard(qntCell) {
   tabelaLinha.push(qntCell);
   tabelaCelula.pop();
   tabelaCelula.push(qntCell);
-  const tableSize = ((qntCell * 40) + 1);
-  tableId.style.width = `${tableSize}px`;
-  tableId.style.height = `${tableSize}px`;
   criaPaletaDeEscolhas(1);
 }
 
