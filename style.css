@@ -43,3 +43,8 @@
   background-color: white;
   border: 1px solid black;
 }
+
+.clear-button {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}

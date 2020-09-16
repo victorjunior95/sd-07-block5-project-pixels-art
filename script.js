@@ -7,27 +7,24 @@ for (let index = 0; index < color.length; index += 1) {
     let selected = document.querySelector('.selected');
     selected.classList.remove('selected');
     event.target.className += ' selected';
-  })
+  });
 }
 
-// // Clear button 
-// const clearBtn = document.querySelector('#clear-board');
-// const pixelTable = document.querySelectorAll('.pixel');
- 
-// clearBtn.addEventListener('click', function () {
-//   for (let index = 0; index < pixelTable.length; index += 1) {
-//     pixelTable[index].style.backgroundColor = 'white';
-//   }
-// });
+// Clear button 
+const clearBtn = document.querySelector('#clear-board');
+
+clearBtn.addEventListener('click', function () {
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+});
 
 // Fill pixel with class selected's background-color
-let pixel = document.querySelectorAll('.pixel');
+const pixel = document.querySelectorAll('.pixel');
 
-  for (let i = 0; i < pixel.length; i += 1) {
-  pixel[i].addEventListener('click', function () {
-      let selected = document.querySelector('.selected');
-      pixel[i].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
-})
-}
-
-  
+for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].addEventListener('click', function () {
+    const selected = document.querySelector('.selected');
+    pixel[i].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
+  });
+  }
