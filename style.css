@@ -13,6 +13,9 @@ h1 {
     display: block;
     text-align: center;
 }
+main{
+    text-align: center;
+}
 .tools {
     background-color: yellow;
     text-align: center;
@@ -42,7 +45,15 @@ h1 {
 #pixel-board {
     background-color: violet;
     display: inline-block;
+    height: 210px;
+    width: 210px;
 }
+.linha {
+    margin-top: -4px;
+}
+/* .linha:first-child {
+    margin-top: 0;
+} */
 .pixel {
     background-color: white;
     border-color: black;
@@ -51,5 +62,4 @@ h1 {
     height: 40px;
     width: 40px;
     display: inline-block;
-    margin: -4px;
-}
+ }

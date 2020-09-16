@@ -25,8 +25,12 @@ for (let i = 0; i < color.length; i += 1){
         let selected = document.querySelector(".selected");
         selected.classList.remove("selected");
 
-        color[i].classList.add("selected")
+        color[i].classList.add("selected");
         
 })}
 
-console.log(color)
+for(let i = 0; i < pixel.length; i += 1) {
+pixel[i].addEventListener("click", function() {
+    let selected = document.querySelector(".selected")
+    pixel[i].style.backgroundColor = window.getComputedStyle(selected).backgroundColor
+})}
