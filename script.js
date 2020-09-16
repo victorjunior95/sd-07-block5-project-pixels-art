@@ -5,71 +5,56 @@ function changeBKGColor () {
   const rColorRGB = Math.floor(Math.random()*255);
   const gColorRGB = Math.floor(Math.random()*255);
   const bColorRGB = Math.floor(Math.random()*255);
-  body.style.backgroundColor='rgb(' + rColorRGB + ' , ' + gColorRGB + ' , ' + bColorRGB + ')';
-  title.style.color='rgb(' + rColorRGB + 1 + ' , ' + gColorRGB + ' , ' + bColorRGB + 1 + ')';
+  body.style.backgroundColor='rgb('+rColorRGB+','+gColorRGB+','+bColorRGB+')';
+  title.style.color='rgb('+rColorRGB+1+','+gColorRGB+','+bColorRGB+1+')';
 }
 //const time = setInterval (changeBKGColor, 100);
 // Remove the bars fron the line above to see the efect.
+function setBoardSize(numberLines) {
+  numberLines = document.querySelector('#generate-board').value;
+  if ((numberLines <= 0) && (numberLines > 5)) {
+    numberLines = 5;
+  } 
+    else if (numberLines > 50) {
+      numberLines = 50;
+   }
+        else {
+          let pixelBoard = document.getElementById('pixel-board');
+          pixelBoard.style.width = (numberLines * 40) +'px';
+          pixelBoard.style.height = (numberLines * 40) +'px';
+          let pixel = [];
+          let linha = [];
+          let divSize = numberLines**2;
+          for (let count = 0; count < divSize; count += 1) {
+          linha[count] = document.createElement('div');
+          linha[count].className = 'pixel';
+          pixelBoard.appendChild(linha[count]);
+        }
+    }
+    document.querySelector('#generate-board').value = '';
+    document.querySelector('#generate-board').focus();
+}
+const teste = document.getElementById('set-board-size');
+teste.addEventListener('click', setBoardSize);
 
-const color01 = document.getElementById('color-01');
-const color02 = document.getElementById('color-02');
-const color03 = document.getElementById('color-03');
-const color04 = document.getElementById('color-04');
-const pixelSS = document.querySelectorAll('.pixel');
-const clearBT = document.getElementById('clear-board');
-let saveClass = 'color-01';
+// Function to add class 'selected' in palet itens, and set the color to pint pixels.
+const pixelBoard = document.getElementById('pixel-board');
+const setColor = document.querySelectorAll('.color');
+for (let i = 0; i < setColor.length; i += 1) {
+  setColor[i].addEventListener('click', function(event) {
+    let selected = document.querySelector('.selected');
+    selected.classList.remove('selected');
+    event.target.className += ' selected';
 
-  document.querySelectorAll('.pixel').forEach(pixel => {
-  pixel.className = 'pixel pixelBackG';
+  })
+}
+// Function to add the class from selected color palet to pixels.
+const selected = 'color-01';
+pixelBoard.addEventListener('click', function(event) {
+  let selected = document.querySelector('.selected');
+  event.target.style.backgroundColor =  window.getComputedStyle(selected).backgroundColor;
+  const pixelIten = document.querySelectorAll('.pixel');
+  pixelIten.forEach(iten => {
+    iten.classList.add(selected.value);
+  })
 });
-
-document.querySelectorAll('.pixel').forEach(item => {
-  item.addEventListener('click', () => item.classList.add('color-01'))
-});
-
-
-// Function to clear all class color fron pixel itens.
-clearBT.addEventListener('click', function () {
-  for (let i = 0; i < pixelSS.length; i += 1) {
-    pixelSS[i].className = 'pixel pixelBackG';
-  }
-});
-
-// Function to add class 'selected' in palet itens, and add a class color of color selected.
-const colorPalet = document.querySelectorAll('.color');
-colorPalet.forEach(colorPalet => {
-  colorPalet.addEventListener('click', event => {
-    colorPalet.classList.add('selected');
-  saveClass = colorPalet.classList[1];
-  });
-    pixelSS.forEach(pixelSS => {
-      pixelSS.addEventListener('click', event => {
-        pixelSS.className = 'pixel color-01';
-        pixelSS.classList.add(saveClass);
-    });
-  });
-});
-
-color01.addEventListener('click', function () {
-  color02.className = 'color color-02';
-  color03.className = 'color color-03';
-  color04.className = 'color color-04';
-})
-
-color02.addEventListener('click', function () {
-  color01.className = 'color color-01';
-  color03.className = 'color color-03';
-  color04.className = 'color color-04';
-})
-
-color03.addEventListener('click', function () {
-  color01.className = 'color color-01';
-  color02.className = 'color color-02';
-  color04.className = 'color color-04';
-})
-
-color04.addEventListener('click', function () {
-  color01.className = 'color color-01';
-  color02.className = 'color color-02';
-  color03.className = 'color color-03';
-})
