@@ -122,7 +122,7 @@ h1 {
 }
 
 .selected {
-  border-color: white; */
+  /* border-color: white; */
   /* border-width: 1px;
 }
 
@@ -221,7 +221,9 @@ button:active {
 }
 
 main{
+  background-color: green;
   height: calc(100% - 165px);
+  width: 100%;
 }
 
 .canvas{
@@ -229,12 +231,11 @@ main{
   border-color: rgb(220, 220, 220);
   border-style: solid;
   border-width: 1px;
-  height: 226px;
-  width: 226px;
-  /* padding: 7px; */
+  display: inline-block;
   position: relative;
-  top: calc(50% - 113px);
-  /* left: calc(50% - 113px); */
+  top: calc(50% - 106px);
+  left: calc(50% - 106px);
+  margin: 10px;
 }
 
 .pixel-board {
@@ -243,14 +244,12 @@ main{
   border-color: rgb(96, 96, 96);
   border-style: solid;
   border-width: 1px;
-  height: 210px;
-  /* width: 210px; */
+  height: 212px;
+  width: 212px;
 }
 
 .boardLines {
   background-color: green;
-  height: 40px;
-  width: 100%;
 }
 
 .pixel {
@@ -258,8 +257,6 @@ main{
   border-color: black;
   border-style: solid;
   border-width: 1px;
-  border-collapse: collapse;
-  /* display: inline-block; */
   float: left;
   height: 40px;
   width: 40px;
