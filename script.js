@@ -119,6 +119,7 @@ function emptyCheck() {
 }
 
 criaPaletaDeEscolhas(0);
+criaPaletaDeEscolhas(1);
 randonColors();
 
 btVqv.addEventListener('click', emptyCheck);
