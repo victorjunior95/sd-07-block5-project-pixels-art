@@ -11,10 +11,9 @@ for (let index = 0; index < numberLines; index += 1) {
     pixelBoard.appendChild(linha[index]);
 
     for (let j = 0; j < numberLines; j += 1) {
-        //
         pixel[k] = document.createElement("div");
         pixel[k].className = "pixel";
-        linha[i].appendChild(pixel[k]);
+        linha[index].appendChild(pixel[k]);
         k = k + 1;
     }
 }
@@ -34,16 +33,22 @@ for (let index = 0; index < color.length; index += 1) {
     })
 }
 
-for (let index = 0; index < pixel.length; index += 1) {
-    pixel[index].addEventListener("click", function () {
-        // reconhecer a cor selecionada
-        let selected = document.querySelector(".selected")
+pixelBoard.addEventListener("click", function(event) {
+    let selected = document.querySelector(".selected");
+    event.target.style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
+})
+
+// Refatoração acima ^
+// for (let index = 0; index < pixel.length; index += 1) {
+//     pixel[index].addEventListener("click", function () {
+//         // reconhecer a cor selecionada
+//         let selected = document.querySelector(".selected")
         
-        // troca da cor de fundo 
-        pixel[index].style.backgroundColor = window.getComputedStyle(selected).backgroundColor; // https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+//         // troca da cor de fundo 
+//         pixel[index].style.backgroundColor = window.getComputedStyle(selected).backgroundColor; // https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
         
-    })
-}
+//     })
+// }
 
 let buttonClear = document.getElementById("clear-board");
 buttonClear.addEventListener("click", function () {
