@@ -16,14 +16,3 @@ paleta.addEventListener('click', function() {
   pixels.style = paleta;
 });
 
-function generateBoardd() {
-  if (document.querySelector("#board-size").value == "") {
-    return alert("Board inválido!");
-  }
-  limpa();
-
-  if (document.querySelector("#board-size").value > 50) {
-    document.querySelector("#board-size").value = 50;
-  } else if (document.querySelector("#board-size").value < 5) {
-    document.querySelector("#board-size").value = 5;
-  }}
