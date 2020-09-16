@@ -8,17 +8,14 @@ let boardSize = document.getElementById('board-size').value;
 let numberOfColumns = 5;
 let numberOfLines = 5;
 let pixelWidth = 40;
-let pixelHeight = 40;
-
 function randomNumber() {
   return Math.round(Math.random() * 255);
-}
-
+};
 for (let index = 0; index < Object.keys(colorDefined).length; index += 1) {
   colorDefined[index].addEventListener('click', function () { 
     firstMainColor[0].classList.remove('selected');
     event.target.classList.add('selected');
-    firstMainColor = document.getElementsByClassName('selected')
+    firstMainColor = document.getElementsByClassName('selected');
   });
 };
 function listenerToPixels() {
@@ -30,36 +27,28 @@ for (let index = 0; index < Object.keys(pixelElements).length; index += 1) {
   });
 }
 }
-
-function test() {
+function firstConditions() {
   boardSize = document.getElementById('board-size').value;
-  if (boardSize === '') {
+  if (boardSize === '' || boardSize == 0) {
     alert('Board inválido!');
   } else {
-    scaleBoardSizeOnRange();
+    conditionsToGenereteBoard();
   }
 }
-function scaleBoardSizeOnRange() {
+function conditionsToGenereteBoard() {
   if (boardSize >= 5 && boardSize <= 50) {
-    assignSizeForGenerateBoard();
+    constructorBoard();
   } else if (boardSize < 5) {
       boardSize = 5;
-      assignSizeForGenerateBoard();
+      constructorBoard();
     } else {
       boardSize = 50;
-      assignSizeForGenerateBoard();
+      constructorBoard();
     }
   }
-
-function assignSizeForGenerateBoard() {
+function constructorBoard() {
   numberOfColumns = boardSize;
   numberOfLines = boardSize;
-  boardCreator();
-  listenerToPixels();
-  pixelBoard.style.width = numberOfColumns * pixelWidth;
-  pixelBoard.style.width += 'px';
-}
-function boardCreator() {
   pixelBoard.innerHTML = '';
   for (let line = 0; line < numberOfLines; line += 1) {
     let elementCreator = document.createElement('section');
@@ -71,6 +60,9 @@ function boardCreator() {
       document.getElementsByClassName('line')[line].appendChild(elementCreator);
     }
   }
+  listenerToPixels();
+  pixelBoard.style.width = numberOfColumns * pixelWidth;
+  pixelBoard.style.width += 'px';
 }
 colorDefined[0].style.backgroundColor = 'black'
 colorDefined[1].style.backgroundColor = `rgb(${randomNumber()} , ${randomNumber()} , ${randomNumber()})`;
@@ -82,7 +74,7 @@ cleanTheBoard.addEventListener('click', function ()  {
     pixelElements[index].style.backgroundColor = 'white';
   }
 });
-generateBoard.addEventListener('click', test);
+generateBoard.addEventListener('click', firstConditions);
 
 
 
