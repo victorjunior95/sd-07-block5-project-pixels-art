@@ -34,12 +34,12 @@ btnBlue.addEventListener('click', function () {
   color = window.getComputedStyle(btnBlue).getPropertyValue('background-color');
 });
 //  trata evento acrescentar cor no quadradinho
-function trocaCor(){
-  document.querySelectorAll('.pixel').forEach((item) =>{
+function trocaCor() {
+  document.querySelectorAll('.pixel').forEach((item) => {
     item.addEventListener('click', () =>{
       item.style.backgroundColor = color;
-    })
-  })
+    });
+  });
 }
 //  cria linhas e quadradinhos
 const pixelBoard = document.querySelector('#pixel-board');
@@ -91,6 +91,7 @@ buttonInput.addEventListener('click', function () {
   }
 });
 //  cria botão que limpa tudo
+const board = document.getElementsByClassName('pixel');
 const btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
   for (let index = 0; index < board.length; index += 1) {
