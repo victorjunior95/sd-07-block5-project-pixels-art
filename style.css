@@ -1,3 +1,4 @@
+/* Dica de estilos de bootões https://www.w3schools.com/css/css3_buttons.asp */
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 10px;
@@ -36,6 +37,7 @@ body {
 
 .color-palette {
   box-sizing: border-box;
+  display: block;
   height: 40px;
   margin-left: 30px;
   width: 180px;
