@@ -1,3 +1,4 @@
+let numbersOfBlocksInLine = 5;
 document.getElementById('color-palette').addEventListener("click", function(event) {
   if (event.target.classList.contains('selected')) {
     alert('Esta cor já está selecionada')
@@ -25,4 +26,23 @@ function clearBoard() {
   }
 }
 
+function defineBoardSize() {
+  let inputSizeValue = document.getElementById('define-board-size').value;
+  let containerSize = (inputSizeValue * 210)/numbersOfBlocksInLine;
+  document.getElementById("pixel-board").style.width = `${containerSize}px`
+  document.getElementById("pixel-board").innerHTML = ""
+  for (let index = 0; index < inputSizeValue**2; index+=1) {
+    let block = document.createElement('div')
+    block.className = "pixel"
+    document.getElementById("pixel-board").appendChild(block)
+  }
+}
+
 document.getElementById('clear-board').addEventListener('click', clearBoard)
+window.onload = function() {
+  for (let index = 0; index < numbersOfBlocksInLine**2; index+=1) {
+    let block = document.createElement('div')
+    block.className = "pixel"
+    document.getElementById("pixel-board").appendChild(block)
+  }
+}
