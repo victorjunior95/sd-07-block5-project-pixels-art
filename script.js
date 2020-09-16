@@ -24,7 +24,7 @@ function criaInicial(tamanhoPixel){
         criaPixel[index].style.width = tamanhoPixel + 'px';
         criaPixel[index].style.height = tamanhoPixel + 'px';
         board.style.maxWidth = (tamanhoPixel * 5 + tamanhoPixel)+ 'px';
-        board.style.maxHeight = (tamanhoPixel * 5 + tamanhoPixel)+ 'px';
+        board.style.maxHeight = 50 + 'px';
         console.log(tamanhoPixel);
         board.appendChild(criaPixel[index]);
         criaPixel[0].id = 'primeiroPixel';
