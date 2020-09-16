@@ -1,9 +1,9 @@
-let lineNumbers = 5;
+let lineNumbers = document.querySelector('#lineNumbers');
 const pixelBoard = document.getElementById('pixel-board');
 
 let line = [];
 let pixel = [];
-let k = 0;
+let count = 0;
 
 for (let index = 0; index < lineNumbers; index += 1) {
   line[index] = document.createElement('div');
@@ -11,10 +11,10 @@ for (let index = 0; index < lineNumbers; index += 1) {
   pixelBoard.appendChild(line[index]);
 
   for (let j = 0; j < lineNumbers; j += 1) {
-    pixel[k] = document.createElement('div');
-    pixel[k].className = 'pixel';
-    line[index].appendChild(pixel[k]);
-    k += 1;
+    pixel[count] = document.createElement('div');
+    pixel[count].className = 'pixel';
+    line[index].appendChild(pixel[count]);
+    count += 1;
   }
 }
 
@@ -44,14 +44,3 @@ buttonClear.addEventListener('click', function () {
     pixel[index].style.backgroundColor = 'white';
   }
 });
-
-// const grid = document.querySelectorAll('.pixel');
-// let colorSelected = document.querySelector('.selected').style.backgroundColor;
-
-
-// let corAtual = "black"
-// function pintar(){ event.target.style.backgroundColor = corAtual}
-// colors.addEventListener('click', function (event) {
-//   if (event.target.className === 'selected') {
-//   }
-// }, false);
