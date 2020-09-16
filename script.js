@@ -49,6 +49,9 @@ generateBoard.addEventListener("click", ()=>{
     else if (parseInt(boardSize) > 50){
         boardSize = 50
     }
+    else if (boardSize == ""){
+        alert("Board inválido!")
+    }
     board.innerHTML = ""
     for (let i = 0; i < parseInt(boardSize); i++){
         let div = document.createElement("div")
