@@ -5,6 +5,7 @@ var yellow = document.querySelector(".yellow");
 var colors = document.getElementsByClassName("color");
 var pixels = document.getElementsByClassName('pixel');
 var paint = "";
+var limpar = document.querySelector("#clear-board");
 
 function selectorB () {
     for (let i = 0; i < colors.length; i += 1) {
@@ -61,11 +62,16 @@ for (let index = 0; index < pixels.length; index += 1) {
   });
 }
 
-
+function clear() {
+    for(let index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = "white"
+    }
+}
 
 black.addEventListener('click', selectorB);
 green.addEventListener('click', selectorG);
 red.addEventListener('click', selectorR);
 yellow.addEventListener('click', selectorY);
+limpar.addEventListener('click', clear);
 
 window.onload = selectorB;
