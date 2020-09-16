@@ -18,6 +18,12 @@ function createPixelsBoard(number) {
   }
 }
 
+function selectedColor() {
+  let selected = document.querySelector(".selected");
+  return getComputedStyle(selected).backgroundColor;
+}
+
+
 // Predefinições ao carregar a página
 window.onload = function() {
   createPixelsBoard(5);
