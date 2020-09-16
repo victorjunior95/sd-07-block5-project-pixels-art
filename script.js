@@ -12,7 +12,7 @@ const time = setInterval (changeBKGColor, 700);
 // Remove the bars fron the line above to see the efect.
 
 function setBoardSize(numberLines) {
-  let vqvButton = document.querySelector('#generate-board').value;
+  let vqvButton = document.querySelector('#board-size').value;
   document.getElementById('pixel-board').innerHTML = '';
   numberLines = vqvButton;
   let pixelBoard = document.getElementById('pixel-board');
@@ -24,8 +24,8 @@ function setBoardSize(numberLines) {
     pixel[count] = document.createElement('div');
     pixel[count].className = 'pixel pixelBackG';
       pixelBoard.appendChild(pixel[count]);
-    document.querySelector('#generate-board').value = '';
-    document.querySelector('#generate-board').focus();
+    document.querySelector('#board-size').value = '';
+    document.querySelector('#board-size').focus();
   }
 }
 const vqvButton = document.getElementById('set-board-size');
@@ -42,11 +42,19 @@ for (let i = 0; i < coloPalet.length; i += 1) {
 }
 
 // Function to add selected color at selected pixel.
+const pixelIten = document.querySelectorAll('.pixel');
+  for (let count = 0; count < pixelIten.length; count += 1) {
+    let pixel = document.querySelectorAll('.pixel');
+    pixel[count].addEventListener('click', function(event) {
+      let selectedPixel = document.querySelector('.selected');
+      event.target.className = 'pixel ' + selectedPixel.classList[1];
+    })
+  }
 document.getElementById('pixel-board').addEventListener('click', function () {
   const pixelIten = document.querySelectorAll('.pixel');
-  for (let i = 0; i < pixelIten.length; i += 1) {
+  for (let count = 0; count < pixelIten.length; count += 1) {
     let pixel = document.querySelectorAll('.pixel');
-    pixel[i].addEventListener('click', function(event) {
+    pixel[count].addEventListener('click', function(event) {
       let selectedPixel = document.querySelector('.selected');
       event.target.className = 'pixel ' + selectedPixel.classList[1];
     })
