@@ -1,11 +1,22 @@
 let palette = document.querySelector("#color-palette")
 let fields = document.querySelectorAll(".pixel")
 let colors = document.querySelectorAll(".color")
-let boardSize = document.querySelector("#board-size").value
 let generateBoard = document.querySelector("#generate-board")
+const clearBoard = document.querySelector("#clear-board")
+const board = document.querySelector("#pixel-board")
 let options = ["red", "blue", "green", "aliceblue", "brown", "purple", "gray", "violet", "pink", "yellow", "coral", "orange", "gold", "darkkhaki", "peachpuff", "springgreen", "mediumspringgreen", "cyan", "teal", "slateblue", "indigo", "deeppink", "seagreen", "seashell", "darkslategray", "sandybrown", "chocolate", "peru", "wheat", "blueviolet", "magenta"]
 let randoms = []
 let number = 0
+
+for (let i = 0; i < 5; i++){
+    let div = document.createElement("div")
+    for (let j = 0; j < 5; j++){
+        let pixel = document.createElement("div")
+        pixel.classList.add("pixel")
+        div.appendChild(pixel)
+}
+board.appendChild(div)
+}
 
 palette.addEventListener("click", (event)=>{
     let selected = document.querySelector(".selected")
@@ -30,26 +41,29 @@ for (let i = 0; i < fields.length; i += 1){
     })
 }
 
-function clearBoard(){
-    for (let i = 0; i < fields.length; i += 1){
-       fields[i].style.backgroundColor = "rgb(255, 255, 255)"
-    }
-}
+clearBoard.addEventListener("click", ()=>{
+  for (let i = 0; i < fields.length; i += 1) {
+    fields[i].style.backgroundColor = "rgb(255, 255, 255)"
+  }  
+})
 
 generateBoard.addEventListener("click", ()=>{
     let boardSize = document.querySelector("#board-size").value
-    if (boardSize == ""){
-        alert('Board inválido!')
+    if (parseInt(boardSize) < 5){
+        boardSize = 5
     }
     else if (parseInt(boardSize) > 50){
         boardSize = 50
     }
-    else if (parseInt(boardSize) < 5){
-        boardSize = 5
+    board.innerHTML = ""
+    for (let i = 0; i < parseInt(boardSize); i++){
+        let div = document.createElement("div")
+        for (let j = 0; j < parseInt(boardSize); j++){
+            let pixel = document.createElement("div")
+            pixel.classList.add("pixel")
+            div.appendChild(pixel)
     }
-    for (let i = 0; i < fields.length; i++){
-        fields[i].style.width = boardSize + "px"
-        fields[i].style.height = boardSize + "px"
+    board.appendChild(div)
     }
 })
 
