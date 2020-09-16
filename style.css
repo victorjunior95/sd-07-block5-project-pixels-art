@@ -47,3 +47,15 @@ text-align: center;
     display: inline-block;
     
 }
+.pixel{
+
+   
+    background-color:white;
+    border:1px solid black;
+    border-width: 1px;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    margin: -4px;
+
+}
