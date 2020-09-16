@@ -3,31 +3,41 @@ const paint = document.querySelector('#pixel-board');
 const clear = document.querySelector('#clear-board');
 const changeSize = document.querySelector('#generate-board');
 
+function randomPalette() {
+  //Random color code source: https://css-tricks.com/snippets/javascript/random-hex-color/
+  document.getElementById('second').style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+  document.getElementsByClassName('third')[0].style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+  document.getElementsByClassName('fourth')[0].style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+}
+
 select.addEventListener('click', function () {
-  if (event.target.id == 'green' ) {
+  if (event.target.id == 'fourth' ) {
     document.getElementById('black').className = 'color black';
-    document.getElementById('blue').className = 'color blue';
-    document.getElementById('yellow').className = 'color yellow';
-    document.getElementById('green').className = 'color green selected';
+    document.getElementById('second').className = 'color second';
+    document.getElementById('third').className = 'color third';
+    document.getElementById('fourth').className = 'color fourth selected';
   } else if (event.target.id == 'black') {
     document.getElementById('black').className = 'color black selected';
-    document.getElementById('blue').className = 'color blue';
-    document.getElementById('yellow').className = 'color yellow';
-    document.getElementById('green').className = 'color green';
-  } else if (event.target.id == 'blue') {
+    document.getElementById('second').className = 'color second';
+    document.getElementById('third').className = 'color third';
+    document.getElementById('fourth').className = 'color fourth';
+  } else if (event.target.id == 'second') {
     document.getElementById('black').className = 'color black';
-    document.getElementById('blue').className = 'color blue selected';
-    document.getElementById('yellow').className = 'color yellow';
-    document.getElementById('green').className = 'color green';
-  } else if (event.target.id == 'yellow') {
+    document.getElementById('second').className = 'color second selected';
+    document.getElementById('third').className = 'color third';
+    document.getElementById('fourth').className = 'color fourth';
+  } else if (event.target.id == 'third') {
     document.getElementById('black').className = 'color black';
-    document.getElementById('blue').className = 'color blue';
-    document.getElementById('yellow').className = 'color yellow selected';
-    document.getElementById('green').className = 'color green';
+    document.getElementById('second').className = 'color second';
+    document.getElementById('third').className = 'color third selected';
+    document.getElementById('fourth').className = 'color fourth';
   }
 })
 
 paint.addEventListener('click', function () {
+
+  //alert(event.target.className.style.backgroundColor)
+
   selectedColor = document.getElementsByClassName('selected')[0];
   selectedClass = selectedColor.className;
   array = selectedClass.split(' ');
@@ -68,4 +78,6 @@ changeSize.addEventListener('click', function () {
     }
   }
 });
+
+
 
