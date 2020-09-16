@@ -28,8 +28,11 @@
     display: table-cell;
     background-color: white;
 }
-#chosecolor {
+#color-palette{
     display: inline-block;
+}
+#chosecolor {
+display: inline-block;
 }
 #c-red {
     background-color: red;
