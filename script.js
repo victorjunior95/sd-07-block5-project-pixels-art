@@ -1,10 +1,10 @@
-const menuPaleta = document.querySelector("#color-palette").childNodes;
+let selected = document.querySelector('.selected');
+const colors = document.querySelectorAll('.color');
+
 const palleta1 = document.querySelector("#color-1");
 const palleta2 = document.querySelector("#color-2");
 const palleta3 = document.querySelector("#color-3");
 const palleta4 = document.querySelector("#color-4");
-let grid = (document.querySelector('#pixel-board'));
-let corSelecionada = 'black'; //setando cor preta por default
 
 function gerarNumeros () {
     return Math.floor(Math.random() * 255 +1);
@@ -25,91 +25,92 @@ function criarCorAleatoria () {
     return RGB
 }
 
-//atribuindo cor preto para primeira cor da paleta de cores.
-palleta1.style.backgroundColor = 'black';
 
 function inserirCorPaleta () {
+    palleta1.style.backgroundColor = 'black'
     palleta2.style.backgroundColor = criarCorAleatoria ();
     palleta3.style.backgroundColor = criarCorAleatoria ();
     palleta4.style.backgroundColor = criarCorAleatoria ();
-    if (corSelecionada = 'black') {
-        palleta1.classList.add('selected');
+    //palleta1.classList.add('selected');
+}
+
+function buttonclearBoard () {
+    let clearBoard = document.querySelector("#clear-board");
+    clearBoard.addEventListener('click', function () {
+        const pixels = document.querySelectorAll('.pixel');
+        for (let index = 0; index < pixels.length; index += 1) {
+            pixels[index].style.backgroundColor = 'white';
+          }
+    })
+}
+
+function coloringPalette() {
+    selected = document.querySelector('.selected');
+    const pixels = document.querySelectorAll('.pixel');
+    for (const cell of pixels) {
+      cell.addEventListener('click', function () {
+        event.target.style.backgroundColor = selected.style.backgroundColor;
+      });
+    }
+}
+
+function gettingTheColors() {
+    for (const btn of colors) {
+      btn.addEventListener('click', function () {
+        if (!event.target.classList.contains('selected')) {
+          selected.classList.remove('selected');
+          event.target.classList.add('selected');
+        }
+        selected = document.querySelector('.selected');
+      });
     }
 }
 
 
-
-function manipularEventpixel (event) {
-    const colorirBox = event.target;
-    colorirBox.style.backgroundColor = corSelecionada;
-}
-
-function manipulaPalete(event) { //inserida função
-    const oldDiv = document.querySelector('.selected');
-    const atualDiv = event.target;
-  
-    oldDiv.classList.remove('selected');
-    atualDiv.classList.add('selected');
-  
-    corSelecionada = window
-      .getComputedStyle(atualDiv, null)
-      .getPropertyValue('background-color');
-}
-
-function selectedItemPallet () {
-    for (let i = 0; i < menuPaleta.length; i++){
-        menuPaleta[i].addEventListener('click', manipulaPalete);
-    }    
-}
-      
-
-//criação do pixel com classe pixel.
-function createBox (color) { //inserir param color
-    let box = document.createElement('div'); 
-    box.className = 'pixel'; //setando classe pixel
-    box.addEventListener('click', manipularEventpixel); //caso clique no box, será chamada função manipularEventpixel
-    return box;
-}
-
-//criação do grid
-function createPixelsBoard(){ 
-    const elementCreatedBoard = document.getElementById('pixel-board'); //capturou o elemento acima do grid
-    let inputQuantityBoard = document.getElementById('board-size').value; //capturando o valor digitado pelo usuário
-    if (inputQuantityBoard < 5 || inputQuantityBoard === undefined || inputQuantityBoard === null
-    ){
-        inputQuantityBoard = 5; //acertando o valor para 5
-        alert('Board Inválido!');
-    } else if (inputQuantityBoard > 50) {
-        inputQuantityBoard = 50; //acertando o valor para 50
-        alert('Board Inválido!');
-    }
-    const matrixGenerated = inputQuantityBoard * inputQuantityBoard; //para geração de matriz quadrada
-    elementCreatedBoard.querySelectorAll('*').forEach((n)=> n.remove()); //aqui estou iterando sobre tudo para remover o grid
-    for (let index = 0; index < matrixGenerated; index += 1) {
-        elementCreatedBoard.appendChild(createBox('pixel')); 
+function generateBoard (boardSize) { //default param number 5 // com auxilio de Lucas Ribeiro - turma 7
+    const pixelBoard = document.querySelector('.pixel-board');
+    for (let rows = 0; rows < boardSize; rows += 1) {
+      const pixelRow = document.createElement('div');
+      pixelRow.classList.add('pixel-row');
+      for (let cells = 0; cells < boardSize; cells += 1) {
+        const pixelCell = document.createElement('div');
+        pixelCell.classList.add('pixel', 'border');
+        pixelCell.style.backgroundColor = 'white';
+        pixelRow.appendChild(pixelCell);
+      }
+      pixelBoard.appendChild(pixelRow);
     }
 }
 
-function botaoCriarGrid () {
-    const botaoCriarMatriz = document.querySelector("#generate-board");
-    botaoCriarMatriz.addEventListener('click', createPixelsBoard); //caso clique no botão, a função createPixelsBoard será executada.
+
+function conditionCreateTable(){  //Com ajuda do meu novo amigo Lucas Martins Ribeiro - tryber turma 7
+    const generateBoard1 = document.querySelector('#generate-board');
+    let pixelBoard = document.getElementById('pixel-board');
+    generateBoard1.addEventListener('click',function () {
+        let boardSize = document.getElementById('board-size').value;
+    
+        if (boardSize < 5 || boardSize === undefined || boardSize === null
+            ){
+                boardSize.value = 5;  
+                alert('Board Inválido!');
+            } else if (boardSize > 50) {
+                boardSize.value = 50;
+                alert('Board Inválido!');
+            }
+            pixelBoard.innerHTML = '';
+            generateBoard (boardSize);
+            gettingTheColors ();
+            coloringPalette()
+    })
 }
 
-function limparGrid () { //função para limpar o grid
-  const limpar = document.querySelector('#clear-board'); //capturar o id do botão para limpar
-  limpar.addEventListener('click', function () { //adicionando event click
-    const grid = document.querySelectorAll('.pixel'); //constante com todas as box
-    for (let index = 0; index < grid.length; index += 1) { //iterando sobre os box do grid
-      grid[index].style.backgroundColor = 'white'; //atribuindo cor branco na box com classe .pixel
-    }
-  });
-}
+
 
 window.onload = () => {
-    inserirCorPaleta ();
-    createBox ();
-    createPixelsBoard();
-    botaoCriarGrid ();
-    limparGrid ();
-    selectedItemPallet ();
+    conditionCreateTable()
+    inserirCorPaleta ()
+    generateBoard (5)
+    coloringPalette()
+    buttonclearBoard ()
+    gettingTheColors()
 }
