@@ -12,7 +12,7 @@ for (let counter = 0; counter < amountOfSquares; counter += 1) {
 }
 
 document.addEventListener('click', function (event) {
-  if (event.target.classList.contains('color') ) {
+  if (event.target.classList.contains('color')) {
     const selectColor = document.querySelector('.selected');
     selectColor.classList.remove('selected');
     event.target.classList.add('selected');
@@ -30,7 +30,7 @@ for (let i = 0; i < pixelBoard.length; i += 1) {
 
 const clear = document.getElementById('clear-board');
 clear.addEventListener('click', function () {
-    for (let index = 0; index < pixelBoard.length; index += 1) {
-     pixelBoard[index].style.backgroundColor = 'white';
-    }
+  for (let index = 0; index < pixelBoard.length; index += 1) {
+      pixelBoard[index].style.backgroundColor = 'white';
+  }
 });
