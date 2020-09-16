@@ -5,6 +5,7 @@ body {
 header {
   background-color: greenyellow;
   height: 150px;
+  /* text-align: center; */
   width: 100%;
 }
 
@@ -58,14 +59,17 @@ main {
 
 .pixel-board {
   display: inline-block;
-  height: 210px;
+  height: 205px;
+  margin-top: 60px;
   width: 210px;
+  background-color: red;
 }
 
 .line {
   margin-top: -4px;
 }
 
-.line:first-child {
-  margin-top: 30px;
+.clear-board {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
