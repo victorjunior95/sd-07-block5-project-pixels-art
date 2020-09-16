@@ -30,14 +30,19 @@ header div {
 }
 
 .new-document-top {
-  animation: center-to-top 1s;
-  box-shadow: 0px 2px 2px rgb(20, 20, 20);
-  padding: 10px;
-  background-color: rgb(62, 63, 68);
+  animation: center-to-top 2s;
+  background-color: rgb(52, 54, 58);
+  box-shadow: 0px 2px 5px rgb(15, 16, 17);
   color: white;
-  height: 30px;
+  font-size: 1.2em;
+  height: 6vh;
+  margin: auto;
+  padding-top: 0.5rem;
+  position: fixed;
   text-align: center;
-  font-size: 1.5em;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
 }
 
 @keyframes center-to-top {
@@ -47,50 +52,62 @@ header div {
   }
 }
 
-.color-palette {
+.input-document-title {
+  background-color: transparent;
+  border: transparent;
   color: white;
-  display: none;
-  height: 50px;
-  margin-top: 40px;
+  display: inline-block;
+  font-size: 1em;
+  margin-bottom: 2%;
   text-align: center;
+  width: 15vw;
+}
+
+.color-palette {
+  background-color: rgb(68, 70, 75);
+  color: rgb(168, 168, 168);
+  display: none;
+  height: 100vh;
+  font-size: small;
+  padding-top: 10vh;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  width: 5vw;
 }
 
 .color {
-  box-shadow: 2px 2px 2px rgb(20, 20, 20);
+  box-shadow: 0px 2px 5px rgb(15, 16, 17);
   border: black solid 1px;
   display: inline-block;
-  height: 50px;
-  width: 50px;
+  height: 4vw;
+  width: 4vw;
 }
 
 .color0 {
   background-color: black;
 }
 
-.color1 {
-  background-color: purple;
-}
-
-.color2 {
-  background-color: orange;
-}
-
-.color3 {
-  background-color: wheat;
-}
-
 .selected {
   border: red solid 2px;
+}
+
+.clear-board {
+  box-shadow: 0px 2px 5px rgb(15, 16, 17);
+  margin-top: 0.5rem;
+  border: transparent;
+  color: white;
+  background-color: transparent;
 }
 
 .window-view {
   display: none;
   margin: auto;
-  height: 60vh;
-  margin-top: 80px;
-  max-height: 95vh;
-  max-width: 95vw;
+  height: 88vh;
+  margin-top: 10vh;
+  margin-left: 6.7vw;
   overflow: auto;
+  width: 92vw;
 }
 
 .pixel-board {

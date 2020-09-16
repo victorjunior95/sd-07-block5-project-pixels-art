@@ -10,12 +10,14 @@ const secondColor = document.querySelector('.color1');
 const thirdColor = document.querySelector('.color2');
 const forthColor = document.querySelector('.color3');
 
-let allPixels = document.querySelectorAll('.pixel');
+const clearBtn = document.querySelector('#clear-board');
+
 generateBoard.addEventListener('click', function() {
   if (boardSize.value >= 5 && boardSize.value <= 50 && boardSize.value !== undefined) {
     pixelBoard.innerHTML = '';
     newDocument.className = 'new-document-top';
     colorPalette.style.display = 'block';
+    randomColor();
     generatePixels(boardSize.value);
     boardSize.value = '';
     pixelBoard.style.display = 'inline-block';
@@ -25,10 +27,28 @@ generateBoard.addEventListener('click', function() {
     secondColor.addEventListener('click', setColorPalette);
     thirdColor.addEventListener('click', setColorPalette);
     forthColor.addEventListener('click', setColorPalette);
+
+    clearBtn.addEventListener('click', clearBoard);
   } else {
     alert("Insira um valor entre 5 e 50");
   }
 })
+
+function clearBoard() {
+  let allPixels = document.querySelectorAll('.pixel');
+  for (index = 0; index < allPixels.length; index += 1) {
+    allPixels[index].style.backgroundColor = 'white';
+  }
+}
+
+function randomColor() {
+  //fonte: https://css-tricks.com/snippets/javascript/random-hex-color/
+  for (index = 2; index < (colorPalette.children.length)-1; index += 1) {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    colorPalette.children[index].style.backgroundColor = '#' + randomColor;
+  }
+}
+
 function setColorPalette() {
   let listOfColors = document.querySelectorAll('.color');
 
