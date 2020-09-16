@@ -31,6 +31,20 @@ for (let i = 0; i < color.length; i += 1) {
 
     //color[i].classList.add('selected');
     event.target.className += " selected"
-
   })
 }
+
+for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].addEventListener ('click', function () {
+        let selected = document.querySelector(".selected")
+        pixel[i].style.backgroundColor = window.getComputedStyle(selected).backgroundColor
+    })
+}
+
+let buttonClear = document.getElementById("clear-board");
+
+buttonClear.addEventListener("click", function () {
+    for (let i= 0; i < pixel.length; i += 1) {
+        pixel[i].style.backgroundColor = "white";
+    }
+})
