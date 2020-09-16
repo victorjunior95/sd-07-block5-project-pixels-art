@@ -19,7 +19,7 @@ footerPage.innerText = 'Josiel - Turma #7 - Trybe';
 document.body.appendChild(footerPage);
 
 function colorGenerate() {
-  let colorList = ['#000000'];
+  const colorList = ['#000000'];
   let hexaColor = '#';
   for (let index = 1; index <= 3; index += 1) {
     for (let color = 1; color <= 6; color += 1) {
