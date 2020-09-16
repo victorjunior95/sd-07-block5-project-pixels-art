@@ -55,25 +55,7 @@ clear.addEventListener('click', function () {
 
 changeSize.addEventListener('click', function () {
   const textSize = document.querySelector('#board-size').value;
-
-
-
- 
-    let sizeInput = parseInt(textSize);
-
-    if (boardSize.value <= 5) {
-      sizeInput = 5;
-
-    } else if (boardSize.value >= 50) {
-      
-      sizeInput = 50;
-    return sizeInput;
-  
-
-
-
-
-    } else if (textSize === '') {
+    if (textSize === '') {
       alert('Board inválido!');
     } else if (parseInt(textSize) <= 5) {
       for (let index = 0; index < 25; index += 1) {
