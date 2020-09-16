@@ -12,9 +12,8 @@
 
 .colors-palette-content {
     width: 100%;
-    height: 500px;
     background-color: red;
-    padding-top: 50px;
+    padding: 50px 0;
 }
 
 .palette {
@@ -50,10 +49,32 @@
 .blue {
     background-color: blue;
 }
-.display-inline {
-    display: inline;
+.board {
+    width: 100%;
+    background-color: yellow;
+    padding: 20px 0;
 }
-.display-block {
-    display: inline-block;
+
+.selected {
+    background-color: black;
+}
+
+.pixels-board {
+    display: table;
+    margin: 0 auto;
+    background-color: yellow;
+}
+
+.line-display {
+    display: table-row;
+}
+
+.column-display {
+    display: table-cell;    
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    background-color: white;
     border: 1px solid black;
-}
