@@ -1,5 +1,4 @@
 let palette = document.querySelector("#color-palette")
-let fields = document.querySelectorAll(".pixel")
 let colors = document.querySelectorAll(".color")
 let generateBoard = document.querySelector("#generate-board")
 const clearBoard = document.querySelector("#clear-board")
@@ -13,6 +12,7 @@ for (let i = 0; i < 5; i++){
     for (let j = 0; j < 5; j++){
         let pixel = document.createElement("div")
         pixel.classList.add("pixel")
+        pixel.style.border = "1px solid black"
         div.appendChild(pixel)
 }
 board.appendChild(div)
@@ -34,12 +34,6 @@ for (let i = 1; i < colors.length; i = i + 1){
     colors[i].style.backgroundColor = options[number]
 }
 
-for (let i = 0; i < fields.length; i += 1){
-    fields[i].addEventListener("click", ()=>{
-        let colorSelected = document.querySelector(".selected").style.backgroundColor
-        fields[i].style.backgroundColor = colorSelected
-    })
-}
 
 clearBoard.addEventListener("click", ()=>{
   for (let i = 0; i < fields.length; i += 1) {
@@ -65,6 +59,18 @@ generateBoard.addEventListener("click", ()=>{
     }
     board.appendChild(div)
     }
+    PixelClick()
 })
 
 
+function PixelClick(){
+    let fields = document.querySelectorAll(".pixel")
+    for (let i = 0; i < fields.length; i += 1){
+        fields[i].addEventListener("click", ()=>{
+            let colorSelected = document.querySelector(".selected").style.backgroundColor
+            fields[i].style.backgroundColor = colorSelected
+        })
+    }
+}
+
+PixelClick()
