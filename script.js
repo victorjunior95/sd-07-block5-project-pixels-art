@@ -55,7 +55,14 @@ defineGenerateBoardButton.addEventListener("click", generateBoard);
 // Função para definir número de pixels
 function generateBoard () {
     let numeroDePixels = parseInt(document.getElementById("board-size").value);
-    if (numeroDePixels > 4 && numeroDePixels < 51) {
+    if (document.getElementById("board-size").value == "") {
+        alert("Board inválido!")
+    }
+    else if (numeroDePixels > 50) {
+        deleteBoard();
+        populateBoard(50);
+    }
+    else if (numeroDePixels > 4 && numeroDePixels < 51) {
         deleteBoard();
         populateBoard(numeroDePixels);
     }
