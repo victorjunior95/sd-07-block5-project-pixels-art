@@ -124,7 +124,7 @@ function selectedColorClass() {
 }
 selectedColorClass();
 
-function selectedButtonsEvents() {
+function clearPixelsBoard() {
   document.body.addEventListener('click', function (event) {
     // Limpando a board
     if (event.target.nodeName === 'BUTTON' && event.target.id === 'clear-board') {
@@ -134,29 +134,35 @@ function selectedButtonsEvents() {
         clearAllPixel[index].style.backgroundColor = 'white';
       }
     }
+  });
+}
+clearPixelsBoard();
+
+function boardNewSizeGenerator(sizeBoard) {
+  const tagMainSelected = document.querySelector('.main-class');
+  const elementBoard = document.getElementById('pixel-board');
+  tagMainSelected.removeChild(elementBoard);
+  createBasePixelBoard(tagMainSelected, sizeBoard);
+}
+
+function alterSizeBoard() {
+  document.body.addEventListener('click', function (event) {
     // Pegando o input
     if (event.target.nodeName === 'BUTTON' && event.target.id === 'generate-board') {
       let valueNewBoard = document.getElementById('board-size').value;
       // console.log(valueNewBoard)
-      const tagMainSelected = document.querySelector('.main-class');
       if (valueNewBoard === '' || valueNewBoard < 0) {
         alert('Board inválido!');
       } else if (valueNewBoard > 0 && valueNewBoard < 5) {
         valueNewBoard = 5;
-        const elementBoard = document.getElementById('pixel-board');
-        tagMainSelected.removeChild(elementBoard);
-        createBasePixelBoard(tagMainSelected, valueNewBoard);
+        boardNewSizeGenerator(valueNewBoard);
       } else if (valueNewBoard > 50) {
         valueNewBoard = 50;
-        const elementBoard = document.getElementById('pixel-board');
-        tagMainSelected.removeChild(elementBoard);
-        createBasePixelBoard(tagMainSelected, valueNewBoard);
+        boardNewSizeGenerator(valueNewBoard);
       } else {
-        const elementBoard = document.getElementById('pixel-board');
-        tagMainSelected.removeChild(elementBoard);
-        createBasePixelBoard(tagMainSelected, valueNewBoard);
+        boardNewSizeGenerator(valueNewBoard);
       }
     }
   });
 }
-selectedButtonsEvents();
+alterSizeBoard();
