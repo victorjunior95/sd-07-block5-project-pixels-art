@@ -17,8 +17,7 @@ function PixelClick() {
 }
 
 function BoardGenerator(boardSize) {
-  boardSize = parseInt(boardSize, 10)
-  if (isNaN(boardSize)){
+  if (boardSize === ''){
     alert('Board inválido!');
   } else if (boardSize < 5) {
     boardSize = 5;
