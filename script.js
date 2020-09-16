@@ -14,3 +14,4 @@ for (let i = 0; i < numeroDeLinhas; i += 1) {
         contaPixel += 1;
     }
 }
+console.log(pixel);
