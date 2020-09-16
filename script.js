@@ -55,19 +55,43 @@ function createButton(parent) {
 }
 createButton(mainPage);
 
-function createBasePixelBoard(parent) {
+function createImputForInsertSize(parent) {
+  // Criando a section
+  const sectionInputAndButton = document.createElement('section');
+  sectionInputAndButton.setAttribute('id', 'section-input');
+  sectionInputAndButton.className = 'section-input';
+  parent.appendChild(sectionInputAndButton);
+  // Criando o input
+  const inputSizeSquad = document.createElement('input');
+  inputSizeSquad.setAttribute('type', 'number');
+  inputSizeSquad.setAttribute('min', '5');
+  inputSizeSquad.setAttribute('max', '50')
+  inputSizeSquad.setAttribute('id', 'board-size');
+  inputSizeSquad.className = 'board-size'
+  sectionInputAndButton.appendChild(inputSizeSquad)
+  // criando o button
+  const buttonSizeSquad = document.createElement('button');
+  buttonSizeSquad.setAttribute('id', 'generate-board');
+  buttonSizeSquad.className = 'generate-board';
+  buttonSizeSquad.innerText = 'VQV';
+  sectionInputAndButton.appendChild(buttonSizeSquad)
+}
+createImputForInsertSize(mainPage)
+
+function createBasePixelBoard(parent, squadSize) {
   // Criar a div base.
   const divAll = document.createElement('div');
   divAll.className = 'pixel-board';
   divAll.setAttribute('id', 'pixel-board');
+  divAll.style.height = `${squadSize * 40}px`
+  divAll.style.width = `${squadSize * 40}px`
   parent.appendChild(divAll);
-  const idLines = ['a', 'b', 'c', 'd', 'e']; // , 'f', 'g', 'h', 'i', 'j'
-  for (let lineIndex = 0; lineIndex < idLines.length; lineIndex += 1) {
+  for (let lineIndex = 0; lineIndex < squadSize; lineIndex += 1) {
     const divLine = document.createElement('div');
     divLine.className = 'line';
     divAll.appendChild(divLine);
-    const lineActual = idLines[lineIndex];
-    for (let pixelIndex = 0; pixelIndex < idLines.length; pixelIndex += 1) {
+    const lineActual = lineIndex;
+    for (let pixelIndex = 0; pixelIndex < squadSize; pixelIndex += 1) {
       const pixel = document.createElement('div');
       pixel.setAttribute('id', `${lineActual}${pixelIndex}`);
       pixel.className = 'pixel';
@@ -76,7 +100,7 @@ function createBasePixelBoard(parent) {
     }
   }
 }
-createBasePixelBoard(mainPage);
+createBasePixelBoard(mainPage, 5);
 
 function selectedColorClass() {
   document.body.addEventListener('click', function (event) {
@@ -97,10 +121,24 @@ function selectedColorClass() {
       elementClicked.style.backgroundColor = idSelected;
     }
     // Limpando a board
-    if (event.target.nodeName === 'BUTTON') {
+    if (event.target.nodeName === 'BUTTON' && event.target.id === 'clear-board') {
+      // console.log(event.target.id)
       const clearAllPixel = document.querySelectorAll('.pixel');
       for (let index = 0; index < clearAllPixel.length; index += 1) {
         clearAllPixel[index].style.backgroundColor = 'white';
+      }
+    }
+    // Pegando o input
+    if (event.target.nodeName === 'BUTTON' && event.target.id === 'generate-board') {
+      let valueNewBoard = document.getElementById('board-size').value;
+      // console.log(valueNewBoard)
+      let tagMainSelected = document.querySelector('.main-class');
+      if (valueNewBoard === '' || valueNewBoard < 0) {
+        alert('Board inválido!');
+      } else {
+        let elementBoard = document.getElementById('pixel-board');
+        tagMainSelected.removeChild(elementBoard);
+        createBasePixelBoard(tagMainSelected, valueNewBoard);
       }
     }
   });
