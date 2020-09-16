@@ -1,7 +1,7 @@
 const numberLines = 5;
 const pixelBoard = document.getElementById("pixel-board");
 const color = document.querySelectorAll(".color");
-
+const buttonClear = document.getElementById("clear-board");
 const pixel = []; 
 const linha = [];
 
@@ -20,9 +20,6 @@ for (let i = 0; i < numberLines; i += 1) {
     }
  
 }
-
-
-
 
 for (let i = 0; i < color.length; i += 1) {
 color[i].addEventListener("click", function() {
@@ -45,3 +42,8 @@ for (let i = 0; i < pixel.length; i += 1) {
       
     })
 }
+
+buttonClear.addEventListener("click", function() {
+    for (let i = 0; i < pixel.length; i += 1)
+    pixel[i].style.backgroundColor = "white";
+})
