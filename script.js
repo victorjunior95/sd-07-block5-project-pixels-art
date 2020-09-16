@@ -14,8 +14,8 @@ function testBoardSize() {
     return (false);
   }
 
-  if (parseInt(boardSize.value) < parseInt(boardSize.min)) {
-    boardSize.value = boardSize.min;
+  if (parseInt(boardSize.value) < 5) { //parseInt(boardSize.min)) {
+    boardSize.value = 5; //boardSize.min;
   }
   if (parseInt(boardSize.value) > parseInt(boardSize.max)) {
     boardSize.value = boardSize.max;
@@ -152,7 +152,7 @@ buttonClear.addEventListener('click', function () {
   }
 });
 
-boardSize.addEventListener('change', testBoardSize);
+//boardSize.addEventListener('change', testBoardSize);
 
 let buttonGenerator = document.getElementById('generate-board');
 buttonGenerator.addEventListener('click', function() {
