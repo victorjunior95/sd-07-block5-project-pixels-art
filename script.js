@@ -26,8 +26,14 @@ for (let i = 0; i < color.length; i += 1) {
     color[i].addEventListener("click", function(event) {
         let selected = document.querySelector(".selected")
         selected.classList.remove('selected');
-
         color[i].classList.add('selected');
 
-    })
+    });
+}
+
+for (let i = 0; i < pixel.length; i++) {
+    pixel[i].addEventListener("click", function() {
+        let selected = document.querySelector(".selected")
+        pixel[i].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
+    });
 }
