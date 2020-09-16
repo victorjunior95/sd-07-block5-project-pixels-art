@@ -1,7 +1,9 @@
-const linesCols = 5;
+const defaultLinesCols = 5;
 const palletePixels = document.getElementsByClassName('pallete-pixel');
 const divPixelBoard = document.getElementById('pixel-board');
 const btnClearBoard = document.getElementById('clear-board');
+const btnGenerateBoard = document.getElementById('generate-board');
+const boardSizeInput = document.getElementById('board-size');
 let selected = 'black';
 
 function createLines(numberOfLines) {
@@ -15,10 +17,10 @@ function createLines(numberOfLines) {
 
 function fillLinesWithPixels(numberOfPixels) {
   for (let lines = 1; lines <= numberOfPixels; lines += 1) {
+    const line = document.getElementById(`line ${lines}`);
     for (let pixels = 1; pixels <= numberOfPixels; pixels += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
-      const line = document.getElementById(`line ${pixels}`);
       line.appendChild(pixel);
     }
   }
@@ -39,7 +41,8 @@ function getColor() {
         event.target.className += ' selected';
         selected = event.target.style.backgroundColor;
       }
-    }, false,
+    },
+    false
   );
 }
 
@@ -50,14 +53,15 @@ function paintPixel() {
       if (event.target.classList.contains('pixel')) {
         event.target.style.backgroundColor = selected;
       }
-    }, false,
+    },
+    false
   );
 }
 
 function clearPixelBoard() {
-  const pixelBoard = document.getElementsByClassName('pixel');
-  for (let pixel = 0; pixel <= pixelBoard.length - 1; pixel += 1) {
-    pixelBoard[pixel].style.backgroundColor = 'white';
+  const pixels = document.getElementsByClassName('pixel');
+  for (let pixel = 0; pixel <= pixels.length - 1; pixel += 1) {
+    pixels[pixel].style.backgroundColor = 'white';
   }
 }
 
@@ -73,11 +77,41 @@ function generateRandomColor() {
   return `rgb(${redValue}, ${greenValue}, ${blueValue})`;
 }
 
-createLines(linesCols);
-fillLinesWithPixels(linesCols);
+function removeAllBoardContent() {
+  divPixelBoard.innerHTML = '';
+}
+
+function createNewBoard(linesCols) {
+  createLines(linesCols);
+  fillLinesWithPixels(linesCols);
+}
+
+createLines(defaultLinesCols);
+fillLinesWithPixels(defaultLinesCols);
 getColor();
 paintPixel();
 btnClearBoard.addEventListener('click', clearPixelBoard);
+
+boardSizeInput.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter') {
+    btnGenerateBoard.click();
+  }
+});
+
+btnGenerateBoard.addEventListener('click', () => {
+  if (
+    !boardSizeInput.value ||
+    boardSizeInput.value <= 0 ||
+    boardSizeInput.value > 50
+  ) {
+    alert('Board inválido!');
+    removeAllBoardContent();
+    createNewBoard(defaultLinesCols);
+  } else {
+    removeAllBoardContent();
+    createNewBoard(boardSizeInput.value);
+  }
+});
 
 window.onload = () => {
   for (let element = 0; element <= palletePixels.length - 1; element += 1) {

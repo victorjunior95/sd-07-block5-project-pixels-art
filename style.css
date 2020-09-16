@@ -21,6 +21,27 @@ h1 , h2 {
   display: inline-block;
 }
 
+input {
+  background-color: blanchedalmond;
+  border-radius: 6px;
+  margin: 8px 8px 0 8px;
+  padding: 4px;
+  position: relative;
+  top: 10px;
+}
+
+button {
+  margin: 8px;
+}
+
+label {
+  background-color: blanchedalmond;
+  border-radius: 4px;;
+  display: inline-block;
+  margin-top: 0;
+  padding: 4px;
+}
+
 .main-container {
   margin: auto;
   text-align: center;
@@ -32,6 +53,10 @@ h1 , h2 {
   display: inline-block;
   height: 80px;
   width: 80px;
+}
+
+.pallete-pixel:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.34), 0 17px 50px 0 rgba(0, 0, 0, 0.29);
 }
 
 .pixel {
@@ -70,8 +95,7 @@ h1 , h2 {
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
-  padding: 10px 25px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   transition-duration: 0.4s;
@@ -80,4 +104,8 @@ h1 , h2 {
 .button:hover {
   background-color: cornflowerblue;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.selected {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.34), 0 17px 50px 0 rgba(0, 0, 0, 0.29);
 }
