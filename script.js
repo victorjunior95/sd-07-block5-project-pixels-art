@@ -6,7 +6,7 @@ let btnVqv = document.querySelector('#generate-board');
 
 
 function validaInput(){
-    if(tamanhoBoard.value != "" && tamanhoBoard.value != 0){
+    if(tamanhoBoard.value != ""){
         console.log('Deu certo');
     }
     else{
