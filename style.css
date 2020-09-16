@@ -51,7 +51,17 @@ h1 {
 #pixel-board {
     background-color: blueviolet;
     display: inline-block;
+    height: 210px;
+    width: 210px;
 }
+
+/* .linha {
+    margin-bottom: -4px;
+}
+
+.linha:first-child {
+    margin-top: 0px;
+} */
 
 .pixel {
     background-color: white;
@@ -60,6 +70,7 @@ h1 {
     border-width: 1px;
     height: 40px;
     width: 40px;
-    display: inline-block;
-    margin: -3px;
+    float: left; /* no lugar dos dois .linha e display: */
+    /* display: inline-block;
+    margin: -3px; */
 }

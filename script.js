@@ -34,5 +34,16 @@ for (let index = 0; index < color.length; index += 1) {
     })
 }
 
+for (let index = 0; index < pixel.length; index += 1) {
+    pixel[0].addEventListener("click", function () {
+        // reconhecer a cor selecionada
+        let selected = document.querySelector(".selected")
+        
+        // troca da cor de fundo 
+        pixel[index].style.backgroundColor = window.getComputedStyle(selected).backgroundColor; // https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+        
+    })
+}
+
 
 // pesquisar sobre o uso do indexOf, método de busca dentro do array
