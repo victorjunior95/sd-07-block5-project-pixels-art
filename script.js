@@ -1,5 +1,5 @@
 let numberLines = 5;
-let pixelBoard = document.querySelector(".pixel-board");
+let pixelBoard = document.querySelector("#pixel-board");
 
 let pixel = [];
 let linha = [];
