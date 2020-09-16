@@ -25,13 +25,6 @@ function tableCreate() {
 
             let pixelElement = document.createElement('div');
             pixelElement.className = "pixel";
-            //tentar link com css
-            pixelElement.style.width = '40px';
-            pixelElement.style.height = '40px';
-            pixelElement.style.backgroundColor = 'white';
-            pixelElement.style.border = '1px solid black' ;
-            pixelElement.style.display = 'inline-block';
-
             linePixel.appendChild(pixelElement);
 
         };
