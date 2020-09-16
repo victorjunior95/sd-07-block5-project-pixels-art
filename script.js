@@ -35,7 +35,7 @@ for (let index = 0; index < color.length; index += 1) {
 }
 
 for (let index = 0; index < pixel.length; index += 1) {
-    pixel[0].addEventListener("click", function () {
+    pixel[index].addEventListener("click", function () {
         // reconhecer a cor selecionada
         let selected = document.querySelector(".selected")
         
@@ -44,6 +44,14 @@ for (let index = 0; index < pixel.length; index += 1) {
         
     })
 }
+
+let buttonClear = document.getElementById("clear-board");
+buttonClear.addEventListener("click", function () {
+    for (let index = 0; index < pixel.length; index += 1) {
+        pixel[index].style.backgroundColor = "white";
+    }
+    
+})
 
 
 // pesquisar sobre o uso do indexOf, método de busca dentro do array

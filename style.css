@@ -53,6 +53,7 @@ h1 {
     display: inline-block;
     height: 210px;
     width: 210px;
+    text-align: center;
 }
 
 /* .linha {
