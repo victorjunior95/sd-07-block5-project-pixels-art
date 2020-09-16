@@ -22,7 +22,7 @@ function findIndexPaletteSelected() {
   for (let index = 0; index < getPixelList.length; index += 1) {
     searchElement = getPixelList[index].getAttribute('class');
     if (searchElement.includes('selected')) {
-    return index;
+      return index;
     }
   }
   return 0;
@@ -47,13 +47,11 @@ function reduceClasseSelectedFromOldPalette(index) {
 function updateClassesOldPalette(index, attributesClass) {
   attributesClass = attributesClass.trim();
   getPixelList[index].className = attributesClass;
-  return;
 }
 
-function updateClassesNewSelectedPalette (targetSelected){
-  const newAttributeClass = ' selected'
+function updateClassesNewSelectedPalette(targetSelected) {
+  const newAttributeClass = ' selected';
   targetSelected.className += newAttributeClass;
-  return;
 }
 
 document.getElementById('pixel-board').addEventListener('click', function (event) {
@@ -67,9 +65,10 @@ document.getElementById('pixel-board').addEventListener('click', function (event
 
 document.getElementById('color-palette').addEventListener('click', function (event) {
   const indexPaletteSelected = findIndexPaletteSelected();
-  const attributesClassSelected = getAttributesClass(indexPaletteSelected);
+  //const attributesClassSelected = getAttributesClass(indexPaletteSelected);
   const attributesClassReduce = reduceClasseSelectedFromOldPalette(indexPaletteSelected);
-  updateClassesNewSelectedPalette(event.target);
   updateClassesOldPalette(indexPaletteSelected, attributesClassReduce);
+  updateClassesNewSelectedPalette(event.target);
 });
+
 
