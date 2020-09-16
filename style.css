@@ -1,27 +1,45 @@
-div.color{
+body {
+    background-color: rgb(253, 251, 251);
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+/* estilo do botão baseado em https://www.youtube.com/watch?v=JOowa0_1scU */
+#clear-board {
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    width: 206px;
+    border: solid 2px black;
+    border-radius: 6px;
+}
+.color{
     width: 40px;
     height: 40px;
     border: solid 1px black;
     display: inline-block;
     text-align: center;
 }
-div#palette1{
+#palette1{
     background-color: black;
 }
-div#palette2{
+#palette2{
     background-color: cornflowerblue;
 }
-div#palette3{
+#palette3{
     background-color: pink;
 }
-div#palette4{
+#palette4{
     background-color: darkcyan;
 }
-section#pixel-board{
+#pixel-board{
     display: block;
     overflow:inherit;
 }
-div.pixel{
+.pixel{
     width: 40px;
     height: 40px;
     border: solid 1px black;

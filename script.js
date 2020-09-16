@@ -20,9 +20,9 @@ document.addEventListener('click', function(event){
         event.target.classList.add('selected')
     }
 })
-
+//baseado em https://app.betrybe.com/course/fundamentals/javascript/dom-manipulation/js-part-6
 let pixelBoard = document.getElementsByClassName('pixel')
-for (let i = 0; i < pixelBoard.length; i++) {
+for (let i = 0; i < pixelBoard.length; i+= 1) {
     pixelBoard[i].addEventListener('click', function (event) {
     let colors = document.getElementsByClassName('selected')[0];
     let pixelColor = event.target;
@@ -31,3 +31,9 @@ for (let i = 0; i < pixelBoard.length; i++) {
 }
 
 
+let clear = document.getElementById('clear-board')
+clear.addEventListener('click', function () {
+    for (let index = 0; index < pixelBoard.length; index += 1) {
+        pixelBoard[index].style.backgroundColor = 'white'
+    }
+});
