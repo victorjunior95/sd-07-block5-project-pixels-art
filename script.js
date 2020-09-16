@@ -15,9 +15,8 @@ function createEvent(pixelDiv) {
   pixelDiv.addEventListener('click', function () {
     const currentSelected = document.querySelector('.selected');
     pixelDiv.classList = 'pixel';
-    colorToPaint = currentSelected.style.backgroundColor;
+    const colorToPaint = currentSelected.style.backgroundColor;
     pixelDiv.style.backgroundColor = colorToPaint;
-    
   });
 }
 
@@ -25,7 +24,7 @@ function createEvent(pixelDiv) {
 clearButton.addEventListener('click', function () {
   const allPixels = document.querySelectorAll('.board div');
   for (let index = 0; index < allPixels.length; index += 1) {
-    allPixels[index].classList = 'pixel white';
+    allPixels[index].style.backgroundColor = 'white';
   }
 });
 
