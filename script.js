@@ -13,15 +13,14 @@ function testBoardSize() {
     alert('Board inválido!');
     return (false);
   }
-  else {
-    if (parseInt(boardSize.value) < parseInt(boardSize.min)) {
-      boardSize.value = boardSize.min;
-    }
-    if (parseInt(boardSize.value) > parseInt(boardSize.max)) {
-      boardSize.value = boardSize.max;
-    }
-    return (true);
+
+  if (parseInt(boardSize.value) < parseInt(boardSize.min)) {
+    boardSize.value = boardSize.min;
   }
+  if (parseInt(boardSize.value) > parseInt(boardSize.max)) {
+    boardSize.value = boardSize.max;
+  }
+  return (true);
 }
 
 // função que gera as linhas e colunas dos pixels
