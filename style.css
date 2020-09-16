@@ -1,13 +1,24 @@
 body {
-    background-color: #B0C4DE;
+    background-color: #0C2340;
+    height: 500px;
 }
 
-#clear-board{
+.card {
+    border: 20px solid;
+    border-image-slice: 1;
+    border-image-source: conic-gradient(
+            hsl(100,100%,60%),
+            hsl(200,100%,60%),
+            hsl(100,100%,60%));
+}
+
+#clear-board {
     width: 100px;
     position: absolute;
     top: 120px;
-    left: 338px;
+    left: 255px;
 }
+
 #pixel-board {
     position: absolute;
     background-color: white;
@@ -17,21 +28,22 @@ body {
     height: 190px;
     width: 401px;
     top: 150px;
-    left: 180px;
-
+    left: 100px;
 }
 
-#title {
+#title{
     position: absolute;
-    left: 280px;
+    padding-left: 100px;
+    top: 10px;
+    left: 105px;
 }
 
 #container {
     position: absolute;
-    border: 1px black solid;
-    background-color: azure;
-    padding-right: 150px;
+    background-color: #89CFF0;
+    padding-right: 50px;
     padding-bottom: 400px;
+    top: 100px;
     height: 200px;
     width: 600px;
     left: 300px;
@@ -40,7 +52,7 @@ body {
 #color-palette {
     position: absolute;
     top: 80px;
-    left: 270px;
+    left: 190px;
     padding-bottom: 27px;
     padding-top: 5px;
     padding-right: 239px;
@@ -50,7 +62,7 @@ body {
     position: absolute;
     padding-right: 50px;
     padding-bottom: 20px;
-    background-color: blue;
+    background-color: #0076CE;
     border: 1px black solid;
     top: 5px;
     left: 66px;
@@ -62,7 +74,7 @@ body {
     border: 1px black solid;
     padding-right: 50px;
     padding-bottom: 20px;
-    background-color: red;
+    background-color: #E44D2E;
     left: 178px;
 }
 
@@ -81,7 +93,7 @@ body {
     border: 1px black solid;
     padding-right: 50px;
     padding-bottom: 20px;
-    background-color: green;
+    background-color: #4CBB17;
     top: 5px;
     left: 122px;
 }
@@ -360,7 +372,6 @@ body {
     background-color: white;
     border: 1px black solid;
 }
-
 
 #color-palette {
     position: absolute;
