@@ -8,13 +8,13 @@ let firstMainColor = document.getElementsByClassName('selected');
 let boardSize = document.getElementById('board-size').value;
 let numberOfColumns = 5;
 let numberOfLines = 5;
-for (let index = 0; index < Object.keys(colorDefined).length; index += 1) {
-  colorDefined[index].addEventListener('click', colorPicker);
-}
 function colorPicker() {
   firstMainColor[0].classList.remove('selected');
   event.target.classList.add('selected');
   firstMainColor = document.getElementsByClassName('selected');
+}
+for (let index = 0; index < Object.keys(colorDefined).length; index += 1) {
+  colorDefined[index].addEventListener('click', colorPicker);
 }
 function pasteColor() {
   firstMainColor = document.getElementsByClassName('selected');
@@ -45,19 +45,19 @@ function constructorBoard() {
   pixelBoard.style.width += 'px';
 }
 function conditionsToGenereteBoard() {
-if (boardSize >= 5 && boardSize <= 50) {
-    constructorBoard();
-  } else if (boardSize < 5) {
-    boardSize = 5;
-    constructorBoard();
-  } else {
-    boardSize = 50;
-    constructorBoard();
-  }
+  if (boardSize >= 5 && boardSize <= 50) {
+  constructorBoard();
+} else if (boardSize < 5) {
+  boardSize = 5;
+  constructorBoard();
+} else {
+  boardSize = 50;
+  constructorBoard();
+}
 }
 function firstConditions() {
   boardSize = document.getElementById('board-size').value;
-  if (boardSize == '' || boardSize == 0) {
+  if (boardSize === '' || boardSize === '0') {
     alert('Board inválido!');
   } else {
     conditionsToGenereteBoard();
