@@ -1,39 +1,39 @@
 .color {
-    display: inline-block;
-    border: black solid 1px;
-    height: 40px;
-    width: 40px;
-    position: relative;
+  display: inline-block;
+  border: black solid 1px;
+  height: 40px;
+  width: 40px;
+  position: relative;
 }
 
 #preto {
-    background-color: black;
+  background-color: black;
 }
 
 #color2 {
-    background-color: red;
+  background-color: red;
 }
 
 #color3 {
-    background-color: blue;
+  background-color: blue;
 }
 
 #color4 {
-    background-color: green;
+  background-color: green;
 }
 
 .pixel {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: white;
-    border: black solid 1px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border: black solid 1px;
 }
 
 .linhas {
-    display: block;
+  display: block;
 }
 
 #pixel-board {
-    position: relative;
+  position: relative;
 }

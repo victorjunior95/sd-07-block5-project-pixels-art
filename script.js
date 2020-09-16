@@ -29,10 +29,12 @@ color4.addEventListener("click", function () {
   color4.classList.add("selected");
 });
 
-let selecionado = corSelecionada.style.backgroundColor;
+// O comando window.getComputedStyle() 
 document.addEventListener("click", function(event){
     if (event.target.classList.contains("pixel")){
-        event.target.style.color = selecionado;
+        let selecionado = window.getComputedStyle(corSelecionada).backgroundColor;
+        event.target.style.backgroundColor = selecionado;
+        console.log(window.getComputedStyle(corSelecionada).backgroundColor)
     }
 });
 
