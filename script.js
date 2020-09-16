@@ -5,7 +5,7 @@ let tamanhoBoard = document.querySelector('#board-size');
 
 
 function validaInput(){
-    if(tamanhoBoard.value != ""){
+    if(tamanhoBoard.value != "" && tamanhoBoard.value != 0){
         console.log('Deu certo');
     }
     else{
