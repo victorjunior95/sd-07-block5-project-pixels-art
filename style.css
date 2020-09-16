@@ -34,10 +34,10 @@ h1 {
 
 .toolsContent {
   background-color: rgb(246, 105, 164);
-  height: 80px;
   border-color: white;
   border-style: solid;
   border-width: 1px 0 1px 0;
+  height: 80px;
 }
 
 .colorSelections {
@@ -146,8 +146,8 @@ h1 {
   border-style: solid;
   border-width: 2px;
   color: rgb(209, 13, 95);
-  height: 35px;
   font-size: 16px;
+  height: 35px;
   outline: none;
   position: relative;
   width: 120px;
