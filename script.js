@@ -64,6 +64,26 @@ clearButton.addEventListener('click', function() {
     }
   })
 
+
+function randomColors(){
+    var hexadecimais = '0123456789ABCDEF';
+    var cor = '#';
+
+    // Pega um número aleatório no array acima
+    for (var i = 0; i < 6; i++ ) {
+    //E concatena à variável cor
+        cor += hexadecimais[Math.floor(Math.random() * 16)];
+    }
+    return cor;
+}
+
+let coresSelect = document.querySelectorAll('.color');
+
+for(let i = 1; i < coresSelect.length; i++) {
+
+  coresSelect[i].style.backgroundColor = randomColors();
+}
+
 }
 
 
