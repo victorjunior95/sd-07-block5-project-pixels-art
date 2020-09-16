@@ -21,7 +21,7 @@
 .title {
   font-size: 3em;
   font-weight: 600;
-  margin: 5px 0 30px 0;
+  margin: 5px 0 30px;
   text-align: center;
   text-decoration: underline;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.418);
@@ -45,15 +45,15 @@
 }
 
 .orange {
-  background-color: rgb(244 , 92 , 51);
+  background-color: rgb(244, 92 ,51);
 }
 
 .orchid {
-  background-color: rgb(102 , 66 , 144);
+  background-color: rgb(102, 66, 144);
 }
 
 .blue {
-  background-color: rgb(1 , 173 , 239);
+  background-color: rgb(1, 173, 239);
 }
 
 .pixel {
