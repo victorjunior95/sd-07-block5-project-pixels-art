@@ -1,4 +1,4 @@
-let colorBrush = 'black';
+let colorBrush = 'Black';
 let boardSize = 5;
 const stringColors = [
   'Black',
@@ -150,10 +150,9 @@ function randomColors() {
   const color = stringColors[Math.floor(Math.random() * numbersOfColors)];
   if (color !== 'white') {
     return color;
-  } else {
-    const color = stringColors[Math.floor(Math.random() * numbersOfColors)];
-    return color;
   }
+  color = stringColors[Math.floor(Math.random() * numbersOfColors)];
+  return color;
 }
 
 function createBox(className) {
@@ -202,7 +201,7 @@ function changeColor() {
         last.classList.remove('selected');
       }
       colorBrush = event.target.classList[1];
-      console.log(`Brush stroke color is: ${colorBrush}`);
+      document.querySelector('.dialog').innerHTML = `Brush stroke color is: <strong>${colorBrush}</strong>`;
     });
   });
 }
@@ -219,7 +218,7 @@ function changeCanvas() {
 function clearBoard() {
   const clearButton = document.querySelector('#clear-board');
   clearButton.addEventListener('click', function () {
-    colorBrush = 'black';
+    colorBrush = 'Black';
     createBoard(boardSize);
     changeColor();
     changeCanvas();
@@ -242,7 +241,7 @@ function reSizeBoard() {
     if (newBoardSize.value === '') {
       alert('Board inválido!');
     }
-    colorBrush = 'black';
+    colorBrush = 'Black';
     createBoard(boardSize);
     changeColor();
     changeCanvas();

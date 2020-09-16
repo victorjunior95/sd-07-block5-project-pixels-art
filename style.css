@@ -2,12 +2,10 @@ h1 {
   text-align: center;
 }
 
-.container {
-  border: 3px solid slategray;
+.button {
   box-sizing: border-box;
-  padding: 20px;
-  text-align: center;
-  width: 100%;
+  height: 40px;
+  width: 160px;
 }
 
 .center {
@@ -24,18 +22,22 @@ h1 {
   width: 40px;
 }
 
-.square {
-  display: inline-block;
+.container {
+  border: 3px solid slategray;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.dialog {
+  box-sizing: border-box;
+  vertical-align: middle;
+  padding: 11px;
 }
 
 .line {
   height: 40px;
-}
-
-.button {
-  box-sizing: border-box;
-  height: 40px;
-  width: 160px;
 }
 
 .pixel {
@@ -45,4 +47,8 @@ h1 {
   display: inline-block;
   height: 40px;
   width: 40px;
+}
+
+.square {
+  display: inline-block;
 }
