@@ -60,6 +60,33 @@ function updateClassesNewSelectedPalette(targetSelected) {
   targetSelected.className += newAttributeClass;
 }
 
+function clearColorPixel() {
+  const lengthElements = document.getElementsByClassName('pixel').length;
+  const color = 'white';
+  for (let index = 0; index < lengthElements; index += 1) {
+    document.getElementsByClassName('pixel')[index].style.backgroundColor = color;
+  }
+}
+
+function getInputSizePixelValue() {
+  return document.getElementById('board-size').value;
+}
+
+function updateSizePixel(sizePixel) {
+  const lengthElementos = document.getElementsByClassName('pixel').length;
+  for (let index = 0; index < lengthElementos; index += 1) {
+    document.getElementsByClassName('pixel')[index].style.width = `${sizePixel}px`;
+    document.getElementsByClassName('pixel')[index].style.height = `${sizePixel}px`;
+  }
+}
+function borderSizeValidation(size) {
+  if (size < 5 && size !== '') return 5;
+  if (size > 50 && size !== '') return 50;
+  return size;
+}
+
+document.getElementById('clear-board').addEventListener('click', clearColorPixel);
+
 document.getElementById('pixel-board').addEventListener('click', function (event) {
   const classEvent = 'pixel td';
   if (event.target.className === classEvent) {
@@ -76,36 +103,11 @@ document.getElementById('color-palette').addEventListener('click', function (eve
   updateClassesNewSelectedPalette(event.target);
 });
 
-document.getElementById('clear-board').addEventListener('click', function () {
-  const lengthElements = document.getElementsByClassName('pixel').length;
-  const color = 'white';
-  for (let index = 0; index < lengthElements; index += 1) {
-    document.getElementsByClassName('pixel')[index].style.backgroundColor = color;
-  }
-});
-
-function getInputSizePixelValue() {
-  return document.getElementById('board-size').value;
-}
-
-function updateSizePixel(sizePixel) {
-  const lengthElementos = document.getElementsByClassName('pixel').length;
-  for (let index = 0; index < lengthElementos; index += 1) {
-    document.getElementsByClassName('pixel')[index].style.width = `${sizePixel}px`;
-    document.getElementsByClassName('pixel')[index].style.height = `${sizePixel}px`;
-  }
-}
-
-function borderSizeValidation(size) {
-  if (size < 5 && size !== '') return 5;
-  if (size > 50 && size !== '') return 50;
-  return size;
-}
-
 document.getElementById('generate-board').addEventListener('click', function () {
   const inputSizeValue = getInputSizePixelValue();
   const inputSize = borderSizeValidation(inputSizeValue);
   if (inputSize === '') {
     alert('Board inválido!');
   } else updateSizePixel(inputSize * inputSize);
+  clearColorPixel();
 });
