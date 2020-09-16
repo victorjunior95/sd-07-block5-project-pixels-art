@@ -33,14 +33,14 @@ for (let index = 0; index < paleta.length; index += 1) { // insere class selecte
   const propBackgroundColor = window.getComputedStyle(paleta[index]).getPropertyValue('background-color');
   corAtual.style.backgroundColor = propBackgroundColor;
   corAtual.addEventListener('click', function () {
-  for (let index1 = 0; index1 < paleta.length; index1 += 1) { // apaga a classe selected de todos
-    const removeClasse = paleta[index1];
-    removeClasse.classList.remove('selected');
-  }
-  corAtual.classList.add('selected');
-  corSelecionada = corAtual; // armazena a cor atual numa variável global
+    for (let index1 = 0; index1 < paleta.length; index1 += 1) { // apaga a classe selected de todos
+      const removeClasse = paleta[index1];
+      removeClasse.classList.remove('selected');
+    }
+    corAtual.classList.add('selected');
+    corSelecionada = corAtual; // armazena a cor atual numa variável global
     // coloca nesta variável o rgb da cor selecionada
-  rgbSelecionado = window.getComputedStyle(corSelecionada).getPropertyValue('background-color');
+    rgbSelecionado = window.getComputedStyle(corSelecionada).getPropertyValue('background-color');
   });
 }
 
@@ -48,12 +48,12 @@ function limpaQuadro() {
   const botaoLimpar = document.getElementById('clear-board');
   const quadro = document.querySelectorAll('.pixel');
   botaoLimpar.addEventListener('click', function () {
-  for (let index = 0; index < quadro.length; index += 1) { // passa por todo o quadro
-    const limpaQuadro = quadro[index];
-    limpaQuadro.className = ''; // apaga todas as classes nela
-    limpaQuadro.classList.add('pixel'); // insere a classe padrão de volta
-    limpaQuadro.style.backgroundColor = 'white';
-  }
+    for (let index = 0; index < quadro.length; index += 1) { // passa por todo o quadro
+      const quadroClear = quadro[index];
+      quadroClear.className = ''; // apaga todas as classes nela
+      quadroClear.classList.add('pixel'); // insere a classe padrão de volta
+      quadroClear.style.backgroundColor = 'white';
+    }
   });
 }
 
@@ -97,7 +97,7 @@ function numberRGB() {
 }
 window.onload = function () {
   for (let index = 1; index < paleta.length; index += 1) {
-  paleta[index].style.backgroundColor = `rgb(${numberRGB()} ,${numberRGB()} , ${numberRGB()})`;
+    paleta[index].style.backgroundColor = `rgb(${numberRGB()} ,${numberRGB()} , ${numberRGB()})`;
   }
   criaQuadroInicial();
   aplicaCor();

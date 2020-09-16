@@ -41,13 +41,13 @@
 }
 
 body {
-  background-image: linear-gradient(to top, rgb(232, 125, 127), rgb(116, 237, 83), rgb(242, 240, 124), rgb(136, 189, 227));
+  background-image: linear-gradient(to top, red, blue, green, yellow);
   display: block;
   text-align: center;
 }
 
 .paleta-de-cores {
-  margin: 1px 15px 15px 15px;
+  margin: 15px;
 }
 
 .botoes {
@@ -61,14 +61,14 @@ body {
 }
 
 h1 {
-  font-family: 'Lobster', cursive;
+  font-family: Lobster, cursive;
   font-size: 50px;
 }
 
 button {
   background-image: linear-gradient(to left, rgb(232, 125, 127), rgb(116, 237, 83), rgb(243, 241, 151), rgb(136, 189, 227));
-  font-weight: 600;
   font-family: fantasy;
+  font-weight: 600;
   font-size: 15px;
 }
 
