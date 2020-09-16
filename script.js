@@ -1,47 +1,37 @@
 const select = document.querySelector('#color-palette');
+const paint = document.querySelector('#pixel-board');
 
 select.addEventListener('click', function () {
-  alert('Ok');
   if (event.target.id == 'green' ) {
-    alert('green');
     document.getElementById('black').className = 'color black';
     document.getElementById('blue').className = 'color blue';
     document.getElementById('yellow').className = 'color yellow';
     document.getElementById('green').className = 'color green selected';
-
   } else if (event.target.id == 'black') {
-    alert('black');
     document.getElementById('black').className = 'color black selected';
     document.getElementById('blue').className = 'color blue';
     document.getElementById('yellow').className = 'color yellow';
     document.getElementById('green').className = 'color green';
-    
   } else if (event.target.id == 'blue') {
-    alert('blue');
     document.getElementById('black').className = 'color black';
     document.getElementById('blue').className = 'color blue selected';
     document.getElementById('yellow').className = 'color yellow';
     document.getElementById('green').className = 'color green';
-
   } else if (event.target.id == 'yellow') {
-    alert('yellow');
     document.getElementById('black').className = 'color black';
     document.getElementById('blue').className = 'color blue';
     document.getElementById('yellow').className = 'color yellow selected';
     document.getElementById('green').className = 'color green';
   }
-
-
-
-  
 })
 
-
-
-
-
-
-
+paint.addEventListener('click', function () {
+  selectedColor = document.getElementsByClassName('selected')[0];
+  selectedClass = selectedColor.className;
+  array = selectedClass.split(' ');
+  newClass = array[1];
+  event.target.className = `pixel ${newClass}`;
+});
 
 
 

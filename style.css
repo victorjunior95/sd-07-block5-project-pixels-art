@@ -5,6 +5,14 @@
   width: 40px;
 }
 
+.pixel {
+  background-color: white;
+  border: solid 1px black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+
 .black {
   background-color: black;
 }
@@ -19,14 +27,6 @@
 
 .green {
   background-color: green;
-}
-
-.pixel {
-  background-color: white;
-  border: solid 1px black;
-  display: inline-block;
-  height: 40px;
-  width: 40px;
 }
 
 .clear-board {
