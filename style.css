@@ -13,7 +13,7 @@ h1 {
     margin: 0; /* tira as margens de todos os lados */
     padding: 0; /* tira a margem de cima */
     display: block;
-    text-align: center; /* "perfumaria" */
+    text-align: center;
 }
 
 .tools {
@@ -53,6 +53,9 @@ h1 {
     display: inline-block;
     height: 210px;
     width: 210px;
+}
+
+main {
     text-align: center;
 }
 

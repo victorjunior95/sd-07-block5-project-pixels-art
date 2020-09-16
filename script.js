@@ -28,8 +28,7 @@ for (let index = 0; index < color.length; index += 1) {
 
         // acrescentar o select na cor certa
         //color[index].classList.add("selected");
-        /* com o event.target */ event.target.className += " selected"
-        //
+        /* com o event.target */ event.target.className += " selected";
     })
 }
 
@@ -51,6 +50,7 @@ pixelBoard.addEventListener("click", function(event) {
 // }
 
 let buttonClear = document.getElementById("clear-board");
+
 buttonClear.addEventListener("click", function () {
     for (let index = 0; index < pixel.length; index += 1) {
         pixel[index].style.backgroundColor = "white";
