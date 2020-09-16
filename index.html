@@ -5,28 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paleta de Cores</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script type="text/javascript" src="script.js"></script>
+    
   </head>
   <body>
     <h1 class="titulo" id="title">Paleta de Cores</h1>
 
     <section class="color-palette" id="color-palette">
-      <div id="black" class="color selected" onclick="colorir1()"></div>
-      <div id="red" class="color" onclick="colorir2()"></div>
-      <div id="green" class="color" onclick="colorir3()"></div>
-      <div id="blue" class="color" onclick="cororir4()"></div>
+      <div class="color1 color selected"></div>
+      <div class="color2 color"></div>
+      <div class="color3 color"></div>
+      <div class="color4 color"></div>
     </section>
-
+    <div>
     <button id="clear-board">Limpar</button>
-
-    <section class="pixel-board center" id="pixel-board">
-      <div class='blocos'>
-      <div class="pixel" id="pixel" onclick="colorir()"></div>
-      <div class="pixel" onclick="colorir()"></div>
-      <div class="pixel" onclick="colorir()"></div>
-      <div class="pixel" onclick="colorir()"></div>
-      <div class="pixel" onclick="colorir()"></div>
-    </div>
-    </section>
+  </div>
+     <section id="pixel-board" class="pixel-board center">
+           
+     </section>
+      <script src="script.js"></script>
   </body>
 </html>
