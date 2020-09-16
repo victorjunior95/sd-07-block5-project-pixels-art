@@ -84,5 +84,17 @@ generateBoardBttn.addEventListener('click', function () {
   createBoard(resizer.value);
 });
 
+function getRandom () {
+  return Math.random() * 255;
+}
+
+function randomColors() {
+  for (index = 1; index <= 3; index += 1) {
+    colors[index].style.backgroundColor = `rgb(${getRandom()} , ${getRandom()} , ${getRandom()})`;
+  }
+}
+
+randomColors();
+
 //  cria tabela inicial
 createBoard(numberOfLines);
