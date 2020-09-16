@@ -45,7 +45,7 @@ for (let index = 0; index < pixel.length; index += 1){
     });
 }
 
-let buttonLimpar = document.querySelector("#botao-limpar");
+let buttonLimpar = document.querySelector("#clear-board");
 buttonLimpar.addEventListener("click", function(){
     for(let index = 0; index < pixel.length; index += 1){
         pixel[index].style.backgroundColor = "white";
