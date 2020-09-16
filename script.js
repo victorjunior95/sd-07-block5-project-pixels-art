@@ -1,34 +1,37 @@
-//gerando numeros aleatórios
+const palleta1 = document.querySelector("#color-1");
+const palleta2 = document.querySelector("#color-2");
+const palleta3 = document.querySelector("#color-3");
+const palleta4 = document.querySelector("#color-4");
+let grid = (document.querySelector('#pixel-board'));
+
 function gerarNumeros () {
     return Math.floor(Math.random() * 255 +1);
 }
 
-//função para criar cor aleatória
 function criarCorAleatoria () {
     let R = gerarNumeros();
     let G = gerarNumeros();
     let B = gerarNumeros();
-    const RGB = `rgb(${R}, ${G}, ${B})`;
+    let RGB;
     if (R == 255 && G == 255 && B == 255) { // se R = 255, se G = 255, se B = 255, estarei gerando novos números!
         R = Math.ceil(Math.random() * 255);
         G = Math.ceil(Math.random() * 255);
         B = Math.ceil(Math.random() * 255);
+    } else {
+        RGB = `rgb(${R}, ${G}, ${B})`;
     }
     return RGB
 }
 
 //atribuindo cor preto para primeira cor da paleta de cores.
-const palleta1 = document.querySelector("#color-1");
 palleta1.style.backgroundColor = 'black';
-//função para cores aleatórias para as pallet id 2, 3 e 4.
-function mudaCorPaleta () {
-    const palleta2 = document.querySelector("#color-2");
-    const palleta3 = document.querySelector("#color-3");
-    const palleta4 = document.querySelector("#color-4");
+
+function inserirCorPaleta () {
     palleta2.style.backgroundColor = criarCorAleatoria ();
     palleta3.style.backgroundColor = criarCorAleatoria ();
     palleta4.style.backgroundColor = criarCorAleatoria ();
 }
+
 
 
 let corSelecionada = 'black'; //setando cor preta por default
@@ -52,7 +55,6 @@ function manipulaPalete(event) { //inserida função
 
 
 
-let grid = (document.querySelector('#pixel-board')); //variável global
 //criação do pixel com classe pixel.
 function createBox (color) { //inserir param color
     let box = document.createElement('div'); 
@@ -62,9 +64,6 @@ function createBox (color) { //inserir param color
     box.style.height = '40px';
     box.style.border = '1px black';
     box.addEventListener('click', manipularEventpixel); //caso clique no box, será chamada função manipularEventpixel
-    if (color == 'black') { //inserido condição para inserir classe selected para cor preta default.
-        box.classList.add('selected');
-    } 
     return box;
 }
 
@@ -103,7 +102,7 @@ function limparGrid () { //função para limpar o grid
 }
 
 window.onload = () => {
-    mudaCorPaleta ();
+    inserirCorPaleta ();
     createBox ();
     createPixelsBoard();
     botaoCriarGrid ();
