@@ -16,7 +16,7 @@
     </div>
     <div class="resize-board">
         <input type="number" id="board-size" min="1">
-        <button id="generate-board">VQV</button>
+        <button id="generate-board" onclick="BoardGenerator(document.querySelector('#board-size').value)">VQV</button>
     </div>
     <button id="clear-board" class="clear-board">Limpar</button>
     <div id="pixel-board">

@@ -11,26 +11,37 @@ function PixelClick() {
   const fields = document.querySelectorAll('.pixel');
   for (let i = 0; i < fields.length; i += 1) {
     fields[i].addEventListener('click', () => {
-        const colorSelected = document.querySelector('.selected').style.backgroundColor;
-        fields[i].style.backgroundColor = colorSelected;
+      const colorSelected = document.querySelector('.selected').style.backgroundColor;
+      fields[i].style.backgroundColor = colorSelected;
       });
   }
 }
 
-for (let i = 0; i < 5; i += 1) {
-  const div = document.createElement('div');
-  for (let j = 0; j < 5; j += 1) {
-    const pixel = document.createElement('div');
-      pixel.classList.add('pixel');
-      div.appendChild(pixel);
-    }
-  board.appendChild(div);
+function BoardGenerator(boardSize) {
+  if (boardSize === ''){
+    alert('Board inválido!');
+  } else if (parseInt(boardSize, 10) < 5) {
+    boardSize = 5;
+  } else if (parseInt(boardSize, 10) > 50) {
+    boardSize = 50;
+  }  
+  board.innerHTML = '';
+  for (let i = 0; i < boardSize; i += 1) {
+    const div = document.createElement('div');
+    for (let j = 0; j < boardSize; j += 1) {
+        const pixel = document.createElement('div');
+        pixel.classList.add('pixel');
+        div.appendChild(pixel);
+      }
+    board.appendChild(div);
+  }
+  PixelClick();
 }
 
 palette.addEventListener('click', (event) => {
-  let selected = document.querySelector('.selected');
+  const selected = document.querySelector('.selected');
   selected.classList.remove('selected');
-  color = event.target;
+  const color = event.target;
   color.classList.add('selected');
 });
 
@@ -51,26 +62,4 @@ clearBoard.addEventListener('click', () => {
   }
 });
 
-generateBoard.addEventListener('click', () => {
-  let boardSize = parseInt(document.querySelector('#board-size').value);
-  if (boardSize < 5) {
-    boardSize = 5;
-  } else if (boardSize > 50) {
-    boardSize = 50;
-  } else if (boardSize === NaN) {
-    alert('Board inválido!');
-  }
-  board.innerHTML = '';
-  for (let i = 0; i < boardSize; i += 1) {
-      const div = document.createElement('div');
-      for (let j = 0; j < boardSize; j++) {
-        const pixel = document.createElement('div');
-        pixel.classList.add('pixel');
-        div.appendChild(pixel);
-      }
-    board.appendChild(div);
-  }
-  PixelClick();
-});
-
-PixelClick();
+BoardGenerator(5)
