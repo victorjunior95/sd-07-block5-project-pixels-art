@@ -46,8 +46,8 @@ function constructorBoard() {
 }
 function conditionsToGenereteBoard() {
   if (boardSize >= 5 && boardSize <= 50) {
-  constructorBoard();
-} else if (boardSize < 5) {
+    constructorBoard();
+  } else if (boardSize < 5) {
   boardSize = 5;
   constructorBoard();
 } else {
