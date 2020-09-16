@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto: Pixels Arte</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
     <header>
@@ -17,14 +16,15 @@
         <div class="color blue"></div>
         <div class="color green"></div>
     </section>
+    <button id="clear-board" class="button">Limpar</button>
+    <input type="number" name="input-board-size" id="board-size" min="5" max="50" placeholder="5/50">
+    <button id="generate-board" class="button">VQV</button>
     <div id="pixel-board">
-        <div class="pixel-line"></div>
-        <div class="pixel-line"></div>
-        <div class="pixel-line"></div>
-        <div class="pixel-line"></div>
+        
     </div>
     <footer>
         <p>@Trybe - By EMoonlit</p>
     </footer>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

@@ -1,5 +1,12 @@
+body {
+    background-color: bisque;
+    text-align: center;
+    font-family: monospace;
+    font-size: large;
+}
 
 .color {
+    border-radius: 5px;
     border: 1px solid black;
     padding: 50px;
     display: inline-block;
@@ -17,22 +24,34 @@
     background-color: green;
 }
 .paletteColor, h1 {
-    background-color: bisque;
     text-align: center;
 }
+input {
+    font-size: xx-large;
+    text-align: center;
+    height: 50px;
+    width: 200px;
+}
+.button {
+    font-family: monospace;
+    font-size: larger;
+    margin: 25px;
+    padding: 50px;
+    border-radius: 5px;
+}
 .pixelBoard {
-    background-color: bisque;
     padding: 45px;
     border: 2px solid black;
+    
 }
 .pixel-line {
-    background-color: bisque;
     text-align: center;
 }
 .pixel {
+    border-radius: 5px;
     background-color: white;
     padding: 40px;
     border: 1px solid black;
+    margin: 2px;
     display: inline-block;
-    margin: 5px;
 }

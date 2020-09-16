@@ -1,25 +1,19 @@
-window.onload = function () {
 
-let lines = document.querySelectorAll(".pixel-line")
-insertPixelBoard(lines);
-}
 
-function insertPixelBoard (lines) {
-    for (let index = 0; index < 5; index += 1) {
-        linePixel(lines[index]);
+let selectedColor = 'black';
+function creatPixelBoard(value) {
+    let pixelBoard = document.querySelector('#pixel-board');
+    pixelBoard.innerHTML = '';
+    for (let index = 0; index < value; index += 1) {
+        let pixelLine = document.createElement('div');
+        pixelLine.className = 'pixel-line';
+        for (let index = 0; index < value; index += 1) {
+            let pixel = document.createElement('div');
+            pixel.className = 'pixel';
+            pixelLine.appendChild(pixel);
+        }
+        pixelBoard.appendChild(pixelLine);
     }
 }
 
-// cria um pixel
-function createPixel(className) {
-    let pixel = document.createElement('div');
-    pixel.className = className;
-    return pixel;
-}
-
-// preenche uma linha com pixel
-function linePixel (divLine) {
-    for ( index = 0; index < 5; index += 1) {
-        divLine.appendChild(createPixel('pixel'))
-    }
-}
+creatPixelBoard(5);
