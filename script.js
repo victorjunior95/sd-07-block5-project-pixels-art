@@ -3,11 +3,30 @@ window.onload = function () {
     populateBoard(5);
     selectFirstColor ();
     clickablePixel();
+    randomizeStartColors();
 }
 
 function selectFirstColor () {
     let firstColor = document.getElementsByClassName("first-color")[0];
     firstColor.classList.add("selected");
+}
+
+function randomizeStartColors () {
+    let secondColor = document.getElementsByClassName("second-color")[0];
+    let thirdColor = document.getElementsByClassName("third-color")[0];
+    let fourthColor = document.getElementsByClassName("fourth-color")[0];
+    secondColor.style.backgroundColor = getRandomBackgroundColor();
+    thirdColor.style.backgroundColor = getRandomBackgroundColor();
+    fourthColor.style.backgroundColor = getRandomBackgroundColor();
+}
+
+function getRandomBackgroundColor () {
+    // Função inspirada em https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let bgColor = "rgb(" + r + "," + g + "," + b + ")";
+    return bgColor;
 }
 
 // Looping para adicionar Event Listener em todos os pixels para pintar quando clicar
