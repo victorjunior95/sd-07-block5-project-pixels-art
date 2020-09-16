@@ -47,40 +47,51 @@ paint.addEventListener('click', function () {
 });
 
 clear.addEventListener('click', function () {
-  let boardLength = document.querySelectorAll('#pixel-board .pixel').length;
-  for (index = 0; index < boardLength; index += 1) {
+  const boardLength = document.querySelectorAll('#pixel-board .pixel').length;
+  for (let index = 0; index < boardLength; index += 1) {
     document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
-  }
-})
-
-changeSize.addEventListener('click', function () {
-  textSize = document.querySelector('#board-size').value;
-    if (textSize == '') {
-    alert('Board inválido!')
-  } else if (parseInt(textSize) <= 5) {
-    for ( index = 0; index < 25; index += 1) {
-      document.getElementsByClassName('pixel')[index].style.height = '5px';
-      document.getElementsByClassName('pixel')[index].style.width = '5px';
-      document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
-    }
-  } else if (parseInt(textSize) >= 50) {
-    for ( index = 0; index < 25; index += 1) {
-      document.getElementsByClassName('pixel')[index].style.height = '50px';
-      document.getElementsByClassName('pixel')[index].style.width = '50px';
-      document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
-    }
-  } else {
-    for ( index = 0; index < 25; index += 1) {
-      document.getElementsByClassName('pixel')[index].style.height = `${textSize}px`;
-      document.getElementsByClassName('pixel')[index].style.width = `${textSize}px`;
-      document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
-    }
   }
 });
 
-function checkInputValue() {
-  let sizeInput;
-  if (boardSize.value <= 5) sizeInput = 5;
-  else if (boardSize.value >= 50) sizeInput = 50;
-  return sizeInput;
-}
+changeSize.addEventListener('click', function () {
+  const textSize = document.querySelector('#board-size').value;
+
+
+
+ 
+    let sizeInput = parseInt(textSize);
+
+    if (boardSize.value <= 5) {
+      sizeInput = 5;
+
+    } else if (boardSize.value >= 50) {
+      
+      sizeInput = 50;
+    return sizeInput;
+  
+
+
+
+
+    } else if (textSize === '') {
+      alert('Board inválido!');
+    } else if (parseInt(textSize) <= 5) {
+      for (let index = 0; index < 25; index += 1) {
+        document.getElementsByClassName('pixel')[index].style.height = '5px';
+        document.getElementsByClassName('pixel')[index].style.width = '5px';
+        document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
+      }
+    } else if (parseInt(textSize) >= 50) {
+      for (let index = 0; index < 25; index += 1) {
+        document.getElementsByClassName('pixel')[index].style.height = '50px';
+        document.getElementsByClassName('pixel')[index].style.width = '50px';
+        document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
+      }
+    } else {
+      for (let index = 0; index < 25; index += 1) {
+        document.getElementsByClassName('pixel')[index].style.height = `${textSize}px`;
+        document.getElementsByClassName('pixel')[index].style.width = `${textSize}px`;
+        document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
+      }
+    }
+});
