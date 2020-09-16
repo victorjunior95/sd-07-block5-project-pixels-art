@@ -22,7 +22,7 @@ function clearBoard() {
 
 function createBoard(nbPixelValue) {
   const pixelLine = Math.sqrt(nbPixelValue);
-  const boardLength = (pixelLine * 42.222) + 2.222;
+  const boardLength = (pixelLine * 42);
   document.querySelector('.pixel-board').style.height = `${boardLength}px`;
   document.querySelector('.pixel-board').style.width = `${boardLength}px`;
 

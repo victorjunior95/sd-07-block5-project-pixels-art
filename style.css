@@ -25,12 +25,13 @@
   background-color: white;
   border-spacing: 0;
   display: table-column;
+  vertical-align: top;
 }
 
 .pixel-board {
   display: table;
-  height: 212px;
-  width: 212px;
+  height: 210px;
+  width: 210px;
 }
 
 .random-color1 {
