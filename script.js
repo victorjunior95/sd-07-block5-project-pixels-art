@@ -1,13 +1,14 @@
-// Adicionando evento click aos elementos da paleta
-let paletteColor = document.getElementsByClassName('color')
+let paletteElements = document.getElementsByClassName('color')
+let pixelGrid = document.getElementsByClassName('pixel')
 
-for (let index = 0; index < paletteColor.length; index += 1) {
-    paletteColor[index].addEventListener('click', selectedColor)
+
+// Adicionando evento click aos elementos da paleta
+for (let index = 0; index < paletteElements.length; index += 1) {
+    paletteElements[index].addEventListener('click', selectedColorInPalette)
 }
 
 // Função para remover e adiocionar a class 'selected'
-
-function selectedColor () {
+function selectedColorInPalette () {
     let elementTarget = this
     if (elementTarget.classList.contains('selected')) {
     } else {
@@ -17,9 +18,16 @@ function selectedColor () {
     }
 }
 
+// Adicionando evento click aos pixels
+for (let index = 0; index < pixelGrid.length; index += 1) {
+    pixelGrid[index].addEventListener('click', pixelPaint)
+}
 
-
-
-
-
-
+// Função para adiconar a classe 'filled' aos pixels, buscar o estilo de cor da paleta e pintar o pixel
+function pixelPaint () {
+    let pixelTarget = this
+    pixelTarget.classList.add('filled')
+    let selectedColor = document.querySelector('.selected')
+    let colorToPaint = getComputedStyle(selectedColor).backgroundColor
+    pixelTarget.style.backgroundColor = colorToPaint
+}
