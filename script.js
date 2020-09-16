@@ -147,7 +147,7 @@ const stringColors = [
 
 function randomColors() {
   const numbersOfColors = 142;
-  const color = stringColors[Math.floor(Math.random() * numbersOfColors)];
+  let color = stringColors[Math.floor(Math.random() * numbersOfColors)];
   if (color !== 'white') {
     return color;
   }

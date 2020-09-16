@@ -32,8 +32,8 @@ h1 {
 
 .dialog {
   box-sizing: border-box;
-  vertical-align: middle;
   padding: 11px;
+  vertical-align: middle;
 }
 
 .line {
