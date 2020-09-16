@@ -1,6 +1,5 @@
 //  https://github.com/Marxneves/Trybe/blob/master/Projetos/pixels-art/script.js
 const colorPalette = document.querySelector('#color-palette');
-const pixelBoard = document.querySelector('#pixel-board');
 
 let selectedColor = 'black';
 
@@ -11,6 +10,17 @@ colorPalette.addEventListener('click', function (event) {
   selectedColor = event.target.style.backgroundColor;
 });
 
+const pixelBoard = document.querySelector('#pixel-board');
+
 pixelBoard.addEventListener('click', function (event) {
   event.target.style.backgroundColor = selectedColor;
+});
+
+const clearButton = document.querySelector('#clear-board');
+const pixels = document.querySelectorAll('.pixel');
+
+clearButton.addEventListener('click', () => {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
 });
