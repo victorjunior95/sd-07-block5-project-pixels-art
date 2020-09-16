@@ -1,3 +1,4 @@
+document.querySelectorAll(".color")[0].classList.add("selected");
 
 document.querySelectorAll('.color').forEach(item => {
     item.addEventListener('click', event => {
