@@ -1,5 +1,38 @@
 window.onload = function() {
 
+  let coresSelect = document.querySelectorAll('.color');
+  let arrayCores = [];
+
+  for (let index = 0; index < coresSelect.length; index++) {
+
+     // console.log(coresSelect[index].classList[1])
+      arrayCores[index] = coresSelect[index].classList[1];
+  }
+
+  console.log(arrayCores)
+
+
+  function arrayRandom(arrayCores) {
+
+    const random = Math.floor(Math.random() * arrayCores.length);
+
+
+    return random, arrayCores[random];
+
+  }
+
+  let stringCor = arrayRandom(arrayCores)
+  console.log(stringCor)
+  for (let index = 1; index < coresSelect.length; index++) {
+      coresSelect[index].classList.remove(arrayCores[index])
+  }
+
+  for(let i = 1; i < coresSelect.length; i++) {
+
+    coresSelect[i].classList.add(arrayRandom(arrayCores))
+  }
+
+
 
 let buttonGenerateBoard = document.getElementById('generate-board').addEventListener('click', createBoard);
 //crianda tabela
@@ -9,8 +42,6 @@ function createBoard() {
       customBoard === '' ? alert("Board inválido!") : true;
       customBoard < 5 ? customBoard = 5 : true;
       customBoard > 50 ? customBoard = 50 : true;
-
-      console.log(customBoard)
 
       let pixelBoard = document.getElementById("pixel-board");
           pixelBoard.innerHTML = '';
