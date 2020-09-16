@@ -1,11 +1,18 @@
-let color = document.querySelectorAll('.color');
-let selected = document.querySelectorAll('.pixel');
-let clear = document.querySelector('#clear-board');
-let div = document.querySelector('#black');
+'use strict'
 
+paintItBlack();
+setClass();
 clearAll();
+selectedFunc();
+
+function setClass() {
+    let div = document.querySelector('#black');
+    div.classList.add('selected');
+}
 
 function clearAll() {
+    let clear = document.querySelector('#clear-board');
+    let selected = document.querySelectorAll('.pixel');
     clear.addEventListener('click', function () {
         for (let index = 0; index < selected.length; index += 1) {
             selected[index].style.backgroundColor = 'white';
@@ -13,21 +20,31 @@ function clearAll() {
     });
 }
 
-    // function setClass() {
-    //     div.classList.add('selected'); // aqui a palleta preta ja inicia com a "selected"
-    // }
+function setClass() {
+    let div = document.querySelector('#black');
+    div.classList.add('selected'); // aqui a palleta preta ja inicia com a "selected"
+}
 
-
-color.forEach(item => { // para cada
-    item.addEventListener('click', function (event) {
-        event.target.classList.add('selected');
-        color.forEach(item => {
-            if (item !== event.target) {
-                item.classList.remove('selected');
-            }
+function selectedFunc() {
+    let color = document.querySelectorAll('.color');
+    color.forEach(item => { // para cada elemento
+        item.addEventListener('click', function (event) {
+            event.target.classList.add('selected'); //verifica qual elemento recebeu a ação
+            color.forEach(item => { // efetuo loop para identificar se 
+                if (item !== event.target) {
+                    item.classList.remove('selected');
+                }
+            });
         });
     });
-});
+}
 
+function paintItBlack() {
+    let selected = document.querySelectorAll('.pixel');
+    for (let item = 0; item < selected.length; item += 1) {
+        selected[item].addEventListener('click', function () {
+            selected[item].style.backgroundColor = 'black';
 
-
+        });
+    }
+}
