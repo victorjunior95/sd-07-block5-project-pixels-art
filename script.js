@@ -1,36 +1,34 @@
-const pixelBoard = document.querySelector('#pixel-board');
-let sizeOfBoard = [5, 5];
-let numberOfPixels = sizeOfBoard[0] * sizeOfBoard[1];
-pixelBoard.style.heigth = (sizeOfBoard[0] * 42) + 'px';
-pixelBoard.style.width = (sizeOfBoard[1] * 42) + 'px';
+const boardSize = document.querySelector('#board-size');
+const generateBoard = document.querySelector('#generate-board');
+const newDocument = document.querySelector('#new-document');
 const colorPalette = document.querySelector('#color-palette');
+const pixelBoard = document.querySelector('#pixel-board');
+const windowView = document.querySelector('.window-view');
+
 const firstColor = document.querySelector('.color0');
 const secondColor = document.querySelector('.color1');
 const thirdColor = document.querySelector('.color2');
 const forthColor = document.querySelector('.color3');
 
-window.onload = function () {
-  //  pixels generator
-  for (let yIndex = 0; yIndex < sizeOfBoard[1]; yIndex += 1) {
-    for (let xIndex = 0; xIndex < sizeOfBoard[0]; xIndex += 1) {
-      const setClass = 'px' + (yIndex + 1).toString() + '-' + (xIndex + 1).toString();
-      const pixels = document.createElement('div');
-      const pixelsStyle = document.createElement('style');
-      pixels.setAttribute('onclick', 'paintPixel(this.className)');
-      pixels.className = 'pixel';
-      pixels.className += ' ' + setClass;
-      pixelBoard.appendChild(pixels);
-      pixels.appendChild(pixelsStyle);
-    }
+let allPixels = document.querySelectorAll('.pixel');
+generateBoard.addEventListener('click', function() {
+  if (boardSize.value >= 5 && boardSize.value <= 50 && boardSize.value !== undefined) {
+    pixelBoard.innerHTML = '';
+    newDocument.className = 'new-document-top';
+    colorPalette.style.display = 'block';
+    generatePixels(boardSize.value);
+    boardSize.value = '';
+    pixelBoard.style.display = 'inline-block';
+    windowView.style.display = 'block';
+
+    firstColor.addEventListener('click', setColorPalette);
+    secondColor.addEventListener('click', setColorPalette);
+    thirdColor.addEventListener('click', setColorPalette);
+    forthColor.addEventListener('click', setColorPalette);
+  } else {
+    alert("Insira um valor entre 5 e 50");
   }
-
-  firstColor.addEventListener('click', setColorPalette);
-  secondColor.addEventListener('click', setColorPalette);
-  thirdColor.addEventListener('click', setColorPalette);
-  forthColor.addEventListener('click', setColorPalette);
-}
-
-//  color selector
+})
 function setColorPalette() {
   let listOfColors = document.querySelectorAll('.color');
 
@@ -44,9 +42,29 @@ function setColorPalette() {
   }
 }
 
+function generatePixels(size) {
+  pixelBoard.style.heigth = (size * 42) + 'px';
+  pixelBoard.style.width = (size * 42) + 'px';
+  
+  for (let yIndex = 0; yIndex < size; yIndex += 1) {
+    for (let xIndex = 0; xIndex < size; xIndex += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      pixelBoard.appendChild(pixel);
+      const pixelsStyle = document.createElement('style');
+      const setClass = 'px-' + (yIndex + 1).toString() + '-' + (xIndex + 1).toString();
+      pixel.setAttribute('onclick', 'paintPixel(this.className)');
+      pixel.className = 'pixel';
+      pixel.className += ' ' + setClass;
+      pixelBoard.appendChild(pixel);
+      pixel.appendChild(pixelsStyle);
+    }
+  }
+}
+
 function paintPixel (readClass) {
-  const coord = readClass.match(/\d/g);
-  const setClass = '.px' + coord[0] + '-' + coord[1];
+  let arrayOfClass = readClass.split('-');
+  const setClass = '.px-' + arrayOfClass[1] + '-' + arrayOfClass[2];
   const paint = document.querySelector(setClass);
 
   selectedColor();
