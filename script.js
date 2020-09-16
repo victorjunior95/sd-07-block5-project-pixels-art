@@ -33,14 +33,9 @@ function getBackgroundColorPixelSelected(index) {
   return stylesPaletteSelected.backgroundColor;
 }
 
-function getAttributesClass(index) {
-  const getAttributesClass = getPixelList[index].getAttribute('class');
-  return getAttributesClass;
-}
-
 function reduceClasseSelectedFromOldPalette(index) {
   const getAttributesClass = getPixelList[index].getAttribute('class');
-  let getAttributesClassReduce = getAttributesClass.replace('selected', '');
+  const getAttributesClassReduce = getAttributesClass.replace('selected', '');
   return getAttributesClassReduce;
 }
 
@@ -71,12 +66,32 @@ document.getElementById('color-palette').addEventListener('click', function (eve
 });
 
 document.getElementById('clear-board').addEventListener('click', function () {
-  let lengthElementos = document.getElementsByClassName('pixel').length;
-  let color = 'white';
+  const lengthElementos = document.getElementsByClassName('pixel').length;
+  const color = 'white';
   for (let index = 0; index < lengthElementos; index += 1) {
     document.getElementsByClassName('pixel')[index].style.backgroundColor = color;
   }
 });
+
+function getInputSizePixelValue () {
+  return document.getElementById('board-size').value;
+}
+
+function updateSizePixel(sizePixel) {
+    const lengthElementos = document.getElementsByClassName('pixel').length;
+    for (let index = 0; index < lengthElementos; index += 1) {
+      document.getElementsByClassName('pixel')[index].style.width = `${sizePixel}px`;
+      document.getElementsByClassName('pixel')[index].style.height = `${sizePixel}px`;
+    }
+}
+
+document.getElementById('generate-board').addEventListener('click', function () {
+  let inputSizeValue = getInputSizePixelValue();
+  if (inputSizeValue === '') {
+    alert('Board inválido!');
+  } else updateSizePixel(inputSizeValue);
+});
+
 
 
 
