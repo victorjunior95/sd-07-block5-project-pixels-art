@@ -3,6 +3,8 @@ var green = document.querySelector(".green");
 var red = document.querySelector(".red");
 var yellow = document.querySelector(".yellow");
 var colors = document.getElementsByClassName("color");
+var pixels = document.getElementsByClassName('pixel');
+var paint = "";
 
 function selectorB () {
     for (let i = 0; i < colors.length; i += 1) {
@@ -11,6 +13,7 @@ function selectorB () {
 
         if(colors[i] === black){
             colors[i].classList.add("selected");
+            paint = "black"
         }
     }
 }
@@ -22,6 +25,7 @@ function selectorG () {
 
         if(colors[i] === green){
             colors[i].classList.add("selected");
+            paint = "green"
         }
     }
 }
@@ -33,6 +37,7 @@ function selectorR () {
 
         if(colors[i] === red){
             colors[i].classList.add("selected");
+            paint = "red"
         }
     }
 }
@@ -44,9 +49,19 @@ function selectorY () {
 
         if(colors[i] === yellow){
             colors[i].classList.add("selected");
+            paint = "yellow"
         }
     }
 }
+
+
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', function (event) {
+    event.target.style.backgroundColor = paint;
+  });
+}
+
+
 
 black.addEventListener('click', selectorB);
 green.addEventListener('click', selectorG);
