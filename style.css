@@ -58,9 +58,9 @@ main {
 
 .pixel-board {
   display: inline-block;
-  height: 205px;
+  height: 700px;
   margin-top: 60px;
-  width: 210px;
+  width: 700px;
   background-color: red;
 }
 
