@@ -32,10 +32,9 @@ paint.addEventListener('click', function () {
   selectedClass = selectedColor.className;
   array = selectedClass.split(' ');
   newClass = array[1];
-  if (event.target.className == 'pixel') {
+  if (event.target.className.includes('pixel')) {
     event.target.className = `pixel ${newClass}`;
   }
-  
 });
 
 clear.addEventListener('click', function () {
@@ -45,16 +44,15 @@ clear.addEventListener('click', function () {
   }
 })
 
-/*
-changeSize.addEventListener('click', function () {
-  alert('');
 
-  const textSize = document.querySelector('#board-size').value;
+changeSize.addEventListener('click', function () {
+  textSize = document.querySelector('#board-size').value;
+  if (textSize == '') {
+    alert('Board inválido!')
+  }
 
   
-    alert(textSize);
   
   
 });
 
-*/
