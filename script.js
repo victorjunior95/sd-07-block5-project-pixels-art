@@ -13,9 +13,30 @@ window.onload = function () {
       divLine.appendChild(divColumn);
     }
   }
-
-  let getDiv = document.querySelector('.color1');
-  let attribute = getDiv.getAttribute('class')
-  getDiv.className = `${attribute} selected`;
 };
+
+const getPixelList = document.getElementsByClassName('color');
+
+function findIndexPaletteSelected() {
+  let searchElement;
+  for (let index in getPixelList) {
+    searchElement = getPixelList[index].getAttribute('class');
+    if (searchElement.includes('selected'))
+      return index;
+  }
+}
+
+function getBackgroundColorPixelSelected (index) {
+  let stylesPaletteSelected = window.getComputedStyle(getPixelList[index]);
+  return stylesPaletteSelected.backgroundColor;
+}
+
+document.getElementById('pixel-board').addEventListener("click", function(event) {
+  const classEvent = 'pixel td';
+  if (event.target.className === classEvent) {
+    let indexPaletteSelected = findIndexPaletteSelected();
+    let backgroundColor = getBackgroundColorPixelSelected(indexPaletteSelected);
+    event.target.style.backgroundColor = backgroundColor;
+  }
+});
 
