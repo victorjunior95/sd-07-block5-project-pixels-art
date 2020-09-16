@@ -6,11 +6,13 @@ window.onload = function () {
     randomizeStartColors();
 }
 
+// Função que estabelece a seleção da primeira cor
 function selectFirstColor () {
     let firstColor = document.getElementsByClassName("first-color")[0];
     firstColor.classList.add("selected");
 }
 
+// Função para colocar cores aleatórias e aplica as cores à paleta
 function randomizeStartColors () {
     let secondColor = document.getElementsByClassName("second-color")[0];
     let thirdColor = document.getElementsByClassName("third-color")[0];
@@ -20,6 +22,7 @@ function randomizeStartColors () {
     fourthColor.style.backgroundColor = getRandomBackgroundColor();
 }
 
+// Função que retorna uma cor aleatória
 function getRandomBackgroundColor () {
     // Função inspirada em https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
     let r = Math.floor(Math.random() * 256);
