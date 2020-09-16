@@ -46,6 +46,7 @@ h1 {
   background-color: crimson;
 }
 
+
 #pixel-board {
   background-color: blueviolet;
   display: inline-block;
@@ -53,13 +54,14 @@ h1 {
   width: 210px;
 }
 
-.linha {
-  margin-top: -4px;
-}
+/* .linha {
+  margin-bottom: -4px;
 
-.linha:first-child {
+} */
+
+/* .linha:first-child {
   margin-top: 0;
-}
+} */
 
 .pixel {
   background-color: white;
@@ -68,8 +70,9 @@ h1 {
   border-width: 1px;
   height: 40px;
   width: 40px;
-  display: inline-block;
+  /* display: inline-block; */
   /* Pesquisar sobre display: grid */
   /* https://www.origamid.com/projetos/css-grid-layout-guia-completo/  */
-  /* margin: -4px; */
+  /* margin: -3px; */
+  float: left;
 }
