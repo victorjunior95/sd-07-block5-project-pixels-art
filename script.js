@@ -19,23 +19,25 @@ const getPixelList = document.getElementsByClassName('color');
 
 function findIndexPaletteSelected() {
   let searchElement;
-  for (let index in getPixelList) {
+  for (let index = 0; index < getPixelList.length; index += 1) {
     searchElement = getPixelList[index].getAttribute('class');
-    if (searchElement.includes('selected'))
+    if (searchElement.includes('selected')) {
       return index;
+    }
   }
+  return 0;
 }
 
-function getBackgroundColorPixelSelected (index) {
-  let stylesPaletteSelected = window.getComputedStyle(getPixelList[index]);
+function getBackgroundColorPixelSelected(index) {
+  const stylesPaletteSelected = window.getComputedStyle(getPixelList[index]);
   return stylesPaletteSelected.backgroundColor;
 }
 
-document.getElementById('pixel-board').addEventListener("click", function(event) {
+document.getElementById('pixel-board').addEventListener('click', function (event) {
   const classEvent = 'pixel td';
   if (event.target.className === classEvent) {
-    let indexPaletteSelected = findIndexPaletteSelected();
-    let backgroundColor = getBackgroundColorPixelSelected(indexPaletteSelected);
+    const indexPaletteSelected = findIndexPaletteSelected();
+    const backgroundColor = getBackgroundColorPixelSelected(indexPaletteSelected);
     event.target.style.backgroundColor = backgroundColor;
   }
 });
