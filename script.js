@@ -1,4 +1,4 @@
-let paleta = document.getElementById('color-palette');
+
 
 
 
@@ -11,9 +11,13 @@ document.getElementById('clear-board').addEventListener('click', function(){
   }
 });
 
-paleta.addEventListener('click', function() {
-  pixels.style = paleta;
+
+document.getElementById('color-palette').addEventListener('click', function(){
+  console.log("estou aqui");
+  let paletaDeCores = document.querySelectorAll('.color');
+  for(let index = 0; index < paletaDeCores.length; index += 1){
+
+  }
+
 })
-
-
 
