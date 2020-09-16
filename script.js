@@ -1,21 +1,22 @@
 let palette = document.querySelector("#color-palette");
+const numberColors = 4;
 
-function colorsPalette(numberLine, numberColumn) {
-    let count = 0;
-    for (let indexLine = 0; indexLine < numberLine; indexLine += 1) {
-    let line = document.createElement("div");
-    line.id = `line${indexLine + 1}`;
-    line.className = "display-inline";
-    palette.appendChild(line);
-    for (let indexColumn = 0; indexColumn < numberColumn; indexColumn += 1) {
-      count += 1;
-      let column = document.createElement("div");
-      column.id = `box${count}`;
-      column.className = `box-color display-block color${count}`;
-      line.appendChild(column);
-    }
+function loadColor(number) {
+  switch (number) {
+    case 1:
+      colorBox.style.bacgroundColor = "black";
+      break;
+    case 2:
+      colorBox.style.bacgroundColor = "red";
+      break;
+    case 3:
+      colorBox.style.bacgroundColor = "green";
+      break;
+    case 4:
+      colorBox.style.bacgroundColor = "blue";
+      break;
   }
 }
 
 
-colorsPalette(4, 14);
+colorsPalette(numberColors);
