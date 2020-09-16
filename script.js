@@ -9,7 +9,7 @@ function randRGB() {
 }
 
 function testBoardSize() {
-  if (boardSize.value == '') {
+  if (boardSize.value === '') {
     alert('Board inválido!');
     return (false);
   }
@@ -20,8 +20,8 @@ function testBoardSize() {
     if (parseInt(boardSize.value) > parseInt(boardSize.max)) {
       boardSize.value = boardSize.max;
     }
+    return (true);
   }
-  return (true);
 }
 
 // função que gera as linhas e colunas dos pixels
