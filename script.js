@@ -37,3 +37,10 @@ for (let i = 0; i < pixel.length; i++) {
         pixel[i].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
     });
 }
+
+let buttonClear = document.getElementById("clear-board");
+buttonClear.addEventListener("click", function() {
+    for (let i = 0; i < pixel.length; i++) {
+        pixel[i].style.backgroundColor = "white";
+    }
+})
