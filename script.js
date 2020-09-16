@@ -4,10 +4,6 @@ const green = document.getElementById('green');
 const red = document.getElementById('red');
 const pixels = document.getElementsByClassName('pixel');
 const clear = document.getElementById('clear-board');
-const generateBoard = document.getElementById('generate-board');
-const inputGenerateBoard = document.getElementById('board-size');
-
-// document.onload = newColors();
 
 function removeAll() {
   black.classList.remove('selected');
