@@ -25,7 +25,7 @@ function getGreenColor(e) {
   let element = e.target;
   removeSelectedColor();
   element.classList.add('selected');
-  selectedColor = 'green'
+  selectedColor = 'darkgreen'
 }
 color2.addEventListener('click', getGreenColor);
 
@@ -33,7 +33,7 @@ function getRedColor(e) {
   let element = e.target;
   removeSelectedColor();
   element.classList.add('selected');
-  selectedColor = 'red'
+  selectedColor = 'orangered'
 }
 color3.addEventListener('click', getRedColor);
 
