@@ -12,7 +12,6 @@ for (let i = 0; i < 5; i++){
     for (let j = 0; j < 5; j++){
         let pixel = document.createElement("div")
         pixel.classList.add("pixel")
-        pixel.style.border = "1px solid black"
         div.appendChild(pixel)
 }
 board.appendChild(div)
@@ -36,6 +35,7 @@ for (let i = 1; i < colors.length; i = i + 1){
 
 
 clearBoard.addEventListener("click", ()=>{
+  let fields = document.querySelectorAll(".pixel")
   for (let i = 0; i < fields.length; i += 1) {
     fields[i].style.backgroundColor = "rgb(255, 255, 255)"
   }  
