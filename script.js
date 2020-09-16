@@ -1,6 +1,6 @@
 let colorBrush = 'black';
 let boardSize = 5;
-let stringColors = [
+const stringColors = [
   'Black',
   'grey11',
   'grey21',
@@ -147,8 +147,13 @@ let stringColors = [
 
 function randomColors() {
   const numbersOfColors = 142;
-  let color = stringColors[Math.floor(Math.random() * numbersOfColors)];
-  return color;
+  const color = stringColors[Math.floor(Math.random() * numbersOfColors)];
+  if (color !== 'white') {
+    return color;
+  } else {
+    const color = stringColors[Math.floor(Math.random() * numbersOfColors)];
+    return color;
+  }
 }
 
 function createBox(className) {
@@ -175,16 +180,15 @@ function createBoard(linesColumns) {
 function createPalette() {
   const paletteStart = document.querySelector('#color-palette');
   paletteStart.innerHTML = '';
-  let colorPalette = [];
+  const colorPalette = [];
   colorPalette[0] = 'black';
-  const colorline = createBox('color black selected');
+  let colorline = [];
+  colorline = createBox('color black selected');
   paletteStart.appendChild(colorline).style.backgroundColor = 'black';
   for (let color = 1; color < 4; color += 1) {
     colorPalette[color] = randomColors();
-    const colorline = createBox(`color ${colorPalette[color]}`);
-    paletteStart.appendChild(
-      colorline
-    ).style.backgroundColor = `${colorPalette[color]}`;
+    colorline = createBox(`color ${colorPalette[color]}`);
+    paletteStart.appendChild(colorline).style.backgroundColor = `${colorPalette[color]}`;
   }
 }
 
@@ -198,7 +202,7 @@ function changeColor() {
         last.classList.remove('selected');
       }
       colorBrush = event.target.classList[1];
-      console.log(colorBrush);
+      console.log(`Brush stroke color is: ${colorBrush}`);
     });
   });
 }
