@@ -1,3 +1,7 @@
+.clearBoard {
+  margin-top: 40px;
+}
+
 .color {
   border: 1px solid black;
   display: inline-block;
