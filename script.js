@@ -41,7 +41,7 @@ paint.addEventListener('click', function () {
 clear.addEventListener('click', function () {
   let boardLength = document.querySelectorAll('#pixel-board .pixel').length;
   for (index = 0; index < boardLength; index += 1) {
-    document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
+    document.getElementsByClassName('pixel')[index].className = 'pixel';
   }
 })
 
