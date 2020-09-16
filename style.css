@@ -148,13 +148,13 @@ h1 {
   color: rgb(209, 13, 95);
   font-size: 16px;
   height: 35px;
-  outline: none;
+
   position: relative;
   width: 120px;
 }
-
-
-
+.board-size:focus {
+  outline: none;
+}
 .generate-board {
   background-color: rgb(209, 13, 95);
   border-color: white;
@@ -165,15 +165,15 @@ h1 {
   font-size: 16px;
   font-weight: 700;
   height: 40px;
-  outline: none;
   width: 220px;
 }
-
+.generate-board {
+  outline: none;
+}
 .generate-board:hover {
   background-color: dodgerblue;
   cursor: pointer;
 }
-
 .generate-board:active {
   left: 2px;
   position: relative ;
@@ -182,13 +182,12 @@ h1 {
 }
 
 .clear {
-  height: 60px;
   float: right;
+  height: 60px;
   margin: 10px;
   text-align: right;
   width: 300px;
 }
-
 button {
   background-color: rgb(209, 13, 95);
   border-color: white;
@@ -200,10 +199,11 @@ button {
   font-weight: 700;
   height: 40px;
   margin: 20px;
-  outline: none;
   width: 220px;
 }
-
+button {
+  outline: none;
+}
 button:hover {
   background-color: dodgerblue;
   cursor: pointer;
