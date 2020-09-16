@@ -14,7 +14,7 @@ header {
 }
 
 .color {
-  border: solid 1px rgb(160, 40, 140);
+  border: solid 1px black;
   border-radius: 8px;
   display: inline-block;
   height: 38px;
