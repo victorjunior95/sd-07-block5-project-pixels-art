@@ -1,87 +1,90 @@
 body {
-    margin: 0;
-  }
+  margin: 0;
+}
   
-  header {
-    height: 200px;
-    width: 100%;
-  }
-  h1 {
-    margin: 0;
-    padding: 0;
-    display: block;
-    text-align: center;
-    font-family: Comic sans-serif;
-    font-size: 4em;
-  }
+header {
+  height: 250px;
+  width: 100%;
+}
+
+h1 {
+  display: block;
+  font-family: Comic sans-serif;
+  font-size: 4em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
   
-  .tools {
-    text-align: center;
-    padding-top: 10px;
-  }
+.tools {
+  padding-top: 10px;
+  text-align: center;
+}
   
-  .color {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    display: inline-block;
-    text-align: center;
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    cursor: pointer;
-  }
+.color {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: inline-block;
+  height: 90px;
+  margin: 10px;
+  text-align: center;
+  width: 90px;
+}
   
-  .color1 {
-    background-color: black;
-  }
+.color1 {
+  background-color: black;
+}
   
-  .color2 {
-    background-color: red;
-  }
-  .color3 {
-    background-color: green;
-  }
+.color2 {
+  background-color: red;
+}
+
+.color3 {
+  background-color: green;
+}
   
-  .color4 {
-    background-color: blue;
-  }
+.color4 {
+  background-color: blue;
+}
   
-  #pixel-board {
-    display: inline-block;
-    height: 210px;
-    width: 210px;
-    text-align: center;
-    margin-left: 578px;
-    margin-top: 100px;
-  }
+#pixel-board {
+  display: inline-block;
+  height: 210px;
+  margin-left: 578px;
+  margin-top: 60px;
+  width: 210px;
+  text-align: center;
+}
   
-  .linha {
-    margin-top: -4px;
-  }
+.linha {
+  margin-top: -4px;
+}
   
-  .linha:first-child {
-    margin-top: 0;
-  }
+.linha:first-child {
+  margin-top: 0;
+}
   
-  #clear-board {
-    background-color: lightgray;
-    display: inline-block;
-    text-align: center;
-    font-size: 20px;
-    cursor: pointer;
-    height: 40px;
-    width: 200px;
-    margin-left: 583px;
-    border-radius: 5px;
-  }
-  .pixel {
-    background-color: white;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-    cursor: pointer;
-  }
+#clear-board {
+  background-color: lightgray;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  height: 40px;
+  margin-left: 583px;
+  text-align: center;
+  width: 200px;
+}
+
+.pixel {
+  background-color: white;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
