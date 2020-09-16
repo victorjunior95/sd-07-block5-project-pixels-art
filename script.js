@@ -55,25 +55,25 @@ clear.addEventListener('click', function () {
 
 changeSize.addEventListener('click', function () {
   const textSize = document.querySelector('#board-size').value;
-    if (textSize === '') {
-      alert('Board inválido!');
-    } else if (parseInt(textSize) <= 5) {
-      for (let index = 0; index < 25; index += 1) {
-        document.getElementsByClassName('pixel')[index].style.height = '5px';
-        document.getElementsByClassName('pixel')[index].style.width = '5px';
-        document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
-      }
-    } else if (parseInt(textSize) >= 50) {
-      for (let index = 0; index < 25; index += 1) {
-        document.getElementsByClassName('pixel')[index].style.height = '50px';
-        document.getElementsByClassName('pixel')[index].style.width = '50px';
-        document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
-      }
-    } else {
-      for (let index = 0; index < 25; index += 1) {
-        document.getElementsByClassName('pixel')[index].style.height = `${textSize}px`;
-        document.getElementsByClassName('pixel')[index].style.width = `${textSize}px`;
-        document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
-      }
+  if (textSize === '') {
+    alert('Board inválido!');
+  } else if (parseInt(textSize) <= 5) {
+    for (let index = 0; index < 25; index += 1) {
+      document.getElementsByClassName('pixel')[index].style.height = '5px';
+      document.getElementsByClassName('pixel')[index].style.width = '5px';
+      document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
     }
+  } else if (parseInt(textSize) >= 50) {
+    for (let index = 0; index < 25; index += 1) {
+      document.getElementsByClassName('pixel')[index].style.height = '50px';
+      document.getElementsByClassName('pixel')[index].style.width = '50px';
+      document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
+    }
+  } else {
+    for (let index = 0; index < 25; index += 1) {
+      document.getElementsByClassName('pixel')[index].style.height = `${textSize}px`;
+      document.getElementsByClassName('pixel')[index].style.width = `${textSize}px`;
+      document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
+    }
+  }
 });
