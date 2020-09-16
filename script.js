@@ -8,7 +8,7 @@ function changeBKGColor () {
   body.style.backgroundColor='rgb(' + rColorRGB + ' , ' + gColorRGB + ' , ' + bColorRGB + ')';
   title.style.color='rgb(' + rColorRGB + 1 + ' , ' + gColorRGB + ' , ' + bColorRGB + 1 + ')';
 }
-//const time = setInterval (changeBKGColor, 100);
+// const time = setInterval (changeBKGColor, 500);
 // Remove the bars fron the line above to see the efect.
 
 const color01 = document.getElementById('color-01');
@@ -31,7 +31,7 @@ document.querySelectorAll('.pixel').forEach(item => {
 // Function to clear all class color fron pixel itens.
 clearBT.addEventListener('click', function () {
   for (let i = 0; i < pixelSS.length; i += 1) {
-    pixelSS[i].className = 'pixel pixelBackG';
+    pixelSS[i].classList.add('pixelBackG')
   }
 });
 
@@ -44,7 +44,7 @@ colorPalet.forEach(colorPalet => {
   });
     pixelSS.forEach(pixelSS => {
       pixelSS.addEventListener('click', event => {
-        pixelSS.className = 'pixel color-01';
+        pixelSS.className = 'pixel';
         pixelSS.classList.add(saveClass);
     });
   });
@@ -73,3 +73,22 @@ color04.addEventListener('click', function () {
   color02.className = 'color color-02';
   color03.className = 'color color-03';
 })
+
+// function setBoardSize(numberLines) {
+//   let teste = document.querySelector('#generate-board').value;
+//   numberLines = teste;
+//   let pixelBoard = document.getElementById('pixel-board');
+//   pixelBoard.style.width = (numberLines * 40) +'px';
+//   pixelBoard.style.height = (numberLines * 40) +'px';
+//   let pixel = [];
+//   let divSize = numberLines**2;
+//   for (let count = 0; count < divSize; count += 1) {
+//     pixel[count] = document.createElement('div');
+//     pixel[count].className = 'pixel';
+//       pixelBoard.appendChild(pixel[count]);
+//     document.querySelector('#generate-board').value = '';
+//     document.querySelector('#generate-board').focus();
+//   }
+// }
+// const teste = document.getElementById('set-board-size');
+// teste.addEventListener('click', setBoardSize);
