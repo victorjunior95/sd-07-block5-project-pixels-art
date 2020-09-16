@@ -58,21 +58,9 @@ let buttonClearBoard = document.querySelector('#clear-board')
 
 function clearPixelBoard() {
   const clear = document.getElementsByClassName('pixel');
-    for (let i = 0; i < clear.length; i += 1) {
-      clear[i].style.backgroundColor = 'white';
-    }
+  for (let i = 0; i < clear.length; i += 1) {
+    clear[i].style.backgroundColor = 'white';
   }
+}
+
 buttonClearBoard.addEventListener('click', clearPixelBoard);
-
-// for (let i = 0 ; i < colors.length ; i += 1) {
-//   list[i].addEventListener(TouchEvent , changeSelectedColor(list[i]));
-// }
-
-
-
-//https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
-
-  // foto.addEventListener('click', function () {
-  //   painel.src = window.URL.createObjectURL(this.files[0]);
-  // });
-
