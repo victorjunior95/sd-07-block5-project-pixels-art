@@ -13,6 +13,12 @@ window.onload = function () {
       divLine.appendChild(divColumn);
     }
   }
+
+  function randomColorPalette() {
+    for (let index = 1; index < getPixelList.length; index += 1) {
+      getPixelList[index].style.backgroundColor = generationRandomColorRGB();
+    }
+  }
   randomColorPalette();
 };
 
@@ -22,12 +28,6 @@ function generationRandomColorRGB() {
   const maxNumberRGB = 256;
   const decimalNumber = () => Math.floor(Math.random() * maxNumberRGB);
   return `rgb(${decimalNumber()},${decimalNumber()},${decimalNumber()})`;
-}
-
-function randomColorPalette() {
-  for (let index = 1; index < getPixelList.length; index += 1) {
-    getPixelList[index].style.backgroundColor = generationRandomColorRGB();
-  }
 }
 
 function findIndexPaletteSelected() {
@@ -98,7 +98,7 @@ function updateSizePixel(sizePixel) {
   }
 }
 
-function borderSizeValidation (size) {
+function borderSizeValidation(size) {
   if (size < 5) return 5;
   if (size > 50) return 50;
   return size;
@@ -111,7 +111,3 @@ document.getElementById('generate-board').addEventListener('click', function () 
     alert('Board inválido!');
   } else updateSizePixel(inputSize);
 });
-
-
-
-
