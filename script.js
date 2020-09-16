@@ -1,4 +1,4 @@
-window.onload = function () {
+
   const numberOfLine = 5;
   const numberOfColumn = 5;
 
@@ -14,16 +14,15 @@ window.onload = function () {
     }
   }
 
+  const getPixelList = document.getElementsByClassName('color');
+
   function randomColorPalette() {
     for (let index = 1; index < getPixelList.length; index += 1) {
       getPixelList[index].style.backgroundColor = generationRandomColorRGB();
     }
   }
-  randomColorPalette();
-};
 
-const getPixelList = document.getElementsByClassName('color');
-
+randomColorPalette();
 function generationRandomColorRGB() {
   const maxNumberRGB = 256;
   const decimalNumber = () => Math.floor(Math.random() * maxNumberRGB);
@@ -99,8 +98,8 @@ function updateSizePixel(sizePixel) {
 }
 
 function borderSizeValidation(size) {
-  if (size < 5) return 5;
-  if (size > 50) return 50;
+  if (size < 5 && size != '') return 5;
+  if (size > 50 && size != '') return 50;
   return size;
 }
 
