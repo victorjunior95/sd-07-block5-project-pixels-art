@@ -41,10 +41,15 @@ function selectedFunc() {
 
 function paintItBlack() {
     let selected = document.querySelectorAll('.pixel');
-    for (let item = 0; item < selected.length; item += 1) {
-        selected[item].addEventListener('click', function () {
-            selected[item].style.backgroundColor = 'black';
-
-        });
+    let color = document.querySelectorAll('.color');
+        for (let item = 0; item < selected.length; item += 1) {
+            selected[item].addEventListener('click', function () {
+                let atributoDiv = document.querySelector('.selected').getAttribute('class');
+                if (atributoDiv !== 'color selected') {
+                  console.log("classe nunca foi encontrada.");
+                } else {
+                    selected[item].style.backgroundColor = document.querySelector('.selected').getAttribute('id');
+                }
+            });
+        }
     }
-}
