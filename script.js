@@ -86,23 +86,30 @@ document.getElementById('clear-board').addEventListener('click', function () {
   }
 });
 
-function getInputSizePixelValue () {
+function getInputSizePixelValue() {
   return document.getElementById('board-size').value;
 }
 
 function updateSizePixel(sizePixel) {
-    const lengthElementos = document.getElementsByClassName('pixel').length;
-    for (let index = 0; index < lengthElementos; index += 1) {
-      document.getElementsByClassName('pixel')[index].style.width = `${sizePixel}px`;
-      document.getElementsByClassName('pixel')[index].style.height = `${sizePixel}px`;
-    }
+  const lengthElementos = document.getElementsByClassName('pixel').length;
+  for (let index = 0; index < lengthElementos; index += 1) {
+    document.getElementsByClassName('pixel')[index].style.width = `${sizePixel}px`;
+    document.getElementsByClassName('pixel')[index].style.height = `${sizePixel}px`;
+  }
+}
+
+function borderSizeValidation (size) {
+  if (size < 5) return 5;
+  if (size > 50) return 50;
+  return size;
 }
 
 document.getElementById('generate-board').addEventListener('click', function () {
-  let inputSizeValue = getInputSizePixelValue();
-  if (inputSizeValue === '') {
+  const inputSizeValue = getInputSizePixelValue();
+  const inputSize = borderSizeValidation(inputSizeValue);
+  if (inputSize === '') {
     alert('Board inválido!');
-  } else updateSizePixel(inputSizeValue);
+  } else updateSizePixel(inputSize);
 });
 
 
