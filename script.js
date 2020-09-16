@@ -93,14 +93,15 @@ paintPixel();
 btnClearBoard.addEventListener('click', clearPixelBoard);
 
 boardSizeInput.onkeydown = (event) => {
-  if (event.key == '-') {
-    event.preventDefault();
-    return false;
-  }
   if (event.key === 'Enter') {
     event.preventDefault();
     btnGenerateBoard.click();
   }
+  if (event.key === '-') {
+    event.preventDefault();
+    return false;
+  }
+  return true;
 };
 
 btnGenerateBoard.addEventListener('click', () => {
