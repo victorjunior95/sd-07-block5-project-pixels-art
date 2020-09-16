@@ -1,5 +1,7 @@
 .pixel-board {
   display: table;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .linha {
@@ -36,4 +38,44 @@
 
 .color-4 {
   background-color: green;
+}
+
+body {
+  background-image: linear-gradient(to top, rgb(232, 125, 127), rgb(116, 237, 83), rgb(242, 240, 124), rgb(136, 189, 227));
+  display: block;
+  text-align: center;
+}
+
+.paleta-de-cores {
+  margin: 1px 15px 15px 15px;
+}
+
+.botoes {
+  margin: 15px;
+}
+
+.rodape {
+  font-weight: 700;
+  margin-top: 50px;
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+}
+
+button {
+  background-image: linear-gradient(to left, rgb(232, 125, 127), rgb(116, 237, 83), rgb(243, 241, 151), rgb(136, 189, 227));
+  font-weight: 600;
+  font-family: fantasy;
+  font-size: 15px;
+}
+
+.botao-limpar {
+  margin-top: 15px;
+}
+
+p {
+  font-style: italic;
 }

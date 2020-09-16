@@ -4,7 +4,7 @@ function criaQuadroInicial() {
   for (let index = 0; index < 5; index += 1) {
     const novaLinha = document.createElement('div');
     const pixelBoard = document.getElementById('pixel-board');
-    let linha = pixelBoard.appendChild(novaLinha);
+    const linha = pixelBoard.appendChild(novaLinha);
     linha.className = 'linha';
     for (let index1 = 0; index1 < 5; index1 += 1) {
       const novaCelula = document.createElement('div');
@@ -23,45 +23,45 @@ function aplicaCor() {
     const pixelSelecionado = quadro[index];
     pixelSelecionado.addEventListener('click', function () {
     // insere no pixel selecionado o rgb da cor selecionada na paleta
-    pixelSelecionado.style.backgroundColor = rgbSelecionado;
+      pixelSelecionado.style.backgroundColor = rgbSelecionado;
     }); // add a segunda classe da div selecionada ao pixel clicado
   }
 }
 
-  for (let index = 0; index < paleta.length; index += 1) { // insere class selected onde for clicado
-    const corAtual = paleta[index]; // define a cor atual de acordo com o indice do array "paleta"
-    const propBackgroundColor = window.getComputedStyle(paleta[index]).getPropertyValue('background-color');
-    corAtual.style.backgroundColor = propBackgroundColor;
-    corAtual.addEventListener('click', function () {
-    for (let index1 = 0; index1 < paleta.length; index1 += 1) { // apaga a classe selected de todos
-      const removeClasse = paleta[index1];
-      removeClasse.classList.remove('selected');
-    }
-    corAtual.classList.add('selected');
-    corSelecionada = corAtual; // armazena a cor atual numa variável global
-    // coloca nesta variável o rgb da cor selecionada
-    rgbSelecionado = window.getComputedStyle(corSelecionada).getPropertyValue('background-color');
-    });
+for (let index = 0; index < paleta.length; index += 1) { // insere class selected onde for clicado
+  const corAtual = paleta[index]; // define a cor atual de acordo com o indice do array "paleta"
+  const propBackgroundColor = window.getComputedStyle(paleta[index]).getPropertyValue('background-color');
+  corAtual.style.backgroundColor = propBackgroundColor;
+  corAtual.addEventListener('click', function () {
+  for (let index1 = 0; index1 < paleta.length; index1 += 1) { // apaga a classe selected de todos
+    const removeClasse = paleta[index1];
+    removeClasse.classList.remove('selected');
   }
-
-function limpaQuadro() { 
-const botaoLimpar = document.getElementById('clear-board');
-const quadro = document.querySelectorAll('.pixel');
-botaoLimpar.addEventListener('click', function () {
-    for (let index = 0; index < quadro.length; index += 1) { // passa por todo o quadro
-      const limpaQuadro = quadro[index];
-      limpaQuadro.className = ''; // apaga todas as classes nela
-      limpaQuadro.classList.add('pixel'); // insere a classe padrão de volta
-      limpaQuadro.style.backgroundColor = 'white';
-    }
-});
+  corAtual.classList.add('selected');
+  corSelecionada = corAtual; // armazena a cor atual numa variável global
+    // coloca nesta variável o rgb da cor selecionada
+  rgbSelecionado = window.getComputedStyle(corSelecionada).getPropertyValue('background-color');
+  });
 }
 
-  const boardSize = document.getElementById('board-size');
-  const buttonGenerateBoard = document.getElementById('generate-board');
-  const pixelBoard = document.getElementById('pixel-board');
-  const removeLinhas = document.getElementsByClassName('linha');
-  let linha;
+function limpaQuadro() {
+  const botaoLimpar = document.getElementById('clear-board');
+  const quadro = document.querySelectorAll('.pixel');
+  botaoLimpar.addEventListener('click', function () {
+  for (let index = 0; index < quadro.length; index += 1) { // passa por todo o quadro
+    const limpaQuadro = quadro[index];
+    limpaQuadro.className = ''; // apaga todas as classes nela
+    limpaQuadro.classList.add('pixel'); // insere a classe padrão de volta
+    limpaQuadro.style.backgroundColor = 'white';
+  }
+  });
+}
+
+const boardSize = document.getElementById('board-size');
+const buttonGenerateBoard = document.getElementById('generate-board');
+const pixelBoard = document.getElementById('pixel-board');
+const removeLinhas = document.getElementsByClassName('linha');
+let linha;
 
 buttonGenerateBoard.addEventListener('click', function () {
   if (boardSize.value === '') {
@@ -74,7 +74,7 @@ buttonGenerateBoard.addEventListener('click', function () {
     // inserir quadro novo
   if (boardSize.value < 5) {
     boardSize.value = 5;
-    }
+  }
   if (boardSize.value > 50) {
     boardSize.value = 50;
   }
@@ -96,10 +96,10 @@ function numberRGB() {
   return number;
 }
 window.onload = function () {
-for (let index = 1; index < paleta.length; index += 1) {
+  for (let index = 1; index < paleta.length; index += 1) {
   paleta[index].style.backgroundColor = `rgb(${numberRGB()} ,${numberRGB()} , ${numberRGB()})`;
-}
+  }
   criaQuadroInicial();
   aplicaCor();
   limpaQuadro();
-}
+};
