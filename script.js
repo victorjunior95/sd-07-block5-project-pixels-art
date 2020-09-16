@@ -42,7 +42,7 @@ function getColor() {
         selected = event.target.style.backgroundColor;
       }
     },
-    false
+    false,
   );
 }
 
@@ -54,7 +54,7 @@ function paintPixel() {
         event.target.style.backgroundColor = selected;
       }
     },
-    false
+    false,
   );
 }
 
@@ -92,21 +92,30 @@ getColor();
 paintPixel();
 btnClearBoard.addEventListener('click', clearPixelBoard);
 
-boardSizeInput.addEventListener('keyup', (event) => {
+boardSizeInput.onkeydown = (event) => {
+  if (event.key == '-') {
+    event.preventDefault();
+    return false;
+  }
   if (event.key === 'Enter') {
+    event.preventDefault();
     btnGenerateBoard.click();
   }
-});
+};
 
 btnGenerateBoard.addEventListener('click', () => {
-  if (
-    !boardSizeInput.value ||
-    boardSizeInput.value <= 0 ||
-    boardSizeInput.value > 50
-  ) {
+  const minValue = 5;
+  const maxValue = 50;
+  if (!boardSizeInput.value) {
     alert('Board inválido!');
     removeAllBoardContent();
-    createNewBoard(defaultLinesCols);
+    createNewBoard(minValue);
+  } else if (boardSizeInput.value < minValue) {
+    removeAllBoardContent();
+    createNewBoard(minValue);
+  } else if (boardSizeInput.value > maxValue) {
+    removeAllBoardContent();
+    createNewBoard(maxValue);
   } else {
     removeAllBoardContent();
     createNewBoard(boardSizeInput.value);
