@@ -41,7 +41,7 @@ document.addEventListener("click", function (event) {
 let botaoLimpar = document.getElementById("clear-board");
 
 botaoLimpar.addEventListener("click", function(){
-    for (let index = 0; index <=pixel.length; index += 1) {
+    for (let index = 0; index <pixel.length; index += 1) {
         pixel[index].style.backgroundColor= "white";
     }
 });
