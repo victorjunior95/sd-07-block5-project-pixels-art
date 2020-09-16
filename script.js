@@ -43,11 +43,3 @@ function clearBoard() {
 }
 
 clear.addEventListener('click', clearBoard);
-
-function generateBoardWithSize() {
-  if (!inputGenerateBoard.value) {
-    alert('Board inválido!');
-  }
-}
-
-generateBoard.addEventListener('click', generateBoardWithSize);
