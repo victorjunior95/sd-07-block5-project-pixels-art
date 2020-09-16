@@ -1,6 +1,5 @@
 const palette = document.querySelector('#color-palette');
 const colors = document.querySelectorAll('.color');
-const generateBoard = document.querySelector('#generate-board');
 const clearBoard = document.querySelector('#clear-board');
 const board = document.querySelector('#pixel-board');
 const options = ['red', 'blue', 'green', 'aliceblue', 'brown', 'purple', 'gray', 'violet', 'pink', 'yellow', 'coral', 'orange', 'gold', 'darkkhaki', 'peachpuff', 'springgreen', 'mediumspringgreen', 'cyan', 'teal', 'slateblue', 'indigo', 'deeppink', 'seagreen', 'seashell', 'darkslategray', 'sandybrown', 'chocolate', 'peru', 'wheat', 'blueviolet', 'magenta'];
@@ -18,11 +17,12 @@ function PixelClick() {
 }
 
 function BoardGenerator(boardSize) {
-  if (boardSize === ''){
+  boardSize = parseInt(boardSize, 10)
+  if (isNaN(boardSize)){
     alert('Board inválido!');
-  } else if (parseInt(boardSize, 10) < 5) {
+  } else if (boardSize < 5) {
     boardSize = 5;
-  } else if (parseInt(boardSize, 10) > 50) {
+  } else if (boardSize > 50) {
     boardSize = 50;
   }  
   board.innerHTML = '';
