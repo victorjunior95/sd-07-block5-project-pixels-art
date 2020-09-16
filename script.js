@@ -1,60 +1,221 @@
-let colorBrush = 'black';
+let colorBrush = "black";
 let boardSize = 5;
+let stringColors = [
+  "Black",
+  "grey11",
+  "grey21",
+  "grey31",
+  "DimGray",
+  "Gray",
+  "DarkGray",
+  "Silver",
+  "LightGrey",
+  "Gainsboro",
+  "SlateBlue",
+  "SlateBlue1",
+  "SlateBlue3",
+  "DarkSlateBlue",
+  "MidnightBlue",
+  "Navy",
+  "DarkBlue",
+  "MediumBlue",
+  "Blue",
+  "CornflowerBlue",
+  "RoyalBlue",
+  "DodgerBlue",
+  "DeepSkyBlue",
+  "LightSkyBlue",
+  "SkyBlue",
+  "LightBlue",
+  "SteelBlue",
+  "LightSteelBlue",
+  "SlateGray",
+  "LightSlateGray",
+  "Cyan",
+  "DarkTurquoise",
+  "Turquoise",
+  "MediumTurquoise",
+  "LightSeaGreen",
+  "DarkCyan",
+  "Teal",
+  "Aquamarine",
+  "MediumAquamarine",
+  "CadetBlue",
+  "DarkSlateGray",
+  "MediumSpringGreen",
+  "SpringGreen",
+  "PaleGreen",
+  "LightGreen",
+  "DarkSeaGreen",
+  "MediumSeaGreen",
+  "SeaGreen",
+  "DarkGreen",
+  "Green",
+  "ForestGreen",
+  "LimeGreen",
+  "Lime",
+  "LawnGreen",
+  "Chartreuse",
+  "GreenYellow",
+  "YellowGreen",
+  "OliveDrab",
+  "DarkOliveGreen",
+  "Olive",
+  "DarkKhaki",
+  "Goldenrod",
+  "DarkGoldenrod",
+  "SaddleBrown",
+  "Sienna",
+  "RosyBrown",
+  "Peru",
+  "Chocolate",
+  "SandyBrown",
+  "NavajoWhite",
+  "Wheat",
+  "BurlyWood",
+  "Tan",
+  "MediumSlateBlue",
+  "MediumPurple",
+  "BlueViolet",
+  "Indigo",
+  "DarkViolet",
+  "DarkOrchid",
+  "MediumOrchid",
+  "Purple",
+  "DarkMagenta",
+  "Magenta",
+  "Violet",
+  "Orchid",
+  "Plum",
+  "MediumVioletRed",
+  "DeepPink",
+  "HotPink",
+  "PaleVioletRed",
+  "LightPink",
+  "Pink",
+  "LightCoral",
+  "IndianRed",
+  "Crimson",
+  "Maroon",
+  "DarkRed",
+  "FireBrick",
+  "Brown",
+  "Salmon",
+  "DarkSalmon",
+  "LightSalmon",
+  "Coral",
+  "Tomato",
+  "Red",
+  "OrangeRed",
+  "DarkOrange",
+  "Orange",
+  "Gold",
+  "Yellow",
+  "Khaki",
+  "AliceBlue",
+  "GhostWhite",
+  "Snow",
+  "Seashell",
+  "FloralWhite",
+  "WhiteSmoke",
+  "Beige",
+  "OldLace",
+  "Ivory",
+  "Linen",
+  "Cornsilk",
+  "AntiqueWhite",
+  "BlanchedAlmond",
+  "Bisque",
+  "LightYellow",
+  "LemonChiffon",
+  "LightGoldenrodYellow",
+  "PapayaWhip",
+  "PeachPuff",
+  "Moccasin",
+  "PaleGoldenrod",
+  "MistyRose",
+  "LavenderBlush",
+  "Lavender",
+  "Thistle",
+  "Azure",
+  "LightCyan",
+  "PowderBlue",
+  "PaleTurquoise",
+  "Honeydew",
+  "MintCream",
+];
+
+function randomColors() {
+  const numbersOfColors = 142;
+  let color = stringColors[Math.floor(Math.random() * numbersOfColors)];
+  return color;
+}
 
 function createBox(className) {
-  const element = document.createElement('div');
+  const element = document.createElement("div");
   element.className = className;
   return element;
 }
 
 function createBoard(linesColumns) {
-  const pixelStart = document.querySelector('#pixel-board');
-  pixelStart.innerHTML = '';
+  const pixelStart = document.querySelector("#pixel-board");
+  pixelStart.innerHTML = "";
   for (let line = 0; line < linesColumns; line += 1) {
-    const bline = createBox('line center');
-    pixelStart.appendChild(bline);
+    const blockline = createBox("line center");
+    pixelStart.appendChild(blockline);
     const finalWidth = 40 * linesColumns;
-    pixelStart.appendChild(bline).style.width = finalWidth;
+    pixelStart.appendChild(blockline).style.width = finalWidth;
     for (let column = 0; column < linesColumns; column += 1) {
-      const pixel = createBox('pixel');
-      bline.appendChild(pixel);
+      const pixel = createBox("pixel");
+      blockline.appendChild(pixel);
     }
   }
 }
 
+function createPalette() {
+  const paletteStart = document.querySelector("#color-palette");
+  paletteStart.innerHTML = "";
+  let colorPalette = [];
+  colorPalette[0] = "black";
+  const colorline = createBox("color black selected");
+  paletteStart.appendChild(colorline).style.backgroundColor = "black";
+  for (let color = 1; color < 4; color += 1) {
+    colorPalette[color] = randomColors();
+    const colorline = createBox(`color ${colorPalette[color]}`);
+    paletteStart.appendChild(
+      colorline
+    ).style.backgroundColor = `${colorPalette[color]}`;
+  }
+}
+
 function changeColor() {
-  // let ns = "black";
   //  https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
-  document.querySelectorAll('.color').forEach((colorindex) => {
-    colorindex.addEventListener('click', (event) => {
-      const last = document.querySelector('.selected');
-      event.target.classList.add('selected');
+  document.querySelectorAll(".color").forEach((colorindex) => {
+    colorindex.addEventListener("click", (event) => {
+      const last = document.querySelector(".selected");
+      event.target.classList.add("selected");
       if (last !== event.target) {
-        last.classList.remove('selected');
+        last.classList.remove("selected");
       }
-      // console.log(event.target.classList[1])
       colorBrush = event.target.classList[1];
-      // fist try vvvvvv
-      // className to string then trim start and end to keep only the main
-      // ns = s.substring(6,s.length-9);
+      console.log(colorBrush);
     });
   });
 }
 
 function changeCanvas() {
-  document.querySelectorAll('.pixel').forEach((canvasindex) => {
-    canvasindex.addEventListener('click', (event) => {
+  document.querySelectorAll(".pixel").forEach((canvasindex) => {
+    canvasindex.addEventListener("click", (event) => {
       event.target.className = `pixel ${colorBrush}`;
-      // I had to change the order in CSS to work the color of the pixel changes on event.target
+      event.target.style.backgroundColor = colorBrush;
     });
   });
 }
 
-
 function clearBoard() {
-  const clearButton = document.querySelector('#clear-board');
-  clearButton.addEventListener('click', function () {
-    colorBrush = 'black';
+  const clearButton = document.querySelector("#clear-board");
+  clearButton.addEventListener("click", function () {
+    colorBrush = "black";
     createBoard(boardSize);
     changeColor();
     changeCanvas();
@@ -62,9 +223,9 @@ function clearBoard() {
 }
 
 function reSizeBoard() {
-  const resBoard = document.querySelector('#generate-board');
-  resBoard.addEventListener('click', function () {
-    const newBoardSize = document.querySelector('#board-size');
+  const resBoard = document.querySelector("#generate-board");
+  resBoard.addEventListener("click", function () {
+    const newBoardSize = document.querySelector("#board-size");
     if (newBoardSize.value < 5) {
       boardSize = 5;
     }
@@ -74,10 +235,10 @@ function reSizeBoard() {
     if (newBoardSize.value >= 5 && newBoardSize.value <= 50) {
       boardSize = newBoardSize.value;
     }
-    if (newBoardSize.value === '') {
-      alert('Board inválido!')
+    if (newBoardSize.value === "") {
+      alert("Board inválido!");
     }
-    colorBrush = 'black';
+    colorBrush = "black";
     createBoard(boardSize);
     changeColor();
     changeCanvas();
@@ -86,6 +247,7 @@ function reSizeBoard() {
 
 window.onload = function () {
   createBoard(boardSize);
+  createPalette();
   changeColor();
   changeCanvas();
 

@@ -13,14 +13,20 @@
     </header>
     <section>
       <nav>
-        <div id="color-palette" class="container">
-          <div class="color black selected"></div>
-          <div class="color gray"></div>
-          <div class="color royalblue"></div>
-          <div class="color cyan"></div>
+        <div id="color-palette" class="container"></div>
+        <div class="container">
+          <input
+            id="board-size"
+            class="button"
+            placeholder="Valor entre 5 e 50"
+            type="number"
+            min="1"
+            max="50"
+          /><button id="generate-board" class="button">VQV</button>
         </div>
-        <div class="container"><input id="board-size" placeholder="Valor entre 5 e 50" type='number' min=1 max=50><button id="generate-board">VQV</button></div>
-        <div class="container"><button id="clear-board">Limpar</button></div>
+        <div class="container">
+          <button id="clear-board" class="button">Limpar</button>
+        </div>
       </nav>
       <article>
         <div id="pixel-board" class="square container"></div>
