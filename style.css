@@ -7,12 +7,7 @@
 #pixel-board{
   display: table;
 }
-.tr{
-  display: table-row;
-}
-.td{
-  display: table-cell;
-}
+
 .pixel{
   display: table-cell;
   background-color: white;
@@ -40,4 +35,3 @@
 
   background-color:rgb(152,251,152);
 }
-
