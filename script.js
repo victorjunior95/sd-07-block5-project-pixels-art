@@ -2,6 +2,7 @@
 let limpar = document.querySelector("#clear-board");
 let board = document.querySelectorAll(".pixel");
 let tamanhoBoard = document.querySelector('#board-size');
+let btnVqv = document.querySelector('#generate-board');
 
 
 function validaInput(){
@@ -14,7 +15,7 @@ function validaInput(){
 };
 
 
-tamanhoBoard.addEventListener('keyup', validaInput)
+btnVqv.addEventListener('click', validaInput)
 
 
 
