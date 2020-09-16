@@ -9,24 +9,12 @@
     background-color: black;
 }
 
-#second-color {
-    background-color: pink;
-}
-
-#third-color {
-    background-color: rgb(12, 174, 238);
-}
-
-#fourth-color {
-    background-color: rgb(86, 180, 86);
-}
-
 #pixel-board {
     display: inline-block;
 }
 
 #board-size {
-    width: 190px;
+    width: 205px;
 }
 
 .pixel-line {
