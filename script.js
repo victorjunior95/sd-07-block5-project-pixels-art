@@ -71,11 +71,12 @@ document.getElementById('color-palette').addEventListener('click', function (eve
 });
 
 document.getElementById('clear-board').addEventListener('click', function () {
-  let = lengthElementos = document.getElementsByClassName('pixel').length;
+  let lengthElementos = document.getElementsByClassName('pixel').length;
   let color = 'white';
   for (let index = 0; index < lengthElementos; index += 1) {
     document.getElementsByClassName('pixel')[index].style.backgroundColor = color;
   }
 });
+
 
 
