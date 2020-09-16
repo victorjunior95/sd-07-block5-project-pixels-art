@@ -59,3 +59,11 @@ body {
 .box {
   text-align: center;
 }
+
+.button {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 100%;
+}
