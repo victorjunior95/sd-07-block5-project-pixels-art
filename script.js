@@ -24,7 +24,7 @@ function tableCreate() {
         for( let j = 0 ; j < 5 ; j++ ) {
 
             let pixelElement = document.createElement('div');
-            pixelElement.className = ".pixel";
+            pixelElement.className = "pixel";
             //tentar link com css
             pixelElement.style.width = '40px';
             pixelElement.style.height = '40px';
