@@ -31,16 +31,17 @@ body {
 .color4 {
     background: yellow;
 }
-.linha {
-    line-height: 0px;
+.pixel {
     margin: 0px;
     padding: 0px;
-    display: block;
-}
-.coluna {
+    color: white;
     height: 40px;
     width: 40px;
     border: black 1px solid;
     display: inline-block;
-    color: white;
+}
+.linha {
+    line-height: 0px;  
+
+    
 }

@@ -9,7 +9,7 @@ for (let i = 0; i < numeroDeLinhas; i += 1) {
     tabelaDePixel.appendChild(linha[i])
     for (let j = 0; j < 5; j += 1) {
         pixel[contaPixel] = document.createElement('div');
-        pixel[contaPixel].className = 'coluna'
+        pixel[contaPixel].className = 'pixel'
         linha[i].appendChild(pixel[contaPixel]);
         contaPixel += 1;
     }
