@@ -38,9 +38,9 @@ document.addEventListener("click", function (event) {
   }
 });
 
-let limpar = document.getElementById("clear-board");
+let botaoLimpar = document.getElementById("clear-board");
 
-limpar.addEventListener("click", function(){
+botaoLimpar.addEventListener("click", function(){
     for (let index = 0; index <=pixel.length; index += 1) {
         pixel[index].style.backgroundColor= "white";
     }
