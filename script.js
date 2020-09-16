@@ -4,29 +4,33 @@ const clear = document.querySelector('#clear-board');
 const changeSize = document.querySelector('#generate-board');
 
 function randomPalette() {
-  //Random color code source: https://css-tricks.com/snippets/javascript/random-hex-color/
-  document.getElementById('second').style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
-  document.getElementsByClassName('third')[0].style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
-  document.getElementsByClassName('fourth')[0].style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+  // Random color code source: https://css-tricks.com/snippets/javascript/random-hex-color/
+  document.getElementById('second').style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  document.getElementById('third').style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  document.getElementById('fourth').style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
+  if (document.getElementById('second').style.backgroundColor === '255255255' || document.getElementById('third').style.backgroundColor === '255255255' || document.getElementById('fourth').style.backgroundColor === '255255255') {
+    randomPalette();
+  }
 }
 
 select.addEventListener('click', function () {
-  if (event.target.id == 'fourth' ) {
+  if (event.target.id === 'fourth' ) {
     document.getElementById('black').className = 'color black';
     document.getElementById('second').className = 'color second';
     document.getElementById('third').className = 'color third';
     document.getElementById('fourth').className = 'color fourth selected';
-  } else if (event.target.id == 'black') {
+  } else if (event.target.id === 'black') {
     document.getElementById('black').className = 'color black selected';
     document.getElementById('second').className = 'color second';
     document.getElementById('third').className = 'color third';
     document.getElementById('fourth').className = 'color fourth';
-  } else if (event.target.id == 'second') {
+  } else if (event.target.id === 'second') {
     document.getElementById('black').className = 'color black';
     document.getElementById('second').className = 'color second selected';
     document.getElementById('third').className = 'color third';
     document.getElementById('fourth').className = 'color fourth';
-  } else if (event.target.id == 'third') {
+  } else if (event.target.id === 'third') {
     document.getElementById('black').className = 'color black';
     document.getElementById('second').className = 'color second';
     document.getElementById('third').className = 'color third selected';
@@ -35,22 +39,17 @@ select.addEventListener('click', function () {
 })
 
 paint.addEventListener('click', function () {
-
-  //alert(event.target.className.style.backgroundColor)
-
   selectedColor = document.getElementsByClassName('selected')[0];
-  selectedClass = selectedColor.className;
-  array = selectedClass.split(' ');
-  newClass = array[1];
+  pixelColor = getComputedStyle(selectedColor).backgroundColor;
   if (event.target.className.includes('pixel')) {
-    event.target.className = `pixel ${newClass}`;
+    event.target.style.backgroundColor = pixelColor;
   }
 });
 
 clear.addEventListener('click', function () {
   let boardLength = document.querySelectorAll('#pixel-board .pixel').length;
   for (index = 0; index < boardLength; index += 1) {
-    document.getElementsByClassName('pixel')[index].className = 'pixel';
+    document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
   }
 })
 
@@ -78,6 +77,3 @@ changeSize.addEventListener('click', function () {
     }
   }
 });
-
-
-
