@@ -1,4 +1,9 @@
 document.querySelectorAll(".color")[0].classList.add("selected");
+document.querySelector("#clear-board").addEventListener("click",function(){
+  document.querySelectorAll('.pixel').forEach(item => {
+        item.style.backgroundColor = "white";
+  })
+});
 
 document.querySelectorAll('.color').forEach(item => {
     item.addEventListener('click', event => {

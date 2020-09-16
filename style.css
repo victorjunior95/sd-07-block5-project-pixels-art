@@ -5,7 +5,14 @@
     display: inline-block;
 }
 .exibition {
-    display: inline-block;
+    display: line;
+    margin: 0px 0px 10px 14%;
+}
+.exibition-text {
+    margin: 0px 0px 10px 10%;
+}
+#clear-board {
+    margin:  0px 0px 10px 10%;
 }
 .exibition-color {
     height: 50px;
