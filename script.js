@@ -1,5 +1,6 @@
 // Coloca primeira cor (preta) como selecionada ao carregar a página
 window.onload = function () {
+    populateBoard(5);
     selectFirstColor ();
     clickablePixel();
 }
@@ -42,6 +43,7 @@ clearButton.addEventListener("click", clearColors);
 
 // Função para limpar as cores
 function clearColors () {
+    let pixels = document.getElementsByClassName("pixel");
     for (let index = 0; index < pixels.length; index += 1) {
         pixels[index].style.backgroundColor = "";
     }
@@ -55,11 +57,11 @@ function generateBoard () {
     let numeroDePixels = parseInt(document.getElementById("board-size").value);
     if (numeroDePixels > 4 && numeroDePixels < 51) {
         deleteBoard();
-        populateBoard();
-        console.log("populateBoard");
+        populateBoard(numeroDePixels);
     }
 }
 
+// Função que apaga o board
 function deleteBoard () {
     let pixelBoard = document.getElementById("pixel-board");
         while (pixelBoard.childElementCount > 0) {
@@ -67,9 +69,10 @@ function deleteBoard () {
         }
 }
 
-function populateBoard () {
+// Função que reconstrói o board
+function populateBoard (numeroDePixels) {
     let pixelBoard = document.getElementById("pixel-board");
-    let numeroDePixels = parseInt(document.getElementById("board-size").value);
+    //let numeroDePixels = parseInt(document.getElementById("board-size").value);
     for (numeroDeLinhas = 0; numeroDeLinhas < numeroDePixels; numeroDeLinhas += 1) {
         // criar linha
         let novaLinha = document.createElement("div");
