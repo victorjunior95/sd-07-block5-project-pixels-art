@@ -8,16 +8,13 @@ let firstMainColor = document.getElementsByClassName('selected');
 let boardSize = document.getElementById('board-size').value;
 let numberOfColumns = 5;
 let numberOfLines = 5;
+for (let index = 0; index < Object.keys(colorDefined).length; index += 1) {
+  colorDefined[index].addEventListener('click', colorPicker);
+}
 function colorPicker() {
   firstMainColor[0].classList.remove('selected');
   event.target.classList.add('selected');
   firstMainColor = document.getElementsByClassName('selected');
-}
-colorDefined[index].addEventListener('click', colorPicker);
-  for (let index = 0; index < Object.keys(colorDefined).length; index += 1) {
-}
-function randomNumber() {
-  return Math.round(Math.random() * 255);
 }
 function pasteColor() {
   firstMainColor = document.getElementsByClassName('selected');
@@ -47,8 +44,8 @@ function constructorBoard() {
   pixelBoard.style.width = numberOfColumns * pixelWidth;
   pixelBoard.style.width += 'px';
 }
-if (boardSize >= 5 && boardSize <= 50) {
 function conditionsToGenereteBoard() {
+if (boardSize >= 5 && boardSize <= 50) {
     constructorBoard();
   } else if (boardSize < 5) {
     boardSize = 5;
@@ -65,6 +62,9 @@ function firstConditions() {
   } else {
     conditionsToGenereteBoard();
   }
+}
+function randomNumber() {
+  return Math.round(Math.random() * 255);
 }
 colorDefined[0].style.backgroundColor = 'black';
 colorDefined[1].style.backgroundColor = `rgb(${randomNumber()} , ${randomNumber()} , ${randomNumber()})`;
