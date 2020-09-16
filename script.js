@@ -1,8 +1,10 @@
+const menuPaleta = document.querySelector("#color-palette").childNodes;
 const palleta1 = document.querySelector("#color-1");
 const palleta2 = document.querySelector("#color-2");
 const palleta3 = document.querySelector("#color-3");
 const palleta4 = document.querySelector("#color-4");
 let grid = (document.querySelector('#pixel-board'));
+let corSelecionada = 'black'; //setando cor preta por default
 
 function gerarNumeros () {
     return Math.floor(Math.random() * 255 +1);
@@ -30,11 +32,13 @@ function inserirCorPaleta () {
     palleta2.style.backgroundColor = criarCorAleatoria ();
     palleta3.style.backgroundColor = criarCorAleatoria ();
     palleta4.style.backgroundColor = criarCorAleatoria ();
+    if (corSelecionada = 'black') {
+        palleta1.classList.add('selected');
+    }
 }
 
 
 
-let corSelecionada = 'black'; //setando cor preta por default
 function manipularEventpixel (event) {
     const colorirBox = event.target;
     colorirBox.style.backgroundColor = corSelecionada;
@@ -50,10 +54,14 @@ function manipulaPalete(event) { //inserida função
     corSelecionada = window
       .getComputedStyle(atualDiv, null)
       .getPropertyValue('background-color');
-  }
+}
 
-
-
+function selectedItemPallet () {
+    for (let i = 0; i < menuPaleta.length; i++){
+        menuPaleta[i].addEventListener('click', manipulaPalete);
+    }    
+}
+      
 
 //criação do pixel com classe pixel.
 function createBox (color) { //inserir param color
@@ -107,4 +115,5 @@ window.onload = () => {
     createPixelsBoard();
     botaoCriarGrid ();
     limparGrid ();
+    selectedItemPallet ();
 }
