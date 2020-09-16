@@ -1,5 +1,4 @@
 const black = document.querySelector('.black');
-const white = document.querySelector('.white');
 const cyan = document.querySelector('.cyan');
 const red = document.querySelector('.red');
 const orange = document.querySelector('.orange');
@@ -8,28 +7,33 @@ const reset = document.getElementById('clear-board');
 const pixels = document.querySelectorAll('.pixel');
 
 function changeColor(color) {
+  console.log(color);
   if (color === 'black') {
     corSelecionada = '#000000';
-  } else if (color === 'white') {
-    corSelecionada = '#fdfffc';
   } else if (color === 'cyan') {
     corSelecionada = '#2ec4b6';
   } else if (color === 'red') {
-    corSelecionada === '#e71d36';
-  } else {
-    corSelecionada === '#ff9f1c';
+    corSelecionada = '#e71d36';
+  } else if (color === 'orange') {
+    corSelecionada = '#ff9f1c';
   };
 };
 
-black.addEventListener('click', changeColor('black'));
+black.addEventListener('click', function () {
+  changeColor('black');
+});
 
-white.addEventListener('click', changeColor('white'));
+cyan.addEventListener('click', function () {
+  changeColor('cyan');
+});
 
-cyan.addEventListener('click', changeColor('cyan'));
+red.addEventListener('click', function () {
+  changeColor('red');
+});
 
-red.addEventListener('click', changeColor('red'));
-
-orange.addEventListener('click', changeColor('orange'));
+orange.addEventListener('click', function () {
+  changeColor('orange');
+});
 
 for (let i = 0; i < pixels.length; i += 1) {
   pixels[i].addEventListener('click', function () {
