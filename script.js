@@ -30,6 +30,20 @@ for (let index = 0; index < colors.length; index += 1) {
   });
 }
 
+for (let index = 0; index < pixel.length; index += 1) {
+  pixel[index].addEventListener('click', function () {
+    let selected = document.querySelector('.selected');
+    pixel[index].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
+  });
+}
+
+const buttonClear = document.getElementById('clear-board');
+
+buttonClear.addEventListener('click', function () {
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+});
 
 // const grid = document.querySelectorAll('.pixel');
 // let colorSelected = document.querySelector('.selected').style.backgroundColor;
