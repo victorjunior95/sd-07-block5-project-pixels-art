@@ -58,10 +58,24 @@ function makeBoard(number) {
     } trocaCor();
   }
 }
-
+function getRandomArray () {
+  let array = [];
+for(let index = 0; index < 3; index += 1){
+  let number = Math.round(Math.random() * 255);
+  array.push(number);
+}
+return array
+}
 //  trata evento criar o board com 5 pixel ao abrir a página
 window.onload = function () {
-  makeBoard(5);
+  makeBoard(5)
+  let color2 = getRandomArray();
+  let color3 = getRandomArray();
+  let color4 = getRandomArray();
+
+  btnOrange.style.backgroundColor = `rgb(${color2})`;
+  btnOrchid.style.backgroundColor = `rgb(${color3})`;
+  btnBlue.style.backgroundColor = `rgb(${color4})`;
 };
 buttonInput.addEventListener('click', function () {
   const numberInput = document.querySelector('#board-size').value;
