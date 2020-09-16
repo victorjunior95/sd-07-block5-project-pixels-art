@@ -1,30 +1,26 @@
-
-
-/* Referência: https://medium.com/horadecodar/como-fazer-um-c%C3%ADrculo-com-css-de-forma-f%C3%A1cil-3e522ea82850*/
 .color {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 1px solid black;
-    margin: 0px 0;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  margin: 0 0;
+  width: 40px;
 }
-
-
 
 .pixel {
-    border: 1px solid black;
-    display: inline-block;
-    margin: -3px -1px;
-    background-color: white;
-    max-width: 50px;
-    width: 40px;
-    height: 40px;
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  margin: -3px -1px;
+  max-width: 50px;
+  width: 40px;
 }
 
-#clear-board {
-    margin-bottom: 14px;
+.clear-board {
+  margin-bottom: 14px;
 }
 
 .resize-board {
-    margin: 10px -2px;
+  margin: 10px -2px;
 }
+
