@@ -1,7 +1,7 @@
 const preto = document.getElementById("preto");
-const color2 = document.getElementById("preto");
-const color3 = document.getElementById("preto");
-const color4 = document.getElementById("preto");
+const color2 = document.getElementById("color2");
+const color3 = document.getElementById("color3");
+const color4 = document.getElementById("color4");
 
 // Definindo a cor selecionada a partir do preto
 let corSelecionada = preto;
@@ -29,5 +29,10 @@ color4.addEventListener("click", function () {
   color4.classList.add("selected");
 });
 
-
+let selecionado = corSelecionada.style.backgroundColor;
+document.addEventListener("click", function(event){
+    if (event.target.classList.contains("pixel")){
+        event.target.style.color = selecionado;
+    }
+});
 
