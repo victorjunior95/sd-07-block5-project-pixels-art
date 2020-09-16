@@ -97,8 +97,8 @@ function updateSizePixel(sizePixel) {
 }
 
 function borderSizeValidation(size) {
-  if (size < 5 && size != '') return 5;
-  if (size > 50 && size != '') return 50;
+  if (size < 5 && size !== '') return 5;
+  if (size > 50 && size !== '') return 50;
   return size;
 }
 
