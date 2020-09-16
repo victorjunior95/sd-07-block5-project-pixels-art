@@ -54,6 +54,8 @@ function changePixelColor(e){
 
 pickPixel.addEventListener('click', changePixelColor);
 
+
+
 // for (let i = 0 ; i < colors.length ; i += 1) {
 //   list[i].addEventListener(TouchEvent , changeSelectedColor(list[i]));
 // }
