@@ -21,6 +21,10 @@
   background-color: yellow;
 }
 
+.colorPalette {
+  width: 425px;
+}
+
 .pixel {
   background-color: white;
   border: 1px solid black;
@@ -30,6 +34,7 @@
 
 .pixelBoard {
   display: table;
+  margin-top: 20px;
 }
 
 .selected {

@@ -22,7 +22,7 @@ function findIndexPaletteSelected() {
   for (let index = 0; index < getPixelList.length; index += 1) {
     searchElement = getPixelList[index].getAttribute('class');
     if (searchElement.includes('selected')) {
-      return index;
+    return index;
     }
   }
   return 0;
@@ -33,6 +33,29 @@ function getBackgroundColorPixelSelected(index) {
   return stylesPaletteSelected.backgroundColor;
 }
 
+function getAttributesClass(index) {
+  const getAttributesClass = getPixelList[index].getAttribute('class');
+  return getAttributesClass;
+}
+
+function reduceClasseSelectedFromOldPalette(index) {
+  const getAttributesClass = getPixelList[index].getAttribute('class');
+  let getAttributesClassReduce = getAttributesClass.replace('selected', '');
+  return getAttributesClassReduce;
+}
+
+function updateClassesOldPalette(index, attributesClass) {
+  attributesClass = attributesClass.trim();
+  getPixelList[index].className = attributesClass;
+  return;
+}
+
+function updateClassesNewSelectedPalette (targetSelected){
+  const newAttributeClass = ' selected'
+  targetSelected.className += newAttributeClass;
+  return;
+}
+
 document.getElementById('pixel-board').addEventListener('click', function (event) {
   const classEvent = 'pixel td';
   if (event.target.className === classEvent) {
@@ -40,5 +63,13 @@ document.getElementById('pixel-board').addEventListener('click', function (event
     const backgroundColor = getBackgroundColorPixelSelected(indexPaletteSelected);
     event.target.style.backgroundColor = backgroundColor;
   }
+});
+
+document.getElementById('color-palette').addEventListener('click', function (event) {
+  const indexPaletteSelected = findIndexPaletteSelected();
+  const attributesClassSelected = getAttributesClass(indexPaletteSelected);
+  const attributesClassReduce = reduceClasseSelectedFromOldPalette(indexPaletteSelected);
+  updateClassesNewSelectedPalette(event.target);
+  updateClassesOldPalette(indexPaletteSelected, attributesClassReduce);
 });
 
