@@ -64,27 +64,27 @@ function createImputForInsertSize(parent) {
   // Criando o input
   const inputSizeSquad = document.createElement('input');
   inputSizeSquad.setAttribute('type', 'number');
-  inputSizeSquad.setAttribute('min', '5');
-  inputSizeSquad.setAttribute('max', '50')
+  inputSizeSquad.setAttribute('min', '1');
+  inputSizeSquad.setAttribute('max', '50');
   inputSizeSquad.setAttribute('id', 'board-size');
-  inputSizeSquad.className = 'board-size'
-  sectionInputAndButton.appendChild(inputSizeSquad)
+  inputSizeSquad.className = 'board-size';
+  sectionInputAndButton.appendChild(inputSizeSquad);
   // criando o button
   const buttonSizeSquad = document.createElement('button');
   buttonSizeSquad.setAttribute('id', 'generate-board');
   buttonSizeSquad.className = 'generate-board';
   buttonSizeSquad.innerText = 'VQV';
-  sectionInputAndButton.appendChild(buttonSizeSquad)
+  sectionInputAndButton.appendChild(buttonSizeSquad);
 }
-createImputForInsertSize(mainPage)
+createImputForInsertSize(mainPage);
 
 function createBasePixelBoard(parent, squadSize) {
   // Criar a div base.
   const divAll = document.createElement('div');
   divAll.className = 'pixel-board';
   divAll.setAttribute('id', 'pixel-board');
-  divAll.style.height = `${squadSize * 40}px`
-  divAll.style.width = `${squadSize * 40}px`
+  divAll.style.height = `${squadSize * 40}px`;
+  divAll.style.width = `${squadSize * 40}px`;
   parent.appendChild(divAll);
   for (let lineIndex = 0; lineIndex < squadSize; lineIndex += 1) {
     const divLine = document.createElement('div');
@@ -120,6 +120,12 @@ function selectedColorClass() {
     if (isPixel === 'pixel') {
       elementClicked.style.backgroundColor = idSelected;
     }
+  });
+}
+selectedColorClass();
+
+function selectedButtonsEvents() {
+  document.body.addEventListener('click', function (event) {
     // Limpando a board
     if (event.target.nodeName === 'BUTTON' && event.target.id === 'clear-board') {
       // console.log(event.target.id)
@@ -132,15 +138,25 @@ function selectedColorClass() {
     if (event.target.nodeName === 'BUTTON' && event.target.id === 'generate-board') {
       let valueNewBoard = document.getElementById('board-size').value;
       // console.log(valueNewBoard)
-      let tagMainSelected = document.querySelector('.main-class');
+      const tagMainSelected = document.querySelector('.main-class');
       if (valueNewBoard === '' || valueNewBoard < 0) {
         alert('Board inválido!');
+      } else if (valueNewBoard > 0 && valueNewBoard < 5) {
+        valueNewBoard = 5;
+        const elementBoard = document.getElementById('pixel-board');
+        tagMainSelected.removeChild(elementBoard);
+        createBasePixelBoard(tagMainSelected, valueNewBoard);
+      } else if (valueNewBoard > 50) {
+        valueNewBoard = 50;
+        const elementBoard = document.getElementById('pixel-board');
+        tagMainSelected.removeChild(elementBoard);
+        createBasePixelBoard(tagMainSelected, valueNewBoard);
       } else {
-        let elementBoard = document.getElementById('pixel-board');
+        const elementBoard = document.getElementById('pixel-board');
         tagMainSelected.removeChild(elementBoard);
         createBasePixelBoard(tagMainSelected, valueNewBoard);
       }
     }
   });
 }
-selectedColorClass();
+selectedButtonsEvents();

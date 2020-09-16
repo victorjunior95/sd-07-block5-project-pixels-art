@@ -67,7 +67,10 @@ body {
 
 .board-size {
   border-radius: 5px;
+  display: inline-block;
+  margin-right: 5px;
   padding: 10px 42px;
+  width: 40px;
 }
 
 .pixel-board {
@@ -86,12 +89,6 @@ body {
   display: inline-block;
   height: 40px;
   margin: -1px;
-  width: 40px;
-}
-
-.board-size {
-  display: inline-block;
-  margin-right: 5px;
   width: 40px;
 }
 
