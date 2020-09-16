@@ -48,7 +48,7 @@ function pixelGenerator(N) {
   main.style.height = 'calc(100% - 165px)';
   main.style.width = '100%';
 
-  let canvas = document.querySelector(".canvas");
+  let canvas = document.querySelector('.canvas');
   let heightMain = parseInt(window.getComputedStyle(main).height);
   let widthMain = parseInt(window.getComputedStyle(main).width);
   let canvasTop = heightMain / 2 - dimension / 2;
@@ -73,14 +73,14 @@ function pixelGenerator(N) {
 
   // Nesse FOR é criada as linhas
   for (let i = 0; i < N; i += 1) {
-    divLines[i] = document.createElement("div");
-    divLines[i].className = "boardLines"
+    divLines[i] = document.createElement('div');
+    divLines[i].className = 'boardLines'
     pixelBoard.appendChild(divLines[i]);
 
     // Cria os N pixels na linha i
     for (let  j = 0; j < N; j += 1) {
-      pixel[i * N + j] = document.createElement("div");
-      pixel[i * N + j].className = "pixel";
+      pixel[i * N + j] = document.createElement('div');
+      pixel[i * N + j].className = 'pixel';
       divLines[i].appendChild(pixel[i * N + j]);
     }
   }
@@ -93,7 +93,7 @@ function addListener() {
 //Container que armazena as linhas e os pixels
 let pixelBoard = document.getElementById('pixel-board');
 // Número de linhas e culunas de pixels
-let boardSize = document.getElementById("board-size");
+let boardSize = document.getElementById('board-size');
 
 let boardLines = boardSize.value;
 let divLines = [];
@@ -103,48 +103,38 @@ let pixel = [];
 pixelGenerator(boardSize.value);
 
 // obtendo cores aleatórias
-let colorSelected = document.getElementsByClassName("color");
+let colorSelected = document.getElementsByClassName('color');
 colorSelected[1].style.backgroundColor = randRGB();
 colorSelected[2].style.backgroundColor = randRGB();
 colorSelected[3].style.backgroundColor = randRGB();
 
 // Selecionando as cores de pintura
-for (let i = 0; i < 4; i += 1) {
-  colorSelected[i].addEventListener("click", function() {
-    document.querySelector(".selected").classList.remove("selected");
-    colorSelected[i].classList.add("selected")
+let colorPalette = document.getElementById("color-palette");
 
-    let fontColor = document.getElementsByClassName('colorFont');
-    fontColor[0].style.backgroundColor = window.getComputedStyle(colorSelected[i]).backgroundColor;
-  });
-}
+colorPalette.addEventListener("click", function(event) {
+  document.querySelector('.selected').classList.remove('selected');
+  event.target.classList.add('selected');
 
-pixelBoard.addEventListener('click', function(event) {
-  let color = document.querySelector(".selected");
-  //let selected = document.querySelectorAll(".selected")
-  event.target.style.backgroundColor = getComputedStyle(color).backgroundColor;
-  pixel[i].style.backgroundColor = getComputedStyle(cor).backgroundColor;
+  let fontColor = document.getElementsByClassName('colorFont');
+    fontColor[0].style.backgroundColor = window.getComputedStyle(event.target).backgroundColor;
 });
 
-// for (let i = 0; i < pixel.length; i += 1) {
-//   pixel[i].addEventListener("click", function() {
-//     let cor = document.querySelector(".selected");
-//     let selected = document.querySelectorAll(".selected")
-//     pixel[i].style.backgroundColor = getComputedStyle(cor).backgroundColor;
-//   })
+pixelBoard.addEventListener('click', function(event) {
+  let color = document.querySelector('.selected');
+  //let selected = document.querySelectorAll('.selected')
+  event.target.style.backgroundColor = window.getComputedStyle(color).backgroundColor;
+  //pixel[i].style.backgroundColor = getComputedStyle(cor).backgroundColor;
+});
 
+let buttonClear= document.getElementById('clear-board');
 
-//}
-
-let buttonClear= document.getElementById("clear-board");
-
-buttonClear.addEventListener("click", function () {
+buttonClear.addEventListener('click', function () {
   for (let i = 0; i < pixel.length; i += 1) {
-    pixel[i].style.backgroundColor = "white"
+    pixel[i].style.backgroundColor = 'white';
   }
 });
 
-boardSize.addEventListener("blur", testBoardSize);
+boardSize.addEventListener('blur', testBoardSize);
 
 let buttonGenerator = document.getElementById('generate-board');
 buttonGenerator.addEventListener('click', function() {
