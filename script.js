@@ -51,16 +51,3 @@ function generateBoardWithSize() {
 }
 
 generateBoard.addEventListener('click', generateBoardWithSize);
-
-function generateColor() {
-  const first = Math.floor(Math.random() * 256);
-  const second = Math.floor(Math.random() * 256);
-  const third = Math.floor(Math.random() * 256);
-  return `rgb(${first} , ${second} , ${third})`;
-}
-
-function newColors() {
-  blue.style.backgroundColor = generateColor();
-  red.style.backgroundColor = generateColor();
-  green.style.backgroundColor = generateColor();
-}
