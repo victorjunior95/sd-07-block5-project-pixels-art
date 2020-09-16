@@ -6,6 +6,7 @@ window.onload = function() {
     const pixels = document.getElementsByClassName("pixel")
     const mainContainer = document.getElementById("mainContainer")
     const pixelBoard = document.getElementById("pixel-board")
+    const buttonReset = document.getElementById("clear-board")
     
 
     function fillPalette(){
@@ -34,6 +35,8 @@ window.onload = function() {
         mainContainer.appendChild(pixelBoard)
     }
 
+
+
     fillPalette();
     paleta[0].classList.add("selected")
     createFirstBoard();
@@ -41,9 +44,8 @@ window.onload = function() {
     //adiciona um leitor de eventos em cada cor da paleta
     for (const color of paleta) {
         color.addEventListener('click',function(){
-            for(let index = 0; index < paleta.length; index += 1 ){
-                paleta[index].classList.remove('selected')
-            }
+            let selected = document.querySelector(".selected")
+            selected.classList.remove("selected")
             color.classList.add("selected")
         })
     }
@@ -55,6 +57,11 @@ window.onload = function() {
         })
     }
     
+    buttonReset.addEventListener('click', function(){
+        for (const pixel of pixels) {
+            pixel.style.backgroundColor = 'rgb(255, 255, 255)'
+        }
+    })
 }
 
 
