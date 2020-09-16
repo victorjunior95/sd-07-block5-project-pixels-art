@@ -70,6 +70,5 @@ h1 {
     border-width: 1px;
     height: 40px;
     width: 40px;
-    display: block;
-    float: right;
+    display: inline-block;
 }
