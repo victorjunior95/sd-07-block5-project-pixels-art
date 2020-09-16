@@ -4,6 +4,7 @@
 
 .clearBoard {
   margin-top: 40px;
+  cursor: pointer;
 }
 
 .color {
@@ -19,6 +20,10 @@
 
 .colorPalette {
   width: 425px;
+}
+
+.generatorBoard {
+  cursor: pointer;
 }
 
 .pixel {
