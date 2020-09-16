@@ -33,10 +33,10 @@ btnBlue.addEventListener('click', function () {
   btnOrange.classList.remove('selected');
   color = window.getComputedStyle(btnBlue).getPropertyValue('background-color');
 });
-//  trata evento acrescentar cor no quadradinho/ refatora para codeClimate/ ajuda colega Thadeu Ramos
+//  trata evento acrescentar cor no quadrado/ refatora p/ codeClimate/ ajuda Thadeu Ramos
 function trocaCor() {
   document.querySelectorAll('.pixel').forEach((item) => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
       item.style.backgroundColor = color;
     });
   });
