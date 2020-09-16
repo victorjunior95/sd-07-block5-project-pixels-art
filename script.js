@@ -44,15 +44,25 @@ clear.addEventListener('click', function () {
   }
 })
 
-
 changeSize.addEventListener('click', function () {
   textSize = document.querySelector('#board-size').value;
-  if (textSize == '') {
+    if (textSize == '') {
     alert('Board inválido!')
+  } else if (parseInt(textSize) <= 5) {
+    for ( index = 0; index < 25; index += 1) {
+      document.getElementsByClassName('pixel')[index].style.height = '5px';
+      document.getElementsByClassName('pixel')[index].style.width = '5px';
+    }
+  } else if (parseInt(textSize) >= 50) {
+    for ( index = 0; index < 25; index += 1) {
+      document.getElementsByClassName('pixel')[index].style.height = '50px';
+      document.getElementsByClassName('pixel')[index].style.width = '50px';
+    }
+  } else {
+    for ( index = 0; index < 25; index += 1) {
+      document.getElementsByClassName('pixel')[index].style.height = `${textSize}px`;
+      document.getElementsByClassName('pixel')[index].style.width = `${textSize}px`;
+    }
   }
-
-  
-  
-  
 });
 
