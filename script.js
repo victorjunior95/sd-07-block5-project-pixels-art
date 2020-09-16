@@ -1,5 +1,7 @@
 let paletteElements = document.getElementsByClassName('color')
 let pixelGrid = document.getElementsByClassName('pixel')
+let clearButton = document.getElementById('clear-board')
+let clearBoard = clearButton.addEventListener('click', clearGrid)
 
 
 // Adicionando evento click aos elementos da paleta
@@ -24,10 +26,19 @@ for (let index = 0; index < pixelGrid.length; index += 1) {
 }
 
 // Função para adiconar a classe 'filled' aos pixels, buscar o estilo de cor da paleta e pintar o pixel
-function pixelPaint () {
+function pixelPaint() {
     let pixelTarget = this
     pixelTarget.classList.add('filled')
     let selectedColor = document.querySelector('.selected')
     let colorToPaint = getComputedStyle(selectedColor).backgroundColor
     pixelTarget.style.backgroundColor = colorToPaint
+}
+
+// Função para limpar os pixels pintados e atribuir 'backgroundColor' branco
+function clearGrid() {
+    for (let index = 0; index < pixelGrid.length; index += 1) {
+        if(pixelGrid[index].classList.contains('filled'))
+            pixelGrid[index].classList.remove('filled')
+            pixelGrid[index].style.backgroundColor = 'white'
+    }
 }
