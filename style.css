@@ -1,8 +1,24 @@
+.color1 {
+  background-color: black;
+}
+
+.color2 {
+  background-color: blue;
+}
+
+.color3 {
+  background-color: green;
+}
+
+.color4 {
+  background-color: red;
+}
+
 .color {
   width: 60px;
   height: 60px;
   border: 1px black solid;
-  display: inline-block
+  display: inline-block;  
 }
 
 .pixel {
@@ -12,24 +28,13 @@
   border: solid 1px black;
 }
 
-#pixel-board {
+.pixel-board {
   display: grid;
   grid-template-columns: 40px 40px 40px 40px 40px;
   margin-top: 40px;
+  justify-content: center;  
 }
 
-#div-black {
-  background-color: black;
-}
-
-#div-red {
-  background-color: red;
-}
-
-#div-green {
-  background-color: green;
-}
-
-#div-blue {
-  background-color: blue;
+body {
+  text-align: center;
 }
