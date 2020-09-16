@@ -18,13 +18,25 @@ footerPage.className = 'footer-class';
 footerPage.innerText = 'Josiel - Turma #7 - Trybe';
 document.body.appendChild(footerPage);
 
+function colorGenerate() {
+  let colorList = ['#000000'];
+  let hexaColor = '#';
+  for (let index = 1; index <= 3; index += 1) {
+    for (let color = 1; color <= 6; color += 1) {
+      hexaColor += Math.floor(Math.random() * 10);
+    }
+    colorList.push(hexaColor);
+    hexaColor = '#';
+  }
+  return colorList;
+}
+
 function createPaletteColors(parent) {
   const palette = document.createElement('section');
   palette.className = 'color-palette';
   palette.setAttribute('id', 'color-palette');
   parent.appendChild(palette);
-
-  const colorsPalette = ['black', 'oldlace', 'tomato', 'dodgerblue']; // , 'green', 'gold'
+  const colorsPalette = colorGenerate();
   for (let index = 0; index < colorsPalette.length; index += 1) {
     if (index === 0) {
       const colorOfPalette = document.createElement('span');
