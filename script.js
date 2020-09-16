@@ -153,7 +153,7 @@ buttonClear.addEventListener('click', function () {
   }
 });
 
-boardSize.addEventListener('input', testBoardSize);
+boardSize.addEventListener('change', testBoardSize);
 
 let buttonGenerator = document.getElementById('generate-board');
 buttonGenerator.addEventListener('click', function() {
