@@ -2,6 +2,7 @@ const palette = document.querySelector('#color-palette');
 const colors = document.querySelectorAll('.color');
 const clearBoard = document.querySelector('#clear-board');
 const board = document.querySelector('#pixel-board');
+const generateBoard = document.querySelector("#generate-board")
 const options = ['red', 'blue', 'green', 'aliceblue', 'brown', 'purple', 'gray', 'violet', 'pink', 'yellow', 'coral', 'orange', 'gold', 'darkkhaki', 'peachpuff', 'springgreen', 'mediumspringgreen', 'cyan', 'teal', 'slateblue', 'indigo', 'deeppink', 'seagreen', 'seashell', 'darkslategray', 'sandybrown', 'chocolate', 'peru', 'wheat', 'blueviolet', 'magenta'];
 const randoms = [];
 let number = 0;
@@ -14,27 +15,6 @@ function PixelClick() {
       fields[i].style.backgroundColor = colorSelected;
       });
   }
-}
-
-function BoardGenerator(boardSize) {
-  if (boardSize === ''){
-    alert('Board inválido!');
-  } else if (boardSize < 5) {
-    boardSize = 5;
-  } else if (boardSize > 50) {
-    boardSize = 50;
-  }  
-  board.innerHTML = '';
-  for (let i = 0; i < boardSize; i += 1) {
-    const div = document.createElement('div');
-    for (let j = 0; j < boardSize; j += 1) {
-        const pixel = document.createElement('div');
-        pixel.classList.add('pixel');
-        div.appendChild(pixel);
-      }
-    board.appendChild(div);
-  }
-  PixelClick();
 }
 
 palette.addEventListener('click', (event) => {
@@ -61,4 +41,26 @@ clearBoard.addEventListener('click', () => {
   }
 });
 
-BoardGenerator(5)
+generateBoard.addEventListener("click", () => {
+  let boardSize = document.querySelector("#board-size").value
+  if (boardSize === ''){
+    alert('Board inválido!');
+  } else if (boardSize < 5) {
+    boardSize = 5;
+  } else if (boardSize > 50) {
+    boardSize = 50;
+  }  
+  board.innerHTML = '';
+  for (let i = 0; i < boardSize; i += 1) {
+    const div = document.createElement('div');
+    for (let j = 0; j < boardSize; j += 1) {
+        const pixel = document.createElement('div');
+        pixel.classList.add('pixel');
+        div.appendChild(pixel);
+      }
+    board.appendChild(div);
+  }
+  PixelClick();
+})
+
+PixelClick()
