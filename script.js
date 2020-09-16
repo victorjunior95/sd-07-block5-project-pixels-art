@@ -7,15 +7,27 @@ window.onload = function () {
     }
   });
 
-  let element;
+  let elementPixel;
   let origin;
   let pixel = document.querySelectorAll(".pixel");
 
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].addEventListener("click", function (e) {
-      element = e.target;
+      elementPixel = e.target;
       origin = document.querySelector(".selected");
-      element.style.backgroundColor = origin.classList[1];
+      elementPixel.style.backgroundColor = origin.classList[1];
+    });
+  }
+
+  let color = document.getElementsByClassName("color");
+  let elementColor;
+
+  for (let j = 0; j < color.length; j += 1) {
+    color[j].addEventListener("click", function (e){
+      origin = document.querySelector(".selected");
+      origin.classList.remove("selected");
+      elementColor = e.target;
+      elementColor.classList.add("selected");
     });
   }
 }
