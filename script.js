@@ -13,9 +13,22 @@ window.onload = function () {
       divLine.appendChild(divColumn);
     }
   }
+  randomColorPalette();
 };
 
 const getPixelList = document.getElementsByClassName('color');
+
+function generationRandomColorRGB() {
+  const maxNumberRGB = 256;
+  const decimalNumber = () => Math.floor(Math.random() * maxNumberRGB);
+  return `rgb(${decimalNumber()},${decimalNumber()},${decimalNumber()})`;
+}
+
+function randomColorPalette() {
+  for (let index = 1; index < getPixelList.length; index += 1) {
+    getPixelList[index].style.backgroundColor = generationRandomColorRGB();
+  }
+}
 
 function findIndexPaletteSelected() {
   let searchElement;
@@ -66,9 +79,9 @@ document.getElementById('color-palette').addEventListener('click', function (eve
 });
 
 document.getElementById('clear-board').addEventListener('click', function () {
-  const lengthElementos = document.getElementsByClassName('pixel').length;
+  const lengthElements = document.getElementsByClassName('pixel').length;
   const color = 'white';
-  for (let index = 0; index < lengthElementos; index += 1) {
+  for (let index = 0; index < lengthElements; index += 1) {
     document.getElementsByClassName('pixel')[index].style.backgroundColor = color;
   }
 });
