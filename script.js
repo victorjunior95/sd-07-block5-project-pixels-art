@@ -22,7 +22,7 @@ function setBoardSize(numberLines) {
   let divSize = numberLines**2;
   for (let count = 0; count < divSize; count += 1) {
     pixel[count] = document.createElement('div');
-    pixel[count].className = 'pixel';
+    pixel[count].className = 'pixel pixelBackG';
       pixelBoard.appendChild(pixel[count]);
     document.querySelector('#generate-board').value = '';
     document.querySelector('#generate-board').focus();
@@ -41,22 +41,22 @@ for (let i = 0; i < coloPalet.length; i += 1) {
   });
 }
 
-const pixelIten = document.querySelectorAll('.pixel');
-// Function to set pixel background white.
-for (let count in pixelIten) {
-  pixelIten[count].className += ' pixelBackG';
-}
 // Function to add selected color at selected pixel.
-for (let i = 0; i < pixelIten.length; i += 1) {
-  pixelIten[i].addEventListener('click', function(event) {
-    let selectedPixel = document.querySelector('.selected');
-    event.target.className = 'pixel ' + selectedPixel.classList[1];
-  })
-}
+document.getElementById('pixel-board').addEventListener('click', function () {
+  const pixelIten = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelIten.length; i += 1) {
+    let pixel = document.querySelectorAll('.pixel');
+    pixel[i].addEventListener('click', function(event) {
+      let selectedPixel = document.querySelector('.selected');
+      event.target.className = 'pixel ' + selectedPixel.classList[1];
+    })
+  }
+});
 
 // Clear bord block
 document.getElementById('clear-board').addEventListener('click', function () {
+  let pixelIten = document.querySelectorAll('.pixel');
   for (let count in pixelIten) {
-    pixelIten[count].className += ' pixelBackG';
+    pixelIten[count].className = 'pixel pixelBackG';
   }
 })
