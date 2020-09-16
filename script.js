@@ -15,7 +15,7 @@ function randomPalette() {
 }
 
 select.addEventListener('click', function () {
-  if (event.target.id === 'fourth' ) {
+  if (event.target.id === 'fourth') {
     document.getElementById('black').className = 'color black';
     document.getElementById('second').className = 'color second';
     document.getElementById('third').className = 'color third';
@@ -36,11 +36,11 @@ select.addEventListener('click', function () {
     document.getElementById('third').className = 'color third selected';
     document.getElementById('fourth').className = 'color fourth';
   }
-})
+});
 
 paint.addEventListener('click', function () {
-  selectedColor = document.getElementsByClassName('selected')[0];
-  pixelColor = getComputedStyle(selectedColor).backgroundColor;
+  const selectedColor = document.getElementsByClassName('selected')[0];
+  const pixelColor = getComputedStyle(selectedColor).backgroundColor;
   if (event.target.className.includes('pixel')) {
     event.target.style.backgroundColor = pixelColor;
   }
@@ -77,3 +77,10 @@ changeSize.addEventListener('click', function () {
     }
   }
 });
+
+function checkInputValue() {
+  let sizeInput;
+  if (boardSize.value <= 5) sizeInput = 5;
+  else if (boardSize.value >= 50) sizeInput = 50;
+  return sizeInput;
+}
