@@ -5,3 +5,18 @@
   margin: 5px;
   width: 45px;
 }
+
+.pixel-board {
+  display: table;
+}
+
+.line {
+  display: table-row;
+}
+
+.pixel {
+  display: table-cell;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+}

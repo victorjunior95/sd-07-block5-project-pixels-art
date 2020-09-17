@@ -25,3 +25,15 @@ window.addEventListener('load', function () {
   box1.classList.add('selected');
   randomColors();
 });
+
+for (let linha = 0; linha < 5; linha += 1) {
+  // criar 1 linha
+  let elementLine = document.createElement('div');
+  elementLine.className = 'line';
+  document.getElementById('pixel-board').appendChild(elementLine);
+    for (let cell = 0; cell < 5; cell += 1) {
+      let elementCell = document.createElement('div');
+      elementCell.className = 'pixel';
+      elementLine.appendChild(elementCell);
+    }
+}
