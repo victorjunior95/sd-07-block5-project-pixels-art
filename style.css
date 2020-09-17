@@ -2,24 +2,29 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 10px;
+  font-size: 20px;
 }
 
-.clear-board {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 15px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: white;
+button {
   background-color: #44a847;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bolder;
+  outline: none;
+  height: 40px;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
 }
 
-.clear-board:hover {background-color: #3e8e41}
+.clear-board:hover {
+  background-color: #3e8e41
+}
 
 .clear-board:active {
   background-color: #3e8e41;
@@ -60,12 +65,8 @@ body {
 }
 
 .entrada {
-  display: block;
   box-sizing: border-box;
-}
-
-input:focus {
-  width: 220px;
+  display: block;
 }
 
 .pixel {
@@ -79,7 +80,7 @@ input:focus {
 }
 
 .pixelBackG {
- background-color:rgb(255 , 255 , 255);
+  background-color: rgb(255 , 255 , 255);
 }
 
 .pixel-board{
@@ -93,22 +94,9 @@ input:focus {
   background-color: white;
 }
 
-.set-board {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 15px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: white;
-  background-color: #44a847;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+.set-board:hover {
+  background-color: #3e8e41
 }
-
-.set-board:hover {background-color: #3e8e41}
 
 .set-board:active {
   background-color: #3e8e41;
