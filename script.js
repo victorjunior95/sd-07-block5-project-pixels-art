@@ -17,14 +17,6 @@ function randRGB() {
   return (`rgb(${rndRGB()} , ${rndRGB()} , ${rndRGB()})`);
 }
 
-function testEmpty() {
-  if (boardSize.value === '') {
-    alert('Board inválido!');
-    // return (false);
-  }
-  // return (true);
-}
-
 function testBoardSize() {
   if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
     boardSize.value = 5; // boardSize.min;
@@ -79,13 +71,6 @@ function pixelGenerator(N) {
   if (!testBoardSize()) {
     return (false);
   }
-  // if (boardSize.value === '') {
-  //   alert('Board inválido!');
-  //   return;
-  // }
-  // if (!testEmpty()) {
-  //   return (false);
-  // }
 
   // Essa linha mata todas as divs de Linhas e de pixels que estão dentro do pixelBoard
   // Idealmente seria bom usar o removeChild
