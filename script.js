@@ -1,20 +1,20 @@
 // Function to make background body color auto change.
-function changeBKGColor () {
-  const body = document.getElementsByTagName('body')[0];
-  const title = document.getElementsByTagName('h1')[0];
-  const rColorRGB = Math.floor(Math.random() * 255);
-  const gColorRGB = Math.floor(Math.random() * 255);
-  const bColorRGB = Math.floor(Math.random() * 255);
-  body.style.backgroundColor = 'rgb(' + rColorRGB + ',' + gColorRGB + ',' + bColorRGB + ')';
-  title.style.color = 'rgb(' + rColorRGB + 1 + ',' + gColorRGB + ',' + bColorRGB + 1 +')';
-}
-const time = setTimeout (changeBKGColor, 0);
+// function changeBKGColor () {
+//   const body = document.getElementsByTagName('body')[0];
+//   const title = document.getElementsByTagName('h1')[0];
+//   const rColorRGB = Math.floor(Math.random() * 255);
+//   const gColorRGB = Math.floor(Math.random() * 255);
+//   const bColorRGB = Math.floor(Math.random() * 255);
+//   body.style.backgroundColor = 'rgb(' + rColorRGB + ',' + gColorRGB + ',' + bColorRGB + ')';
+//   title.style.color = 'rgb(' + rColorRGB + 1 + ',' + gColorRGB + ',' + bColorRGB + 1 +')';
+// }
+// const time = setTimeout (changeBKGColor, 0);
 // Remove the bars fron the line above to see the efect.
 const paletRandonColors = document.querySelectorAll('.color');
 for (let count = 1; count < paletRandonColors.length; count+=1) {
   paletRandonColors[count].style.backgroundColor = `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
 }
-
+// Function to creat board pixel.
 function setBoardSize(numberLines) {
   let vqvButton = document.querySelector('#board-size').value;
   document.getElementById('pixel-board').innerHTML = '';
@@ -40,7 +40,7 @@ function setBoardSize(numberLines) {
 }
 const vqvButton = document.getElementById('generate-board');
 vqvButton.addEventListener('click', setBoardSize);
-vqvButton.addEventListener('click', changeBKGColor);
+//vqvButton.addEventListener('click', changeBKGColor);
 
 // Function to add 'selected' class at selected color.
 const colorPalet = document.querySelectorAll('.color');
@@ -78,13 +78,16 @@ for (let i = 0; i < colorPalet.length; i += 1) {
 //   for (let count in pixelIten) {
 //     pixelIten[count].className = 'pixel pixelBackG';
 //   }
-// })
-// O bloco a cima que está comentado foi minha primeira lógica para solução do projeto, este aqui de baixo foi desenvolvido durante o grupo de estudos, dirigido pelo aluno Luciano Berchon - Turma 07.
+// });
+
+// O bloco a cima que está comentado foi minha primeira lógica para solução do projeto,
+// este aqui de baixo foi desenvolvido durante o grupo de estudos, dirigido pelo aluno
+// Luciano Berchon - Turma 07.
 const pixelBoard = document.querySelector('.pixel-board');
 pixelBoard.addEventListener("click", function(event) {
   let selected = document.querySelector(".selected");
   event.target.style.backgroundColor =  window.getComputedStyle(selected).backgroundColor;
-})
+});
 
 const buttonClear = document.getElementById('clear-board');
 buttonClear.addEventListener('click', function() {
