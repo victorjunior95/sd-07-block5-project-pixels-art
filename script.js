@@ -39,6 +39,5 @@ limpar.addEventListener('click', function(){
     for (let i = 0; i < contaPixel; i += 1) {
         pixel[i].style.backgroundColor = 'white'
     }
-    console.log("dsadas");
 })
 
