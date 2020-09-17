@@ -1,8 +1,16 @@
+header{
+  margin-left: 30px;
+}
+
 .color{
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
   display: inline-block;
+}
+
+#color-palette{
+  margin-left: 30px;
 }
 
 #black{
@@ -21,6 +29,13 @@
   background-color: blue;
 }
 
-#yellow{
-  background-color: yellow;
+#pixel-board{
+  margin: 30px;
+}
+
+.pixel{
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: inline-block;
 }
