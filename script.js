@@ -38,8 +38,8 @@ function testBoardSize() {
 function positionCanvas(N) {
   // Redimensionando o Board
   const dimension = (40 * N) + (2 * N);
-  pixelBoard.style.height = `${dimension} px`;
-  pixelBoard.style.width = `${dimension} px`;
+  pixelBoard.style.height = `${dimension}px`;
+  pixelBoard.style.width = `${dimension}px`;
 
   // Reposicionando no centro da tela
   const main = document.querySelector('main');
@@ -62,13 +62,13 @@ function positionCanvas(N) {
 
   // Aumenta as dimensões da MAIN (colocando rolagem) se o box size ficar muito grande
   if (heightMain <= (dimension + (2 * 7) + (2 * 1) + (2 * 10))) {
-    main.style.height = `${(dimension + (2 * 7) + (2 * 1) + (2 * 20))} px`;
+    main.style.height = `${(dimension + (2 * 7) + (2 * 1) + (2 * 20))}px`;
   }
   if (widthMain <= (dimension + (2 * 7) + (2 * 1) + (2 * 10))) {
-    main.style.width = `${(dimension + (2 * 7) + (2 * 1) + (2 * 20))} px`;
+    main.style.width = `${(dimension + (2 * 7) + (2 * 1) + (2 * 20))}px`;
   }
-  canvas.style.top = `${canvasTop} px`;
-  canvas.style.left = `${canvasLeft} px`;
+  canvas.style.top = `${canvasTop}px`;
+  canvas.style.left = `${canvasLeft}px`;
 }
 
 // função que gera as linhas e colunas dos pixels
@@ -147,7 +147,8 @@ boardSize.addEventListener('change', testBoardSize);
 
 const buttonGenerator = document.getElementById('generate-board');
 buttonGenerator.addEventListener('click', function () {
-  if (boardSize.value === '') {
+  console.log("a" + boardSize.value + "b")
+  if (boardSize.value == "") {
     console.log(boardSize.value);
     alert('Board inválido!');
   }
