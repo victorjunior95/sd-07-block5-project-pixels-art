@@ -8,17 +8,37 @@ const board = document.getElementById('pixel-board');
 const inputNumber = document.getElementById('board-size');
 const renderNewBoard = document.getElementById('generate-board');
 
-// document.onload = newColors();
+function generateColor() {
+  const first = Math.floor(Math.random() * 256);
+  const second = Math.floor(Math.random() * 256);
+  const third = Math.floor(Math.random() * 256);
+  return `rgb(${first} , ${second} , ${third})`;
+}
 
-// function to get Color of the blocks
-// Create one new class to display the palette collors (maybe color1, color2, color3, color4)
-  //Display inline put on color class
-// Remember: the first (color1) is always black!
-// Change name of blocks to selected (don't forget the class!!)
-// Change split (because of rgb have spaces)
+function newColors() {
+  blue.style.backgroundColor = generateColor();
+  red.style.backgroundColor = generateColor();
+  green.style.backgroundColor = generateColor();
+}
+
+document.onload = newColors();
 
 function getSelectedColor() {
-  return document.getElementsByClassName('selected')[0].className.split(' ')[1];
+  const selectedColor = document.getElementsByClassName('selected')[0];
+  const cssResult = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
+  return cssResult;
+}
+
+function removeAll() {
+  black.classList.remove('selected');
+  blue.classList.remove('selected');
+  green.classList.remove('selected');
+  red.classList.remove('selected');
+}
+
+function selectColor(element) {
+  removeAll();
+  element.classList.add('selected');
 }
 
 function coloringPixels() {
@@ -44,18 +64,6 @@ function initialSizeBoard() {
 }
 
 document.onload = initialSizeBoard();
-
-function removeAll() {
-  black.classList.remove('selected');
-  blue.classList.remove('selected');
-  green.classList.remove('selected');
-  red.classList.remove('selected');
-}
-
-function selectColor(element, color) {
-  removeAll();
-  element.className = `color ${color} selected`;
-}
 
 blue.addEventListener('click', () => selectColor(blue, 'blue'));
 black.addEventListener('click', () => selectColor(black, 'black'));
@@ -98,16 +106,3 @@ function addColums(number) {
 }
 
 renderNewBoard.addEventListener('click', addColums);
-
-// function generateColor() {
-//   const first = Math.floor(Math.random() * 256);
-//   const second = Math.floor(Math.random() * 256);
-//   const third = Math.floor(Math.random() * 256);
-//   return `rgb(${first} , ${second} , ${third})`;
-// }
-
-// function newColors() {
-//   blue.style.backgroundColor = generateColor();
-//   red.style.backgroundColor = generateColor();
-//   green.style.backgroundColor = generateColor();
-// }
