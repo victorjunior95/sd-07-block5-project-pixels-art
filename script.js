@@ -9,6 +9,21 @@ const colums = document.getElementsByClassName('tr');
 const inputNumber = document.getElementById('board-size');
 const renderNewBoard = document.getElementById('generate-board');
 
+function initialSizeBoard() {
+  for (let i = 0; i < 5; i += 1) {
+    const newLine = document.createElement('div');
+    newLine.classList.add('tr');
+    board.appendChild(newLine);
+    for (let j = 0; j < 5; j += 1) {
+      const newColum = document.createElement('div');
+      newColum.className = 'td pixel initial';
+      newLine.appendChild(newColum);
+    }
+  }
+}
+
+document.onload = initialSizeBoard();
+
 function removeAll() {
   black.classList.remove('selected');
   blue.classList.remove('selected');
@@ -72,6 +87,7 @@ function addColums(number) {
       for (let j = 0; j < number; j += 1) {
         const newColum = document.createElement('div');
         newColum.className = 'td pixel';
+        newColum.style.backgroundColor = 'white';
         newLine.appendChild(newColum);
       }
     }
