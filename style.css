@@ -6,7 +6,11 @@
     margin: 2px;
     display: inline-block
 }
-    
+
+#clear-board {
+    margin: 30px 0px;
+}
+
 #black {
     background-color: black;
 }
@@ -41,6 +45,5 @@
 }
 
 #pixel-board {
-    margin-top: 40px;
     display: table;
 }
