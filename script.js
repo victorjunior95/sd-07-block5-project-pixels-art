@@ -69,7 +69,7 @@ function addColums(number) {
   if (!number) {
     alert('Board inválido!');
   }
-  if (number > colums.length && number <= 50) {
+  if (number > colums.length && number <= 50 && number > 5) {
     board.innerHTML = '';
     for (let i = 0; i < number; i += 1) {
       const newLine = document.createElement('div');
