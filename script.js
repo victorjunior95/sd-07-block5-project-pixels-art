@@ -22,10 +22,10 @@ pixelContainer[index].addEventListener("click", function (event) {
 });
 }
 
-let clear = document.getElementsById("clear-board");
+let clear = document.getElementById("clear-board");
 
 clear.addEventListener("click", function () {
-  for (let index = 0; index < pixel.length; index += 1) {
-    pixel[i].style.backgroundColor = "white";
+  for (let index = 0; index < pixelContainer.length; index += 1) {
+    pixelContainer[index].style.backgroundColor = "white";
   }
 });
