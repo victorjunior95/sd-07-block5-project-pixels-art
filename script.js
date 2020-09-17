@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
     creatColorsPalette();
     createPixelBoard();
     creatEvents();
-    changeClass(colorPalette.querySelector('#paletteColor1'));
+    selectColor(colorPalette.querySelector('#paletteColor1'));
 
 });
 
@@ -11,7 +11,7 @@ let colorPalette = document.getElementById("color-palette"),
     pixelBoard = document.getElementById("pixel-board"),
     buttonClear = document.getElementById('clear-board'),
     colors = ['black', 'blue', 'pink', 'green'],
-    colorSelected = 'black',
+    colorSelected,
     lastElementClass;
 
 function creatColorsPalette() {
@@ -99,16 +99,16 @@ function selectClear() {
 
 function  whichElement(id) {
 
-    let element = document.querySelector(`#${id}`);
+    let el = document.querySelector(`#${id}`);
 
     if( id.indexOf('pixel') !== -1 ){
         
-        selectPixel(element);
+        selectPixel(el);
 
     }
     else if( id.indexOf('paletteColor') !== -1 ){
 
-        selectColor(element);
+        selectColor(el);
 
     }
     else {
@@ -142,5 +142,4 @@ function creatEvents() {
     };
 
     buttonClear.addEventListener('click',getClick);
-
 };
