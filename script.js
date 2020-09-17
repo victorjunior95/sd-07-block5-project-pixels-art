@@ -9,6 +9,20 @@ const colums = document.getElementsByClassName('tr');
 const inputNumber = document.getElementById('board-size');
 const renderNewBoard = document.getElementById('generate-board');
 
+// document.onload = newColors();
+
+function getSelectedColor() {
+  return document.getElementsByClassName('selected')[0].className.split(' ')[1];
+}
+
+function coloringPixels() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].addEventListener('click', () => {
+      pixels[i].style.backgroundColor = getSelectedColor();
+    });
+  }
+}
+
 function initialSizeBoard() {
   for (let i = 0; i < 5; i += 1) {
     const newLine = document.createElement('div');
@@ -20,6 +34,7 @@ function initialSizeBoard() {
       newLine.appendChild(newColum);
     }
   }
+  coloringPixels();
 }
 
 document.onload = initialSizeBoard();
@@ -41,31 +56,6 @@ black.addEventListener('click', () => selectColor(black, 'black'));
 green.addEventListener('click', () => selectColor(green, 'green'));
 red.addEventListener('click', () => selectColor(red, 'red'));
 
-function getSelectedColor() {
-  return document.getElementsByClassName('selected')[0].className.split(' ')[1];
-}
-
-for (let i = 0; i < pixels.length; i += 1) {
-  pixels[i].addEventListener('click', () => {
-    pixels[i].style.backgroundColor = getSelectedColor();
-  });
-}
-
-function coloringPixels() {
-  for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].addEventListener('click', () => {
-      pixels[i].style.backgroundColor = getSelectedColor();
-    });
-  }
-}
-
-function hideInitialGrid() {
-  const initialGrid = document.getElementsByClassName('initial');
-  for (let i = 0; i < initialGrid.length; i += 1) {
-    initialGrid[i].classList.toggle('display');
-  }
-}
-
 function clearBoard() {
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = 'white';
@@ -80,6 +70,7 @@ function addColums(number) {
     alert('Board inválido!');
   }
   if (number > colums.length && number <= 50) {
+    board.innerHTML = '';
     for (let i = 0; i < number; i += 1) {
       const newLine = document.createElement('div');
       newLine.classList.add('tr');
@@ -87,13 +78,24 @@ function addColums(number) {
       for (let j = 0; j < number; j += 1) {
         const newColum = document.createElement('div');
         newColum.className = 'td pixel';
-        newColum.style.backgroundColor = 'white';
         newLine.appendChild(newColum);
       }
     }
     coloringPixels();
-    hideInitialGrid();
   }
 }
 
 renderNewBoard.addEventListener('click', addColums);
+
+// function generateColor() {
+//   const first = Math.floor(Math.random() * 256);
+//   const second = Math.floor(Math.random() * 256);
+//   const third = Math.floor(Math.random() * 256);
+//   return `rgb(${first} , ${second} , ${third})`;
+// }
+
+// function newColors() {
+//   blue.style.backgroundColor = generateColor();
+//   red.style.backgroundColor = generateColor();
+//   green.style.backgroundColor = generateColor();
+// }
