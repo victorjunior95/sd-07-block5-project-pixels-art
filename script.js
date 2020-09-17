@@ -31,14 +31,23 @@ for(let ind2 = 0 ; ind2 < numberLines; ind2 +=1){
     }
 }
 
+// criando  a variavel para pegar todos os elemento com a class .color
 let color= document.querySelectorAll(".color");
 
-
+// removendo o selected e add e outro lugar com o click
 for(let index = 0; index < color.length; index +=1){
     
     color[index].addEventListener("click", function(event){
     let selected = document.querySelector(".selected");
     selected.classList.remove('selected');
-  event.target.className += " selected";
+    event.target.className += " selected";
+    })
+}
+
+// colocar cor no quadrado que foi clicado
+for(let index = 0; index < pixel.length; index +=1){
+    pixel[index].addEventListener("click", function(){
+        let selected = document.querySelector(".selected");
+       pixel[index].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
     })
 }
