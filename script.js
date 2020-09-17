@@ -9,6 +9,8 @@ const colums = document.getElementsByClassName('tr');
 const inputNumber = document.getElementById('board-size');
 const renderNewBoard = document.getElementById('generate-board');
 
+document.onload = newColors();
+
 function getSelectedColor() {
   return document.getElementsByClassName('selected')[0].className.split(' ')[1];
 }
@@ -90,3 +92,16 @@ function addColums(number) {
 }
 
 renderNewBoard.addEventListener('click', addColums);
+
+function generateColor() {
+  const first = Math.floor(Math.random() * 256);
+  const second = Math.floor(Math.random() * 256);
+  const third = Math.floor(Math.random() * 256);
+  return `rgb(${first} , ${second} , ${third})`;
+}
+
+function newColors() {
+  blue.style.backgroundColor = generateColor();
+  red.style.backgroundColor = generateColor();
+  green.style.backgroundColor = generateColor();
+}
