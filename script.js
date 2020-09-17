@@ -19,7 +19,6 @@ let buttonVqv = document.getElementById("generate-board");
 let sizeBoard = document.getElementById("board-size");
 
 selectedColor.addEventListener("click", function (event) {
-  console.log(paintPixel);
   if (
     event.target.classList.contains("selected") == false &&
     event.target.classList.contains("color") == true
@@ -45,7 +44,6 @@ resetPixel.addEventListener("click", function () {
 });
 
 buttonVqv.addEventListener("click", function () {
-  // console.log(sizeBoard.value)
   if (sizeBoard.value == "") {
     alert("Board inválido!");
     return;
@@ -54,12 +52,9 @@ buttonVqv.addEventListener("click", function () {
   } else if (sizeBoard.value >= 50) {
     sizeBoard.value = 50;
   }
-  console.log(sizeBoard.value);
 
-  while (document.querySelector("#pixel-board").firstChild) {
-    document
-      .querySelector("#pixel-board")
-      .removeChild(document.querySelector("#pixel-board").firstChild);
+  while (paintPixel.firstChild) {
+    paintPixel.removeChild(paintPixel.firstChild);
   }
   for (let index = 0; index < sizeBoard.value; index += 1) {
     let createTable = document.createElement("tr");
@@ -70,6 +65,4 @@ buttonVqv.addEventListener("click", function () {
       createTable.appendChild(createPixel);
     }
   }
-  // paintPixel = document.getElementById("pixel-board");
-  console.log(paintPixel);
 });
