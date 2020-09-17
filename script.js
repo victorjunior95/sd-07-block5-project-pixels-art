@@ -109,7 +109,7 @@ document.getElementById('generate-board').addEventListener('click', function () 
   if (inputSize === '') {
     alert('Board inválido!');
   } else {
-    updateSizePixel(inputSize * inputSize);
+    updateSizePixel(inputSize);
     clearColorPixel();
   }
 });
