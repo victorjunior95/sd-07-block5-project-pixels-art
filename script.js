@@ -3,10 +3,16 @@ window.addEventListener('load', () => {
     creatColorsPalette();
     createPixelBoard();
     creatEvents();
+    selectColor(document.querySelector("#paletteColor1"));
+
 });
 
 let colorPalette = document.getElementById("color-palette"),
-    colors = ['black', 'blue', 'pink', 'green'];
+    pixelBoard = document.getElementById("pixel-board"),
+    buttonClear = document.getElementById('clear-board'),
+    colors = ['black', 'blue', 'pink', 'green'],
+    colorSelected,
+    lastElementClass;
 
 function creatColorsPalette() {
 
@@ -18,8 +24,6 @@ function creatColorsPalette() {
         colorPalette.appendChild(color);
     };
 };
-
-let pixelBoard = document.getElementById("pixel-board");
 
 function createPixelBoard() {
 
@@ -44,29 +48,34 @@ function createPixelBoard() {
 
 };
 
-let buttonClear = document.getElementById('clear-board'),
-    colorSelected = "black",
-    lastColorId;
+function changeClass(element){
 
-function selectColor(element) {
+    let thisElement = element;
 
-    let color = element
-        n = color.id.replace("paletteColor","");
+    if(lastElementClass === undefined ) {
 
-    if(lastColorId === undefined ) {
-
-        lastColorId = color;
+        lastElementClass = thisElement;
 
     }
     else {
 
-        document.querySelector(`#${lastColorId.id}`).className = 'color';
+        document.querySelector(`#${lastElementClass.id}`).className = 'color';
 
     };
 
+    lastElementClass = thisElement ;
+
+    thisElement.className = 'selected';
+
+};
+
+function selectColor(element) {
+
+    let color = element,
+        n = color.id.replace("paletteColor","");
     colorSelected = colors[n-1];
-    lastColorId = color;
-    color.className = 'selected';
+
+    changeClass(color);
 
 };
 
