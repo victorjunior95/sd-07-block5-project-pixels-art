@@ -64,24 +64,30 @@ function clearBoard() {
 
 clear.addEventListener('click', clearBoard);
 
+function createBoard(number) {
+  board.innerHTML = '';
+  for (let i = 0; i < number; i += 1) {
+    const newLine = document.createElement('div');
+    newLine.classList.add('tr');
+    board.appendChild(newLine);
+    for (let j = 0; j < number; j += 1) {
+      const newColum = document.createElement('div');
+      newColum.className = 'td pixel';
+      newLine.appendChild(newColum);
+    }
+  }
+}
+
 function addColums(number) {
   number = inputNumber.value;
   if (!number) {
     alert('Board inválido!');
   }
-  if (number > colums.length && number <= 50 && number > 5) {
-    board.innerHTML = '';
-    for (let i = 0; i < number; i += 1) {
-      const newLine = document.createElement('div');
-      newLine.classList.add('tr');
-      board.appendChild(newLine);
-      for (let j = 0; j < number; j += 1) {
-        const newColum = document.createElement('div');
-        newColum.className = 'td pixel';
-        newLine.appendChild(newColum);
-      }
-    }
+  if (number > colums.length && number > 5) {
+    createBoard(number);
     coloringPixels();
+  } else if (number > 50) {
+    createBoard(50);
   }
 }
 
