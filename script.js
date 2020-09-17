@@ -1,11 +1,3 @@
-window.addEventListener('DOMContentLoaded', () => { 
-
-    creatColorsPalette();
-    createPixelBoard();
-    creatEvents();
-
-});
-
 let colorPalette = document.getElementById("color-palette"),
     pixelBoard = document.getElementById("pixel-board"),
     buttonClear = document.getElementById('clear-board'),
@@ -144,3 +136,11 @@ function creatEvents() {
     document.addEventListener('load' ,
     selectColor(colorPalette.querySelector('#paletteColor1')));
 };
+
+window.addEventListener('DOMContentLoaded', () => { 
+
+    creatColorsPalette();
+    createPixelBoard();
+    creatEvents();
+
+});
