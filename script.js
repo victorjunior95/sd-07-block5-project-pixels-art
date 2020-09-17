@@ -52,7 +52,7 @@ pixel[index].addEventListener("click", function(){
 })
 }
 
-// colocar o botão no variavel 
+//colocar o botão no variavel
 let buttonClear = document.getElementById("clear-board");
 
 buttonClear.addEventListener('click',function(){
