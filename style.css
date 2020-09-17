@@ -13,9 +13,7 @@ body {
   width: 100px;
   height: 100px;
   display: inline-block;
-  border-width: 1px;
-  border-style: solid;
-  border-color: black;
+  border: 1px solid black;
   box-sizing: border-box;
 }
 
@@ -42,10 +40,10 @@ body {
 }
 
 .pixel {
-  width: 39.97px;
+  width: 40px;
   height: 40px;
   background: white;
-  border: 1px solid #acacac;
+  border: 1px solid black;
   box-sizing: border-box;
   display: inline-block;
 }
