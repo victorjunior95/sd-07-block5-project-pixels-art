@@ -44,3 +44,14 @@ function changeColor() {
   });
 };
 changeColor()
+
+function clearBoard() {
+    let clearButton = document.querySelector("#clear-board");
+    let pixels = document.querySelectorAll(".pixel");
+    clearButton.addEventListener("click", function () {
+        for ( i=0; i < pixels.length; i += 1) {
+            pixels[i].style.backgroundColor = "white";
+        }
+    })
+}
+clearBoard()
