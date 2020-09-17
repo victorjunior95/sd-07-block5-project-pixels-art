@@ -127,7 +127,7 @@ pixelBoard.addEventListener('click', function (event) {
   event.target.style.backgroundColor = window.getComputedStyle(color).backgroundColor;
 });
 
-const buttonClear= document.getElementById('clear-board');
+const buttonClear = document.getElementById('clear-board');
 
 buttonClear.addEventListener('click', function () {
   for (let i = 0; i < pixel.length; i += 1) {
