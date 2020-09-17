@@ -35,22 +35,7 @@ function testBoardSize() {
   return (true);
 }
 
-// função que gera as linhas e colunas dos pixels
-function pixelGenerator(N) {
-  // N é o número de linhas / colunas da matriz de pixels
-
-  // Testa se o boardSize possui um valor válido
-  if (!testBoardSize()) {
-    return (false);
-  }
-  if (!testEmpty()) {
-    return (false);
-  }
-
-  // Essa linha mata todas as divs de Linhas e de pixels que estão dentro do pixelBoard
-  // Idealmente seria bom usar o removeChild
-  pixelBoard.innerHTML = '';
-
+function positionCanvas(N) {
   // Redimensionando o Board
   const dimension = (40 * N) + (2 * N);
   pixelBoard.style.height = `${dimension} px`;
@@ -84,6 +69,25 @@ function pixelGenerator(N) {
   }
   canvas.style.top = `${canvasTop} px`;
   canvas.style.left = `${canvasLeft} px`;
+}
+
+// função que gera as linhas e colunas dos pixels
+function pixelGenerator(N) {
+  // N é o número de linhas / colunas da matriz de pixels
+
+  // Testa se o boardSize possui um valor válido
+  if (!testBoardSize()) {
+    return (false);
+  }
+  if (!testEmpty()) {
+    return (false);
+  }
+
+  // Essa linha mata todas as divs de Linhas e de pixels que estão dentro do pixelBoard
+  // Idealmente seria bom usar o removeChild
+  pixelBoard.innerHTML = '';
+
+  positionCanvas(N);
 
   // Nesse FOR é criada as linhas
   for (let i = 0; i < N; i += 1) {

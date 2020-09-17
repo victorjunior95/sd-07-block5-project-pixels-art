@@ -128,7 +128,7 @@ h1 {
 
 .edit {
 
-  /* bottom: 38px; */
+  bottom: 38px;
   color: white;
   display: inline-block;
   height: 60px;
@@ -233,16 +233,16 @@ main {
 
 .canvas {
   background-color: rgb(196, 196, 196);
-  border-color: rgb(220, 220, 220);
+  border-color: gainsboro;
   border-style: solid;
   border-width: 1px;
 
   /* display: inline-block; */
 
-  /* left: calc(50% - 106px);
+  left: calc(50% - 106px);
   margin: 10px;
   position: relative;
-  top: calc(50% - 106px); */
+  top: calc(50% - 106px);
 }
 
 .pixel-board {
