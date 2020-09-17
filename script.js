@@ -5,3 +5,10 @@ for (let index = 0; index < selecionandoCor.length; index += 1) {
     this.classList.add('selected');
   });
 }
+
+const selecionandoPixel = document.getElementsByClassName('pixel');
+for (let index = 0; index < selecionandoPixel.length; index += 1) {
+  selecionandoPixel[index].addEventListener('click', function () {
+    this.style.backgroundColor = window.getComputedStyle(document.getElementsByClassName('color selected')[0]).backgroundColor;
+  })
+}
