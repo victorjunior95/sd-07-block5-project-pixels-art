@@ -3,6 +3,7 @@ window.addEventListener('load', () => {
     creatColorsPalette();
     createPixelBoard();
     creatEvents();
+    changeClass(colorPalette.querySelector('#paletteColor1'));
 
 });
 
@@ -54,6 +55,7 @@ function changeClass(element){
     if(lastElementClass === undefined ) {
 
         lastElementClass = thisElement;
+        thisElement.className = 'selected';
 
     }
     else {
@@ -61,7 +63,7 @@ function changeClass(element){
         document.querySelector(`#${lastElementClass.id}`).className = 'color';
         lastElementClass = thisElement ;
         thisElement.className = 'selected';
-        
+
     };
 
 };
