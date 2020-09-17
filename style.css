@@ -1,9 +1,6 @@
-.boardSize {
-  margin-left: 30px;
-}
-
 .clearBoard {
   cursor: pointer;
+  margin-left: 20px;
   margin-top: 40px;
 }
 
