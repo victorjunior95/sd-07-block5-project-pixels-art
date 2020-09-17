@@ -117,8 +117,5 @@ document.getElementById('generate-board').addEventListener('click', function () 
   const inputSize = borderSizeValidation(inputSizeValue);
   if (inputSize === '') {
     alert('Board inválido!');
-  }
-  else {
-    generatePixelMatriz(inputSize, inputSize);
-  }
+  } else generatePixelMatriz(inputSize, inputSize);
 });
