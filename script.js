@@ -3,7 +3,6 @@ window.addEventListener('load', () => {
     creatColorsPalette();
     createPixelBoard();
     creatEvents();
-    selectColor(document.querySelector("#paletteColor1"));
 
 });
 
@@ -11,7 +10,7 @@ let colorPalette = document.getElementById("color-palette"),
     pixelBoard = document.getElementById("pixel-board"),
     buttonClear = document.getElementById('clear-board'),
     colors = ['black', 'blue', 'pink', 'green'],
-    colorSelected,
+    colorSelected = 'black',
     lastElementClass;
 
 function creatColorsPalette() {
