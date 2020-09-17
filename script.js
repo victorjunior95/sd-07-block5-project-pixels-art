@@ -51,3 +51,13 @@ for(let index = 0; index < pixel.length; index +=1){
        pixel[index].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
     })
 }
+
+// colocar o botão no variavel 
+let buttonClear = document.getElementById("clear-board");
+
+buttonClear.addEventListener('click',function(){
+    for(let index = 0; index < pixel.length; index += 1){
+    pixel[index].style.backgroundColor = "rgb(255,255,255)";
+    
+}
+});
