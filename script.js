@@ -10,6 +10,10 @@ function changeBKGColor () {
 }
 const time = setTimeout (changeBKGColor, 0);
 // Remove the bars fron the line above to see the efect.
+const paletRandonColors = document.querySelectorAll('.color');
+for (let count = 1; count < paletRandonColors.length; count+=1) {
+  paletRandonColors[count].style.backgroundColor = `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
+}
 
 function setBoardSize(numberLines) {
   let vqvButton = document.querySelector('#board-size').value;
