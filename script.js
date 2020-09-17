@@ -88,7 +88,7 @@ function pixelGenerator(N) {
   // Nesse FOR é criada as linhas
   for (let i = 0; i < N; i += 1) {
     divLines[i] = document.createElement('div');
-    divLines[i].className = 'boardLines'
+    divLines[i].className = 'boardLines';
     pixelBoard.appendChild(divLines[i]);
 
     // Cria os N pixels na linha i
@@ -127,7 +127,7 @@ pixelBoard.addEventListener('click', function (event) {
   event.target.style.backgroundColor = window.getComputedStyle(color).backgroundColor;
 });
 
-let buttonClear= document.getElementById('clear-board');
+const buttonClear= document.getElementById('clear-board');
 
 buttonClear.addEventListener('click', function () {
   for (let i = 0; i < pixel.length; i += 1) {
@@ -138,6 +138,6 @@ buttonClear.addEventListener('click', function () {
 boardSize.addEventListener('change', testBoardSize);
 
 const buttonGenerator = document.getElementById('generate-board');
-buttonGenerator.addEventListener('click', function() {
+buttonGenerator.addEventListener('click', function () {
   pixelGenerator(boardSize.value);
-})
+});
