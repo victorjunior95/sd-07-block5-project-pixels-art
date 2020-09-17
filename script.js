@@ -43,39 +43,53 @@ vqvButton.addEventListener('click', setBoardSize);
 vqvButton.addEventListener('click', changeBKGColor);
 
 // Function to add 'selected' class at selected color.
-const coloPalet = document.querySelectorAll('.color');
-for (let i = 0; i < coloPalet.length; i += 1) {
-  coloPalet[i].addEventListener('click', function(event) {
+const colorPalet = document.querySelectorAll('.color');
+for (let i = 0; i < colorPalet.length; i += 1) {
+  colorPalet[i].addEventListener('click', function(event) {
     let selectedColor = document.querySelector('.selected');
     selectedColor.classList.remove('selected');
     event.target.className += ' selected';
   });
 }
 
-// Function to add selected color at selected pixel.
-const pixelIten = document.querySelectorAll('.pixel');
-  for (let count = 0; count < pixelIten.length; count += 1) {
-    let pixel = document.querySelectorAll('.pixel');
-    pixel[count].addEventListener('click', function(event) {
-      let selectedPixel = document.querySelector('.selected');
-      event.target.className = 'pixel ' + selectedPixel.classList[1];
-    })
-  }
-document.getElementById('pixel-board').addEventListener('click', function () {
-  const pixelIten = document.querySelectorAll('.pixel');
-  for (let count = 0; count < pixelIten.length; count += 1) {
-    let pixel = document.querySelectorAll('.pixel');
-    pixel[count].addEventListener('click', function(event) {
-      let selectedPixel = document.querySelector('.selected');
-      event.target.className = 'pixel ' + selectedPixel.classList[1];
-    })
-  }
-});
+// // Function to add selected color at selected pixel.
+// const pixelIten = document.querySelectorAll('.pixel');
+//   for (let count = 0; count < pixelIten.length; count += 1) {
+//     let pixel = document.querySelectorAll('.pixel');
+//     pixel[count].addEventListener('click', function(event) {
+//       let selectedPixel = document.querySelector('.selected');
+//       event.target.className = 'pixel ' + selectedPixel.classList[1];
+//     })
+//   }
+// document.getElementById('pixel-board').addEventListener('click', function () {
+//   const pixelIten = document.querySelectorAll('.pixel');
+//   for (let count = 0; count < pixelIten.length; count += 1) {
+//     let pixel = document.querySelectorAll('.pixel');
+//     pixel[count].addEventListener('click', function(event) {
+//       let selectedPixel = document.querySelector('.selected');
+//       event.target.className = 'pixel ' + selectedPixel.classList[1];
+//     })
+//   }
+// });
 
 // Clear bord block
-document.getElementById('clear-board').addEventListener('click', function () {
-  let pixelIten = document.querySelectorAll('.pixel');
-  for (let count in pixelIten) {
-    pixelIten[count].className = 'pixel pixelBackG';
-  }
+// document.getElementById('clear-board').addEventListener('click', function () {
+//   let pixelIten = document.querySelectorAll('.pixel');
+//   for (let count in pixelIten) {
+//     pixelIten[count].className = 'pixel pixelBackG';
+//   }
+// })
+// O bloco a cima que está comentado foi minha primeira lógica para solução do projeto, este aqui de baixo foi desenvolvido durante o grupo de estudos, dirigido pelo aluno Luciano Berchon - Turma 07.
+const pixelBoard = document.querySelector('.pixel-board');
+pixelBoard.addEventListener("click", function(event) {
+  let selected = document.querySelector(".selected");
+  event.target.style.backgroundColor =  window.getComputedStyle(selected).backgroundColor;
 })
+
+const buttonClear = document.getElementById('clear-board');
+buttonClear.addEventListener('click', function() {
+  const pixelIten = document.querySelectorAll('.pixel');
+  for (let count in pixelIten) {
+    pixelIten[count].style.backgroundColor = 'white';
+  }
+});
