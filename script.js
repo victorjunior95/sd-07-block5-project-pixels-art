@@ -2,7 +2,7 @@
 const numberOfLine = 5;
 const numberOfColumn = 5;
 
-let getDivPixelBoard = document.getElementById('pixel-board');
+const getDivPixelBoard = document.getElementById('pixel-board');
 
 function removeChildsPixel() {
   while (getDivPixelBoard.firstChild) {
@@ -11,19 +11,18 @@ function removeChildsPixel() {
 }
 
 function checkChildPixel() {
-  if (getDivPixelBoard.childElementCount > 0 ) {
+  if (getDivPixelBoard.childElementCount > 0) {
     removeChildsPixel();
   }
 }
-
-function generatePixelMatriz (numberOfLine, numberOfColumn) {
+function generatePixelMatriz(linePixels, columnPixels) {
   checkChildPixel();
-  for (let line = 1; line <= numberOfLine; line += 1) {
+  for (let line = 1; line <= linePixels; line += 1) {
     const divLine = document.createElement('div');
     divLine.className = 'tr';
     getDivPixelBoard.appendChild(divLine);
 
-    for (let column = 1; column <= numberOfColumn; column += 1) {
+    for (let column = 1; coc; columnPixels += 1) {
       const divColumn = document.createElement('div');
       divColumn.className = 'pixel td';
       divLine.appendChild(divColumn);
@@ -90,14 +89,6 @@ function clearColorPixel() {
 function getInputSizePixelValue() {
   return document.getElementById('board-size').value;
 }
-
-function updateSizePixel(sizePixel) {
-  const lengthElementos = document.getElementsByClassName('pixel').length;
-  for (let index = 0; index < lengthElementos; index += 1) {
-    document.getElementsByClassName('pixel')[index].style.width = `${sizePixel}px`;
-    document.getElementsByClassName('pixel')[index].style.height = `${sizePixel}px`;
-  }
-}
 function borderSizeValidation(size) {
   if (size <= 5 && size !== '') return 5;
   if (size >= 50 && size !== '') return 50;
@@ -127,8 +118,8 @@ document.getElementById('generate-board').addEventListener('click', function () 
   const inputSize = borderSizeValidation(inputSizeValue);
   if (inputSize === '') {
     alert('Board inválido!');
-  } else {
-      generatePixelMatriz(inputSize, inputSize);
-      //clearColorPixel();
+  }
+  else {
+    generatePixelMatriz(inputSize, inputSize);
   }
 });
