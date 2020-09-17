@@ -1,7 +1,7 @@
 // criar um variavel dinâmico para usuario digita numero de quadrados. 
 let numberLines = 5;
 
-// variavel que sera igual a Id pixel-board
+// criando uma variavel que sera igual a Id pixel-board
 let pixelBorad = document.getElementById("pixel-board");
 
 // criando a variaveis para linha e quadrado
@@ -22,11 +22,23 @@ for(let index = 0; index < numberLines; index +=1){
     pixelBorad.appendChild(line[index]);
 
 //criar os quadrados  dentro da linha
-    for(let ind2 = 0 ; ind2 < numberLines; ind2 +=1){
+for(let ind2 = 0 ; ind2 < numberLines; ind2 +=1){
     pixel[lineZero] = document.createElement("div");
     pixel[lineZero].className="pixel";
     line[index].appendChild(pixel[lineZero]);
     lineZero = lineZero + 1;
 
     }
+}
+
+let color= document.querySelectorAll(".color");
+
+
+for(let index = 0; index < color.length; index +=1){
+    
+    color[index].addEventListener("click", function(event){
+    let selected = document.querySelector(".selected");
+    selected.classList.remove('selected');
+  event.target.className += " selected";
+    })
 }
