@@ -8,53 +8,23 @@
 </head>
 <body>
   <h1 id='title'>Paleta de Cores</h1>
+  <h4>Escolha o tamanho e as cores da paleta</h4>
 
   <div class='color-palette' id='color-palette'>
-    <div class='color black selected' style='background-color: black;'>black</div>
-    <div class='color red' style='background-color: red;'>red</div>
-    <div class='color blue' style='background-color: blue;'>blue</div>
-    <div class='color green' style='background-color: green;'>green</div>
+    <div class='color selected'></div>
+    <div class='color'></div>
+    <div class='color'></div>
+    <div class='color'></div>
   </div>
 
-  <button class = 'clear-board' id = 'clear-board' onclick='buttonClear();'>Limpar</button>
-
-  <!--https://stackoverflow.com/questions/29229523/how-and-why-to-use-display-table-cell-css-->
-  <div class='pixel-board' id='pixel-board'>
-    <div class='line' id='line'>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-    </div>
-    <div class='line' id='line'>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-    </div>
-    <div class='line' id='line'>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-    </div>
-    <div class='line' id='line'>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-    </div>
-    <div class='line' id='line'>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-    </div>
+  <!--https://github.com/susanschen/Pixel-Art-Maker/blob/master/index.html-->
+  <form class='pixel-board' id='pixel-board'>
+    <input type='number' required id='pixel' name='width' min='5' max='50' value='5'>
+    <input type='submit'>
+    <button class = 'clear-board' id = 'clear-board' onclick='buttonClear();'>Limpar</button>
+  </form>
+  <div>
+    <table id='pixel_canvas'></table>
   </div>
 
   <script src="script.js"></script>

@@ -9,16 +9,70 @@ selectColor.addEventListener('click', function (event) {
   defaultColor = event.target.style.backgroundColor;
 });
 
-const selectPixel = document.querySelector('.pixel-board');
+const selectPixel = document.querySelector('table');
 selectPixel.addEventListener('click', function (event) {
   event.target.style.backgroundColor = defaultColor;
 });
-
+// ---------------------------------------------------------------------------------------------
 
 
 function buttonClear() {
-  let pixels = document.querySelectorAll('.pixel');
+  let pixels = document.querySelectorAll('td');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
 }
+
+
+// https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
+const colors = document.querySelectorAll('.color');
+for (let index = 0; index < colors.length; index += 1) {
+  var x = Math.floor(Math.random() * 256);
+  var y = Math.floor(Math.random() * 256);
+  var z = Math.floor(Math.random() * 256);
+
+if (index === 0) {
+  colors[index].style.backgroundColor = 'black';
+  } else {
+    colors[index].style.backgroundColor = `rgb(${x},${y},${z})`;
+  }
+}
+// ---------------------------------------------------------------------------------------------
+
+
+// github.com/susanschen/Pixel-Art-Maker/blob/master/index.html
+let canvas = document.getElementById('pixel_canvas');
+let height = document.getElementById('pixel');
+let width = document.getElementById('pixel');
+let pixelBoard = document.getElementById('pixel-board');
+
+pixelBoard.onsubmit = function(event){
+  event.preventDefault();
+  clearGrid();
+  makeGrid();
+};
+
+function clearGrid(){
+  while (canvas.firstChild){
+    canvas.removeChild(canvas.firstChild);
+  }
+}
+
+function fillSquare () {
+  this.setAttribute('style', `background-color: ${color.value}`);
+}
+
+function makeGrid() {
+  for (let r=0; r<height.value; r++){
+    const row = canvas.insertRow(r);
+    for (let c = 0; c < width.value; c++){
+      const cell = row.insertCell(c);
+      cell.addEventListener('click', fillSquare);
+    }
+  }
+}
+
+window.onload = function () {
+  makeGrid(5);
+}
+// ---------------------------------------------------------------------------------------------
