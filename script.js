@@ -1,9 +1,8 @@
-window.addEventListener('load', () => { 
+window.addEventListener('DOMContentLoaded', () => { 
 
     creatColorsPalette();
     createPixelBoard();
     creatEvents();
-    selectColor(colorPalette.querySelector('#paletteColor1'));
 
 });
 
@@ -142,4 +141,6 @@ function creatEvents() {
     };
 
     buttonClear.addEventListener('click',getClick);
+    document.addEventListener('load' ,
+    selectColor(colorPalette.querySelector('#paletteColor1')));
 };
