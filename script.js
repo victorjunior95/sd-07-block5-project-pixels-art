@@ -10,15 +10,17 @@ for (let index = 0; index < color.length; index += 1) {
   });
 }
 
-let pixelContainer = document.getElementById("pixel-board");
-
-pixelContainer.addEventListener("click", function (event) {
+let pixelContainer = document.querySelectorAll(".pixel");
+console.log(pixelContainer)
+for(let index = 0; index < pixelContainer.length; index += 1){
+pixelContainer[index].addEventListener("click", function (event) {
   let colorSelected = document.querySelector(".selected");
 
   event.target.style.backgroundColor = window.getComputedStyle(
     colorSelected
   ).backgroundColor;
 });
+}
 
 let clear = document.getElementsById("clear-board");
 
