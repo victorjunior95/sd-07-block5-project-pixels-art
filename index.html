@@ -18,13 +18,13 @@
   </div>
 
   <!--https://github.com/susanschen/Pixel-Art-Maker/blob/master/index.html-->
-  <form class='pixel-board' id='pixel-board'>
-    <input type='number' required id='pixel' name='width' min='5' max='50' value='5'>
-    <input type='submit'>
+  <form class='custom-board' id='custom-board'>
+    <input type='number' required id='board-size' name='width' min='5' max='50' value='5'>
+    <button id='generate-board'>VQV</button>
     <button class = 'clear-board' id = 'clear-board' onclick='buttonClear();'>Limpar</button>
   </form>
   <div>
-    <table id='pixel_canvas'></table>
+    <table class='pixel' id='pixel-board'></table>
   </div>
 
   <script src="script.js"></script>

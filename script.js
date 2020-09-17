@@ -41,10 +41,10 @@ if (index === 0) {
 
 
 // github.com/susanschen/Pixel-Art-Maker/blob/master/index.html
-let canvas = document.getElementById('pixel_canvas');
-let height = document.getElementById('pixel');
-let width = document.getElementById('pixel');
-let pixelBoard = document.getElementById('pixel-board');
+let canvas = document.getElementById('pixel-board');
+let height = document.getElementById('board-size');
+let width = document.getElementById('board-size');
+let pixelBoard = document.getElementById('custom-board');
 
 pixelBoard.onsubmit = function(event){
   event.preventDefault();
