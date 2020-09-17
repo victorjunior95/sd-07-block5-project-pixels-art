@@ -20,9 +20,9 @@ function randRGB() {
 function testEmpty() {
   if (boardSize.value === '') {
     alert('Board inválido!');
-    return (false);
+    // return (false);
   }
-  return (true);
+  // return (true);
 }
 
 function testBoardSize() {
