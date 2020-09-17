@@ -79,9 +79,13 @@ function pixelGenerator(N) {
   if (!testBoardSize()) {
     return (false);
   }
-  if (!testEmpty()) {
-    return (false);
+  if (boardSize.value === '') {
+    alert('Board inválido!');
+    return;
   }
+  // if (!testEmpty()) {
+  //   return (false);
+  // }
 
   // Essa linha mata todas as divs de Linhas e de pixels que estão dentro do pixelBoard
   // Idealmente seria bom usar o removeChild
