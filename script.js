@@ -59,12 +59,10 @@ function changeClass(element){
     else {
 
         document.querySelector(`#${lastElementClass.id}`).className = 'color';
-
+        lastElementClass = thisElement ;
+        thisElement.className = 'selected';
+        
     };
-
-    lastElementClass = thisElement ;
-
-    thisElement.className = 'selected';
 
 };
 
