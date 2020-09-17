@@ -11,20 +11,50 @@ const thirdColor = document.querySelector('.color2');
 const forthColor = document.querySelector('.color3');
 
 const clearBtn = document.querySelector('#clear-board');
+const inputTitle = document.querySelector('#input-document-title');
+
+const restoreBoard = document.querySelector('#restore-board');
+const yesRestore = document.querySelector('#yes-restore');
+const noRestore = document.querySelector('#no-restore');
+
+let saveBoardSize = 0;
+
+if (localStorage.length !== 0) {
+  restoreBoard.style.display = 'inline-block';
+
+  yesRestore.addEventListener('click', function() {
+    restoreBoard.style.display = 'none';
+    loadBoard();
+  })
+
+  noRestore.addEventListener('click', function() {
+    localStorage.clear();
+    document.location.reload(true);
+  })
+
+} else {
+  newDocument.style.display = 'inline-block';
+}
 
 generateBoard.addEventListener('click', function() {
-  if (boardSize.value < 5) {
-    boardSize.value = 5;
-  } else if (boardSize.value > 50) {
-    boardSize.value = 50;
-  }
+  loadBoard(boardSize.value);
+})
 
-  if (boardSize.value !== undefined) {
+function loadBoard(boardSizeValue) {
+  if (boardSizeValue < 5) {
+    boardSizeValue = 5;
+  } else if (boardSizeValue > 50) {
+    boardSizeValue = 50;
+  }
+  saveBoardSize = boardSizeValue;
+  console.log(saveBoardSize);
+
+  if (boardSizeValue !== undefined) {
     pixelBoard.innerHTML = '';
     newDocument.className = 'new-document-top';
     colorPalette.style.display = 'block';
     randomColor();
-    generatePixels(boardSize.value);
+    generatePixels(boardSizeValue);
     boardSize.value = '';
     pixelBoard.style.display = 'inline-block';
     windowView.style.display = 'block';
@@ -36,7 +66,7 @@ generateBoard.addEventListener('click', function() {
 
     clearBtn.addEventListener('click', clearBoard);
   }
-})
+}
 
 function clearBoard() {
   let allPixels = document.querySelectorAll('.pixel');
