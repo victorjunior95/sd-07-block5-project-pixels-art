@@ -28,15 +28,13 @@
 
 }
 #clear-board {  
-  display: inline-block;
+  display: block;
   background-color: white;
   border: 1px solid black;
   height : 30px;
   width : 63px;
-  margin-right: 6px;
   box-sizing: border-box;
-  float: left;
-  border-radius: 25%;
+  margin-bottom: 7px;
 }
 
 .pixel {
