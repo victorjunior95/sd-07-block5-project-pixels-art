@@ -1,7 +1,7 @@
 const black = document.getElementById('black');
-const blue = document.getElementById('blue');
-const green = document.getElementById('green');
-const red = document.getElementById('red');
+const colorOne = document.getElementById('color-one');
+const colorTwo = document.getElementById('color-two');
+const colorThree = document.getElementById('color-three');
 const pixels = document.getElementsByClassName('pixel');
 const clear = document.getElementById('clear-board');
 const board = document.getElementById('pixel-board');
@@ -16,9 +16,9 @@ function generateColor() {
 }
 
 function newColors() {
-  blue.style.backgroundColor = generateColor();
-  red.style.backgroundColor = generateColor();
-  green.style.backgroundColor = generateColor();
+  colorOne.style.backgroundColor = generateColor();
+  colorThree.style.backgroundColor = generateColor();
+  colorTwo.style.backgroundColor = generateColor();
 }
 
 document.onload = newColors();
@@ -31,9 +31,9 @@ function getSelectedColor() {
 
 function removeAll() {
   black.classList.remove('selected');
-  blue.classList.remove('selected');
-  green.classList.remove('selected');
-  red.classList.remove('selected');
+  colorOne.classList.remove('selected');
+  colorTwo.classList.remove('selected');
+  colorThree.classList.remove('selected');
 }
 
 function selectColor(element) {
@@ -65,10 +65,10 @@ function initialSizeBoard() {
 
 document.onload = initialSizeBoard();
 
-blue.addEventListener('click', () => selectColor(blue, 'blue'));
-black.addEventListener('click', () => selectColor(black, 'black'));
-green.addEventListener('click', () => selectColor(green, 'green'));
-red.addEventListener('click', () => selectColor(red, 'red'));
+colorOne.addEventListener('click', () => selectColor(colorOne));
+black.addEventListener('click', () => selectColor(black));
+colorTwo.addEventListener('click', () => selectColor(colorTwo));
+colorThree.addEventListener('click', () => selectColor(colorThree));
 
 function clearBoard() {
   for (let i = 0; i < pixels.length; i += 1) {
