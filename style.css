@@ -32,11 +32,6 @@ table {
   border-collapse: collapse;
 }
 
-table , th , td {
-  border: 1px solid black;
-  padding: 1px;
-}
-
 .pixel-board {
   clear: both;
   display: table;
@@ -44,6 +39,7 @@ table , th , td {
 }
 
 .tr {
+  border: 1px solid black;
   display: table-row;
 }
 
@@ -54,6 +50,6 @@ table , th , td {
   width: 40px;
 }
 
-.select-size {
-  padding-top: 5px;
+.display {
+  display: none;
 }

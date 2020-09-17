@@ -4,6 +4,10 @@ const green = document.getElementById('green');
 const red = document.getElementById('red');
 const pixels = document.getElementsByClassName('pixel');
 const clear = document.getElementById('clear-board');
+const board = document.getElementById('pixel-board');
+const colums = document.getElementsByClassName('tr');
+const inputNumber = document.getElementById('board-size');
+const renderNewBoard = document.getElementById('generate-board');
 
 function removeAll() {
   black.classList.remove('selected');
@@ -32,6 +36,21 @@ for (let i = 0; i < pixels.length; i += 1) {
   });
 }
 
+function coloringPixels() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].addEventListener('click', () => {
+      pixels[i].style.backgroundColor = getSelectedColor();
+    });
+  }
+}
+
+function hideInitialGrid() {
+  const initialGrid = document.getElementsByClassName('initial');
+  for (let i = 0; i < initialGrid.length; i += 1) {
+    initialGrid[i].classList.toggle('display');
+  }
+}
+
 function clearBoard() {
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = 'white';
@@ -39,3 +58,23 @@ function clearBoard() {
 }
 
 clear.addEventListener('click', clearBoard);
+
+function addColums(number) {
+  number = inputNumber.value;
+  if (number > colums.length && number <= 50) {
+    for (let i = 0; i < number; i += 1) {
+      const newLine = document.createElement('div');
+      newLine.classList.add('tr');
+      board.appendChild(newLine);
+      for (let j = 0; j < number; j += 1) {
+        const newColum = document.createElement('div');
+        newColum.className = 'td pixel';
+        newLine.appendChild(newColum);
+      }
+    }
+    coloringPixels();
+    hideInitialGrid();
+  }
+}
+
+renderNewBoard.addEventListener('click', addColums);
