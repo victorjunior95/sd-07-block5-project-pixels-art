@@ -2,17 +2,36 @@
 const numberOfLine = 5;
 const numberOfColumn = 5;
 
-for (let line = 1; line <= numberOfLine; line += 1) {
-  const divLine = document.createElement('div');
-  divLine.className = 'tr';
-  document.getElementById('pixel-board').appendChild(divLine);
+let getDivPixelBoard = document.getElementById('pixel-board');
 
-  for (let column = 1; column <= numberOfColumn; column += 1) {
-    const divColumn = document.createElement('div');
-    divColumn.className = 'pixel td';
-    divLine.appendChild(divColumn);
+function removeChildsPixel() {
+  while (getDivPixelBoard.firstChild) {
+    getDivPixelBoard.removeChild(getDivPixelBoard.firstChild);
   }
 }
+
+function checkChildPixel() {
+  if (getDivPixelBoard.childElementCount > 0 ) {
+    removeChildsPixel();
+  }
+}
+
+function generatePixelMatriz (numberOfLine, numberOfColumn) {
+  checkChildPixel();
+  for (let line = 1; line <= numberOfLine; line += 1) {
+    const divLine = document.createElement('div');
+    divLine.className = 'tr';
+    getDivPixelBoard.appendChild(divLine);
+
+    for (let column = 1; column <= numberOfColumn; column += 1) {
+      const divColumn = document.createElement('div');
+      divColumn.className = 'pixel td';
+      divLine.appendChild(divColumn);
+    }
+  }
+}
+
+generatePixelMatriz(numberOfLine, numberOfColumn);
 
 const getPixelList = document.getElementsByClassName('color');
 function generationRandomColorRGB() {
@@ -80,8 +99,8 @@ function updateSizePixel(sizePixel) {
   }
 }
 function borderSizeValidation(size) {
-  if (size < 5 && size !== '') return 5;
-  if (size > 50 && size !== '') return 50;
+  if (size <= 5 && size !== '') return 5;
+  if (size >= 50 && size !== '') return 50;
   return size;
 }
 
@@ -109,7 +128,7 @@ document.getElementById('generate-board').addEventListener('click', function () 
   if (inputSize === '') {
     alert('Board inválido!');
   } else {
-    updateSizePixel(inputSize * inputSize);
-    clearColorPixel();
+      generatePixelMatriz(inputSize, inputSize);
+      //clearColorPixel();
   }
 });
