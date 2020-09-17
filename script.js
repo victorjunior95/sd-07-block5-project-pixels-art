@@ -1,11 +1,14 @@
-let initialColor = document.getElementsByClassName("color");
-
-for (let index = 0; index < initialColor.length; index += 1) {
-  initialColor[i].addEventListener("click", function (event) {
-    let colorSelected = document.getElementsByClassName("selected");
+let color = document.querySelectorAll("color");
+for (let index = 0; index < color.length; index += 1) {
+  color[index].addEventListener("click", function (event) {
+    let colorSelected = document.querySelector("selected")
 
     colorSelected.classList.remove("selected");
 
     event.target.className += "selected";
+    console.log(color);
+
   });
+
 }
+
