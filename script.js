@@ -2,7 +2,7 @@ const colors = document.querySelectorAll('.color');
 const reset = document.getElementById('clear-board');
 const pixels = document.querySelectorAll('.pixel');
 const corAtual = {
-  'bg': '#000000'
+  bg: '#000000',
 };
 
 colors[0].style.backgroundColor = '#000000';
@@ -49,4 +49,8 @@ reset.addEventListener('click', function () {
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = '#ffffff';
   }
+  removeSelected();
+  colors[0].classList.add('selected');
+  const selected = document.querySelector('.selected');
+  corAtual.bg = getComputedStyle(selected).backgroundColor;
 });
