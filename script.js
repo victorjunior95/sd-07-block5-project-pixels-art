@@ -1,6 +1,15 @@
 window.onload = function () {
   let colorPalet = document.querySelector('.selected');
   const selectedColor = document.getElementsByClassName('color');
+  
+  for (let index = 0; index < selectedColor.length; index += 1) {
+    if (selectedColor.item(index).classList[1] !== 'black') {
+      selectedColor.item(index).style.backgroundColor = 
+      '#' + Math.floor(Math.random() * 16777215).toString(16);
+      /* source: https://pt.stackoverflow.com/questions/5848/como-colorir-aleatoriamente-
+      divs-com-um-array-de-cores-em-javascript */
+    }
+  }
 
   for (let index = 0; index < selectedColor.length; index += 1) {
     selectedColor[index].addEventListener('click', function (event) {
@@ -22,7 +31,7 @@ window.onload = function () {
     https://github.com/tryber/sd-07-block5-project-pixels-art/blob/lenodeoliveira-pixel-art/script.js */
   // source: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
 
-  let buttonClearPixel = document.getElementById('clear-board');
+  const buttonClearPixel = document.getElementById('clear-board');
   buttonClearPixel.addEventListener('click', function () {
     for (let index = 0; index < pixel.length; index += 1) {
       pixel[index].style.backgroundColor = 'white';
