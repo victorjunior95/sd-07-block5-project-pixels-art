@@ -13,7 +13,13 @@ const forthColor = document.querySelector('.color3');
 const clearBtn = document.querySelector('#clear-board');
 
 generateBoard.addEventListener('click', function() {
-  if (boardSize.value >= 5 && boardSize.value <= 50 && boardSize.value !== undefined) {
+  if (boardSize.value < 5) {
+    boardSize.value = 5;
+  } else if (boardSize.value > 50) {
+    boardSize.value = 50;
+  }
+
+  if (boardSize.value !== undefined) {
     pixelBoard.innerHTML = '';
     newDocument.className = 'new-document-top';
     colorPalette.style.display = 'block';
@@ -29,8 +35,6 @@ generateBoard.addEventListener('click', function() {
     forthColor.addEventListener('click', setColorPalette);
 
     clearBtn.addEventListener('click', clearBoard);
-  } else {
-    alert("Insira um valor entre 5 e 50");
   }
 })
 
