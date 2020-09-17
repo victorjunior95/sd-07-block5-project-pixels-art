@@ -61,6 +61,9 @@ clear.addEventListener('click', clearBoard);
 
 function addColums(number) {
   number = inputNumber.value;
+  if (!number) {
+    alert('Board inválido!');
+  }
   if (number > colums.length && number <= 50) {
     for (let i = 0; i < number; i += 1) {
       const newLine = document.createElement('div');
