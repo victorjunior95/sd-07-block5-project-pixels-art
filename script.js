@@ -10,6 +10,13 @@ const renderNewBoard = document.getElementById('generate-board');
 
 // document.onload = newColors();
 
+// function to get Color of the blocks
+// Create one new class to display the palette collors (maybe color1, color2, color3, color4)
+  //Display inline put on color class
+// Remember: the first (color1) is always black!
+// Change name of blocks to selected (don't forget the class!!)
+// Change split (because of rgb have spaces)
+
 function getSelectedColor() {
   return document.getElementsByClassName('selected')[0].className.split(' ')[1];
 }
