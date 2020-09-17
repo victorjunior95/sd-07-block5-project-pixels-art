@@ -1,15 +1,15 @@
-//Container que armazena as linhas e os pixels
-let pixelBoard = document.getElementById('pixel-board');
+// Container que armazena as linhas e os pixels
+const pixelBoard = document.getElementById('pixel-board');
 // Número de linhas e culunas de pixels
-let boardSize = document.getElementById('board-size');
+const boardSize = document.getElementById('board-size');
 
-let boardLines = boardSize.value;
-let divLines = [];
-let pixel = [];
+// const boardLines = boardSize.value;
+const divLines = [];
+const pixel = [];
 
 // Função que gera um número pseudo aleatório de 0 até 255
 function rndRGB() {
-  return (Math.floor(parseInt(Math.random() * 255 , 10)));
+  return (Math.floor(parseInt(Math.random() * 255, 10)));
 }
 
 // Função que retorna um RGB com as três cores aleatórias
@@ -17,16 +17,19 @@ function randRGB() {
   return (`rgb(${rndRGB()} , ${rndRGB()} , ${rndRGB()})`);
 }
 
-function testBoardSize() {
+function testEmpty() {
   if (boardSize.value === '') {
     alert('Board inválido!');
     return (false);
   }
+  return (true);
+}
 
-  if (parseInt(boardSize.value , 10) < 5) { // parseInt(boardSize.min)) {
+function testBoardSize() {
+  if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
     boardSize.value = 5; // boardSize.min;
   }
-  if (parseInt(boardSize.value , 10) > parseInt(boardSize.max , 10)) {
+  if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
     boardSize.value = boardSize.max;
   }
   return (true);
@@ -38,6 +41,9 @@ function pixelGenerator(N) {
 
   // Testa se o boardSize possui um valor válido
   if (!testBoardSize()) {
+    return (false);
+  }
+  if (!testEmpty()) {
     return (false);
   }
 
@@ -56,9 +62,9 @@ function pixelGenerator(N) {
   main.style.height = 'calc(100% - 165px)';
   main.style.width = '100%';
 
-  let canvas = document.querySelector('.canvas');
-  const heightMain = parseInt(window.getComputedStyle(main).height , 10);
-  const widthMain = parseInt(window.getComputedStyle(main).width , 10);
+  const canvas = document.querySelector('.canvas');
+  const heightMain = parseInt(window.getComputedStyle(main).height, 10);
+  const widthMain = parseInt(window.getComputedStyle(main).width, 10);
   let canvasTop = (heightMain / 2) - (dimension / 2);
   let canvasLeft = (widthMain / 2) - (dimension / 2);
 
@@ -76,8 +82,8 @@ function pixelGenerator(N) {
   if (widthMain <= (dimension + (2 * 7) + (2 * 1) + (2 * 10))) {
     main.style.width = `${(dimension + (2 * 7) + (2 * 1) + (2 * 20))} px`;
   }
-  canvas.style.top = canvasTop + 'px';
-  canvas.style.left = canvasLeft + 'px';
+  canvas.style.top = `${canvasTop} px`;
+  canvas.style.left = `${canvasLeft} px`;
 
   // Nesse FOR é criada as linhas
   for (let i = 0; i < N; i += 1) {
@@ -86,64 +92,40 @@ function pixelGenerator(N) {
     pixelBoard.appendChild(divLines[i]);
 
     // Cria os N pixels na linha i
-    for (let  j = 0; j < N; j += 1) {
-      pixel[i * N + j] = document.createElement('div');
-      pixel[i * N + j].className = 'pixel';
-      divLines[i].appendChild(pixel[i * N + j]);
+    for (let j = 0; j < N; j += 1) {
+      pixel[(i * N) + j] = document.createElement('div');
+      pixel[(i * N) + j].className = 'pixel';
+      divLines[i].appendChild(pixel[(i * N) + j]);
     }
   }
   return (true);
-}
-
-function addListener() {
-
 }
 
 // Gerando os pixels ao carregara página
 pixelGenerator(boardSize.value);
 
 // obtendo cores aleatórias
-let colorSelected = document.getElementsByClassName('color');
+const colorSelected = document.getElementsByClassName('color');
 colorSelected[1].style.backgroundColor = randRGB();
 colorSelected[2].style.backgroundColor = randRGB();
 colorSelected[3].style.backgroundColor = randRGB();
 
 // Selecionando as cores de pintura
-let colorPalette = document.getElementById("color-palette");
+const colorPalette = document.getElementById('color-palette');
 
-colorPalette.addEventListener("click", function(event) {
+colorPalette.addEventListener('click', function (event) {
   document.querySelector('.selected').classList.remove('selected');
   event.target.classList.add('selected');
 
-  let fontColor = document.getElementsByClassName('colorFont');
-    fontColor[0].style.backgroundColor = window.getComputedStyle(event.target).backgroundColor;
+  const fontColor = document.getElementsByClassName('colorFont');
+  fontColor[0].style.backgroundColor = window.getComputedStyle(event.target).backgroundColor;
 });
-// for (let i = 0; i < 4; i += 1) {
-//   colorSelected[i].addEventListener('click', function() {
-//     document.querySelector('.selected').classList.remove('selected');
-//     colorSelected[i].classList.add('selected');
 
-//     let fontColor = document.getElementsByClassName('colorFont');
-//     fontColor[0].style.backgroundColor = window.getComputedStyle(colorSelected[i]).backgroundColor;
-//   });
-// }
-
-pixelBoard.addEventListener('click', function(event) {
-  let color = document.querySelector('.selected');
-  //let selected = document.querySelectorAll('.selected')
+pixelBoard.addEventListener('click', function (event) {
+  const color = document.querySelector('.selected');
+  // let selected = document.querySelectorAll('.selected')
   event.target.style.backgroundColor = window.getComputedStyle(color).backgroundColor;
-  //pixel[i].style.backgroundColor = getComputedStyle(cor).backgroundColor;
 });
-
-// for (let i = 0; i < pixel.length; i += 1) {
-//   pixel[i].addEventListener('click', function() {
-//     let cor = document.querySelector('.selected');
-//     let selected = document.querySelectorAll('.selected')
-//     pixel[i].style.backgroundColor = getComputedStyle(cor).backgroundColor;
-//   })
-
-
-//}
 
 let buttonClear= document.getElementById('clear-board');
 
@@ -155,7 +137,7 @@ buttonClear.addEventListener('click', function () {
 
 boardSize.addEventListener('change', testBoardSize);
 
-let buttonGenerator = document.getElementById('generate-board');
+const buttonGenerator = document.getElementById('generate-board');
 buttonGenerator.addEventListener('click', function() {
   pixelGenerator(boardSize.value);
 })
