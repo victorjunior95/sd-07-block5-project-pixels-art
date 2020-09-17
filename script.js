@@ -79,10 +79,10 @@ function pixelGenerator(N) {
   if (!testBoardSize()) {
     return (false);
   }
-  if (boardSize.value === '') {
-    alert('Board inválido!');
-    return;
-  }
+  // if (boardSize.value === '') {
+  //   alert('Board inválido!');
+  //   return;
+  // }
   // if (!testEmpty()) {
   //   return (false);
   // }
@@ -147,5 +147,10 @@ boardSize.addEventListener('change', testBoardSize);
 
 const buttonGenerator = document.getElementById('generate-board');
 buttonGenerator.addEventListener('click', function () {
-  pixelGenerator(boardSize.value);
+  if (boardSize.value === '') {
+    alert('Board inválido!');
+  }
+  else{
+    pixelGenerator(boardSize.value);
+  }
 });
