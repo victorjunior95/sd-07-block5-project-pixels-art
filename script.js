@@ -21,12 +21,14 @@ line[index] = document.createElement("div");
 line[index].className = "line";
 pixelBorad.appendChild(line[index]);
 
+
 //criar os quadrados  dentro da linha
 for(let ind2 = 0 ; ind2 < numberLines; ind2 +=1){
 pixel[lineZero] = document.createElement("div");
 pixel[lineZero].className="pixel";
 line[index].appendChild(pixel[lineZero]);
 lineZero = lineZero + 1;
+
 
 }
 }

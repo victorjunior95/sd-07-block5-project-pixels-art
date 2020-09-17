@@ -5,10 +5,19 @@ padding: 0;
 }
 .color-paletter-div{
 display: inline-block;
+border-collapse: collapse;
 }
 .color-paletter-div div {
 border: 1px solid rgb(0,0,0);
 display: inline-block;
+}
+/* .contaner-pixel{
+    display: table;
+    border-collapse: collapse;
+} */
+
+.line{
+    margin-bottom: -4px;
 }
 .clear-board{
 display: inline-block;
@@ -36,4 +45,5 @@ border: 1px solid rgb(0,0,0);
 width: 40px;
 height: 40px;
 display: inline-block;
+box-sizing: border-box;
 }
