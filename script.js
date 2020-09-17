@@ -1,0 +1,1 @@
+document.querySelectorAll('.color')[0].style.backgroundColor = 'black';
