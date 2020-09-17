@@ -10,7 +10,9 @@ display: inline-block;
 border: 1px solid rgb(0,0,0);
 display: inline-block;
 }
-
+.clear-board{
+display: inline-block;
+}
 .colorOne, .colorTwo, .colorThree, .colorFour{
 width: 40px;
 height: 40px;
