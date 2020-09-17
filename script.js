@@ -89,7 +89,7 @@ pixelBoard.addEventListener("click", function(event) {
 const buttonClear = document.getElementById('clear-board');
 buttonClear.addEventListener('click', function() {
   const pixelIten = document.querySelectorAll('.pixel');
-  for (let count in pixelIten) {
+  for (let count = 0; count < pixelIten.length; count += 1) {
     pixelIten[count].style.backgroundColor = 'white';
   }
 });
