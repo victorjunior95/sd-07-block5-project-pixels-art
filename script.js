@@ -22,7 +22,7 @@ function generatePixelMatriz(linePixels, columnPixels) {
     divLine.className = 'tr';
     getDivPixelBoard.appendChild(divLine);
 
-    for (let column = 1; coc; columnPixels += 1) {
+    for (let column = 1; column <= columnPixels; column += 1) {
       const divColumn = document.createElement('div');
       divColumn.className = 'pixel td';
       divLine.appendChild(divColumn);
@@ -112,7 +112,6 @@ document.getElementById('color-palette').addEventListener('click', function (eve
   updateClassesOldPalette(indexPaletteSelected, attributesClassReduce);
   updateClassesNewSelectedPalette(event.target);
 });
-
 document.getElementById('generate-board').addEventListener('click', function () {
   const inputSizeValue = getInputSizePixelValue();
   const inputSize = borderSizeValidation(inputSizeValue);
