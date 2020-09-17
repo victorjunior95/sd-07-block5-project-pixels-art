@@ -3,7 +3,7 @@ let colorPalette = document.getElementById("color-palette"),
     buttonClear = document.getElementById('clear-board'),
     colors = ['black', 'blue', 'pink', 'green'],
     colorSelected,
-    lastElementClass;
+    lastElementSelected;
 
 function creatColorsPalette() {
 
@@ -43,17 +43,17 @@ function changeClass(element){
 
     let thisElement = element;
 
-    if(lastElementClass === undefined ) {
+    if(lastElementSelected === undefined ) {
 
-        lastElementClass = thisElement;
-        thisElement.className = 'selected';
+        lastElementSelected = thisElement;
+        thisElement.className = 'color selected';
 
     }
     else {
 
-        document.querySelector(`#${lastElementClass.id}`).className = 'color';
-        lastElementClass = thisElement ;
-        thisElement.className = 'selected';
+        document.querySelector(`#${lastElementSelected.id}`).className = 'color';
+        lastElementSelected = thisElement ;
+        thisElement.className = 'color selected';
 
     };
 
@@ -144,3 +144,13 @@ window.addEventListener('DOMContentLoaded', () => {
     creatEvents();
 
 });
+
+/*
+
+Ao carregar a página, a cor preta da paleta já deve estar selecionada para pintar os pixels.	
+*/
+
+/*
+A cor preta deve ser a primeira na paleta de cores.	
+A página deve possuir uma paleta de quatro cores distintas.	
+*/
