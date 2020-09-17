@@ -1,6 +1,5 @@
 
 #color-palette{
-
   display: inline-block;
   box-sizing: border-box;
 
@@ -8,37 +7,33 @@
 
 .color{
 
+  box-sizing: border-box;
+  border: 1px solid black;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 7px;
+
+}
+
+.selected {
+
   border: 1px solid black;
   display: inline-block;
   width: 30px;
   height: 30px;
   border-radius: 25%;
+  margin-right: 7px;
+
 
 }
-
-#blackColor{
-  background-color: black;
-}
-
-#greenColor{
-  background-color: green;
-}
-
-#redColor{
-  background-color: red;
-}
-
-#pinkColor{
-  background-color: pink;
-}
-
-#clear-board {
+#clear-board {  
   display: inline-block;
   background-color: white;
   border: 1px solid black;
   height : 30px;
   width : 63px;
-  margin-right: 7px;
+  margin-right: 6px;
   box-sizing: border-box;
   float: left;
   border-radius: 25%;
