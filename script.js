@@ -89,7 +89,7 @@ function resetBoard() {
 }
 // Função que cria um novo quadro com os parametros passados
 const generateBoard = document.querySelector('#generate-board');
-generateBoard.addEventListener('click', function createBoard() {
+generateBoard.addEventListener('click', function () {
   if (boardSize.value <= 0) {
     return alert('Board inválido!');
   }
