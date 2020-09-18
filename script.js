@@ -92,11 +92,13 @@ function alertVQV() {
       case (alertVQV.value > 50):
         alertVQV.value = 50;
         break;
-      default:
-        break;
     }
   } else {
-    alert('Board inválido!');
+    switch (false) {
+      default:
+      alert('Board inválido!');
+      break;
+    }
   }
 }
 
