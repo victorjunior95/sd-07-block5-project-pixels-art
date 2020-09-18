@@ -1,5 +1,5 @@
 const select = document.querySelector('#color-palette');
-const paint = document.querySelector('#pixel-board');
+const pixel = document.querySelector('#pixel-board');
 const clear = document.querySelector('#clear-board');
 const changeSize = document.querySelector('#generate-board');
 
@@ -12,6 +12,7 @@ function randomPalette() {
   if (document.getElementById('second').style.backgroundColor === '255255255' || document.getElementById('third').style.backgroundColor === '255255255' || document.getElementById('fourth').style.backgroundColor === '255255255') {
     randomPalette();
   }
+  createBoard();
 }
 
 select.addEventListener('click', function () {
@@ -38,7 +39,7 @@ select.addEventListener('click', function () {
   }
 });
 
-paint.addEventListener('click', function () {
+pixel.addEventListener('click', function () {
   const selectedColor = document.getElementsByClassName('selected')[0];
   const pixelColor = getComputedStyle(selectedColor).backgroundColor;
   if (event.target.className.includes('pixel')) {
@@ -53,27 +54,38 @@ clear.addEventListener('click', function () {
   }
 });
 
-changeSize.addEventListener('click', function () {
-  const textSize = document.querySelector('#board-size').value;
-  if (textSize === '') {
-    alert('Board inválido!');
-  } else if (parseInt(textSize) <= 5) {
-    for (let index = 0; index < 25; index += 1) {
-      document.getElementsByClassName('pixel')[index].style.height = '5px';
-      document.getElementsByClassName('pixel')[index].style.width = '5px';
-      document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
+// Creating a board with JavaScript
+
+// const boardSize = document.querySelector('#board-size').value;
+
+
+function createBoard() {
+
+  for (let index = 0; index < 25; index += 1) {
+
+    if (index === 5 || index === 10 || index === 15 || index === 20) {
+      const broke = document.createElement('br');
+      pixel.appendChild(broke);
     }
-  } else if (parseInt(textSize) >= 50) {
-    for (let index = 0; index < 25; index += 1) {
-      document.getElementsByClassName('pixel')[index].style.height = '50px';
-      document.getElementsByClassName('pixel')[index].style.width = '50px';
-      document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
-    }
-  } else {
-    for (let index = 0; index < 25; index += 1) {
-      document.getElementsByClassName('pixel')[index].style.height = `${textSize}px`;
-      document.getElementsByClassName('pixel')[index].style.width = `${textSize}px`;
-      document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
-    }
+
+    let pixelItem = document.createElement('div');
+    pixelItem.className = 'pixel';
+    pixelItem.id = `${index}`;
+    pixel.appendChild(pixelItem);
+    
+
   }
-});
+}
+
+// ******************************************************************************
+const states = document.getElementById('states');
+const brazilianStates = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa',  'Catarina', 'São Paulo', 'Sergipe', 'Tocantins'];
+
+function stateslist() {
+  for(let index = 0; index < brazilianStates.length; index += 1) {
+    let state = brazilianStates[index];
+    let statesItem = document.createElement('option');
+    statesItem.innerText = state;
+    states.appendChild(statesItem);
+  }
+}
