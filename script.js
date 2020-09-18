@@ -89,7 +89,6 @@ function pixelGenerator(N) {
   }
   return (true);
 }
-
 boardSize.addEventListener('change', testBoardSize);
 
 // const buttonGenerator = document.getElementById('generate-board');
@@ -119,12 +118,10 @@ generateBoard.addEventListener('click', function () {
     boardSize.value = 50;
   }
   pixelGenerator(boardSize.value);
-  boardSize.value = 0;
 });
 
 // Gerando os pixels ao carregara página
-boardSize.value = 5
-pixelGenerator(boardSize.value);
+pixelGenerator(5);
 
 // obtendo cores aleatórias
 const colorSelected = document.getElementsByClassName('color');
