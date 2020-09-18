@@ -110,7 +110,8 @@ boardSize.addEventListener('change', testBoardSize);
 const generateBoard = document.querySelector('#generate-board');
 generateBoard.addEventListener('click', function () {
   if ((boardSize.value <= 0)) {
-    return alert('Board inválido!');
+    alert('Board inválido!');
+    return (false);
   }
   if (boardSize.value < 5) {
     boardSize.value = 5;
