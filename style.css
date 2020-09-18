@@ -4,6 +4,7 @@
   height: 45px;
   margin: 5px;
   width: 45px;
+  cursor: pointer;
 }
 
 .pixel-board {
