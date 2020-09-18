@@ -133,7 +133,7 @@ boardSize.addEventListener('change', testBoardSize);
 const buttonGenerator = document.getElementById('generate-board');
 buttonGenerator.addEventListener('click', function () {
   console.log("a" + boardSize.value + "b")
-  if (boardSize.value == "") {
+  if (boardSize.value <= 0) {
     console.log(boardSize.value);
     alert('Board inválido!');
   }
