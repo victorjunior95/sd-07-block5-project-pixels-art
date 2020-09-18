@@ -17,15 +17,15 @@ function randRGB() {
   return (`rgb(${rndRGB()} , ${rndRGB()} , ${rndRGB()})`);
 }
 
-function testBoardSize() {
-  if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
-    boardSize.value = 5; // boardSize.min;
-  }
-  if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
-    boardSize.value = boardSize.max;
-  }
-  return (true);
-}
+// function testBoardSize() {
+//   if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
+//     boardSize.value = 5; // boardSize.min;
+//   }
+//   if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
+//     boardSize.value = boardSize.max;
+//   }
+//   return (true);
+// }
 
 function positionCanvas(N) {
   // Redimensionando o Board
@@ -68,9 +68,9 @@ function pixelGenerator(N) {
   // N é o número de linhas / colunas da matriz de pixels
 
   // Testa se o boardSize possui um valor válido
-  if (!testBoardSize()) {
-    return (false);
-  }
+  // if (!testBoardSize()) {
+  //   return (false);
+  // }
 
   // Essa linha mata todas as divs de Linhas e de pixels que estão dentro do pixelBoard
   // Idealmente seria bom usar o removeChild
@@ -128,14 +128,18 @@ buttonClear.addEventListener('click', function () {
   }
 });
 
-boardSize.addEventListener('change', testBoardSize);
+// boardSize.addEventListener('change', testBoardSize);
 
 const buttonGenerator = document.getElementById('generate-board');
 buttonGenerator.addEventListener('click', function () {
   if (boardSize.value <= 0) {
     return (alert('Board inválido!'));
   }
-  else {
-    pixelGenerator(boardSize.value);
+  if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
+    boardSize.value = 5; // boardSize.min;
   }
+  if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
+    boardSize.value = boardSize.max;
+  }
+  pixelGenerator(boardSize.value);
 });
