@@ -1,0 +1,32 @@
+#color-palette{
+    display: inline-flex;
+    height: 100px;
+    width: 400px;
+}
+.color, .Selected{
+    height: 98px;
+    width: 98px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border: 1px;
+    background-color: burlywood;
+    padding: auto;
+    margin: auto;
+}
+#pixel-board{
+    height: 210px;
+    width: 210px;
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.pixel{
+    height: 40px;
+    width: 40px;
+    border-style: solid;
+    border-color: black;
+    background-color: rgb(255, 255, 255);
+    border-width: 1px;
+}
