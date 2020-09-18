@@ -2,11 +2,11 @@
 // so it's applied to all spec files
 // cypress/support/index.js
 
-//Cypress.on('uncaught:exception', (err, runnable) => {
+Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from
   // failing the test
-//  return false
-//})
+  return false
+})
 
 
 // https://github.com/tryber/sd-07-block5-project-pixels-art/tree/Cainan6697-project-pixels-art
@@ -30,12 +30,12 @@ selectPixel.addEventListener('click', function (event) {
 // https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
 const colors = document.querySelectorAll('.color');
 for (let index = 0; index < colors.length; index += 1) {
-  var x = Math.floor(Math.random() * 256);
-  var y = Math.floor(Math.random() * 256);
-  var z = Math.floor(Math.random() * 256);
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
 
-if (index === 0) {
-  colors[index].style.backgroundColor = 'black';
+  if (index === 0) {
+    colors[index].style.backgroundColor = 'black';
   } else {
     colors[index].style.backgroundColor = `rgb(${x},${y},${z})`;
   }
@@ -44,31 +44,31 @@ if (index === 0) {
 
 
 // github.com/susanschen/Pixel-Art-Maker/blob/master/index.html
-let canvas = document.getElementById('pixel-board');
-let height = document.getElementById('board-size');
-let width = document.getElementById('board-size');
-let pixelBoard = document.getElementById('custom-board');
+const canvas = document.getElementById('pixel-board');
+const height = document.getElementById('board-size');
+const width = document.getElementById('board-size');
+const pixelBoard = document.getElementById('custom-board');
 
-pixelBoard.onsubmit = function(event){
+pixelBoard.onsubmit = function (event){
   event.preventDefault();
   clearGrid();
   makeGrid();
 };
 
-function clearGrid(){
-  while (canvas.firstChild){
+function clearGrid() {
+  while (canvas.firstChild) {
     canvas.removeChild(canvas.firstChild);
   }
 }
 
-function fillSquare () {
+function fillSquare() {
   this.setAttribute('style', `background-color: ${color.value}`);
 }
 
 function makeGrid() {
-  for (let r=0; r<height.value; r++){
+  for (let r = 0; r < height.value; r += 1) {
     const row = canvas.insertRow(r);
-    for (let c = 0; c < width.value; c++){
+    for (let c = 0; c < width.value; c += 1) {
       const cell = row.insertCell(c);
       cell.addEventListener('click', fillSquare);
       cell.className = 'pixel';
@@ -78,7 +78,7 @@ function makeGrid() {
 
 window.onload = function () {
   makeGrid();
-}
+};
 // ---------------------------------------------------------------------------------------------
 
 
