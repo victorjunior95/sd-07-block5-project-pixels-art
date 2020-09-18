@@ -1,118 +1,158 @@
-// Define nossa cor padrão para pintar o quadro
-let color = 'black';
-// Gera a cor do botão
-// Fonte: https://stackoverflow.com/a/25873123
-const randomHsl = () => `hsla(${Math.random() * 360}, 100%, 50%, 1)`;
-// <------------------------------------------------------->
+// Container que armazena as linhas e os pixels
+const pixelBoard = document.getElementById('pixel-board');
+// Número de linhas e culunas de pixels
+const boardSize = document.getElementById('board-size');
 
-// Adiciona cada cor ao valor do botão
-const buttonColor1 = randomHsl();
-const buttonColor2 = randomHsl();
-const buttonColor3 = randomHsl();
-// Define o fundo de cada botão com a cor gerada a cima
-document.querySelector('.button1').style.backgroundColor = buttonColor1;
-document.querySelector('.button2').style.backgroundColor = buttonColor2;
-document.querySelector('.button3').style.backgroundColor = buttonColor3;
-// Remove a classe selected de cada botão
-const resetSelector = () => {
-  document.querySelectorAll('.color').forEach((item) => {
-    item.classList.remove('selected');
-  });
-};
-// Bloco que cria os seletores de cores
-const blackPicker = document.querySelector('.black');
-blackPicker.addEventListener('click', function () {
-  color = 'black';
-  resetSelector();
-  document.querySelector('.black').classList.add('selected');
-});
+// const boardLines = boardSize.value;
+const divLines = [];
+const pixel = [];
 
-const colorOne = document.querySelector('.button1');
-colorOne.addEventListener('click', function () {
-  color = buttonColor1;
-  resetSelector();
-  document.querySelector('.button1').classList.add('selected');
-});
-
-const colorTwo = document.querySelector('.button2');
-colorTwo.addEventListener('click', function () {
-  color = buttonColor2;
-  resetSelector();
-  document.querySelector('.button2').classList.add('selected');
-});
-
-const colorThree = document.querySelector('.button3');
-colorThree.addEventListener('click', function () {
-  color = buttonColor3;
-  resetSelector();
-  document.querySelector('.button3').classList.add('selected');
-});
-
-// Função que permite que pinte o fundo de cada quadrado com a cor selecionada
-// https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
-function colorSelector() {
-  document.querySelectorAll('.pixel').forEach((item) => {
-    item.addEventListener('click', () => {
-      item.style.backgroundColor = color;
-    });
-  });
+// Função que gera um número pseudo aleatório de 0 até 255
+function rndRGB() {
+  return (Math.floor(parseInt(Math.random() * 255, 10)));
 }
-// Chamando a função
-colorSelector();
-// <-------------------------------------------------------------------------------->
-// Função que limpa a cor do quadro
-const clearBoard = document.getElementById('clear-board');
-clearBoard.addEventListener('click', () => {
-  for (
-    let index = 0;
-    index < document.querySelectorAll('.pixel').length;
-    index += 1
-  ) {
-    document.querySelectorAll('.pixel')[index].style.backgroundColor = 'white';
+
+// Função que retorna um RGB com as três cores aleatórias
+function randRGB() {
+  return (`rgb(${rndRGB()} , ${rndRGB()} , ${rndRGB()})`);
+}
+
+function testBoardSize() {
+  if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
+    boardSize.value = 5; // boardSize.min;
   }
-});
-// Capturando o valor do tamanho do nosso quadro
-let boardSizeNumber;
-const boardSize = document.querySelector('#board-size');
-boardSize.addEventListener('keyup', () => {
-  boardSizeNumber = document.querySelector('#board-size').value;
-  boardSizeNumber *= boardSizeNumber;
-});
-// Função que deleta os quadrados do nosso quadro
-function resetBoard() {
-  document.querySelectorAll('.col').forEach(function (a) {
-    a.remove();
-  });
-  document.querySelectorAll('.pixel').forEach((item) => {
-    item.remove();
-  });
+  if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
+    boardSize.value = boardSize.max;
+  }
 }
-// Função que cria um novo quadro com os parametros passados
+
+function positionCanvas(N) {
+  // Redimensionando o Board
+  const dimension = (40 * N) + (2 * N);
+  pixelBoard.style.height = `${dimension}px`;
+  pixelBoard.style.width = `${dimension}px`;
+
+  // Reposicionando no centro da tela
+  const main = document.querySelector('main');
+
+  // Resetando as dimensões da MAIN
+
+  main.style.height = 'calc(100% - 165px)';
+  main.style.width = '100%';
+
+  const canvas = document.querySelector('.canvas');
+  const heightMain = parseInt(window.getComputedStyle(main).height, 10);
+  const widthMain = parseInt(window.getComputedStyle(main).width, 10);
+  let canvasTop = (heightMain / 2) - (dimension / 2);
+  let canvasLeft = (widthMain / 2) - (dimension / 2);
+
+  if (canvasTop < 10) {
+    canvasTop = 10;
+  }
+  if (canvasLeft < 10) {
+    canvasLeft = 10;
+  }
+
+  // Aumenta as dimensões da MAIN (colocando rolagem) se o box size ficar muito grande
+  if (heightMain <= (dimension + (2 * 7) + (2 * 1) + (2 * 10))) {
+    main.style.height = `${(dimension + (2 * 7) + (2 * 1) + (2 * 20))}px`;
+  }
+  if (widthMain <= (dimension + (2 * 7) + (2 * 1) + (2 * 10))) {
+    main.style.width = `${(dimension + (2 * 7) + (2 * 1) + (2 * 20))}px`;
+  }
+  canvas.style.top = `${canvasTop}px`;
+  canvas.style.left = `${canvasLeft}px`;
+}
+
+// função que gera as linhas e colunas dos pixels
+function pixelGenerator(N) {
+  // N é o número de linhas / colunas da matriz de pixels
+
+  // Essa linha mata todas as divs de Linhas e de pixels que estão dentro do pixelBoard
+  // Idealmente seria bom usar o removeChild
+  pixelBoard.innerHTML = '';
+
+  positionCanvas(N);
+
+  // Nesse FOR é criada as linhas
+  for (let i = 0; i < N; i += 1) {
+    divLines[i] = document.createElement('div');
+    divLines[i].className = 'boardLines';
+    pixelBoard.appendChild(divLines[i]);
+
+    // Cria os N pixels na linha i
+    for (let j = 0; j < N; j += 1) {
+      pixel[(i * N) + j] = document.createElement('div');
+      pixel[(i * N) + j].className = 'pixel';
+      divLines[i].appendChild(pixel[(i * N) + j]);
+    }
+  }
+  return (true);
+}
+
+boardSize.addEventListener('change', testBoardSize);
+
+// const buttonGenerator = document.getElementById('generate-board');
+// buttonGenerator.addEventListener('click', function () {
+//   if (boardSize.value == '') {
+//     return (alert('Board inválido!'));
+//   }
+//   if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
+//     boardSize.value = 5; // boardSize.min;
+//   }
+//   if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
+//     boardSize.value = boardSize.max;
+//   }
+//   pixelGenerator(boardSize.value);
+//   return (true);
+// });
+
 const generateBoard = document.querySelector('#generate-board');
-generateBoard.addEventListener('click', function createBoard() {
-  if (boardSize.value <= 0) {
+generateBoard.addEventListener('click', function () {
+  if ((boardSize.value <= 0)) {
     return alert('Board inválido!');
   }
   if (boardSize.value < 5) {
-    boardSizeNumber = 5 * 5;
+    boardSize.value = 5;
   }
   if (boardSize.value > 50) {
-    boardSizeNumber = 50 * 50;
+    boardSize.value = 50;
   }
-  const targetDiv = document.getElementById('pixel-board');
-  let count = 0;
-  resetBoard();
-  for (let index = 0; index < boardSizeNumber; index += 1) {
-    const newPixel = document.createElement('div');
-    newPixel.className = 'pixel';
-    targetDiv.appendChild(newPixel);
-    count += 1;
-    if (count === Math.sqrt(boardSizeNumber)) {
-      const spacer = document.createElement('div');
-      spacer.className = 'col';
-      targetDiv.appendChild(spacer);
-      count = 0;
-    }
+  pixelGenerator(boardSize.value);
+  boardSize.value = 0;
+});
+
+// Gerando os pixels ao carregara página
+boardSize.value = 5
+pixelGenerator(boardSize.value);
+
+// obtendo cores aleatórias
+const colorSelected = document.getElementsByClassName('color');
+colorSelected[1].style.backgroundColor = randRGB();
+colorSelected[2].style.backgroundColor = randRGB();
+colorSelected[3].style.backgroundColor = randRGB();
+
+// Selecionando as cores de pintura
+const colorPalette = document.getElementById('color-palette');
+
+colorPalette.addEventListener('click', function (event) {
+  document.querySelector('.selected').classList.remove('selected');
+  event.target.classList.add('selected');
+
+  const fontColor = document.getElementsByClassName('colorFont');
+  fontColor[0].style.backgroundColor = window.getComputedStyle(event.target).backgroundColor;
+});
+
+pixelBoard.addEventListener('click', function (event) {
+  const color = document.querySelector('.selected');
+  // let selected = document.querySelectorAll('.selected')
+  event.target.style.backgroundColor = window.getComputedStyle(color).backgroundColor;
+});
+
+const buttonClear = document.getElementById('clear-board');
+
+buttonClear.addEventListener('click', function () {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
   }
-  return colorSelector();
 });
