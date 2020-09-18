@@ -40,7 +40,7 @@ function positionCanvas(N) {
   // Resetando as dimensões da MAIN
 
   main.style.height = 'calc(100% - 165px)';
-  main.style.width = '50%';
+  // main.style.width = '50%';
   console.log(window.getComputedStyle(main).width)
 
   const canvas = document.querySelector('.canvas');
@@ -150,10 +150,10 @@ generateBoard.addEventListener('click', function () {
     return alert('Board inválido!');
   }
   if (boardSize.value < 5) {
-    boardSizeNumber = 5 * 5;
+    boardSize.value = 5;
   }
   if (boardSize.value > 50) {
-    boardSizeNumber = 50 * 50;
+    boardSize.value = 50;
   }
   pixelGenerator(boardSize.value);
 });
