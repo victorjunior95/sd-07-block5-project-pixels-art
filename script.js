@@ -132,7 +132,7 @@ buttonClear.addEventListener('click', function () {
 
 const buttonGenerator = document.getElementById('generate-board');
 buttonGenerator.addEventListener('click', function () {
-  if (boardSize.value <= 0) {
+  if (boardSize.value == '') {
     return (alert('Board inválido!'));
   }
   if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
@@ -142,4 +142,5 @@ buttonGenerator.addEventListener('click', function () {
     boardSize.value = boardSize.max;
   }
   pixelGenerator(boardSize.value);
+  return (true);
 });
