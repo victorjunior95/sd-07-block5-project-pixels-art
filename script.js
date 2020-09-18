@@ -2,11 +2,11 @@
 // so it's applied to all spec files
 // cypress/support/index.js
 
-Cypress.on('uncaught:exception', (err, runnable) => {
+//Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from
   // failing the test
-  return false
-})
+//  return false
+//})
 
 
 // https://github.com/tryber/sd-07-block5-project-pixels-art/tree/Cainan6697-project-pixels-art
@@ -86,9 +86,17 @@ function alertVQV() {
   let alertVQV = document.querySelector('#board-size');
   if (alertVQV.value === '') {
     alert('Board inválido!');
-  } else if (alertVQV.value < 5) {
-    alertVQV.value = 5;
-  } else if (alertVQV.value > 50) {
-    alertVQV.value = 50;
+  } else {
+    switch (true) {
+      case (alertVQV.value < 5):
+        alertVQV.value = 5;
+        break;
+      case (alertVQV.value > 50):
+        alertVQV.value = 50;
+        break;
+      default:
+        break;
+    }
   }
 }
+
