@@ -127,7 +127,6 @@ h1 {
 } */
 
 .edit {
-
   bottom: 38px;
   color: white;
   display: inline-block;
@@ -238,7 +237,6 @@ main {
   border-width: 1px;
 
   /* display: inline-block; */
-
   left: calc(50% - 106px);
   margin: 10px;
   position: relative;
