@@ -24,7 +24,6 @@ function testBoardSize() {
   if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
     boardSize.value = boardSize.max;
   }
-  return (true);
 }
 
 function positionCanvas(N) {
