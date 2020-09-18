@@ -123,8 +123,8 @@ generateBoard.addEventListener('click', function () {
 });
 
 // Gerando os pixels ao carregara página
-boardSize.value = 5
-pixelGenerator(boardSize.value);
+//boardSize.value = 5
+pixelGenerator(5);
 
 // obtendo cores aleatórias
 const colorSelected = document.getElementsByClassName('color');
