@@ -144,7 +144,7 @@ buttonClear.addEventListener('click', function () {
 
 const generateBoard = document.querySelector('#generate-board');
 generateBoard.addEventListener('click', function () {
-  if ((boardSize.value <= 0) || (boardSize.value == '')) {
+  if ((boardSize.value <= 0)) {
     return alert('Board inválido!');
   }
   if (boardSize.value < 5) {
