@@ -9,10 +9,29 @@
   <body>
     <h1 id="title">Paleta de Cores</h1>
     <div id="color-palette" class="head-container">
-      <div class="color selected" id="black"></div>
-      <div class="color" id="red"></div>
-      <div class="color" id="green"></div>
-      <div class="color" id="grey"></div>
+      <div class="color black selected fixed"></div>
+      <div class="color"></div>
+      <div class="color"></div>
+      <div class="color"></div>
+    </div>
+    <div class="board-size">
+      <input
+        type="number"
+        id="board-size"
+        class="heigth"
+        min="5"
+        max="50"
+        placeholder="altura"
+      />
+      <input
+        type="number"
+        id="board-size"
+        class="width"
+        min="5"
+        max="50"
+        placeholder="largura"
+      />
+      <button id="generate-board">VQV</button>
     </div>
     <button id="clear-board">Limpar</button>
     <div id="pixel-board">
