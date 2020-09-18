@@ -35,9 +35,13 @@ function positionCanvas(N) {
 
   // Reposicionando no centro da tela
   const main = document.querySelector('main');
+  main.style.width = '1px';
+  console.log(window.getComputedStyle(main).width)
   // Resetando as dimensões da MAIN
+
   main.style.height = 'calc(100% - 165px)';
-  main.style.width = '100%';
+  main.style.width = '50%';
+  console.log(window.getComputedStyle(main).width)
 
   const canvas = document.querySelector('.canvas');
   const heightMain = parseInt(window.getComputedStyle(main).height, 10);
@@ -66,11 +70,6 @@ function positionCanvas(N) {
 // função que gera as linhas e colunas dos pixels
 function pixelGenerator(N) {
   // N é o número de linhas / colunas da matriz de pixels
-
-  // Testa se o boardSize possui um valor válido
-  // if (!testBoardSize()) {
-  //   return (false);
-  // }
 
   // Essa linha mata todas as divs de Linhas e de pixels que estão dentro do pixelBoard
   // Idealmente seria bom usar o removeChild
@@ -130,17 +129,31 @@ buttonClear.addEventListener('click', function () {
 
 // boardSize.addEventListener('change', testBoardSize);
 
-const buttonGenerator = document.getElementById('generate-board');
-buttonGenerator.addEventListener('click', function () {
-  if (boardSize.value == '') {
-    return (alert('Board inválido!'));
+// const buttonGenerator = document.getElementById('generate-board');
+// buttonGenerator.addEventListener('click', function () {
+//   if (boardSize.value == '') {
+//     return (alert('Board inválido!'));
+//   }
+//   if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
+//     boardSize.value = 5; // boardSize.min;
+//   }
+//   if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
+//     boardSize.value = boardSize.max;
+//   }
+//   pixelGenerator(boardSize.value);
+//   return (true);
+// });
+
+const generateBoard = document.querySelector('#generate-board');
+generateBoard.addEventListener('click', function () {
+  if (boardSize.value <= 0) {
+    return alert('Board inválido!');
   }
-  if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
-    boardSize.value = 5; // boardSize.min;
+  if (boardSize.value < 5) {
+    boardSizeNumber = 5 * 5;
   }
-  if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
-    boardSize.value = boardSize.max;
+  if (boardSize.value > 50) {
+    boardSizeNumber = 50 * 50;
   }
   pixelGenerator(boardSize.value);
-  return (true);
 });
