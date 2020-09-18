@@ -68,6 +68,7 @@ function makeGrid() {
     for (let c = 0; c < width.value; c++){
       const cell = row.insertCell(c);
       cell.addEventListener('click', fillSquare);
+      cell.className = 'pixel';
     }
   }
 }
