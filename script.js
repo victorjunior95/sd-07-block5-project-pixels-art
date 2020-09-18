@@ -3,6 +3,8 @@ let box2 = document.querySelectorAll('.color')[1];
 let box3 = document.querySelectorAll('.color')[2];
 let box4 = document.querySelectorAll('.color')[3];
 const pixelBoard = document.getElementById('pixel-board');
+const buttonClear = document.getElementById('clear-board');
+
 
 box1.style.backgroundColor = 'black';
 
@@ -49,6 +51,12 @@ for (let i = 0; i < color.length; i += 1) {
       selected.classList.remove('selected');
       // event.target.className += ' selected';
       color[i].classList.add('selected');
-})
-    
+  })
 }
+
+buttonClear.addEventListener('click', function () {
+  const allPixels = document.querySelectorAll('.pixel')
+  for (let i = 0; i < allPixels.length; i += 1) {
+    allPixels[i].style.backgroundColor = 'white';
+  }
+});
