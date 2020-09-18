@@ -90,7 +90,39 @@ function pixelGenerator(N) {
   return (true);
 }
 
+boardSize.addEventListener('change', testBoardSize);
+
+// const buttonGenerator = document.getElementById('generate-board');
+// buttonGenerator.addEventListener('click', function () {
+//   if (boardSize.value == '') {
+//     return (alert('Board inválido!'));
+//   }
+//   if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
+//     boardSize.value = 5; // boardSize.min;
+//   }
+//   if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
+//     boardSize.value = boardSize.max;
+//   }
+//   pixelGenerator(boardSize.value);
+//   return (true);
+// });
+
+const generateBoard = document.querySelector('#generate-board');
+generateBoard.addEventListener('click', function () {
+  if ((boardSize.value <= 0)) {
+    return alert('Board inválido!');
+  }
+  if (boardSize.value < 5) {
+    boardSize.value = 5;
+  }
+  if (boardSize.value > 50) {
+    boardSize.value = 50;
+  }
+  pixelGenerator(boardSize.value);
+});
+
 // Gerando os pixels ao carregara página
+boardSize.value = 5
 pixelGenerator(boardSize.value);
 
 // obtendo cores aleatórias
@@ -122,35 +154,4 @@ buttonClear.addEventListener('click', function () {
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = 'white';
   }
-});
-
-boardSize.addEventListener('change', testBoardSize);
-
-// const buttonGenerator = document.getElementById('generate-board');
-// buttonGenerator.addEventListener('click', function () {
-//   if (boardSize.value == '') {
-//     return (alert('Board inválido!'));
-//   }
-//   if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
-//     boardSize.value = 5; // boardSize.min;
-//   }
-//   if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
-//     boardSize.value = boardSize.max;
-//   }
-//   pixelGenerator(boardSize.value);
-//   return (true);
-// });
-
-const generateBoard = document.querySelector('#generate-board');
-generateBoard.addEventListener('click', function () {
-  if ((boardSize.value <= 0)) {
-    return alert('Board inválido!');
-  }
-  if (boardSize.value < 5) {
-    boardSize.value = 5;
-  }
-  if (boardSize.value > 50) {
-    boardSize.value = 50;
-  }
-  pixelGenerator(boardSize.value);
 });
