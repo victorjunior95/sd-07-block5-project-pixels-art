@@ -77,3 +77,15 @@ window.onload = function () {
   makeGrid(5);
 }
 // ---------------------------------------------------------------------------------------------
+
+
+const alertVQV = document.querySelector('#board-size');
+document.querySelector('#generate-board').addEventListener('click', function () {
+  if (alertVQV.value === '') {
+    alert('Board inválido!');
+  } else if (alertVQV.value < 5) {
+    alertVQV.value = 5;
+  } else if (alertVQV.value > 50) {
+    alertVQV.value = 50;
+  }
+});
