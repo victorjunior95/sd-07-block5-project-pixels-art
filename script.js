@@ -35,13 +35,11 @@ function positionCanvas(N) {
 
   // Reposicionando no centro da tela
   const main = document.querySelector('main');
-  main.style.width = '1px';
-  console.log(window.getComputedStyle(main).width)
+
   // Resetando as dimensões da MAIN
 
   main.style.height = 'calc(100% - 165px)';
-  // main.style.width = '50%';
-  console.log(window.getComputedStyle(main).width)
+  main.style.width = '100%';
 
   const canvas = document.querySelector('.canvas');
   const heightMain = parseInt(window.getComputedStyle(main).height, 10);
@@ -146,7 +144,7 @@ buttonClear.addEventListener('click', function () {
 
 const generateBoard = document.querySelector('#generate-board');
 generateBoard.addEventListener('click', function () {
-  if (boardSize.value <= 0) {
+  if ((boardSize.value <= 0) || (boardSize.value == '')) {
     return alert('Board inválido!');
   }
   if (boardSize.value < 5) {
