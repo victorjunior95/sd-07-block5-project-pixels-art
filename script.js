@@ -17,15 +17,15 @@ function randRGB() {
   return (`rgb(${rndRGB()} , ${rndRGB()} , ${rndRGB()})`);
 }
 
-// function testBoardSize() {
-//   if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
-//     boardSize.value = 5; // boardSize.min;
-//   }
-//   if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
-//     boardSize.value = boardSize.max;
-//   }
-//   return (true);
-// }
+function testBoardSize() {
+  if (parseInt(boardSize.value, 10) < 5) { // parseInt(boardSize.min)) {
+    boardSize.value = 5; // boardSize.min;
+  }
+  if (parseInt(boardSize.value, 10) > parseInt(boardSize.max, 10)) {
+    boardSize.value = boardSize.max;
+  }
+  return (true);
+}
 
 function positionCanvas(N) {
   // Redimensionando o Board
@@ -125,7 +125,7 @@ buttonClear.addEventListener('click', function () {
   }
 });
 
-// boardSize.addEventListener('change', testBoardSize);
+boardSize.addEventListener('change', testBoardSize);
 
 // const buttonGenerator = document.getElementById('generate-board');
 // buttonGenerator.addEventListener('click', function () {
