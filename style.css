@@ -5,7 +5,7 @@
 }
     
 .palette-color {
-  margin-left: 225px;
+  margin-left: 580px;
   width: 245px;
 }  
 
@@ -14,12 +14,21 @@
   height: 212px;
   line-height: 1px;
   display: table;
-  margin-left: 225px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.size-board{
+  margin-left: 580px;
+}
+.generate{
+  
+  border-radius: 20px;
 }
 
 .clear {
-margin-left: 225px;
-border-radius: 20px;
+  margin-left: 580px;
+  border-radius: 20px;
 }
   
 .color {
