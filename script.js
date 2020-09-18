@@ -16,14 +16,6 @@ selectPixel.addEventListener('click', function (event) {
 // ---------------------------------------------------------------------------------------------
 
 
-function buttonClear() {
-  let pixels = document.querySelectorAll('td');
-  for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].style.backgroundColor = 'white';
-  }
-}
-
-
 // https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
 const colors = document.querySelectorAll('.color');
 for (let index = 0; index < colors.length; index += 1) {
