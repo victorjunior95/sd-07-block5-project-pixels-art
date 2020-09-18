@@ -2,8 +2,7 @@
 const colorPalette = document.querySelectorAll('.color');
 const clearBoard = document.querySelector('#clear-board');
 const generateNewBoard = document.querySelector('#generate-board');
-const heigth = document.querySelector('.heigth');
-const width = document.querySelector('.width');
+const size = document.querySelector('#board-size');
 let pixel = document.querySelectorAll('.pixel');
 let selectedColor = '';
 
@@ -28,7 +27,7 @@ function pixelEvent() {
 }
 
 function greaterOrLess(value) {
-  if (value < 5 && value != '') {
+  if (value < 5 && value !== '') {
     value = 5;
   } else if (value > 50) {
     value = 50;
@@ -54,20 +53,20 @@ clearBoard.addEventListener('click', () => {
 
 generateNewBoard.addEventListener('click', () => {
   const table = document.querySelector('table');
-  heigthQt = heigth.value;
-  widthQt = width.value;
+  const boardQt = size.value;
 
-  if (heigthQt !== '' || widthQt !== '') {
+  if (boardQt !== '') {
     table.innerHTML = '';
-    for (let i = 0; i < heigthQt; i += 1) {
+    for (let i = 0; i < boardQt; i += 1) {
       const heigthLines = document.createElement('tr');
 
-      for (let i = 0; i < widthQt; i += 1) {
+      for (let j = 0; j < boardQt; j += 1) {
         const widthLines = document.createElement('td');
 
         widthLines.classList.add('pixel');
         heigthLines.appendChild(widthLines);
       }
+
       table.appendChild(heigthLines);
       pixel = document.querySelectorAll('.pixel');
       pixelEvent();
@@ -77,12 +76,8 @@ generateNewBoard.addEventListener('click', () => {
   }
 });
 
-width.addEventListener('blur', () => {
-  width.value = greaterOrLess(width.value);
-});
-
-heigth.addEventListener('blur', () => {
-  heigth.value = greaterOrLess(heigth.value);
+size.addEventListener('blur', () => {
+  size.value = greaterOrLess(size.value);
 });
 
 // Soluções encontradas no seguintes links:
@@ -95,7 +90,7 @@ window.addEventListener('load', () => {
   colorPalette.forEach((color) => {
     if (!color.classList.contains('black')) {
       const newColor = random[Math.floor(Math.random() * random.length)];
-      let removeRepeat = random.indexOf(newColor);
+      const removeRepeat = random.indexOf(newColor);
       random.splice(removeRepeat, 1);
       color.classList.add(newColor);
     }
