@@ -82,8 +82,8 @@ window.onload = function () {
 // ---------------------------------------------------------------------------------------------
 
 
-const alertVQV = document.querySelector('#board-size');
-document.querySelector('#generate-board').addEventListener('click', function () {
+function alertVQV() {
+  let alertVQV = document.querySelector('#board-size');
   if (alertVQV.value === '') {
     alert('Board inválido!');
   } else if (alertVQV.value < 5) {
@@ -91,4 +91,4 @@ document.querySelector('#generate-board').addEventListener('click', function () 
   } else if (alertVQV.value > 50) {
     alertVQV.value = 50;
   }
-});
+}
