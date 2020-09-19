@@ -9,7 +9,7 @@ function geraCores() {
 }
 
 for(let index = 0; index < paletteColor.length; index += 1) {
-    const colors = ['black', geraCores(), geraCores(), geraCores()];
+    const colors = ['black', 'red', 'blue', 'green'];
     paletteColor[index].style.backgroundColor = colors[index];
 }
 
