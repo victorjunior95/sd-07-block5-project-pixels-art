@@ -54,11 +54,18 @@ pixelBoard.onsubmit = function (event) {
   makeGrid();
 };
 
-function clearGrid() {
+/*function clearGrid() {
   while (canvas.firstChild) {
     canvas.removeChild(canvas.firstChild);
   }
-}
+}*/
+
+const cell = document.getElementsByClassName('pixel');
+document.querySelector('#clear-board').addEventListener('click', function () {
+  for (let index = 0; index < cell.length; index += 1) {
+    cell[index].style.backgroundColor = 'white';
+  }
+});
 
 function fillSquare() {
   this.setAttribute('style', `background-color: ${colors.value}`);
