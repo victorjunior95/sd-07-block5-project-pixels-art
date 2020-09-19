@@ -1,14 +1,3 @@
-// likely want to do this in a support file
-// so it's applied to all spec files
-// cypress/support/index.js
-
-//Cypress.on('uncaught:exception', (err, runnable) => {
-  // returning false here prevents Cypress from
-  // failing the test
-//  return false;
-//});
-
-
 // https://github.com/tryber/sd-07-block5-project-pixels-art/tree/Cainan6697-project-pixels-art
 let defaultColor = 'black';
 
@@ -54,11 +43,11 @@ pixelBoard.onsubmit = function (event) {
   makeGrid();
 };
 
-/*function clearGrid() {
+function clearGrid() {
   while (canvas.firstChild) {
     canvas.removeChild(canvas.firstChild);
   }
-}*/
+}
 
 const cell = document.getElementsByClassName('pixel');
 document.querySelector('#clear-board').addEventListener('click', function () {
@@ -81,6 +70,8 @@ function makeGrid() {
     }
   }
 }
+// ---------------------------------------------------------------------------------------------
+
 
 window.onload = function () {
   for (let r = 0; r < 5; r += 1) {
@@ -91,8 +82,7 @@ window.onload = function () {
       cell.className = 'pixel';
     }
   }
-}
-// ---------------------------------------------------------------------------------------------
+};
 
 
 document.querySelector('#generate-board').addEventListener('click', function () {
