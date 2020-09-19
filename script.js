@@ -1,12 +1,10 @@
 const cores = document.querySelectorAll('.color');
 cores[0].style.backgroundColor = 'black';
 function pixelCor() {
-  pixel = document.querySelectorAll('.pixel');
+  const pixel = document.querySelectorAll('.pixel');
   pixel.forEach((item) => {
     item.addEventListener('click', function () {
-      item.style.backgroundColor = document.querySelector(
-        '.selected'
-      ).style.backgroundColor;
+      item.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
     });
   });
 }
@@ -34,16 +32,12 @@ function inputSize() {
     return (inputValue = 50);
   } else if (inputValue < 5) {
     return (inputValue = 5);
-  } else {
+  }
     return inputValue;
   }
-}
 
-function removeAll() {
-  while (pixelBoard.firstElementChild) {
-    pixelBoard.removeChild(pixelBoard.firstElementChild);
-  }
-}
+
+
 
 function RgbAlea() {
   cores[1].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
@@ -63,12 +57,13 @@ window.onload = function () {
   cores[0].classList.add('selected');
   pixelCor();
 };
-generatePixel(25);
 function generatePixel(quadrados) {
-  for (let index = 0; index < quadrados; index += 1) {
-    stylePixel();
+    for (let index = 0; index < quadrados; index += 1) {
+      stylePixel();
+    }
   }
-}
+  
+generatePixel(25);
 
 // Cor preta selecionada
 cores[0].addEventListener('click', function () {
@@ -102,10 +97,14 @@ let pixel = document.querySelectorAll('.pixel');
 const apaga = document.querySelector('.clear');
 apaga.addEventListener('click', apagao);
 const inputButton = document.querySelector('#generate-board');
-
+function removeAll() {
+    while (pixelBoard.firstElementChild) {
+      pixelBoard.removeChild(pixelBoard.firstElementChild);
+    }
+  }
 inputButton.addEventListener('click', function () {
   nulll();
-  let inputValue = inputSize();
+  const inputValue = inputSize();
   pixelBoard.style.height = (inputValue * 42) + 'px';
   pixelBoard.style.width = (inputValue * 42) + 'px';
   removeAll();
