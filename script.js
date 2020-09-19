@@ -64,6 +64,8 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
             paletteColor[sel].classList.add('color');
         }
     }
+});
+    paletteColor[aux].addEventListener('click', function () {
         paletteColor[aux].className = 'selected';
         if (paletteColor[aux].className === 'selected'){
          for(let index = 0; index < boardPixel.length; index += 1) {
