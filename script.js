@@ -56,7 +56,10 @@ function initial(number) {
 const boardPixel = document.querySelectorAll('#pixel-board .pixel');
 
     for (let aux = 0; aux < paletteColor.length; aux += 1) {
-       paletteColor[aux].addEventListener('click', function () {
+       paletteColor[aux].addEventListener('click', (event) => {
+        let selected = event.target.className
+        selected = 'selected';
+        console.log(selected)
     for (let sel = 0; sel < paletteColor.length; sel += 1) {
         if (paletteColor[sel].className === 'selected' || 
         paletteColor[sel].className === 'selected color') {
@@ -64,7 +67,7 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
             paletteColor[sel].classList.add('color');
         }
     }
-        paletteColor[aux].className = 'selected';
+        paletteColor[aux].className = selected;
         if (paletteColor[aux].className === 'selected'){
          for(let index = 0; index < boardPixel.length; index += 1) {
             boardPixel[index].addEventListener('click', function () {
