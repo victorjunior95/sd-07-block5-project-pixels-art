@@ -12,7 +12,7 @@ function clearPixels(){
 }
 
 let selected = collorPallet[0];
-selected.className = "selected";
+
 document.addEventListener("click", function(event){
     if(event.target.className == "pixel"){
         event.target.style.backgroundColor = selected.style.backgroundColor;
