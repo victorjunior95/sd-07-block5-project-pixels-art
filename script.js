@@ -19,18 +19,24 @@ botaoGerar.addEventListener('click', (event) => {
         alert("Board inválido!");
         inputNumber.value = 50;
     }
+    for(let aux = 0; aux < number; aux += 1) {
+        for (let index = 0; index < number; index += 1) {
+            let pixel = document.querySelector('#pixel-board .pixel');          
+            document.querySelector('#pixel-board').removeChild(pixel);         
+        }
+    }
     number = inputNumber.value;
-    //initial(number);
+    initial(number);
 });
 
-//initial(number);
-//function initial(number) {
+initial(number);
+function initial(number) {
     for(let aux = 0; aux < number; aux += 1) {
-    for (let index = 0; index < number; index += 1) {
-        let pixels = document.createElement('div');
-        pixels.className = 'pixel';            
-        document.querySelector('#pixel-board').appendChild(pixels);         
-    }
+        for (let index = 0; index < number; index += 1) {
+            let pixels = document.createElement('div');
+            pixels.className = 'pixel';            
+            document.querySelector('#pixel-board').appendChild(pixels);         
+        }
     let br = document.createElement('br');
     document.querySelector('#pixel-board').appendChild(br);       
 }    
@@ -76,4 +82,4 @@ function initPage(){
         });        
     }
 }
-//}
+}

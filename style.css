@@ -16,10 +16,12 @@
 
 .pale {
     margin-left: 25px;
+    line-height: 0rem;  
 }
+
 .pale br {
     padding-bottom: 0px;
-    margin-bottom: 0px
+    margin-bottom: 0px;
 }
 
 .pixel {
@@ -27,8 +29,7 @@
     height: 40px;
     border: solid 1px black;
     display: inline-block;
-    background-color: white;
-    margin-bottom: 0px;    
+    background-color: white; 
 }
 
 .selected {
