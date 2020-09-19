@@ -1,11 +1,11 @@
-.color,.selected {
+.color, .selected {
   border: 1px solid black;
   display: inline-block;
   height: 100px;
   width: 100px;
 }
 
-.pixelBoard  {
+.pixelBoard {
   height: 230px;
   line-height: 0;
   width: 210px;

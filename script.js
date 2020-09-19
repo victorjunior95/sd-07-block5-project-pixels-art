@@ -33,12 +33,8 @@ function inputSize() {
   } else if (inputValue < 5) {
     return (inputValue = 5);
   }
-    return inputValue;
-  }
-
-
-
-
+  return inputValue;
+}
 function RgbAlea() {
   cores[1].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
   cores[2].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
@@ -58,13 +54,12 @@ window.onload = function () {
   pixelCor();
 };
 function generatePixel(quadrados) {
-    for (let index = 0; index < quadrados; index += 1) {
-      stylePixel();
+  for (let index = 0; index < quadrados; index += 1) {
+    stylePixel();
     }
   }
   
 generatePixel(25);
-
 // Cor preta selecionada
 cores[0].addEventListener('click', function () {
   for (let index = 0; index < 4; index += 1) {
@@ -105,8 +100,8 @@ function removeAll() {
 inputButton.addEventListener('click', function () {
   nulll();
   const inputValue = inputSize();
-  pixelBoard.style.height = (inputValue * 42) + 'px';
-  pixelBoard.style.width = (inputValue * 42) + 'px';
+  pixelBoard.style.height = `${inputValue * 42}px`;
+  pixelBoard.style.width = `${inputValue * 42}px`;
   removeAll();
   generatePixel(inputValue * inputValue);
   pixelCor();
