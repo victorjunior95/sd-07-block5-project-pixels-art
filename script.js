@@ -64,10 +64,6 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
             paletteColor[sel].classList.add('color');
         }
     }
-});
-}
-for (let aux = 0; aux < paletteColor.length; aux += 1) {
-    paletteColor[aux].addEventListener('click', function () {
         paletteColor[aux].className = 'selected';
         if (paletteColor[aux].className === 'selected'){
          for(let index = 0; index < boardPixel.length; index += 1) {
@@ -77,7 +73,7 @@ for (let aux = 0; aux < paletteColor.length; aux += 1) {
          }    
        }
     });
-}
+    }
 
     const botaoLimpar = document.querySelector('#clear-board');
     botaoLimpar.addEventListener('click', (event) => {
