@@ -1,8 +1,9 @@
-let collorPallet = document.querySelectorAll('.selected,.color');
+let collorPallet = document.getElementsByClassName("color")
 collorPallet[0].style.backgroundColor = "rgb(0, 0, 0)"
 for (let count = 1; count < collorPallet.length ; count +=1 ){
     collorPallet[count].style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);     
 }
+let collorContainer = document.querySelectorAll('.selected,.unselected')
 
 let pixels = document.getElementsByClassName("pixel");
 function clearPixels(){
@@ -18,8 +19,9 @@ document.addEventListener("click", function(event){
         event.target.style.backgroundColor = selected.style.backgroundColor;
     }
     else if (event.target.className == "color"){
-        selected.className = "color";
+        selected.parentElement.className = "unselected";
         selected = event.target;
-        selected.className = "selected";
+        selected.parentElement.className = "selected";
+        
         }
 })
