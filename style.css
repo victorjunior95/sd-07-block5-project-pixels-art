@@ -1,3 +1,36 @@
+body {
+    text-align: center;
+}
+
 h1 {
     text-align: center;
+    background-color: cyan;
+}
+
+#color-palette {
+    text-align: center;
+    display: inline-block;
+}
+
+.color {
+    width: 60px;
+    height: 60px;
+    border: solid black 1px;
+    display: inline-block;
+}
+
+#black {
+    background-color: black;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#red {
+    background-color: red;
 }
