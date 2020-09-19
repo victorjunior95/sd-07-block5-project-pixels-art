@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 .header {
     text-align: center;
     width: 100%;
@@ -49,14 +50,11 @@
 .blue {
     background-color: blue;
 }
+
 .board {
     width: 100%;
     background-color: yellow;
     padding: 20px 0;
-}
-
-.selected {
-    background-color: black;
 }
 
 .pixels-board {
