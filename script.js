@@ -18,61 +18,61 @@ function createPixelsBoard(number) {
   }
 }
 
-const black = document.querySelector(".black");
-const red = document.querySelector(".red");
-const green = document.querySelector(".green");
-const blue = document.querySelector(".blue");
+const color1 = document.querySelector(".color1");
+const color2 = document.querySelector(".color2");
+const color3 = document.querySelector(".color3");
+const color4 = document.querySelector(".color4");
 let selected = document.querySelector(".selected");
 
 // Preto
-function blackSelect() {
-  black.classList.add("selected");
-  red.classList.remove("selected");
-  green.classList.remove("selected");
-  blue.classList.remove("selected");
-  selected = black;
-  const colorBlack = window.getComputedStyle(black).getPropertyValue("background-color");
-  return colorBlack;
+function color1Select() {
+  color1.classList.add("selected");
+  color2.classList.remove("selected");
+  color3.classList.remove("selected");
+  color4.classList.remove("selected");
+  selected = color1;
+  const color1Background = window.getComputedStyle(color1).getPropertyValue("background-color");
+  return color1Background;
 }
 
 // Vermelho
-function redSelect() {
-  black.classList.remove("selected");
-  red.classList.add("selected");
-  green.classList.remove("selected");
-  blue.classList.remove("selected");
-  selected = red;
-  const colorRed = window.getComputedStyle(red).getPropertyValue("background-color");
-  return colorRed;
+function color2Select() {
+  color1.classList.remove("selected");
+  color2.classList.add("selected");
+  color3.classList.remove("selected");
+  color2.classList.remove("selected");
+  selected = color2;
+  const color2Background = window.getComputedStyle(color2).getPropertyValue("background-color");
+  return color2Background;
 }
 
 // Verde
-function greenSelect() {
-  black.classList.remove("selected");
-  red.classList.remove("selected");
-  green.classList.add("selected");
-  blue.classList.remove("selected");
-  selected = green;
-  const colorGreen = window.getComputedStyle(green).getPropertyValue("background-color");
-  return colorGreen;
+function color3Select() {
+  color1.classList.remove("selected");
+  color2.classList.remove("selected");
+  color3.classList.add("selected");
+  color4.classList.remove("selected");
+  selected = color3;
+  const color3Background = window.getComputedStyle(color3).getPropertyValue("background-color");
+  return color3Background;
 }
 
 // Azul
-function blueSelect() {
-  black.classList.remove("selected");
-  red.classList.remove("selected");
-  green.classList.remove("selected");
-  blue.classList.add("selected");
-  selected = blue;
-  const colorBlue = window.getComputedStyle(blue).getPropertyValue("background-color");
-  return colorBlue;
+function color4Select() {
+  color1.classList.remove("selected");
+  color2.classList.remove("selected");
+  color3.classList.remove("selected");
+  color4.classList.add("selected");
+  selected = color4;
+  const color4Background = window.getComputedStyle(color4).getPropertyValue("background-color");
+  return color4Background;
 }
 
 // Evento de click das cores selecionadas
-black.addEventListener("click", blackSelect);
-red.addEventListener("click", redSelect);
-green.addEventListener("click", greenSelect);
-blue.addEventListener("click", blueSelect);
+color1.addEventListener("click", color1Select);
+color2.addEventListener("click", color2Select);
+color3.addEventListener("click", color3Select);
+color4.addEventListener("click", color4Select);
 
 // Função pintar os píxels
 function paintBoard() {
@@ -85,7 +85,7 @@ function paintBoard() {
 }
 
 // Botão para limpar o quadro
-let btnErase = document.querySelector("#clear-board");
+const btnErase = document.querySelector("#clear-board");
 btnErase.addEventListener("click", function () {
   let numberPixels = document.querySelectorAll(".pixel");
   for (let indexBoard = 0; indexBoard < numberPixels.length; indexBoard += 1) {
@@ -94,7 +94,7 @@ btnErase.addEventListener("click", function () {
 });
 
 // Botão para gerar o quadro com o tamanho definido pelo usuário
-let buttonGenerate = document.querySelector("#generate-board");
+const buttonGenerate = document.querySelector("#generate-board");
 buttonGenerate.addEventListener("click", function () {
   let size = document.querySelector("#board-size");
   let erase = document.querySelector("#pixel-board");
@@ -114,8 +114,30 @@ buttonGenerate.addEventListener("click", function () {
   paintBoard();
 });
 
+// Gera um número inteiro aleatório entre um valor mínimo e um máximo
+function randomNumber(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function newColor() {
+  let red = randomNumber(0, 255);
+  let green = randomNumber(0, 255);
+  let blue = randomNumber(0, 255);
+  let color = `rgb(${red}, ${green}, ${blue})`
+  return color;
+}
+
+function changeNewColor() {
+  color2.style.backgroundColor = newColor();
+  color3.style.backgroundColor = newColor();
+  color4.style.backgroundColor = newColor();
+}
+
 // Predefinições ao carregar a página
 window.onload = function () {
   createPixelsBoard(5);
   paintBoard();
+  changeNewColor();
 }
