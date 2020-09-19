@@ -1,3 +1,26 @@
+window.onload = function () {
+  buttonSizeBoard.addEventListener('click', function () {
+    if (inputSizeBoard.value === '') {
+      alert('Board inválido!');
+    } else if (inputSizeBoard.value <= 5) {
+      numberLines = 5;
+      numberElements = 5;
+      getColor = 'black';
+    } else if (inputSizeBoard.value >= 50) {
+      numberLines = 50;
+      numberElements = 50;
+      getColor = 'black';
+    } else if (inputSizeBoard.value > 5 && inputSizeBoard.value < 50) {
+      numberElements = inputSizeBoard.value;
+      numberLines = inputSizeBoard.value;
+      getColor = 'black';
+      // console.log(numberElements);
+      // console.log(numberLines);
+    }
+    executeAll();
+  });
+}
+
 // MY VARIABLES AND CONSTANTS
 const pixelBoard = document.querySelector('#pixel-board');
 const inputSizeBoard = document.querySelector('#board-size');
@@ -5,27 +28,6 @@ const buttonSizeBoard = document.querySelector('#generate-board');
 let getColor = 'black';
 let numberLines = 5;
 let numberElements = 5;
-
-buttonSizeBoard.addEventListener('click', function () {
-  if (inputSizeBoard.value === '') {
-    alert('Board inválido!');
-  } else if (inputSizeBoard.value <= 5) {
-    numberLines = 5;
-    numberElements = 5;
-    getColor = 'black';
-  } else if (inputSizeBoard.value >= 50) {
-    numberLines = 50;
-    numberElements = 50;
-    getColor = 'black';
-  } else if (inputSizeBoard.value > 5 && inputSizeBoard.value < 50) {
-    numberElements = inputSizeBoard.value;
-    numberLines = inputSizeBoard.value;
-    getColor = 'black';
-    // console.log(numberElements);
-    // console.log(numberLines);
-  }
-  executeAll();
-});
 
 function executeAll() {
   clearBoard();

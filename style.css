@@ -39,18 +39,18 @@
 }
 
 .line {
-  margin: 0;
-  padding: 0;
   height: 40px;
+  padding: 0;
+  margin: 0;
 }
 
 .pixel {
-  background-color: white;
   border: 1px solid black;
   box-sizing: border-box;
+  display: inline-block;
   height: 40px;
   width: 40px;
-  display: inline-block;
+  background-color: white;
 }
 
 .button {
@@ -60,10 +60,10 @@
 }
 
 .clear-board {
-  font-size: 20px;
+  display: inline-block;
   margin: 0;
   padding: 5px 10px;
-  display: inline-block;
+  font-size: 20px;
 }
 
 .userElements {
@@ -81,8 +81,8 @@
 }
 
 .placeholder::placeholder {
-  display: block;
   margin: 0;
-  width: 100%;
   padding: 0;
+  width: 100%;
+  display: block;
 }
