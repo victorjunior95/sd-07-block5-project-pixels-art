@@ -54,9 +54,13 @@ for (let i = 0; i < color.length; i += 1) {
   })
 }
 
+pixelBoard.addEventListener('click', function (event) {
+  event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+})
+
 buttonClear.addEventListener('click', function () {
   const allPixels = document.querySelectorAll('.pixel')
   for (let i = 0; i < allPixels.length; i += 1) {
     allPixels[i].style.backgroundColor = 'white';
   }
-});
+})
