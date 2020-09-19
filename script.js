@@ -1,7 +1,15 @@
 const paletteColor = document.querySelectorAll('#color-palette .color');
-  
+
+function geraCores() {
+    let r = Math.ceil(Math.random()* 256);
+    let g = Math.ceil(Math.random()* 256);
+    let b = Math.ceil(Math.random()* 256);
+    let cores = `rgb(${r}, ${g}, ${b})`;
+    return cores;
+}
+
 for(let index = 0; index < paletteColor.length; index += 1) {
-    const colors = ['black', 'red', 'blue', 'green'];
+    const colors = ['black', geraCores(), geraCores(), geraCores()];
     paletteColor[index].style.backgroundColor = colors[index];
 }
 
@@ -49,7 +57,6 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
 
     for (let aux = 0; aux < paletteColor.length; aux += 1) {
        paletteColor[aux].addEventListener('click', function () {
-
     for (let sel = 0; sel < paletteColor.length; sel += 1) {
         if (paletteColor[sel].className === 'selected' || 
         paletteColor[sel].className === 'color selected') {
@@ -65,7 +72,7 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
           });        
          }    
        }
-       });
+    });
     }
 
     const botaoLimpar = document.querySelector('#clear-board');
