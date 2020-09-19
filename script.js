@@ -19,9 +19,9 @@ document.addEventListener("click", function(event){
         event.target.style.backgroundColor = selected.style.backgroundColor;
     }
     else if (event.target.className == "color"){
-        selected.parentElement.className = "unselected";
+        selected.firstChild.className = "unselected";
         selected = event.target;
-        selected.parentElement.className = "selected";
+        selected.firstChild.className = "selected";
         
         }
 })
