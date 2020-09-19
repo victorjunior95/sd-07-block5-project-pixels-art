@@ -18,10 +18,10 @@ function createPixelsBoard(number) {
   }
 }
 
-const color1 = document.querySelector(".color1");
-const color2 = document.querySelector(".color2");
-const color3 = document.querySelector(".color3");
-const color4 = document.querySelector(".color4");
+const color1 = document.querySelector("#color1");
+const color2 = document.querySelector("#color2");
+const color3 = document.querySelector("#color3");
+const color4 = document.querySelector("#color4");
 let selected = document.querySelector(".selected");
 
 // Preto
@@ -40,7 +40,7 @@ function color2Select() {
   color1.classList.remove("selected");
   color2.classList.add("selected");
   color3.classList.remove("selected");
-  color2.classList.remove("selected");
+  color4.classList.remove("selected");
   selected = color2;
   const color2Background = window.getComputedStyle(color2).getPropertyValue("background-color");
   return color2Background;
