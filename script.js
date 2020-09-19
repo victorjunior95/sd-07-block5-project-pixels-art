@@ -37,11 +37,6 @@ const canvas = document.getElementById('pixel-board');
 const size = document.getElementById('board-size');
 const pixelBoard = document.getElementById('custom-board');
 
-pixelBoard.onsubmit = function (event) {
-  event.preventDefault();
-  clearGrid();
-  makeGrid();
-};
 
 function clearGrid() {
   while (canvas.firstChild) {
@@ -49,10 +44,10 @@ function clearGrid() {
   }
 }
 
-const cell = document.getElementsByClassName('pixel');
+const cel = document.getElementsByClassName('pixel');
 document.querySelector('#clear-board').addEventListener('click', function () {
-  for (let index = 0; index < cell.length; index += 1) {
-    cell[index].style.backgroundColor = 'white';
+  for (let index = 0; index < cel.length; index += 1) {
+    cel[index].style.backgroundColor = 'white';
   }
 });
 
@@ -70,6 +65,13 @@ function makeGrid() {
     }
   }
 }
+
+
+pixelBoard.onsubmit = function (event) {
+  event.preventDefault();
+  clearGrid();
+  makeGrid();
+};
 // ---------------------------------------------------------------------------------------------
 
 
