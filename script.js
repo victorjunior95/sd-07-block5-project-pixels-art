@@ -18,8 +18,6 @@ function createPixelsBoard(number) {
   }
 }
 
-
-
 const black = document.querySelector(".black");
 const red = document.querySelector(".red");
 const green = document.querySelector(".green");
@@ -86,11 +84,8 @@ function paintBoard() {
   }
 }
 
-
-
-
 // Botão para limpar o quadro
-let btnErase = document.querySelector("#erase-board");
+let btnErase = document.querySelector("#clear-board");
 btnErase.addEventListener("click", function () {
   let numberPixels = document.querySelectorAll(".pixel");
   for (let indexBoard = 0; indexBoard < numberPixels.length; indexBoard += 1) {
@@ -105,7 +100,7 @@ buttonGenerate.addEventListener("click", function () {
   let erase = document.querySelector("#pixel-board");
   erase.innerHTML = "";
   if (size.value == "") {
-    alert("Board inválido");
+    alert("Board inválido!");
   }
   if (size.value < 5) {
     size.value = 5;
