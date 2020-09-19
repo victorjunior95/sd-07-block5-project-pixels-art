@@ -29,7 +29,7 @@ function apagao() {
 }
 
 function inputSize() {
-  const inputValue = document.querySelector('#board-size').value;
+  let inputValue = document.querySelector('#board-size').value;
   if (inputValue > 50) {
     return (inputValue = 50);
   } else if (inputValue < 5) {
@@ -46,20 +46,14 @@ function removeAll() {
 }
 
 function RgbAlea() {
-  cores[1].style.backgroundColor = `rgb(${Math.ceil(
-    Math.random() * 255
-  )}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
-  cores[2].style.backgroundColor = `rgb(${Math.ceil(
-    Math.random() * 255
-  )}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
-  cores[3].style.backgroundColor = `rgb(${Math.ceil(
-    Math.random() * 255
-  )}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
+  cores[1].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
+  cores[2].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
+  cores[3].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255 )}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
 }
 
 function nulll() {
-  let inputValue = document.querySelector('#board-size').value;
-  if (inputValue == '') {
+  const inputValue = document.querySelector('#board-size').value;
+  if (inputValue === '') {
     alert('Board inválido!');
   }
 }
@@ -112,8 +106,8 @@ const inputButton = document.querySelector('#generate-board');
 inputButton.addEventListener('click', function () {
   nulll();
   let inputValue = inputSize();
-  pixelBoard.style.height = inputValue * 42 + 'px';
-  pixelBoard.style.width = inputValue * 42 + 'px';
+  pixelBoard.style.height = (inputValue * 42) + 'px';
+  pixelBoard.style.width = (inputValue * 42) + 'px';
   removeAll();
   generatePixel(inputValue * inputValue);
   pixelCor();
