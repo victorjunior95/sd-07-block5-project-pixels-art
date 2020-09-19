@@ -65,6 +65,8 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
         }
     }
 });
+}
+for (let aux = 0; aux < paletteColor.length; aux += 1) {
     paletteColor[aux].addEventListener('click', function () {
         paletteColor[aux].className = 'selected';
         if (paletteColor[aux].className === 'selected'){
@@ -75,7 +77,7 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
          }    
        }
     });
-    }
+}
 
     const botaoLimpar = document.querySelector('#clear-board');
     botaoLimpar.addEventListener('click', (event) => {
