@@ -1,19 +1,20 @@
-let box1 = document.querySelectorAll('.color')[0];
-let box2 = document.querySelectorAll('.color')[1]; 
-let box3 = document.querySelectorAll('.color')[2];
-let box4 = document.querySelectorAll('.color')[3];
+const box1 = document.querySelectorAll('.color')[0];
+const box2 = document.querySelectorAll('.color')[1];
+const box3 = document.querySelectorAll('.color')[2];
+const box4 = document.querySelectorAll('.color')[3];
 const pixelBoard = document.getElementById('pixel-board');
 const buttonClear = document.getElementById('clear-board');
 
 
 box1.style.backgroundColor = 'black';
 
-function randomColor () {
+function randomColor() {
+  let n;
   n = Math.round(Math.random() * 256);
   return n;
 }
 
-function randomColors () {
+function randomColors() {
   const cor2 = 'rgb(' + randomColor() + ', ' + randomColor() + ', ' + randomColor() + ')';
   const cor3 = 'rgb(' + randomColor() + ', ' + randomColor() + ', ' + randomColor() + ')';
   const cor4 = 'rgb(' + randomColor() + ', ' + randomColor() + ', ' + randomColor() + ')';
