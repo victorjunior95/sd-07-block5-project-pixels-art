@@ -80,11 +80,11 @@ cores[3].addEventListener('click', function () {
   }
   cores[3].classList.add('selected');
 });
-let pixel = document.querySelectorAll('.pixel');
+const pixel = document.querySelectorAll('.pixel');
 const apaga = document.querySelector('.clear');
 function apagao() {
   pixel.forEach((item) => {
-   item.style.backgroundColor = 'white';
+    item.style.backgroundColor = 'white';
   });
 }
 apaga.addEventListener('click', apagao);
