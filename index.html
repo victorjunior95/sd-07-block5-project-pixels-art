@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel art</title>
+    <title>Paint</title>
     <link rel="stylesheet" href="style.css">
-<header><h1 id="title"><strong class="strongblue">P</strong>aleta de <strong class="strongred">C</strong>ores</h1></header>
 </head>
 <body>
+    <header>
+        <h1 id="title">Paleta de Cores | Trybe color</h1>
+        <div id="color-palette" class="color-palette">
+            <div class="black color selected">black</div>
+            <div class="blue color">Blue</div>
+            <div class="green color">Green</div>
+            <div class="red color">Red</div>
+        </div>
+        <button id="clear-board">LClear</button>
+    </header>
     <main>
-       <!-- <button id="clear-board">Clear</button> -->
-    <div id="color-palette" class="div">
-
-<div id="black" class="color selected"></div>
-<div id="red" class=color></div>
-<div id="blue" class="color"></div>
-<div id="green" class="color"></div>
-   
-    </div>
-
-    <div id="pixel-board"></div>
-
-</main>
-<script src="script.js" ></script>
+        <div id="pixel-board"></div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>

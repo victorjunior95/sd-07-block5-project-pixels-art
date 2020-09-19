@@ -3,15 +3,14 @@ body{
     padding: 0%;
     background-color: lightgrey;
 }
-*
-h1{
+
+.text{
 text-align: center;
 text-shadow: 3px;
 text-decoration-color: black;
 font-size: 34px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-style: inherit;
-display: block;
 line-height: 1.2rem;
 }
 .strongblue{
@@ -39,39 +38,32 @@ border-radius: 20%;
     
 }
 
-#black{
+.black{
 background-color: black;
 margin-top: 2px;
 margin-bottom: 2px;
 border-radius: 30%;
 }
 
-#red{
+.red{
     background-color: red;
     margin-top: 2px;
     border-radius: 30%;
     margin-bottom: 2px;
 }
 
-#blue{
+.blue{
     background-color: blue;
     border-radius: 30%;
     margin-bottom: 2px;
 }
 
-#green{
+.green{
     background-color: green;
     border-radius: 30%;
     margin-bottom: 2px;
 }
 
-#pixel-border{
-    background-color:blueviolet;
-    text-align: center;
-    width: 100%;
-    display: inline-block;
-
-}
     
 .pixel{
 background-color: white;
@@ -80,17 +72,18 @@ border-style: solid;
 border-width: 1px;
 height: 40px;
 width: 40px;
-display: inline-block;
 margin: 1px;
+float:left;
 }
 
-#pixel-board {
-display: inline-block;
+.matriz {
+
 height: 100px;
-width:50px;
+width:100px;
+display: inline-block;
+
 
 }
 #clear-board {
-display: flex;
-
+    text-align : center;
 }
