@@ -1,6 +1,3 @@
-window.onload(clearPixels);   
-
-
 let collorPallet = document.getElementsByClassName("color")
 collorPallet[0].style.backgroundColor = "rgb(0, 0, 0)"
 for (let count = 1; count < collorPallet.length ; count +=1 ){
