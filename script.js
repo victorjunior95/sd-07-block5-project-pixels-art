@@ -1,10 +1,6 @@
-// código de como fazer uma cor aleatória tirada de: https://pt.stackoverflow.com/questions/5848/como-colorir-aleatoriamente-divs-com-um-array-de-cores-em-javascript
 
-document.querySelector('.second-color').style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
 
-document.querySelector('.third-color').style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
-
-document.querySelector('.fourth-color').style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+// função para colorir pixels de acordo com a cor da paleta escolhida
 
 let selectPixel = document.querySelectorAll('.pixel');
 
@@ -17,6 +13,8 @@ function changeColor(event) {
 for(let index = 0; index < selectPixel.length; index += 1) {
   selectPixel[index].addEventListener('click', changeColor);
 }
+
+// função para alterar a cor da paleta selecionada
 
 let getColor = document.querySelectorAll('.color');
 
@@ -31,6 +29,8 @@ for(let count = 0; count < getColor.length; count += 1) {
   getColor[count].addEventListener('click', changeSelected)
 }
 
+//função para deixar os pixels com fundo branco de novo
+
 let clearButton = document.getElementById('clear-board');
 
 clearButton.addEventListener('click', function (){
@@ -40,4 +40,4 @@ clearButton.addEventListener('click', function (){
   }
 })
 
-console.log(corRandom);
+
