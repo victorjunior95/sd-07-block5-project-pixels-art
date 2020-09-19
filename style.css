@@ -18,21 +18,21 @@
 }
 
 .genBoard{
-  color: white;
   background-color: rgb(234 , 53 , 70);
-  border: 1px solid black;
-  border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
-  width: 50px;
+  border-top-left-radius: 50%;
+  border: 1px solid black;
+  color: white;
   height: 50px;
+  width: 50px;
 }
 
 .boardSize{
-  text-align: center;
   background-color: white;
-  border: 1px solid black;
-  border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border: 1px solid black;
   color: rgb(234 , 53 , 70);
   height: 20px;
+  text-align: center;
 }
