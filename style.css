@@ -37,3 +37,7 @@
     border-color: black;
     border-width: 1px;
 }
+#clear-board{
+    position: absolute;
+    float: left;
+}

@@ -5,10 +5,11 @@ for (let count = 1; count < collorPallet.length ; count +=1 ){
 }
 
 let pixels = document.getElementsByClassName("pixel");
-for (let count = 0; count < pixels.length; count+=1){
+function clearPixels(){
+    for (let count = 0; count < pixels.length; count+=1){
     pixels[count].style.backgroundColor = "rgb(255, 255, 255)";
+    }
 }
-
 
 let selected = collorPallet[0];
 selected.className = "selected";
@@ -21,12 +22,4 @@ document.addEventListener("click", function(event){
         selected = event.target;
         selected.className = "selected";
         }
-
-
 })
-
-
-
-
-
-
