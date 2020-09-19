@@ -20,13 +20,6 @@ function stylePixel() {
   caixa.style.display = 'inline-block';
   pixelBoard.appendChild(caixa);
 }
-
-function apagao() {
-  pixel.forEach((item) => {
-    item.style.backgroundColor = 'white';
-  });
-}
-
 function inputSize() {
   let inputValue = document.querySelector('#board-size').value;
   if (inputValue > 50) {
@@ -90,15 +83,15 @@ cores[3].addEventListener('click', function () {
 let pixel = document.querySelectorAll('.pixel');
 const apaga = document.querySelector('.clear');
 function apagao() {
-    pixel.forEach((item) => {
-      item.style.backgroundColor = 'white';
-    });
-  }
+  pixel.forEach((item) => {
+   item.style.backgroundColor = 'white';
+  });
+}
 apaga.addEventListener('click', apagao);
 const inputButton = document.querySelector('#generate-board');
 function removeAll() {
   while (pixelBoard.firstElementChild) {
-  pixelBoard.removeChild(pixelBoard.firstElementChild);
+    pixelBoard.removeChild(pixelBoard.firstElementChild);
   }
 }
 inputButton.addEventListener('click', function () {
