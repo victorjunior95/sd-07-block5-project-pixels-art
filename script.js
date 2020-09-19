@@ -41,25 +41,25 @@ for (let linha = 0; linha < 5; linha += 1) {
 window.addEventListener('load', function () {
   box1.classList.add('selected');
   randomColors();
-})
+});
 
 let color = document.querySelectorAll('.color');
 for (let i = 0; i < color.length; i += 1) {
   color[i].addEventListener('click', function () {
     let selected = document.querySelector('.selected');
-      selected.classList.remove('selected');
-      // event.target.className += ' selected';
-      color[i].classList.add('selected');
-  })
+    selected.classList.remove('selected');
+    // event.target.className += ' selected';
+    color[i].classList.add('selected');
+  });
 }
 
 pixelBoard.addEventListener('click', function (event) {
   event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
-})
+});
 
 buttonClear.addEventListener('click', function () {
-  const allPixels = document.querySelectorAll('.pixel')
+  const allPixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < allPixels.length; i += 1) {
     allPixels[i].style.backgroundColor = 'white';
   }
-})
+});
