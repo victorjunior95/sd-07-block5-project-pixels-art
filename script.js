@@ -1,9 +1,9 @@
 const paletteColor = document.querySelectorAll('#color-palette .color');
 
 function geraCores() {
-    let r = Math.ceil(Math.random()* 256);
-    let g = Math.ceil(Math.random()* 256);
-    let b = Math.ceil(Math.random()* 256);
+    let r = Math.ceil(Math.random()* 255);
+    let g = Math.ceil(Math.random()* 255);
+    let b = Math.ceil(Math.random()* 255);
     let cores = `rgb(${r}, ${g}, ${b})`;
     return cores;
 }
@@ -59,7 +59,7 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
        paletteColor[aux].addEventListener('click', function () {
     for (let sel = 0; sel < paletteColor.length; sel += 1) {
         if (paletteColor[sel].className === 'selected' || 
-        paletteColor[sel].className === 'color selected') {
+        paletteColor[sel].className === 'selected color') {
             paletteColor[sel].classList.remove('selected');
             paletteColor[sel].classList.add('color');
         }
@@ -86,7 +86,8 @@ window.onload = initPage;
 
 function initPage(){
     for(let index = 0; index < boardPixel.length; index += 1) {
-        paletteColor[0].classList.add('selected');
+        paletteColor[0].className = 'selected';
+        paletteColor[0].classList.add('color');
         boardPixel[index].addEventListener('click', function () {          
             boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
         });        
