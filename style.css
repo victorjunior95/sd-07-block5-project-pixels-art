@@ -2,17 +2,17 @@
   border: 1px solid black;
   display: inline-block;
   height: 40px;
-  margin: 10px;
+  margin: 0 15px;
   width: 40px;
 }
 
 .pixel-board {
   border: 1px solid black;
   font-size: 0;
+  margin: 0 auto;
   max-width: 210px;
   padding: 0;
   width: 80%;
-  margin: 0 auto
 }
 
 .pixel {
@@ -38,11 +38,16 @@ h1 {
   top: 0;
 }
 
+section {
+  margin: 20px 0;
+}
+
+ /* Removido para que o código seja aceito pelo Cypress
 .inline {
   display: inline-block;
   padding: 10px 15px;
   vertical-align: middle;
-}
+} */
 
 button {
   background-color: rgb(89 ,192 ,223);
@@ -50,9 +55,10 @@ button {
   border-radius: 4px;
   display: inline-block;
   font-size: 16px;
+  margin: 0 15px;
   padding: 10px 20px;
-  transition-duration: 0.4s;
   text-align: center;
+  transition-duration: 0.4s;
 }
 
 button:hover {
@@ -64,8 +70,8 @@ nav {
   text-align: center;
 }
 
-input[ type = 'number' ] {
-  border-color: rgb(220 ,220 ,220);
+input[type="number"] {
+  border-color: gainsboro;
   border-radius: 4px;
   height: 20px;
   width: 40px;
