@@ -22,8 +22,8 @@
     margin: auto;
 }
 #pixel-board{
-    height: 210px;
-    width: 210px;
+    height: 200px;
+    width: 200px;
     display: flex;
     justify-content: space-evenly;
     justify-items: auto;
