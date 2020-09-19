@@ -23,9 +23,9 @@ window.onload = function () {
   createPixelsBoard(5);
 }
 
-let color = "black";
+let color = "";
 
-// Adiciona a classe selected a cor preta
+// Adiciona a classe selected à cor preta
 let black = document.querySelector(".black");
 black.addEventListener("click", function () {
   black.classList.add("selected");
@@ -35,7 +35,7 @@ black.addEventListener("click", function () {
   color = window.getComputedStyle(black).getPropertyValue("background-color");
 });
 
-// Adiciona a classe selected a cor vermelha
+// Adiciona a classe selected à cor vermelha
 let red = document.querySelector(".red");
 red.addEventListener("click", function () {
   black.classList.remove("selected");
@@ -45,7 +45,7 @@ red.addEventListener("click", function () {
   color = window.getComputedStyle(red).getPropertyValue("background-color");
 });
 
-// Adiciona a classe selected a cor verde
+// Adiciona a classe selected à cor verde
 let green = document.querySelector(".green");
 green.addEventListener("click", function () {
   black.classList.remove("selected");
@@ -55,7 +55,7 @@ green.addEventListener("click", function () {
   color = window.getComputedStyle(green).getPropertyValue("background-color");
 });
 
-// Adiciona a classe selected a cor azul
+// Adiciona a classe selected à cor azul
 let blue = document.querySelector(".blue");
 blue.addEventListener("click", function () {
   black.classList.remove("selected");

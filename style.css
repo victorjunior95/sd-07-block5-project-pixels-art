@@ -10,7 +10,9 @@
     line-height: 100px;
     background-color: green;
 }
-
+.selected {
+    background-color: black;
+}
 .colors-palette-content {
     width: 100%;
     background-color: red;
@@ -76,3 +78,4 @@
     height: 40px;
     background-color: white;
     border: 1px solid black;
+}
