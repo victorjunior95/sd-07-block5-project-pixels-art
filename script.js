@@ -57,7 +57,7 @@ function generatePixel(quadrados) {
   for (let index = 0; index < quadrados; index += 1) {
     stylePixel();
   }
-} 
+}
 generatePixel(25);
 // Cor preta selecionada
 cores[0].addEventListener('click', function () {
@@ -89,12 +89,17 @@ cores[3].addEventListener('click', function () {
 });
 let pixel = document.querySelectorAll('.pixel');
 const apaga = document.querySelector('.clear');
+function apagao() {
+    pixel.forEach((item) => {
+      item.style.backgroundColor = 'white';
+    });
+  }
 apaga.addEventListener('click', apagao);
 const inputButton = document.querySelector('#generate-board');
 function removeAll() {
   while (pixelBoard.firstElementChild) {
-      pixelBoard.removeChild(pixelBoard.firstElementChild);
-    }
+  pixelBoard.removeChild(pixelBoard.firstElementChild);
+  }
 }
 inputButton.addEventListener('click', function () {
   nulll();
