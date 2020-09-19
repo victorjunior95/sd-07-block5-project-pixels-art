@@ -69,9 +69,16 @@ const clearButtonPixelBoard = () => {
 }
 
 // Resize pixel border
+
+
 const resizeCanvasBoard = () => {
-  const inputResizeValue = document.querySelector('#board-size').value
+
+  let inputResizeValue = Number(document.querySelector('#board-size').value);
   if (inputResizeValue >= 5 && inputResizeValue <= 50) {
+    removeCurrentBoardCanvas();
+    createCanvasBoard(inputResizeValue);
+  } else if (inputResizeValue > 50) {
+    inputResizeValue = 50;
     removeCurrentBoardCanvas();
     createCanvasBoard(inputResizeValue);
   } else {
@@ -91,9 +98,6 @@ const handleControllerEvents = (...types) => {
     switch (type) {
       case 'click':
         controllerEventsClicks(type);
-        break;
-      case 'change':
-        // controllerEventsInputs(type);
         break;
     }
   }
@@ -118,13 +122,9 @@ const controllerEventsClicks = (type) => {
   })
 }
 
-
-
 // Load page
 window.onload = () => {
-
   populateColorsPalette(3);
   createCanvasBoard(5)
   handleControllerEvents('click')
-
 }
