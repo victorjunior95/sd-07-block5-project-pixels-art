@@ -1,5 +1,6 @@
 const cores = document.querySelectorAll('.color');
 cores[0].style.backgroundColor = 'black';
+const pixelBoard = document.querySelector('#pixel-board');
 function pixelCor() {
   const pixel = document.querySelectorAll('.pixel');
   pixel.forEach((item) => {
@@ -38,7 +39,7 @@ function inputSize() {
 function RgbAlea() {
   cores[1].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
   cores[2].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
-  cores[3].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255 )}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
+  cores[3].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
 }
 
 function nulll() {
@@ -48,7 +49,6 @@ function nulll() {
   }
 }
 RgbAlea();
-const pixelBoard = document.querySelector('#pixel-board');
 window.onload = function () {
   cores[0].classList.add('selected');
   pixelCor();
@@ -56,9 +56,8 @@ window.onload = function () {
 function generatePixel(quadrados) {
   for (let index = 0; index < quadrados; index += 1) {
     stylePixel();
-    }
   }
-  
+} 
 generatePixel(25);
 // Cor preta selecionada
 cores[0].addEventListener('click', function () {
@@ -93,10 +92,10 @@ const apaga = document.querySelector('.clear');
 apaga.addEventListener('click', apagao);
 const inputButton = document.querySelector('#generate-board');
 function removeAll() {
-    while (pixelBoard.firstElementChild) {
+  while (pixelBoard.firstElementChild) {
       pixelBoard.removeChild(pixelBoard.firstElementChild);
     }
-  }
+}
 inputButton.addEventListener('click', function () {
   nulll();
   const inputValue = inputSize();
