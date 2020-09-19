@@ -19,6 +19,30 @@ const populateColorsPalette = (number) => {
   }
 }
 
+// Create board canvas
+const createLinePixel = () => {
+  const linePixelBoard = document.createElement('div');
+  linePixelBoard.className = "line-pixel-board";
+  return linePixelBoard;
+}
+const createPixelInLine = () => {
+  const pixelDiv = document.createElement('div');
+  pixelDiv.className = 'pixel';
+  pixelDiv.dataset.event = 'changeColor';
+  pixelDiv.style.backgroundColor = 'white';
+  return pixelDiv;
+}
+const createCanvasBoard = (number) => {
+  const pixelBoard = document.querySelector('#pixel-board');
+  for (let line = 1; line <= number; line += 1) {
+    const line = createLinePixel();
+    for (let pixel = 1; pixel <= number; pixel += 1) {
+      line.appendChild(createPixelInLine());
+    }
+    pixelBoard.appendChild(line);
+  }
+}
+
 // Select color
 let colorComputed = 'black';
 const selectColor = (event) => {
@@ -44,6 +68,23 @@ const clearButtonPixelBoard = () => {
   }
 }
 
+// Resize pixel border
+const resizeCanvasBoard = () => {
+  const inputResizeValue = document.querySelector('#board-size').value
+  if (inputResizeValue >= 5 && inputResizeValue <= 50) {
+    removeCurrentBoardCanvas();
+    createCanvasBoard(inputResizeValue);
+  } else {
+    alert("Board inválido!")
+  }
+}
+const removeCurrentBoardCanvas = () => {
+  const pixels = document.querySelectorAll('.pixel');
+  for (const pixel of pixels) {
+    pixel.remove();
+  }
+}
+
 // Event handle's
 const handleControllerEvents = (...types) => {
   for (const type of types) {
@@ -51,7 +92,7 @@ const handleControllerEvents = (...types) => {
       case 'click':
         controllerEventsClicks(type);
         break;
-      case 'input':
+      case 'change':
         // controllerEventsInputs(type);
         break;
     }
@@ -70,32 +111,11 @@ const controllerEventsClicks = (type) => {
       case 'clearButton':
         clearButtonPixelBoard();
         break;
+      case 'resizeCanvas':
+        resizeCanvasBoard();
+        break;
     }
   })
-}
-
-// Create board canvas
-const createLinePixel = () => {
-  const linePixelBoard = document.createElement('div');
-  linePixelBoard.className = "line-pixel-board";
-  return linePixelBoard;
-}
-const createPixelInLine = () => {
-  const pixelDiv = document.createElement('div');
-  pixelDiv.className = 'pixel';
-  pixelDiv.dataset.event = 'changeColor';
-  pixelDiv.style.backgroundColor = 'white';
-  return pixelDiv;
-}
-const makeCanvasBoard = (heightNumber, widthNumber) => {
-  const pixelBoard = document.querySelector('#pixel-board');
-  for (let line = 1; line <= heightNumber; line += 1) {
-    const line = createLinePixel();
-    for (let pixel = 1; pixel <= widthNumber; pixel += 1) {
-      line.appendChild(createPixelInLine());
-    }
-    pixelBoard.appendChild(line);
-  }
 }
 
 
@@ -104,7 +124,7 @@ const makeCanvasBoard = (heightNumber, widthNumber) => {
 window.onload = () => {
 
   populateColorsPalette(3);
-  makeCanvasBoard(5, 5)
+  createCanvasBoard(5)
   handleControllerEvents('click')
 
 }
