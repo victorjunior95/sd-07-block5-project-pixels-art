@@ -1,24 +1,5 @@
 window.onload = function () {
-  buttonSizeBoard.addEventListener('click', function () {
-    if (inputSizeBoard.value === '') {
-      alert('Board inválido!');
-    } else if (inputSizeBoard.value <= 5) {
-      numberLines = 5;
-      numberElements = 5;
-      getColor = 'black';
-    } else if (inputSizeBoard.value >= 50) {
-      numberLines = 50;
-      numberElements = 50;
-      getColor = 'black';
-    } else if (inputSizeBoard.value > 5 && inputSizeBoard.value < 50) {
-      numberElements = inputSizeBoard.value;
-      numberLines = inputSizeBoard.value;
-      getColor = 'black';
-      // console.log(numberElements);
-      // console.log(numberLines);
-    }
-    executeAll();
-  });
+  createNewBoard ()
 }
 
 // MY VARIABLES AND CONSTANTS
@@ -37,6 +18,29 @@ function executeAll() {
   updateColors();
   changeColorPixel();
   clearColors();
+}
+
+function createNewBoard () {
+buttonSizeBoard.addEventListener('click', function () {
+  if (inputSizeBoard.value === '') {
+    alert('Board inválido!');
+  } else if (inputSizeBoard.value <= 5) {
+    numberLines = 5;
+    numberElements = 5;
+    getColor = 'black';
+  } else if (inputSizeBoard.value >= 50) {
+    numberLines = 50;
+    numberElements = 50;
+    getColor = 'black';
+  } else if (inputSizeBoard.value > 5 && inputSizeBoard.value < 50) {
+    numberElements = inputSizeBoard.value;
+    numberLines = inputSizeBoard.value;
+    getColor = 'black';
+    // console.log(numberElements);
+    // console.log(numberLines);
+  }
+  executeAll();
+});
 }
 
 function clearBoard() {
