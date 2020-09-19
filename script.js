@@ -7,12 +7,15 @@ for(let index = 0; index < paletteColor.length; index += 1) {
 
 const botaoGerar = document.querySelector('#generate-board');
 const inputNumber = document.querySelector('#board-size');
-inputNumber.value = 5;
-let number = inputNumber.value;
+let number = 5;
+initial(number);
 botaoGerar.addEventListener('click', (event) => {
-    if(inputNumber.value === ''){
+    if(inputNumber.value === '' || inputNumber.value <= 0){
         alert("Board inválido!");
-    }else if (inputNumber.value < 5) {
+        inputNumber.value = '';
+        number = 5;
+        initial(number);
+    }else if (inputNumber.value > 0 && inputNumber.value < 5) {
         alert("Board inválido!");
         inputNumber.value = 5;
     }else if (inputNumber.value > 50) {
@@ -25,11 +28,12 @@ botaoGerar.addEventListener('click', (event) => {
             document.querySelector('#pixel-board').removeChild(pixel);         
         }
     }
-    number = inputNumber.value;
-    initial(number);
+    if(inputNumber.value >= 5){
+        number = inputNumber.value;
+        initial(number);
+    }
+    
 });
-
-initial(number);
 function initial(number) {
     for(let aux = 0; aux < number; aux += 1) {
         for (let index = 0; index < number; index += 1) {
@@ -53,8 +57,8 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
             paletteColor[sel].classList.add('color');
         }
     }
-           paletteColor[aux].className = 'selected';
-       if (paletteColor[aux].className === 'selected'){
+        paletteColor[aux].className = 'selected';
+        if (paletteColor[aux].className === 'selected'){
          for(let index = 0; index < boardPixel.length; index += 1) {
             boardPixel[index].addEventListener('click', function () {
             boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;            
