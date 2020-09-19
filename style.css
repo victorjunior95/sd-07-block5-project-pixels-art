@@ -24,50 +24,49 @@
 }
 
 body {
+  background-color: rgb(230, 230, 230);
   margin: 0;
-  background-color: rgb(0,0,0,0.1);
 }
 
 h1 {
-  background-color: rgb(14 , 144 , 173);
+  background-color: rgb(14 ,144 ,173);
   color: white;
   left: 0;
   margin: 0;
   padding: 20px 0;
-  top: 0;
   text-align: center;
+  top: 0;
 }
 
 .inline {
   display: inline-block;
-  vertical-align: middle;
   padding: 10px 15px;
+  vertical-align: middle;
 }
 
 button {
-  background-color: rgb(89 , 192 , 223);
+  background-color: rgb(89 ,192 ,223);
   border: none;
   border-radius: 4px;
-  padding: 10px 20px;
-  text-align: center;
   display: inline-block;
   font-size: 16px;
+  padding: 10px 20px;
   transition-duration: 0.4s;
+  text-align: center;
 }
 
 button:hover {
-  background-color: rgb(0 , 98 , 126);
+  background-color: rgb(0 ,98 ,126);
   color: white;
-  opacity: 100%;
 }
 
 nav {
   text-align: center;
 }
 
-input[type=number] {
+input[ type = 'number' ] {
+  border-color: rgb(220 ,220 ,220);
+  border-radius: 4px;
   height: 20px;
   width: 40px;
-  border-radius: 4px;
-  border-color: rgb(220 , 220 , 220);
 }
