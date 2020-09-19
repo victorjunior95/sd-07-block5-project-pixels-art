@@ -18,7 +18,6 @@ const populateColorsPalette = (number) => {
     createColorSinglePalette(colorGeneratorRandom());
   }
 }
-/* end */
 
 // Select color
 let colorComputed = 'black';
@@ -36,7 +35,14 @@ const setColorChangePixel = (event) => {
   const pixel = event.target;
   pixel.style.backgroundColor = colorComputed;
 }
-/* end */
+
+// Clear button
+const clearButtonPixelBoard = () => {
+  const pixels = document.querySelectorAll('.pixel');
+  for (const pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
+}
 
 // Event handle's
 const handleControllerEvents = (...types) => {
@@ -61,10 +67,12 @@ const controllerEventsClicks = (type) => {
       case 'changeColor':
         setColorChangePixel(event);
         break;
+      case 'clearButton':
+        clearButtonPixelBoard();
+        break;
     }
   })
 }
-/* end */
 
 // Create board canvas
 const createLinePixel = () => {
@@ -89,7 +97,6 @@ const makeCanvasBoard = (heightNumber, widthNumber) => {
     pixelBoard.appendChild(line);
   }
 }
-/* end */
 
 
 
