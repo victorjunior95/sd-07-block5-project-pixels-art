@@ -5,8 +5,8 @@
 Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from
   // failing the test
-  return false
-})
+  return false;
+});
 
 
 // https://github.com/tryber/sd-07-block5-project-pixels-art/tree/Cainan6697-project-pixels-art
@@ -30,9 +30,9 @@ selectPixel.addEventListener('click', function (event) {
 // https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
 const colors = document.querySelectorAll('.color');
 for (let index = 0; index < colors.length; index += 1) {
-  let x = Math.floor(Math.random() * 256);
-  let y = Math.floor(Math.random() * 256);
-  let z = Math.floor(Math.random() * 256);
+  const x = Math.floor(Math.random() * 256);
+  const y = Math.floor(Math.random() * 256);
+  const z = Math.floor(Math.random() * 256);
 
   if (index === 0) {
     colors[index].style.backgroundColor = 'black';
@@ -49,7 +49,7 @@ const height = document.getElementById('board-size');
 const width = document.getElementById('board-size');
 const pixelBoard = document.getElementById('custom-board');
 
-pixelBoard.onsubmit = function (event){
+pixelBoard.onsubmit = function (event) {
   event.preventDefault();
   clearGrid();
   makeGrid();

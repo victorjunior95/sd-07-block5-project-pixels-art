@@ -40,12 +40,3 @@ td {
   height: 41px;
   width: 41px;
 }
-
-input[ type = 'number' ] {
-  margin-right: 10px;
-  width: 3em;
-}
-
-input[ type = 'submit' ] {
-  margin-right: 2em;
-}
