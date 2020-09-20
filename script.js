@@ -9,7 +9,7 @@ function geraCores() {
 }
 
 for(let index = 0; index < paletteColor.length; index += 1) {
-    const colors = ['black', 'red', 'blue', 'green'];
+    const colors = ['black', geraCores(), geraCores(), geraCores()];
     paletteColor[index].style.backgroundColor = colors[index];
 }
 
@@ -51,24 +51,21 @@ function initial(number) {
         }
     let br = document.createElement('br');
     document.querySelector('#pixel-board').appendChild(br);       
-}    
+}
 
 const boardPixel = document.querySelectorAll('#pixel-board .pixel');
-
     for (let aux = 0; aux < paletteColor.length; aux += 1) {
        paletteColor[aux].addEventListener('click', (event) => {
-        let selected = event.target.className
-        selected = 'selected';
-        console.log(selected)
+        console.log(event.target.className)
     for (let sel = 0; sel < paletteColor.length; sel += 1) {
         if (paletteColor[sel].className === 'selected' || 
         paletteColor[sel].className === 'selected color') {
             paletteColor[sel].classList.remove('selected');
-            paletteColor[sel].classList.add('color');
+            paletteColor[sel].className  = 'color';
         }
     }
-        paletteColor[aux].className = selected;
-        if (paletteColor[aux].className === 'selected'){
+    event.target.className  = 'selected';
+    if (event.target.className  === 'selected'){
          for(let index = 0; index < boardPixel.length; index += 1) {
             boardPixel[index].addEventListener('click', function () {
             boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;            
