@@ -10,20 +10,6 @@ for (let index = 0; index < paletteColor.length; index += 1) {
   const colors = ['black', geraCores(), geraCores(), geraCores()];
   paletteColor[index].style.backgroundColor = colors[index];
 }
-function initial(number) {
-  for (let aux = 0; aux < number; aux += 1) {
-    for (let index = 0; index < number; index += 1) {
-      const pixels = document.createElement('div');
-      pixels.className = 'pixel';
-      document.querySelector('#pixel-board').appendChild(pixels);
-    }
-    const br = document.createElement('br');
-    document.querySelector('#pixel-board').appendChild(br);
-  }
-  paintSelected();
-  limpar();
-  initPage()
-}
 
 function paintSelected() {
   const boardPixel = document.querySelectorAll('#pixel-board .pixel');
@@ -67,6 +53,21 @@ function initPage() {
   }
 }
 window.onload = initPage;
+
+function initial(number) {
+  for (let aux = 0; aux < number; aux += 1) {
+    for (let index = 0; index < number; index += 1) {
+      const pixels = document.createElement('div');
+      pixels.className = 'pixel';
+      document.querySelector('#pixel-board').appendChild(pixels);
+    }
+    const br = document.createElement('br');
+    document.querySelector('#pixel-board').appendChild(br);
+  }
+  paintSelected();
+  limpar();
+  initPage();
+}
 
 const botaoGerar = document.querySelector('#generate-board');
 const inputNumber = document.querySelector('#board-size');
