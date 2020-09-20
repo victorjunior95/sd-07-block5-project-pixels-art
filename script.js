@@ -1,8 +1,8 @@
-//função para escolher uma cor aleatória para a paleta de cores (cria um numero rgb)
+// função para escolher uma cor aleatória para a paleta de cores (cria um numero rgb)
 
-let secondColor = document.querySelector('.second-color');
-let thirdColor = document.querySelector('.third-color');
-let fourthColor = document.querySelector('.fourth-color');
+const secondColor = document.querySelector('.second-color');
+const thirdColor = document.querySelector('.third-color');
+const fourthColor = document.querySelector('.fourth-color');
 
 function randomColor(number) {
   return Math.floor(Math.random() * number);
@@ -15,80 +15,85 @@ function randomPalette() {
 
 window.onload = randomPalette;
 
-//função para definir tamanho do quadrado
+// função para definir tamanho do quadrado
+function deletePixels() {
+  const pixelBoard = document.getElementById('pixel-board');
 
-function createTable() {
-  let pixelBoard = document.getElementById('pixel-board');
-
-  while (pixelBoard.firstChild){
+  while (pixelBoard.firstChild) {
     pixelBoard.removeChild(pixelBoard.firstChild);
   }
+}
 
-  let input = document.getElementById('board-size');
 
-  if(input.value === ''){
-    alert("Board inválido!");
+function createTable() {
+  deletePixels()
+
+  const input = document.getElementById('board-size');
+
+  if (input.value === '') {
+    alert('Board inválido!');
   }
-  else if(input.value < 5){
+  else if (input.value < 5) {
     input.value = 5;
   }
-  else if (input.value > 50){
+  else if (input.value > 50) {
     input.value = 50;
   }
 
-  for(i = 0; i < input.value; i += 1){
-    let tr = document.createElement('div');
-    tr.className = "tr";
+  let pixelBoard = document.getElementById('pixel-board');
+
+  for (index = 0; index < input.value; index += 1) {
+    const tr = document.createElement('div');
+    tr.className = 'tr';
     pixelBoard.appendChild(tr);
 
-    for(j = 0; j < input.value; j += 1){
+    for (count = 0; count < input.value; count += 1) {
       let td = document.createElement('div');
-      td.className = "pixel td";
+      td.className = 'pixel td';
       tr.appendChild(td);
     }
   }
 }
 
-let generateTable = document.getElementById('generate-board');
+const generateTable = document.getElementById('generate-board');
 
-generateTable.addEventListener('click', createTable)
+generateTable.addEventListener('click', createTable);
 
 // função para colorir pixels de acordo com a cor da paleta escolhida
 
-let selectPixel = document.querySelectorAll('.pixel');
+const selectPixel = document.querySelectorAll('.pixel');
 
 function changeColor(event) {
-  let colorSelected = document.querySelector('.selected');
+  const colorSelected = document.querySelector('.selected');
 
   event.target.style.backgroundColor = colorSelected.style.backgroundColor;
 }
 
-for(let index = 0; index < selectPixel.length; index += 1) {
+for (let index = 0; index < selectPixel.length; index += 1) {
   selectPixel[index].addEventListener('click', changeColor);
 }
 
 // função para alterar a cor da paleta selecionada
 
-let getColor = document.querySelectorAll('.color');
+const getColor = document.querySelectorAll('.color');
 
-function changeSelected(event){
-  let colorSelected = document.querySelector('.selected');
+function changeSelected(event) {
+  const colorSelected = document.querySelector('.selected');
 
   colorSelected.classList.remove('selected');
   event.target.classList.add('selected');
 }
 
-for(let count = 0; count < getColor.length; count += 1) {
-  getColor[count].addEventListener('click', changeSelected)
+for (let count = 0; count < getColor.length; count += 1) {
+  getColor[count].addEventListener('click', changeSelected);
 }
 
-//função para deixar os pixels com fundo branco de novo
+// função para deixar os pixels com fundo branco de novo
 
-let clearButton = document.getElementById('clear-board');
+const clearButton = document.getElementById('clear-board');
 
-clearButton.addEventListener('click', function (){
-  for(let list = 0; list < selectPixel.length; list += 1){
-    let selectPixel = document.querySelectorAll('.pixel');
+clearButton.addEventListener('click', function () {
+  for (let list = 0; list < selectPixel.length; list += 1) {
     selectPixel[list].style.backgroundColor = 'white';
   }
-})
+});
