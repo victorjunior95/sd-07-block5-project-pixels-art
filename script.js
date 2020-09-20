@@ -24,35 +24,37 @@ function deletePixels() {
   }
 }
 
+function createLinesAndColumns() {
+  const input = document.getElementById('board-size');
+  const pixelBoard = document.getElementById('pixel-board');
+
+  for (let index = 0; index < input.value; index += 1) {
+    const tr = document.createElement('div');
+    tr.className = 'tr';
+    pixelBoard.appendChild(tr);
+
+    for (let count = 0; count < input.value; count += 1) {
+      const td = document.createElement('div');
+      td.className = 'pixel td';
+      tr.appendChild(td);
+    }
+  }
+}
 
 function createTable() {
-  deletePixels()
+  deletePixels();
 
   const input = document.getElementById('board-size');
 
   if (input.value === '') {
     alert('Board inválido!');
-  }
-  else if (input.value < 5) {
+  } else if (input.value < 5) {
     input.value = 5;
-  }
-  else if (input.value > 50) {
+  } else if (input.value > 50) {
     input.value = 50;
   }
 
-  let pixelBoard = document.getElementById('pixel-board');
-
-  for (index = 0; index < input.value; index += 1) {
-    const tr = document.createElement('div');
-    tr.className = 'tr';
-    pixelBoard.appendChild(tr);
-
-    for (count = 0; count < input.value; count += 1) {
-      let td = document.createElement('div');
-      td.className = 'pixel td';
-      tr.appendChild(td);
-    }
-  }
+  createLinesAndColumns();
 }
 
 const generateTable = document.getElementById('generate-board');
