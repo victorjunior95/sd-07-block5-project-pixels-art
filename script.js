@@ -20,7 +20,7 @@ document.addEventListener("click", function(event){
     else if (event.target.className == "color"){
         selected.className = "color";
         selected = event.target;
-        selected.className = "color select";
+        selected.className = "color selected";
                 
         }
 })
