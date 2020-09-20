@@ -28,8 +28,8 @@ function initial(number) {
           paletteColor[sel].classList.remove('selected');
         }
       }
-    paletteColor[aux].classList.add('selected');
-    if (paletteColor[aux].className === 'color selected'){
+      paletteColor[aux].classList.add('selected');
+    if (paletteColor[aux].className === 'color selected') {
       for (let index = 0; index < boardPixel.length; index += 1) {
         boardPixel[index].addEventListener('click', function () {
           boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;
@@ -44,7 +44,7 @@ function initial(number) {
       boardPixel[index].style.backgroundColor = 'white';
     }
   });
-  function initPage(){
+  function initPage() {
     for (let index = 0; index < boardPixel.length; index += 1) {
       paletteColor[0].classList.add('color');
       paletteColor[0].classList.add('selected');
@@ -60,7 +60,7 @@ const inputNumber = document.querySelector('#board-size');
 let number = 5;
 initial(number);
 botaoGerar.addEventListener('click', () => {
-  if (inputNumber.value === '' || inputNumber.value <= 0){
+  if (inputNumber.value === '' || inputNumber.value <= 0) {
     alert('Board inválido!');
     inputNumber.value = '';
     number = 5;
@@ -82,7 +82,7 @@ botaoGerar.addEventListener('click', () => {
       document.querySelector('#pixel-board').removeChild(pixel);
     }
   }
-  if (inputNumber.value >= 5){
+  if (inputNumber.value >= 5) {
     number = inputNumber.value;
     initial(number);
   }
