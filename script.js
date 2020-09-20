@@ -59,13 +59,12 @@ const boardPixel = document.querySelectorAll('#pixel-board .pixel');
         console.log(event.target.className)
     for (let sel = 0; sel < paletteColor.length; sel += 1) {
         if (paletteColor[sel].className === 'selected' || 
-        paletteColor[sel].className === 'selected color') {
+        paletteColor[sel].className === 'color selected') {
             paletteColor[sel].classList.remove('selected');
-            paletteColor[sel].className  = 'color';
         }
     }
-    event.target.className  = 'selected';
-    if (event.target.className  === 'selected'){
+    paletteColor[aux].classList.add('selected');
+    if (paletteColor[aux].className  === 'color selected'){
          for(let index = 0; index < boardPixel.length; index += 1) {
             boardPixel[index].addEventListener('click', function () {
             boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;            
@@ -86,8 +85,8 @@ window.onload = initPage;
 
 function initPage(){
     for(let index = 0; index < boardPixel.length; index += 1) {
-        paletteColor[0].className = 'selected';
         paletteColor[0].classList.add('color');
+        paletteColor[0].classList.add('selected');
         boardPixel[index].addEventListener('click', function () {          
             boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
         });        
