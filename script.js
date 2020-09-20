@@ -23,12 +23,7 @@ function generateColors() {
   	color.setAttribute('class', 'color')
   	document.querySelector('#color-palette').appendChild(color)
   	color.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')'
-	color.addEventListener('click', function(select){
-		colorSelected = color.style.backgroundColor
-		let selected = document.querySelector(".selected");
-		selected.classList.remove('selected');
-		select.target.className += " selected";
-	})
+	addClick(color)
 }
 
 function generateBlackColor() {
@@ -37,6 +32,11 @@ function generateBlackColor() {
 	color.setAttribute('class', 'color selected')
 	document.querySelector('#color-palette').appendChild(color)
 	color.style.backgroundColor = 'black'
+	addClick(color)
+}
+
+function addClick(a) {
+	const color = a
 	color.addEventListener('click', function(select){
 		colorSelected = color.style.backgroundColor
 		let selected = document.querySelector(".selected");
