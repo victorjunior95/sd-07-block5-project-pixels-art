@@ -50,10 +50,10 @@ function updateColors() {
   const colorSelected = document.querySelectorAll('.color');
   for (let i = 0; i < colorSelected.length; i += 1) {
     colorSelected[i].addEventListener('click', function (event) {
-      let divs = event.target;
+      const divs = event.target;
       getColor = divs.style.backgroundColor;
       // getColor = divs.classList[1];
-      console.log(getColor);
+      // console.log(getColor);
     });
   }
 }
@@ -64,7 +64,7 @@ function changeColorPixel() {
   const myPixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < myPixels.length; i += 1) {
     myPixels[i].addEventListener('click', function (event) {
-      let onePixel = event.target;
+      const onePixel = event.target;
       onePixel.style.backgroundColor = getColor;
       // console.log(getColor);
     });
@@ -76,8 +76,8 @@ changeColorPixel();
 const colorSelected = document.querySelectorAll('.color');
 for (let i = 0; i < colorSelected.length; i += 1) {
   colorSelected[i].addEventListener('click', function (event) {
-    let divs = event.target;
-    let checkClassName = document.querySelector('.selected');
+    const divs = event.target;
+    const checkClassName = document.querySelector('.selected');
     // If the class selected existed, it will be removed
     if (checkClassName) {
       checkClassName.classList.remove('selected');
@@ -103,14 +103,14 @@ clearColors();
 
 // FUNCTION TO GENERATE RANDOM COLORS
 function paletteRandom() {
-  let randomNumber1 = Math.round(Math.random() * 1000000);
-  let randomNumber2 = Math.round(Math.random() * 1000000);
-  let randomNumber3 = Math.round(Math.random() * 1000000);
-  let palette = document.querySelectorAll('.color');
+  const randomNumber1 = Math.round(Math.random() * 1000000);
+  const randomNumber2 = Math.round(Math.random() * 1000000);
+  const randomNumber3 = Math.round(Math.random() * 1000000);
+  const palette = document.querySelectorAll('.color');
   palette[0].style.backgroundColor = 'black';
-  palette[1].style.backgroundColor = '#' + randomNumber1;
-  palette[2].style.backgroundColor = '#' + randomNumber2;
-  palette[3].style.backgroundColor = '#' + randomNumber3;
+  palette[1].style.backgroundColor = `#${randomNumber1}`;
+  palette[2].style.backgroundColor = `#${randomNumber2}`;
+  palette[3].style.backgroundColor = `#${randomNumber3}`;
 }
 paletteRandom();
 
