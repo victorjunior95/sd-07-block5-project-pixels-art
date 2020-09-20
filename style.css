@@ -1,0 +1,23 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    background-color: gold;
+}
+
+#title {
+    text-align: center;
+    margin: 20px;
+}
+
+#color-palette {
+    text-align: center;
+    margin: 30px;
+}
+
+.color {
+    color: white;
+    border: black solid 1px;
+    display: inline;
+    padding: 15px;
+    margin: 0px 15px;
+}
