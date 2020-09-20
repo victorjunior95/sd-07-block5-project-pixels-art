@@ -68,13 +68,9 @@ botaoGerar.addEventListener('click', () => {
   } else if (inputNumber.value > 0 && inputNumber.value < 5) {
     alert('Board inválido!');
     inputNumber.value = 5;
-    number = inputNumber.value;
-    initial(number);
   } else if (inputNumber.value > 50) {
     alert('Board inválido!');
     inputNumber.value = 50;
-    number = inputNumber.value;
-    initial(number);
   }
   for (let aux = 0; aux < number; aux += 1) {
     for (let index = 0; index < number; index += 1) {
