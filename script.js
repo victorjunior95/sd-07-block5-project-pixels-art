@@ -10,34 +10,6 @@ for (let index = 0; index < paletteColor.length; index += 1) {
   const colors = ['black', geraCores(), geraCores(), geraCores()];
   paletteColor[index].style.backgroundColor = colors[index];
 }
-const botaoGerar = document.querySelector('#generate-board');
-const inputNumber = document.querySelector('#board-size');
-let number = 5;
-initial(number);
-botaoGerar.addEventListener('click', () => {
-  if (inputNumber.value === '' || inputNumber.value <= 0){
-    alert('Board inválido!');
-    inputNumber.value = '';
-    number = 5;
-    initial(number);
-  } else if (inputNumber.value > 0 && inputNumber.value < 5) {
-    alert('Board inválido!');
-    inputNumber.value = 5;
-  } else if (inputNumber.value > 50) {
-    alert('Board inválido!');
-    inputNumber.value = 50;
-  }
-  for (let aux = 0; aux < number; aux += 1) {
-    for (let index = 0; index < number; index += 1) {
-      const pixel = document.querySelector('#pixel-board .pixel');
-      document.querySelector('#pixel-board').removeChild(pixel);
-    }
-  }
-  if (inputNumber.value >= 5){
-    number = inputNumber.value;
-    initial(number);
-  }
-});
 function initial(number) {
   for (let aux = 0; aux < number; aux += 1) {
     for (let index = 0; index < number; index += 1) {
@@ -71,7 +43,7 @@ function initial(number) {
     for (let index = 0; index < boardPixel.length; index += 1) {
       boardPixel[index].style.backgroundColor = 'white';
     }
-  });  
+  });
   function initPage(){
     for (let index = 0; index < boardPixel.length; index += 1) {
       paletteColor[0].classList.add('color');
@@ -83,3 +55,35 @@ function initial(number) {
   }
   window.onload = initPage;
 }
+const botaoGerar = document.querySelector('#generate-board');
+const inputNumber = document.querySelector('#board-size');
+let number = 5;
+initial(number);
+botaoGerar.addEventListener('click', () => {
+  if (inputNumber.value === '' || inputNumber.value <= 0){
+    alert('Board inválido!');
+    inputNumber.value = '';
+    number = 5;
+    initial(number);
+  } else if (inputNumber.value > 0 && inputNumber.value < 5) {
+    alert('Board inválido!');
+    inputNumber.value = 5;
+    number = inputNumber.value;
+    initial(number);
+  } else if (inputNumber.value > 50) {
+    alert('Board inválido!');
+    inputNumber.value = 50;
+    number = inputNumber.value;
+    initial(number);
+  }
+  for (let aux = 0; aux < number; aux += 1) {
+    for (let index = 0; index < number; index += 1) {
+      const pixel = document.querySelector('#pixel-board .pixel');
+      document.querySelector('#pixel-board').removeChild(pixel);
+    }
+  }
+  if (inputNumber.value >= 5){
+    number = inputNumber.value;
+    initial(number);
+  }
+});
