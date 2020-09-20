@@ -1,5 +1,5 @@
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .color-palette {
@@ -30,20 +30,20 @@ h1 {
   width: 55px;
 }
 
-.input-button  {
+.input-button {
   display: flex;
   justify-content: center;
+}
+
+input::-webkit-outer-spin-button, 
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
 }
 
 .input-button input {
   margin: 0 10px;
   width: 100px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  appearance: none;
-  margin: 0;
 }
 
 .input-button button {
