@@ -9,25 +9,31 @@ let b
 window.onload = function palette() {
 	const color = document.createElement('div')
 	color.setAttribute('id', 'corPreta')
-	color.setAttribute('class', 'color')
+	color.setAttribute('class', 'color selected')
 	document.querySelector('#color-palette').appendChild(color)
 	color.style.backgroundColor = 'black'
-	color.addEventListener('click', function(){
+	color.addEventListener('click', function(select){
 		colorSelected = color.style.backgroundColor
+		let selected = document.querySelector(".selected");
+		selected.classList.remove('selected');
+		select.target.className += " selected";
 		console.log(colorSelected)
 	})
 	for (let row = 0; row < 3; row += 1) {
 		if (color.id === 'corPreta') {
 			r = Math.floor(Math.random() * 256);
-  		g = Math.floor(Math.random() * 256);
+  			g = Math.floor(Math.random() * 256);
 			b = Math.floor(Math.random() * 256);
 			const color = document.createElement('div')
 			color.setAttribute('id', 'color')
 			color.setAttribute('class', 'color')
 			document.querySelector('#color-palette').appendChild(color)
 			color.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')'
-			color.addEventListener('click', function(){
+			color.addEventListener('click', function(select){
 				colorSelected = color.style.backgroundColor
+				let selected = document.querySelector(".selected");
+				selected.classList.remove('selected');
+				select.target.className += " selected";
 				console.log(colorSelected)
 			})
 		}
@@ -60,19 +66,32 @@ function generatePixelBoard() {
 		const pixelRow = document.createElement('div')
 		pixelRow.setAttribute('id', 'pixel-row' + i)
 		pixelRow.setAttribute('class', 'pixel-row')
-		document.querySelector('#whole-board').appendChild(pixelRow)
+		document.querySelector('#pixel-board').appendChild(pixelRow)
 		for (let column = 0; column < columnMax; column += 1) {
 			const pixel = document.createElement('div')
 			pixel.setAttribute('id', 'pixel')
 			pixel.setAttribute('class', 'pixel')
+			pixel.style.backgroundColor = 'white'
 			document.querySelector('#pixel-row' + i).appendChild(pixel)
+			pixel.addEventListener('click', function() {
+				pixel.style.backgroundColor = colorSelected
+			})
 		}
 		i += 1
 	}
 }
 
 function removePixelBoard() {
-	while (wholeBoard.firstChild) {
-	  wholeBoard.removeChild(wholeBoard.firstChild);
+	while (pixelBoard.firstChild) {
+	  pixelBoard.removeChild(pixelBoard.firstChild);
 	}
 }
+
+const clearBoard = document.querySelector('#clear-board')
+clearBoard.addEventListener('click', function() {
+	let pixel = document.getElementsByClassName('pixel')
+	console.log(pixel)
+	for (let i = 0; i < pixel.length; i += 1)  {
+		pixel[i].style.backgroundColor = 'white'
+	}
+})

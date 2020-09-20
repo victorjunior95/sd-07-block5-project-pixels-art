@@ -8,9 +8,9 @@ h1 {
   transform: translateX(-50%);
   width: 300px;
   height: 60px;
-	border: 3px solid #73AD21; /* tirar */
 	display: flex; 
   justify-content: space-between;
+  margin-bottom: 25px;
 }
 
 .color {
@@ -23,11 +23,39 @@ h1 {
 	transform: translateY(-50%);
 }
 
+.selected {
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+.input-button  {
+  display: flex;
+  justify-content: center;
+}
+
+.input-button input {
+  margin: 0px 10px;
+  appearance: textfield;
+  width: 100px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-button button {
+  margin: 0px 10px;
+  width: 100px;
+}
+
 .pixel-board {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-	border: 3px solid #73AD21; /* tirar */
   margin-top: 25px;
   min-height: 250px;
   min-width: 250px;
@@ -44,4 +72,8 @@ h1 {
   width: 40px;
   height: 40px;
   margin: 1px;
+}
+
+.pixel:hover {
+  box-shadow: inset 0px 0px 1px 1px rgb(134, 133, 133);
 }
