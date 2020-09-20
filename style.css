@@ -2,6 +2,12 @@ body {
   text-align: center;
 }
 
+
+
+.board-size {
+  width: 20px;
+}
+
 .clear-board {
   margin-top: 20px;
 }
@@ -14,6 +20,10 @@ body {
   width: 40px;
 }
 
+.color-palette {
+  margin-bottom: 20px;
+}
+
 .pixel {
   background-color: white;
   border: 1px solid black;
@@ -23,23 +33,9 @@ body {
   padding: 0;
 }
 
-.first-color {
-  background-color: black;
-}
-
-.fourth-color {
-  background-color: "";
-}
-
 .pixel-board {
   display: table;
   margin: 20px auto;
 }
 
-.second-color {
-  background-color: "";
-}
 
-.third-color {
-  background-color: "";
-}

@@ -15,14 +15,21 @@
         <h1 id="title">"Paleta de Cores"</h1>
     </header>
 
-    <section id="color-palette">
+    <section class="color-palette" id="color-palette">
         <div class="color first-color selected" style="background-color: black"></div>
         <div class="color second-color"></div>
         <div class="color third-color"></div>
         <div class="color fourth-color"></div>
     </section>
 
-    <button class="clear-board" id="clear-board">"Limpar"</button>
+    <div>
+        <label>Defina o tamanho do quadrado:</label>
+        <br>
+        <input id="board-size" class="board-size" type="number" min="1" max="50">
+        <button id="generate-board">VQV</button>
+    </div>
+
+    <button class="clear-board" id="clear-board">Limpar</button>
 
     <section class="pixel-board" id="pixel-board">
         <div class="tr">
