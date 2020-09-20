@@ -1,55 +1,50 @@
-.titulo{
-    margin-left: 15px;
-}
-
-.paletasClasses {
-    margin-left: 25px;
+.botao {
+  margin-bottom: 10px;
+  margin-left: 15px;
+  font-size: 13px;
 }
 
 .color {
-    width: 40px;
-    height: 40px;
-    border: solid 1px black;
-    display: inline-block;
-    margin-bottom: 8px;
-}
-
-.pale {
-    margin-left: 25px;
-    line-height: 0rem;  
-}
-
-.pale br {
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-
-.pixel {
-    width: 40px;
-    height: 40px;
-    border: solid 1px black;
-    display: inline-block;
-    background-color: white; 
-}
-
-.selected {
-    width: 40px;
-    height: 40px;
-    border: solid 1px black;
-    display: inline-block;
-    margin-bottom: 8px; 
-}
-
-.botao {
-    margin-bottom: 10px;
-    margin-left: 15px;
-    font-size: 13px;
-}
-
-.input {
-    margin-left: 12px;
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  display: inline-block;
+  margin-bottom: 8px;
 }
 
 .gerar {
-    margin-left: 5px;
+  margin-left: 5px;
+}
+
+.input {
+  margin-left: 12px;
+}
+
+.titulo{
+  margin-left: 15px;
+}
+
+.paletasClasses {
+  margin-left: 25px;
+}
+
+.pale {
+  margin-left: 25px;
+  line-height: 0;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  display: inline-block;
+  background-color: white;
+}
+
+.selected {
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  display: inline-block;
+  margin-bottom: 8px;
 }
