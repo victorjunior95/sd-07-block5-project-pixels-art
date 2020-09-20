@@ -20,10 +20,6 @@
   margin-left: 12px;
 }
 
-.titulo{
-  margin-left: 15px;
-}
-
 .paletasClasses {
   margin-left: 25px;
 }
@@ -48,3 +44,7 @@
   display: inline-block;
   margin-bottom: 8px;
 }
+
+.titulo {
+    margin-left: 15px;
+  }
