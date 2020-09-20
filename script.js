@@ -6,7 +6,7 @@ let getColor = 'black';
 let numberLines = 5;
 let numberElements = 5;
 
-// FUNCTION TO 
+// FUNCTION TO clear the board
 function clearBoard() {
   pixelBoard.innerHTML = '';
 }
@@ -101,6 +101,7 @@ function clearColors() {
 }
 clearColors();
 
+// FUNCTION TO GENERATE RANDOM COLORS
 function paletteRandom() {
   let randomNumber1 = Math.round(Math.random() * 1000000);
   let randomNumber2 = Math.round(Math.random() * 1000000);
@@ -113,6 +114,7 @@ function paletteRandom() {
 }
 paletteRandom();
 
+// EXECUTE MY ALL FUNCTIONS
 function executeAll() {
   clearBoard();
   paletteRandom();
@@ -123,6 +125,7 @@ function executeAll() {
   clearColors();
 }
 
+// FUNCTION TO CREATE NEW BOARD
 function createNewBoard() {
   buttonSizeBoard.addEventListener('click', function () {
     if (inputSizeBoard.value === '') {
@@ -146,6 +149,7 @@ function createNewBoard() {
   });
 }
 
+// EXECUTE MY FUNCTION AFTER ALL ELEMENTS UPLOAD
 window.onload = function () {
   createNewBoard();
 };
