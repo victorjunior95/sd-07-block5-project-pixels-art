@@ -1,3 +1,5 @@
+const pixelBoard = document.querySelector('#pixel-board');
+const generateBoard = document.querySelector('#generate-board');
 let colorSelected = 'black';
 
 let r;
@@ -6,7 +8,7 @@ let b;
 
 function addClick(a) {
   const color = a;
-  color.addEventListener ('click', function (select){
+  color.addEventListener('click', function (select) {
     colorSelected = color.style.backgroundColor;
     const selected = document.querySelector('.selected');
     selected.classList.remove('selected');
@@ -21,9 +23,9 @@ function removePixelBoard() {
 }
 
 function generateColors() {
-  r = Math.floor (Math.random () * 256);
-  g = Math.floor (Math.random () * 256);
-  b = Math.floor (Math.random () * 256);
+  r = Math.floor(Math.random() * 256);
+  g = Math.floor(Math.random() * 256);
+  b = Math.floor(Math.random() * 256);
   const color = document.createElement('div');
   color.setAttribute('id', 'color');
   color.setAttribute('class', 'color');
@@ -41,15 +43,12 @@ function generateBlackColor() {
   addClick(color);
 }
 
-const pixelBoard = document.querySelector('#pixel-board');
-const generateBoard = document.querySelector('#generate-board');
-
 let i = 0;
 let rowMax = 5;
 let columnMax = 5;
 
 function pixelAddClick(a) {
-  const pixel = a
+  const pixel = a;
   pixel.addEventListener('click', function () {
     pixel.style.backgroundColor = colorSelected;
   });
@@ -83,7 +82,7 @@ generateBoard.addEventListener('click', function () {
     removePixelBoard();
     generatePixelBoard();
   }
-})
+});
 
 const clearBoard = document.querySelector('#clear-board');
 clearBoard.addEventListener('click', function () {
@@ -91,7 +90,7 @@ clearBoard.addEventListener('click', function () {
   for (let x = 0; x < pixel.length; x += 1) {
     pixel[x].style.backgroundColor = 'white';
   }
-})
+});
 
 window.onload = function palette() {
   generateBlackColor();
@@ -99,4 +98,4 @@ window.onload = function palette() {
     generateColors();
   }
   generatePixelBoard();
-}
+};

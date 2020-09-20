@@ -35,8 +35,7 @@ h1 {
   justify-content: center;
 }
 
-input::-webkit-outer-spin-button, 
-input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   appearance: none;
   margin: 0;
 }
