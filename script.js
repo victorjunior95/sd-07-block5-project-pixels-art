@@ -20,6 +20,12 @@ function initial(number) {
     const br = document.createElement('br');
     document.querySelector('#pixel-board').appendChild(br);
   }
+  paintSelected();
+  limpar();
+  initPage()
+}
+
+function paintSelected() {
   const boardPixel = document.querySelectorAll('#pixel-board .pixel');
   for (let aux = 0; aux < paletteColor.length; aux += 1) {
     paletteColor[aux].addEventListener('click', () => {
@@ -30,31 +36,38 @@ function initial(number) {
       }
       paletteColor[aux].classList.add('selected');
       if (paletteColor[aux].className === 'color selected') {
-      for (let index = 0; index < boardPixel.length; index += 1) {
-        boardPixel[index].addEventListener('click', function () {
-          boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;
-        });
-      }
+        for (let index = 0; index < boardPixel.length; index += 1) {
+          boardPixel[index].addEventListener('click', function () {
+            boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;
+          });
+        }
       }
     });
   }
+}
+
+function limpar() {
+  const boardPixel = document.querySelectorAll('#pixel-board .pixel');
   const botaoLimpar = document.querySelector('#clear-board');
   botaoLimpar.addEventListener('click', () => {
     for (let index = 0; index < boardPixel.length; index += 1) {
       boardPixel[index].style.backgroundColor = 'white';
     }
   });
-  function initPage() {
-    for (let index = 0; index < boardPixel.length; index += 1) {
-      paletteColor[0].classList.add('color');
-      paletteColor[0].classList.add('selected');
-      boardPixel[index].addEventListener('click', function () {
-        boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
-      });
-    }
-  }
-  window.onload = initPage;
 }
+
+function initPage() {
+  const boardPixel = document.querySelectorAll('#pixel-board .pixel');
+  for (let index = 0; index < boardPixel.length; index += 1) {
+    paletteColor[0].classList.add('color');
+    paletteColor[0].classList.add('selected');
+    boardPixel[index].addEventListener('click', function () {
+      boardPixel[index].style.backgroundColor = paletteColor[0].style.backgroundColor;
+    });
+  }
+}
+window.onload = initPage;
+
 const botaoGerar = document.querySelector('#generate-board');
 const inputNumber = document.querySelector('#board-size');
 let number = 5;
