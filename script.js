@@ -1,18 +1,8 @@
-const colorPalette = document.querySelector('#color-palette')
-
 let colorSelected = 'black'
 
 let r
 let g
 let b
-
-window.onload = function palette() {
-	generateBlackColor()
-	for (let row = 0; row < 3; row += 1) {	
-		generateColors()
-	}
-	generatePixelBoard()
-}
 
 function generateColors() {
 	r = Math.floor(Math.random() * 256);
@@ -42,7 +32,7 @@ function addClick(a) {
 		let selected = document.querySelector(".selected");
 		selected.classList.remove('selected');
 		select.target.className += " selected";
-	})	
+	})
 }
 
 const pixelBoard = document.querySelector('#pixel-board')
@@ -98,3 +88,11 @@ clearBoard.addEventListener('click', function() {
 		pixel[i].style.backgroundColor = 'white'
 	}
 })
+
+window.onload = function palette() {
+	generateBlackColor()
+	for (let row = 0; row < 3; row += 1) {	
+		generateColors()
+	}
+	generatePixelBoard()
+}
