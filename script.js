@@ -29,13 +29,13 @@ function initial(number) {
         }
       }
       paletteColor[aux].classList.add('selected');
-    if (paletteColor[aux].className === 'color selected') {
+      if (paletteColor[aux].className === 'color selected') {
       for (let index = 0; index < boardPixel.length; index += 1) {
         boardPixel[index].addEventListener('click', function () {
           boardPixel[index].style.backgroundColor = paletteColor[aux].style.backgroundColor;
         });
       }
-    }
+      }
     });
   }
   const botaoLimpar = document.querySelector('#clear-board');
