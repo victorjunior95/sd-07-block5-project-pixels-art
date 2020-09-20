@@ -17,8 +17,8 @@ h1 {
   border: 1px solid black;
   display: inline-flex;
   height: 50px;
-	position: relative;
-	top: 50%;
+  position: relative;
+  top: 50%;
   transform: translateY(-50%);
   width: 50px;
 }
@@ -37,6 +37,7 @@ h1 {
 
 .input-button input {
   -moz-appearance: textfield;
+  -webkit-appearance: textfield;
   margin: 0 10px;
   width: 100px;
 }
