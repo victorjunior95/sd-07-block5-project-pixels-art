@@ -71,18 +71,32 @@ function generatePixelBoard() {
   }
 }
 
+function resize(a) {
+  const boardSizeN = a
+  if (boardSizeN > 20) {
+    const newRowMax = boardSizeN - 20
+    columnMax = 20
+    rowMax = newRowMax + boardSizeN
+    console.log(newRowMax)
+    console.log(rowMax)
+  } else {
+    rowMax = boardSizeN;
+  columnMax = boardSizeN;
+  }
+}
+
 generateBoard.addEventListener('click', function () {
   const boardSize = document.querySelector('#board-size').value;
   const boardSizeN = Number(boardSize);
-  if (boardSizeN > 7 || boardSizeN <= 2) {
+  if (boardSizeN > 50 || boardSizeN < 5) {
     window.alert('Board Inválido!');
   } else {
-    rowMax = boardSizeN;
-    columnMax = boardSizeN;
+    resize(boardSizeN)
     removePixelBoard();
     generatePixelBoard();
   }
 });
+
 
 const clearBoard = document.querySelector('#clear-board');
 clearBoard.addEventListener('click', function () {
