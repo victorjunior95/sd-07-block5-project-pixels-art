@@ -27,6 +27,11 @@
     height: 40px;
     display: inline-block;
     background-color:rgb(255, 255, 255);
+    padding: 0;
+}
+
+.linha {
+  padding: 0;
 }
 
 #clear-board {

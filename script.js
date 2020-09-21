@@ -8,8 +8,32 @@ let botaoCorVerde = document.getElementById("color3");
 let botaoCorCinza = document.getElementById("color4");
 let cores = document.getElementsByClassName("color");
 
-botaoCorPreta.addEventListener("click", pintarPreta)
+//criar linhas
+//criar colunas
+let pixelBoard = document.getElementById("pixel-board")
+let botaoVqv = document.getElementById("generate-board");
 
+botaoVqv.addEventListener ("click", function() {
+    let numeroPixel = document.getElementById("board-size").value
+    if (numeroPixel < 5) {
+        numeroPixel = 5
+    }
+    if (numeroPixel > 50) {
+        numeroPixel = 50
+    }
+    for (let index = 0; index < numeroPixel; index += 1) {
+        let linha = document.createElement("div");
+        pixelBoard.appendChild(linha);
+        pixelBoard.lastElementChild.className = "linha";
+        for (index2 = 0; index2 < numeroPixel; index2 += 1){
+            let pixelsFilhos = document.createElement("div");
+            linha.appendChild(pixelsFilhos);
+            linha.lastElementChild.className = "pixel"
+        }
+    }
+})
+
+botaoCorPreta.addEventListener("click", pintarPreta)
 function pintarPreta() {
     for (index = 0; index < cores.length; index += 1) {
         cores[index].classList.remove("selected")
