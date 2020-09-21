@@ -36,6 +36,7 @@ function setDefaultValues(value) {
 function construcGridDivs(gridSize) {
   const pixelsBoard = document.getElementById('pixels-container');
   const newDivGrid = document.createElement('div');
+  newDivGrid.id = 'new-grid';
   newDivGrid.className = 'new-grid';
   for (let i = 0; i < gridSize; i += 1) {
     const rowDiv = document.createElement('div');
@@ -97,11 +98,18 @@ generateGridButton.addEventListener('click', generateGrid);
 const changeColorsButton = document.getElementById('change-colors');
 changeColorsButton.addEventListener('click', addRandomClass);
 
-const inputImage = document.getElementById('background-image');
-const output = document.getElementById('pixels-container');
-inputImage.addEventListener('change', function() {
-  output.style.backgroundImage = `url(${window.URL.createObjectURL(this.files[0])})`;
-})
-
 addRandomClass();
 generateGrid();
+
+const inputImage = document.getElementById('background-image');
+inputImage.addEventListener('change', function() {
+  const output = document.getElementById('new-grid');
+  output.style.backgroundImage = `url(${window.URL.createObjectURL(this.files[0])})`;
+  output.classList.add('board-image');
+})
+
+document.getElementById('clear-photo').addEventListener('click', function() {
+  const output = document.getElementById('new-grid');
+  output.classList.remove('board-image');
+  output.style.backgroundImage = '';
+})

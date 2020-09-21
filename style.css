@@ -108,3 +108,7 @@ body {
 .div-row {
   height: 40px;
 }
+
+.board-image {
+  background-size: 100% 100%;
+}
