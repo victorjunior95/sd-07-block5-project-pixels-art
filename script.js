@@ -84,14 +84,19 @@ const colorPixelList = document.getElementsByClassName('color');
 for (let i = 0; i < colorPixelList.length; i += 1) {
   colorPixelList[i].addEventListener('click', selectingColor);
 }
+
 const pixelList = document.getElementsByClassName('pixel');
 for (let i = 0; i < pixelList.length; i += 1) {
   pixelList[i].addEventListener('click', paintingPixel);
 }
+
 const clearButton = document.getElementById('clear-board');
 clearButton.addEventListener('click', clearColors);
 const generateGridButton = document.getElementById('generate-board');
 generateGridButton.addEventListener('click', generateGrid);
 addRandomClass();
+
+const changeColorsButton = document.getElementById('change-colors');
+changeColorsButton.addEventListener('click', addRandomClass);
 
 generateGrid();
