@@ -73,15 +73,14 @@ function generatePixelBoard() {
 
 function resize(a) {
   const boardSizeN = a;
-  if (boardSizeN > 20) {
-    const rowMaxDif = boardSizeN - 20;
-    columnMax = 20;
-    const newRowMax = rowMaxDif + boardSizeN;
-    if (newRowMax > 50) {
-      rowMax = 50;
-    } else {
-      rowMax = newRowMax;
-    }
+  if (boardSizeN > 50) {
+    rowMax = 50;
+    columnMax = 50;
+    window.alert('Board Inválido!');
+  } else if (boardSizeN < 5) {
+    rowMax = 5;
+    columnMax = 5;
+    window.alert('Board Inválido!');
   } else {
     rowMax = boardSizeN;
     columnMax = boardSizeN;
@@ -91,15 +90,9 @@ function resize(a) {
 generateBoard.addEventListener('click', function () {
   const boardSize = document.querySelector('#board-size').value;
   const boardSizeN = Number(boardSize);
-  if (boardSizeN > 50 || boardSizeN < 5) {
-    window.alert('Board Inválido!');
-  } else {
-    //resize(boardSizeN);
-    rowMax = boardSizeN;
-    columnMax = boardSizeN;
+    resize(boardSizeN);
     removePixelBoard();
     generatePixelBoard();
-  }
 });
 
 
