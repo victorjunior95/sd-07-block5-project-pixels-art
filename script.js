@@ -33,6 +33,11 @@ function setDefaultValues(value) {
   return value;
 }
 
+function removeColor(event) {
+  console.log('alou');
+  event.target.classList[1] = "no-color"
+}
+
 function construcGridDivs(gridSize) {
   const pixelsBoard = document.getElementById('pixels-container');
   const newDivGrid = document.createElement('div');
@@ -48,6 +53,7 @@ function construcGridDivs(gridSize) {
       // newPixel.classList.add('white');
       rowDiv.appendChild(newPixel);
       newPixel.addEventListener('click', paintingPixel);
+      newPixel,addEventListener('dbclick', removeColor);
     }
   }
   pixelsBoard.appendChild(newDivGrid);
@@ -74,7 +80,7 @@ function addRandomClass() {
   document.getElementById('first-selected').classList.add('selected');
   const classColorList = ['red', 'blue', 'green', 'grey', 'yellow', 'purple', 'brown', 'pink', 'lightblue', 'lightgreen', 'maroon', 'salmon', 'orange'];
   const palletList = document.getElementsByClassName('color');
-  for (let i = 2; i < palletList.length; i += 1) {
+  for (let i = 3; i < palletList.length; i += 1) {
     const chosenColor = classColorList[Math.floor(Math.random() * (palletList.length))];
     const index = classColorList.indexOf(chosenColor);
     classColorList.splice(index, 1);

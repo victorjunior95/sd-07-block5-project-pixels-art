@@ -113,7 +113,9 @@ body {
 }
 
 .no-color {
-
+  text-align: center;
+  font-size: 37px;
+  background-color: none;
 }
 
 .pixels-container {
