@@ -68,6 +68,9 @@ function generateGrid() {
 }
 
 function addRandomClass() {
+  const selectedColor = document.querySelector('.selected');
+  selectedColor.classList.remove('selected');
+  document.getElementById('first-selected').classList.add('selected');
   const classColorList = ['red', 'blue', 'green', 'grey', 'yellow', 'purple', 'brown', 'pink', 'lightblue', 'lightgreen', 'maroon', 'salmon', 'orange'];
   const palletList = document.getElementsByClassName('color');
   for (let i = 2; i < palletList.length; i += 1) {
