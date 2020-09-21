@@ -2,6 +2,13 @@
 const buttonSize = document.querySelector('.generate');
 const pixelBoard = document.querySelectorAll('.pixel')
 
+const boxes = document.querySelectorAll('.pixel');
+for (let index = 0; index < boxes.length; index += 1) {
+  const selectBoxes = boxes[index];
+  selectBoxes.addEventListener('click', function paint() {
+    selectBoxes.style.backgroundColor = localStorage.getItem('color');
+  });
+}
 
 
 
@@ -33,20 +40,7 @@ buttonSize.addEventListener('click', function () {
       muchBoxes.appendChild(lineBox)
     }
   }
-
-
-  const boxes = document.querySelectorAll('.pixel');
-  for (let index = 0; index < boxes.length; index += 1) {
-    const selectBoxes = boxes[index];
-    selectBoxes.addEventListener('click', function () {
-      selectBoxes.style.backgroundColor = localStorage.getItem('color');
-    });
-  }
-
-
 })
-
-
 
 const colors = document.getElementsByClassName('color');
 
@@ -55,10 +49,21 @@ colors[1].style.backgroundColor = 'blue';
 colors[2].style.backgroundColor = 'green';
 colors[3].style.backgroundColor = 'red';
 
+function random(){
+
+
+  colors[1].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)} , ${Math.ceil(Math.random() * 255)},${Math.ceil(Math.random() * 255)} )`
+  colors[2].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)} , ${Math.ceil(Math.random() * 255)},${Math.ceil(Math.random() * 255)} )`
+  colors[3].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)} , ${Math.ceil(Math.random() * 255)},${Math.ceil(Math.random() * 255)} )`
+  
+}
+
 const colorBlack = document.getElementsByClassName('color')[0];
 const colorBlue = document.getElementsByClassName('color')[1];
 const colorGreen = document.getElementsByClassName('color')[2];
 const colorRed = document.getElementsByClassName('color')[3];
+
+
 
 colorBlack.addEventListener('click', function () {
   colorBlack.className = 'color selected';
@@ -101,20 +106,6 @@ colorRed.addEventListener('click', function () {
 });
 
 
-const boxes = document.querySelectorAll('.pixel');
-for (let index = 0; index < boxes.length; index += 1) {
-  const selectBoxes = boxes[index];
-  selectBoxes.addEventListener('click', function () {
-    selectBoxes.style.backgroundColor = localStorage.getItem('color');
-  });
-}
-
-
-
-
-
-
-
 
 const buttonClear = document.querySelector('.clear');
 for (let index = 0; index < boxes.length; index += 1) {
@@ -126,12 +117,10 @@ for (let index = 0; index < boxes.length; index += 1) {
 }
 
 
-
-
-
-
-
-
-
 const select = document.querySelector('.selected').style.backgroundColor
 localStorage.setItem('color', select);
+window.onload = function (){
+  random() 
+ 
+  
+}
