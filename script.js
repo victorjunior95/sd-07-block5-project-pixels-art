@@ -9,28 +9,28 @@ buttonSize.addEventListener('click', function () {
   document.querySelector('.board-pixel').innerHTML = ''
 
   const inputSize = document.querySelector('.size-board');
-  let number = Number(inputSize.value)
- 
-  if (number < 5) {
-    number = 5
+  let number = inputSize.value
+
+  if (inputSize.value === "") {
+    alert('Board inválido!')
   } else if (number > 50) {
     number = 50
   } else if (number >= 5 && number <= 50) {
     number = Number(inputSize.value)
-  } else {
-    alert("Insira um número")
+  } else if (number < 5) {
+    number = 5
   }
-  document.querySelector('.board-pixel').style.width = (number * 45) +"px"
-  document.querySelector('.board-pixel').style.height = (number * 45) +"px"
+  document.querySelector('.board-pixel').style.width = (number * 45) + "px"
+  document.querySelector('.board-pixel').style.height = (number * 45) + "px"
   for (let index = 0; index < number; index += 1) {
     const muchBoxes = document.createElement("div")
     muchBoxes.className = 'pixel'
     document.querySelector('.board-pixel').appendChild(muchBoxes)
 
-    for (let index1 = 0; index1 < number; index1 += 1){
+    for (let index1 = 0; index1 < number; index1 += 1) {
       const lineBox = document.createElement('div')
       lineBox.className = 'pixel'
-     muchBoxes.appendChild(lineBox)
+      muchBoxes.appendChild(lineBox)
     }
   }
 
@@ -38,7 +38,7 @@ buttonSize.addEventListener('click', function () {
   const boxes = document.querySelectorAll('.pixel');
   for (let index = 0; index < boxes.length; index += 1) {
     const selectBoxes = boxes[index];
-    selectBoxes.addEventListener('click', function colorBox() {
+    selectBoxes.addEventListener('click', function () {
       selectBoxes.style.backgroundColor = localStorage.getItem('color');
     });
   }
@@ -102,12 +102,12 @@ colorRed.addEventListener('click', function () {
 
 
 const boxes = document.querySelectorAll('.pixel');
-  for (let index = 0; index < boxes.length; index += 1) {
-    const selectBoxes = boxes[index];
-    selectBoxes.addEventListener('click', function () {
-      selectBoxes.style.backgroundColor = localStorage.getItem('color');
-    });
-  }
+for (let index = 0; index < boxes.length; index += 1) {
+  const selectBoxes = boxes[index];
+  selectBoxes.addEventListener('click', function () {
+    selectBoxes.style.backgroundColor = localStorage.getItem('color');
+  });
+}
 
 
 
