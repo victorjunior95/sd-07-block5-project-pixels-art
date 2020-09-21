@@ -1,0 +1,18 @@
+body {
+    background-color: grey;
+    text-align: center;
+  }
+h1 {
+    text-align: center;
+  }
+#color-palette {
+  background-color: white;
+  margin: auto;
+  max-width: 300px;
+  padding: 10px;
+}
+.color {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+  }
