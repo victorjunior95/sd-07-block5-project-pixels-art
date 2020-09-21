@@ -70,7 +70,7 @@ function generateGrid() {
 function addRandomClass() {
   const classColorList = ['empty', 'red', 'blue', 'green', 'grey', 'yellow', 'purple', 'brown'];
   const palletList = document.getElementsByClassName('color');
-  for (let i = 1; i < palletList.length; i += 1) {
+  for (let i = 2; i < palletList.length; i += 1) {
     const chosenColor = classColorList[Math.ceil(Math.random() * (palletList.length - 1))];
     const index = classColorList.indexOf(chosenColor);
     classColorList.splice(index, 1);

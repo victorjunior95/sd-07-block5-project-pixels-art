@@ -65,16 +65,6 @@ body {
   background-color: white;
 }
 
-.pixel-board {
-  background-color: white;
-  border: 1px solid black;
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  height: 200px;
-  margin-top: 25px;
-  width: 200px;
-}
-
 .pixels-container {
   display: flex;
   justify-content: center;
