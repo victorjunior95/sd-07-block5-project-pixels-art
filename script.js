@@ -34,6 +34,7 @@ function setDefaultValues(value) {
 }
 
 function construcGridDivs(gridSize) {
+  const pixelsBoard = document.getElementById('pixels-container');
   const newDivGrid = document.createElement('div');
   newDivGrid.className = 'new-grid';
   for (let i = 0; i < gridSize; i += 1) {
@@ -45,9 +46,10 @@ function construcGridDivs(gridSize) {
       newPixel.className = 'pixel';
       newPixel.classList.add('white');
       rowDiv.appendChild(newPixel);
+      newPixel.addEventListener('click', paintingPixel);
     }
   }
-  document.body.appendChild(newDivGrid);
+  pixelsBoard.appendChild(newDivGrid);
 }
 
 function generateGrid() {
