@@ -46,30 +46,34 @@ function createPixels() {
 createPixels();
 
 // LOOP TO UPDATE MY LET GET COLOR
-function updateColors() {
-  const colorSelected = document.querySelectorAll('.color');
-  for (let i = 0; i < colorSelected.length; i += 1) {
-    colorSelected[i].addEventListener('click', toUpdateColors)
-  }
-}
-updateColors();
 
-function toUpdateColors (event) {
+function toUpdateColors(event) {
   const divs = event.target;
   getColor = divs.style.backgroundColor;
   // getColor = divs.classList[1];
   // console.log(getColor);
 }
 
+function updateColors() {
+  const colorSelected = document.querySelectorAll('.color');
+  for (let i = 0; i < colorSelected.length; i += 1) {
+    colorSelected[i].addEventListener('click', toUpdateColors);
+  }
+}
+updateColors();
+
 // LOOP TO SELECTED MY PIXEL ELEMENT AND CHANGE HIS BACKGROUND COLOR
+
+function toChangeColors(event) {
+  const onePixel = event.target;
+  onePixel.style.backgroundColor = getColor;
+  // console.log(getColor);
+}
+
 function changeColorPixel() {
   const myPixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < myPixels.length; i += 1) {
-    myPixels[i].addEventListener('click', function (event) {
-      const onePixel = event.target;
-      onePixel.style.backgroundColor = getColor;
-      // console.log(getColor);
-    });
+    myPixels[i].addEventListener('click', toChangeColors);
   }
 }
 changeColorPixel();
