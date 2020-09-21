@@ -76,7 +76,7 @@ function resize(a) {
   if (boardSizeN > 20) {
     const rowMaxDif = boardSizeN - 20;
     columnMax = 20;
-    newRowMax = rowMaxDif + boardSizeN;
+    const newRowMax = rowMaxDif + boardSizeN;
     if (newRowMax > 50) {
       rowMax = 50;
     } else {
