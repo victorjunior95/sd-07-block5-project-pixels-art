@@ -1,5 +1,4 @@
-//selecionar a cor preta
-window.onload = pintarPreta
+window.onload = teste;
    
 
 let botaoCorPreta = document.getElementById("color1");
@@ -13,47 +12,51 @@ let cores = document.getElementsByClassName("color");
 let pixelBoard = document.getElementById("pixel-board")
 let botaoVqv = document.getElementById("generate-board");
 
-botaoVqv.addEventListener ("click", function() {
-    let numeroPixel = document.getElementById("board-size").value
-    if (numeroPixel < 5) {
-        numeroPixel = 5
-    }
-    if (numeroPixel > 50) {
-        numeroPixel = 50
-    }
-    for (let index = 0; index < numeroPixel; index += 1) {
-        let linha = document.createElement("div");
-        pixelBoard.appendChild(linha);
-        pixelBoard.lastElementChild.className = "linha";
-        for (index2 = 0; index2 < numeroPixel; index2 += 1){
-            let pixelsFilhos = document.createElement("div");
-            linha.appendChild(pixelsFilhos);
-            linha.lastElementChild.className = "pixel"
-        }
-    }
-})
+botaoVqv.addEventListener ("click", teste)
 
-botaoCorPreta.addEventListener("click", pintarPreta)
-function pintarPreta() {
-    for (index = 0; index < cores.length; index += 1) {
-        cores[index].classList.remove("selected")
-    }
-    botaoCorPreta.classList.add("selected")
-let corPreta = window.getComputedStyle(botaoCorPreta, null).getPropertyValue("background-color");
-document.querySelectorAll(".pixel").forEach(item => {
+function teste() {
+  let numeroPixel = document.getElementById("board-size").value
+  if (numeroPixel < 5) {
+    numeroPixel = 5
+  }
+  if (numeroPixel > 50) {
+    numeroPixel = 50
+  }
+  for (let index = 0; index < numeroPixel; index += 1) {
+    let linha = document.createElement("div");
+    pixelBoard.appendChild(linha);
+    
+      for (index2 = 0; index2 < numeroPixel; index2 += 1){
+        let pixelsFilhos = document.createElement("div");
+        linha.appendChild(pixelsFilhos);
+        linha.lastElementChild.className = "pixel"
+      }
+  }
+  pintarPreta()
+};
+
+botaoCorPreta.addEventListener("click", pintarPreta);
+
+function pintarPreta () {
+  for (index = 0; index < cores.length; index += 1) {
+    cores[index].classList.remove("selected")
+  }
+  botaoCorPreta.classList.add("selected")
+  let corPreta = window.getComputedStyle(botaoCorPreta, null).getPropertyValue("background-color");
+  document.querySelectorAll(".pixel").forEach(item => {
     item.addEventListener("click", function() {
-        item.style.backgroundColor = corPreta
-        })
+      item.style.backgroundColor = corPreta
     })
+  })
 }
 
 botaoCorAzul.addEventListener("click", function(){
-    for (index = 0; index < cores.length; index += 1) {
-        cores[index].classList.remove("selected")
-    }
-    botaoCorAzul.classList.add("selected")
-let corAzul = window.getComputedStyle(botaoCorAzul, null).getPropertyValue("background-color");
-document.querySelectorAll(".pixel").forEach(item => {
+  for (index = 0; index < cores.length; index += 1) {
+    cores[index].classList.remove("selected")
+  }
+  botaoCorAzul.classList.add("selected")
+  let corAzul = window.getComputedStyle(botaoCorAzul, null).getPropertyValue("background-color");
+  document.querySelectorAll(".pixel").forEach(item => {
     item.addEventListener("click", function() {
         item.style.backgroundColor = corAzul
 
