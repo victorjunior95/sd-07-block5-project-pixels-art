@@ -97,6 +97,7 @@ body {
 }
 
 .pixel {
+  opacity: 50%;
   border: 1px solid black;
   display: inline-block;
   height: 40px;
