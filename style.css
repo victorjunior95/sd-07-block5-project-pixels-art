@@ -65,6 +65,30 @@ body {
   background-color: white;
 }
 
+.maroon {
+  background-color: maroon;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.lightblue {
+  background-color: lightblue;
+}
+
+.lightgreen {
+  background-color: lightgreen;
+}
+
+.salmon {
+  background-color: salmon;
+}
+
+.orange {
+  background-color: orange;
+}
+
 .pixels-container {
   display: flex;
   justify-content: center;

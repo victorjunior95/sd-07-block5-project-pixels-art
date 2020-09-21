@@ -68,10 +68,10 @@ function generateGrid() {
 }
 
 function addRandomClass() {
-  const classColorList = ['empty', 'red', 'blue', 'green', 'grey', 'yellow', 'purple', 'brown'];
+  const classColorList = ['red', 'blue', 'green', 'grey', 'yellow', 'purple', 'brown', 'pink', 'lightblue', 'lightgreen', 'maroon', 'salmon', 'orange'];
   const palletList = document.getElementsByClassName('color');
   for (let i = 2; i < palletList.length; i += 1) {
-    const chosenColor = classColorList[Math.ceil(Math.random() * (palletList.length - 1))];
+    const chosenColor = classColorList[Math.floor(Math.random() * (palletList.length))];
     const index = classColorList.indexOf(chosenColor);
     classColorList.splice(index, 1);
     const palletClassList = palletList[i].className.split(' ');
@@ -81,7 +81,7 @@ function addRandomClass() {
 }
 
 const colorPixelList = document.getElementsByClassName('color');
-for (let i = 0; i < 4; i += 1) {
+for (let i = 0; i < colorPixelList.length; i += 1) {
   colorPixelList[i].addEventListener('click', selectingColor);
 }
 const pixelList = document.getElementsByClassName('pixel');
