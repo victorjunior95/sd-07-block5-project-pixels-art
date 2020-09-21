@@ -72,16 +72,19 @@ function generatePixelBoard() {
 }
 
 function resize(a) {
-  const boardSizeN = a
+  const boardSizeN = a;
   if (boardSizeN > 20) {
-    const newRowMax = boardSizeN - 20
-    columnMax = 20
-    rowMax = newRowMax + boardSizeN
-    console.log(newRowMax)
-    console.log(rowMax)
-  } else {
+    const rowMaxDif = boardSizeN - 20;
+    columnMax = 20;
+    newRowMax = rowMaxDif + boardSizeN;
+    if (newRowMax > 50) {
+      rowMax = 50;
+    } else {
+      rowMax = newRowMax;
+    }
+  } else{
     rowMax = boardSizeN;
-  columnMax = boardSizeN;
+    columnMax = boardSizeN;
   }
 }
 
