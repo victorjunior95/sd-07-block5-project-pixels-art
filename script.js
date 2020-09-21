@@ -82,7 +82,7 @@ function resize(a) {
     } else {
       rowMax = newRowMax;
     }
-  } else{
+  } else {
     rowMax = boardSizeN;
     columnMax = boardSizeN;
   }
@@ -94,7 +94,9 @@ generateBoard.addEventListener('click', function () {
   if (boardSizeN > 50 || boardSizeN < 5) {
     window.alert('Board Inválido!');
   } else {
-    resize(boardSizeN)
+    //resize(boardSizeN);
+    rowMax = boardSizeN;
+    columnMax = boardSizeN;
     removePixelBoard();
     generatePixelBoard();
   }
