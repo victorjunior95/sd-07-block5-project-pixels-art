@@ -29,64 +29,91 @@ body {
   margin-right: 5px;
 }
 
+.pixel {
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  margin: 0;
+  width: 40px;
+}
+
 .red {
+  opacity: 100%;
   background-color: red;
 }
 
 .black {
+  opacity: 100%;
   background-color: black;
 }
 
 .blue {
+  opacity: 100%;
   background-color: blue;
 }
 
 .green {
+  opacity: 100%;
   background-color: green;
 }
 
 .brown {
+  opacity: 100%;
   background-color: brown;
 }
 
 .grey {
+  opacity: 100%;
   background-color: grey;
 }
 
 .yellow {
+  opacity: 100%;
   background-color: yellow;
 }
 
 .purple {
+  opacity: 100%;
   background-color: purple;
 }
 
 .white {
+  opacity: 100%;
   background-color: white;
 }
 
 .maroon {
+  opacity: 100%;
   background-color: maroon;
 }
 
 .pink {
+  opacity: 100%;
   background-color: pink;
 }
 
 .lightblue {
+  opacity: 100%;
   background-color: lightblue;
 }
 
 .lightgreen {
+  opacity: 100%;
   background-color: lightgreen;
 }
 
 .salmon {
+  opacity: 100%;
   background-color: salmon;
 }
 
 .orange {
+  opacity: 100%;
   background-color: orange;
+}
+
+.no-color {
+
 }
 
 .pixels-container {
@@ -94,15 +121,6 @@ body {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-}
-
-.pixel {
-  opacity: 50%;
-  border: 1px solid black;
-  display: inline-block;
-  height: 40px;
-  margin: 0;
-  width: 40px;
 }
 
 .div-row {

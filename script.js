@@ -45,7 +45,7 @@ function construcGridDivs(gridSize) {
     for (let j = 0; j < gridSize; j += 1) {
       const newPixel = document.createElement('div');
       newPixel.className = 'pixel';
-      newPixel.classList.add('white');
+      // newPixel.classList.add('white');
       rowDiv.appendChild(newPixel);
       newPixel.addEventListener('click', paintingPixel);
     }
