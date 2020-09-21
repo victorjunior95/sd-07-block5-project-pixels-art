@@ -49,15 +49,17 @@ createPixels();
 function updateColors() {
   const colorSelected = document.querySelectorAll('.color');
   for (let i = 0; i < colorSelected.length; i += 1) {
-    colorSelected[i].addEventListener('click', function (event) {
-      const divs = event.target;
-      getColor = divs.style.backgroundColor;
-      // getColor = divs.classList[1];
-      // console.log(getColor);
-    });
+    colorSelected[i].addEventListener('click', toUpdateColors)
   }
 }
 updateColors();
+
+function toUpdateColors (event) {
+  const divs = event.target;
+  getColor = divs.style.backgroundColor;
+  // getColor = divs.classList[1];
+  // console.log(getColor);
+}
 
 // LOOP TO SELECTED MY PIXEL ELEMENT AND CHANGE HIS BACKGROUND COLOR
 function changeColorPixel() {
