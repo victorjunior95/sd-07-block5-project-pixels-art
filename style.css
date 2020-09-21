@@ -1,5 +1,18 @@
 body {
-  padding: 30px;
+  padding: 0;
+  margin: 0;
+  background-color: floralwhite;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  color: rgb(151, 167, 167);
+}
+
+header {
+  background-color: rgb(86, 90, 139);
+  border-bottom: 2px solid black;
+  height: 240px;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .title {
@@ -13,8 +26,9 @@ body {
 
 .buttons {
   display: flex;
-  justify-content: center;
-  margin: 15px 0;
+  justify-content: space-evenly;
+  margin: 15px auto;
+  width: 750px;
 }
 
 .buttons > * {
@@ -27,6 +41,7 @@ body {
   height: 40px;
   width: 40px;
   margin-right: 5px;
+  margin-bottom: 15px;
 }
 
 .pixel {
@@ -123,6 +138,7 @@ body {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 30px;
 }
 
 .div-row {
@@ -131,4 +147,27 @@ body {
 
 .board-image {
   background-size: 100% 100%;
+}
+
+.insert-image > * {
+  display: block;
+}
+
+.format-board {
+  display: flex;
+  align-items: flex-start;
+}
+
+.format-board input {
+  border-radius: 5px;
+  height: 50px;
+  font-size: 40px;
+  padding: 0;
+  width: 70px;
+}
+
+.format-board button {
+  height: 53px;
+  padding: 0;
+  width: 50px;
 }
