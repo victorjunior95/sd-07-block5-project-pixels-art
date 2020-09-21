@@ -54,12 +54,15 @@ function construcGridDivs(gridSize) {
 
 function generateGrid() {
   let gridSize = document.getElementById('board-size').value;
+  const pixelBoard = document.getElementById('pixels-container');
   if (gridSize === '') {
     alert('Board inválido!');
   } else {
+    if (pixelBoard.innerHTML !== '') {
+      const divToRemove = document.getElementsByClassName('new-grid')[0];
+      pixelBoard.removeChild(divToRemove);
+    }
     gridSize = setDefaultValues(gridSize);
-    const grid = document.getElementById('pixel-board');
-    document.body.removeChild(grid);
     construcGridDivs(gridSize);
   }
 }
@@ -90,3 +93,5 @@ clearButton.addEventListener('click', clearColors);
 const generateGridButton = document.getElementById('generate-board');
 generateGridButton.addEventListener('click', generateGrid);
 addRandomClass();
+
+generateGrid();
