@@ -44,23 +44,28 @@ pixels.forEach((element) => {
 
 //Definindo as ações do botão de seleção de tamanho pelo usuario
 botaoSize.addEventListener('click', function () {
-  let size = document.getElementById('board-size');
-  
-  eliminaTags();
-  criaTag(size.value);
+  let size = document.getElementById('board-size');  
 
-    if (size.value !== '') {
-      pixels.forEach((pixel) => {
-        if (parseInt(size.value) > 0) {
-          pixel.style.width = size.value + 'px';
-          pixel.style.height = size.value + 'px';
-          pixel.style.backgroundColor = 'white';        
-        }
-      });
-    }else{
-      alert("Board inválido!");
-    }  
-    size.value = '';
+  if (size.value !== '') {
+    eliminaTags();
+
+    if(size.value < 5){
+      size.value = 5;
+    }
+
+    criaTag(size.value);
+    
+    pixels.forEach((pixel) => {
+      if (parseInt(size.value) > 0) {
+        pixel.style.width = size.value + 'px';
+        pixel.style.height = size.value + 'px';
+        pixel.style.backgroundColor = 'white';
+      }
+    });
+  } else {
+    alert("Board inválido!");
+  }
+  size.value = '';
 });
 
 function eliminaTags() {
@@ -85,9 +90,9 @@ function criaTag(num) {
     let novoFilho = document.createElement('div');
     novoFilho.classList.add('pixel-linha');
 
-    for(let pos = 0; pos < num; pos += 1){
+    for (let pos = 0; pos < num; pos += 1) {
       let neto = document.createElement('div');
-      neto.className='pixel';
+      neto.className = 'pixel';
       novoFilho.appendChild(neto);
     }
 
@@ -95,3 +100,24 @@ function criaTag(num) {
   }
 }
 
+/** FONTE: http://www.criarweb.com/artigos/gerar-cor-aleatoria-javascript.html#:~:text=Para%20criar%20uma%20cor%20aleat%C3%B3rio,c%C3%B3digo%20de%20uma%20cor%20aleat%C3%B3ria. */
+
+function aleatorio(inferior, superior) {
+  const numPossibilidades = superior - inferior
+  let aleat = Math.random() * numPossibilidades
+  aleat = Math.floor(aleat)
+  return parseInt(inferior) + aleat
+}
+
+
+function gerarCorAleatoria() {
+  const hexadecimal = new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F")
+  let cor_aleatoria = "#";
+  const qtdCaracters = 6;
+
+  for (i = 0; i < qtdCaracters; i += 1) {
+    let posarray = aleatorio(0, hexadecimal.length)
+    cor_aleatoria += hexadecimal[posarray]
+  }
+  return cor_aleatoria
+}
