@@ -1,5 +1,6 @@
 window.onload = function() {
     defineColorsBackground();
+    screen(5);
 }
 
 function getRandomColors() {
@@ -18,6 +19,23 @@ function defineColorsBackground() {
             }
         }
         buttons[i].style.backgroundColor = "rgb(" + getRandomColors() + ")";
+    }
+}
+
+function screen(size) {
+    let board = document.querySelector("#pixel-board")
+    let area = size;
+
+    for (let i = 0; i < size; i++) {
+        let linha = document.createElement("div")
+        linha.className = "linha";
+        for (let j = 0; j < size; j++) {
+            let coluna = document.createElement("div");
+            coluna.className = "pixel coluna";
+            coluna.style.padding = '40px';
+            linha.appendChild(coluna);
+        }
+        board.appendChild(linha);
     }
 }
 // let selectedButton = document.querySelector(".selected");

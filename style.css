@@ -32,8 +32,14 @@ h1 {
     height: 800px;
 }
 
-div div div {
+.linha{
     border: black solid 1px;
+    background-color: white;
+    display: table-row;
+}
+
+.coluna{
+    border: black solid 1px;
+    background-color: white;
     display: table-cell;
-    padding: 39px 65px;
 }
