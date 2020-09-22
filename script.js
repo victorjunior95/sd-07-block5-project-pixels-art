@@ -39,6 +39,7 @@ for (let i = 0; i < color.length; i +=1) {
 
 
 
+
 for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].addEventListener("click", function(){
     //conferir a cor
