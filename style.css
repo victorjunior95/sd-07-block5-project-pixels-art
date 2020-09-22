@@ -15,6 +15,7 @@ h1 {
     display: inline-block;
     height: 30px;
     width: 30px;
+    border: solid black 1px;
   }
 #pixel-board{
   display: table;
