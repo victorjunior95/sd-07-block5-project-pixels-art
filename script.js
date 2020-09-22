@@ -3,12 +3,19 @@ window.onload = function() {
     screen(5);
 }
 
+let board = document.querySelector("#pixel-board")
+let buttons = document.querySelectorAll(".color");
+let selectedButton = document.querySelector(".selected");
+let clearButton = document.querySelector("#clear-board");
+
+
+clearButton.addEventListener('click', cleanScreen)
+
 function getRandomColors() {
     return (Math.floor(Math.random()*256) + ", " + Math.floor(Math.random()*256) + ", " + Math.floor(Math.random()*256));
 }
 
 function defineColorsBackground() {
-    let buttons = document.querySelectorAll(".color");
     buttons[0].style.backgroundColor = "black";
     let helper = ["0, 0, 0"];
     for (let i = 1; i < buttons.length; i++) {
@@ -23,7 +30,6 @@ function defineColorsBackground() {
 }
 
 function screen(size) {
-    let board = document.querySelector("#pixel-board")
     let area = size;
 
     for (let i = 0; i < size; i++) {
@@ -38,12 +44,14 @@ function screen(size) {
         board.appendChild(linha);
     }
 }
-// let selectedButton = document.querySelector(".selected");
-// let buttons = document.querySelectorAll(".color");
 
-// for (let i of buttons) {
-//     i.addEventListener("click", function() {
-//         i.classList.add("selected")
-//         selectedButton.classList.remove("selected")
-//     });
-// }
+function cleanScreen() {
+    let linha = document.querySelectorAll(".linha");
+    let coluna = document.querySelectorAll(".coluna");
+    for (let i = 0; i < linha.length; i++) {
+        linha[i].style.backgroundColor = "white";
+        for (let j = 0; j < coluna.length; j++) {
+            coluna[j].style.backgroundColor = "white";
+        }
+    }
+}

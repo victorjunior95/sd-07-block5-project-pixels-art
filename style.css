@@ -16,30 +16,45 @@ h1 {
     justify-content: center;
 }
 
-.color, .selected{
+.color, .selected {
     border: black solid 1px;
     display: inline-block;
     padding: 20px 45px;
     margin: 10px 0px;
 }
 
+#paraAlinhamento {
+    display: flex;
+    justify-content: center;
+}
+
+#clear-board {
+    border: black solid 1px;
+    background-color: gray;
+    padding: 15px;
+    margin: 10px;
+}
+
 #pixel-board {
-    margin: 0px auto;
+    display: table;
+    margin: 15px auto;
     margin-bottom: 50px;
     background-color: white;
     border: black solid 1px;
     width: 800px;
     height: 800px;
+    position: relative;
+}
+
+.linha, .coluna {
+    border: black solid 1px;
+    background-color: white;
 }
 
 .linha{
-    border: black solid 1px;
-    background-color: white;
     display: table-row;
 }
 
 .coluna{
-    border: black solid 1px;
-    background-color: white;
     display: table-cell;
 }
