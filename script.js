@@ -1,3 +1,4 @@
+let selectedColor = document.getElementById("black");
 document.querySelectorAll(".color").forEach(colorSelect);
     function colorSelect(element) {
     element.addEventListener("click", function () {
