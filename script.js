@@ -1,18 +1,9 @@
-const COR = [ 'black', '#6AD62A', '#BA3365', '#650DBF' ];
+const COR = ['black'];
 const botaoLimpar = document.getElementById('clear-board');
 const pixels = document.querySelectorAll('.pixel');
 const colors = document.querySelectorAll('.color');
 const botaoSize = document.getElementById('generate-board');
 let posColor = 0;
-
-// Criar seleção de cores
-/** Passos do algoritimo: 
- * 1 - retiro qualquer ocorrencia da classe 'selected' com a função retiraSelected;
- * 2 - atribuo ao elemento clicado a classe 'selected';
- * 3 - atribuo o elemento clicado a variavel posColor;
- */
-
-
 
 
 function retiraSelected(elements) {
@@ -101,11 +92,10 @@ function criaTag(num) {
 
 /** FONTE: http://www.criarweb.com/artigos/gerar-cor-aleatoria-javascript.html#:~:text=Para%20criar%20uma%20cor%20aleat%C3%B3rio,c%C3%B3digo%20de%20uma%20cor%20aleat%C3%B3ria. */
 
-function gerarCorAleatoria() {
+function gerarCorAleatoria(COR) {
   const hexadecimal = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
-  let COR = ['black'];
-
-  let qtdCores = 4;
+  
+  let qtdCores = 3;
 
   while (qtdCores) {
       let qtdCaracters = 6;
@@ -121,6 +111,9 @@ function gerarCorAleatoria() {
   }
   return COR;
 }
+
+gerarCorAleatoria(COR);
+console.log(COR)
 
 colors.forEach((element, index, array) => {
   element.addEventListener('click', event => {
