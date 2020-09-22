@@ -27,8 +27,8 @@ const colorirPixels = function (event) {
 };
 
 function eliminaTags() {
-  let netos = document.querySelectorAll('.pixel');
-  let filhos = document.querySelectorAll('.pixel-linha');
+  const netos = document.querySelectorAll('.pixel');
+  const filhos = document.querySelectorAll('.pixel-linha');
 
   netos.forEach((item) => {
     item.parentNode.removeChild(item);
@@ -37,35 +37,6 @@ function eliminaTags() {
   filhos.forEach((item) => {
     item.parentNode.removeChild(item);
   });
-};
-
-// Definindo as ações do botão de seleção de tamanho pelo usuario
-const gerarPixels = function () {
-  const size = document.getElementById('board-size');
-
-  if (size.value !== '') {
-    eliminaTags();
-
-    if (size.value < 5) {
-      size.value = 5;
-    } else if (size.value > 50) {
-      size.value = 50;
-      console.log(size.value)
-    }
-
-    criaTag(size.value);
-
-    pixels.forEach((pixel) => {
-      if (parseInt(size.value) > 0) {
-        pixel.style.width = size.value + 'px';
-        pixel.style.height = size.value + 'px';
-        pixel.style.backgroundColor = 'white';
-      }
-    });
-  } else {
-    alert("Board inválido!");
-  }
-  size.value = '';
 };
 
 function criaTag(num) {
@@ -83,6 +54,34 @@ function criaTag(num) {
 
     divPai.appendChild(novoFilho);
   }
+};
+
+// Definindo as ações do botão de seleção de tamanho pelo usuario
+const gerarPixels = function () {
+  const size = document.getElementById('board-size');
+
+  if (size.value !== '') {
+    eliminaTags();
+
+    if (size.value < 5) {
+      size.value = 5;
+    } else if (size.value > 50) {
+      size.value = 50;
+    }
+
+    criaTag(size.value);
+
+    pixels.forEach((pixel) => {
+      if (parseInt(size.value) > 0) {
+        pixel.style.width = `${size.value}px`;
+        pixel.style.height = `${size.value}px`;
+        pixel.style.backgroundColor = 'white';
+      }
+    });
+  } else {
+    alert('Board inválido!');
+  }
+  size.value = '';
 };
 
 /** FONTE: http://www.criarweb.com/artigos/gerar-cor-aleatoria-javascript.html#:~:text=Para%20criar%20uma%20cor%20aleat%C3%B3rio,c%C3%B3digo%20de%20uma%20cor%20aleat%C3%B3ria. */
