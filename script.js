@@ -45,6 +45,7 @@ pixels.forEach((element) => {
 //Definindo as ações do botão de seleção de tamanho pelo usuario
 botaoSize.addEventListener('click', function () {
   let size = document.getElementById('board-size');
+  
   eliminaTags();
   criaTag(size.value);
 
