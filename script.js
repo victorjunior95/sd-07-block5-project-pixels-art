@@ -107,7 +107,7 @@ function gerarCorAleatoria(arrayCor) {
 }
 
 colors.forEach((element, index, array) => {
-  element.addEventListener('click', function() {
+  element.addEventListener('click', function () {
     retiraSelected(array);
     element.className += ' selected';
     posColor = index;
