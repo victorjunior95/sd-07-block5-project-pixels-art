@@ -82,7 +82,7 @@ const gerarPixels = function () {
     alert('Board inválido!');
   }
   size.value = '';
-}
+};
 
 /** FONTE: http://www.criarweb.com/artigos/gerar-cor-aleatoria-javascript.html#:~:text=Para%20criar%20uma%20cor%20aleat%C3%B3rio,c%C3%B3digo%20de%20uma%20cor%20aleat%C3%B3ria. */
 
@@ -107,7 +107,7 @@ function gerarCorAleatoria(arrayCor) {
 }
 
 colors.forEach((element, index, array) => {
-  element.addEventListener('click', function(){
+  element.addEventListener('click', function() {
     retiraSelected(array);
     element.className += ' selected';
     posColor = index;
