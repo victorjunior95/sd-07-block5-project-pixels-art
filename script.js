@@ -31,7 +31,8 @@ let vqvBtn = document.querySelector('#generate-board');
 vqvBtn.addEventListener('click', function () {
   if (boardSize.value < 5) {
     boardSize.value == 5;
-  } else if (boardSize.value > 50) {
+  }
+  if (boardSize.value > 50) {
     boardSize.value == 50;
   }
   if (boardSize.value === '') {
