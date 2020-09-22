@@ -29,6 +29,24 @@ body {
     border: 1px solid black;
 }
 
+#pixel-board {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: flex-start; */
+    /* align-items: stretch; */
+}
+
+.pixel {
+    background-color: white;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
 #black {
     background-color: black;
 }
