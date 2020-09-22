@@ -15,6 +15,9 @@
 .red{
     background-color: red;
 }
+.green{
+    background-color: green;
+}
 .selected{
     background-color: black;
 }
@@ -22,7 +25,6 @@
 .pixel {
     width: 40px;
     height: 40px;
-    background-color: white;
     border: solid  1px black;
     display: table-cell;
     

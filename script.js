@@ -2,6 +2,7 @@
 let black = document.querySelector(".black");
 let blue = document.querySelector(".blue");
 let red = document.querySelector(".red");
+let green = document.querySelector(".green");
 let selected = document.querySelector(".selected");
 let pixel = document.querySelectorAll(".pixel");
 let colorSaved = "black";
@@ -23,6 +24,11 @@ red.addEventListener("click", function (){
     selected = window.getComputedStyle(red, null).getPropertyValue("background-color");
     
 })
+green.addEventListener("click", function (){
+    selected = window.getComputedStyle(green, null).getPropertyValue("background-color");
+    
+})
+
 
 for (let i = 0; i < pixel.length; i++) {
     pixel[i].addEventListener("click", function() {
