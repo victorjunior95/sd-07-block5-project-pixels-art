@@ -2,11 +2,8 @@ let colorPallete = document.getElementById('color-palette');
 let pixelBoard = document.getElementById('pixel-board');
 let colors = document.querySelectorAll('.color');
 
-let firstColorPallete = colorPallete.children[0];
-
-
 window.onload = function () {
-  firstColorPallete.classList.add('selected');
+  colorPallete.children[0].classList.add('selected');
 };
 
 for (let indexLine = 0; indexLine < 5; indexLine += 1) {
@@ -19,8 +16,6 @@ for (let indexLine = 0; indexLine < 5; indexLine += 1) {
   }
 }
 
-// console.log(colors);
-
 colors.forEach(element => {
   element.addEventListener('click', function (){
     for (let color of colors) {
@@ -29,3 +24,4 @@ colors.forEach(element => {
     element.classList.add('selected');
   });
 });
+
