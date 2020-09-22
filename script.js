@@ -1,7 +1,10 @@
 function geraCor() {
-  const r = parseInt(Math.floor(Math.random() * (255)));
-  const g = parseInt(Math.floor(Math.random() * (255)));
-  const b = parseInt(Math.floor(Math.random() * (255)));
+  let r = Math.random() * (255);
+  r = parseInt(r, 10);
+  let g = Math.random() * (255);
+  r = parseInt(g, 10);
+  let b = Math.random() * (255);
+  r = parseInt(b, 10);
   const rgb = `rgb(${r},${g},${b})`;
   return rgb;
 }
