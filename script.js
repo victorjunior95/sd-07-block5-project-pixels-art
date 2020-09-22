@@ -14,11 +14,27 @@ for (let index = 0; index < pixels.length; index += 1) {
   pixels[index].addEventListener('click', function (){
     let classSelected = document.querySelector('.selected');
     pixels[index].style.backgroundColor = window.getComputedStyle(classSelected).backgroundColor
-  })
+  });
 }
 
 clearButton.addEventListener('click', function(){
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
+  }
+});
+
+//requisitos bônus #VQV
+
+let boardSize = document.querySelector('#board-size');
+let vqvBtn = document.querySelector('#generate-board');
+
+vqvBtn.addEventListener('click', function () {
+  if (boardSize.value < 5) {
+    boardSize.value == 5;
+  } else if (boardSize.value > 50) {
+    boardSize.value == 50;
+  }
+  if (boardSize.value === '') {
+    alert('Board inválido!');
   }
 });
