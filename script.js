@@ -1,4 +1,12 @@
-function criaQuadro(tamanho) { 
+function trocaCor() {
+  const selecionandoPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < selecionandoPixel.length; index += 1) {
+    selecionandoPixel[index].addEventListener('click', function () {
+      this.style.backgroundColor = window.getComputedStyle(document.getElementsByClassName('color selected')[0]).backgroundColor;
+    });
+  }
+}
+function criaQuadro(tamanho) {
   const pixelBoard = document.querySelector('#pixel-board');
   pixelBoard.innerHTML = '';
   for (let index = 0; index < (tamanho); index += 1) {
@@ -13,14 +21,6 @@ function criaQuadro(tamanho) {
 }
 window.onload = function () {
   criaQuadro(5);
-}
-function trocaCor() {
-  const selecionandoPixel = document.getElementsByClassName('pixel');
-  for (let index = 0; index < selecionandoPixel.length; index += 1) {
-    selecionandoPixel[index].addEventListener('click', function () {
-      this.style.backgroundColor = window.getComputedStyle(document.getElementsByClassName('color selected')[0]).backgroundColor;
-    });
-  }
 }
 const selecionandoCor = document.getElementById('color-palette').children;
 for (let index = 0; index < selecionandoCor.length; index += 1) {
@@ -40,7 +40,9 @@ botaoLimpaTela.addEventListener('click', function () {
 const botaoVqv = document.querySelector('#generate-board');
 botaoVqv.addEventListener('click', function () {
   let tamanhoQuadro = document.querySelector('#board-size').value;
-  if (tamanhoQuadro < 5) {
+  if( tamanhoQuadro === null) {
+    window.alert('Board inválido!');
+  } else if (tamanhoQuadro < 5) {
     tamanhoQuadro = 5;
   } else if (tamanhoQuadro > 50) {
     tamanhoQuadro = 50;
