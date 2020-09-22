@@ -45,6 +45,17 @@ for (let i = 0; i < pixel.length; i += 1) {
     let selected = document.querySelector('.selected')
     pixel[i].style.backgroundColor = window.getComputedStyle(selected).backgroundColor
     //console.log(window.getComputedStyle(selected).backgroundColor)
-    })
-   
+    })   
 }
+
+
+let buttonClear = document.getElementById('clear-board');
+
+buttonClear.addEventListener('click', function(){
+    //mudar a cor para branco
+    // colocar backgroundColor do pixel para branco
+    for (let i = 0; i < pixel.length; i += 1) {
+        pixel[i].style.backgroundColor = 'white';
+    }
+});
+
