@@ -14,7 +14,7 @@
     margin: 30px;
 }
 
-.color {
+.color, .selected{
     color: white;
     border: black solid 1px;
     display: inline;
@@ -22,3 +22,10 @@
     margin: 0px 15px;
 }
 
+#pixel-board {
+    background-color: white;
+    margin: auto;
+    border: black solid 5px;
+    height: 600px;
+    width: 700px;
+}
