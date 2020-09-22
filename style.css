@@ -1,9 +1,7 @@
-
 .title1 {
-  text-align: center;
   align-items: center;
- 
-}
+  text-align: center;
+ }
     
 .palette-color {
   margin-left: 580px;
@@ -11,25 +9,24 @@
 }  
 
 .board-pixel {
-  width: 212px;
-  height: 212px;
-  line-height: 1px;
   display: table;
+  height: 212px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1px;
+  width: 212px;
 }
 
-.size-board{
+.size-board {
   margin-left: 580px;
 }
-.generate{
-  
+.generate {
   border-radius: 20px;
 }
 
 .clear {
-  margin-left: 580px;
   border-radius: 20px;
+  margin-left: 580px;
 }
   
 .color {
@@ -42,7 +39,7 @@
 .pixel { 
   background-color: white;
   border: 1px black solid;
-  display:inline-table;
+  display: inline-table;
   height: 40px;
   width: 40px;
 }
