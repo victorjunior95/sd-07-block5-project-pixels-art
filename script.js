@@ -1,4 +1,4 @@
-const COR = ['black', 'red', 'blue', 'green'];
+const COR = [ 'black', '#6AD62A', '#BA3365', '#650DBF' ];
 const botaoLimpar = document.getElementById('clear-board');
 const pixels = document.querySelectorAll('.pixel');
 const colors = document.querySelectorAll('.color');
@@ -12,13 +12,7 @@ let posColor = 0;
  * 3 - atribuo o elemento clicado a variavel posColor;
  */
 
-colors.forEach((element, index, array) => {
-  element.addEventListener('click', event => {
-    retiraSelected(array);
-    element.className += ' selected';
-    posColor = index;
-  });
-})
+
 
 
 function retiraSelected(elements) {
@@ -43,7 +37,9 @@ pixels.forEach((element) => {
 });
 
 //Definindo as ações do botão de seleção de tamanho pelo usuario
-botaoSize.addEventListener('click', function () {
+
+
+const gerarPixels = function () {
   let size = document.getElementById('board-size');  
 
   if (size.value !== '') {
@@ -69,7 +65,7 @@ botaoSize.addEventListener('click', function () {
     alert("Board inválido!");
   }
   size.value = '';
-});
+};
 
 function eliminaTags() {
   let netos = document.querySelectorAll('.pixel');
@@ -105,22 +101,40 @@ function criaTag(num) {
 
 /** FONTE: http://www.criarweb.com/artigos/gerar-cor-aleatoria-javascript.html#:~:text=Para%20criar%20uma%20cor%20aleat%C3%B3rio,c%C3%B3digo%20de%20uma%20cor%20aleat%C3%B3ria. */
 
-function aleatorio(inferior, superior) {
-  const numPossibilidades = superior - inferior
-  let aleat = Math.random() * numPossibilidades
-  aleat = Math.floor(aleat)
-  return parseInt(inferior) + aleat
-}
-
-
 function gerarCorAleatoria() {
-  const hexadecimal = new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F")
-  let cor_aleatoria = "#";
-  const qtdCaracters = 6;
+  const hexadecimal = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+  let COR = ['black'];
 
-  for (i = 0; i < qtdCaracters; i += 1) {
-    let posarray = aleatorio(0, hexadecimal.length)
-    cor_aleatoria += hexadecimal[posarray]
+  let qtdCores = 4;
+
+  while (qtdCores) {
+      let qtdCaracters = 6;
+      let corAleatoria = '#';
+
+      while (qtdCaracters) {
+          let posicao = Math.floor(Math.random() * hexadecimal.length);
+          corAleatoria += hexadecimal[posicao]
+          qtdCaracters -= 1;
+      }
+      COR.push(corAleatoria);
+      qtdCores -= 1;
   }
-  return cor_aleatoria
+  return COR;
 }
+
+colors.forEach((element, index, array) => {
+  element.addEventListener('click', event => {
+    retiraSelected(array);
+    element.className += ' selected';
+    element.style.backgroundColor = COR[index];
+    posColor = index;
+  });
+})
+
+window.onload = function () {
+  
+  botaoSize.addEventListener('click', gerarPixels);
+
+
+
+};
