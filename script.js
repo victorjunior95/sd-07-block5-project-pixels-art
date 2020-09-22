@@ -1,14 +1,7 @@
-window.onload = criaQuadro(5);
-function trocaCor() {
-  const selecionandoPixel = document.getElementsByClassName('pixel');
-  for (let index = 0; index < selecionandoPixel.length; index += 1) {
-    selecionandoPixel[index].addEventListener('click', function () {
-      this.style.backgroundColor = window.getComputedStyle(document.getElementsByClassName('color selected')[0]).backgroundColor;
-    });
-  }
-}
-function criaQuadro(tamanho) {
-  for (let index = 0; index < tamanho; index += 1) {
+function criaQuadro(tamanho) { 
+  const pixelBoard = document.querySelector('#pixel-board');
+  pixelBoard.innerHTML = '';
+  for (let index = 0; index < (tamanho); index += 1) {
     document.querySelector('#pixel-board').appendChild(document.createElement('div'));
     document.querySelector('#pixel-board').children[index].classList.add('linha');
     for (let index2 = 0; index2 < tamanho; index2 += 1) {
@@ -17,6 +10,17 @@ function criaQuadro(tamanho) {
     }
   }
   trocaCor();
+}
+window.onload = function () {
+  criaQuadro(5);
+}
+function trocaCor() {
+  const selecionandoPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < selecionandoPixel.length; index += 1) {
+    selecionandoPixel[index].addEventListener('click', function () {
+      this.style.backgroundColor = window.getComputedStyle(document.getElementsByClassName('color selected')[0]).backgroundColor;
+    });
+  }
 }
 const selecionandoCor = document.getElementById('color-palette').children;
 for (let index = 0; index < selecionandoCor.length; index += 1) {
