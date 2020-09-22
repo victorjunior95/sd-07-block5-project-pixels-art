@@ -19,13 +19,37 @@ for(let i=0; i < nLinha; i += 1){
             k=k+1;
         }
 }
-let color=document.querySelecctorAll(".color");
+let color =document.querySelectorAll(".color");
 
-for(let i=0; i< color.lenght; i +=1){
-    color[i].addlistener("click", function(){
+console.log(color);
+for(let i=0; i < color.lenght; i +=1){
+    console.log(color);
+    color[i].addEventListener("click", function(event){
         let selected = document.querySelector(".selected");
-        selected.classList.remove("selected");
-        color[i].classList.add("selected");
+                selected.classList.remove('.selected');
+        event.target.className += " selected";
+
+    }); 
+}
+
+for(let i=0; i < pixel.length; i += 1){
+    pixel[i].addEventListener("click", function(){
+        let selected=document.querySelector(".selected");
+        console.log(selected);
+        pixel[i].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
+            
 
     });
 }
+
+let limpapx=document.getElementById("clear-board")
+
+limpapx.addEventListener("click", function(){ 
+    
+    for(let i=0; i < pixel.length; i += 1){
+
+        pixel[i].style.backgroundColor= "white";
+    }
+
+
+});
