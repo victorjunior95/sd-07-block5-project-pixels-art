@@ -6,7 +6,7 @@ h1 {
     text-align: center;
   }
 #color-palette {
-  background-color: white;
+  background-color:burlywood;
   margin: auto;
   max-width: 300px;
   padding: 10px;
@@ -15,4 +15,21 @@ h1 {
     display: inline-block;
     height: 30px;
     width: 30px;
+  }
+#pixel-board{
+  display: table;
+  background-color: burlywood;
+  margin: 20px auto;
+  width: 300px;
+  padding: 10px;
+}
+.tabela{
+  background-color: burlywood;
+  }
+.pixel {
+    background-color: white;
+    border: solid 1px black;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
   }
