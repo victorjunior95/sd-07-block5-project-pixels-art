@@ -32,3 +32,10 @@ for (let index = 0; index < pixel.length; index++) {
     pixel[index].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;    
   });
 }
+
+let clearButtonBoard = document.getElementById("clear-board");
+clearButtonBoard.addEventListener("click", function() {
+for (let index = 0; index < pixel.length; index++) {
+  pixel[index].style.backgroundColor = "white";
+}
+})
