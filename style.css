@@ -22,6 +22,14 @@
     margin: 0px 15px;
 }
 
+#clear-board {
+    background-color: gray;
+    display: flex;
+    
+    padding: 15px;
+    margin: 15px auto;
+}
+
 #pixel-board {
     background-color: white;
     margin: auto;
