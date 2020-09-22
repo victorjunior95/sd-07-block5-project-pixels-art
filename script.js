@@ -1,3 +1,17 @@
+function geraCor() {
+  let r = parseInt(Math.random() * (255));
+  let g = parseInt(Math.random() * (255));
+  let b = parseInt(Math.random() * (255));
+  let rgb = `rgb(${r},${g},${b})`;
+  return rgb;
+}
+function coresPaleta() {
+  for (let index = 0; index < document.querySelector('#color-palette').children.length; index += 1) {
+    let cor = geraCor();
+    document.querySelector('#color-palette').children[index].style.backgroundColor = cor;
+  }
+  document.querySelector('#color-palette').children[0].style.backgroundColor = 'black';
+}
 function trocaCor() {
   const selecionandoPixel = document.getElementsByClassName('pixel');
   for (let index = 0; index < selecionandoPixel.length; index += 1) {
@@ -21,6 +35,7 @@ function criaQuadro(tamanho) {
 }
 window.onload = function () {
   criaQuadro(5);
+  coresPaleta();
 };
 const selecionandoCor = document.getElementById('color-palette').children;
 for (let index = 0; index < selecionandoCor.length; index += 1) {
