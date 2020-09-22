@@ -21,7 +21,7 @@ function criaQuadro(tamanho) {
 }
 window.onload = function () {
   criaQuadro(5);
-}
+};
 const selecionandoCor = document.getElementById('color-palette').children;
 for (let index = 0; index < selecionandoCor.length; index += 1) {
   selecionandoCor[index].addEventListener('click', function () {
@@ -40,7 +40,7 @@ botaoLimpaTela.addEventListener('click', function () {
 const botaoVqv = document.querySelector('#generate-board');
 botaoVqv.addEventListener('click', function () {
   let tamanhoQuadro = document.querySelector('#board-size').value;
-  if( tamanhoQuadro === null) {
+  if (tamanhoQuadro === '') {
     window.alert('Board inválido!');
   } else if (tamanhoQuadro < 5) {
     tamanhoQuadro = 5;
