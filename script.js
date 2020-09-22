@@ -1,10 +1,11 @@
-let color = document.querySelectorAll('color');
+let color = document.querySelectorAll('.color');
 
 for (index = 0; index < color.length; index += 1)
-  color[index].addEventListener('click', function () {
+  color[index].addEventListener('click', function (event) {
     let selected = document.querySelector('.selected');
     selected.classList.remove('selected');
-    color[index].classList.add('selected');
+    event.target.className += " selected"
+    
   });
 
 // let buttonClearBoard = document.getElementById("clear-board");
