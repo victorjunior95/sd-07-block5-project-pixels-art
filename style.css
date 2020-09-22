@@ -29,6 +29,7 @@ h1 {
     display: inline-block;
     width: 100px;
     height: 100px;
+    margin: 10px;
 }
 
 .color1 {
@@ -47,9 +48,15 @@ h1 {
     background-color: crimson;
 }
 
+/*main {
+    text-align: center;
+}*/
+
 #pixel-board {
     background-color: blueviolet;
     display: inline-block;
+    height: 210px;
+    width: 210px;
 }
 
 .pixel {
@@ -60,5 +67,5 @@ h1 {
     height: 40px;
     width: 40px;
     display: inline-block;
-    margin: 0px;
+    float: left;
 }
