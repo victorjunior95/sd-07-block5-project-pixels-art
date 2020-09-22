@@ -1,4 +1,4 @@
-let color = document.getElementsByClassName('color');
+let color = document.querySelectorAll('color');
 
 for (index = 0; index < color.length; index += 1)
   color[index].addEventListener('click', function () {
