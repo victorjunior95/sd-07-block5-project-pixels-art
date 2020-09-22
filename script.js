@@ -26,8 +26,7 @@ window.onload = function()
   {
     for (let lineColumn = 0; lineColumn < numberOfLines; lineColumn += 1)
     {
-      let box = createBox();
-      divLine.appendChild(box);
+      divLine.appendChild(createBox());
     }
   }
 }
