@@ -17,7 +17,6 @@ body {
 }
 
 #color-palette {
-    /* background-color: red; */
     display: flex;
     justify-content: space-around;
     width: 600px;
