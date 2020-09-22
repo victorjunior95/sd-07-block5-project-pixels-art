@@ -27,3 +27,10 @@ for (let i = 0; i < color.length; i += 1) {
         event.target.className += " selected"
     })
 }
+
+buttonClear = document.getElementById("clear-board")
+
+buttonClear.addEventListener("click", function() {
+    clear = document.querySelector("pixel")
+    clear.stye.backgroundColor = 'white'
+})
