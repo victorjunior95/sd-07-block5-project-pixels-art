@@ -27,11 +27,11 @@ h1 {
   background-color: burlywood;
   }
 .pixel {
-    background-color: white;
-    border: solid 1px black;
-    display: inline-block;
-    height: 40px;
-    width: 40px;
+  background-color: white;
+  border: solid 1px black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
   }
 #black {
     background-color: black;
@@ -44,4 +44,8 @@ h1 {
 }
 #green {
     background-color: green;
+}
+button{
+    padding: 3px;
+    background-color: yellow;
 }
