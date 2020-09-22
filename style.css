@@ -30,13 +30,11 @@ body {
 }
 
 #pixel-board {
-    width: 500px;
-    /* height: 300px; */
+    width: 15rem;
     margin: auto;
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: stretch;
 }
 
 .pixel {
