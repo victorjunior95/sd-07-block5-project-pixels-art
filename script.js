@@ -19,3 +19,13 @@ for(let i=0; i < nLinha; i += 1){
             k=k+1;
         }
 }
+let color=document.querySelecctorAll(".color");
+
+for(let i=0; i< color.lenght; i +=1){
+    color[i].addlistener("click", function(){
+        let selected = document.querySelector(".selected");
+        selected.classList.remove("selected");
+        color[i].classList.add("selected");
+
+    });
+}
