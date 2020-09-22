@@ -13,11 +13,11 @@ const retiraSelected = function (elements) {
   });
 };
 
-//Limpar cor dos pixels
+// Limpar cor dos pixels
 const limparPaleta = function () {
-  for (const pixel of pixels) {
+  pixels.forEach((pixel) => {
     pixel.style.backgroundColor = 'white';
-  }
+  });
 };
 
 const colorirPixels = function (event) {
@@ -26,9 +26,22 @@ const colorirPixels = function (event) {
   }
 };
 
-//Definindo as ações do botão de seleção de tamanho pelo usuario
+function eliminaTags() {
+  let netos = document.querySelectorAll('.pixel');
+  let filhos = document.querySelectorAll('.pixel-linha');
+
+  netos.forEach((item) => {
+    item.parentNode.removeChild(item);
+  });
+
+  filhos.forEach((item) => {
+    item.parentNode.removeChild(item);
+  });
+};
+
+// Definindo as ações do botão de seleção de tamanho pelo usuario
 const gerarPixels = function () {
-  let size = document.getElementById('board-size');
+  const size = document.getElementById('board-size');
 
   if (size.value !== '') {
     eliminaTags();
@@ -54,21 +67,6 @@ const gerarPixels = function () {
   }
   size.value = '';
 };
-
-
-function eliminaTags() {
-  let netos = document.querySelectorAll('.pixel');
-  let filhos = document.querySelectorAll('.pixel-linha');
-
-  netos.forEach((item) => {
-    item.parentNode.removeChild(item);
-  });
-
-  filhos.forEach((item) => {
-    item.parentNode.removeChild(item);
-  });
-};
-
 
 function criaTag(num) {
   let divPai = document.getElementById('pixel-board');
