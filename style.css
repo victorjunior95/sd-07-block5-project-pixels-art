@@ -4,9 +4,36 @@
     background-color: gold;
 }
 
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 10px;
+}
+
+#color-palette {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
 .color, .selected{
     border: black solid 1px;
     display: inline-block;
-    padding: 20px;
-    margin: 10px;
+    padding: 20px 45px;
+    margin: 10px 0px;
+}
+
+#pixel-board {
+    margin: 0px auto;
+    margin-bottom: 50px;
+    background-color: white;
+    border: black solid 1px;
+    width: 800px;
+    height: 800px;
+}
+
+div div div {
+    border: black solid 1px;
+    display: table-cell;
+    padding: 39px 65px;
 }
