@@ -2,11 +2,11 @@
   align-items: center;
   text-align: center;
 }
-    
+
 .palette-color {
   margin-left: 580px;
   width: 245px;
-}  
+}
 
 .board-pixel {
   display: table;
@@ -29,7 +29,7 @@
   border-radius: 20px;
   margin-left: 580px;
 }
-  
+
 .color {
   border: 1px black solid;
   display: inline-block;
