@@ -21,9 +21,10 @@ buttonSize.addEventListener('click', function () {
   } else if (number >= 5 && number <= 50) {
     number = inputSize.value;
   }
+  const px = 'px';
   document.querySelector('.board-pixel').innerHTML = '';
-  document.querySelector('.board-pixel').style.width = (number * 42) + 'px';
-  document.querySelector('.board-pixel').style.height = (number * 42) + 'px';
+  document.querySelector('.board-pixel').style.width = (number * 42) + px;
+  document.querySelector('.board-pixel').style.height = (number * 42) + px;
   for (let index = 0; index < number; index += 1) {
     const line = document.createElement('div');
     line.className = 'line';
