@@ -1,10 +1,10 @@
 const boxesclear = document.querySelectorAll('.pixel');
 const buttonClear = document.querySelector('.clear');
 for (let index = 0; index < boxesclear.length; index += 1) {
-  let boxesPixels = []
+  let boxesPixels = [];
   boxesPixels = boxesclear[index]
   buttonClear.addEventListener('click', function clear() {
-    boxesPixels.style.backgroundColor = 'white'
+    boxesPixels.style.backgroundColor = 'white';
   });
 }
 
@@ -22,8 +22,8 @@ buttonSize.addEventListener('click', function () {
     number = inputSize.value;
   }
   document.querySelector('.board-pixel').innerHTML = '';
-  document.querySelector('.board-pixel').style.width = (number * 42) + "px";
-  document.querySelector('.board-pixel').style.height = (number * 42) + "px";
+  document.querySelector('.board-pixel').style.width = (number * 42) + 'px';
+  document.querySelector('.board-pixel').style.height = (number * 42) + 'px';
   for (let index = 0; index < number; index += 1) {
     const line = document.createElement('div');
     line.className = 'line';
@@ -39,7 +39,7 @@ buttonSize.addEventListener('click', function () {
       });
 
       buttonClear.addEventListener('click', function clear() {
-        pixel.style.backgroundColor = 'white'
+        pixel.style.backgroundColor = 'white';
       });
     }
   }
@@ -49,7 +49,7 @@ const boxes = document.querySelectorAll('.pixel');
 for (let index = 0; index < boxes.length; index += 1) {
   const selectBoxes = boxes[index];
   selectBoxes.addEventListener('click', function paint() {
-  selectBoxes.style.backgroundColor = localStorage.getItem('color');
+    selectBoxes.style.backgroundColor = localStorage.getItem('color');
   });
 }
 const colors = document.getElementsByClassName('color');
@@ -112,5 +112,5 @@ colorRed.addEventListener('click', function () {
 const select = document.querySelector('.selected').style.backgroundColor
 localStorage.setItem('color', select);
 window.onload = function () {
-  random()
-}
+  random();
+};
