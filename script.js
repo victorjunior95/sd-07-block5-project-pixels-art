@@ -1,19 +1,8 @@
 
 const buttonSize = document.querySelector('.generate');
 const pixelBoard = document.querySelectorAll('.pixel')
-
-const boxes = document.querySelectorAll('.pixel');
-for (let index = 0; index < boxes.length; index += 1) {
-  const selectBoxes = boxes[index];
-  selectBoxes.addEventListener('click', function paint() {
-    selectBoxes.style.backgroundColor = localStorage.getItem('color');
-  });
-}
-
-
-
 buttonSize.addEventListener('click', function () {
-  document.querySelector('.board-pixel').innerHTML = ''
+
 
   const inputSize = document.querySelector('.size-board');
   let number = inputSize.value
@@ -22,25 +11,51 @@ buttonSize.addEventListener('click', function () {
     alert('Board inválido!')
   } else if (number > 50) {
     number = 50
-  } else if (number >= 5 && number <= 50) {
-    number = Number(inputSize.value)
   } else if (number < 5) {
     number = 5
-  }
-  document.querySelector('.board-pixel').style.width = (number * 45) + "px"
-  document.querySelector('.board-pixel').style.height = (number * 45) + "px"
-  for (let index = 0; index < number; index += 1) {
-    const muchBoxes = document.createElement("div")
-    muchBoxes.className = 'pixel'
-    document.querySelector('.board-pixel').appendChild(muchBoxes)
+  } else if (number >= 5 && number <= 50) {
+    number = inputSize.value
 
-    for (let index1 = 0; index1 < number; index1 += 1) {
-      const lineBox = document.createElement('div')
-      lineBox.className = 'pixel'
-      muchBoxes.appendChild(lineBox)
+    document.querySelector('.board-pixel').innerHTML = ''
+    document.querySelector('.board-pixel').style.width = (number * 42) + "px"
+  document.querySelector('.board-pixel').style.height = (number * 42) + "px"
+    for (let index = 0; index < number; index += 1) {
+      const line = document.createElement("div")
+      line.className = 'line'
+      document.querySelector('.board-pixel').appendChild(line)
+
+      for (let index1 = 0; index1 < number; index1 += 1) {
+        const pixel = document.createElement('div')
+        pixel.className = 'pixel'
+        line.appendChild(pixel)
+
+        pixel.addEventListener('click', function paint() {
+         pixel.style.backgroundColor = localStorage.getItem('color');
+        });
+
+        buttonClear.addEventListener('click', function clear() {
+         pixel.style.backgroundColor = 'white'
+        });
+
+      }
     }
   }
+
+
+
+
 })
+
+const boxes = document.querySelectorAll('.pixel');
+for (let index = 0; index < boxes.length; index += 1) {
+  const selectBoxes = boxes[index];
+  
+  selectBoxes.addEventListener('click', function paint() {
+    selectBoxes.style.backgroundColor = localStorage.getItem('color');
+  });
+
+}
+
 
 const colors = document.getElementsByClassName('color');
 
@@ -49,13 +64,10 @@ colors[1].style.backgroundColor = 'blue';
 colors[2].style.backgroundColor = 'green';
 colors[3].style.backgroundColor = 'red';
 
-function random(){
-
-
+function random() {
   colors[1].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)} , ${Math.ceil(Math.random() * 255)},${Math.ceil(Math.random() * 255)} )`
   colors[2].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)} , ${Math.ceil(Math.random() * 255)},${Math.ceil(Math.random() * 255)} )`
   colors[3].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)} , ${Math.ceil(Math.random() * 255)},${Math.ceil(Math.random() * 255)} )`
-  
 }
 
 const colorBlack = document.getElementsByClassName('color')[0];
@@ -106,21 +118,21 @@ colorRed.addEventListener('click', function () {
 });
 
 
-
+const boxesclear = document.querySelectorAll('.pixel')
 const buttonClear = document.querySelector('.clear');
-for (let index = 0; index < boxes.length; index += 1) {
-  let boxexPixels = []
-  boxexPixels = boxes[index]
+for (let index = 0; index < boxesclear.length; index += 1) {
+  let boxesPixels = []
+  boxesPixels = boxesclear[index]
   buttonClear.addEventListener('click', function clear() {
-    boxexPixels.style.backgroundColor = 'white'
+    boxesPixels.style.backgroundColor = 'white'
   });
 }
 
 
 const select = document.querySelector('.selected').style.backgroundColor
 localStorage.setItem('color', select);
-window.onload = function (){
-  random() 
- 
-  
+window.onload = function () {
+  random()
 }
+
+
