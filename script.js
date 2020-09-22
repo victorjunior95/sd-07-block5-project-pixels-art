@@ -5,9 +5,13 @@ for (index = 0; index < color.length; index += 1)
     let selected = document.querySelector('.selected');
     selected.classList.remove('selected');
     event.target.className += " selected"
-    
-  });
+ });
 
+ let pixelBoard = document.querySelector('#pixel-board')
+ pixelBoard.addEventListener('click', function (event) {
+    let selected = document.querySelector('.selected');
+    event.target.style.backgroundColor = window.getComputedStyle(selected).backgroundColor
+ })
 // let buttonClearBoard = document.getElementById("clear-board");
 
 // buttonClearBoard.addEventListener('click', function () {
