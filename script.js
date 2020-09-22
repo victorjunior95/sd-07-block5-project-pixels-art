@@ -10,8 +10,8 @@ let posColor = 0;
 const retiraSelected = function (elements) {
   elements.forEach((elem) => {
     elem.className = elem.className.replace(' selected', '');
-  })
-}
+  });
+};
 
 //Limpar cor dos pixels
 const limparPaleta = function () {
@@ -67,7 +67,7 @@ function eliminaTags() {
   filhos.forEach((item) => {
     item.parentNode.removeChild(item);
   });
-}
+};
 
 
 function criaTag(num) {
@@ -85,7 +85,7 @@ function criaTag(num) {
 
     divPai.appendChild(novoFilho);
   }
-}
+};
 
 /** FONTE: http://www.criarweb.com/artigos/gerar-cor-aleatoria-javascript.html#:~:text=Para%20criar%20uma%20cor%20aleat%C3%B3rio,c%C3%B3digo%20de%20uma%20cor%20aleat%C3%B3ria. */
 
@@ -115,7 +115,7 @@ colors.forEach((element, index, array) => {
     element.className += ' selected';
     posColor = index;
   });
-})
+});
 
 window.onload = function () {
   gerarCorAleatoria(COR);
