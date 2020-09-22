@@ -20,7 +20,7 @@ for (let i = 0; i < numberLines; i += 1) {
 }
 
 let color = document.querySelectorAll(".color");
-//usar o indexOf é um método de busca dentro do array
+    //usar o indexOf é um método de busca dentro do array
 
 
 for (let i = 0; i < color.length; i +=1) {
@@ -33,7 +33,18 @@ for (let i = 0; i < color.length; i +=1) {
     // color[i].classList.add("selected");
     //target
     event.target.className += " selected"
-    //console.log(selected)
     
     });
+}
+
+for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].addEventListener("click", function(){
+    //conferir a cor
+    // colocar a cor preta
+    //trocar a cor do pixel
+    let selected = document.querySelector('.selected')
+    pixel[i].style.backgroundColor = window.getComputedStyle(selected).backgroundColor
+    //console.log(window.getComputedStyle(selected).backgroundColor)
+    })
+   
 }
