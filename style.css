@@ -1,4 +1,4 @@
-.color,
+.color ,
 .pixel {
   border: 1px solid black;
   display: table-cell;
@@ -8,7 +8,7 @@
 
 .color-palette > div > a {
   display: inline-block;
-  /* coloca as divs em linha*/
+  /* coloca as divs em linha */
   margin: 5px;
 }
 
