@@ -1,4 +1,13 @@
-function criaQuadro(tamanho) {  
+window.onload = criaQuadro(5);
+function trocaCor() {
+  const selecionandoPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < selecionandoPixel.length; index += 1) {
+    selecionandoPixel[index].addEventListener('click', function () {
+      this.style.backgroundColor = window.getComputedStyle(document.getElementsByClassName('color selected')[0]).backgroundColor;
+    });
+  }
+}
+function criaQuadro(tamanho) {
   for (let index = 0; index < tamanho; index += 1) {
     document.querySelector('#pixel-board').appendChild(document.createElement('div'));
     document.querySelector('#pixel-board').children[index].classList.add('linha');
@@ -16,14 +25,6 @@ for (let index = 0; index < selecionandoCor.length; index += 1) {
     this.classList.add('selected');
   });
 }
-function trocaCor() {
-  const selecionandoPixel = document.getElementsByClassName('pixel');
-  for (let index = 0; index < selecionandoPixel.length; index += 1) {
-    selecionandoPixel[index].addEventListener('click', function () {
-      this.style.backgroundColor = window.getComputedStyle(document.getElementsByClassName('color selected')[0]).backgroundColor;
-    });
-  }
-}
 const botaoLimpaTela = document.getElementById('clear-board');
 const selecionandoPixel = document.getElementsByClassName('pixel');
 botaoLimpaTela.addEventListener('click', function () {
@@ -31,7 +32,7 @@ botaoLimpaTela.addEventListener('click', function () {
     selecionandoPixel[index].style.backgroundColor = 'white';
   }
   document.getElementById('board-size').value = '';
-})
+});
 const botaoVqv = document.querySelector('#generate-board');
 botaoVqv.addEventListener('click', function () {
   let tamanhoQuadro = document.querySelector('#board-size').value;
@@ -42,4 +43,3 @@ botaoVqv.addEventListener('click', function () {
   }
   criaQuadro(tamanhoQuadro);
 });
-
