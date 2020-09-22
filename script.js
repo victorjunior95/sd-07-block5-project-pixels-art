@@ -1,10 +1,8 @@
 window.onload = function() {
     
-    let pixel = document.querySelectorAll('.pixel');
+    let pixelBoard = document.querySelector('#pixel-board');
     let button = document.querySelector('#clear-board');
     button.addEventListener('click', function() {
-    for (let i in pixel) {
-        pixel[i].style.backgroundColor = "white";
-    }
+        pixelBoard.style.backgroundColor = "white";
 })
 }
