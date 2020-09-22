@@ -1,26 +1,29 @@
-body{
+    body {
     margin: 0;
     padding: 0;
 }
 
-header{
+header {
     background-color: blue;
     height: 150px;
     width: 100%;
 }
 
-h1{
+h1 {
     background-color: green;
     margin: 0px;
     padding: 0px;
     display: block;
     text-align: center;
 }
-.tools{
+
+.tools {
     background-color: red;
-    margin: 10px;
+    text-align: center;
+    padding-top: 10px;
 }
-.color{
+
+.color {
     display: inline-block;
     border-color: black;
     border-style: solid;
@@ -41,7 +44,7 @@ h1{
     background-color: green;
 }
 .color4 {
-    background-color: red;
+    background-color: crimson;
 }
 
 #pixel-board{
