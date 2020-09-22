@@ -51,10 +51,13 @@ botaoSize.addEventListener('click', function () {
 
     if(size.value < 5){
       size.value = 5;
+    }else if(size.value > 50){
+      size.value = 50;
+      console.log(size.value)
     }
 
     criaTag(size.value);
-    
+
     pixels.forEach((pixel) => {
       if (parseInt(size.value) > 0) {
         pixel.style.width = size.value + 'px';
