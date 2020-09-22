@@ -9,13 +9,13 @@ buttonSize.addEventListener('click', function () {
 
   if (inputSize.value === "") {
     alert('Board inválido!')
-  } else if (number > 50) {
+  } else if (inputSize.value > 50) {
     number = 50
-  } else if (number < 5) {
+  } else if (inputSize.value < 5) {
     number = 5
   } else if (number >= 5 && number <= 50) {
     number = inputSize.value
-
+  }
     document.querySelector('.board-pixel').innerHTML = ''
     document.querySelector('.board-pixel').style.width = (number * 42) + "px"
   document.querySelector('.board-pixel').style.height = (number * 42) + "px"
@@ -39,7 +39,7 @@ buttonSize.addEventListener('click', function () {
 
       }
     }
-  }
+  
 
 
 
