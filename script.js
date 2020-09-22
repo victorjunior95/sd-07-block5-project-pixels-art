@@ -5,7 +5,7 @@ let red = document.querySelector(".red");
 let green = document.querySelector(".green");
 let selected = document.querySelector(".selected");
 let pixel = document.querySelectorAll(".pixel");
-let colorSaved = "black";
+
 
 
     
