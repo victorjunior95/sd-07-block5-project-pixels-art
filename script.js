@@ -37,24 +37,24 @@ function eliminaTags() {
   filhos.forEach((item) => {
     item.parentNode.removeChild(item);
   });
-};
+}
 
 function criaTag(num) {
-  let divPai = document.getElementById('pixel-board');
+  const divPai = document.getElementById('pixel-board');
 
   for (let index = 0; index < num; index += 1) {
-    let novoFilho = document.createElement('div');
+    const novoFilho = document.createElement('div');
     novoFilho.classList.add('pixel-linha');
 
     for (let pos = 0; pos < num; pos += 1) {
-      let neto = document.createElement('div');
+      const neto = document.createElement('div');
       neto.className = 'pixel';
       novoFilho.appendChild(neto);
     }
 
     divPai.appendChild(novoFilho);
   }
-};
+}
 
 // Definindo as ações do botão de seleção de tamanho pelo usuario
 const gerarPixels = function () {
@@ -72,7 +72,7 @@ const gerarPixels = function () {
     criaTag(size.value);
 
     pixels.forEach((pixel) => {
-      if (parseInt(size.value) > 0) {
+      if (parseInt(size.value, 10) > 0) {
         pixel.style.width = `${size.value}px`;
         pixel.style.height = `${size.value}px`;
         pixel.style.backgroundColor = 'white';
@@ -82,11 +82,11 @@ const gerarPixels = function () {
     alert('Board inválido!');
   }
   size.value = '';
-};
+}
 
 /** FONTE: http://www.criarweb.com/artigos/gerar-cor-aleatoria-javascript.html#:~:text=Para%20criar%20uma%20cor%20aleat%C3%B3rio,c%C3%B3digo%20de%20uma%20cor%20aleat%C3%B3ria. */
 
-function gerarCorAleatoria(COR) {
+function gerarCorAleatoria(arrayCor) {
   const hexadecimal = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
 
   let qtdCores = 3;
@@ -96,18 +96,18 @@ function gerarCorAleatoria(COR) {
     let corAleatoria = '#';
 
     while (qtdCaracters) {
-      let posicao = Math.floor(Math.random() * hexadecimal.length);
-      corAleatoria += hexadecimal[posicao]
+      const posicao = Math.floor(Math.random() * hexadecimal.length);
+      corAleatoria += hexadecimal[posicao];
       qtdCaracters -= 1;
     }
-    COR.push(corAleatoria);
+    arrayCor.push(corAleatoria);
     qtdCores -= 1;
   }
-  return COR;
+  return arrayCor;
 }
 
 colors.forEach((element, index, array) => {
-  element.addEventListener('click', event => {
+  element.addEventListener('click', function(){
     retiraSelected(array);
     element.className += ' selected';
     posColor = index;
@@ -118,13 +118,12 @@ window.onload = function () {
   gerarCorAleatoria(COR);
 
   (function () {
-    colors.forEach((divCor, index, array) => {
+    colors.forEach((divCor, index) => {
       divCor.style.backgroundColor = COR[index];
-    })
-  })();
+    });
+  }());
 
   botaoSize.addEventListener('click', gerarPixels);
   botaoLimpar.addEventListener('click', limparPaleta);
   quadroDePixel.addEventListener('click', colorirPixels);
-
 };
