@@ -10,3 +10,5 @@ for (let index = 1; index < 26; index += 1) {
         pixelBoard.appendChild(document.createElement('BR'));
     }
 }
+
+document.querySelector('.color .black').className = "color black selected";
