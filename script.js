@@ -1,35 +1,32 @@
 const COR = ['black'];
 const botaoLimpar = document.getElementById('clear-board');
+const quadroDePixel = document.getElementById('pixel-board');
 const pixels = document.querySelectorAll('.pixel');
 const colors = document.querySelectorAll('.color');
 const botaoSize = document.getElementById('generate-board');
 let posColor = 0;
 
 
-function retiraSelected(elements) {
+const retiraSelected = function (elements) {
   elements.forEach((elem) => {
     elem.className = elem.className.replace(' selected', '');
   })
 }
 
 //Limpar cor dos pixels
-
-botaoLimpar.addEventListener('click', function () {
+const limparPaleta = function () {
   for (const pixel of pixels) {
     pixel.style.backgroundColor = 'white';
   }
-});
+};
 
-//Atribui cor aos pixels
-pixels.forEach((element) => {
-  element.addEventListener('click', event => {
-    element.style.backgroundColor = COR[posColor];
-  });
-});
+const colorirPixels = function (event){
+  if(event.target.className === 'pixel'){
+    event.target.style.backgroundColor = COR[posColor];
+  }
+};
 
 //Definindo as ações do botão de seleção de tamanho pelo usuario
-
-
 const gerarPixels = function () {
   let size = document.getElementById('board-size');  
 
@@ -58,6 +55,7 @@ const gerarPixels = function () {
   size.value = '';
 };
 
+
 function eliminaTags() {
   let netos = document.querySelectorAll('.pixel');
   let filhos = document.querySelectorAll('.pixel-linha');
@@ -66,7 +64,6 @@ function eliminaTags() {
     item.parentNode.removeChild(item);
   });
 
-
   filhos.forEach((item) => {
     item.parentNode.removeChild(item);
   });
@@ -74,7 +71,7 @@ function eliminaTags() {
 
 
 function criaTag(num) {
-  let pai = document.getElementById('pixel-board');
+  let divPai = document.getElementById('pixel-board');
 
   for (let index = 0; index < num; index += 1) {
     let novoFilho = document.createElement('div');
@@ -86,7 +83,7 @@ function criaTag(num) {
       novoFilho.appendChild(neto);
     }
 
-    pai.appendChild(novoFilho);
+    divPai.appendChild(novoFilho);
   }
 }
 
@@ -112,22 +109,28 @@ function gerarCorAleatoria(COR) {
   return COR;
 }
 
-gerarCorAleatoria(COR);
-console.log(COR)
+
+
 
 colors.forEach((element, index, array) => {
   element.addEventListener('click', event => {
     retiraSelected(array);
     element.className += ' selected';
-    element.style.backgroundColor = COR[index];
     posColor = index;
   });
 })
 
 window.onload = function () {
+  gerarCorAleatoria(COR);
   
+  (function(){
+    colors.forEach((divCor, index, array) =>{
+      divCor.style.backgroundColor = COR[index];
+    })
+  })();
+
   botaoSize.addEventListener('click', gerarPixels);
-
-
+  botaoLimpar.addEventListener('click', limparPaleta);
+  quadroDePixel.addEventListener('click', colorirPixels);
 
 };
