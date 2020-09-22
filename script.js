@@ -2,7 +2,7 @@ const boxesclear = document.querySelectorAll('.pixel');
 const buttonClear = document.querySelector('.clear');
 for (let index = 0; index < boxesclear.length; index += 1) {
   let boxesPixels = [];
-  boxesPixels = boxesclear[index]
+  boxesPixels = boxesclear[index];
   buttonClear.addEventListener('click', function clear() {
     boxesPixels.style.backgroundColor = 'white';
   });
@@ -109,7 +109,7 @@ colorRed.addEventListener('click', function () {
   localStorage.setItem('color', redColor);
 });
 
-const select = document.querySelector('.selected').style.backgroundColor
+const select = document.querySelector('.selected').style.backgroundColor;
 localStorage.setItem('color', select);
 window.onload = function () {
   random();
