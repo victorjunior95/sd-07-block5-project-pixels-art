@@ -17,3 +17,13 @@
 //         k += 1;
 //     }
 // }
+
+let color = document.querySelectorAll(".color")
+
+for (let i = 0; i < color.length; i += 1) {
+    color[i].addEventListener("click", function(event) {
+        let selected = document.querySelector(".selected")
+        selected.classList.remove("selected")
+        event.target.className += " selected"
+    })
+}
