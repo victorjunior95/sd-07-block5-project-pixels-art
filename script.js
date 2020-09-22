@@ -20,22 +20,22 @@ const limparPaleta = function () {
   }
 };
 
-const colorirPixels = function (event){
-  if(event.target.className === 'pixel'){
+const colorirPixels = function (event) {
+  if (event.target.className === 'pixel') {
     event.target.style.backgroundColor = COR[posColor];
   }
 };
 
 //Definindo as ações do botão de seleção de tamanho pelo usuario
 const gerarPixels = function () {
-  let size = document.getElementById('board-size');  
+  let size = document.getElementById('board-size');
 
   if (size.value !== '') {
     eliminaTags();
 
-    if(size.value < 5){
+    if (size.value < 5) {
       size.value = 5;
-    }else if(size.value > 50){
+    } else if (size.value > 50) {
       size.value = 50;
       console.log(size.value)
     }
@@ -91,26 +91,23 @@ function criaTag(num) {
 
 function gerarCorAleatoria(COR) {
   const hexadecimal = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
-  
+
   let qtdCores = 3;
 
   while (qtdCores) {
-      let qtdCaracters = 6;
-      let corAleatoria = '#';
+    let qtdCaracters = 6;
+    let corAleatoria = '#';
 
-      while (qtdCaracters) {
-          let posicao = Math.floor(Math.random() * hexadecimal.length);
-          corAleatoria += hexadecimal[posicao]
-          qtdCaracters -= 1;
-      }
-      COR.push(corAleatoria);
-      qtdCores -= 1;
+    while (qtdCaracters) {
+      let posicao = Math.floor(Math.random() * hexadecimal.length);
+      corAleatoria += hexadecimal[posicao]
+      qtdCaracters -= 1;
+    }
+    COR.push(corAleatoria);
+    qtdCores -= 1;
   }
   return COR;
 }
-
-
-
 
 colors.forEach((element, index, array) => {
   element.addEventListener('click', event => {
@@ -122,9 +119,9 @@ colors.forEach((element, index, array) => {
 
 window.onload = function () {
   gerarCorAleatoria(COR);
-  
-  (function(){
-    colors.forEach((divCor, index, array) =>{
+
+  (function () {
+    colors.forEach((divCor, index, array) => {
       divCor.style.backgroundColor = COR[index];
     })
   })();

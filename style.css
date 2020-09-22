@@ -1,9 +1,9 @@
 .color,
 .pixel {
-  display: table-cell;
   border: 1px solid black;
-  width: 40px;
+  display: table-cell;
   height: 40px;
+  width: 40px;  
 }
 
 .color-palette>div>a {
