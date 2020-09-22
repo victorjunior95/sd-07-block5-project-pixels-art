@@ -20,8 +20,8 @@ for (let i = 0; i < numberLines; i += 1) {
 }
 
 let color = document.querySelectorAll(".color");
-
 //usar o indexOf é um método de busca dentro do array
+
 
 for (let i = 0; i < color.length; i +=1) {
     color[i].addEventListener("click", function (event) {
@@ -29,14 +29,11 @@ for (let i = 0; i < color.length; i +=1) {
     //acrescentrar o select na cor certa
     //.REMOVE
     let selected = document.querySelector(".selected")
-    console.log(selectd)
-    selected.classList.remove("selected");
-    
+    selected.classList.remove('selected');
     // color[i].classList.add("selected");
+    //target
     event.target.className += " selected"
     //console.log(selected)
-
-    })
+    
+    });
 }
-
-
