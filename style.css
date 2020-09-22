@@ -33,3 +33,15 @@ h1 {
     height: 40px;
     width: 40px;
   }
+#black {
+    background-color: black;
+}
+#blue {
+    background-color: blue;
+}
+#red {
+    background-color: red;
+}
+#green {
+    background-color: green;
+}
