@@ -45,19 +45,52 @@ pixels.forEach((element) => {
 //Definindo as ações do botão de seleção de tamanho pelo usuario
 botaoSize.addEventListener('click', function () {
   let size = document.getElementById('board-size');
+  eliminaTags();
+  criaTag(size.value);
 
-  if (size.value !== '') {
-    pixels.forEach((pixel) => {
-      if (parseInt(size.value) > 0) {
-        pixel.style.width = size.value + 'px';
-        pixel.style.height = size.value + 'px';
-        pixel.style.backgroundColor = 'white';
-        
-      }
-    });
-  }else{
-    alert("Board inválido!");
-  }
-  
-  size.value = '';
+    if (size.value !== '') {
+      pixels.forEach((pixel) => {
+        if (parseInt(size.value) > 0) {
+          pixel.style.width = size.value + 'px';
+          pixel.style.height = size.value + 'px';
+          pixel.style.backgroundColor = 'white';        
+        }
+      });
+    }else{
+      alert("Board inválido!");
+    }  
+    size.value = '';
 });
+
+function eliminaTags() {
+  let netos = document.querySelectorAll('.pixel');
+  let filhos = document.querySelectorAll('.pixel-linha');
+
+  netos.forEach((item) => {
+    item.parentNode.removeChild(item);
+  });
+
+
+  filhos.forEach((item) => {
+    item.parentNode.removeChild(item);
+  });
+}
+
+
+function criaTag(num) {
+  let pai = document.getElementById('pixel-board');
+
+  for (let index = 0; index < num; index += 1) {
+    let novoFilho = document.createElement('div');
+    novoFilho.classList.add('pixel-linha');
+
+    for(let pos = 0; pos < num; pos += 1){
+      let neto = document.createElement('div');
+      neto.className='pixel';
+      novoFilho.appendChild(neto);
+    }
+
+    pai.appendChild(novoFilho);
+  }
+}
+
