@@ -1,9 +1,10 @@
-window.onload = function() 
-{
+window.onload() {
   let numberOfLines = 5;
   var lines = document.querySelectorAll(".line");
   let className="box-empty";
   let color = document.getElementById("")
+  let counter_id = 1;
+  var color;
 
   fillSquare(lines);
 
@@ -15,10 +16,11 @@ window.onload = function()
     }
   }
 
-  function createBox()
+  function createBox(id)
   {
     let box = document.createElement("div");
     box.className = className;
+    box.id = id;
     return(box);
   }
 
@@ -26,32 +28,30 @@ window.onload = function()
   {
     for (let lineColumn = 0; lineColumn < numberOfLines; lineColumn += 1)
     {
-      divLine.appendChild(createBox());
+      divLine.appendChild(createBox(counter_id));
+      counter_id++;
     }
   }
 }
 
+  function storeVariable_box1()
+  {
+    color = 'black';
+  }
+  function storeVariable_box2()
+  {
+    color = 'red';
+  }
+  function storeVariable_box3()
+  {
+    color = 'yellow';
+  }
+  function storeVariable_box4()
+  {
+    color = 'orange';
+  }
 
-// fillSquare(lines);
-
-// function fillSquare(lines) {
-//     for(let index = 0; index < lines; index += 1) {
-//       fillLine(lines[index]);
-//     }
-//   }
-
-// function createBox(className) {
-//     let box = document.createElement("div");
-//     box.className = className;
-//     return box;
-// }
-
-// function fillLine(divLine) {
-//     for (let lineColumn = 1; lineColumn <= 5; lineColumn += 1) {
-//       let box = createBox("box");
-//       divLine.appendChild(box);
-//       divLine.appendChild(createBox("box-empty"));
-//     }
-//   }
-  
-
+  function changeColor(id)
+  {
+    document.getElementById(id).style.backgroundColor = color;
+  }
