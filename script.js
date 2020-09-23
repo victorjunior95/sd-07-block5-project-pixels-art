@@ -11,14 +11,12 @@ for (let index = 0; index < colorOptions.length; index += 1) {
   });
 } // Abstração facilitada pela resolução em grupo feita por parte da turma.
 
-function paintPixel () {
-  for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].addEventListener('click', function () {
-      let classSelected = document.querySelector('.selected');
-      pixels[index].style.backgroundColor = window.getComputedStyle(classSelected).backgroundColor;
-    });
+board.addEventListener('click', function (event) {
+  let classSelected = document.querySelector('.selected');
+  if (event.target.classList.contains('pixel')) {
+    event.target.style.backgroundColor = window.getComputedStyle(classSelected).backgroundColor;
   }
-}
+})
 
 clearButton.addEventListener('click', function () {
   for (let index = 0; index < pixels.length; index += 1) {
