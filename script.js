@@ -1,5 +1,5 @@
 let colorOptions = document.querySelectorAll('.color');
-let pixels = document.querySelectorAll('.pixel');
+
 let clearButton = document.querySelector('#clear-board');
 let board = document.querySelector('#pixel-board');
 
@@ -16,9 +16,10 @@ board.addEventListener('click', function (event) {
   if (event.target.classList.contains('pixel')) {
     event.target.style.backgroundColor = window.getComputedStyle(classSelected).backgroundColor;
   }
-})
+});
 
 clearButton.addEventListener('click', function () {
+  let pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
@@ -53,3 +54,7 @@ vqvBtn.addEventListener('click', function () {
     createBoard(boardSize.value)
   }
 });
+
+for (let index = 1; index < 4; index += 1) {
+  colorOptions[index].style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)} , ${Math.floor(Math.random() * 255)} )`;
+}
