@@ -1,7 +1,7 @@
 const quadro = document.getElementById("pixel-board");
-const pixels = document.getElementByClassName("pixel");
+const pixels = document.querySelectorAll(".pixel");
 const botaoTamanhoQuadro = document.getElementById("generate-board");
-const TamanhoQuadro = document.getElementById("board-size");
+const tamanhoPersonalizadoQuadro = document.getElementById("board-size");
 const botaoLimpar = document.getElementById("botao-limpar");
 const preto = document.getElementById("preto");
 const cor1 = document.getElementById("cor1");
@@ -9,28 +9,47 @@ const cor2 = document.getElementById("cor2");
 const cor3 = document.getElementById("cor3");
 
 // Gerando o quadro
-criarMatrizAlt(5);
-function criarMatriz(n){ 
-    construcao = Array(n)
-        .fill(undefined);
-    for (const i in construcao){ 
-        construcao[i] = Array(n).fill(<div classe = "pixel"></div>);
+let tamanhoQuadro = 5;
+criarMatriz(tamanhoQuadro);
+function criarMatriz(n) {
+    quadro.innerHTML = '';
+    for (let linha = 0; linha < n; linha +=1) {
+        const pixelLinha = document.createElement('div');
+        quadro.appendChild(pixelLinha);
+        for (let coluna = 0 ; coluna < n; coluna +=1) {
+            const pixelColuna = document.createElement('div');
+            pixelLinha.appendChild(pixelColuna);
+            pixelColuna.className = 'pixel';
+        // Colorindo os pixels
+            pixelColuna.addEventListener('click', function() {
+                alert("aqui");
+            });
+        }
     }
-    quadro.innerHTML= construcao;
 }
 
-// Gerando quadro do tamanho solicitado
-let TamanhoQuadro = "";
-botaoTamanhoQuadro.addElementEvent("click", function () {
-    if (TamanhoQuadro == ""){ alert(Board inválido!)}
-    if (TamanhoQuadro < 5){TamanhoQuadro = 5};
-    if (TamanhoQuadro > 50){TamanhoQuadro = 50};
-    criarMatrizAlt(TamanhoQuadro);
+// Gerando Quadro Personalizado
+let tamanho;
+botaoTamanhoQuadro.addEventListener('click', function(){
+    if (tamanhoPersonalizadoQuadro.value > 0){
+            tamanho = tamanhoPersonalizadoQuadro.value;
+        alert(tamanho);
+        if (tamanho < 5){
+            tamanho = 5;
+        };
+        if (tamanho > 50){
+            tamanho = 50;
+        };
+        criarMatriz(tamanho);
+    } else {
+        alert ("Digite um valor para o tamanho.");
+    };
+    return tamanho;
 });
 
 // Gerando cores aleatóriamente
 let cores = [];
-for (let index = 0; index < 2; index +=1){
+for (let index = 0; index < 3; index +=1){
     cores[index] = getRandomColor();
 }
 function getRandomColor() {
@@ -47,41 +66,38 @@ function getRandomColor() {
 
 // Mostrando a paleta de cores
 cor1.style.backgroundColor = cores[0];
-cor2.style.backgrundColor = cores[1];
-cor3.style.backgrundColor = cores[2];
+cor2.style.backgroundColor = cores[1];
+cor3.style.backgroundColor = cores[2];
 
 // Definindo a cor selecionada
 let corSelecionada = preto;
-preto.addElementEvent("click", function () {
+preto.classList.add("selected");
+preto.addEventListener("click", function () {
     corSelecionada.classList.remove("selected");
     corSelecionada = preto;
     preto.classList.add("selected");
 });
-cor1.addElementEvent("click", function () {
+cor1.addEventListener("click", function () {
     corSelecionada.classList.remove("selected");
     corSelecionada = cor1;
     cor1.classList.add("selected");
 });
-cor2.addElementEvent("click", function () {
+cor2.addEventListener("click", function () {
     corSelecionada.classList.remove("selected");
     corSelecionada = cor2;
     cor2.classList.add("selected");
 });
-cor3.addElementEvent("click", function () {
+cor3.addEventListener("click", function () {
     corSelecionada.classList.remove("selected");
     corSelecionada = cor3;
     cor3.classList.add("selected");
 });
 
-// Colorindo os pixels
-document.querySelectorAll("pixel").forEach(item => {
-    item.addEventListener('click', event => {
-        item.style.color = window.getComputedStyle(corSelecionada, null).getPropertyValue("background-color");
-    })
-});
-
 // Funcao de limpar o quadro
-botaoLimpar.addElementEvent("click", function () {
-    pixels.style.color = white;
+botaoLimpar.addEventListener("click", function () {
+    if (tamanho > 0){
+        criarMatriz(tamanho);
+    } else {
+        criarMatriz(tamanhoQuadro);
+    };
 });
-

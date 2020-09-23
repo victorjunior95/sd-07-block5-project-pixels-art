@@ -10,15 +10,19 @@
         <h1 id="title">Paleta de Cores</h1>
         <table id="color-palette">
             <tr>
-                <th><button id="Preto" class="color" classe="selected"></button></th>
+                <th><button id="preto" class="color" classe="selected"></button></th>
                 <th><button id="cor1" class="color"></button></th>
                 <th><button id="cor2" class="color"></button></th>
                 <th><button id="cor3" class="color"></button></th>
             </tr>
         </table>
-        <button id="generate-board">VQV</button>
-        <input id="board-size" placeholder="Tamanho da Matriz" type="number" min="0"/>
-        <button id="botao-limpar">Limpar</button>
+        <br>
+        <div id="botoes">
+            <input id="board-size" class="execucao" placeholder="Tamanho" type="number" min="0"/>
+            <button id="generate-board" class="execucao">VQV</button>
+            <button id="botao-limpar" class="execucao">Limpar</button>
+        </div>
+        <br>
         <div id="pixel-board"></div>
         <script type="text/javascript" src="script.js"></script>
     </body>
