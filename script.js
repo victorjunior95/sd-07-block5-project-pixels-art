@@ -1,14 +1,11 @@
 // colorindo os elementos da paleta de cores
-function paletteColor(arrayColors) {
-  const paletteColor = [];
-  for (let index = 0; index < arrayColors.length; index += 1) {
-    const color = document.getElementById(arrayColors[index]);
-    color.style.backgroundColor = arrayColors[index];
-    paletteColor.push(color);
-  }
-  paletteColor[0].classList.add('selected');
+const arrayPaletteColor = document.getElementsByClassName('color');
+// console.log(arrayPaletteColor);
+arrayPaletteColor[0].style.backgroundColor = 'black';
+arrayPaletteColor[0].classList.add('selected');
 
-  return paletteColor;
+for (let index = 1; index < 4; index +=1) {
+    arrayPaletteColor[index].style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)} , ${Math.floor(Math.random() * 255)} , ${Math.floor(Math.random() * 255)})`;
 }
 
 // adicionando evento click na paleta de cores
@@ -55,9 +52,9 @@ function createPixelBoard(numberPixels) {
 const pixelBoard = document.getElementById('pixel-board');
 pixelBoard.addEventListener('click', function (event) {
   const selected = document.querySelector('.selected');
-  event.target.style.backgroundColor = window.getComputedStyle(
-    selected
-  ).backgroundColor;
+  if (event.target.classList.contains('pixel')) {
+    event.target.style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
+  }
 });
 
 // limpar o board
@@ -88,8 +85,7 @@ buttonCreatBoard.addEventListener('click', function () {
     createPixelBoard(numberPixelsLine);
   }
 });
-const colors = ['black', 'yellow', 'pink', 'orange'];
-const arrayPaletteColor = paletteColor(colors);
+
 const numberPixelsLineInitial = 5;
 
 createPixelBoard(numberPixelsLineInitial);
