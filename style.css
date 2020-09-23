@@ -11,16 +11,16 @@ body {
     padding: 50px;
     display: inline-block;
 }
-.black {
+.color-one {
     background-color: black;
 }
-.red {
+.color-two {
     background-color: red;
 }
-.blue {
+.color-three {
     background-color: blue;
 }
-.green {
+.color-four {
     background-color: green;
 }
 .paletteColor, h1 {
@@ -36,7 +36,7 @@ input {
     font-family: monospace;
     font-size: larger;
     margin: 25px;
-    padding: 50px;
+    padding: 20px;
     border-radius: 5px;
 }
 .pixelBoard {

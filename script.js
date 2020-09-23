@@ -1,54 +1,66 @@
+window.onload = function () {
+    createPixelBoard(5);
+    initialColorSelected ();
+    selectPixel();
+}
+let pixelBoard = document.querySelector('#pixel-board');
 
+function initialColorSelected () {
+    let firstColor = document.querySelector('.color-one');
+    firstColor.classList.add('selected');
+}
 
-let selectedColor = document.querySelector('.black');
-function creatPixelBoard(value) {
-    let pixelBoard = document.querySelector('#pixel-board');
-    pixelBoard.innerHTML = '';
-    for (let index = 0; index < value; index += 1) {
-        let pixelLine = document.createElement('div');
-        pixelLine.className = 'pixel-line';
-        for (let index = 0; index < value; index += 1) {
-            let pixel = document.createElement('div');
-            pixel.className = 'pixel';
-            pixelLine.appendChild(pixel);
-
-            pixel.addEventListener('click', function (event) {
-                let selected = document.querySelector('.selected');
-                event.target.style.backgroundColor = selected.style.backgroundColor;
+function selectPixel () {
+    let pixels = document.querySelectorAll('.pixel');
+        for (let index = 0; index < pixels.length; index += 1) {
+            pixels[index].addEventListener('click', function () {
+            let selectedColor = document.querySelector('.selected');
+            this.style.backgroundColor = getComputedStyle(selectedColor).backgroundColor;
             })
         }
-        pixelBoard.appendChild(pixelLine);
-    }
 }
 
-
-creatPixelBoard(5);
-
-let pixelSelected = document.querySelectorAll('.pixel');
-pixelSelected.forEach(changePixelSelected);
-function changePixelSelected (value) {
-    for (let index in pixelSelected) {
-        value.addEventListener('click', function (event) {
-            let color = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
-            value.style.backgroundColor = color;
-        })
-    }
-}
-
-document.querySelectorAll('.color').forEach(selectedClick);
-function selectedClick (pixel) {
-    pixel.addEventListener('click', function() {
-        document.querySelectorAll('.color');
-        pixel.classList.add('selected');
-        selectedColor = pixel;
-        pixel.classList.remove('selected');
+let colorSelector = document.querySelectorAll('.color');
+for (let index = 0; index < colorSelector.length; index += 1) {
+    colorSelector[index].addEventListener('click', function () {
+    let selectedColor = document.getElementsByClassName("selected")[0];
+    selectedColor.classList.remove("selected");
+    this.classList.add("selected");
     });
 }
 
-let pixels = document.querySelectorAll('.pixel');
-let clearPixelBoard = document.querySelector('#clear-board');
-clearPixelBoard.addEventListener('click', function(event) {
-    for (let index = 0; index < pixels.length; index += 1) {
-        pixels[index].style.backgroundColor = 'white';
-    }
+let clearButton = document.querySelector('#clear-board');
+clearButton.addEventListener("click", function () {
+        let pixels = document.getElementsByClassName("pixel");
+        for (let index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = "";
+        }
 });
+
+
+let buttonCreatPixelBoard = document.getElementById("generate-board");
+buttonCreatPixelBoard.addEventListener("click", function () {
+    pixelBoard.innerHTML = '';
+    let pixelsNumber = parseInt(document.getElementById("board-size").value);
+    if (document.getElementById("board-size").value === "") {
+        alert("Board inválido!")
+        createPixelBoard(5);
+    } else if (pixelsNumber >= 5 && pixelsNumber <= 50) {
+        createPixelBoard(pixelsNumber);
+    } else {
+        createPixelBoard(5);
+    }
+})
+function createPixelBoard (pixelsNumber) {
+    for (lineNumber = 0; lineNumber < pixelsNumber; lineNumber += 1) { 
+        let newLine = document.createElement("div");
+        newLine.className = 'pixel-line'
+        pixelBoard.appendChild(newLine);
+        for (columnNumber = 0; columnNumber < pixelsNumber; columnNumber += 1) {
+            let newPixel = document.createElement("div");
+            newPixel.className = "pixel";
+            newLine.appendChild(newPixel);
+        }
+    selectPixel();
+    }
+}
