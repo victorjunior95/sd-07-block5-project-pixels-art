@@ -2,7 +2,7 @@
 // {
   let numberOfLines = 5;
   var lines = document.querySelectorAll(".line");
-  let className="box-empty";
+  let className="pixel";
   let color = document.getElementById("");
   var counterId=1;
   var colorBox="white";
