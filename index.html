@@ -8,18 +8,24 @@
 </head>
 <body>
   <header>
-    <h1 id="title">Paleta de Cores</h1>
+    <div class="titulo">
+      <h1 id="title">Paleta de Cores</h1>
+    </div>
     <div class="color-palette" id="color-palette">
       <div class="color selected"></div>
       <div class="color"></div>
       <div class="color"></div>
       <div class="color"></div>
     </div>
-    <button id="clear-board">Limpar</button>
-    <input type="number" name="" id="board-size" min="1">
-    <button id="generate-board">VQV</button>
+    <div>
+      <input type="number" name="" id="board-size" min="1">
+    </div>
+    <div class="botoes">
+      <button class="botao" id="clear-board">Limpar</button>
+      <button class="botao" id="generate-board">VQV</button>
+    </div>
   </header>
-  <section>
+  <section class="quadro">
     <div id="pixel-board" class="tabela">
     </div>
   </section>
