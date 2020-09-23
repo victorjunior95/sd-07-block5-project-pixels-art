@@ -1,3 +1,7 @@
+body {
+  margin-left: 50px;
+}
+
 .color {
   height: 50px;
   width: 50px;
@@ -19,6 +23,15 @@
 
 #color-d {
   background-color: blue;
+}
+
+h3 {
+  display: inline;
+}
+
+#clear-board{
+  margin:20px 10px;
+  display: inline;
 }
 
 .pixel {

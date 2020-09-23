@@ -1,6 +1,7 @@
 let colorPallete = document.getElementById('color-palette');
 let pixelBoard = document.getElementById('pixel-board');
 let colors = document.querySelectorAll('.color');
+let clearBoard = document.getElementById('clear-board');
 
 for (let indexLine = 0; indexLine < 5; indexLine += 1) {
   let lineBoard = document.createElement('div');
@@ -19,7 +20,6 @@ for (let indexLine = 0; indexLine < 5; indexLine += 1) {
 function getBgColor(element) {
   let colorOfElementPallete = window.getComputedStyle(element, null)
   .getPropertyValue("background-color");
-  console.log(colorOfElementPallete);
   return colorOfElementPallete;
 }
 
@@ -32,4 +32,10 @@ colors.forEach(element => {
   });
 });
 
+clearBoard.addEventListener('click', function () {
+  let pixels = document.querySelectorAll('.pixel');
+  for (let pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
+});
 
