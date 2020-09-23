@@ -29,36 +29,61 @@
 <script src="script.js"></script>
 
 <script>
-    document.getElementById('box1').addEventListener("click", storeVariable_box1);
-    document.getElementById('box2').addEventListener("click", storeVariable_box2);
-    document.getElementById('box3').addEventListener("click", storeVariable_box3);
-    document.getElementById('box4').addEventListener("click", storeVariable_box4);
 
-    document.getElementById('1').addEventListener("click", changeColor(document.getElementById('1').id));
-    document.getElementById('2').addEventListener("click", changeColor(document.getElementById('2').id));
-    document.getElementById('3').addEventListener("click", changeColor(document.getElementById('3').id));
-    document.getElementById('4').addEventListener("click", changeColor(document.getElementById('4').id));
-    document.getElementById('5').addEventListener("click", changeColor(document.getElementById('5').id));
-    document.getElementById('6').addEventListener("click", changeColor(document.getElementById('6').id));
-    document.getElementById('7').addEventListener("click", changeColor(document.getElementById('7').id));
-    document.getElementById('8').addEventListener("click", changeColor(document.getElementById('8').id));
-    document.getElementById('9').addEventListener("click", changeColor(document.getElementById('9').id));
-    document.getElementById('10').addEventListener("click", changeColor(document.getElementById('10').id));
-    document.getElementById('11').addEventListener("click", changeColor(document.getElementById('11').id));
-    document.getElementById('12').addEventListener("click", changeColor(document.getElementById('12').id));
-    document.getElementById('13').addEventListener("click", changeColor(document.getElementById('13').id));
-    document.getElementById('14').addEventListener("click", changeColor(document.getElementById('14').id));
-    document.getElementById('15').addEventListener("click", changeColor(document.getElementById('15').id));
-    document.getElementById('16').addEventListener("click", changeColor(document.getElementById('16').id));
-    document.getElementById('17').addEventListener("click", changeColor(document.getElementById('17').id));
-    document.getElementById('18').addEventListener("click", changeColor(document.getElementById('18').id));
-    document.getElementById('19').addEventListener("click", changeColor(document.getElementById('19').id));
-    document.getElementById('20').addEventListener("click", changeColor(document.getElementById('20').id));
-    document.getElementById('21').addEventListener("click", changeColor(document.getElementById('21').id));
-    document.getElementById('22').addEventListener("click", changeColor(document.getElementById('22').id));
-    document.getElementById('23').addEventListener("click", changeColor(document.getElementById('23').id));
-    document.getElementById('24').addEventListener("click", changeColor(document.getElementById('24').id));
-    document.getElementById('25').addEventListener("click", changeColor(document.getElementById('25').id));
+    document.getElementById('box1').addEventListener("click", storeVariableBox1);
+    document.getElementById('box2').addEventListener("click", storeVariableBox2);
+    document.getElementById('box3').addEventListener("click", storeVariableBox3);
+    document.getElementById('box4').addEventListener("click", storeVariableBox4);
+
+    document.getElementById('1').addEventListener("click", function(){document.getElementById('1').style.backgroundColor = colorBox});
+    document.getElementById('2').addEventListener("click", function(){document.getElementById('2').style.backgroundColor = colorBox});
+    document.getElementById('3').addEventListener("click", function(){document.getElementById('3').style.backgroundColor = colorBox});
+    document.getElementById('4').addEventListener("click", function(){document.getElementById('4').style.backgroundColor = colorBox});
+    document.getElementById('5').addEventListener("click", function(){document.getElementById('5').style.backgroundColor = colorBox});
+    document.getElementById('6').addEventListener("click", function(){document.getElementById('6').style.backgroundColor = colorBox});
+    document.getElementById('7').addEventListener("click", function(){document.getElementById('7').style.backgroundColor = colorBox});
+    document.getElementById('8').addEventListener("click", function(){document.getElementById('8').style.backgroundColor = colorBox});
+    document.getElementById('9').addEventListener("click", function(){document.getElementById('9').style.backgroundColor = colorBox});
+    document.getElementById('10').addEventListener("click", function(){document.getElementById('10').style.backgroundColor = colorBox});
+    document.getElementById('11').addEventListener("click", function(){document.getElementById('11').style.backgroundColor = colorBox});
+    document.getElementById('12').addEventListener("click", function(){document.getElementById('12').style.backgroundColor = colorBox});
+    document.getElementById('13').addEventListener("click", function(){document.getElementById('13').style.backgroundColor = colorBox});
+    document.getElementById('14').addEventListener("click", function(){document.getElementById('14').style.backgroundColor = colorBox});
+    document.getElementById('15').addEventListener("click", function(){document.getElementById('15').style.backgroundColor = colorBox});
+    document.getElementById('16').addEventListener("click", function(){document.getElementById('16').style.backgroundColor = colorBox});
+    document.getElementById('17').addEventListener("click", function(){document.getElementById('17').style.backgroundColor = colorBox});
+    document.getElementById('18').addEventListener("click", function(){document.getElementById('18').style.backgroundColor = colorBox});
+    document.getElementById('19').addEventListener("click", function(){document.getElementById('19').style.backgroundColor = colorBox});
+    document.getElementById('20').addEventListener("click", function(){document.getElementById('20').style.backgroundColor = colorBox});
+    document.getElementById('21').addEventListener("click", function(){document.getElementById('21').style.backgroundColor = colorBox});
+    document.getElementById('22').addEventListener("click", function(){document.getElementById('22').style.backgroundColor = colorBox});
+    document.getElementById('23').addEventListener("click", function(){document.getElementById('23').style.backgroundColor = colorBox});
+    document.getElementById('24').addEventListener("click", function(){document.getElementById('24').style.backgroundColor = colorBox});
+    document.getElementById('25').addEventListener("click", function(){document.getElementById('25').style.backgroundColor = colorBox});
+    // document.getElementById('2').addEventListener("click", changeColor(document.getElementById('2').id));
+    // document.getElementById('3').addEventListener("click", changeColor(document.getElementById('3').id));
+    // document.getElementById('4').addEventListener("click", changeColor(document.getElementById('4').id));
+    // document.getElementById('5').addEventListener("click", changeColor(document.getElementById('5').id));
+    // document.getElementById('6').addEventListener("click", changeColor(document.getElementById('6').id));
+    // document.getElementById('7').addEventListener("click", changeColor(document.getElementById('7').id));
+    // document.getElementById('8').addEventListener("click", changeColor(document.getElementById('8').id));
+    // document.getElementById('9').addEventListener("click", changeColor(document.getElementById('9').id));
+    // document.getElementById('10').addEventListener("click", changeColor(document.getElementById('10').id));
+    // document.getElementById('11').addEventListener("click", changeColor(document.getElementById('11').id));
+    // document.getElementById('12').addEventListener("click", changeColor(document.getElementById('12').id));
+    // document.getElementById('13').addEventListener("click", changeColor(document.getElementById('13').id));
+    // document.getElementById('14').addEventListener("click", changeColor(document.getElementById('14').id));
+    // document.getElementById('15').addEventListener("click", changeColor(document.getElementById('15').id));
+    // document.getElementById('16').addEventListener("click", changeColor(document.getElementById('16').id));
+    // document.getElementById('17').addEventListener("click", changeColor(document.getElementById('17').id));
+    // document.getElementById('18').addEventListener("click", changeColor(document.getElementById('18').id));
+    // document.getElementById('19').addEventListener("click", changeColor(document.getElementById('19').id));
+    // document.getElementById('20').addEventListener("click", changeColor(document.getElementById('20').id));
+    // document.getElementById('21').addEventListener("click", changeColor(document.getElementById('21').id));
+    // document.getElementById('22').addEventListener("click", changeColor(document.getElementById('22').id));
+    // document.getElementById('23').addEventListener("click", changeColor(document.getElementById('23').id));
+    // document.getElementById('24').addEventListener("click", changeColor(document.getElementById('24').id));
+    // document.getElementById('25').addEventListener("click", changeColor(document.getElementById('25').id));
 </script>
 
 </html>

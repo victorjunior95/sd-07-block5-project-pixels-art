@@ -1,7 +1,7 @@
 #box1 {
     width: 40px;
     height: 40px;
-    background-color: black;
+    /* background-color: black; */
     display: inline-block;
     background: black;
     border: 1px solid black;
@@ -10,7 +10,7 @@
 #box2 {
     width: 40px;
     height: 40px;
-    background-color: red;
+    /* background-color: red; */
     display: inline-block;
     background: red;
     border: 1px solid black;
@@ -19,7 +19,7 @@
 #box3 {
     width: 40px;
     height: 40px;
-    background-color: yellow;
+    /* background-color: yellow; */
     display: inline-block;
     background: yellow;
     border: 1px solid black;
@@ -28,7 +28,7 @@
 #box4 {
     width: 40px;
     height: 40px;
-    background-color: orange;
+    /* background-color: orange; */
     display: inline-block;
     background: orange;
     border: 1px solid black;
@@ -50,4 +50,3 @@
     width: 250px;
     height: 40px;
 }
-
