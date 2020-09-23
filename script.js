@@ -4,21 +4,19 @@ for (index = 0; index < color.length; index += 1)
   color[index].addEventListener('click', function (event) {
     let selected = document.querySelector('.selected');
     selected.classList.remove('selected');
-    event.target.className += " selected"
+    event.target.className += ' selected';
+  });
+
+let pixelBoard = document.querySelector('#pixel-board');
+pixelBoard.addEventListener('click', function (event) {
+  let selected = document.querySelector('.selected');
+  event.target.style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
+});
+
+let buttonClearBoard = document.getElementById('clear-board');
+let allPixel = document.querySelectorAll('.pixel');
+buttonClearBoard.addEventListener('click', function () {
+    for (let index = 0; index < allPixel.length; index += 1) {
+      allPixel[index].style.backgroundColor = 'white';
+    }
  });
-
- let pixelBoard = document.querySelector('#pixel-board')
- pixelBoard.addEventListener('click', function (event) {
-    let selected = document.querySelector('.selected');
-    event.target.style.backgroundColor = window.getComputedStyle(selected).backgroundColor
- })
-// let buttonClearBoard = document.getElementById("clear-board");
-
-// buttonClearBoard.addEventListener('click', function () {
-//   for (index = 0; index < pixel.length; index =+ 1)
-//     pixel.style.backgroundColor = 'white';
-// });
-
-// function clearBoard() {
-//     document.getElementsByClassName("pixel").style.backgroundColor = 'white';
-// };
