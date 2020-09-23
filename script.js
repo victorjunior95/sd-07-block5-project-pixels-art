@@ -1,7 +1,7 @@
-let colorOptions = document.querySelectorAll('.color');
+const colorOptions = document.querySelectorAll('.color');
 
-let clearButton = document.querySelector('#clear-board');
-let board = document.querySelector('#pixel-board');
+const clearButton = document.querySelector('#clear-board');
+const board = document.querySelector('#pixel-board');
 
 for (let index = 0; index < colorOptions.length; index += 1) {
   colorOptions[index].addEventListener('click', function (event) {
@@ -12,29 +12,28 @@ for (let index = 0; index < colorOptions.length; index += 1) {
 } // Abstração facilitada pela resolução em grupo feita por parte da turma.
 
 board.addEventListener('click', function (event) {
-  let classSelected = document.querySelector('.selected');
+  const classSelected = document.querySelector('.selected');
   if (event.target.classList.contains('pixel')) {
     event.target.style.backgroundColor = window.getComputedStyle(classSelected).backgroundColor;
   }
 });
 
 clearButton.addEventListener('click', function () {
-  let pixels = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
 });
 
-//requisitos bônus #VQV
-function createBoard (input) {
+function createBoard (input){
   for (let index = 0; index < input; index += 1) {
-    const linhas = document.createElement('div');  
+    const linhas = document.createElement('div');
     for (let index = 0; index < input; index += 1) {
-      let pixel = document.createElement('div');
+      const pixel = document.createElement('div');
       pixel.className = 'pixel';
       linhas.appendChild(pixel);
     }
-  board.appendChild(linhas);
+    board.appendChild(linhas);
   }
 }
 createBoard(5);
@@ -50,8 +49,8 @@ vqvBtn.addEventListener('click', function () {
     createBoard(5);
   } else if (boardSize.value > 50) {
     createBoard(50);
-  } else { 
-    createBoard(boardSize.value)
+  } else {
+    createBoard(boardSize.value);
   }
 });
 
