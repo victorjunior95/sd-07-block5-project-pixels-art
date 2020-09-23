@@ -1,11 +1,10 @@
 const colorOptions = document.querySelectorAll('.color');
-
 const clearButton = document.querySelector('#clear-board');
 const board = document.querySelector('#pixel-board');
 
 for (let index = 0; index < colorOptions.length; index += 1) {
   colorOptions[index].addEventListener('click', function (event) {
-    let selectedColor = document.querySelector('.selected');
+    const selectedColor = document.querySelector('.selected');
     selectedColor.classList.remove('selected');
     event.target.classList.add('selected');
   });
@@ -25,10 +24,10 @@ clearButton.addEventListener('click', function () {
   }
 });
 
-function createBoard (input){
+function createBoard(input) {
   for (let index = 0; index < input; index += 1) {
     const linhas = document.createElement('div');
-    for (let index = 0; index < input; index += 1) {
+    for (let index2 = 0; index2 < input; index2 += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       linhas.appendChild(pixel);
@@ -41,7 +40,6 @@ createBoard(5);
 const vqvBtn = document.querySelector('#generate-board');
 vqvBtn.addEventListener('click', function () {
   const boardSize = document.querySelector('#board-size');
-  const board = document.querySelector('#pixel-board');
   board.innerHTML = '';
   if (boardSize.value === '') {
     alert('Board inválido!');
