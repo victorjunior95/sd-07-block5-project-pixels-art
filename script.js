@@ -4,12 +4,12 @@ const arrayPaletteColor = document.getElementsByClassName('color');
 arrayPaletteColor[0].style.backgroundColor = 'black';
 arrayPaletteColor[0].classList.add('selected');
 
-for (let index = 1; index < 4; index +=1) {
-    arrayPaletteColor[index].style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)} , ${Math.floor(Math.random() * 255)} , ${Math.floor(Math.random() * 255)})`;
+for (let index = 1; index < 4; index += 1) {
+  arrayPaletteColor[index].style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)} , ${Math.floor(Math.random() * 255)} , ${Math.floor(Math.random() * 255)})`;
 }
 
 // adicionando evento click na paleta de cores
-function addEventClick(arrayPaletteColor) {
+function addEventClick() {
   for (let index = 0; index < arrayPaletteColor.length; index += 1) {
     arrayPaletteColor[index].addEventListener('click', function (event) {
       const selected = document.querySelector('.selected'); // pega a cor que está selecionada
@@ -89,4 +89,4 @@ buttonCreatBoard.addEventListener('click', function () {
 const numberPixelsLineInitial = 5;
 
 createPixelBoard(numberPixelsLineInitial);
-addEventClick(arrayPaletteColor);
+addEventClick();
