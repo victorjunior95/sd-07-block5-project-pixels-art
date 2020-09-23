@@ -24,15 +24,15 @@
 .pixel {
   background-color: white;
   border: solid 1px black;
+  display: inline-block;
   height: 40px;
   width: 40px;
 }
 
 .pixel-board {
-  display: grid;
-  grid-template-columns: 40px 40px 40px 40px 40px;
-  justify-content: center;  
-  margin-top: 40px;
+  text-align: center;
+  line-height: 0;
+  padding: 15px;
 }
 
 body {
