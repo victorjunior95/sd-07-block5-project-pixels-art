@@ -7,6 +7,8 @@
   var counterId=1;
   var colorBox="white";
   var selectedColor="box1";
+  var idLimpa="";
+  let counterLimpa=1;
 
   fillSquare(lines);
 
@@ -66,6 +68,15 @@
     document.getElementById(selectedColor).class = "selected"
     colorBox = document.getElementById("box4").style.backgroundColor;
   }
+
+  document.getElementById('clear-board').addEventListener("click",function(){
+    
+    for (counterLimpa=1; counterLimpa<=25; counterLimpa++)
+    {
+        idLimpa = counterLimpa.toString();
+        document.getElementById(idLimpa).style.backgroundColor="white";
+    }
+});
 
 
 // }
