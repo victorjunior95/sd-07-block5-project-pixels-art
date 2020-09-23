@@ -72,6 +72,7 @@ cor3.style.backgroundColor = cores[2];
 
 // Definindo a cor selecionada
 let corSelecionada = preto;
+preto.classList.add("selected");
 preto.addEventListener("click", function () {
     corSelecionada.classList.remove("selected");
     corSelecionada = preto;
