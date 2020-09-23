@@ -40,6 +40,7 @@
   document.getElementById("box2").style.backgroundColor = "red";
   document.getElementById("box3").style.backgroundColor = "yellow";
   document.getElementById("box4").style.backgroundColor = "orange";
+  storeVariableBox1();
 
   function storeVariableBox1(){
     document.getElementById(selectedColor).class = "color";
