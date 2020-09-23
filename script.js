@@ -22,7 +22,8 @@ function criarMatriz(n) {
             pixelColuna.className = 'pixel';
         // Colorindo os pixels
             pixelColuna.addEventListener('click', function() {
-                alert("aqui");
+                let colorirCom = window.getComputedStyle(corSelecionada, null).getPropertyValue("background-color");
+                pixelColuna.style.backgroundColor = colorirCom;
             });
         }
     }
