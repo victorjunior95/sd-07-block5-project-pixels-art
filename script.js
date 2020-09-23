@@ -6,6 +6,7 @@
   let color = document.getElementById("");
   var counterId=1;
   var colorBox="white";
+  var selectedColor="box1";
 
   fillSquare(lines);
 
@@ -17,34 +18,12 @@
     }
   }
 
-  document.getElementById("box1").style.backgroundColor = "black";
-  document.getElementById("box2").style.backgroundColor = "red";
-  document.getElementById("box3").style.backgroundColor = "yellow";
-  document.getElementById("box4").style.backgroundColor = "orange";
-
-  function storeVariableBox1(){
-    colorBox = document.getElementById("box1").style.backgroundColor;
-  }
-  function storeVariableBox2(){
-    colorBox = document.getElementById("box2").style.backgroundColor;
-  }
-  function storeVariableBox3(){
-    colorBox = document.getElementById("box3").style.backgroundColor;
-  }
-  function storeVariableBox4(){
-    colorBox = document.getElementById("box4").style.backgroundColor;
-  }
-
-  
-  function changeColor1(){
-    document.getElementById('1').style.backgroundColor = colorBox;
-  }
-
   function createBox(id)
   {
     let box = document.createElement("div");
     box.className = className;
     box.id=id;
+    box.backgroundColor="white";
     return(box);
   }
 
@@ -56,6 +35,38 @@
       counterId++;
     }
   }
+
+  document.getElementById("box1").style.backgroundColor = "black";
+  document.getElementById("box2").style.backgroundColor = "red";
+  document.getElementById("box3").style.backgroundColor = "yellow";
+  document.getElementById("box4").style.backgroundColor = "orange";
+
+  function storeVariableBox1(){
+    document.getElementById(selectedColor).class = "color";
+    selectedColor="box1";
+    document.getElementById(selectedColor).class = "selected"
+    colorBox = document.getElementById("box1").style.backgroundColor;
+  }
+  function storeVariableBox2(){
+    document.getElementById(selectedColor).class = "color";
+    selectedColor="box2";
+    document.getElementById(selectedColor).class = "selected"
+    colorBox = document.getElementById(selectedColor).style.backgroundColor;
+  }
+  function storeVariableBox3(){
+    document.getElementById(selectedColor).class = "color";
+    selectedColor="box3";
+    document.getElementById(selectedColor).class = "selected"
+    colorBox = document.getElementById("box3").style.backgroundColor;
+  }
+  function storeVariableBox4(){
+    document.getElementById(selectedColor).class = "color";
+    selectedColor="box4";
+    document.getElementById(selectedColor).class = "selected"
+    colorBox = document.getElementById("box4").style.backgroundColor;
+  }
+
+
 // }
 
 
