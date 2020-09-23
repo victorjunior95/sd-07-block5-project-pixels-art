@@ -70,9 +70,8 @@ cor1.style.backgroundColor = cores[0];
 cor2.style.backgroundColor = cores[1];
 cor3.style.backgroundColor = cores[2];
 
-// Definindo a cor selecionada
 let corSelecionada = preto;
-preto.classList.add("selected");
+// Definindo a cor selecionada
 preto.addEventListener("click", function () {
     corSelecionada.classList.remove("selected");
     corSelecionada = preto;
