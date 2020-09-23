@@ -43,6 +43,14 @@ h1 {
     background-color: red;
 }
 
+button {
+    margin-top: 10px;
+}
+
+/* .linha {
+    
+} */
+
 .pixel {
     background-color: white;
     width: 40px;
