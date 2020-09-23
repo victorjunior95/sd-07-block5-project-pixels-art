@@ -45,27 +45,27 @@
   storeVariableBox1();
 
   function storeVariableBox1(){
-    document.getElementById(selectedColor).class = "color";
+    document.getElementById(selectedColor).classList.remove("selected");
     selectedColor="box1";
-    document.getElementById(selectedColor).class = ".selected"
+    document.getElementById(selectedColor).classList.add("selected");
     colorBox = document.getElementById("box1").style.backgroundColor;
   }
   function storeVariableBox2(){
-    document.getElementById(selectedColor).class = "color";
+    document.getElementById(selectedColor).classList.remove("selected");
     selectedColor="box2";
-    document.getElementById(selectedColor).class = ".selected"
+    document.getElementById(selectedColor).classList.add("selected");
     colorBox = document.getElementById(selectedColor).style.backgroundColor;
   }
   function storeVariableBox3(){
-    document.getElementById(selectedColor).class = "color";
+    document.getElementById(selectedColor).classList.remove("selected");
     selectedColor="box3";
-    document.getElementById(selectedColor).class = ".selected"
+    document.getElementById(selectedColor).classList.add("selected");
     colorBox = document.getElementById("box3").style.backgroundColor;
   }
   function storeVariableBox4(){
-    document.getElementById(selectedColor).class = "color";
+    document.getElementById(selectedColor).classList.remove("selected");
     selectedColor="box4";
-    document.getElementById(selectedColor).class = ".selected"
+    document.getElementById(selectedColor).classList.add("selected");
     colorBox = document.getElementById("box4").style.backgroundColor;
   }
 
