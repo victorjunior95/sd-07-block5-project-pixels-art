@@ -2,7 +2,7 @@ const quadro = document.getElementById("pixel-board");
 const pixels = document.querySelectorAll(".pixel");
 const botaoTamanhoQuadro = document.getElementById("generate-board");
 const tamanhoPersonalizadoQuadro = document.getElementById("board-size");
-const botaoLimpar = document.getElementById("botao-limpar");
+const botaoLimpar = document.getElementById("clear-board");
 const preto = document.getElementById("preto");
 const cor1 = document.getElementById("cor1");
 const cor2 = document.getElementById("cor2");
@@ -32,9 +32,8 @@ function criarMatriz(n) {
 // Gerando Quadro Personalizado
 let tamanho;
 botaoTamanhoQuadro.addEventListener('click', function(){
-    if (tamanhoPersonalizadoQuadro.value > 0){
+    if (tamanhoPersonalizadoQuadro.value !== null ){
             tamanho = tamanhoPersonalizadoQuadro.value;
-        alert(tamanho);
         if (tamanho < 5){
             tamanho = 5;
         };
@@ -42,8 +41,9 @@ botaoTamanhoQuadro.addEventListener('click', function(){
             tamanho = 50;
         };
         criarMatriz(tamanho);
-    } else {
-        alert ("Digite um valor para o tamanho.");
+    };
+    if (tamanhoPersonalizadoQuadro.value == ""){
+        alert ("Board inválido!");
     };
     return tamanho;
 });
@@ -70,8 +70,8 @@ cor1.style.backgroundColor = cores[0];
 cor2.style.backgroundColor = cores[1];
 cor3.style.backgroundColor = cores[2];
 
-let corSelecionada = preto;
 // Definindo a cor selecionada
+let corSelecionada = preto;
 preto.addEventListener("click", function () {
     corSelecionada.classList.remove("selected");
     corSelecionada = preto;
