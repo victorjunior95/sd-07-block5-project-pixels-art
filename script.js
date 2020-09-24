@@ -8,7 +8,6 @@ let buttons = document.querySelectorAll(".color");
 let selectedButton = document.querySelector(".selected");
 let clearButton = document.querySelector("#clear-board");
 
-
 clearButton.addEventListener('click', cleanScreen)
 
 function getRandomColors() {
@@ -38,7 +37,6 @@ function screen(size) {
         for (let j = 0; j < size; j++) {
             let coluna = document.createElement("div");
             coluna.className = "pixel coluna";
-            coluna.style.padding = '40px';
             linha.appendChild(coluna);
         }
         board.appendChild(linha);

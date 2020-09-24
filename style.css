@@ -51,10 +51,12 @@ h1 {
     background-color: white;
 }
 
-.linha{
+.linha {
     display: table-row;
 }
 
-.coluna{
+.coluna {
     display: table-cell;
+    width: 40px;
+    height: 40px;
 }
