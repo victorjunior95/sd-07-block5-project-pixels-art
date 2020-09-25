@@ -18,5 +18,7 @@ let allPixel = document.querySelectorAll('.pixel');
 buttonClearBoard.addEventListener('click', function () {
     for (let index = 0; index < allPixel.length; index += 1) {
       allPixel[index].style.backgroundColor = 'white';
-    }
+      console.log(allPixel[index])
+   }
  });
+console.log(allPixel)
