@@ -4,6 +4,7 @@ let pixel =[];
 let linha = [];
 let k=0;
 /* criação da div em linhas*/
+
 for(let i=0; i < nLinha; i += 1){
 
     linha[i]= document.createElement("div");
@@ -19,17 +20,18 @@ for(let i=0; i < nLinha; i += 1){
             k=k+1;
         }
 }
+
 let color =document.querySelectorAll(".color");
 
-console.log(color);
-for(let i=0; i < color.lenght; i +=1){
-    console.log(color);
-    color[i].addEventListener("click", function(event){
+for (let i = 0; i < color.length; i += 1) {
+    
+    color[i].addEventListener("click", function() {
+        
         let selected = document.querySelector(".selected");
-                selected.classList.remove('.selected');
-        event.target.className += " selected";
+        selected.classList.remove('selected');
+        color[i].classList.add('selected');
 
-    }); 
+     }); 
 }
 
 for(let i=0; i < pixel.length; i += 1){
