@@ -5,19 +5,24 @@ let linha = [];
 let k=0;
 /* criação da div em linhas*/
 
-for(let i=0; i < nLinha; i += 1){
+function createGrid(nLinha){ 
 
-    linha[i]= document.createElement("div");
-    linha[i].className = "linha";
-    divtotal.appendChild(linha[i]);
-    for(let j=0; j < nLinha; j += 1){
+    for(let i=0; i < nLinha; i += 1){
 
-            pixel[k]= document.createElement("div");
-            pixel[k].className="pixel";
-            linha[i].appendChild(pixel[k]);
-            k=k+1;
-        }
+        linha[i]= document.createElement("div");
+        linha[i].className = "linha";
+        divtotal.appendChild(linha[i]);
+        for(let j=0; j < nLinha; j += 1){
+
+                pixel[k]= document.createElement("div");
+                pixel[k].className="pixel";
+                linha[i].appendChild(pixel[k]);
+                k=k+1;
+            }
+    }
 }
+
+createGrid(nLinha);
 
 let color =document.querySelectorAll(".color");
 
@@ -36,7 +41,7 @@ for(let i=0; i < pixel.length; i += 1){
     pixel[i].addEventListener("click", function(){
         let selected=document.querySelector(".selected");
         console.log(selected);
-        pixel[i].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
+        pixel[gi].style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
             
 
     });
@@ -53,3 +58,19 @@ limpapx.addEventListener("click", function(){
 
 
 });
+let btn=document.querySelector("#generate-board")
+    btn.addEventListener("click", function() {
+    let numberImput = document.querySelector("#board-size").value;
+    if(numberImput === null || numberImput === "" ){
+        alert("Board inválido!")
+    }
+    deleteGrid();
+    createGrid(numberImput);
+});
+
+function deleteGrid(){
+    let linhaBoard=document.querySelectorAll(".linha");
+    for (let i = 0; i < linhaBoard.length; i += 1) {
+        linhaBoard[i].remove();
+    }
+}
