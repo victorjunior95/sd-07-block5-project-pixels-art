@@ -1,4 +1,4 @@
-body{
+*{
     margin:0;
     padding:0;
   }
@@ -44,29 +44,29 @@ body{
   }
   #pixel-board{
   
-      background-color: violet;
-      display: inline-block;
-      
-  
-      
+    background-color: violet;
+    display: inline-block;
+          
+  }
+
+  .linha {
+      width: auto;
+      height: auto;
   }
   .pixel{
   
      
       background-color:white;
-      border:1px solid black;
-      border-width: 1px;
+      border: 1px solid black;
+      
       height: 40px;
       width: 40px;
       display: inline-block;
-      margin:-4px;
       
-  
   }
   
   #clear-board{
-      
-      
+            
       display: inline-block;
       width: 60px;
       height: 40px;
