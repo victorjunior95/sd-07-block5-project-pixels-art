@@ -90,9 +90,9 @@ function resize(a) {
 generateBoard.addEventListener('click', function () {
   const boardSize = document.querySelector('#board-size').value;
   const boardSizeN = Number(boardSize);
-    resize(boardSizeN);
-    removePixelBoard();
-    generatePixelBoard();
+  resize(boardSizeN);
+  removePixelBoard();
+  generatePixelBoard();
 });
 
 
