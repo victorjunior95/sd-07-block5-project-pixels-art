@@ -24,3 +24,11 @@ document.getElementById('pixel-board').addEventListener('click', function (event
   let selectedColor = document.querySelector('.selected');
   selectedPixel.style.backgroundColor = selectedColor.style.backgroundColor; 
 })
+
+document.getElementById('clear-board').addEventListener('click', function() {
+  let pixel = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixel.length; i += 1) {
+    let pixelOnClick = pixel[i];
+    pixelOnClick.style.backgroundColor = 'white';
+  }
+})
