@@ -66,7 +66,7 @@ document.getElementById('generate-board').addEventListener('click', function() {
       }
     }
 
-    if (numberLines > 5 && numberLines < 50) {
+    if (numberLines >= 5 && numberLines <= 50) {
       dadBox.innerHTML = '';
       for (let i = 0; i < numberLines * numberLines; i += 1) {
         let pixel = document.createElement('div');
