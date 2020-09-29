@@ -49,27 +49,26 @@ document.getElementById('generate-board').addEventListener('click', function() {
     if (numberLines < 5 && numberLines > 0) {
       alert('mínimo 5');
       dadBox.innerHTML = '';
-      for (let i = 1; i <= 25; i += 1) {
+      for (let i = 0; i < 25; i += 1) {
         let pixel = document.createElement('div');
         pixel.className = 'pixel';
         dadBox.appendChild(pixel);
       }
-      console.log(dadBox);
     }
 
     if (numberLines > 50) {
       alert('máximo 50');
       dadBox.innerHTML = '';
-      for (let i = 1; i <= 2500; i += 1) {
+      for (let i = 0; i < 2500; i += 1) {
         let pixel = document.createElement('div');
         pixel.className = 'pixel';
         dadBox.appendChild(pixel);
       }
-      console.log(dadBox);
     }
 
     if (numberLines > 5 && numberLines < 50) {
-      for (let i = 1; i = numberLines; i += 1) {
+      dadBox.innerHTML = '';
+      for (let i = 0; i < numberLines * numberLines; i += 1) {
         let pixel = document.createElement('div');
         pixel.className = 'pixel';
         dadBox.appendChild(pixel);
