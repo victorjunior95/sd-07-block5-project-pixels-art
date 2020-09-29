@@ -38,18 +38,41 @@ document.getElementById('clear-board').addEventListener('click', function() {
 
 // EVENTO PARA GERAR PIXEL BOARD PELO USUÁRIO
 document.getElementById('generate-board').addEventListener('click', function() {
+  
     let numberLines = document.getElementById('board-size').value;
     let dadBox = document.getElementById('pixel-board');
     
-    if (numberLines.value === null) {
-        alert('Board inválido!');
+    if (numberLines === '') {
+      alert('Board Inválido!');
     }
 
-    for (let i = 0; i < numberLines; i += 1) {
-      let pixelChildren = document.createElement('div');
-      pixelChildren.className = 'pixel';
-      dadBox.appendChild(pixelChildren);
+    if (numberLines < 5 && numberLines > 0) {
+      alert('mínimo 5');
+      dadBox.innerHTML = '';
+      for (let i = 1; i <= 25; i += 1) {
+        let pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        dadBox.appendChild(pixel);
+      }
+      console.log(dadBox);
     }
-    console.log(dadBox);
+
+    if (numberLines > 50) {
+      alert('máximo 50');
+      dadBox.innerHTML = '';
+      for (let i = 1; i <= 2500; i += 1) {
+        let pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        dadBox.appendChild(pixel);
+      }
+      console.log(dadBox);
+    }
+
+    if (numberLines > 5 && numberLines < 50) {
+      for (let i = 1; i = numberLines; i += 1) {
+        let pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        dadBox.appendChild(pixel);
+      }
+    }
 })
-
