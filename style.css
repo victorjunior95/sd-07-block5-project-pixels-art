@@ -6,6 +6,7 @@ body , div , h1 , p {
 
 .color-palette {
   border: 1px black;
+  margin: 30px 40px;
 }
 
 .color {
@@ -28,6 +29,7 @@ body , div , h1 , p {
   display: table;
   height: 210px;
   width: 210px;
+  margin: 40px;
 }
 
 .tr {
@@ -39,18 +41,22 @@ body , div , h1 , p {
   display: table-cell;
 }
 
-.color:nth-child( 1 ) {
+.color:first-child {
   background-color: black;
 }
 
-.color:nth-child( 2 ) {
-  background-color: rgb(255, 134, 0);
+.board-size {
+  width: 3ch;
 }
 
-.color:nth-child( 3 ) {
-  background-color: rgb(195, 60, 84);
+.selected {
+  box-shadow: 5px 5px 5px gold;
 }
 
-.color:nth-child( 4 ) {
-  background-color: rgb(34, 116, 165);
+.color-options {
+  margin: 10px;
+}
+
+.board-options {
+  margin: 20px;
 }
