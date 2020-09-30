@@ -1,0 +1,56 @@
+body , div , h1 , p {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.color-palette {
+  border: 1px black;
+}
+
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  box-sizing: content-box;
+  height: 40px;
+  width: 40px;
+}
+
+.pixel-board {
+  box-sizing: content-box;
+  display: table;
+  height: 210px;
+  width: 210px;
+}
+
+.tr {
+  border: 1px solid red;
+  display: table-row;
+}
+
+.td {
+  display: table-cell;
+}
+
+.color:nth-child( 1 ) {
+  background-color: black;
+}
+
+.color:nth-child( 2 ) {
+  background-color: rgb(255, 134, 0);
+}
+
+.color:nth-child( 3 ) {
+  background-color: rgb(195, 60, 84);
+}
+
+.color:nth-child( 4 ) {
+  background-color: rgb(34, 116, 165);
+}
