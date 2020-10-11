@@ -55,11 +55,21 @@ const generateBoard = (size) => {
   }
 };
 
+const size = (inputSize) => {
+  let result = inputSize;
+  if (inputSize < 5) {
+    result = 5;
+  } else if (inputSize > 50) {
+    result = 50;
+  }
+  return result;
+}
+
 const generateBoardBtn = document.querySelector('#generate-board');
 generateBoardBtn.addEventListener('click', () => {
   const inputSize = document.querySelector('#board-size').value;
   if (inputSize !== '') {
-    generateBoard(inputSize);
+    generateBoard(size(inputSize));
   } else {
     alert('Board inválido!');
   }
