@@ -1,6 +1,15 @@
 const colors = document.querySelectorAll('.color');
 colors[0].className = 'color selected';
 
+for (let indexColor = 1; indexColor <= 3; indexColor += 1) {
+  const rgb = {
+    r: Math.floor(Math.random() * 256),
+    g: Math.floor(Math.random() * 256),
+    b: Math.floor(Math.random() * 256),
+  };
+  colors[indexColor].style.backgroundColor = `rgb(${Object.values(rgb)})`;
+}
+
 const setColor = (thisColor) => {
   colors.forEach((element, index) => {
     if (index !== thisColor) {
