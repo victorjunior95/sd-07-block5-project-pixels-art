@@ -37,6 +37,7 @@ function actionPixels() {
     }));
 }
 
+actionPixels();
 const generateBoard = (size) => {
   const pixelBoard = document.querySelector('#pixel-board');
   pixelBoard.innerHTML = '';
@@ -54,14 +55,11 @@ const generateBoard = (size) => {
   }
 };
 
-generateBoard(5);
 const generateBoardBtn = document.querySelector('#generate-board');
 generateBoardBtn.addEventListener('click', () => {
   const inputSize = document.querySelector('#board-size').value;
   if (inputSize !== '') {
-    if (inputSize >= 5 && inputSize <= 50) {
-      generateBoard(inputSize);
-    }
+    generateBoard(inputSize);
   } else {
     alert('Board inválido!');
   }
