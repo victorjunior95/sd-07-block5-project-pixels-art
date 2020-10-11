@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <header class="header">
       <h1 id="title">Paleta de Cores</h1>
       <button id="clear-board">Limpar</button>
-    </header>
 
     <section id="color-palette" class="color-palette">
       <div class="color"></div>
@@ -19,47 +17,10 @@
       <div class="color"></div>
     </section>
 
-    <section id="pixel-board" class="pixel-board">
-      <div class="line1">
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-      </div>
+    <input id="board-size" type="number" min="5" max="50">
+    <button id="generate-board">VQV</button>
 
-      <div class="line2">
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-      </div>
-
-      <div class="line3">
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-      </div>
-
-      <div class="line4">
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-      </div>
-
-      <div class="line5">
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-      </div>
-    </section>
+    <section id="pixel-board" class="pixel-board"></section>
 
     <script src="/script.js"></script>
   </body>
