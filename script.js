@@ -25,3 +25,9 @@ pixels.forEach((eachPixel) => {
     eachPixel.style.backgroundColor = selectedColor;
   });
 });
+
+const clearBtn = document.querySelector('#clear-board');
+
+clearBtn.addEventListener('click', () => pixels.forEach((eachPixel) => {
+  eachPixel.style.backgroundColor = 'white';
+}));

@@ -1,5 +1,11 @@
-h1 {
-  text-align: center;
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 250px;
 }
 
 .color-palette {
