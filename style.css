@@ -20,12 +20,12 @@ body {
 .pixel-board {
   align-items: center;
   display: flex;
-  height: 100%;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  width: 100%;
+  width: 210px;
+  flex-wrap: wrap;
 }
 
 .pixel {
@@ -37,4 +37,8 @@ body {
 
 .tr {
   display: table-row;
+}
+
+.td {
+  display: table-cell;
 }
