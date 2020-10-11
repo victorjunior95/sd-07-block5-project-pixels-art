@@ -42,28 +42,32 @@ const generateBoard = (size) => {
   const pixelBoard = document.querySelector('#pixel-board');
   pixelBoard.innerHTML = '';
 
-  for (let columns = 0; columns < size; columns += 1) {
+  let numberOfColumns = 1;
+  while (numberOfColumns <= size) {
+    numberOfColumns += 1;
     const newLine = document.createElement('div');
     pixelBoard.appendChild(newLine);
 
-    for (let addPixels = 0; addPixels < size; addPixels += 1) {
+    let numberOfPixels = 1;
+    while (numberOfPixels <= size) {
+      numberOfPixels += 1;
       const newPixel = document.createElement('div');
       newPixel.className = 'pixel';
       newLine.appendChild(newPixel);
-      actionPixels();
     }
   }
+  actionPixels();
 };
 
 const size = (inputSize) => {
   let result = inputSize;
-  if (inputSize < 5) {
+  if (inputSize <= 5) {
     result = 5;
-  } else if (inputSize > 50) {
+  } else if (inputSize >= 50) {
     result = 50;
   }
   return result;
-}
+};
 
 const generateBoardBtn = document.querySelector('#generate-board');
 generateBoardBtn.addEventListener('click', () => {
