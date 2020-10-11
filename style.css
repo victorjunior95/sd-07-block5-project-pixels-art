@@ -20,12 +20,12 @@ body {
 .pixel-board {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
   width: 210px;
-  flex-wrap: wrap;
 }
 
 .pixel {
