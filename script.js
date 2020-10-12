@@ -49,6 +49,7 @@ function actionPixels() {
 actionPixels();
 const generateBoard = (size) => {
   const pixelBoard = document.querySelector('#pixel-board');
+  pixelBoard.style.width = '100%';
   pixelBoard.innerHTML = '';
 
   let numberOfColumns = 1;
