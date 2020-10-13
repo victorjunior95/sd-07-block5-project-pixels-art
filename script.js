@@ -3,6 +3,16 @@ color[0].classList.add('selected');
 
 
 const colorPalette = document.querySelector('.color-palette');
+
+for (let indexColor = 1; indexColor <= 3; indexColor += 1) {
+  const rgb = {
+    r: Math.floor(Math.random() * 256),
+    g: Math.floor(Math.random() * 256),
+    b: Math.floor(Math.random() * 256),
+  };
+  color[indexColor].style.backgroundColor = `rgb(${Object.values(rgb)})`;
+}
+
 colorPalette.addEventListener('click', (event) => {
   const selectedColor = document.querySelector('.selected');
   
