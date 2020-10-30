@@ -1,6 +1,6 @@
 window.onload = function () {
     
-    let board = document.querySelectorAll(".pixel");
+    /* let board = document.querySelectorAll(".pixel"); */
     let clearButton = document.querySelector("#clear-board");
     let setNumberTable = document.querySelector("#generate-board"); /* button */
     let numberTable = document.querySelector("#board-size"); /* input */
@@ -38,8 +38,8 @@ window.onload = function () {
         let variable2 = Math.floor(Math.random()* 255) + 1;
         let variable3 = Math.floor(Math.random()* 255) + 1;
         color2.style.backgroundColor = "rgb(" + variable1 + "," + variable2 + "," + variable3 + ")";
-        color3.style.backgroundColor = 'rgb(' + variable2 + ',' + variable3 + ',' + variable1 + ')';
-        color4.style.backgroundColor = 'rgb(' + variable3 + ',' + variable1 + ',' + variable2 + ')';
+        color3.style.backgroundColor = "rgb(" + variable3 + "," + variable1 + "," + variable2 + ")";
+        color4.style.backgroundColor = "rgb(" + variable2 + "," + variable3 + "," + variable1 + ")";
         console.log(color2);
         console.log(color3);
         console.log(color4);
@@ -58,7 +58,7 @@ window.onload = function () {
     function paintPixels() {
         let setPixel = event.target;
         console.log(setPixel);
-        paintColor = window.getComputedStyle(document.querySelector(".selected")).backgroundColor;
+        let paintColor = window.getComputedStyle(document.querySelector(".selected")).backgroundColor;
         setPixel.classList.remove("black");
         setPixel.classList.remove("orange");
         setPixel.classList.remove("pink");
